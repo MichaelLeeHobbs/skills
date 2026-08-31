@@ -12,8 +12,6 @@ bought you code execution from a repo you probably skimmed.
 This repo makes that impossible. There are no executable files in it and there never will be. You can
 install everything here without reading a line of code, because there is no code.
 
-> **Status: pre-release.** Three of eight skills have landed. The rest are being ported in.
-
 ## Install
 
 ```bash
@@ -46,35 +44,35 @@ Reaching a decision. Nothing here touches code.
 
 Writing and reviewing code.
 
-| Skill | What it does | |
-|---|---|---|
-| `write-tests` | Write a test that would actually catch the bug it claims to cover. Covers the traps: vacuous assertions, tests that encode the bug, green from two cancelling faults, fixtures the product never produces. | *porting* |
-| `deep-code-review` | Exhaustive file-by-file review of a package or service. Splits the tree into disjoint slices so every file is actually read, then verifies the load-bearing findings against the source before reporting them. | *porting* |
+| Skill | What it does |
+|---|---|
+| `write-tests` | Write a test that would actually catch the bug it claims to cover. Covers the traps: vacuous assertions, tests that encode the bug, green from two cancelling faults, fixtures the product never produces. |
+| `deep-code-review` | Exhaustive file-by-file review of a package or service. Splits the tree into disjoint slices so every file is actually read, then verifies the load-bearing findings against the source before reporting them. |
 
 ### operations
 
 Running things that are already live.
 
-| Skill | What it does | |
-|---|---|---|
-| `postmortem` | Write a blameless incident postmortem as a conversation, not a deliverable. Refuses to invent the timeline, detection story and severity, because you were there and the model was not. | *porting* |
+| Skill | What it does |
+|---|---|
+| `postmortem` | Write a blameless incident postmortem as a conversation, not a deliverable. Refuses to invent the timeline, detection story and severity, because you were there and the model was not. |
 
 ### agent-workflow
 
 Directing the agent itself.
 
-| Skill | What it does | |
-|---|---|---|
+| Skill | What it does |
+|---|---|
 | `optimize-context-file` | Audit and tighten a bloated `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` or `.cursorrules`. Strips rationale that does not change behavior and catches standing rules that got demoted to a lazily loaded link. | |
-| `hands-off` | Prepare a project for an unattended build-out. Freezes an ordered queue with a check per item, sets up a decision log, and defines what the agent does when it hits something ambiguous at 3am. | *porting* |
+| `hands-off` | Prepare a project for an unattended build-out. Freezes an ordered queue with a check per item, sets up a decision log, and defines what the agent does when it hits something ambiguous at 3am. |
 
 ### domains
 
 Tied to one technology. Useful only if you use that thing.
 
-| Skill | What it does | |
-|---|---|---|
-| `oie-plugin-development` | Scaffold and build a plugin for Open Integration Engine or Mirth Connect. Maven layout, `plugin.xml`, server and admin-GUI classes, connectors, migrations, packaging and signing. Nine reference docs. | *porting* |
+| Skill | What it does |
+|---|---|
+| `oie-plugin-development` | Scaffold and build a plugin for Open Integration Engine or Mirth Connect. Maven layout, `plugin.xml`, server and admin-GUI classes, connectors, migrations, packaging and signing. Nine reference docs. |
 
 ## The rules
 

@@ -66,13 +66,13 @@ Directing the agent itself.
 | `optimize-context-file` | Audit and tighten a bloated `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` or `.cursorrules`. Strips rationale that does not change behavior and catches standing rules that got demoted to a lazily loaded link. | |
 | `hands-off` | Prepare a project for an unattended build-out. Freezes an ordered queue with a check per item, sets up a decision log, and defines what the agent does when it hits something ambiguous at 3am. |
 
-### blackbox
+### clean-room
 
-Specifying a system you can observe but cannot read the source of.
+Specifying a system you can observe but must not copy.
 
 | Skill | What it does |
 |---|---|
-| `ui-feature-spec` | Reverse-engineer a live web page into a build-ready spec by operating it: scrolling, clicking, breaking forms on purpose, reading the network. Produces something a developer who has never seen the page can rebuild from. Needs browser control. |
+| `ui-feature-spec` | Reverse-engineer a live web page into a build-ready spec by operating it: scrolling, clicking, breaking forms on purpose, exercising every variant, reading the network. Captures behaviour exactly and describes appearance by intent rather than copying values. Needs browser control. |
 
 ### domains
 

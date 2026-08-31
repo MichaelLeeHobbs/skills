@@ -12,6 +12,10 @@ Page name and title, URL pattern with variables marked such as `/orders/:id`, on
 type: form, dashboard, list, detail, landing, settings, wizard, other. Date captured, and the product it
 belongs to if identifiable. Query parameters and deep-link behaviour.
 
+**Scope answers from step 0**, recorded so a reader can tell a rule from an oversight: the environment,
+whether destructive testing was permitted and how far, which roles were available, the clean-room
+strictness setting, and anything declared out of bounds.
+
 ## 1. Overview and context
 
 Two to four sentences on what the page does and why it exists. Who uses it and at what point in their
@@ -58,9 +62,10 @@ multi-step flows, every step, its indicator, and whether state survives navigati
 
 ## 4. Page layout and structure
 
-Layout pattern: columns, grid, maximum content width, alignment, density. Region breakdown in DOM order.
-A text wireframe of the visual hierarchy. Responsive behaviour at each width tested, with observed
-breakpoints. Layering for overlays, sticky elements and modals.
+Layout pattern: columns, grid, whether width is capped, alignment, density. Region breakdown in DOM order.
+A text wireframe of the visual hierarchy. Responsive behaviour at each width tested, with the
+approximate widths at which the layout changes, observed rather than read from stylesheets. Layering for
+overlays, sticky elements and modals.
 
 ## 5. Component inventory
 
@@ -123,14 +128,27 @@ roles present, and ones that are missing. Observed tab order and focus managemen
 trapping in modals. Contrast, and whether any state is signalled by colour alone. A short list of gaps
 worth fixing in the rebuild.
 
-## 13. Visual design and theme
+## 13. Visual design intent
 
-From computed styles, not from a screenshot.
+**No exact values.** This section tells a developer what the design is *doing* so they can achieve the
+same effect in their own design system. It does not transcribe this one.
 
-Colour palette: background, surface, primary and accent, text, border, status colours. Typography:
-families, weights, sizes and line heights per text role. Spacing scale, radii, shadows, density.
-Iconography style and source. A proposed token set a developer could centralise, with names and values.
-Dark mode variants if present.
+- **Colour roles.** Name each role and its job: page background, raised surface, primary action, danger,
+  success, muted text, border. Describe relationships rather than values: "the raised surface is
+  slightly lighter than the page background", "the primary action is the only saturated colour in the
+  toolbar". Note anywhere colour alone carries meaning, since the rebuild has to solve that too.
+- **Typographic roles.** The distinct text roles you can see, such as page title, section heading, body,
+  label, help text, and how they differ from each other in relative weight and size. Say how many
+  distinct sizes are in use, not what they are.
+- **Density and rhythm.** Roughly how many steps of spacing are in play, whether the layout is tight or
+  airy, and where the exceptions are.
+- **Shape.** Whether corners are square, slightly rounded or pill-shaped, and whether elevation is
+  conveyed by shadow, border or background alone.
+- **Iconography.** Style, such as outline or filled, and the set if identifiable, since a rebuild needs
+  an equivalent source.
+- **Themes.** If there is a theme switch, describe what changes by role rather than by value.
+- **Token set.** A proposed list of token *names* a developer should centralise, with the role each one
+  plays and the values left as a design decision.
 
 ## 14. Content inventory
 
@@ -153,8 +171,13 @@ to wiring to states. This is the section they will actually work from.
 Honest accounting of what you did and did not reach.
 
 - Interactive elements enumerated versus exercised, as a count.
-- Every element or state you could not reach, with the reason: destructive, permission-gated, requires
-  data you do not have, would have triggered a blocking dialog, capability unavailable.
+- **Per dimension from the variant sweep: values enumerated versus values exercised, as counts.** One
+  row per dimension. This is the number that tells a reader whether to trust a generalisation, and it is
+  the single most useful line in the document.
+- Every generalisation still tagged `[SAMPLED n/N]`, gathered in one place.
+- Every element or state you could not reach, with the reason: destructive and not permitted by step 0,
+  permission-gated with no role available, requires data you do not have, would have triggered a
+  blocking dialog, capability unavailable.
 - Anything that behaved inconsistently across attempts.
 
 **Do not omit this section.** A spec that claims total coverage without evidence is worse than one that
@@ -165,3 +188,19 @@ names its gaps.
 Everything ambiguous, hidden or guessed. Everything a developer must confirm with product or design
 before building. And the section 2.2 coverage check: confirm every interactive component appears in at
 least one story, or list the ones that do not and explain why.
+
+## Appendices: variant matrices
+
+One appendix per dimension from the variant sweep. These get long, which is exactly why they are not
+inline: a fifty-row table of per-type property schemas would bury sections 1 to 18, and those sections
+are what a reader needs first.
+
+Each appendix is a matrix, one row per value of the dimension, columns for whatever varies. Typical
+shapes:
+
+- **Per type:** the full property set, the events available, which features are absent entirely.
+- **Enumerated option lists:** every select, in full, since these cannot be guessed and are pure fact.
+- **Control-type catalogue:** each distinct kind of input the interface uses and how it behaves, so a
+  rebuild implements each one once.
+
+State the row count at the top of each appendix, and make sure it matches the count in section 17.

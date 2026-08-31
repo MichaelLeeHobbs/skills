@@ -66,7 +66,7 @@ skills/<name>/
   reference/*.md        optional, for detail that would bloat the body
 ```
 
-Frontmatter needs exactly two fields:
+Two fields are required:
 
 ```yaml
 ---
@@ -75,6 +75,12 @@ description: >-
   What it does, then when to use it, then when not to.
 ---
 ```
+
+Agent-specific frontmatter keys are allowed on top of those two. An agent that does not recognise a key
+ignores it, so `disable-model-invocation: true` costs nothing on an agent that has no such concept. This
+is the one place agent-specific naming is fine, because it degrades gracefully by construction. The rule
+in [rule 2](#2-no-agent-specific-names) is about the body, where a name the reader has to translate is a
+real bug.
 
 The `description` is a retrieval surface, not a summary. An agent decides whether to load the skill from
 this text alone, so lead with the trigger conditions and include the phrases a user would actually say.

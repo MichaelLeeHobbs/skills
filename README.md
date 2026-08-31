@@ -12,8 +12,7 @@ bought you code execution from a repo you probably skimmed.
 This repo makes that impossible. There are no executable files in it and there never will be. You can
 install everything here without reading a line of code, because there is no code.
 
-> **Status: pre-release.** The design is settled and the skills are being ported in. Nothing installable
-> has landed yet.
+> **Status: pre-release.** Three of eight skills have landed. The rest are being ported in.
 
 ## Install
 
@@ -32,18 +31,50 @@ Or read the markdown and copy what you want. Every skill is one file you can hol
 
 ## The skills
 
-Different topics, no unifying theme beyond being useful and being prose.
+Grouped by area. Different topics, no unifying theme beyond being useful and being prose.
+
+### thinking
+
+Reaching a decision. Nothing here touches code.
 
 | Skill | What it does |
 |---|---|
 | `brainstorm` | Explore a problem you have not solved. You bring the problem and the goal, the agent brings the option space instead of running with its first idea. |
-| `deep-code-review` | Exhaustive file-by-file review of a package or service. Splits the tree into disjoint slices so every file is actually read, then verifies the load-bearing findings against the source before reporting them. |
-| `hands-off` | Prepare a project for an unattended build-out. Freezes an ordered queue with a check per item, sets up a decision log, and defines what the agent does when it hits something ambiguous at 3am. |
-| `oie-plugin-development` | Scaffold and build a plugin for Open Integration Engine or Mirth Connect. Maven layout, `plugin.xml`, server and admin-GUI classes, connectors, migrations, packaging and signing. Nine reference docs. |
-| `optimize-context-file` | Audit and tighten a bloated `CLAUDE.md`, `AGENTS.md` or `.cursorrules`. Strips rationale that does not change behavior and catches standing rules that got demoted to a lazily loaded link. |
-| `postmortem` | Write a blameless incident postmortem as a conversation, not a deliverable. Refuses to invent the timeline, detection story and severity, because you were there and the model was not. |
 | `steelman` | Settle a binary design question that keeps getting deferred. Both positions argued at full strength, both tested against ground truth, judged on a rubric written before the arguing started. |
-| `write-tests` | Write a test that would actually catch the bug it claims to cover. Covers the traps: vacuous assertions, tests that encode the bug, green from two cancelling faults, fixtures the product never produces. |
+
+### engineering
+
+Writing and reviewing code.
+
+| Skill | What it does | |
+|---|---|---|
+| `write-tests` | Write a test that would actually catch the bug it claims to cover. Covers the traps: vacuous assertions, tests that encode the bug, green from two cancelling faults, fixtures the product never produces. | *porting* |
+| `deep-code-review` | Exhaustive file-by-file review of a package or service. Splits the tree into disjoint slices so every file is actually read, then verifies the load-bearing findings against the source before reporting them. | *porting* |
+
+### operations
+
+Running things that are already live.
+
+| Skill | What it does | |
+|---|---|---|
+| `postmortem` | Write a blameless incident postmortem as a conversation, not a deliverable. Refuses to invent the timeline, detection story and severity, because you were there and the model was not. | *porting* |
+
+### agent-workflow
+
+Directing the agent itself.
+
+| Skill | What it does | |
+|---|---|---|
+| `optimize-context-file` | Audit and tighten a bloated `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` or `.cursorrules`. Strips rationale that does not change behavior and catches standing rules that got demoted to a lazily loaded link. | |
+| `hands-off` | Prepare a project for an unattended build-out. Freezes an ordered queue with a check per item, sets up a decision log, and defines what the agent does when it hits something ambiguous at 3am. | *porting* |
+
+### domains
+
+Tied to one technology. Useful only if you use that thing.
+
+| Skill | What it does | |
+|---|---|---|
+| `oie-plugin-development` | Scaffold and build a plugin for Open Integration Engine or Mirth Connect. Maven layout, `plugin.xml`, server and admin-GUI classes, connectors, migrations, packaging and signing. Nine reference docs. | *porting* |
 
 ## The rules
 

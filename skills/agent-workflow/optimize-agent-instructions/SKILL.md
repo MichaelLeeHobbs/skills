@@ -1,5 +1,5 @@
 ---
-name: optimize-context-file
+name: optimize-agent-instructions
 description: >-
   Audit and tighten any file that instructs an agent: a context file (CLAUDE.md, AGENTS.md, GEMINI.md,
   .cursorrules), a skill, a slash command, a subagent definition, or a reference file one of those links

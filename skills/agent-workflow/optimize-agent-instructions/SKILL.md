@@ -17,35 +17,56 @@ and the reference files those link to. This pass tightens any of them.
 An over-long file makes the model ignore the instructions inside it, so every line you add weakens the
 lines already there.
 
-## Find the tier before you cut
+Work the steps in order. Relocating comes before tightening so you do not shorten a block that then
+leaves the file.
+
+## Step 1: find the tier and the target
 
 How hard to cut depends on when the file enters the context window.
 
-| Tier | What is in it | How hard to cut |
+| File | When it loads | Target |
 |---|---|---|
-| Always loaded | the context file, and the frontmatter `description` of every skill, command and subagent | hardest. Every task pays, including the ones this file has nothing to do with |
-| Loaded on trigger | skill bodies, command bodies, subagent prompts | hard. One task pays, and the text competes with that task's real work |
-| Loaded on demand | reference files a body links to | barely. This is where detail belongs |
+| Context file | every session | well under 200 lines. Roughly 60 to 100 for a typical project, less for a personal global file |
+| `description` of a skill, command or subagent | every session, whether or not it fires | a few lines, trigger conditions first |
+| Skill body, command body, subagent prompt | when its description matches the task | under roughly 150 lines, with the rest pushed into reference files |
+| Reference file | when a step sends the agent there | no limit worth enforcing |
 
-Confirm the tiers against your own agent. Some inline every skill body up front, some load a body only
-after its description matches.
+Confirm the loading rules against your own agent. Some inline every skill body up front, some load a body
+only after its description matches.
 
-## Run the built-in audit first, if there is one
+## Step 2: run the built-in audit, if there is one
 
 Some agents ship a command that does the mechanical passes: cutting content derivable from the codebase,
 deduplicating a local file against a checked-in one, moving always-loaded guidance into things that load
-on demand, linting skill frontmatter. Run it, apply what you agree with, then do the three things those
-tools do not.
+on demand, linting skill frontmatter. Run it and apply what you agree with. Steps 3 to 5 are the passes
+it does not do.
 
-1. **The files the tool skips.** Built-in audits target the project context file. A personal global file
-   is all stance, and stance is never derivable from a codebase, so a clean report there means the tool
-   found nothing it knows how to look for, not that the file is fine. Skill bodies get checked for shape,
-   not for length.
-2. **Within-line tightening.** Automated passes move and delete whole blocks. They do not shorten a rule
-   you are keeping. That is the pass below.
-3. **Checking the result still reads as an instruction.**
+A clean report is not a clean bill of health. These tools target the project context file, and a personal
+global file is all stance, which is never derivable from a codebase, so the tool finds nothing it knows
+how to look for. Skill bodies get checked for shape, not for length.
 
-## TIGHTEN: the pass that matters
+## Step 3: decide what stays inline
+
+A reference to another file loads at wildly different cost depending on how it is written, and the two
+forms look identical in markdown.
+
+- **In a context file:** a plain link is usually lazy, read only when the task needs it. An import is
+  eager, inlined every session, exactly as expensive as leaving the text inline. Agents spell imports
+  differently and some have no such concept, so confirm before relying on one. Reserve it for the rare
+  thing genuinely needed every session.
+- **In a skill or command body:** a linked reference file is read only when a step sends the agent there.
+  Long tables, worked examples and detail a run needs sometimes belong in one. What every run needs stays
+  in the body.
+
+Move a sometimes-needed block out and leave a one-line pointer plus a plain link behind it. The pointer
+has to say when to follow it or the file never gets opened.
+
+Two things never move. A standing directive about what counts as done stays inline, because a lazily
+loaded file may not be in context at the moment it matters. A step's check stays with the step.
+
+**Check:** every link resolves, and every pointer says when to follow it.
+
+## Step 4: TIGHTEN what remains
 
 Strip rationale that does not change behavior:
 
@@ -76,7 +97,11 @@ second sentence that restates the first.
 a decision already made, "this matters because...", a parenthetical explaining a term the author
 obviously knows, and the file explaining its own purpose to its author.
 
-## A description is a trigger, not a summary
+**Check:** re-read each shortened line cold. Does it still tell you what to do? A rule whose reasoning
+was load-bearing must keep it. This is the failure mode the pass introduces, so check it explicitly
+rather than assuming shorter is safer.
+
+## Step 5: fix the description
 
 Skills, commands and subagents only. The agent decides whether to load the body from the description
 alone. Two failures, opposite directions:
@@ -86,46 +111,17 @@ alone. Two failures, opposite directions:
 - **A paragraph of summary.** Always-loaded rates for prose that duplicates the body.
 
 Write the conditions that should trigger it, in the words a user would actually say, plus what it is not
-for when the boundary is easy to get wrong. Then check it cold: read the description with the body
-hidden, and decide whether you would open the file. If you cannot tell, neither can the agent.
+for when the boundary is easy to get wrong.
 
-## Eager versus lazy references
+**Check:** read the description cold with the body hidden. If you cannot tell whether to open the file,
+neither can the agent.
 
-The two forms look identical in markdown and cost wildly different amounts.
+## Step 6: verify, do not self-grade
 
-- **In a context file:** a plain link is usually lazy, read only when the task needs it. An import is
-  eager, inlined every session, exactly as expensive as leaving the text inline. Agents spell imports
-  differently and some have no such concept, so confirm before relying on one. Reserve it for the rare
-  thing genuinely needed every session.
-- **In a skill or command body:** a linked reference file is read only when a step sends the agent there.
-  Long tables, worked examples and detail a run needs sometimes belong in one. What every run needs stays
-  in the body.
+Diff old against new. Everything kept is still inline or relocated to a real destination, and only
+deliberate cuts disappear. Compare the result against the target from step 1.
 
-Either way, "break it up" means replacing a sometimes-needed inline block with a one-line pointer plus a
-plain link, and the pointer has to say when to follow it or the file never gets opened. Never leave a
-link to a file that does not exist.
+## Step 7: report, do not impose
 
-## Verify, do not self-grade
-
-- **No rule broken by tightening.** Re-read each shortened line cold. Does it still tell you what to do?
-  A rule whose reasoning was load-bearing must keep it. This is the failure mode the pass introduces, so
-  check it explicitly rather than assuming shorter is safer.
-- **Nothing over-demoted.** A standing directive about what counts as done belongs inline, even when a
-  skill could hold it, because a lazily loaded file may not be in context at the moment it matters. In a
-  skill body, a step's check stays with the step and never moves to a reference file.
-- **No behavior lost.** Diff old against new: everything kept is still inline or relocated to a real
-  destination. Only deliberate cuts disappear.
-- **Descriptions still fire**, if you touched one. Run the cold read above.
-- **Links resolve.**
-
-## Targets and output
-
-| File | Target |
-|---|---|
-| Context file | well under 200 lines. Roughly 60 to 100 is healthy for a typical project, less for a personal global file |
-| Skill or command body | under roughly 150 lines, with the rest pushed into reference files |
-| Description | a few lines, trigger conditions first |
-| Reference file | no limit worth enforcing, it is read only when a step calls for it |
-
-Match the file's existing voice. Propose rather than impose. Show the diff and a before-and-after report:
-`N to M lines`, the cut list, and every TIGHTEN before and after, not just a line-count delta.
+Match the file's existing voice. Show the diff and a before-and-after report: `N to M lines`, the cut
+list, and every TIGHTEN before and after, not just a line-count delta.

@@ -12,57 +12,53 @@ description: >-
 
 # OIE / Mirth plugin development
 
-Build a plugin (extension) for the Open Integration Engine (OIE) — the open-source fork of Mirth Connect.
-The detail lives in [`reference/`](./reference/), loaded on demand; this file is the map. Read the
+Build a plugin (extension) for the Open Integration Engine (OIE), the open-source fork of Mirth Connect.
+The detail lives in [`reference/`](./reference/), loaded on demand. This file is the map. Read the
 reference for the task at hand rather than pulling in the whole guide.
 
 > **Credit:** this skill is adapted from the **OIE Plugin Development Guide by
-> [@pacmano1](https://github.com/pacmano1)** — the hard-won knowledge here is his. Thank you.
+> [@pacmano1](https://github.com/pacmano1)**. The hard-won knowledge here is his. Thank you.
 
 ## First, the thing that surprises people
-Plugins build with **Maven** (root POM + module POMs), even though the **engine itself builds with Gradle**
-(it migrated off Ant in June 2026 — older guides still say Ant). Don't mix them up: use the Maven workflow below for plugin work. You never build
-the engine to build a plugin — its artifacts come from a Maven repo (see
-[`reference/maven-poms.md`](./reference/maven-poms.md)), so the engine's own build system is not your concern.
+
+Plugins build with **Maven** (root POM plus module POMs), even though the **engine itself builds with
+Gradle**. It migrated off Ant in June 2026, so older guides still say Ant. Use the Maven workflow below
+for plugin work. You never build the engine to build a plugin, because its artifacts come from a Maven
+repo. See [`reference/maven-poms.md`](./reference/maven-poms.md).
 
 ## Shape of a plugin
+
 A plugin is a multi-module Maven project that produces an installable `.zip`:
-- **server** module — classes the engine instantiates (services, REST servlets, migrators).
-- **client** module — classes the **Administrator** GUI instantiates (panels, settings).
-- **shared** module — types used by both.
+
+- **server** module, the classes the engine instantiates: services, REST servlets, migrators.
+- **client** module, the classes the **Administrator** GUI instantiates: panels, settings.
+- **shared** module, types used by both.
 - a **`plugin.xml`** descriptor wiring it together, and a **packaging/assembly** step that zips it.
 
-## Typical workflow (→ reference for each step)
-1. **Set up** the project — prerequisites, layout, scaffolding → [`reference/project-structure.md`](./reference/project-structure.md)
-2. **Maven POMs** — root + module POMs, and the build commands → [`reference/maven-poms.md`](./reference/maven-poms.md)
-3. **`plugin.xml`** descriptor → [`reference/plugin-descriptor.md`](./reference/plugin-descriptor.md)
-4. **Server-side** plugin — services, **REST/servlet** endpoints, **permissions**, **event logging** → [`reference/server-plugin.md`](./reference/server-plugin.md)
-5. **Client-side** (Administrator GUI) + **shared** module → [`reference/client-and-shared.md`](./reference/client-and-shared.md)
-6. **Database** — Migrator + MyBatis → [`reference/database.md`](./reference/database.md)
-7. **Package, sign, serialize** — assembly, code signing, XStream → [`reference/packaging-signing-serialization.md`](./reference/packaging-signing-serialization.md)
-8. **Gotchas & a minimal working example** (read early — saves pain) → [`reference/gotchas-and-example.md`](./reference/gotchas-and-example.md)
+## Where to go
 
-**Building a source/destination connector?** That's a distinct shape (a connector descriptor + settings
-panel, often subclassing a stock connector) with its own hard-won lessons — styling, live testing, and
-staying compatible with TLS plugins → [`reference/connector-plugins.md`](./reference/connector-plugins.md).
+Numbered in the order a new plugin usually needs them. Jump straight to a row if you already know the
+task. Read [`gotchas-and-example.md`](./reference/gotchas-and-example.md) early rather than at the end.
 
-## Router (jump straight to a task)
-| I'm trying to… | Reference |
-|---|---|
-| Scaffold a new plugin / understand the layout / prerequisites | `reference/project-structure.md` |
-| Write or fix the root/module POMs; find the build command | `reference/maven-poms.md` |
-| Configure `plugin.xml` (classes, resources, version) | `reference/plugin-descriptor.md` |
-| Add a server service, a REST endpoint, permissions, or event logging | `reference/server-plugin.md` |
-| Add an Administrator-GUI panel or a shared type | `reference/client-and-shared.md` |
-| Build a **source/destination connector** (subclass a stock one, settings panel, TLS-plugin compat, live testing) | `reference/connector-plugins.md` |
-| Add/alter a table (Migrator) or a query (MyBatis) | `reference/database.md` |
-| Build the `.zip`, sign it (incl. the Administrator Launcher signing wall), or (de)serialize with XStream | `reference/packaging-signing-serialization.md` |
-| Debug a weird build/runtime problem; see a full tiny example | `reference/gotchas-and-example.md` |
+| # | I am trying to | Reference |
+|---|---|---|
+| 1 | Scaffold a new plugin, understand the layout, check prerequisites | [`project-structure.md`](./reference/project-structure.md) |
+| 2 | Write or fix the root and module POMs, or find the build command | [`maven-poms.md`](./reference/maven-poms.md) |
+| 3 | Configure `plugin.xml`: classes, resources, version | [`plugin-descriptor.md`](./reference/plugin-descriptor.md) |
+| 4 | Add a server service, a REST endpoint, permissions, or event logging | [`server-plugin.md`](./reference/server-plugin.md) |
+| 5 | Add an Administrator-GUI panel or a shared type | [`client-and-shared.md`](./reference/client-and-shared.md) |
+| 6 | Add or alter a table (Migrator), or a query (MyBatis) | [`database.md`](./reference/database.md) |
+| 7 | Build the `.zip`, sign it including the Administrator Launcher signing wall, or serialize with XStream | [`packaging-signing-serialization.md`](./reference/packaging-signing-serialization.md) |
+| 8 | Debug a weird build or runtime problem, or read a full tiny example | [`gotchas-and-example.md`](./reference/gotchas-and-example.md) |
+| | Build a **source or destination connector**: subclass a stock one, settings panel, TLS-plugin compatibility, live testing | [`connector-plugins.md`](./reference/connector-plugins.md) |
+
+A connector has no number because it is a different shape rather than a step in the sequence. It brings
+its own descriptor, its own settings panel, and its own lessons about styling and live testing.
 
 ## Notes
-- Most references are pacmano1's guide text, split by topic (each footers back to the source).
-  `connector-plugins.md` and the Administrator-Launcher signing section are **field notes** from building a
-  connector — additions to, not from, the original guide.
-- This skill covers **building the plugin**. For JavaScript that runs *inside a channel* (transformers,
-  filters, code templates), that's a different runtime (Rhino) with different rules — see the companion
-  **`oie-channel-code-review`** skill.
+
+- Most references are pacmano1's guide text split by topic, and each footers back to the source.
+  `connector-plugins.md` and the Administrator-Launcher signing section are field notes from building a
+  connector, additions to the original guide rather than from it.
+- This skill covers building the plugin. JavaScript that runs *inside a channel*, meaning transformers,
+  filters and code templates, is a different runtime (Rhino) with different rules and is out of scope.

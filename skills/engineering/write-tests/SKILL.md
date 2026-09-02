@@ -10,12 +10,12 @@ description: >-
 
 # Writing tests that mean something
 
-A test suite has two failure modes. It can fail when the code is fine, which is annoying and gets fixed
-within the hour because someone is staring at red. Or it can pass when the code is broken, which is
-invisible and survives for months.
+A test suite can fail when the code is fine, which someone fixes within the hour because they are
+staring at red. Or it can pass when the code is broken, which is invisible and survives for months. This
+skill is about the second one.
 
-This skill is about the second one. Every trap in [reference/TRAPS.md](reference/TRAPS.md) is a real
-incident where a green suite hid a live defect, and almost none were caught by reading the diff.
+Every trap in [reference/TRAPS.md](reference/TRAPS.md) is a real incident where a green suite hid a live
+defect, and almost none were caught by reading the diff.
 
 ## The one question
 
@@ -35,7 +35,7 @@ that guards something load-bearing. Not the whole suite, the specific test that 
 
 **The habit proves it once. An artifact proves it on every run.** Breaking the code happens in a
 scratch buffer and leaves nothing behind, so nobody later can tell a test that was proved from one that
-was never checked, and it is the first step dropped when the queue is long. For anything load-bearing,
+was never checked. For anything load-bearing,
 make the proof outlive the session: turn the broken input into a checked-in case the test must reject,
 or let a tool compute it for you on every run. A green suite does not distinguish a test that fires
 from a test that cannot.
@@ -84,12 +84,9 @@ positional test that passes only because the fixture happens to fit on screen.
 the three routes that leaked will not notice the fourth. A structural check over all routes will.
 
 **A guard is code, so it needs the same treatment.** Break the thing the guard exists to catch, in
-exactly the way the original incident broke it, and watch the guard go red. A guard that has never been
-seen to fail is a second thing needing a guard.
-
-Ship that proof beside the guard rather than performing it once. Commit the broken input as a case the
-guard must reject, so the guard's own failure path runs in every suite. This matters more for guards
-than for ordinary tests, because guards accumulate faster than anything else in a codebase: every
+exactly the way the original incident broke it, and watch the guard go red. Then commit that broken
+input as a case the guard must reject, so its failure path runs in every suite. This matters more for
+guards than for ordinary tests, because guards accumulate faster than anything else in a codebase: every
 incident suggests one, nothing ever retires one, and a guard nobody has seen fail is indistinguishable
 from a guard that cannot.
 
@@ -106,8 +103,8 @@ Point it at the code that carries the most risk rather than the whole tree, reco
 the build below it. High line coverage with a low mutation score is precisely the suite this skill is
 about: it executes everything and asserts almost nothing.
 
-Prefer this to auditing test strength by reading. Reading is slow, unrepeatable, and produces an opinion
-that expires with the next edit, while a score is a number a build can enforce.
+Prefer this to auditing test strength by reading. An opinion from reading expires with the next edit,
+and a score is a number a build can enforce.
 
 ## Before you open the PR
 

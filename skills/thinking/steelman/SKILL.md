@@ -65,10 +65,10 @@ keeps a decision log, it goes there.
 
 ## If you cannot spawn agents
 
-The method still works, and the ground-truth step matters more, not less. Write each brief in a separate
-pass without re-reading the other, gather the ground truth before you write either, and do not let the
-second brief answer the first. Sequential debate that cross-references itself converges on whichever
-position you wrote down first, which is exactly the failure the parallel version exists to avoid.
+Write each brief in a separate pass without re-reading the other, gather the ground truth before you
+write either, and do not let the second brief answer the first. A sequential debate that cross-references
+itself converges on whichever position you wrote down first, which is the failure the parallel version
+exists to avoid.
 
 ## It is working if
 

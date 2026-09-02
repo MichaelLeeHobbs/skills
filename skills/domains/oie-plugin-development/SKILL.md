@@ -63,3 +63,10 @@ its own descriptor, its own settings panel, and its own lessons about styling an
 - This skill covers building the plugin. JavaScript that runs *inside a channel*, meaning transformers,
   filters and code templates, is a different runtime (Rhino) with different rules. That is the companion
   [`oie-channel-code-review`](../oie-channel-code-review/) skill.
+
+## It is working if
+
+`mvn package` produces a `.zip` the Administrator installs without a signing complaint, the plugin
+appears in the extension list after a server restart, and its server and client classes both load, which
+you confirm in the server log rather than by the install succeeding. If the plugin runs a migrator, the
+table exists at the new schema version.

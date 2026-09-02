@@ -43,7 +43,7 @@ Before reporting, check yourself. These matter more than any single rule.
 - **False positives to look thorough.** Do not invent findings to seem diligent. A clean category
   reported clean is a real result.
 - **Confident fabrication.** Do not claim a global exists, or that code does something, from memory. Read
-  the line or grep for it, and cite the `file:line` you actually looked at.
+  the line or search for it, and cite the `file:line` you actually looked at.
 - **Sycophancy.** When the author defends the code, re-check the code, not the argument. Hold the finding
   until the code changes your mind.
 - **Over-engineering as improvement.** Do not flag "this could be a class or a framework" when the direct

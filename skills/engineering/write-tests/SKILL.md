@@ -120,7 +120,7 @@ and a score is a number a build can enforce.
       failures.
 - [ ] **Run the slow suite too** if there is one. Layout, real event capture, focus order and anything
       the simulated environment only approximates live there.
-- [ ] **Grep your diff for the tells:** an assertion that would hold with the feature removed, a lookup
+- [ ] **Search your diff for the tells:** an assertion that would hold with the feature removed, a lookup
       with no scope, a fixture literal where a factory exists, a fixture whose two names are the same
       string, a sleep, a hardcoded port, an exact count, a new "must" in a document with no test behind
       it, and any claim about what a real browser or database does asserted against a simulation of one.

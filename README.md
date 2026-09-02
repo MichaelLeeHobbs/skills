@@ -81,6 +81,7 @@ Tied to one technology. Useful only if you use that thing.
 | Skill | What it does |
 |---|---|
 | `oie-plugin-development` | Scaffold and build a plugin for Open Integration Engine or Mirth Connect. Maven layout, `plugin.xml`, server and admin-GUI classes, connectors, migrations, packaging and signing. Nine reference docs. |
+| `oie-channel-code-review` | Review channel and code-template JavaScript before it deploys. The Rhino block-scoping trap that costs people days, E4X fields that are empty rather than null, scope-map leaks, and PHI heading for the logs. |
 
 ## The rules
 

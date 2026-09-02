@@ -61,4 +61,5 @@ its own descriptor, its own settings panel, and its own lessons about styling an
   `connector-plugins.md` and the Administrator-Launcher signing section are field notes from building a
   connector, additions to the original guide rather than from it.
 - This skill covers building the plugin. JavaScript that runs *inside a channel*, meaning transformers,
-  filters and code templates, is a different runtime (Rhino) with different rules and is out of scope.
+  filters and code templates, is a different runtime (Rhino) with different rules. That is the companion
+  [`oie-channel-code-review`](../oie-channel-code-review/) skill.

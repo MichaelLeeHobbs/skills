@@ -7,7 +7,13 @@ and the domain-risk sentence. Substitute the angle-bracketed parts.
 
 You are doing an extremely deep, file-by-file code review of part of a production codebase.
 
-**Read-only: do not modify any file, do not run tests or builds.**
+**Never modify the repository.** No edits, no new files, no commands that write, no builds, and do not
+run the project's suite, because those write to the tree.
+
+**Evaluating something in a throwaway process is allowed, and beats guessing.** Running a pure function,
+a regular expression, or a short snippet in a scratch process is how a suspicion becomes evidence, and
+it is the difference between "this looks quadratic" and knowing. Do it when it settles a finding, and
+say what you ran and what it printed.
 
 **Context:** `<one paragraph: what this service is, what it does, what data and risks it handles>`.
 `<Name the domain-specific risk that matters here, for example regulated personal data in logs, funds
@@ -34,8 +40,14 @@ misleading naming or comments.
 
 > **For a test slice, replace the dimension list with:** tests that do not test what their name claims,
 > mock drift against the real implementation, coverage gaps in specific branches, flakiness from real
-> timers or wall-clock or ordering, tests that bless a bug as correct, and real-looking secrets or
-> personal data in fixtures. Read the source under test as well.
+> timers or wall-clock or ordering, tests that bless a bug as correct, guards that cannot fail for the
+> reason they exist, and real-looking secrets or personal data in fixtures. Read the source under test
+> as well.
+>
+> Say whether the project runs a mutation testing tool. If it does, most of this slice is already
+> answered mechanically and you should spend your effort on what such a tool cannot see: fixtures the
+> product never builds, tests asserting the wrong level, and guards whose subject has moved. If it does
+> not, say so once in your output. It is usually a larger finding than any individual weak test.
 
 Verify each finding against the actual code before reporting it. Trace the call path, check the actual
 types, do not pattern-match.
@@ -57,15 +69,47 @@ than a high one you cannot back.
 only reached E2, report it at that severity prefixed `UNCERTAIN:` and state the one check that would
 settle it.
 
-You are read-only, so E5 is usually only reachable for committed secrets and checked-in fixtures. That
-is expected, not a failing.
+E5 is reachable more often than reviewers assume: committed secrets and fixtures, but also anything you
+can evaluate in a scratch process under the rule above.
 
 ## Severity calibration
 
 - **CRITICAL:** exploitable security issue, data loss, or silent corruption.
 - **HIGH:** a real bug or leak that will bite in production.
 - **MEDIUM:** a correctness or robustness gap, or a hazard sitting behind a guard.
-- **LOW / NOTE:** dead code, drift, cosmetics.
+- **LOW / NOTE:** cosmetics, and drift with nothing behind it.
+
+## Class, which is not severity
+
+Severity is how much it hurts. Class is what kind of thing it is. They are independent, and a finding
+needs both, because grading on severity alone is what buries a soundness hole among the typos.
+
+- **DEFECT-LIVE.** Wrong today, on a path the system actually reaches.
+- **DEFECT-LATENT.** Correct today only by accident of what currently calls it. A declared type and a
+  runtime check that disagree, an unsound cast nothing yet exercises, a missing guard nothing yet
+  triggers. **Floors at MEDIUM.** Grade these by what makes them wrong, never by today's blast radius:
+  "nothing reads it yet" is a fact about the callers, not about the defect, and the callers change.
+- **DRIFT.** Code and its stated contract disagree. A comment, document, test name or type that
+  describes something the code does not do.
+- **PREFERENCE.** Could be written differently. No defect behind it.
+- **OBSERVATION.** True, mildly interesting, nothing follows from it.
+
+**Do not report PREFERENCE or OBSERVATION at all**, at any severity. They are most of what makes a long
+report go unread, and they crowd out the findings that earned their place.
+
+**Escalation.** If a finding repeats a failure that this file, its comments, its tests or the project's
+own notes record as having happened before, it inherits that incident's seriousness. A codebase that
+documents its own scars is telling you which mistakes are cheap to make twice.
+
+## The test for whether to report it at all
+
+> Can you name what the reader would do differently because of this finding?
+
+If not, do not write it. Not at NOTE, not anywhere.
+
+This is a test on the finding, not on its size. "The published type says this field is required and the
+runtime check accepts its absence" is small, latent, and completely actionable. "These two helpers are
+similar" is none of those.
 
 ## Focus
 
@@ -79,10 +123,14 @@ report:
 
 ```
 ## <relative path from the target root>
-- **[CRITICAL|HIGH|MEDIUM|LOW|NOTE]** **[E1-E5]** `<file>:<line>` - one-sentence issue.
+- **[CRITICAL|HIGH|MEDIUM|LOW|NOTE]** **[E1-E5]** **[CLASS]** `<file>:<line>` - one-sentence issue.
   Evidence: what in the code proves it.
   Failure scenario: concrete input or state, leading to the wrong outcome.
+  Action: what the reader should do.
 ```
+
+`CLASS` is one of `DEFECT-LIVE`, `DEFECT-LATENT` or `DRIFT`. If the honest class is `PREFERENCE` or
+`OBSERVATION`, the finding does not go in the report.
 
 Prefix the line with `UNCERTAIN:` where the rule above requires it.
 

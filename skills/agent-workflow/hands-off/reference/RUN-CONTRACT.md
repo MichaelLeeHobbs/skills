@@ -38,3 +38,22 @@ one.
 **Keep the record current** as you go: queue checkmarks, decisions, found work, and the resume block's
 last-completed item.
 
+**Where justification goes.** With nobody reading the code as it lands, the pull is to explain every
+decision in a comment beside it. That pull is why unattended runs produce codebases that are half
+prose. Pick one home per fact:
+
+- *Why this rather than that* goes in the decision log. Once.
+- *What used to break here* becomes a test whose name states the behaviour. A test cannot rot silently.
+  A comment can, and will, and the next reviewer will file the difference as a defect.
+- *A non-obvious local why* that a reader needs at that line stays a short comment.
+
+Do not write all three for one fact. A comment restating a decision-log entry is a second copy that
+drifts from the first. Prefer the record that executes: a regression test outranks a log entry, which
+outranks a comment.
+
+**A guard you add is code you now own.** Turning every finding into a new check is how a small codebase
+acquires a large, unexamined test surface, and guards accumulate faster than anything else because every
+incident suggests one and nothing ever retires one. Add the guard when the mistake is easy to repeat and
+cheap to detect, and commit the broken input that proves the guard fires. Otherwise fix the thing and
+move on.
+

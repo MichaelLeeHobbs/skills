@@ -84,6 +84,10 @@ attention, out of a list they did not watch being written.
 
 **A found-work file.** Discovered work, explicitly out of scope for this run.
 
+**Say where each kind of record goes**, or the run writes all of them everywhere. An unattended agent
+with no reviewer justifies itself in prose beside the code, and a run that leaves half its output as
+comments produced documentation, not protection. Step 6's contract gives each fact one home.
+
 ## 4. Write the resume block
 
 Add a short block to whatever file your agent loads at the start of every session, because it is the

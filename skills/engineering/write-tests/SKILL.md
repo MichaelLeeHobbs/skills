@@ -33,6 +33,13 @@ put it back                     ->  run that test  ->  expect GREEN
 Thirty seconds, and it is the only evidence a green line means anything. Do it for every test you write
 that guards something load-bearing. Not the whole suite, the specific test that names the behavior.
 
+**The habit proves it once. An artifact proves it on every run.** Breaking the code happens in a
+scratch buffer and leaves nothing behind, so nobody later can tell a test that was proved from one that
+was never checked, and it is the first step dropped when the queue is long. For anything load-bearing,
+make the proof outlive the session: turn the broken input into a checked-in case the test must reject,
+or let a tool compute it for you on every run. A green suite does not distinguish a test that fires
+from a test that cannot.
+
 ## Before you write
 
 1. **Write down what the code is supposed to do**, then check that against the code. Most of these traps
@@ -80,12 +87,36 @@ the three routes that leaked will not notice the fourth. A structural check over
 exactly the way the original incident broke it, and watch the guard go red. A guard that has never been
 seen to fail is a second thing needing a guard.
 
+Ship that proof beside the guard rather than performing it once. Commit the broken input as a case the
+guard must reject, so the guard's own failure path runs in every suite. This matters more for guards
+than for ordinary tests, because guards accumulate faster than anything else in a codebase: every
+incident suggests one, nothing ever retires one, and a guard nobody has seen fail is indistinguishable
+from a guard that cannot.
+
+## Let a tool answer the one question
+
+Whether a test would catch a broken implementation is computable, not only a habit. A mutation testing
+tool changes one operator, constant or return value at a time, runs the suite, and reports which
+changes nothing noticed. Every survivor is a test that does not test what its name claims.
+
+Tools exist for most stacks: Stryker for JavaScript and TypeScript, PIT for the JVM, mutmut or
+cosmic-ray for Python, go-mutesting for Go.
+
+Point it at the code that carries the most risk rather than the whole tree, record the score, and fail
+the build below it. High line coverage with a low mutation score is precisely the suite this skill is
+about: it executes everything and asserts almost nothing.
+
+Prefer this to auditing test strength by reading. Reading is slow, unrepeatable, and produces an opinion
+that expires with the next edit, while a score is a number a build can enforce.
+
 ## Before you open the PR
 
 - [ ] **Break the fix and watch the right test fail.** The only step that distinguishes a test from a
-      comment.
+      comment. Then commit the input that made it fail, so the next reader does not have to take your
+      word for it.
 - [ ] **Mutation-check anything load-bearing.** For a guard, a projection or a scope filter, change the
-      value the assertion depends on and confirm the test notices.
+      value the assertion depends on and confirm the test notices. Use a mutation testing tool where one
+      exists for your stack, because doing this by hand covers what you thought to try.
 - [ ] **Confirm it passed via the path you meant.** Add a temporary failure inside the branch you think
       is running. If the test still passes, it is not running there.
 - [ ] **Read the file-and-test split, not just the test count.** A file that failed to load reports zero

@@ -49,6 +49,12 @@ deliverable.
 If the user said not to bias them on what to look for, asking about the location is still fine. Asking
 what to focus on is not.
 
+**Read what earlier passes already settled.** Previous review reports, a list of declined findings, a
+log of accepted trade-offs. Read them yourself and hand the reviewers nothing from them, so the sweep
+stays unbiased. You need them at merge time instead: a finding that repeats a decision the project made
+deliberately is not a finding, and re-raising it spends the credibility the real findings need. Note the
+previous pass's totals while you are there. The report opens with the delta.
+
 ## 2. Slice into disjoint, cohesive groups
 
 Aim for 6 to 10 slices, each fitting comfortably in one reviewer's context. Group by cohesion, not
@@ -96,48 +102,34 @@ HIGH findings, especially any that several reviewers converged on. Convergence r
 verify anyway. For any committed-secret claim, confirm the file is really tracked and the value is a
 live literal, because that finding outranks everything else and has to be right.
 
-Give every finding you check exactly one verdict. The vocabulary is closed on purpose. Pick one, do not
-invent a softer word.
+Give every finding you check exactly one verdict from a closed vocabulary: CONFIRMED, DOWNGRADED,
+REFUTED or BLOCKED. The vocabulary, the anti-laundering rule that keeps CONFIRMED honest, and the
+recurring false-positive shapes are in [reference/VERDICTS.md](reference/VERDICTS.md).
 
-- **CONFIRMED.** You read the anchor lines and the claim holds. Mark it verified in the report.
-- **DOWNGRADED.** Real but less severe. Restate at the correct severity and say why.
-- **REFUTED.** You checked and it is wrong. Drop it, but note it if a reviewer argued it forcefully, so
-  the next reviewer does not re-raise it.
-- **BLOCKED.** You could not check it. Say so, name what would settle it, and keep it in the report at
-  its claimed severity flagged unverified.
+Two things from it are worth stating here, because they are the ones most often skipped:
 
-**The anti-laundering rule.** BLOCKED ranks *better* than a soft CONFIRMED. Never write CONFIRMED for
-something you pattern-matched, inferred from a name, or "checked" by re-reading the reviewer's own
-prose. That disguises an unverified claim as a verified one, and a CRITICAL the user trusts because it
-says verified is worse than one honestly marked unverified. If you are tempted to write CONFIRMED
-without having opened the file, the verdict is BLOCKED.
+**BLOCKED ranks better than a soft CONFIRMED.** If you are tempted to write CONFIRMED without having
+opened the file, the verdict is BLOCKED.
 
-**Before dropping a finding, name why it is a false positive.** Reviewers over-report and filtering is
-this pass's job. The recurring shapes:
-
-- **Nitpick gravity.** A reviewer that found nothing serious inflates nits to fill the space. If a
-  slice's findings are *all* low-severity style preferences, the diagnosis is "this area is clean". Say
-  that instead of passing through a list of cosmetics.
-- **Hypothetical versus actual.** The failure needs an input the system cannot produce. Ask what
-  actually calls this.
-- **"I would have written it differently."** A preference wearing a bug's clothes. The most common false
-  positive there is.
-- **Premature-abstraction warnings.** "This should be extracted", with no defect behind it.
-- **Missing context.** The guard exists one layer up and the reviewer did not look. Check the caller
-  before dropping *or* keeping.
-
-Do not apply this filter to security and correctness findings by default. Be readier to keep a plausible
-injection or data-leak finding flagged uncertain than to drop it for tidiness. The filter exists to kill
-noise, not to shrink the report.
+**Check the classes, not only the severities.** A reviewer that filed a latent defect as a note made the
+exact mistake the class rubric exists to prevent, and the tell is reasoning that says "nothing uses this
+yet". Promote it, and say you did.
 
 ## 5. Assemble the report
 
 Structure, the sanity checks to run on the finished file, and one hard-won mechanical warning are in
 [reference/REPORT-FORMAT.md](reference/REPORT-FORMAT.md).
 
-The warning is worth repeating here because it costs real work when ignored: **do not build the report
+One warning is worth repeating here because it costs real work when ignored: **do not build the report
 with shell heredocs.** Apostrophes and backticks in review prose break shell quoting. Write the parts
 with a file-writing tool and concatenate once.
+
+**Answer one question about the project, not the code.** What is it about how this codebase is built
+that produces the findings you are holding? A tree full of guards that cannot fail is describing a
+process that manufactures guards and never proves them. Documentation drift everywhere is describing a
+project that writes prose where it should write tests. That answer is worth more than any individual
+finding, it is invisible from inside a single slice, and this is the one place a review should look past
+the code at the thing producing it.
 
 ## 6. Hand back
 
@@ -149,3 +141,8 @@ is an assessment, and the user drives what gets fixed.
 
 Every file in the tree appears in the report, at least one finding was refuted during verification, and
 the cross-cutting themes name a root cause that no single file would have revealed.
+
+Across passes, it is working if the severity mix falls. A second pass that reports the same total as the
+first with half the seriousness is telling you the code improved and the method is now dredging. That is
+a result, not a failure, and it is the signal to stop running full passes and switch to reviewing
+changes. A review that cannot tell you when to stop running it is a review you will run forever.

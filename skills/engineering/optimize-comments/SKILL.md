@@ -22,8 +22,10 @@ behind these rules is in [reference/EVIDENCE.md](reference/EVIDENCE.md), read on
 
 1. **Prefer self-documenting code.** A rename or an extracted function that removes the need for a
    comment beats the comment. It cannot go stale. Try it before writing or keeping anything.
-2. **A comment says why, not what.** One exception, and it is the only one: a doc comment on an exported
-   declaration may say what, because a caller reading a hover cannot see the body.
+2. **A comment says why, not what.** One exception: a doc comment on the public API may say what,
+   because a caller reading a hover cannot see the body. Public means reachable from the package's
+   entry point, not the presence of the `export` keyword. A module-level export nobody outside can
+   import has no hover audience and gets the inline budget.
 3. **Terse, and in the imperative.** Write the instruction, not the story about the code. "A second
    entry here is usually the wrong repair" is narration; "Do not add a second entry" is the thing a
    reader has to do. A comment longer than the code it annotates means the fact is in the wrong home,
@@ -32,12 +34,8 @@ behind these rules is in [reference/EVIDENCE.md](reference/EVIDENCE.md), read on
    dense even when each one is defensible, and pitches everything as subtle, which devalues the two or
    three things that are.
 
-The budgets differ because the readers do. A doc comment on an exported declaration is read by a person
-on hover, deciding how to call something without opening it. That is an interface: it earns the length a
-caller needs, and nothing else can carry it. An inline comment is read by whoever already opened the
-file, which in practice means a model loading it into context. Nobody hovers it. Its job is to stop a
-plausible wrong edit, and every line past that is weight. An over-commented file makes the model skim
-what is in it, the same way an over-long instruction file does.
+The budgets differ because the readers do: a hover reader who cannot see the body, against a reader who
+already has the file open. [reference/EVIDENCE.md](reference/EVIDENCE.md) has the reasoning.
 
 ## Step 1: scope it before you touch anything
 
@@ -48,6 +46,9 @@ what is in it, the same way an over-long instruction file does.
    generated API documentation is a deliverable, not a comment.
 3. **May you change code**, or comments only? Rule 1 needs renames, and a rename is a code change that
    needs the tests to prove it.
+
+If you cannot ask, take the conservative branch and say so in the report: comments only, no renames,
+and nothing deleted that might be attribution.
 
 **Never touch license headers, copyright notices or attribution required by a license.** They are the
 largest comment category by line count in real projects, and the first thing a naive pass deletes.
@@ -90,21 +91,29 @@ describing a regression test. If that test exists, the comment is a second copy 
 If it does not, the comment is the only thing holding a behaviour nobody checks, which is worth more
 than any edit to the prose. Search the tests for the behaviour, not the rule, symbol or option name: a
 test asserting through a fixture never names what it protects, so a name search reports no coverage
-where there is plenty.
+where there is plenty. Tests are not the only oracle: a comment naming a dependency's symbol, a file
+path or a fixture is checkable against that source. Open it.
 
 **It lies.** A comment older than the code beneath it describes a version that no longer exists. Compare
-the last-changed dates and read every comment that lost the race. Do not hunt for a commit that edited
+the last-changed dates and read every comment that lost the race. This needs history with real spread: a
+file rewritten last week blames entirely to last week, and the check then returns nothing rather than
+failing, so confirm the spread before trusting a clean result and say in the report if it did not run. Do not hunt for a commit that edited
 code and forgot the comment: when comments get edited at all they are almost always edited alongside the
 code, so the ones that lie are the ones nobody has opened in years. **When a comment and the code
 disagree, do not assume the comment is wrong.** It may be the only surviving record of the intent, which
 makes this a bug in the code. You cannot tell which from the file, so report both readings and never
-silently rewrite the comment to match.
+silently rewrite the comment to match. Such a comment is frozen: do not shorten it either, because
+shortening picks a side.
 
 **It carries nothing.** Restating the code, where the comment's words are the code's words. Restating
 the name, where a doc comment's first line is the declaration written out in prose; cut that line and
 keep what follows, if anything does. Commented-out code, which version control has. Changelogs and
-bylines, which the history holds accurately. Section banners and formatter directives. Mandated empty
-documentation such as `@param path the path`.
+bylines, which the history holds accurately. Formatter directives. Mandated empty documentation such as
+`@param path the path`.
+
+A section banner is the exception. Inside a long literal or rules table it is carrying structure, so
+extract a named constant and let the name replace it. Deleting it leaves the block structureless, and
+this is the highest-value rename in a file built from one big list.
 
 **Check:** every contradiction is fixed or reported with both readings, none resolved by guessing. Every
 measured claim is named alongside the test that asserts it, or reported as unguarded. For each deletion,
@@ -135,29 +144,28 @@ Skipping this turns the pass into vandalism. Newly written code is the least com
 codebase, so the file someone has just edited hard is where the why has gone missing.
 
 Look for a constant nobody can explain, a guard against a case that looks impossible, an unusual
-approach, an ordering that matters, or a workaround for someone else's bug. Prefer the ones whose
-failure is silent: a mistake that throws teaches the next reader on its own, one that produces no signal
-never will.
+approach, an ordering that matters, or a workaround for someone else's bug. Prefer the ones whose failure
+is silent: a mistake that throws teaches the next reader on its own, one that produces no signal never
+will.
 
-Write the reason, not the restatement. If you do not know why a line is there, say so in the report
-rather than inventing a plausible reason, which is worse than no comment at all.
+If you do not know why a line is there, say so in the report rather than inventing a plausible reason,
+which is worse than no comment at all.
 
 ## Step 6: report
 
 Show the diff, the verdict counts from step 2, and both the comment-to-code ratio and the comment word
-count before and after. List two things separately rather than burying them in a total: every contradiction between a comment and its
+count before and after. If nothing changed, report the sweep instead of the diff. List two things separately rather than burying them in a total: every contradiction between a comment and its
 code, with both readings, and every measured claim with no test behind it.
-
-## If you cannot compare ages
-
-The age check needs history with some spread in it. A file rewritten last week blames entirely to last
-week, and the check then returns nothing rather than failing, so confirm you got a real spread before
-trusting a clean result. Without usable history, read each comment against the code beneath it and ask
-whether it is still true. Every other step is unchanged. Say in the report that the age check did not run.
 
 ## It is working if
 
-Every comment in scope got a verdict, and at least one was removable by a rename rather than by deleting
-prose. Comment words fell faster than comment lines, and some declarations now carry no comment at all.
-At least one comment either contradicted its code or duplicated a test, and you reported it rather than
-quietly resolving it. Nothing you deleted was the only surviving record of a decision.
+Every comment in scope got a verdict, each verdict defensible on its own rather than as a total. Nothing
+you deleted was the only surviving record of a decision, and nothing you shortened was under an
+unresolved contradiction. Where you did change things, comment words fell faster than comment lines,
+because register is where the weight is.
+
+**A file that needs no changes passes this too.** Every comment coming back `keep` is a result, not a
+skipped pass, on the same evidence as any other run: the sweep covering every comment, each with a clause
+saying what it tells a reader that the code does not. Never manufacture an edit to justify the run. A
+pass that always finds something is not measuring anything, and a wrong deletion costs a fact nobody can
+recover.

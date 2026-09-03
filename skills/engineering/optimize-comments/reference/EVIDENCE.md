@@ -39,6 +39,20 @@ A contradiction between a comment and its code is therefore the valuable output 
 cosmetic defect. It also means resolving one by rewriting the comment to agree with the code destroys the
 evidence: the comment may be the surviving record of the intent, and the code may be the bug.
 
+## Who each kind of comment is actually for
+
+This sets the two budgets in rules 2 and 3.
+
+A doc comment on the public API is read by a person on hover, deciding how to call something without
+opening it. That is an interface: it earns the length a caller needs, and nothing else in the codebase
+can carry it. Public means reachable from the package's entry point, not the presence of the `export`
+keyword; a module-level export nobody outside can import has no hover audience.
+
+An inline comment is read by whoever already opened the file, which in practice means a model loading it
+into context. Nobody hovers it. Its job is to stop a plausible wrong edit, and every line past that is
+weight the next reader pays for. An over-commented file makes the model skim what is in it, the same way
+an over-long instruction file does.
+
 ## The two positions on whether comments should exist at all
 
 Robert Martin holds that a comment is a failure to express something in code, and that a perfect language

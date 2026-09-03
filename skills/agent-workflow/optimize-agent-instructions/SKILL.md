@@ -10,8 +10,9 @@ description: >-
 
 # Optimize an agent instruction file
 
-Agents take instructions from several files: a standing context file read at the start of every session, skills, slash commands, subagent definitions,
-and the reference files those link to. This pass tightens any of them.
+Agents take instructions from several files: a standing context file read at the start of every session,
+skills, slash commands, subagent definitions, and the reference files those link to. This pass tightens
+any of them.
 
 An over-long file makes the model ignore the instructions inside it, so every line you add weakens the
 lines already there.
@@ -91,6 +92,16 @@ justify the rule to a human reader?** Justification goes. Corrective reasoning s
 
 Cut hedges (`generally`, `try to`, `where possible`) that soften an instruction into a suggestion, and a
 second sentence that restates the first.
+
+**Cut a past event a reader can no longer act on.** "`main` is the only long-lived branch (`dev` was
+deleted 2026-08-26)" carries a parenthetical about a branch nobody can reach. The rule is complete
+without it and the note will never be useful again, but it reads like the why that makes the rule work,
+so it survives every pass.
+
+The discriminator: **could a reader still make the mistake this history warns about?** A rejected
+approach stays, because someone will propose it again. These go: a completed migration, a deleted branch
+or flag, a rename, a version no longer supported, "this used to be X", and any line narrating what was
+done in an earlier session. Dated status has a half-life and nobody ever deletes it.
 
 **What it looks like in the wild:** a dash or `because` clause selling the rule, cost/benefit math behind
 a decision already made, "this matters because...", a parenthetical explaining a term the author

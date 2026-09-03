@@ -111,9 +111,15 @@ keep what follows, if anything does. Commented-out code, which version control h
 bylines, which the history holds accurately. Formatter directives. Mandated empty documentation such as
 `@param path the path`.
 
-A section banner is the exception. Inside a long literal or rules table it is carrying structure, so
-extract a named constant and let the name replace it. Deleting it leaves the block structureless, and
-this is the highest-value rename in a file built from one big list.
+**Stale history** is the shape that survives every pass, because it reads like the why that makes the
+code make sense. A comment about a state the code can no longer be in: a completed migration, a removed
+option, "this used to return null", "restored from the pre-1.0 version". The discriminator is whether a
+reader could still make the mistake it warns about. A rejected alternative stays, because someone will
+propose it again; a note that something was deleted goes with the thing.
+
+A section banner is the exception to all of this. Inside a long literal or rules table it carries
+structure, so extract a named constant and let the name replace it rather than deleting it. This is the
+highest-value rename in a file built from one big list.
 
 **Check:** every contradiction is fixed or reported with both readings, none resolved by guessing. Every
 measured claim is named alongside the test that asserts it, or reported as unguarded. For each deletion,
@@ -127,7 +133,7 @@ intuition, saying what a block accomplishes so a reader can skip the body. The t
 different words than the code?** Same words means same level, which means redundant.
 
 Then cut to the shortest form that still stops the wrong edit. What survives is usually one clause: the
-failure that produces no signal, the measured number, the reason the obvious alternative is wrong.
+silent failure, the measured number, or why the obvious alternative is wrong.
 
 **Fix register before length.** Shortening every comment while leaving the voice alone still reads as
 heavy. Three tics, worst first: narration where an imperative would do, connective glue joining labels
@@ -145,8 +151,7 @@ codebase, so the file someone has just edited hard is where the why has gone mis
 
 Look for a constant nobody can explain, a guard against a case that looks impossible, an unusual
 approach, an ordering that matters, or a workaround for someone else's bug. Prefer the ones whose failure
-is silent: a mistake that throws teaches the next reader on its own, one that produces no signal never
-will.
+is silent: a mistake that throws teaches the next reader, one that produces no signal never will.
 
 If you do not know why a line is there, say so in the report rather than inventing a plausible reason,
 which is worse than no comment at all.

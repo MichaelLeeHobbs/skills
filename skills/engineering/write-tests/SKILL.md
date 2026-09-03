@@ -10,12 +10,12 @@ description: >-
 
 # Writing tests that mean something
 
-A test suite has two failure modes. It can fail when the code is fine, which is annoying and gets fixed
-within the hour because someone is staring at red. Or it can pass when the code is broken, which is
-invisible and survives for months.
+A test suite can fail when the code is fine, which someone fixes within the hour because they are
+staring at red. Or it can pass when the code is broken, which is invisible and survives for months. This
+skill is about the second one.
 
-This skill is about the second one. Every trap in [reference/TRAPS.md](reference/TRAPS.md) is a real
-incident where a green suite hid a live defect, and almost none were caught by reading the diff.
+Every trap in [reference/TRAPS.md](reference/TRAPS.md) is a real incident where a green suite hid a live
+defect, and almost none were caught by reading the diff.
 
 ## The one question
 
@@ -32,6 +32,13 @@ put it back                     ->  run that test  ->  expect GREEN
 
 Thirty seconds, and it is the only evidence a green line means anything. Do it for every test you write
 that guards something load-bearing. Not the whole suite, the specific test that names the behavior.
+
+**The habit proves it once. An artifact proves it on every run.** Breaking the code happens in a
+scratch buffer and leaves nothing behind, so nobody later can tell a test that was proved from one that
+was never checked. For anything load-bearing,
+make the proof outlive the session: turn the broken input into a checked-in case the test must reject,
+or let a tool compute it for you on every run. A green suite does not distinguish a test that fires
+from a test that cannot.
 
 ## Before you write
 
@@ -77,22 +84,43 @@ positional test that passes only because the fixture happens to fit on screen.
 the three routes that leaked will not notice the fourth. A structural check over all routes will.
 
 **A guard is code, so it needs the same treatment.** Break the thing the guard exists to catch, in
-exactly the way the original incident broke it, and watch the guard go red. A guard that has never been
-seen to fail is a second thing needing a guard.
+exactly the way the original incident broke it, and watch the guard go red. Then commit that broken
+input as a case the guard must reject, so its failure path runs in every suite. This matters more for
+guards than for ordinary tests, because guards accumulate faster than anything else in a codebase: every
+incident suggests one, nothing ever retires one, and a guard nobody has seen fail is indistinguishable
+from a guard that cannot.
+
+## Let a tool answer the one question
+
+Whether a test would catch a broken implementation is computable, not only a habit. A mutation testing
+tool changes one operator, constant or return value at a time, runs the suite, and reports which
+changes nothing noticed. Every survivor is a test that does not test what its name claims.
+
+Tools exist for most stacks: Stryker for JavaScript and TypeScript, PIT for the JVM, mutmut or
+cosmic-ray for Python, go-mutesting for Go.
+
+Point it at the code that carries the most risk rather than the whole tree, record the score, and fail
+the build below it. High line coverage with a low mutation score is precisely the suite this skill is
+about: it executes everything and asserts almost nothing.
+
+Prefer this to auditing test strength by reading. An opinion from reading expires with the next edit,
+and a score is a number a build can enforce.
 
 ## Before you open the PR
 
 - [ ] **Break the fix and watch the right test fail.** The only step that distinguishes a test from a
-      comment.
+      comment. Then commit the input that made it fail, so the next reader does not have to take your
+      word for it.
 - [ ] **Mutation-check anything load-bearing.** For a guard, a projection or a scope filter, change the
-      value the assertion depends on and confirm the test notices.
+      value the assertion depends on and confirm the test notices. Use a mutation testing tool where one
+      exists for your stack, because doing this by hand covers what you thought to try.
 - [ ] **Confirm it passed via the path you meant.** Add a temporary failure inside the branch you think
       is running. If the test still passes, it is not running there.
 - [ ] **Read the file-and-test split, not just the test count.** A file that failed to load reports zero
       failures.
 - [ ] **Run the slow suite too** if there is one. Layout, real event capture, focus order and anything
       the simulated environment only approximates live there.
-- [ ] **Grep your diff for the tells:** an assertion that would hold with the feature removed, a lookup
+- [ ] **Search your diff for the tells:** an assertion that would hold with the feature removed, a lookup
       with no scope, a fixture literal where a factory exists, a fixture whose two names are the same
       string, a sleep, a hardcoded port, an exact count, a new "must" in a document with no test behind
       it, and any claim about what a real browser or database does asserted against a simulation of one.

@@ -63,7 +63,7 @@ Directing the agent itself.
 
 | Skill | What it does |
 |---|---|
-| `optimize-context-file` | Audit and tighten a bloated `CLAUDE.md`, `AGENTS.md`, `GEMINI.md` or `.cursorrules`. Strips rationale that does not change behavior and catches standing rules that got demoted to a lazily loaded link. | |
+| `optimize-agent-instructions` | Audit and tighten any file that instructs an agent: a context file (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.cursorrules`), a skill, a command, a subagent definition. Sizes the cut by when the file loads, strips rationale that does not change behavior, and catches a description too vague to ever fire. |
 | `hands-off` | Prepare a project for an unattended build-out. Freezes an ordered queue with a check per item, sets up a decision log, and defines what the agent does when it hits something ambiguous at 3am. |
 
 ### clean-room
@@ -81,6 +81,7 @@ Tied to one technology. Useful only if you use that thing.
 | Skill | What it does |
 |---|---|
 | `oie-plugin-development` | Scaffold and build a plugin for Open Integration Engine or Mirth Connect. Maven layout, `plugin.xml`, server and admin-GUI classes, connectors, migrations, packaging and signing. Nine reference docs. |
+| `oie-channel-code-review` | Review channel and code-template JavaScript before it deploys. The Rhino block-scoping trap that costs people days, E4X fields that are empty rather than null, scope-map leaks, and PHI heading for the logs. |
 
 ## The rules
 

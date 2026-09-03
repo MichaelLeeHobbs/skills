@@ -1,13 +1,11 @@
 ---
 name: postmortem
 description: >-
-  Write a blameless incident postmortem collaboratively, the way a good root-cause writeup is done.
-  Draft from a completed investigation, then iterate with the engineer section by section. Explicitly a
-  back-and-forth, not a one-shot: it drafts, flags every assumption and inference, and asks for
-  correction before finalizing. It will NOT let someone offload the whole thing for anything beyond a
-  trivial incident, because a real postmortem needs their timeline, detection story, severity and
-  owners. Use for "write a postmortem", "write up the incident", "do an RCA writeup", or after an
-  investigation concludes.
+  Write a blameless incident postmortem collaboratively. Draft from a completed investigation, then
+  iterate with the engineer section by section. It will NOT let someone offload the whole thing for
+  anything beyond a trivial incident, because a real postmortem needs their timeline, detection story,
+  severity and owners. Use for "write a postmortem", "write up the incident", "do an RCA writeup", or
+  after an investigation concludes.
 ---
 
 # Postmortem, collaborative and blameless
@@ -26,15 +24,13 @@ template, folder convention and card format are in [reference/TEMPLATE.md](refer
 Draft a section, or a skeleton, then stop and ask them to review and correct it before moving on.
 Explicitly surface what you do not know and what you assumed.
 
-A real postmortem written this way went through several rounds, and the engineer corrected the detection
-story, a root-cause detail, the action-item buckets and the summary's altitude. That back-and-forth is
-the point, not friction.
+Expect several rounds. That back-and-forth is the point, not friction.
 
 ### 2. Do not enable offloading
 
 If they say "just write the postmortem", push back for anything beyond a trivial incident. Ask for the
 things only they know rather than inventing them. A confidently wrong postmortem is worse than a thin
-one, and it is worse specifically because it will be read by people who were not there and cannot tell.
+one, because it will be read by people who were not there and cannot tell.
 
 Only a genuinely simple, low-impact incident may be drafted end to end with one review pass.
 
@@ -58,8 +54,8 @@ Only a genuinely simple, low-impact incident may be drafted end to end with one 
 Base the draft on a verified root cause with an evidence chain. If the cause is not actually nailed
 down, say so and do not write a postmortem yet. Investigate first.
 
-A prior investigation's disproven hypotheses are especially valuable here, because they map directly
-onto a section of the template and they stop the next person re-walking the same wrong turns.
+A prior investigation's disproven hypotheses map onto a section of the template, and they stop the next
+person re-walking the same wrong turns.
 
 ### 2. Draft the skeleton, confirm scope
 

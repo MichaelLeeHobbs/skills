@@ -2,12 +2,10 @@
 name: ui-feature-spec
 description: >-
   Reverse-engineer a live web page into a build-ready UI and feature specification by operating it, with
-  no access to its source. Scrolls, clicks, types, breaks forms on purpose, exercises every variant of
-  every repeated element, and reads the network, to produce a spec a developer who has never seen the
-  page can rebuild from. Clean-room by default: captures behaviour, structure and content, and describes
-  appearance by intent rather than copying exact style values. Use for "spec this page", "document this
-  UI", "reverse-engineer this page", or before rebuilding or replacing an existing interface. REQUIRES
-  browser control; it cannot be done from a screenshot or a URL alone.
+  no access to its source. Use for "spec this page", "document this UI", "reverse-engineer this page", or
+  before rebuilding or replacing an existing interface. Clean-room by default: it captures behaviour and
+  content exactly, and describes appearance by intent rather than copying style values. REQUIRES browser
+  control, and cannot be done from a screenshot or a URL alone.
 disable-model-invocation: true
 ---
 
@@ -69,15 +67,12 @@ You may be operating someone's real application. Treat it that way until told ot
 6. **If you are unsure whether an action is safe, do not take it.** Record it as unreached.
 7. **Redact secrets.** Tokens, cookies, passwords, keys and real personal data never go in the spec.
 
-## The rule that decides whether the spec is any good
-
-**Uniformity is a claim, and it needs evidence.**
+## Uniformity is a claim, and it needs evidence
 
 The failure that ruins these specs is sampling a repeated element and generalising. A real run inspected
 one component type's property panel, wrote that the style tab was uniform, and was wrong: there were
 three distinct shapes. The same run assumed one palette item inserts one node, when two inserted
-multi-node composites. Neither error is visible in the finished document. Both look like a confident,
-complete spec.
+multi-node composites. Neither error is visible in the finished document.
 
 So: **wherever the interface varies along a dimension, the variation is the specification.** Component
 types, row kinds, tabs, item categories, roles, statuses. Enumerate every value, or say which ones you
@@ -99,8 +94,8 @@ detail in [reference/PASSES.md](reference/PASSES.md).
    in the DOM that are the error slots and empty states you would never see rendered.
 2. **Interaction sweep.** Enumerate every interactive element first, then walk the list. Hover, focus,
    activate, reverse. Complete option lists, never the first few. Then tab through for real focus order.
-3. **Variant sweep.** The pass that separates a first draft from a usable spec. Every value of every
-   dimension the UI varies along. This is where most of the real content is.
+3. **Variant sweep.** Every value of every dimension the UI varies along. This is where most of the
+   real content is.
 4. **State and error harvest.** Verbatim error copy is the most commonly missing piece of a rebuild spec
    because it cannot be guessed. Submit empty, submit malformed, probe boundaries. Hunt the empty state
    deliberately; it is easy to never see.
@@ -116,10 +111,8 @@ cannot make for you. The short version:
 **Capture exactly** what the thing does: structure, behaviour, states, option lists, validation rules,
 data shapes, network contracts, keyboard behaviour, accessibility semantics.
 
-**Describe by intent** what it looks like: colour, typography, spacing, shape. Write "primary action
-colour, high contrast against the surface" rather than a value. **Do not open stylesheets or source
-maps, and do not extract computed style values.** The rebuild should land on the reader's own design
-system rather than a clone of this one.
+**Describe by intent** what it looks like: colour, typography, spacing, shape. **Do not open stylesheets
+or source maps, and do not extract computed style values.**
 
 ## Evidence tagging
 

@@ -5,16 +5,26 @@ quoting, and you will lose work to it. Write the header and summary to the repor
 file-writing tool, write each area's findings to its own part file, concatenate once, then delete the
 parts.
 
-Sanity-check the result: count the file headings, tally the severities, and tally the evidence levels. A
-report whose CRITICAL and HIGH findings sit mostly at the bottom two evidence rungs is a report you have
-not finished verifying. Go back to step 4.
+Sanity-check the result: count the file headings, and tally the severities, the evidence levels and the
+classes. Three things to read off those tallies:
+
+- CRITICAL and HIGH findings sitting mostly at the bottom two evidence rungs means you have not finished
+  verifying. Go back to step 4.
+- Any `PREFERENCE` or `OBSERVATION` that survived into the report should not have. Cut them.
+- A report that is overwhelmingly `DRIFT` is describing a documentation problem rather than a code
+  problem, and the summary should say so in those words.
 
 Structure:
 
 - **Header.** Date, scope, method, how many reviewers, and that findings were lead-verified.
-- **Executive summary.** Lead with the single most important outcome, then a severity tally, then the
+- **Executive summary.** Lead with the single most important outcome, then the tallies, then the
   cross-cutting themes. The same root cause reached from many files is the highest-signal thing you can
   report.
+- **Trend, when earlier passes exist.** This pass's counts beside the previous pass's, by severity. Then
+  say what the shape means, because it is invisible from inside one report and it decides whether to run
+  another. Falling severity with a flat total is a codebase that improved and a method now dredging for
+  volume. Rising severity is a regression in the process that produced the code. Flat everything means
+  the last pass was not acted on.
 - **Verification note.** The anchors you confirmed, the verdict tally, and every blocked finding with
   what would settle it. **List what you refuted too.** Showing which alarming findings did not survive
   is what makes the survivors trustworthy.

@@ -48,6 +48,7 @@ Writing and reviewing code.
 |---|---|
 | `write-tests` | Write a test that would actually catch the bug it claims to cover. Covers the traps: vacuous assertions, tests that encode the bug, green from two cancelling faults, fixtures the product never produces. |
 | `deep-code-review` | Exhaustive file-by-file review of a package or service. Splits the tree into disjoint slices so every file is actually read, then verifies the load-bearing findings against the source before reporting them. |
+| `optimize-comments` | Audit the comments in a file or package. Deletes the ones restating the code, finds the ones that now contradict it, and adds the reason a reader cannot recover by reading harder. Refuses to be a deletion-only pass. |
 
 ### operations
 

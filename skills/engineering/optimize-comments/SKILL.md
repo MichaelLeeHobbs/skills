@@ -97,29 +97,23 @@ path or a fixture is checkable against that source. Open it.
 **It lies.** A comment older than the code beneath it describes a version that no longer exists. Compare
 the last-changed dates and read every comment that lost the race. This needs history with real spread: a
 file rewritten last week blames entirely to last week, and the check then returns nothing rather than
-failing, so confirm the spread before trusting a clean result and say in the report if it did not run. Do not hunt for a commit that edited
-code and forgot the comment: when comments get edited at all they are almost always edited alongside the
-code, so the ones that lie are the ones nobody has opened in years. **When a comment and the code
+failing, so confirm the spread before trusting a clean result and say in the report if it did not run.
+Do not hunt for a commit that edited code and forgot the comment: when comments get edited at all they
+are almost always edited alongside the code, so the ones that lie are the ones nobody has opened in
+years. **When a comment and the code
 disagree, do not assume the comment is wrong.** It may be the only surviving record of the intent, which
 makes this a bug in the code. You cannot tell which from the file, so report both readings and never
 silently rewrite the comment to match. Such a comment is frozen: do not shorten it either, because
 shortening picks a side.
 
-**It carries nothing.** Restating the code, where the comment's words are the code's words. Restating
-the name, where a doc comment's first line is the declaration written out in prose; cut that line and
-keep what follows, if anything does. Commented-out code, which version control has. Changelogs and
-bylines, which the history holds accurately. Formatter directives. Mandated empty documentation such as
-`@param path the path`.
+**It carries nothing.** Restating the code, restating the declaration's own name, commented-out code,
+changelogs and bylines, formatter directives, mandated empty documentation. **Stale history** hides in
+this verdict: a comment about a state the code can no longer be in reads like the why that makes the
+code make sense, so it survives every pass.
 
-**Stale history** is the shape that survives every pass, because it reads like the why that makes the
-code make sense. A comment about a state the code can no longer be in: a completed migration, a removed
-option, "this used to return null", "restored from the pre-1.0 version". The discriminator is whether a
-reader could still make the mistake it warns about. A rejected alternative stays, because someone will
-propose it again; a note that something was deleted goes with the thing.
-
-A section banner is the exception to all of this. Inside a long literal or rules table it carries
-structure, so extract a named constant and let the name replace it rather than deleting it. This is the
-highest-value rename in a file built from one big list.
+When a verdict is not obvious, or when you hit a section banner, read
+[reference/SHAPES.md](reference/SHAPES.md). It carries each shape, the discriminator that separates dead
+history from a rejected alternative worth keeping, and the one case where deleting is the wrong move.
 
 **Check:** every contradiction is fixed or reported with both readings, none resolved by guessing. Every
 measured claim is named alongside the test that asserts it, or reported as unguarded. For each deletion,
@@ -133,7 +127,7 @@ intuition, saying what a block accomplishes so a reader can skip the body. The t
 different words than the code?** Same words means same level, which means redundant.
 
 Then cut to the shortest form that still stops the wrong edit. What survives is usually one clause: the
-silent failure, the measured number, or why the obvious alternative is wrong.
+failure that produces no signal, the measured number, or the reason the obvious alternative is wrong.
 
 **Fix register before length.** Shortening every comment while leaving the voice alone still reads as
 heavy. Three tics, worst first: narration where an imperative would do, connective glue joining labels
@@ -159,8 +153,10 @@ which is worse than no comment at all.
 ## Step 6: report
 
 Show the diff, the verdict counts from step 2, and both the comment-to-code ratio and the comment word
-count before and after. If nothing changed, report the sweep instead of the diff. List two things separately rather than burying them in a total: every contradiction between a comment and its
-code, with both readings, and every measured claim with no test behind it.
+count before and after. If nothing changed, report the sweep instead of the diff.
+
+List two things separately rather than burying them in a total: every contradiction between a comment
+and its code, with both readings, and every measured claim with no test behind it.
 
 ## It is working if
 

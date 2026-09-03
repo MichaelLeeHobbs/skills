@@ -57,7 +57,7 @@ its own descriptor, its own settings panel, and its own lessons about styling an
 
 ## Notes
 
-- Most references are pacmano1's guide text split by topic, and each footers back to the source.
+- Most references are pacmano1's guide text split by topic, and each has a footer linking back to the source.
   `connector-plugins.md` and the Administrator-Launcher signing section are field notes from building a
   connector, additions to the original guide rather than from it.
 - This skill covers building the plugin. JavaScript that runs *inside a channel*, meaning transformers,

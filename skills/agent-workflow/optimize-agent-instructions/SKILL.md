@@ -94,7 +94,7 @@ Cut hedges (`generally`, `try to`, `where possible`) that soften an instruction 
 second sentence that restates the first.
 
 **Cut a past event a reader can no longer act on.** "`main` is the only long-lived branch (`dev` was
-deleted 2026-08-26)" carries a parenthetical about a branch nobody can reach. The rule is complete
+deleted on YYYY-MM-DD)" carries a parenthetical about a branch nobody can reach. The rule is complete
 without it and the note will never be useful again, but it reads like the why that makes the rule work,
 so it survives every pass.
 

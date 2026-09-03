@@ -10,8 +10,7 @@ description: >-
 
 # Optimize an agent instruction file
 
-Agents take instructions from several files: a standing context file read at the start of every session
-(`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.cursorrules`), skills, slash commands, subagent definitions,
+Agents take instructions from several files: a standing context file read at the start of every session, skills, slash commands, subagent definitions,
 and the reference files those link to. This pass tightens any of them.
 
 An over-long file makes the model ignore the instructions inside it, so every line you add weakens the

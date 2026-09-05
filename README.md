@@ -40,6 +40,14 @@ Reaching a decision. Nothing here touches code.
 | `brainstorm` | Explore a problem you have not solved. You bring the problem and the goal, the agent brings the option space instead of running with its first idea. |
 | `steelman` | Settle a binary design question that keeps getting deferred. Both positions argued at full strength, both tested against ground truth, judged on a rubric written before the arguing started. |
 
+### writing
+
+Prose, in any medium.
+
+| Skill | What it does |
+|---|---|
+| `unslop` | Cut AI tells from any writing. 36 named patterns, from puffery and em dashes to the debate-rubric essay (manufactured stakes, strawman setup, announced taxonomy). Forked from Cursor's pstack; items 32 to 36 are the additions. |
+
 ### engineering
 
 Writing and reviewing code.
@@ -104,9 +112,11 @@ it is published.
 
 ## Credits
 
-- `unslop` is [Cursor's](https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md), and
-  `codebase-design` and `grilling` are [mattpocock's](https://github.com/mattpocock/skills). None of them
-  are vendored here. Go get them from the source.
+- `unslop` is a fork of [Cursor's pstack skill](https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md)
+  by Lauren Tan (MIT). Her notice ships in the skill folder. The fork adds five structural patterns
+  upstream does not have.
+- `codebase-design` and `grilling` are [mattpocock's](https://github.com/mattpocock/skills). Not vendored
+  here. Go get them from the source.
 - The parallel-argument method in `steelman` owes a lot to Ousterhout's "design it twice".
 
 ## License

@@ -57,6 +57,7 @@ Writing and reviewing code.
 | `write-tests` | Write a test that would actually catch the bug it claims to cover. Covers the traps: vacuous assertions, tests that encode the bug, green from two cancelling faults, fixtures the product never produces. |
 | `deep-code-review` | Exhaustive file-by-file review of a package or service. Splits the tree into disjoint slices so every file is actually read, then verifies the load-bearing findings against the source before reporting them. |
 | `optimize-comments` | Audit the comments in a file or package. Renames what a better name would explain, cuts what a test already enforces, finds the ones that now contradict the code, and adds the reason a reader cannot recover by reading harder. Refuses to be a deletion-only pass. |
+| `optimize-docs` | Audit the prose docs in a repository and make them smaller. Extracts every path, command, flag, symbol and link the docs claim and checks it against the repo, so prose gets graded on evidence instead of on how it reads. Deletes what the code already says, routes a real decision to a dated record, and refuses to create a new home for anything that failed the test. |
 
 ### operations
 

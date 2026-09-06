@@ -53,6 +53,17 @@ question in three code reviews.
 Verdict: unverifiable, unless an answer carries a checkable claim or defines a domain word, and a domain
 word belongs in the glossary rather than here.
 
+## The fact spread across many files
+
+Which implementations are registered and where. What is allowed to depend on what. A list whose whole
+value is that it is exhaustive. Every line of it is recoverable from the code, and recovering it means
+opening every file it covers, so a reader assumes instead and assumes wrong.
+
+Verdict: keep, against the usual rule, because the cost of recovery is the point rather than the
+possibility of it. Then make it pay its way: name the files, state the count, so the sentence fails a
+check when the set changes. An exhaustive claim that nothing counts is the one most likely to be quietly
+false, because the day somebody adds the eighth member is the day it stops being true and nothing says so.
+
 ## The hand-maintained changelog
 
 Verdict: never delete it. It is history, and it is the one doc whose age is not a defect.

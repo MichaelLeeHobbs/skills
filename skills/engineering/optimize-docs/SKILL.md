@@ -19,8 +19,10 @@ the home and the doc is a second copy free to disagree with it. **When the code 
 does anything break?** A path in a doc breaks a link check. A behaviour written in prose breaks nothing,
 and nobody finds out.
 
-This pass is a subtraction. It ends with fewer words than it started, and the survivors are the words
-something checked.
+This pass is usually a subtraction. It ends with fewer words than it started, and the survivors are the
+words something checked. Not always: a tree whose defect is wrongness rather than bulk can finish larger,
+because stating a contradiction correctly costs more words than the false sentence it replaces. What goes
+up either way is the share of what remains that something checked.
 
 ## Step 1: scope it, and find what you may not delete
 
@@ -32,7 +34,8 @@ something checked.
    delete one.
 3. **May you change code**, or docs only? Moving a fact into a test, or a rename, is a code change and
    needs the tests to prove it.
-4. **Is there a decision-record directory**, and does the project want one? Step 5 depends on the answer.
+4. **Is there a decision record already**, in any shape, and does the project want one? Step 5 depends
+   on the answer.
 
 If you cannot ask, take the conservative branch and say so in the report: correctness only, no deletions.
 
@@ -78,6 +81,9 @@ a useful file usually holds three good paragraphs and a page of restatement.
 
 - **The code says it.** Recoverable by reading the code or running `--help`. Delete. If it is only hard
   to recover because the code is badly named or badly split, say so, and put the repair in the code.
+  **Recoverable is not the same as cheap.** A fact spread thin across many files is recoverable only by
+  reading all of them, so the reader guesses instead and guesses wrong. Keep those, and make each one
+  carry a claim a check can hold. [reference/SHAPES.md](reference/SHAPES.md) has the shape.
 - **Generatable.** A hand-typed API reference. Generate it from the source, or delete it and link.
 - **It contradicts the code.** A claim from step 2 failed.
 - **Unverifiable.** No checkable claim, and no decision inside it.
@@ -125,13 +131,18 @@ leaving.
 
 - Create a decision-record directory only when you have at least one decision with an alternative someone
   could genuinely propose again, and the project said yes in step 1.
+- **If the project already keeps one, use the shape it has.** A single append-only register file is as
+  valid as a directory of records, and one may carry a convention for where an entry goes and how two
+  people appending at once resolve a conflict. Follow it: restructuring a decision log is not this pass.
 - A record carries a date and is not edited afterwards. A later decision supersedes it with a new record.
 - **The history is the archive.** Deleted prose is recoverable from version control. Do not paste it into
   a file on the way out.
 
 ## Step 6: report
 
-Show the diff, the verdict counts from step 3, and the documentation word count before and after.
+Show the diff, the verdict counts from step 3, and the documentation word count before and after. **The
+word count is context, not the score.** Report it and do not optimise it. A pass that shrinks a tree by
+deleting correct prose has made it worse, and the number cannot tell the difference.
 
 List these separately rather than folding them into a total:
 

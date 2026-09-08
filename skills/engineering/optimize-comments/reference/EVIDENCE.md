@@ -1,78 +1,39 @@
-# What the research says
+# Evidence for comment decisions
 
-Read this once, to calibrate what to expect before a pass. It is not needed during one.
+Read this when deciding whether an explanation earns its space. Judge individual comments from their contents and consumers; repository-wide comment counts cannot settle their value.
 
-## The mix you will find
+## Count the reading a comment saves
 
-Pascarella and Bacchelli hand-classified 2,000 Java files across Apache Spark, Eclipse CDT, Google
-Guava, Apache Hadoop, Google Guice and Vaadin, sorting every comment into 6 top and 16 inner categories.
+A reader can recover a simple assignment or loop from nearby code. Repeating it increases the text they must process without reducing uncertainty.
 
-- **59% of comment lines** fell into categories that say nothing about the readability or maintainability
-  of the code they sit next to: licenses, ownership, commented-out code, IDE directives, auto-generated
-  stubs, noise.
-- **Rationale, the *why*, was the rarest explanatory category.** Comments restating what the code does
-  outnumbered it by roughly 21 to 1 by block count, 5,346 to 256.
-- Comment-to-code ratios in those projects ran from **31% to 56%**.
+A short explanation can save a search through callers, a specification, or a dependency's issue history. Keep it when it states a consequential fact accurately and is placed where the reader needs it. Do not repeat a long external explanation when a short reason and a precise reference suffice.
 
-So the volume is real, and the part everyone says comments are for is nearly absent. This is why the pass
-both cuts and adds, and why a deletion-only pass leaves the gap exactly where it was.
+Comment word counts describe the edit but do not prove improvement. A smaller result can lose essential information; a larger result can prevent a costly misunderstanding. Judge each added or retained sentence by the interpretation or action it changes.
 
-## Why stale comments are the ones nobody touched
+## Tests enforce behavior; explanations preserve reasons
 
-Fluri et al. found that when a comment changes at all, **97% of the time it changes in the same commit as
-the code**, and in six of eight systems the figure was above 90%.
+A regression test shows which behavior is expected and detects some departures from it. It may not explain the external constraint that requires the expectation. Without that reason, a future editor may consider both the implementation and test mistaken.
 
-The failure is therefore rarely someone editing code and forgetting the comment beside it. It is a
-comment nobody has opened in years while the code moved. That is what makes comment age versus code age
-the highest-yield search in the pass, rather than reading a file top to bottom.
+Keep a short local explanation when it prevents that error. Delete prose that only repeats obvious mechanics. A test, comment, and decision record can serve different readers without each repeating the whole story.
 
-The same work found that newly added code barely gets commented, which is why the file someone has just
-edited hard is where the missing *why* will be.
+Check the actual assertion before treating a behavior as covered. An observed measurement can instead depend on a workload, environment, or external system; preserve the conditions needed to interpret it and report missing evidence or coverage honestly.
 
-## Why a contradiction outranks a tidy-up
+## Caller documentation has a different reading context
 
-Work on code-comment inconsistency reports that an inconsistent change is about **1.5 times more likely
-to lead to a bug-introducing commit** than a consistent one, and that the effect is strongest right after
-the inconsistency appears and fades over time.
+A caller may read a declaration or editor hover without opening the body. Units, accepted ranges, side effects, and ordering guarantees can belong there even when the caller is inside the same package. Export visibility alone does not determine whether the explanation is useful.
 
-A contradiction between a comment and its code is therefore the valuable output of the pass, not a
-cosmetic defect. It also means resolving one by rewriting the comment to agree with the code destroys the
-evidence: the comment may be the surviving record of the intent, and the code may be the bug.
+A reader editing the implementation already has its mechanics in view. Inline comments should supply the constraint, reason, or brief orientation that changes how they interpret those mechanics. Do not force a factual explanation into an imperative when stating the fact is shorter and clearer.
 
-## Who each kind of comment is actually for
+## Age and aggregate statistics do not prove a comment is wrong
 
-This sets the two budgets in rules 2 and 3.
+A comment older than nearby code is a candidate for verification, not evidence of a contradiction. It may still state a stable requirement. Compare the claim with the implementation and available requirements before editing it.
 
-A doc comment on the public API is read by a person on hover, deciding how to call something without
-opening it. That is an interface: it earns the length a caller needs, and nothing else in the codebase
-can carry it. Public means reachable from the package's entry point, not the presence of the `export`
-keyword; a module-level export nobody outside can import has no hover audience.
+The fraction of comment edits that accompany code edits does not tell you how often code edits omit needed comment updates. Those are different conditional probabilities. Do not use one to dismiss the other failure mode.
 
-An inline comment is read by whoever already opened the file, which in practice means a model loading it
-into context. Nobody hovers it. Its job is to stop a plausible wrong edit, and every line past that is
-weight the next reader pays for. An over-commented file makes the model skim what is in it, the same way
-an over-long instruction file does.
+Likewise, a survey grouping licenses or tool directives with non-explanatory comments does not establish that those comments are removable. They have consumers other than the person reading the algorithm. Verify their role before changing them.
 
-## The two positions on whether comments should exist at all
+## A useful check can fail
 
-Robert Martin holds that a comment is a failure to express something in code, and that a perfect language
-would need none. John Ousterhout disagrees, and the disagreement is worth knowing because it marks the
-boundary this skill draws.
+Before deleting or shortening a comment, name what information would disappear and where the reader can recover anything still needed. Check directives with their consuming tools when an authorized change affects them. Preserve unresolved explanations and record unavailable evidence.
 
-Ousterhout names two things code cannot carry. An interface, meaning everything a caller needs in order
-to use something without reading its body, since if a caller must read the implementation there is no
-abstraction. And design rationale, meaning why this approach rather than the obvious one.
-
-Both agree on the part that matters here: a comment at the same level of abstraction as the code will
-restate it. A useful comment moves down for precision or up for intuition, and if it uses the same words
-as the code, it is at the same level.
-
-## Sources
-
-- Pascarella and Bacchelli, "Classifying code comments in Java open-source software systems", MSR 2017.
-- Fluri, Wursch and Gall, "Do Code and Comments Co-Evolve? On the Relation between Source Code and
-  Comment Changes".
-- Recent work on code-comment inconsistency and bug introduction, including
-  [arxiv.org/abs/2409.10781](https://arxiv.org/abs/2409.10781).
-- Ousterhout, *A Philosophy of Software Design*, and the recorded discussion with Robert Martin at
-  [github.com/johnousterhout/aposd-vs-clean-code](https://github.com/johnousterhout/aposd-vs-clean-code).
+A pass with no changes can meet every check. A pass that reduces words while deleting an unexplained compatibility constraint cannot.

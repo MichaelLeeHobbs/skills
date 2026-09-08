@@ -80,10 +80,7 @@ including the evidence ladder and the required output shape, is in
 Tell the user how many reviewers you dispatched and what each covers. Then wait. Do not predict or
 fabricate results. Give a one-line highlight as each returns so the user sees progress.
 
-**If you cannot run reviewers in parallel,** do the slices sequentially and start a fresh context per
-slice rather than carrying the previous slice's findings forward. Carrying them forward is what makes a
-sequential review converge on whatever the first slice found. Expect it to take proportionally longer,
-and do not reduce the number of slices to compensate, because that is the same as skipping files.
+**If you cannot run reviewers in parallel,** review the same slices sequentially using the same rubric. Keep a durable ledger of assigned files, completed reads, findings, and verification status outside version control. If isolated review passes are available, use them to reduce influence from earlier findings. Otherwise continue in the same conversation, judge each slice against the full rubric, and state that the passes were not independent. Check the ledger against the original inventory before merging the report; every file still needs a full read.
 
 ## 4. Verify the load-bearing findings yourself
 
@@ -118,8 +115,7 @@ decision. Offer to start fix branches on a chosen subset. Do not apply fixes unp
 
 ## It is working if
 
-Every file in the tree appears in the report, at least one finding was refuted during verification, and
-the cross-cutting themes name a root cause that no single file would have revealed.
+Check that every scoped file appears in the report, every reported finding carries evidence, and each finding selected for verification has a recorded verdict. Report unverified claims explicitly. Zero findings or zero refutations is a valid result; do not manufacture either. Include cross-cutting causes only when the evidence supports them.
 
 Across passes, it is working if the severity mix falls. A second pass that reports the same total as the
 first with half the seriousness is telling you the code improved and the method is now dredging. That is

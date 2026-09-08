@@ -59,9 +59,9 @@ styling, live testing). See **[`connector-plugins.md`](./connector-plugins.md)**
 
 16. **Write separate SQL scripts for each database dialect.** PostgreSQL, MySQL, Oracle, SQL Server, and Derby all have syntax differences. Oracle is the worst offender: no `IF NOT EXISTS`, no `ADD COLUMN` (just `ADD`), uses `NUMBER` instead of `INTEGER`, and `CLOB` instead of `TEXT`.
 
-17. **Handle "already exists" errors gracefully in your Migrator.** The `migrate()` method runs every time the plugin starts. Your CREATE TABLE statements will fail on the second startup if you don't use `IF NOT EXISTS` (or catch the error for Oracle/Derby).
+17. **Make migrations repeatable and propagate unexpected failures.** Use dialect-specific existence checks or handle only a verified duplicate-object error. Never swallow missing resources, permission failures, connection errors, or malformed SQL. Verify the schema after both the first and second migration runs, and confirm an unexpected failure is reported.
 
-18. **MyBatis uses iBATIS 2 syntax**, not the modern MyBatis 3 mapper syntax. Use `#property#` for parameter binding (not `#{property}`), and `parameterClass` / `resultMap` attributes.
+18. **Use MyBatis 3 mapper syntax.** Mirth Connect 4.5.2 and OIE load plugin mappings through MyBatis 3. Use a `mapper` root, the MyBatis 3 DTD, `#{property}` bindings, `parameterType`, and `type` on result maps. Parse the mapping against the target engine's MyBatis version before installation; see [database.md](./database.md).
 
 ### REST API
 

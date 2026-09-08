@@ -4,6 +4,7 @@
 
 ```xml
 <project>
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yourorg</groupId>
         <artifactId>your-plugin</artifactId>
@@ -32,11 +33,13 @@
     </dependencies>
 
     <build>
+        <finalName>${project.parent.artifactId}-${project.version}</finalName>
         <plugins>
             <!-- Copy plugin.xml with version substitution -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
                 <executions>
                     <execution>
                         <id>copy-plugin-xml</id>
@@ -61,6 +64,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.7.0</version>
                 <executions>
                     <execution>
                         <id>copy-jars</id>
@@ -99,6 +103,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.7.1</version>
                 <executions>
                     <execution>
                         <id>build-zip</id>
@@ -188,22 +193,22 @@ the Launcher to accept it.
 
 ### Self-signed dev signing (fast path)
 
-1. Generate a self-signed keystore — Mirth uses the legacy Java **JKS** keystore format:
+1. Create a `certificate/` directory at the project root, then generate a self-signed JKS keystore there:
    ```bash
    keytool -genkeypair -keyalg RSA -keysize 2048 -alias selfsigned \
      -keystore certificate/keystore.jks -storepass storepass -keypass storepass \
      -validity 3650 -storetype JKS -dname "CN=Your Plugin (dev self-signed), O=you, C=US"
    ```
-2. Build with the `signing` profile pointed at it (see the POM below):
-   `mvn clean package -Psigning -Dsigning.keystore=certificate/keystore.jks -Dsigning.alias=selfsigned -Dsigning.storepass=storepass`
+2. From the project root, build with the `signing` profile below. It defaults to that keystore and alias:
+   `mvn clean package -Psigning "-Dsigning.storepass=storepass"`
 3. Launch the Administrator **Launcher** with `-k` (`--allow-self-signed`) — on Windows, append ` -k` to the
    shortcut's *Target* field; on macOS/Linux, `java -jar mirth-client-launcher.jar -k`. (`-d`,
    `--allow-incorrect-digest`, is the sibling flag for digest mismatches.)
 
-Two config gotchas for the self-signed path:
+Configuration for the self-signed path:
 - **Do not set a `<tsa>`** (timestamp authority) on a self-signed dev cert. It makes the *client* do slow,
   often-failing OCSP/timestamp lookups. Add a `<tsa>` back only for a real CA-signed release build.
-- Add `<keypass>${signing.storepass}</keypass>` if your key and store share a password.
+- The profile defaults `signing.keypass` to `signing.storepass`. Override it if the key has a different password.
 - **Don't commit the keystore.** Even a throwaway self-signed keystore holds a private key — committing it is
   a credential/supply-chain smell and tends to get copied forward. Generate it locally (or in CI) and
   `.gitignore` it; document the one `keytool` command (above) so anyone can regenerate. If you must commit
@@ -211,13 +216,17 @@ Two config gotchas for the self-signed path:
 
 ### The signing POM
 
-Sign the **collected** jars in the package staging dir, right before the assembly zips them (bind to
-`prepare-package`, after `copy-jars`). Add a `signing` profile:
+Add this `signing` profile to `package/pom.xml`. Sign the collected JARs during `prepare-package`, after `copy-jars` and before assembly. This profile uses a local JKS keystore. Its default location is relative to the reactor root, so invoke Maven from the project root. Override `signing.keystore` with a full keystore path and `signing.alias` for another local key.
 
 ```xml
 <profiles>
     <profile>
         <id>signing</id>
+        <properties>
+            <signing.keystore>${maven.multiModuleProjectDirectory}/certificate/keystore.jks</signing.keystore>
+            <signing.alias>selfsigned</signing.alias>
+            <signing.keypass>${signing.storepass}</signing.keypass>
+        </properties>
         <build>
             <plugins>
                 <plugin>
@@ -236,15 +245,11 @@ Sign the **collected** jars in the package staging dir, right before the assembl
                                 <includes>
                                     <include>your-plugin-*.jar</include>
                                 </includes>
-                                <!-- Configure for your signing method -->
-                                <keystore>NONE</keystore>
-                                <storetype>PKCS11</storetype>
-                                <providerClass>sun.security.pkcs11.SunPKCS11</providerClass>
-                                <providerArg>yubikey-pkcs11.cfg</providerArg>
+                                <keystore>${signing.keystore}</keystore>
+                                <storetype>JKS</storetype>
                                 <storepass>${signing.storepass}</storepass>
-                                <alias>Certificate for PIV Authentication</alias>
-                                <certchain>certchain.pem</certchain>
-                                <tsa>http://timestamp.digicert.com</tsa>
+                                <keypass>${signing.keypass}</keypass>
+                                <alias>${signing.alias}</alias>
                             </configuration>
                         </execution>
                     </executions>
@@ -255,7 +260,9 @@ Sign the **collected** jars in the package staging dir, right before the assembl
 </profiles>
 ```
 
-Build with signing: `mvn clean package -Psigning -Dsigning.storepass=YOUR_PIN`
+Keep hardware-token or CA-backed release signing in a separate profile with its own provider, certificate chain, and timestamp configuration. Do not mix PKCS11 settings into this JKS profile.
+
+Verify the documented build with a newly generated development keystore. Extract the resulting ZIP and run `jarsigner -verify -verbose -certs <jar>` on every included JAR; require signed payload entries and no digest errors. Check the signer fingerprint against the generated certificate, then open the plugin in the Administrator Launcher with self-signed certificates allowed. An expected self-signed trust warning is distinct from an unsigned entry or a failed signature. Also try an incorrect keystore password and confirm the signing build fails. Do not mark Launcher loading as checked if no Launcher is available.
 
 ---
 

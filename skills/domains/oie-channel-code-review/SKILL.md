@@ -79,11 +79,8 @@ version in use.
   discards block-scoping safety to dodge one bug. Some report the same mis-alias in `if` and `switch`
   blocks on certain builds, so a binding declared inside any block and reused is the first suspect when
   values behave oddly.
-- **Watch for the ES6 features Rhino handles poorly.** Template literals, `async`/`await`, `Promise`,
-  optional chaining `?.`, nullish `??`, spread in parameter lists and `for...of` are unreliable or
-  missing on the bundled Rhino. Flag them and use `+` or `.join()`, callbacks and retries, plain
-  `try`/`catch`, `||`, and indexed or `.forEach()` loops instead. OIE defaults Rhino to ES6, so `let`,
-  `const` and arrow functions do work. Confirm borderline features against the server in use.
+- **Watch for the ES6 features Rhino handles poorly.** Template literals, `async`/`await`, `Promise`, optional chaining `?.`, spread in parameter lists and `for...of` are unreliable or missing on the bundled Rhino. Flag them and use `+` or `.join()`, callbacks and retries, plain `try`/`catch`, explicit property guards, and indexed or `.forEach()` loops as appropriate. OIE defaults Rhino to ES6, so `let`, `const` and arrow functions do work. Confirm borderline features against the server in use.
+- **Rhino does not support `??`.** For a nullish default, evaluate the input once into a local `value`, then use `value === null || typeof value === 'undefined' ? fallback() : value`. This preserves `0`, `false`, and `""`, and evaluates the fallback only when needed. Keep `||` when the intended contract defaults on every falsy value; do not substitute it for a nullish check. Verify null, undefined, zero, false, and empty-string cases, plus single input evaluation and lazy fallback evaluation, on the target Rhino runtime.
 - **Use the channel `logger`, not `System.out` or `System.err`**, at the right level, never `println`.
   Never log HL7 content, PHI or credentials, per `[SECURITY]`.
 - **Unclosed database connections.** A connection from `DatabaseConnectionFactory` must be closed in a

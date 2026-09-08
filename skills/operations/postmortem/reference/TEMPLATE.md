@@ -122,4 +122,4 @@ Before finalizing:
 - [ ] Disproven-hypotheses section present, if the investigation had wrong turns.
 - [ ] Action items owned, prioritised, and bucketed by feasibility.
 - [ ] No customer data, no secrets, including in the examples.
-- [ ] The engineer has reviewed and corrected it. Otherwise it is still a draft and says so.
+- [ ] The engineer has reviewed and accepted it, with any requested corrections incorporated. Otherwise it is still a draft and says so.

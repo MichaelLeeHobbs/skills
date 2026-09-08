@@ -71,10 +71,7 @@ worse than nothing, because the next person will not re-check it.
 
 **Verbatim error copy is the single most commonly missing piece of a rebuild spec.** Go get it.
 
-For every form field: submit the form empty and record every required-field message verbatim. Enter
-malformed input for the field's type and record the message verbatim. Probe boundaries with overlong
-strings, zero, negatives and special characters, and read the constraint attributes from the DOM. Note
-*when* validation fires, on blur, change or submit, and whether submit disables until the form is valid.
+For every form field, read constraint attributes and probe required-field, malformed-input, and boundary validation within step 0's permissions. Treat submission as potentially successful even when the input looks invalid. Submit only when its possible effects are authorized or prevented; otherwise use non-mutating blur/change probes and mark submit-only states `[UNREACHED]`. Record observed messages verbatim, when validation fires, and whether submit disables until the form is valid. If transmission is blocked, tag the result as client-side validation and leave server behavior unverified.
 
 Do this for the authoring interface too, not only the content it produces. A run missed a required-field
 message entirely because it validated the form being built but never tried to clear a required property

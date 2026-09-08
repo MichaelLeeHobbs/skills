@@ -90,7 +90,7 @@ a useful file usually holds three good paragraphs and a page of restatement.
 - **A decision.** It says what was rejected and why. Route it to step 5.
 - **Navigation.** It says where things live. Keep it under the rule in step 4.
 - **Domain language.** It says what a word means here. Keep it. Nothing in the code defines this.
-- **Human procedure.** Install, deploy, on-call. Keep it only once you have executed it.
+- **Human procedure.** Install, deploy, on-call. Keep useful procedures. Execute only the read-only commands allowed by step 2. When execution is prohibited or unavailable, preserve the procedure, mark those command claims unchecked with the reason, and limit corrections to facts you independently verified. An unchecked command is neither a pass nor a reason to delete its instructions.
 - **Keep.** Say in one clause what it gives a reader that the code does not.
 
 Where a doc holds a true fact in the wrong place, this says where it goes. The homes differ in one way:

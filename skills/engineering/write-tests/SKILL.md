@@ -92,16 +92,12 @@ from a guard that cannot.
 
 ## Let a tool answer the one question
 
-Whether a test would catch a broken implementation is computable, not only a habit. A mutation testing
-tool changes one operator, constant or return value at a time, runs the suite, and reports which
-changes nothing noticed. Every survivor is a test that does not test what its name claims.
+A mutation testing tool changes operators, constants, or return values, runs the suite, and reports which changes the tests missed. Triage each survivor before calling it a test defect: does it change observable behavior required by the contract, or is it equivalent to the original? Equivalent mutants cannot be killed by a correct behavioral test. Record the evidence for equivalence or an out-of-contract change; do not change the implementation merely to raise the score. Add coverage when a survivor exposes a required behavior the tests missed. See [equivalent mutants](https://stryker-mutator.io/docs/mutation-testing-elements/equivalent-mutants/) for worked examples.
 
 Tools exist for most stacks: Stryker for JavaScript and TypeScript, PIT for the JVM, mutmut or
 cosmic-ray for Python, go-mutesting for Go.
 
-Point it at the code that carries the most risk rather than the whole tree, record the score, and fail
-the build below it. High line coverage with a low mutation score is precisely the suite this skill is
-about: it executes everything and asserts almost nothing.
+Point it at the code that carries the most risk rather than the whole tree. Record the score, reviewed survivors, and any justified exclusions before setting a build threshold. Keep the scope and exclusions visible when comparing scores. High line coverage with surviving behavior-changing mutants means the suite executes code without protecting those behaviors.
 
 Prefer this to auditing test strength by reading. An opinion from reading expires with the next edit,
 and a score is a number a build can enforce.

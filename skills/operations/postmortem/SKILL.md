@@ -85,8 +85,7 @@ code fixes, spike cards for the uncertain ones. Put them beside the postmortem.
 
 ### 5. Finalize
 
-Only call it done when they have reviewed and corrected it. Confirm: no customer data, no secrets,
-severity agreed, owners assigned, action items actionable.
+Only call it done when they have reviewed and accepted it, with any requested corrections incorporated. Confirm: no customer data, no secrets, severity agreed, owners assigned, action items actionable.
 
 Leave the commit and push to them.
 
@@ -103,5 +102,4 @@ Leave the commit and push to them.
 
 ## It is working if
 
-The engineer corrected something in every round, the detection story in the final document is one you
-could not have guessed from the logs, and the disproven-hypotheses section saves the next person a day.
+Confirm the engineer reviewed and explicitly accepted the timeline, detection story, severity, and action owners, with any corrections incorporated. Check each causal claim against its cited evidence, and retain disproven hypotheses when the investigation had them. Approval without corrections is valid. Unanswered questions remain marked as gaps, and the document stays a draft until the engineer accepts it.

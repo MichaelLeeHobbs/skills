@@ -26,8 +26,7 @@ around it goes.
 A launch tutorial, a getting-started page, and install steps in the README. Three copies of one
 procedure, at most one of them right.
 
-Verdict: keep the one you executed and delete the rest. The copy you would not have chosen to run is the
-one that has been lying to people, and keeping two copies guarantees this shape comes back.
+Verdict: keep the canonical procedure and replace redundant copies with links after checking that no unique prerequisites or steps disappear. Execute only the commands step 2 permits. If execution is prohibited or unavailable, preserve the procedure and mark those claims unchecked; lack of execution does not establish that a copy is wrong.
 
 ## The aspiration
 
@@ -87,5 +86,4 @@ look incomplete rather than short.
 A procedure for a deployment target, a platform, or an option that no longer gets exercised. Nothing
 contradicts it, because nothing touches it.
 
-Verdict: ask whether the path is still supported. Supported means someone runs it, so run it. Unsupported
-means the code for it should go with the doc, and that is a finding worth more than the edit.
+Verdict: ask whether the path is still supported. For a supported path, perform the checks step 2 permits and report any prohibited or unavailable checks as unchecked while preserving the procedure. For an unsupported path, report the obsolete code alongside the doc; changing code still requires the scope from step 1.

@@ -62,8 +62,7 @@ You may be operating someone's real application. Treat it that way until told ot
    confirmation dialog you can safely open, then stop.
 3. **Do not log out**, clear storage, or navigate away except to follow a link you can return from.
 4. **Prefer reversible probes.** Open a modal and close it. Type into a field and clear it.
-5. **Deliberate validation testing is encouraged even under the strictest setting.** Submitting an empty
-   or malformed form to harvest real error copy is exactly the probe you should run.
+5. **Apply the same permissions to validation probes as to valid submissions.** Empty or malformed input may still create a record or send a message. Submit only when step 0 permits the resulting action, or when you can prevent transmission and other persistent effects. Otherwise inspect constraints and non-mutating validation states, and mark submit-only behavior `[UNREACHED]`. Do not infer server rejection from invalid-looking input.
 6. **If you are unsure whether an action is safe, do not take it.** Record it as unreached.
 7. **Redact secrets.** Tokens, cookies, passwords, keys and real personal data never go in the spec.
 

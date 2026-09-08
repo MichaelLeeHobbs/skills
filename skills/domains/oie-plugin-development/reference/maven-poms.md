@@ -128,6 +128,7 @@ The root POM is a parent that defines shared properties, dependency versions, an
 
 ```xml
 <project>
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yourorg</groupId>
         <artifactId>your-plugin</artifactId>
@@ -164,6 +165,7 @@ The root POM is a parent that defines shared properties, dependency versions, an
 
 ```xml
 <project>
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yourorg</groupId>
         <artifactId>your-plugin</artifactId>
@@ -202,6 +204,7 @@ The root POM is a parent that defines shared properties, dependency versions, an
 
 ```xml
 <project>
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yourorg</groupId>
         <artifactId>your-plugin</artifactId>
@@ -259,14 +262,16 @@ mvn clean package
 # Build without tests
 mvn clean package -DskipTests
 
-# Build with code signing
-mvn clean package -Psigning -Dsigning.storepass=YOUR_PIN
+# Build with local development signing after generating the keystore
+mvn clean package -Psigning "-Dsigning.storepass=storepass"
 
 # Run tests only
 mvn test
 ```
 
 The installable ZIP ends up at `package/target/your-plugin-<version>.zip`. Upload this through the OIE Administrator's Extension Manager.
+
+Run `mvn validate` from the root to check the complete reactor before compiling. Each module must declare its own `modelVersion`. Follow [the signing setup](./packaging-signing-serialization.md#self-signed-dev-signing-fast-path) before using `-Psigning`; it uses a local JKS keystore.
 
 ---
 

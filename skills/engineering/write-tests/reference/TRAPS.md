@@ -227,6 +227,32 @@ problem rather than a collision.
 
 **Rule:** bind port 0 and let the operating system assign one.
 
+### 4.7 Clearing call history is not resetting implementations
+
+Many mocking libraries offer two resets. One clears the recorded calls. The other also drops stubbed
+return values, custom implementations and queued one-shot values. A test that stubs a failure, then a
+later test that only cleared call history, inherits the failure. It fails or passes depending on which
+test ran first.
+
+**Rule:** know which reset your library's "clear" performs. When isolation needs fresh behavior, reset
+implementations too and reinstall the defaults in shared setup. Restore spies and any changed
+environment or clock in cleanup. **Detect it:** run the file in shuffled order, or run the second test
+alone. A result that changes is leaking stubs.
+
+### 4.8 Removing a directory something is still writing
+
+A test that commits into a temporary repository and deletes it afterwards failed with "directory not
+empty" after its body passed. After a commit, version control can start a detached maintenance or
+garbage collection child, and that child was writing lock and log files inside the repository while
+the recursive delete walked the tree. The same shape shows up as "file locked" on systems that refuse
+to delete open files.
+
+**Rule:** turn off automatic background maintenance for every process the suite starts, in a way child
+processes inherit (environment configuration rather than a flag on one command). Remove temporary
+directories with a delete that retries a few times with a short delay, never a single recursive
+delete. **Detect it:** a cleanup failure after a green body, intermittent, and only in suites that
+drive an external tool.
+
 ---
 
 ## 5. Time and concurrency
@@ -261,6 +287,79 @@ it, and the timeout is hiding the design problem.
 **Rule:** when a test needs a long timeout, ask what shared operation is inside it before raising the
 number.
 
+### 5.5 A timed-out test keeps running
+
+Most runners do not cancel a test body when it times out. They report the timeout and start the next
+test, while the old body's promises, timers and workers keep going. A timed-out copy test left eleven
+copies holding process-wide slots, and the next two tests failed with "expected 11 to be 0". Neither
+of them had done anything wrong.
+
+The timeout itself came from a barrier that waited for twelve copies at once, a count the code under
+test never reached in one of its phases. On passing runs the barrier always fell through to its
+fifteen-second fallback, so it looked like it worked and nobody asked why the test took eighteen
+seconds.
+
+**Rule:** give every piece of background work a test starts a per-test abort signal, and have cleanup
+abort it and wait for that work to finish. Any hold or gate the test sets up ends on the same abort.
+Before writing a barrier, check that the code can reach its count in every phase. **Detect it:**
+failures in the test after a timeout, counts that match leftover work, and a test whose duration
+equals its fallback delay on every run.
+
+### 5.6 A lock scenario that outlives its test
+
+A test that sets up a lock holder and waiters, then releases them in the body's `finally`, leaves them
+queued when the body times out (5.5), so the next test reads the previous test's locks. Borrowing the
+holder's connection from the shared pool makes it worse, because the borrow itself can wait without
+bound.
+
+**Rule:** a lock scenario must never outlive its test. Open each holder and waiter on its own
+single-connection client with a name the test can find. In cleanup, first terminate every session
+carrying that name from the server side, because a session queued on a lock may not notice its socket
+closing. Then close the clients, each with its own time bound. Bound every step of the scenario
+(connect, begin, acquire, release, every poll) so a stall fails naming the step and printing what the
+server shows. Assert on your own scenario's session or lock key, never on a server-wide view.
+**Detect it:** a lock or session count that is off by the size of an earlier test's scenario, or a
+step that hangs only in the pipeline.
+
+### 5.7 A fixture whose cost grows with the repository
+
+A test can be fast when written and slow a month later with nobody touching it. A migration test
+replayed the whole migration chain several times. The chain grew from 70 to 112 entries and the same
+six tests went from 52 to 105 seconds. Every new migration added its own replaying test and also
+slowed every existing one, so total time grew with the square of the chain. It surfaced as timeouts
+that looked like flake.
+
+**Rule:** before writing a fixture, ask whether its cost grows with something that only grows: a
+migration chain, seeded reference data, the route table, every role or permission. If it does, build
+it once and copy it, start from the current state, or bound the input. Raising a timeout to fit such a
+fixture is 5.4. **Detect it:** compare per-test durations across pipeline runs a few weeks apart. A
+test that slows with no change to its own file is paying for the repository's growth.
+
+### 5.8 A cold compile inside a timed assertion
+
+The first test in a file that imports a large UI library or code generator can spend seconds
+transforming or compiling it. If that import happens lazily inside a timed assertion or a wait with a
+deadline, the test reports a behavioral timeout for what was a cold cache.
+
+**Rule:** keep expensive imports at module scope, in collection, when import timing is not what the
+test is about. Do not raise the timeout until you know what spent the time. **Detect it:** the first
+test in a file times out on a cold runner and passes on rerun, or passes when moved second.
+
+### 5.9 Reading an effect's result before the effect ran
+
+A UI test's stub counted its mounts in a deferred effect, and the test read the count right after an
+async "find this text" query resolved. On a loaded runner it read 0. The query resolves as soon as the
+render commits the text, but some frameworks run deferred effects in a later task, so the effect can
+still be pending. In React, for example, passive effects from a non-urgent render run after the
+commit.
+
+**Rule:** a stub that records lifecycle facts for a test records them in the phase that runs inside
+the commit (a layout-phase effect), or the test reads them only after something that flushes effects.
+Do not wrap an exact count in a retrying wait instead: it can pass at 1 just before an unwanted
+remount makes it 2. A retrying wait is safe only when its condition depends on something that happens
+after the mount. **Detect it:** a count that reads low only under load, read immediately after an
+async query.
+
 ---
 
 ## 6. Testing at the wrong level
@@ -271,6 +370,15 @@ If the fix was "add a middleware", "register the handler" or "mount the router",
 function proves nothing. The function was always correct. The wiring was missing.
 
 **Rule:** test at the level the bug lived at.
+
+A guard test has its own version of this. Asserting only that a request was rejected passes when some
+unrelated middleware rejected it first. Asserting only that the handler was not called passes when the
+fixture is broken and nothing could reach the handler.
+
+**Rule:** for a guard, drive the real routing and assert both halves: the forbidden request is rejected
+**and** the downstream handler was never called. Then send an authorized request through the same path
+and assert it reaches the handler. **Detect it:** remove the guard. If the rejection test still passes,
+something else is doing the rejecting.
 
 ### 6.2 Asserting on a raw string the production code never sees
 

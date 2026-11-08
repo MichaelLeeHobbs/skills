@@ -39,6 +39,7 @@ Reaching a decision. Nothing here touches code.
 |---|---|
 | `brainstorm` | Explore a problem you have not solved. You bring the problem and the goal, the agent brings the option space instead of running with its first idea. |
 | `steelman` | Settle a binary design question that keeps getting deferred. Both positions argued at full strength, both tested against ground truth, judged on a rubric written before the arguing started. |
+| `debate-plan` | Turn a vague ticket or idea into buildable work by having panels argue it: builders open and rebut, real users and guardians review, and the report comes back as a design, slices in build order and numbered decisions with defaults. Runs serially on an agent that cannot work in parallel. |
 
 ### writing
 
@@ -56,6 +57,8 @@ Writing and reviewing code.
 |---|---|
 | `write-tests` | Write a test that would actually catch the bug it claims to cover. Covers the traps: vacuous assertions, tests that encode the bug, green from two cancelling faults, fixtures the product never produces. |
 | `deep-code-review` | Exhaustive file-by-file review of a package or service. Splits the tree into disjoint slices so every file is actually read, then verifies the load-bearing findings against the source before reporting them. |
+| `triage-card` | Judge a ticket before anyone builds it. Pins a revision, checks each claim in code, finds where the ticket's diagnosis is wrong, and records a verdict with file:line evidence on the ticket. |
+| `batch-work` | Build several small tickets as one batch: a branch per ticket inside one batch branch, one review, one test run, one pull request. Keeps each ticket's state honest and checks the merge history proves it. |
 | `optimize-comments` | Keep the shortest comments that prevent misunderstandings or wrong edits. Cuts nearby-code narration, preserves useful constraints and active tool directives, checks contradictions, and adds missing reasons only when supported by evidence. |
 | `optimize-docs` | Audit the prose docs in a repository and make them smaller. Extracts every path, command, flag, symbol and link the docs claim and checks it against the repo, so prose gets graded on evidence instead of on how it reads. Deletes what the code already says, routes a real decision to a dated record, and refuses to create a new home for anything that failed the test. |
 

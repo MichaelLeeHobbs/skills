@@ -1,6 +1,6 @@
 ---
 name: unslop
-description: Cut AI tells from any writing. Must always apply.
+description: Cut AI tells from any writing, then re-scan against every numbered pattern and report zero hits. Must always apply.
 ---
 
 # Unslop
@@ -13,6 +13,19 @@ Edit text to remove AI patterns and add human voice.
 2. Rewrite. Preserve meaning, match intended tone.
 3. Add soul (see next section).
 4. Self-audit: "What makes this obviously AI generated?" Fix remaining tells.
+5. Run the check below. Do not hand the text back until it passes.
+
+## Check
+
+Re-scan the final text against every numbered pattern in this file, 1 to 36, one at a time. For the
+patterns that name words or phrases (1, 3 to 9, 20 to 26, 31 to 36), search the text for
+each listed term. For the rest, read for the shape the pattern describes. Character patterns are exact:
+pattern 13 fails on any em dash, pattern 19 on any curly quote.
+
+Report one line per pattern: its number and either `0 hits` or each remaining hit with the line it is
+on. The check fails if any pattern has a hit you did not deliberately keep. A kept hit needs a stated
+reason (a quotation, a proper name, a term the reader's field uses). Fix the failures and run the check
+again. If you cannot read the final text back, the check fails. It never passes by default.
 
 ## Adding soul
 

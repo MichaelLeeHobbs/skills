@@ -95,6 +95,12 @@ Two of its rules are the ones skipped most often: BLOCKED ranks better than a so
 are tempted to write CONFIRMED without having opened the file the verdict is BLOCKED; and a latent defect
 filed as a note gets promoted, with the promotion stated in the report.
 
+When a finding rests on a claim about the code ("we require X") or touches anything that deletes,
+disables or bulk-mutates data, also read
+[reference/claims-and-irreversible-ops.md](reference/claims-and-irreversible-ops.md). It covers history
+checks, repo versus deployed evidence, and the fail-closed list. Record the revision you reviewed (commit,
+or base and head) in the report header either way.
+
 ## 5. Assemble the report
 
 Structure and the sanity checks to run on the finished file are in

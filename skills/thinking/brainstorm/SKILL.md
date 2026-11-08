@@ -52,6 +52,18 @@ search: ask the rest of your questions now and fold the answer in when it lands.
 5. **Converge on their signal, not yours.** When they pick, restate the choice in a sentence or two, name
    the exit below you think fits, and wait.
 
+## Replacing something that already exists
+
+When the problem is replacing an existing screen or workflow, start with a job inventory before any
+option: each thing each role does there today, with its click path and the label it uses. Read the
+current thing to build it, and ask only for what you cannot see. Check every option in step 2 against
+the inventory, and say which jobs an option drops or makes slower. A missing job is a cost in step 3.
+
+When they pick, attach sign-off tasks: the jobs they will do by hand to accept the result, in their own
+words, with click counts where speed matters ("reset a user's access from the list in two clicks"). For
+a replacement the tasks cover every job in the inventory. A technical goal such as "safe by
+construction" does not replace them.
+
 ## Exits
 
 Brainstorming ends in one of three places. Offer the exit, let the user pick it.

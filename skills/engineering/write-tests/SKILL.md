@@ -67,13 +67,18 @@ executing it. A guard with a hole in its own regex. A guard naming a structure t
 
 **Shared state and ordering.** Identity fixtures shared between tests. Assertions on state wider than
 the test owns. Resetting some of the state but not all. One file depending on another having run first.
-An exact count with no reset on the way in. Hand-assigned ports.
+An exact count with no reset on the way in. Hand-assigned ports. Clearing mock call history but not
+implementations. Deleting a directory a background process is still writing.
 
 **Time and concurrency.** Sleeping instead of waiting for a condition. Timestamps as a uniqueness
-source. Pinning which side of a race wins. A timeout tuned to a contended resource.
+source. Pinning which side of a race wins. A timeout tuned to a contended resource. A timed-out test
+that keeps running. A lock scenario that outlives its test. A fixture whose cost grows with the
+repository. A cold compile inside a timed assertion. Reading an effect's result before it ran.
 
-**Testing at the wrong level.** Unit-testing what only breaks when wired up. Asserting on a raw string
-the production code never sees. Covering the function you changed rather than every call site.
+**Testing at the wrong level.** Unit-testing what only breaks when wired up. Asserting a guard's
+rejection without proving the handler never ran and an authorized request still does. Asserting on a
+raw string the production code never sees. Covering the function you changed rather than every call
+site.
 Enumerating cases where a structural check would catch the next one. Asserting browser behavior in a
 simulated environment that implements a subset. Reading one projection while meaning another. A
 positional test that passes only because the fixture happens to fit on screen.

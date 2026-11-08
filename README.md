@@ -77,6 +77,7 @@ Directing the agent itself.
 | Skill | What it does |
 |---|---|
 | `optimize-agent-instructions` | Audit and tighten any file that instructs an agent: a context file (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.cursorrules`), a skill, a command, a subagent definition. Sizes the cut by when the file loads, strips rationale that does not change behavior, and catches a description too vague to ever fire. |
+| `hill-climb` | Improve something fuzzy (a screen, a prompt, generated code) as a scored loop. Freezes a metric or a judge rubric with anchors, measures the judge's noise floor, then keeps one change per round only if the score beats the noise. Blind judges, guardrails, and a gaming check. |
 | `hands-off` | Prepare a project for an unattended build-out. Freezes an ordered queue with a check per item, sets up a decision log, and defines what the agent does when it hits something ambiguous at 3am. |
 
 ### clean-room

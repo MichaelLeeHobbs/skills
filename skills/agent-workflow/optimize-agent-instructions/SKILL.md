@@ -73,6 +73,8 @@ clause by clause for these shapes:
 - **A colon or dash tail on a complete rule** that says who else acts or why.
 - **A `so`, `because` or `since` clause that sells the rule:** "Use the pinned toolchain version, because
   a floating version gives two developers different lockfile output." Keep the first sentence only.
+- **Rationale and "so that" framing:** a sentence or clause that states the goal behind the rules
+  instead of a rule.
 - **Other people's process:** what a reviewer, an owner, CI or another team does after the agent's part
   ends. The agent cannot act on it.
 - Cost/benefit math behind a decision already made, "this matters because...", a parenthetical defining
@@ -86,6 +88,14 @@ Worked example, from a personal context file:
 The tail after the colon names who acts next. Delete it and the agent still stops at Review and still
 does not ask, so it goes. "Knowing who does it could help" is the argument that keeps these alive. Name
 what the agent would do differently with it. If you cannot, cut it.
+
+**Turn a rationale into an acceptance criterion when it holds a real test.** If the goal names something
+checkable, rewrite it as a rule the output must pass. If it names nothing checkable, cut it.
+
+> *"I check in on many parallel sessions with "Status?", "What's next?", "Are we done?". If I have to
+> ask, the last message didn't do its job."*
+> becomes, under the block's rules: **"It must answer "Status?", "What's next?" and "Are we done?"
+> without my asking."**
 
 **Keep the why when the why IS the rule.** Some reasoning blocks a specific false conclusion:
 

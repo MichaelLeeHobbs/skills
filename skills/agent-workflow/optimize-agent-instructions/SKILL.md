@@ -14,11 +14,7 @@ Agents take instructions from several files: a standing context file read at the
 skills, slash commands, subagent definitions, and the reference files those link to. This pass tightens
 any of them.
 
-An over-long file makes the model ignore the instructions inside it, so every line you add weakens the
-lines already there.
-
-Work the steps in order. Relocating comes before tightening so you do not shorten a block that then
-leaves the file.
+Work the steps in order.
 
 ## Step 1: find the tier and the target
 
@@ -38,87 +34,84 @@ only after its description matches.
 
 Some agents ship a command that does the mechanical passes: cutting content derivable from the codebase,
 deduplicating a local file against a checked-in one, moving always-loaded guidance into things that load
-on demand, linting skill frontmatter. Run it and apply what you agree with. Steps 3 to 5 are the passes
+on demand, linting skill frontmatter. Run it and apply what you agree with. Steps 3 and 4 are the passes
 it does not do.
 
 A clean report is not a clean bill of health. These tools target the project context file, and a personal
 global file is all stance, which is never derivable from a codebase, so the tool finds nothing it knows
 how to look for. Skill bodies get checked for shape, not for length.
 
-## Step 3: decide what stays inline
+## Step 3: run every sentence through the four-prong test
 
-A reference to another file loads at wildly different cost depending on how it is written, and the two
-forms look identical in markdown.
+Test each sentence, and each clause after a colon, dash, `so`, `because` or `since`, against the four
+prongs in order. It stays as is only if it passes all four. The first prong it fails sets the remedy.
+Record each failure for the report.
 
-- **In a context file:** a plain link is usually lazy, read only when the task needs it. An import is
-  eager, inlined every session, exactly as expensive as leaving the text inline. Agents spell imports
-  differently and some have no such concept, so confirm before relying on one. Reserve it for the rare
-  thing genuinely needed every session.
-- **In a skill or command body:** a linked reference file is read only when a step sends the agent there.
-  Long tables, worked examples and detail a run needs sometimes belong in one. What every run needs stays
-  in the body.
+| Prong | Question | Fails | Remedy |
+|---|---|---|---|
+| 1. Action | Does it tell the agent to do or not do something, or give a check it can pass or fail? | rationale, "so that" framing, justification, background, other people's process | Cut it, or turn it into an acceptance criterion if it holds a real test |
+| 2. But-for | Would a capable agent behave or conclude differently without it? | a restatement, a default, something the agent already does, a past event | Cut it |
+| 3. Trigger | Is it clear when it applies? | "be careful with migrations", a hedge such as `where possible` | Rewrite it with the situation that triggers it |
+| 4. Placement | Does it need to load every time this file loads? | long tool gotchas in an always-loaded context file | Move it to a reference file behind a pointer that says when to read it |
 
-Move a sometimes-needed block out and leave a one-line pointer plus a plain link behind it. The pointer
-has to say when to follow it or the file never gets opened.
+Agents write justification by habit. Expect prong 1 failures in text an agent wrote, including yours.
 
-Two things never move. A standing directive about what counts as done stays inline, because a lazily
-loaded file may not be in context at the moment it matters. A step's check stays with the step.
+**Prong 1.** The tail after the colon here names who acts next and gives the agent nothing to do:
 
-**Check:** every link resolves, and every pointer says when to follow it.
+> *"On every other board a finished card goes to Review and stops there: the board owner moves it to
+> Done. Don't ask me to mark it Done."*
 
-## Step 4: TIGHTEN what remains
+Cut it. "Knowing who does it could help" is the argument that keeps these alive. Name what the agent
+would do differently with it. If you cannot, it fails.
 
-Strip rationale that does not change behavior:
+A rationale that names something checkable becomes an acceptance criterion. One that names nothing
+checkable is cut.
 
-> *"Use the pinned toolchain version, because a floating version means two developers get different
-> lockfile output and the diff noise makes review slower for everyone."*
-> becomes **"Use the pinned toolchain version."**
+> *"I check in on many parallel sessions with "Status?", "What's next?", "Are we done?". If I have to
+> ask, the last message didn't do its job."*
+> becomes, under the block's rules: **"It must answer "Status?", "What's next?" and "Are we done?"
+> without my asking."**
 
-**Where the line falls depends on who reads the file.** A context file states rules to someone who
-already agreed with them, so most rationale in it is dead weight. A skill or command teaches a procedure
-to a reader meeting it for the first time. Cut a reason that argues the step is a good idea. Keep a
-reason that says what goes wrong if the agent improvises instead.
-
-**Keep the why when the why IS the rule.** Some rules work only because their reasoning blocks a specific
-false conclusion:
+**Prong 2.** Corrective reasoning passes, because it changes what the agent concludes:
 
 > *"Exported HARs redact `Set-Cookie`, so a missing `Set-Cookie` is **not** evidence the server didn't
 > set one. Confirm in devtools."*
 
-Delete that "so" clause and the rule stops working.
+Delete that "so" clause and the agent reads a missing header as proof. In a skill, a reason that says
+what goes wrong if the agent improvises passes. A reason that argues the step is a good idea fails.
 
-The test before cutting a clause: **does it change what the agent concludes or does, or does it only
-justify the rule to a human reader?** Justification goes. Corrective reasoning stays.
+A past event fails when a reader can no longer make the mistake it warns about: "`main` is the only
+long-lived branch (`dev` was deleted on YYYY-MM-DD)". Cut the parenthetical. A rejected approach passes,
+because someone will propose it again. A completed migration, a deleted branch or flag, a rename, an
+unsupported version, "this used to be X" and a note on what an earlier session did all fail.
 
-Cut hedges (`generally`, `try to`, `where possible`) that soften an instruction into a suggestion, and a
-second sentence that restates the first.
+**Prong 3.** "Be careful with migrations" becomes "Before editing a migration that has run in
+production, write a new migration instead." A hedge (`generally`, `try to`, `where possible`) leaves the
+agent to decide when the rule applies. Name the case or drop the hedge.
 
-**Cut a past event a reader can no longer act on.** "`main` is the only long-lived branch (`dev` was
-deleted on YYYY-MM-DD)" carries a parenthetical about a branch nobody can reach. The rule is complete
-without it and the note will never be useful again, but it reads like the why that makes the rule work,
-so it survives every pass.
+**Prong 4.** Step 1's table sets what loads when. When you move a block, the link form decides its cost:
 
-The discriminator: **could a reader still make the mistake this history warns about?** A rejected
-approach stays, because someone will propose it again. These go: a completed migration, a deleted branch
-or flag, a rename, a version no longer supported, "this used to be X", and any line narrating what was
-done in an earlier session. Dated status has a half-life and nobody ever deletes it.
+- **In a context file:** a plain link is usually lazy, read only when the task needs it. An import is
+  eager, inlined every session, as expensive as leaving the text inline. Agents spell imports
+  differently and some have none, so confirm before relying on one.
+- **In a skill or command body:** a linked reference file is read only when a step sends the agent there.
+  What every run needs stays in the body.
 
-**What it looks like in the wild:** a dash or `because` clause selling the rule, cost/benefit math behind
-a decision already made, "this matters because...", a parenthetical explaining a term the author
-obviously knows, and the file explaining its own purpose to its author.
+Leave a one-line pointer that says when to follow it. Two things never move: a standing directive about
+what counts as done, and a step's check.
 
-**Check:** re-read each shortened line cold. Does it still tell you what to do? A rule whose reasoning
-was load-bearing must keep it. This is the failure mode the pass introduces, so check it explicitly
-rather than assuming shorter is safer.
+**Check:** re-read each changed line cold. It still tells you what to do, corrective reasoning is still
+there, every link resolves and every pointer says when to follow it. For each surviving clause after a
+colon, dash, `so`, `because` or `since`, name what the agent would do differently without it. A clause
+you cannot name that for failed prong 1 or 2.
 
-## Step 5: fix the description
+## Step 4: fix the description
 
 Skills, commands and subagents only. The agent decides whether to load the body from the description
 alone. Two failures, opposite directions:
 
-- **Too vague to fire.** The body is excellent and never loads. Fix this one first: you get the agent's
-  default behavior and no error, so nothing looks broken.
-- **A paragraph of summary.** Always-loaded rates for prose that duplicates the body.
+- **Too vague to fire.** The body never loads and nothing errors. Fix this one first.
+- **A paragraph of summary.** Prose that duplicates the body, loaded every session.
 
 Write the conditions that should trigger it, in the words a user would actually say, plus what it is not
 for when the boundary is easy to get wrong.
@@ -126,12 +119,16 @@ for when the boundary is easy to get wrong.
 **Check:** read the description cold with the body hidden. If you cannot tell whether to open the file,
 neither can the agent.
 
-## Step 6: verify, do not self-grade
+## Step 5: verify, do not self-grade
 
 Diff old against new. Everything kept is still inline or relocated to a real destination, and only
 deliberate cuts disappear. Compare the result against the target from step 1.
 
-## Step 7: report, do not impose
+## Step 6: report, do not impose
 
-Match the file's existing voice. Show the diff and a before-and-after report: `N to M lines`, the cut
-list, and every TIGHTEN before and after, not just a line-count delta.
+Match the file's existing voice. Show the diff, `N to M lines`, and a table of every sentence that failed
+the test, with the prong it failed, the remedy applied, and its before and after:
+
+| Sentence | Prong | Remedy | After |
+|---|---|---|---|
+| "...stops there: the board owner moves it to Done." | 1. Action | cut | "...stops there." |

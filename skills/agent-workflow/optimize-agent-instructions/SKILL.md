@@ -14,11 +14,7 @@ Agents take instructions from several files: a standing context file read at the
 skills, slash commands, subagent definitions, and the reference files those link to. This pass tightens
 any of them.
 
-An over-long file makes the model ignore the instructions inside it, so every line you add weakens the
-lines already there.
-
-Work the steps in order. Relocating comes before tightening so you do not shorten a block that then
-leaves the file.
+Work the steps in order.
 
 ## Step 1: find the tier and the target
 
@@ -61,34 +57,48 @@ forms look identical in markdown.
 Move a sometimes-needed block out and leave a one-line pointer plus a plain link behind it. The pointer
 has to say when to follow it or the file never gets opened.
 
-Two things never move. A standing directive about what counts as done stays inline, because a lazily
-loaded file may not be in context at the moment it matters. A step's check stays with the step.
+Two things never move. A standing directive about what counts as done stays inline. A step's check
+stays with the step.
 
 **Check:** every link resolves, and every pointer says when to follow it.
 
 ## Step 4: TIGHTEN what remains
 
-Strip rationale that does not change behavior:
+Strip rationale that does not change behavior. The test for every clause: **delete it, then ask whether
+the agent would now do or conclude anything different.** If not, it goes.
 
-> *"Use the pinned toolchain version, because a floating version means two developers get different
-> lockfile output and the diff noise makes review slower for everyone."*
-> becomes **"Use the pinned toolchain version."**
+Agents add justification by habit, so expect it in text an agent wrote, including text you wrote. Check
+clause by clause for these shapes:
 
-**Where the line falls depends on who reads the file.** A context file states rules to someone who
-already agreed with them, so most rationale in it is dead weight. A skill or command teaches a procedure
-to a reader meeting it for the first time. Cut a reason that argues the step is a good idea. Keep a
-reason that says what goes wrong if the agent improvises instead.
+- **A colon or dash tail on a complete rule** that says who else acts or why.
+- **A `so`, `because` or `since` clause that sells the rule:** "Use the pinned toolchain version, because
+  a floating version gives two developers different lockfile output." Keep the first sentence only.
+- **Other people's process:** what a reviewer, an owner, CI or another team does after the agent's part
+  ends. The agent cannot act on it.
+- Cost/benefit math behind a decision already made, "this matters because...", a parenthetical defining
+  a term the author knows, and the file explaining its own purpose.
 
-**Keep the why when the why IS the rule.** Some rules work only because their reasoning blocks a specific
-false conclusion:
+Worked example, from a personal context file:
+
+> *"Only OPS cards go to Done. On every other board a finished card goes to Review and stops there: the
+> board owner moves it to Done. Don't ask me to mark a non-OPS card Done."*
+
+The tail after the colon names who acts next. Delete it and the agent still stops at Review and still
+does not ask, so it goes. "Knowing who does it could help" is the argument that keeps these alive. Name
+what the agent would do differently with it. If you cannot, cut it.
+
+**Keep the why when the why IS the rule.** Some reasoning blocks a specific false conclusion:
 
 > *"Exported HARs redact `Set-Cookie`, so a missing `Set-Cookie` is **not** evidence the server didn't
 > set one. Confirm in devtools."*
 
-Delete that "so" clause and the rule stops working.
+Delete that "so" clause and the agent reads a missing header as proof. The board-owner tail blocks no
+conclusion. This one does.
 
-The test before cutting a clause: **does it change what the agent concludes or does, or does it only
-justify the rule to a human reader?** Justification goes. Corrective reasoning stays.
+**Where the line falls depends on who reads the file.** A context file states rules to someone who
+already agreed with them, so most rationale in it is dead weight. A skill or command teaches a procedure
+to a first-time reader. Cut a reason that argues the step is a good idea. Keep a reason that says what
+goes wrong if the agent improvises instead.
 
 Cut hedges (`generally`, `try to`, `where possible`) that soften an instruction into a suggestion, and a
 second sentence that restates the first.
@@ -101,24 +111,20 @@ so it survives every pass.
 The discriminator: **could a reader still make the mistake this history warns about?** A rejected
 approach stays, because someone will propose it again. These go: a completed migration, a deleted branch
 or flag, a rename, a version no longer supported, "this used to be X", and any line narrating what was
-done in an earlier session. Dated status has a half-life and nobody ever deletes it.
-
-**What it looks like in the wild:** a dash or `because` clause selling the rule, cost/benefit math behind
-a decision already made, "this matters because...", a parenthetical explaining a term the author
-obviously knows, and the file explaining its own purpose to its author.
+done in an earlier session.
 
 **Check:** re-read each shortened line cold. Does it still tell you what to do? A rule whose reasoning
-was load-bearing must keep it. This is the failure mode the pass introduces, so check it explicitly
-rather than assuming shorter is safer.
+was load-bearing must keep it. Then re-read every surviving colon, dash, `so`, `because` and `since` and
+name what the agent would do differently without the clause after it. A clause you cannot name that for
+is still justification.
 
 ## Step 5: fix the description
 
 Skills, commands and subagents only. The agent decides whether to load the body from the description
 alone. Two failures, opposite directions:
 
-- **Too vague to fire.** The body is excellent and never loads. Fix this one first: you get the agent's
-  default behavior and no error, so nothing looks broken.
-- **A paragraph of summary.** Always-loaded rates for prose that duplicates the body.
+- **Too vague to fire.** The body never loads and nothing errors. Fix this one first.
+- **A paragraph of summary.** Prose that duplicates the body, loaded every session.
 
 Write the conditions that should trigger it, in the words a user would actually say, plus what it is not
 for when the boundary is easy to get wrong.

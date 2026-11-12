@@ -1,19 +1,22 @@
 # The report
 
-Keep it under 150 lines. Everything else goes in the appendix in the state folder. Take every number from
-tool output or the run tables, never from memory or a worker's summary: coverage lines from the
-`verify --check coverage` summary; rows, exclusions, slices, spend and the jobs metric from `tally`;
-executed groups and canaries from the run tables. Canary rows never enter `tally`, groups or decisions.
+Keep it under 150 lines and save it in the catalog folder as `report.md`. Everything else goes in the
+appendix. Take every number from tool output or the run tables, never from memory or a worker's summary:
+coverage lines from the `verify --check coverage` summary; rows, exclusions, slices, spend and the jobs
+metric from `tally`; the since-last-run line from `reuse`; executed groups and canaries from the run
+tables. Canary rows never enter `tally`, groups or decisions.
 
 ## Header
 
 ```
 Reinvention audit: <package>  commit <hash>  <date>
-State folder: <path>
+Catalog: <folder in the repo>   Work folder: <path outside the repo>
+Since last run: <reused> reused, <changed> changed, <added> added, <removed> removed | first run
 Coverage: <coverage> over <files> files (<adjusted> adjusted: <reasons>)   PASS | FAIL
 Rows: <total> (<by kind>; <private> private)   Excluded: <total> (<by reason>)
 Slices: <done> done, <blocked> blocked
-Spend: $<total> of $<cap> cap
+Groups: <judged> judged of <candidates> (rest cut by priority); residuals judged <n> of <m>
+Spend: $<total> of $<cap> cap (measured | estimated from tokens)
 Canaries: <n> of 4 behaved as planted   PASS | FAIL
 Executed: <n> of 10 top groups   Network off: yes | no
 Jobs implemented 2+ times: <n> (last run: <n> | first run)
@@ -75,9 +78,12 @@ Drafts for the user to apply. The skill edits nothing.
 - **The cause**, if the repo's agent context file or contributing guide tells contributors to keep
   helpers local to each feature or module: quote that line and draft the replacement.
 
-## Appendix (state folder, not the report)
+## Appendix (catalog folder, not the report)
 
-- Every group with its verdicts and tables.
+- Every group with its verdicts and tables (`verdicts.jsonl`).
+- Removed since last run: the functions `reuse` reported removed, and any group they leave with one
+  member, which is a resolved duplicate. A falling "jobs implemented 2+ times" with resolved groups
+  listed is how a cleanup shows its progress.
 - Per-key unique hits: for each grouping key and optional source, how many confirmed groups only it
   found. A key that finds nothing unique over two runs is a candidate to drop.
 - The domain mapping and its version.

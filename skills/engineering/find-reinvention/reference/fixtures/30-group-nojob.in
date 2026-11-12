@@ -1,0 +1,8 @@
+group
+{"t":"map","value":"no input","domain":"D0009"}
+{"t":"map","value":"timestamp","domain":"D0001"}
+{"t":"nojob","domain":"D0009"}
+{"t":"row","id":"h1.ts:1:useStudies","name":"useStudies","kind":"framework-bound","domain_in":"no input","domain_out":"record"}
+{"t":"row","id":"h2.ts:1:useAccounts","name":"useAccounts","kind":"framework-bound","domain_in":"no input","domain_out":"record"}
+{"t":"row","id":"a.ts:1:formatDate","name":"formatDate","kind":"utility","domain_in":"timestamp","domain_out":"text"}
+{"t":"row","id":"b.ts:1:formatDate","name":"formatDate","kind":"utility","domain_in":"timestamp","domain_out":"text"}

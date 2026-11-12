@@ -1,0 +1,4 @@
+reuse
+{"t":"old","id":"a.ts:1:f","hash":"h1"}
+{"t":"new","id":"a.ts:1:f","hash":"h1"}
+{"t":"new","id":"a.ts:1:f","hash":"h2"}

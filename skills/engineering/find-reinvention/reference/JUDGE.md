@@ -37,9 +37,16 @@ is BLOCKED.
 ## Anchors, residuals and the canonical copy
 
 - **Anchor** (what each member is judged against): the most typical member, the one whose behaviour most
-  members share, preferring the most defensive one on bad input. Pick it from the rows before judging.
+  members share, preferring the most defensive one on bad input. For a part of a split group, pick it
+  from the rows before judging. For any other group the judge may pick it after reading the source, and
+  names it in every verdict line.
 - **Residual**: members judged DIFFERENT from the anchor form a new group and are judged again the same
-  way. Two copies that match each other but not an odd anchor still get compared.
+  way. Two copies that match each other but not an odd anchor still get compared. Add residual groups to
+  the next judge batch rather than a separate pass. If the cap stops you before all residuals are judged,
+  the report header says how many were judged out of how many.
+- **Parts of a split group**: when the cross-part group finds VARIANT or SAME between two parts' anchors,
+  judge the VARIANT and SAME members of each of those parts against the other part's anchor too, so two
+  copies that landed in different parts still meet.
 - **Canonical** (what the report recommends keeping): an existing shared copy if one exists, else the
   member with the most importers, else the most defensive on the tricky inputs, else the one with tests.
   If the repo already depends on a library that does this job, say so next to the canonical copy.

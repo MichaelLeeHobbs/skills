@@ -1,0 +1,5 @@
+verify --check ids
+{"t":"expect","slice":"S0001","id":"a.ts:1:f"}
+{"t":"expect","slice":"S0001","id":"a.ts:5:g"}
+{"t":"got","slice":"S0001","id":"a.ts:5:g"}
+{"t":"got","slice":"S0001","id":"a.ts:1:f"}

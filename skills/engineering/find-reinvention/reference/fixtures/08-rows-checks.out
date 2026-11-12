@@ -1,0 +1,9 @@
+{"t":"problem","id":"a.ts:9:formatDate","kind":"restates_name"}
+{"t":"problem","id":"b.ts:2:toLabel","kind":"bad_verb"}
+{"t":"problem","id":"b.ts:2:toLabel","kind":"empty","field":"invalid"}
+{"t":"problem","id":"b.ts:2:toLabel","kind":"na_not_allowed","field":"empty"}
+{"t":"problem","id":"c.tsx:4:UserCard","kind":"bad_domain_out"}
+{"t":"problem","id":"c.tsx:4:UserCard","kind":"bad_effects"}
+{"t":"problem","id":"d.ts:1:x","kind":"bad_kind"}
+{"t":"problem","id":"d.ts:1:x","kind":"bad_visibility"}
+{"t":"summary","rows":5,"rejected":4,"problems":8}

@@ -1,0 +1,4 @@
+{"t":"problem","kind":"unmapped","value":"user id"}
+{"t":"problem","kind":"unknown_domain","value":"error object"}
+{"t":"problem","kind":"conflict","value":"file size"}
+{"t":"summary","strings":5,"mapped":2,"domains":2,"problems":3}

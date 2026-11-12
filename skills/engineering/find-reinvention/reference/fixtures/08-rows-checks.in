@@ -1,0 +1,6 @@
+verify --check rows
+{"t":"row","id":"a.ts:1:formatBytes","name":"formatBytes","kind":"utility","visibility":"exported","verb":"format","domain_in":"byte count","domain_out":"text","empty":"0 B","invalid":"NaN B","zone_or_units":"binary units up to TB","effects":"pure"}
+{"t":"row","id":"a.ts:9:formatDate","name":"formatDate","kind":"utility","visibility":"private","verb":"format","domain_in":"the date value","domain_out":"text","empty":"dash","invalid":"Invalid Date","zone_or_units":"local zone","effects":"locale"}
+{"t":"row","id":"b.ts:2:toLabel","name":"toLabel","kind":"method","visibility":"private","verb":"prettify","domain_in":"status code","domain_out":"text","empty":"n/a","invalid":"","zone_or_units":"none","effects":"pure"}
+{"t":"row","id":"c.tsx:4:UserCard","name":"UserCard","kind":"component","visibility":"exported","verb":"render","domain_in":"user record","domain_out":"html","empty":"n/a","invalid":"n/a","zone_or_units":"n/a","effects":"dom"}
+{"t":"row","id":"d.ts:1:x","name":"x","kind":"helper","visibility":"public","verb":"guard","domain_in":"nullable string","domain_out":"boolean","empty":"false","invalid":"false","zone_or_units":"none","effects":"pure"}

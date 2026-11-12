@@ -1,0 +1,17 @@
+group
+{"t":"map","value":"iso timestamp","domain":"D0001"}
+{"t":"map","value":"timestamp string","domain":"D0001"}
+{"t":"map","value":"timestamp","domain":"D0001"}
+{"t":"map","value":"user record","domain":"D0002"}
+{"t":"map","value":"order lines","domain":"D0003"}
+{"t":"map","value":"invoice lines","domain":"D0003"}
+{"t":"map","value":"epoch number","domain":"D0006"}
+{"t":"row","id":"a.ts:1:formatDate","name":"formatDate","kind":"utility","domain_in":"iso timestamp","domain_out":"text"}
+{"t":"row","id":"b.tsx:5:formatDate","name":"formatDate","kind":"utility","domain_in":"timestamp string","domain_out":"text"}
+{"t":"row","id":"c.ts:2:formatDay","name":"formatDay","kind":"utility","domain_in":"iso timestamp","domain_out":"text"}
+{"t":"row","id":"d.ts:3:formatDatetime","name":"formatDatetime","kind":"utility","domain_in":"timestamp","domain_out":"text"}
+{"t":"row","id":"e.ts:4:formatDateTime","name":"formatDateTime","kind":"method","domain_in":"timestamp","domain_out":"text"}
+{"t":"row","id":"f.tsx:1:UserCard","name":"UserCard","kind":"component","domain_in":"user record","domain_out":"markup"}
+{"t":"row","id":"g.ts:9:getTotal","name":"getTotal","kind":"utility","domain_in":"order lines","domain_out":"number"}
+{"t":"row","id":"h.ts:2:total","name":"total","kind":"utility","domain_in":"invoice lines","domain_out":"number"}
+{"t":"row","id":"k.ts:3:toDate","name":"toDate","kind":"utility","domain_in":"epoch number","domain_out":"date"}

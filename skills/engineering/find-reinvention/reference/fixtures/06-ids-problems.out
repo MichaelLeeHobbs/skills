@@ -1,0 +1,4 @@
+{"t":"problem","slice":"S0001","id":"a.ts:1:f","kind":"duplicate"}
+{"t":"problem","slice":"S0001","id":"a.ts:5:g","kind":"missing"}
+{"t":"problem","slice":"S0001","id":"a.ts:7:h","kind":"extra"}
+{"t":"summary","expected":3,"got":4,"problems":3}

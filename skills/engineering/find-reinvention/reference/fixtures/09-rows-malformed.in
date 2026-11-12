@@ -1,0 +1,2 @@
+verify --check rows
+{"t":"row","id":"a.ts:1:f","name":"f","kind":"utility","visibility":"exported","verb":"format","domain_in":"byte count","domain_out":"text","empty":"0 B","invalid":"NaN B","zone_or_units":"none"}

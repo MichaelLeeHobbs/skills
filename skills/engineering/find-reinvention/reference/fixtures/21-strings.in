@@ -1,0 +1,5 @@
+strings
+{"t":"row","id":"a","domain_in":"timestamp"}
+{"t":"row","id":"b","domain_in":" timestamp "}
+{"t":"row","id":"c","domain_in":"byte count"}
+{"t":"row","id":"d","domain_in":"  "}

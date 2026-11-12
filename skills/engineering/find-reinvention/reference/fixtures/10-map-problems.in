@@ -1,0 +1,15 @@
+verify --check map
+{"t":"domain","id":"D0001","name":"timestamp"}
+{"t":"domain","id":"D0002","name":"byte count"}
+{"t":"string","value":"iso date string"}
+{"t":"string","value":"byte count"}
+{"t":"string","value":"file size"}
+{"t":"string","value":"error object"}
+{"t":"string","value":"user id"}
+{"t":"string","value":"iso date string"}
+{"t":"map","value":"iso date string","domain":"D0001"}
+{"t":"map","value":"byte count","domain":"D0002"}
+{"t":"map","value":"file size","domain":"D0002"}
+{"t":"map","value":"file size","domain":"D0001"}
+{"t":"map","value":"error object","domain":"D0009"}
+{"t":"map","value":"not a seen string","domain":"D0001"}

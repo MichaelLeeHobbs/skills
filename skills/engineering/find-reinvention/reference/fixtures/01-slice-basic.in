@@ -1,0 +1,9 @@
+slice --max-bytes 100
+{"t":"file","path":"src/b.ts","bytes":40}
+{"t":"file","path":"src/a.ts","bytes":50}
+{"t":"file","path":"src/c.ts","bytes":30}
+{"t":"file","path":"src/empty.ts","bytes":10}
+{"t":"row","id":"src/b.ts:3:fmtB","path":"src/b.ts"}
+{"t":"row","id":"src/a.ts:1:fmtA","path":"src/a.ts"}
+{"t":"row","id":"src/a.ts:9:helperA","path":"src/a.ts"}
+{"t":"row","id":"src/c.ts:2:fmtC","path":"src/c.ts"}

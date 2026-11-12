@@ -1,0 +1,4 @@
+{"t":"group","id":"G0001","key":"job:D0001>text","members":["a.ts:1:formatDate","b.tsx:5:formatDate","c.ts:2:formatDay","d.ts:3:formatDatetime","e.ts:4:formatDateTime"]}
+{"t":"group","id":"G0002","key":"job:D0003>number","members":["g.ts:9:getTotal","h.ts:2:total"]}
+{"t":"group","id":"G0003","key":"stem:date","members":["a.ts:1:formatDate","b.tsx:5:formatDate","k.ts:3:toDate"]}
+{"t":"summary","rows":9,"eligible":8,"groups":3,"stopstems":0}

@@ -1,0 +1,7 @@
+{"t":"rows","total":0,"by_kind":{},"by_visibility":{}}
+{"t":"excluded","total":0,"by_reason":{}}
+{"t":"slices","done":0,"blocked":0}
+{"t":"verdicts","SAME":0,"VARIANT":0,"DIFFERENT":0}
+{"t":"evidence","CONFIRMED":0,"REFUTED":0,"BLOCKED":0}
+{"t":"jobs","reinvented":0}
+{"t":"spend","total_cents":3000,"cap_cents":2500,"over_cap":true,"by_phase":{"judge":3000}}

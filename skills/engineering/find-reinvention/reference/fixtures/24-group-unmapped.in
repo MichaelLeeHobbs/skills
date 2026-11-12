@@ -1,0 +1,5 @@
+group
+{"t":"map","value":"timestamp","domain":"D0001"}
+{"t":"row","id":"a.ts:1:f","name":"f","kind":"utility","domain_in":"timestamp","domain_out":"text"}
+{"t":"row","id":"b.ts:1:g","name":"g","kind":"utility","domain_in":"money","domain_out":"text"}
+{"t":"row","id":"c.tsx:1:C","name":"C","kind":"component","domain_in":"user record","domain_out":"markup"}

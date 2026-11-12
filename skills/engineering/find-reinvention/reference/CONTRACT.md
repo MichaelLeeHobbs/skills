@@ -10,6 +10,7 @@ has, then run every fixture in [fixtures/](fixtures/). Any failing fixture stops
 <tool> slice [--max-bytes N]
 <tool> strings
 <tool> group [--max-stem N]
+<tool> reuse
 <tool> verify --check ids
 <tool> verify --check rows
 <tool> verify --check map
@@ -33,7 +34,7 @@ any other argument left over.
 
 | Code | Meaning |
 |---|---|
-| 0 | Input valid, and the check found no problem (always 0 for valid `slice`, `strings`, `group` and `tally` input) |
+| 0 | Input valid, and the check found no problem (always 0 for valid `slice`, `strings`, `group`, `reuse` and `tally` input) |
 | 1 | Input valid, and the check found at least one problem or failed its threshold |
 | 2 | Usage error or malformed input. Output is exactly one error record |
 
@@ -116,6 +117,8 @@ records are valid input for `verify --check map`.
 Input:
 - `{"t":"row","id":name,"name":name,"kind":str,"domain_in":str,"domain_out":str}`
 - `{"t":"map","value":name,"domain":name}`: the saved domain mapping.
+- `{"t":"nojob","domain":name}`: a domain ID whose rows get no job key (domains meaning "no input",
+  whose members share nothing but an empty parameter list). Optional, repeatable.
 
 Output: `group` records, then `stopstem` records, then `summary`. The `group` records are valid input for
 `verify --check groups`.
@@ -124,6 +127,24 @@ Output: `group` records, then `stopstem` records, then `summary`. The `group` re
 {"t":"stopstem","stem":"date","rows":3}
 {"t":"summary","rows":9,"eligible":8,"groups":2,"stopstems":1}
 ```
+
+### reuse
+
+Input:
+- `{"t":"old","id":name,"hash":name}`: a row from the saved catalog.
+- `{"t":"new","id":name,"hash":name}`: a row from this run's inventory.
+
+IDs have the form `path:line:name`.
+
+Output: one record per new row, then one `removed` record per old row that is gone, then `summary`.
+```
+{"t":"reuse","id":"a.ts:12:formatDate","from":"a.ts:10:formatDate"}
+{"t":"changed","id":"a.ts:22:formatBytes","from":"a.ts:20:formatBytes"}
+{"t":"added","id":"e.ts:1:slugify"}
+{"t":"removed","id":"c.ts:1:legacy"}
+{"t":"summary","old":4,"new":5,"reused":3,"changed":1,"added":1,"removed":1}
+```
+A `reuse` row keeps its saved description. `changed` and `added` rows are described again.
 
 ### verify --check ids
 

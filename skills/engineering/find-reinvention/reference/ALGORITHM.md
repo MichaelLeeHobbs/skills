@@ -8,7 +8,7 @@ the disagreement is a bug to report.
 1. Parse the arguments. On any usage problem, print `{"t":"error","line":0,"reason":"usage"}`, exit 2.
 2. Read every input line (CONTRACT.md "Input lines"). For each line, in order, stop at the first failure
    and print one error record with that line's number, then exit 2:
-   1. Not valid JSON: `bad_json`.
+   1. Not valid UTF-8 (a byte order mark included) or not valid JSON: `bad_json`.
    2. Not an object: `not_object`.
    3. `t` absent, not a string, or not accepted by this subcommand or check: `unknown_type`.
    4. For each required field of that type, in the order CONTRACT.md lists them: absent is
@@ -69,7 +69,9 @@ Trim every `map` `value` before comparing it. Semantic checks: a second `row` wi
 trimmed `domain_in` equals no trimmed `map` `value` is `unmapped`.
 
 1. **Eligible rows** have `kind` `utility`, `method` or `framework-bound`.
-2. **Job key** of an eligible row: `job:` + the mapped domain ID + `>` + its `domain_out`.
+2. **Job key** of an eligible row: `job:` + the mapped domain ID + `>` + its `domain_out`. A row whose
+   mapped domain ID appears in a `nojob` record gets no job key; it stays eligible and keeps its stem
+   key.
 3. **Stem key**: take the token list of `name`. If it has two or more tokens and the first is one of
    `get`, `format`, `to`, `is`, `use`, `handle`, `on`, drop the first. Join the rest with nothing
    between them. The key is `stem:` + that string. (`formatDatetime` and `formatDateTime` both give
@@ -84,6 +86,27 @@ trimmed `domain_in` equals no trimmed `map` `value` is `unmapped`.
 7. Print each stop stem as `stopstem` with `stem` (without the `stem:` prefix) and `rows` (its member
    count), sorted by stem.
 8. Print `summary`: `rows` (all row records), `eligible`, `groups`, `stopstems`.
+
+## reuse
+
+Semantic checks: an `old` or `new` `id` with fewer than two `:` characters is `bad_field`; a second
+`old` with the same `id` is `duplicate`; a second `new` with the same `id` is `duplicate`.
+
+Split each ID into path, line and name at its last two `:` characters.
+
+1. For each new row, in sorted ID order, print exactly one of:
+   1. `reuse`, when some old row has the same `hash`. `from` is the old row with the same `id` if one
+      has that hash, otherwise the smallest such old ID.
+   2. `changed`, when no old row has its hash, but an old row has the same path and name and that old
+      row's hash belongs to no new row. `from` is the smallest such old ID.
+   3. `added`, otherwise.
+2. Print `removed` for each old row, in sorted ID order, whose hash belongs to no new row and that is no
+   `changed` record's `from`.
+3. Print `summary`: `old` and `new` (record counts), then the counts of `reuse` (as `reused`), `changed`,
+   `added` and `removed` records.
+
+Two new rows may name the same `from`: identical copies of one function both reuse its description, and
+two rewritten functions with the same path and name (overloads) may both be `changed` from one old row.
 
 ## verify --check ids
 

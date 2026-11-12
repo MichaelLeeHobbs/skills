@@ -28,8 +28,10 @@ reported as rows, and every one shows up in the report header as a count.
 **Re-exports** (`export { formatBytes } from './format'`) are not rows. Record them as `alias_of` the
 row they re-export, and count them as importers of it.
 
-For every row record: `id` (`path:line:name`), `path`, `line`, `name`, `kind`, `visibility`, a content
-hash of the function's source, `importers` (count) and `imported_by` (files).
+For every row record: `id` (`path:line:name`), `path`, `line`, `end` (last line), `name`, `kind`,
+`visibility`, `signature` (the parameter list and return type as written, whitespace collapsed; step 4
+splits oversize groups by it), a content hash of the function's source, `importers` (count) and
+`imported_by` (files).
 
 ## Coverage count pattern
 
@@ -45,8 +47,10 @@ TypeScript and JavaScript, count a line when it matches any of:
 - `^\s*(export\s+)?const\s+[A-Za-z_$][\w$]*\s*=\s*(React\.)?(useCallback|memo|forwardRef)\(`
 
 Do not count `useMemo` consts: they hold values, not callables. Do not count a matching line that ends
-in `;` with no body, such as an overload signature or a `declare function` line. Class methods are not in the pattern, so
-files with classes show parser surplus, which the check allows.
+in `;` with no body, such as an overload signature or a `declare function` line. Class methods are not
+in the pattern, so files with classes show parser surplus, which the check allows. The pattern also
+matches example code inside comments; a file short by one or two for that reason needs no adjustment
+while the total passes.
 
 Python: `^\s*(async\s+)?def\s+\w+`. It also matches `def` inside docstrings and multi-line strings; a
 file where that happens is adjusted with that reason.
@@ -62,7 +66,7 @@ rejected.
 | Slot | Content |
 |---|---|
 | `verb` | `format`, `parse`, `convert`, `validate`, `check`, `compare`, `sort`, `filter`, `group`, `map`, `merge`, `build`, `extract`, `normalize`, `compute`, `count`, `find`, `generate`, `render`, `wrap`, `guard` |
-| `domain_in` | what the input **means**, in a short noun phrase: "byte count", "timestamp", "error of unknown shape". Not its type, and not the function's name reworded. If the function takes one parameter object, describe the value it reads from it: a grid cell formatter taking `{ value }` describes `value` |
+| `domain_in` | what the input **means**, in two to four words, the noun only: "byte count", "timestamp", "error of unknown shape". No clauses about the caller or the purpose: those make every string unique and the mapping step unworkable. Not its type, and not the function's name reworded. If the function takes one parameter object, describe the value it reads from it: a grid cell formatter taking `{ value }` describes `value` |
 | `domain_out` | `text`, `number`, `boolean`, `date`, `collection`, `record`, `markup`, `none` |
 | `empty` | what it returns or does for null, undefined, empty string or zero |
 | `invalid` | what it returns or does for input of the right type that makes no sense |

@@ -1,0 +1,15 @@
+verify --check captures
+{"t":"screen","screen":"home","route":"/"}
+{"t":"screen","screen":"orders","route":"/orders"}
+{"t":"viewport","width":1440}
+{"t":"variant","variant":"base"}
+{"t":"routes","count":3}
+{"t":"exclude","route":"/logout","reason":"side-effect"}
+{"t":"capture","screen":"home","viewport":1440,"variant":"base","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"text","cap":"home@1440/base","site":"h1","owner":"h1","tag":"h1","aria":"","ctx":"","size":2400,"weight":400,"line":2000,"canary":"","n":1}
+{"t":"capture","screen":"orders","viewport":1440,"variant":"base","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"text","cap":"orders@1440/base","site":"p","owner":"p","tag":"p","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":1}
+{"t":"capture","screen":"orders","viewport":1440,"variant":"canary-logged-out","width":1440,"auth":false,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"end","cap":"home@1440/base","text":1,"box":0,"skip":0,"hashed":0}
+{"t":"end","cap":"orders@1440/base","text":1,"box":0,"skip":0,"hashed":0}
+{"t":"end","cap":"orders@1440/canary-logged-out","text":0,"box":0,"skip":0,"hashed":0}

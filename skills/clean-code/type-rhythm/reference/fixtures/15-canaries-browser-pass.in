@@ -1,0 +1,27 @@
+verify --check canaries
+{"t":"mode","mode":"browser"}
+{"t":"scale","kind":"size","value":1200,"viewport":0,"roles":["caption","label"]}
+{"t":"scale","kind":"size","value":1400,"viewport":0,"roles":["body","label"]}
+{"t":"scale","kind":"size","value":1600,"viewport":0,"roles":["body"]}
+{"t":"scale","kind":"size","value":2400,"viewport":0,"roles":["heading"]}
+{"t":"scale","kind":"weight","value":400,"viewport":0,"roles":[]}
+{"t":"scale","kind":"weight","value":700,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":400,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":800,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":1600,"viewport":0,"roles":[]}
+{"t":"viewport","width":1440}
+{"t":"capture","screen":"orders","viewport":1440,"variant":"canary-elements","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"text","cap":"orders@1440/canary-elements","site":"main#app label","owner":"main#app label","tag":"label","aria":"","ctx":"","size":1300,"weight":400,"line":2000,"canary":"c1","n":1}
+{"t":"text","cap":"orders@1440/canary-elements","site":"main#app h2","owner":"main#app h2","tag":"h2","aria":"","ctx":"","size":2400,"weight":700,"line":2000,"canary":"c2","n":1}
+{"t":"text","cap":"orders@1440/canary-elements","site":"main#app label","owner":"main#app div","tag":"label","aria":"","ctx":"","size":1300,"weight":400,"line":2000,"canary":"c3","n":1}
+{"t":"box","cap":"orders@1440/canary-elements","site":"main#app div","family":"padding","value":600,"border":0,"auto":false,"canary":"c4","n":4}
+{"t":"skip","cap":"orders@1440/canary-elements","reason":"hidden","canary":"c5","n":1}
+{"t":"box","cap":"orders@1440/canary-elements","site":"main#app div","family":"margin","value":10000,"border":0,"auto":true,"canary":"c7","n":2}
+{"t":"text","cap":"orders@1440/canary-elements","site":"main#app p#mrn-#","owner":"main#app p#mrn-#","tag":"p","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"c8","n":1}
+{"t":"text","cap":"orders@1440/canary-elements","site":"main#app p.intro","owner":"main#app p.intro","tag":"p","aria":"","ctx":"","size":1600,"weight":400,"line":2000,"canary":"","n":1}
+{"t":"capture","screen":"orders","viewport":1440,"variant":"canary-logged-out","width":1440,"auth":false,"login":true,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"capture","screen":"nope","viewport":1440,"variant":"canary-bad-route","width":1440,"auth":true,"login":false,"notfound":true,"url_ok":false,"main":true,"fonts":true,"busy":false}
+{"t":"text","cap":"nope@1440/canary-bad-route","site":"h1","owner":"h1","tag":"h1","aria":"","ctx":"","size":2400,"weight":400,"line":2000,"canary":"","n":1}
+{"t":"end","cap":"orders@1440/canary-elements","text":5,"box":2,"skip":1,"hashed":0}
+{"t":"end","cap":"orders@1440/canary-logged-out","text":0,"box":0,"skip":0,"hashed":0}
+{"t":"end","cap":"nope@1440/canary-bad-route","text":1,"box":0,"skip":0,"hashed":0}

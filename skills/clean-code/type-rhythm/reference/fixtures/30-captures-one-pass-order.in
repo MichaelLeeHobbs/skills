@@ -1,0 +1,9 @@
+verify --check captures
+{"t":"screen","screen":"home","route":"/"}
+{"t":"screen","screen":"orders","route":"/orders"}
+{"t":"viewport","width":1440}
+{"t":"variant","variant":"base"}
+{"t":"routes","count":3}
+{"t":"exclude","route":"/logout","reason":"side-effect"}
+{"t":"capture","screen":"ghost","viewport":1440,"variant":"base","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"screen","screen":"home","route":"/home"}

@@ -1,0 +1,9 @@
+{"t":"role","role":"body","elements":94,"caps":1,"screens":1,"by_source":{"tag":94},"on_bp":"1.0000"}
+{"t":"role","role":"unassigned","elements":6,"caps":1,"screens":1,"by_source":{"none":6},"on_bp":"1.0000"}
+{"t":"value","role":"body","prop":"size","value":1400,"status":"on","nearest":1400,"elements":94,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"body","prop":"weight","value":400,"status":"unscaled","nearest":-1,"elements":94,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"body","prop":"line","value":2000,"status":"unscaled","nearest":-1,"elements":94,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"unassigned","prop":"size","value":1400,"status":"on","nearest":1400,"elements":6,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"unassigned","prop":"weight","value":400,"status":"unscaled","nearest":-1,"elements":6,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"unassigned","prop":"line","value":2000,"status":"unscaled","nearest":-1,"elements":6,"caps":1,"screens":1,"owners":1}
+{"t":"summary","mode":"browser","caps":1,"screens":1,"text":100,"boxes":0,"skipped":{"excluded":0,"hidden":0,"icon":0},"sizes_in_use":1,"sizes_off":0,"scale_sizes":1,"weights_in_use":1,"weights_off":0,"scale_weights":0,"space_in_use":0,"space_off":0,"scale_space":0,"unassigned_bp":"0.0600","gate":"PASS"}

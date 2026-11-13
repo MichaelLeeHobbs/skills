@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>type-rhythm collector fixture</title>
+<style>
+html { font-size: 16px; }
+* { margin: 0; padding: 0; border: 0; }
+body { font-family: sans-serif; font-size: 16px; line-height: 24px; font-weight: 400; }
+.row { display: flex; gap: 12px; width: 400px; }
+.icon { font-family: "Fixture Icons", sans-serif; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+</style>
+</head>
+<body>
+<div id="app">
+<main>
+<h1 class="title" style="font-size: 32px; line-height: 40px; font-weight: 700; margin-bottom: 16px">Heading</h1>
+<p class="intro css-1x2y3z Text_body__a1b2c" style="font-size: 15px; margin-bottom: 10px">Intro</p>
+<div class="card" style="font-size: 18px; padding: 7px; border: 1px solid black">
+<p>Inherits the card size</p>
+<span class="meta">Card meta</span>
+</div>
+<ul><li id="user-48213"><span>Item <strong>bold</strong></span></li></ul>
+<div role="heading"><span>Aria heading</span></div>
+<div class="row">
+<label>Name</label>
+<button style="font-size: 14px; font-weight: 600; line-height: 20px; padding: 4px 8px">Save</button>
+</div>
+<div style="width: 400px"><div class="centered" style="width: 200px; height: 10px; margin: 0 auto"></div></div>
+<div class="pull" style="margin-top: -4px">Loose text</div>
+<p data-testid="row-jane@x.com">Email test id</p>
+<p id="item-0f3a9c22e" class="this-is-a-very-long-class-name-for-testing col-1234">Hex id</p>
+<p style="visibility: hidden">Invisible</p>
+<div style="opacity: 0"><p>Faded</p></div>
+<span class="sr-only">Screen reader only</span>
+<p style="display: none">Gone</p>
+<div data-exclude="yes"><p>Third party</p></div>
+<span class="icon">Menu</span>
+<small style="font-size: 12px">Fine print</small>
+<label data-type-rhythm-canary="c1" style="font-size: 13px">Canary</label>
+</main>
+</div>
+</body>
+</html>

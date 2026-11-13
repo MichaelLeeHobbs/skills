@@ -1,0 +1,49 @@
+{"t":"role","role":"heading","elements":7,"caps":2,"screens":2,"by_source":{"map":4,"tag":3},"on_bp":"1.0000"}
+{"t":"role","role":"body","elements":19,"caps":3,"screens":2,"by_source":{"context":2,"tag":17},"on_bp":"0.1052"}
+{"t":"role","role":"label","elements":1,"caps":1,"screens":1,"by_source":{"tag":1},"on_bp":"1.0000"}
+{"t":"role","role":"caption","elements":1,"caps":1,"screens":1,"by_source":{"tag":1},"on_bp":"0.0000"}
+{"t":"role","role":"unassigned","elements":1,"caps":1,"screens":1,"by_source":{"none":1},"on_bp":"0.0000"}
+{"t":"value","role":"heading","prop":"size","value":2000,"status":"on","nearest":2000,"elements":5,"caps":2,"screens":2,"owners":2}
+{"t":"value","role":"heading","prop":"size","value":2400,"status":"on","nearest":2400,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"heading","prop":"size","value":4800,"status":"excepted","nearest":-1,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"heading","prop":"weight","value":600,"status":"on","nearest":600,"elements":4,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"heading","prop":"weight","value":700,"status":"excepted","nearest":-1,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"heading","prop":"weight","value":700,"status":"on","nearest":700,"elements":2,"caps":2,"screens":2,"owners":2}
+{"t":"value","role":"heading","prop":"line","value":-1,"status":"excepted","nearest":-1,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"heading","prop":"line","value":-1,"status":"normal","nearest":-1,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"heading","prop":"line","value":2400,"status":"on","nearest":2400,"elements":5,"caps":2,"screens":2,"owners":2}
+{"t":"value","role":"body","prop":"size","value":1400,"status":"on","nearest":1400,"elements":2,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"body","prop":"size","value":1500,"status":"off","nearest":1400,"elements":17,"caps":3,"screens":2,"owners":2}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"table.grid td","owner":"table.grid","elements":10,"caps":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"main#app p.intro","owner":"main#app p.intro","elements":7,"caps":3}
+{"t":"value","role":"body","prop":"weight","value":400,"status":"on","nearest":400,"elements":19,"caps":3,"screens":2,"owners":3}
+{"t":"value","role":"body","prop":"line","value":2000,"status":"on","nearest":2000,"elements":12,"caps":2,"screens":2,"owners":2}
+{"t":"value","role":"body","prop":"line","value":2400,"status":"on","nearest":2400,"elements":7,"caps":3,"screens":2,"owners":1}
+{"t":"value","role":"label","prop":"size","value":1400,"status":"on","nearest":1400,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"label","prop":"weight","value":600,"status":"on","nearest":600,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"label","prop":"line","value":2000,"status":"on","nearest":2000,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"caption","prop":"size","value":1400,"status":"wrong-role","nearest":1200,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"site","role":"caption","prop":"size","value":1400,"status":"wrong-role","site":"main#app small.note","owner":"main#app small.note","elements":1,"caps":1}
+{"t":"value","role":"caption","prop":"weight","value":400,"status":"on","nearest":400,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"caption","prop":"line","value":2000,"status":"on","nearest":2000,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"unassigned","prop":"size","value":1300,"status":"off","nearest":1200,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"site","role":"unassigned","prop":"size","value":1300,"status":"off","site":"main#app div.loose","owner":"main#app div.loose","elements":1,"caps":1}
+{"t":"value","role":"unassigned","prop":"weight","value":500,"status":"off","nearest":400,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"site","role":"unassigned","prop":"weight","value":500,"status":"off","site":"main#app div.loose","owner":"main#app div.loose","elements":1,"caps":1}
+{"t":"value","role":"unassigned","prop":"line","value":2100,"status":"off","nearest":2000,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"site","role":"unassigned","prop":"line","value":2100,"status":"off","site":"main#app div.loose","owner":"main#app div.loose","elements":1,"caps":1}
+{"t":"space","family":"margin","value":-400,"status":"negative","nearest":-1,"elements":1,"caps":1,"screens":1}
+{"t":"space","family":"margin","value":800,"status":"on","nearest":800,"elements":4,"caps":1,"screens":1}
+{"t":"space","family":"margin","value":10000,"status":"auto","nearest":-1,"elements":2,"caps":1,"screens":1}
+{"t":"space","family":"padding","value":700,"status":"compensated","nearest":800,"elements":2,"caps":1,"screens":1}
+{"t":"space","family":"padding","value":1000,"status":"off","nearest":800,"elements":10,"caps":2,"screens":2}
+{"t":"spacesite","family":"padding","value":1000,"site":"div.card","elements":8,"caps":2}
+{"t":"spacesite","family":"padding","value":1000,"site":"aside.panel","elements":2,"caps":1}
+{"t":"space","family":"padding","value":2400,"status":"excepted","nearest":-1,"elements":4,"caps":1,"screens":1}
+{"t":"space","family":"gap","value":1600,"status":"on","nearest":1600,"elements":1,"caps":1,"screens":1}
+{"t":"owner","owner":"main#app p.intro","sizes":[1500],"elements":7,"caps":3,"screens":2}
+{"t":"owner","owner":"table.grid","sizes":[1500],"elements":10,"caps":1,"screens":1}
+{"t":"owner","owner":"main#app div.loose","sizes":[1300],"elements":1,"caps":1,"screens":1}
+{"t":"owner","owner":"main#app small.note","sizes":[1400],"elements":1,"caps":1,"screens":1}
+{"t":"stale","site":"footer.legal","reason":"legal small print"}
+{"t":"summary","mode":"browser","caps":3,"screens":2,"text":29,"boxes":24,"skipped":{"excluded":3,"hidden":2,"icon":1},"sizes_in_use":6,"sizes_off":2,"scale_sizes":5,"weights_in_use":4,"weights_off":1,"scale_weights":3,"space_in_use":6,"space_off":1,"scale_space":4,"unassigned_bp":"0.0344","gate":"PASS"}

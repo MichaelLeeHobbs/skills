@@ -1,0 +1,10 @@
+verify --check canaries
+{"t":"scale","kind":"size","value":1200,"viewport":0,"roles":["caption","label"]}
+{"t":"scale","kind":"size","value":1400,"viewport":0,"roles":["body","label"]}
+{"t":"scale","kind":"size","value":1600,"viewport":0,"roles":["body"]}
+{"t":"scale","kind":"size","value":2400,"viewport":0,"roles":["heading"]}
+{"t":"scale","kind":"weight","value":400,"viewport":0,"roles":[]}
+{"t":"scale","kind":"weight","value":700,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":400,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":800,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":1600,"viewport":0,"roles":[]}

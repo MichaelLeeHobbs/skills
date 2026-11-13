@@ -1,0 +1,12 @@
+{"t":"canary","cap":"nope@1440/canary-bad-route","id":"bad-route","pass":true,"got":"notfound,wrong_page"}
+{"t":"canary","cap":"orders@1440/canary-elements","id":"capture","pass":true,"got":"valid"}
+{"t":"canary","cap":"orders@1440/canary-elements","id":"c1","pass":true,"got":"label off"}
+{"t":"canary","cap":"orders@1440/canary-elements","id":"c2","pass":true,"got":"heading on"}
+{"t":"canary","cap":"orders@1440/canary-elements","id":"c3","pass":true,"got":"label off other-owner"}
+{"t":"canary","cap":"orders@1440/canary-elements","id":"c4","pass":true,"got":"padding off"}
+{"t":"canary","cap":"orders@1440/canary-elements","id":"c5","pass":true,"got":"skip hidden"}
+{"t":"canary","cap":"orders@1440/canary-elements","id":"c6","pass":true,"got":"absent"}
+{"t":"canary","cap":"orders@1440/canary-elements","id":"c7","pass":true,"got":"margin auto"}
+{"t":"canary","cap":"orders@1440/canary-elements","id":"c8","pass":true,"got":"normalised"}
+{"t":"canary","cap":"orders@1440/canary-logged-out","id":"logged-out","pass":true,"got":"auth_lost,login,empty"}
+{"t":"summary","mode":"browser","entries":11,"passed":11,"failed":0}

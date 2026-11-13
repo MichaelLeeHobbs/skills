@@ -1,0 +1,2 @@
+verify --check captures
+{"t":"capture","screen":"a","viewport":1440,"variant":"canary-foo","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}

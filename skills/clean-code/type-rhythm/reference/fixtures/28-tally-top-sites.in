@@ -1,0 +1,17 @@
+tally
+{"t":"mode","mode":"browser"}
+{"t":"scale","kind":"size","value":1400,"viewport":0,"roles":[]}
+{"t":"capture","screen":"a","viewport":1440,"variant":"base","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"text","cap":"a@1440/base","site":"div.b","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.Zed","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.alpha","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.c","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.d","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.e","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.f","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.g","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.h","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.i","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.most","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":5}
+{"t":"text","cap":"a@1440/base","site":"div.j","owner":"main","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"end","cap":"a@1440/base","text":12,"box":0,"skip":0,"hashed":0}

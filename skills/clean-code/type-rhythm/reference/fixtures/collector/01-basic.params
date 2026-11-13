@@ -1,0 +1,1 @@
+{"screen":"fixture","viewport":800,"variant":"base","auth":"#app","login":"#login-form","notfound":"#not-found","route":".*","exclude":["[data-exclude]"]}

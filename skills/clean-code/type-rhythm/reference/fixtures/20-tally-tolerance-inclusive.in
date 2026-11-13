@@ -1,0 +1,13 @@
+tally
+{"t":"mode","mode":"browser"}
+{"t":"scale","kind":"size","value":1400,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":800,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":1200,"viewport":0,"roles":[]}
+{"t":"capture","screen":"a","viewport":1440,"variant":"base","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"text","cap":"a@1440/base","site":"p.a","owner":"p.a","tag":"p","aria":"","ctx":"","size":1405,"weight":400,"line":2000,"canary":"","n":1}
+{"t":"text","cap":"a@1440/base","site":"p.b","owner":"p.b","tag":"p","aria":"","ctx":"","size":1406,"weight":400,"line":2000,"canary":"","n":1}
+{"t":"text","cap":"a@1440/base","site":"p.c","owner":"p.c","tag":"p","aria":"","ctx":"","size":1395,"weight":400,"line":2000,"canary":"","n":1}
+{"t":"text","cap":"a@1440/base","site":"p.d","owner":"p.d","tag":"p","aria":"","ctx":"","size":1394,"weight":400,"line":-1,"canary":"","n":1}
+{"t":"box","cap":"a@1440/base","site":"div.a","family":"margin","value":1000,"border":0,"auto":false,"canary":"","n":1}
+{"t":"box","cap":"a@1440/base","site":"div.b","family":"margin","value":1005,"border":0,"auto":false,"canary":"","n":1}
+{"t":"end","cap":"a@1440/base","text":4,"box":2,"skip":0,"hashed":0}

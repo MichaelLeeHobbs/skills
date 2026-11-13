@@ -1,0 +1,8 @@
+{"t":"role","role":"heading","elements":2,"caps":2,"screens":1,"by_source":{"tag":2},"on_bp":"0.5000"}
+{"t":"value","role":"heading","prop":"size","value":1800,"status":"off","nearest":1600,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"site","role":"heading","prop":"size","value":1800,"status":"off","site":"h1","owner":"h1","elements":1,"caps":1}
+{"t":"value","role":"heading","prop":"size","value":1800,"status":"on","nearest":1800,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"heading","prop":"weight","value":400,"status":"unscaled","nearest":-1,"elements":2,"caps":2,"screens":1,"owners":1}
+{"t":"value","role":"heading","prop":"line","value":2000,"status":"unscaled","nearest":-1,"elements":2,"caps":2,"screens":1,"owners":1}
+{"t":"owner","owner":"h1","sizes":[1800],"elements":1,"caps":1,"screens":1}
+{"t":"summary","mode":"browser","caps":2,"screens":1,"text":2,"boxes":0,"skipped":{"excluded":0,"hidden":0,"icon":0},"sizes_in_use":1,"sizes_off":1,"scale_sizes":3,"weights_in_use":1,"weights_off":0,"scale_weights":0,"space_in_use":0,"space_off":0,"scale_space":0,"unassigned_bp":"0.0000","gate":"PASS"}

@@ -1,0 +1,4 @@
+{"t":"capture","screen":"orders","viewport":1440,"variant":"base","width":800,"auth":false,"login":true,"notfound":false,"url_ok":true,"main":false,"fonts":true,"busy":true}
+{"t":"text","cap":"orders@1440/base","site":"div#login-form h2","owner":"div#login-form h2","tag":"h2","aria":"","ctx":"","size":2000,"weight":700,"line":2800,"canary":"","n":1}
+{"t":"text","cap":"orders@1440/base","site":"div#login-form label","owner":"body","tag":"label","aria":"","ctx":"","size":1600,"weight":400,"line":2400,"canary":"","n":1}
+{"t":"end","cap":"orders@1440/base","text":2,"box":0,"skip":0,"hashed":0}

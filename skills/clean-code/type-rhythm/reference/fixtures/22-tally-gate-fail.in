@@ -1,0 +1,7 @@
+tally
+{"t":"mode","mode":"browser"}
+{"t":"scale","kind":"size","value":1400,"viewport":0,"roles":[]}
+{"t":"capture","screen":"a","viewport":1440,"variant":"base","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"text","cap":"a@1440/base","site":"p","owner":"p","tag":"p","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":94}
+{"t":"text","cap":"a@1440/base","site":"div.x","owner":"div.x","tag":"div","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":6}
+{"t":"end","cap":"a@1440/base","text":2,"box":0,"skip":0,"hashed":0}

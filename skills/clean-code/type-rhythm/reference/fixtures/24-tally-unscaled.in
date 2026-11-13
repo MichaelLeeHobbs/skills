@@ -1,0 +1,8 @@
+tally
+{"t":"mode","mode":"static"}
+{"t":"capture","screen":"app.css","viewport":0,"variant":"static","width":0,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"text","cap":"app.css@0/static","site":"h1.title","owner":"h1.title","tag":"h1","aria":"","ctx":"","size":3200,"weight":700,"line":2000,"canary":"","n":1}
+{"t":"text","cap":"app.css@0/static","site":"p","owner":"p","tag":"p","aria":"","ctx":"","size":1500,"weight":400,"line":-1,"canary":"","n":1}
+{"t":"box","cap":"app.css@0/static","site":"div.card","family":"padding","value":1200,"border":0,"auto":false,"canary":"","n":1}
+{"t":"box","cap":"app.css@0/static","site":"div.card","family":"padding","value":1200,"border":100,"auto":false,"canary":"","n":1}
+{"t":"end","cap":"app.css@0/static","text":2,"box":2,"skip":0,"hashed":0}

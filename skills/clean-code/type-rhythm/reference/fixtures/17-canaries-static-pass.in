@@ -1,0 +1,18 @@
+verify --check canaries
+{"t":"mode","mode":"static"}
+{"t":"scale","kind":"size","value":1200,"viewport":0,"roles":["caption","label"]}
+{"t":"scale","kind":"size","value":1400,"viewport":0,"roles":["body","label"]}
+{"t":"scale","kind":"size","value":1600,"viewport":0,"roles":["body"]}
+{"t":"scale","kind":"size","value":2400,"viewport":0,"roles":["heading"]}
+{"t":"scale","kind":"weight","value":400,"viewport":0,"roles":[]}
+{"t":"scale","kind":"weight","value":700,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":400,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":800,"viewport":0,"roles":[]}
+{"t":"scale","kind":"space","value":1600,"viewport":0,"roles":[]}
+{"t":"capture","screen":"canary.css","viewport":0,"variant":"canary-static","width":0,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"text","cap":"canary.css@0/canary-static","site":"label.canary-one","owner":"label.canary-one","tag":"label","aria":"","ctx":"","size":1300,"weight":400,"line":2000,"canary":"c1","n":1}
+{"t":"text","cap":"canary.css@0/canary-static","site":"h2.canary-two","owner":"h2.canary-two","tag":"h2","aria":"","ctx":"","size":2400,"weight":400,"line":2000,"canary":"c2","n":1}
+{"t":"box","cap":"canary.css@0/canary-static","site":"div.canary-four","family":"padding","value":600,"border":0,"auto":false,"canary":"c4","n":1}
+{"t":"capture","screen":"orders","viewport":1440,"variant":"canary-elements","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"end","cap":"canary.css@0/canary-static","text":2,"box":1,"skip":0,"hashed":0}
+{"t":"end","cap":"orders@1440/canary-elements","text":0,"box":0,"skip":0,"hashed":0}

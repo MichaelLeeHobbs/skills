@@ -1,0 +1,10 @@
+{"t":"role","role":"heading","elements":1,"caps":1,"screens":1,"by_source":{"tag":1},"on_bp":"-"}
+{"t":"role","role":"body","elements":1,"caps":1,"screens":1,"by_source":{"tag":1},"on_bp":"-"}
+{"t":"value","role":"heading","prop":"size","value":3200,"status":"unscaled","nearest":-1,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"heading","prop":"weight","value":700,"status":"unscaled","nearest":-1,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"heading","prop":"line","value":2000,"status":"unscaled","nearest":-1,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"body","prop":"size","value":1500,"status":"unscaled","nearest":-1,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"body","prop":"weight","value":400,"status":"unscaled","nearest":-1,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"body","prop":"line","value":-1,"status":"normal","nearest":-1,"elements":1,"caps":1,"screens":1,"owners":1}
+{"t":"space","family":"padding","value":1200,"status":"unscaled","nearest":-1,"elements":2,"caps":1,"screens":1}
+{"t":"summary","mode":"static","caps":1,"screens":1,"text":2,"boxes":2,"skipped":{"excluded":0,"hidden":0,"icon":0},"sizes_in_use":2,"sizes_off":0,"scale_sizes":0,"weights_in_use":2,"weights_off":0,"scale_weights":0,"space_in_use":1,"space_off":0,"scale_space":0,"unassigned_bp":"0.0000","gate":"PASS"}

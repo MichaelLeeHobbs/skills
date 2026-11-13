@@ -1,0 +1,7 @@
+verify --check captures
+{"t":"screen","screen":"home","route":"/"}
+{"t":"viewport","width":1440}
+{"t":"variant","variant":"base"}
+{"t":"capture","screen":"home","viewport":1440,"variant":"base","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"text","cap":"home@1440/base","site":"p","owner":"p","tag":"p","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":1}
+{"t":"end","cap":"home@1440/base","text":1,"box":0,"skip":0,"hashed":0}

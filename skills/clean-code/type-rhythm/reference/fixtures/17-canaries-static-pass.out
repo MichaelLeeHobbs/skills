@@ -1,0 +1,5 @@
+{"t":"canary","cap":"canary.css@0/canary-static","id":"capture","pass":true,"got":"valid"}
+{"t":"canary","cap":"canary.css@0/canary-static","id":"c1","pass":true,"got":"label off"}
+{"t":"canary","cap":"canary.css@0/canary-static","id":"c2","pass":true,"got":"heading on"}
+{"t":"canary","cap":"canary.css@0/canary-static","id":"c4","pass":true,"got":"padding off"}
+{"t":"summary","mode":"static","entries":4,"passed":4,"failed":0}

@@ -1,0 +1,16 @@
+{"t":"role","role":"body","elements":27,"caps":1,"screens":1,"by_source":{"tag":27},"on_bp":"0.0000"}
+{"t":"value","role":"body","prop":"size","value":1500,"status":"off","nearest":1400,"elements":27,"caps":1,"screens":1,"owners":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"div.most","owner":"main","elements":5,"caps":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"div.Zed","owner":"main","elements":2,"caps":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"div.alpha","owner":"main","elements":2,"caps":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"div.b","owner":"main","elements":2,"caps":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"div.c","owner":"main","elements":2,"caps":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"div.d","owner":"main","elements":2,"caps":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"div.e","owner":"main","elements":2,"caps":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"div.f","owner":"main","elements":2,"caps":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"div.g","owner":"main","elements":2,"caps":1}
+{"t":"site","role":"body","prop":"size","value":1500,"status":"off","site":"div.h","owner":"main","elements":2,"caps":1}
+{"t":"value","role":"body","prop":"weight","value":400,"status":"unscaled","nearest":-1,"elements":27,"caps":1,"screens":1,"owners":1}
+{"t":"value","role":"body","prop":"line","value":2000,"status":"unscaled","nearest":-1,"elements":27,"caps":1,"screens":1,"owners":1}
+{"t":"owner","owner":"main","sizes":[1500],"elements":27,"caps":1,"screens":1}
+{"t":"summary","mode":"browser","caps":1,"screens":1,"text":27,"boxes":0,"skipped":{"excluded":0,"hidden":0,"icon":0},"sizes_in_use":1,"sizes_off":1,"scale_sizes":1,"weights_in_use":1,"weights_off":0,"scale_weights":0,"space_in_use":0,"space_off":0,"scale_space":0,"unassigned_bp":"0.0000","gate":"PASS"}

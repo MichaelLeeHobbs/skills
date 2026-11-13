@@ -1,0 +1,18 @@
+unmatched
+{"t":"capture","screen":"a","viewport":1440,"variant":"base","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"capture","screen":"b","viewport":1440,"variant":"base","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"capture","screen":"a","viewport":1440,"variant":"canary-elements","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"rolemap","site":"div.c","role":"label"}
+{"t":"text","cap":"a@1440/base","site":"div.a","owner":"div.a","tag":"div","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":3}
+{"t":"text","cap":"b@1440/base","site":"div.a","owner":"div.a","tag":"div","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"div.b","owner":"div.b","tag":"div","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":5}
+{"t":"text","cap":"a@1440/base","site":"Zeta div","owner":"Zeta div","tag":"div","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":5}
+{"t":"text","cap":"a@1440/base","site":"div.c","owner":"div.c","tag":"div","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":9}
+{"t":"text","cap":"a@1440/base","site":"span.free","owner":"span.free","tag":"span","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":2}
+{"t":"text","cap":"a@1440/base","site":"span.nested","owner":"span.nested","tag":"span","aria":"","ctx":"div","size":1400,"weight":400,"line":2000,"canary":"","n":1}
+{"t":"text","cap":"a@1440/base","site":"span.ok","owner":"span.ok","tag":"span","aria":"","ctx":"p","size":1400,"weight":400,"line":2000,"canary":"","n":7}
+{"t":"text","cap":"a@1440/base","site":"p","owner":"p","tag":"p","aria":"","ctx":"","size":1400,"weight":400,"line":2000,"canary":"","n":20}
+{"t":"text","cap":"a@1440/canary-elements","site":"div.canary","owner":"div.canary","tag":"div","aria":"","ctx":"","size":1300,"weight":400,"line":2000,"canary":"c1","n":50}
+{"t":"end","cap":"a@1440/base","text":8,"box":0,"skip":0,"hashed":0}
+{"t":"end","cap":"b@1440/base","text":1,"box":0,"skip":0,"hashed":0}
+{"t":"end","cap":"a@1440/canary-elements","text":1,"box":0,"skip":0,"hashed":0}

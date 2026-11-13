@@ -1,0 +1,5 @@
+unmatched
+{"t":"mode","mode":"browser"}
+{"t":"capture","screen":"a","viewport":1440,"variant":"base","width":1440,"auth":true,"login":false,"notfound":false,"url_ok":true,"main":true,"fonts":true,"busy":false}
+{"t":"box","cap":"a@1440/base","site":"div","family":"margin","value":0,"border":0,"auto":false,"canary":"","n":1}
+{"t":"text","cap":"a@1440/base"}

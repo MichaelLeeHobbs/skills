@@ -1,0 +1,3 @@
+slice
+{"t":"file","path":"a.ts","bytes":5}
+{"t":"row","id":"b.ts:1:f","path":"b.ts"}

@@ -1,0 +1,4 @@
+verify --check coverage
+{"t":"count","path":"src/a.tsx","parser":13,"pattern":10}
+{"t":"count","path":"src/b.ts","parser":8,"pattern":10}
+{"t":"count","path":"src/c.ts","parser":30,"pattern":30}

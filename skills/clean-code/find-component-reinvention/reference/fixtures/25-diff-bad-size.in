@@ -1,0 +1,7 @@
+diff
+{"t":"cell","member":"a","state":"s"}
+{"t":"cell","member":"b","state":"s"}
+{"t":"image","member":"a","state":"s","take":1,"width":2,"height":1}
+{"t":"px","member":"a","state":"s","take":1,"y":0,"hex":"000000ffffff"}
+{"t":"image","member":"b","state":"s","take":1,"width":3,"height":1}
+{"t":"px","member":"b","state":"s","take":1,"y":0,"hex":"000000ffffffffffff"}

@@ -1,0 +1,17 @@
+{"t":"problem","member":"m3","state":"s","kind":"missing"}
+{"t":"problem","member":"m4","state":"s","kind":"conflict"}
+{"t":"problem","member":"m5","state":"s","kind":"missing_take"}
+{"t":"problem","member":"m6","state":"t","kind":"no_prediction"}
+{"t":"outcome","member":"m1","state":"s","outcome":"ok"}
+{"t":"outcome","member":"m2","state":"s","outcome":"ok"}
+{"t":"outcome","member":"m6","state":"t","outcome":"ok"}
+{"t":"pair","state":"s","a":"m1","b":"m2","pixels":0,"region":0,"box":[],"noticeable":false}
+{"t":"looks","state":"s","looks":[["m1","m2"]]}
+{"t":"looks","state":"t","looks":[["m6"]]}
+{"t":"evidence","member":"m1","result":"REFUTED","states":1,"mismatch":["s"]}
+{"t":"evidence","member":"m2","result":"REFUTED","states":1,"mismatch":["s"]}
+{"t":"evidence","member":"m3","result":"BLOCKED","states":0,"mismatch":[]}
+{"t":"evidence","member":"m4","result":"BLOCKED","states":0,"mismatch":[]}
+{"t":"evidence","member":"m5","result":"BLOCKED","states":0,"mismatch":[]}
+{"t":"evidence","member":"m6","result":"BLOCKED","states":0,"mismatch":[]}
+{"t":"summary","cells":6,"ok":3,"unreachable":0,"unstable":0,"blank":0,"blocked":0,"problems":4,"pairs":1,"confirmed":0,"refuted":2,"unproven":4}

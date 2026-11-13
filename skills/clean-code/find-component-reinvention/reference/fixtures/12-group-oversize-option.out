@@ -1,0 +1,3 @@
+{"t":"group","id":"G0001","key":"class:badge","members":["X.tsx:1:B2","x.tsx:1:B1","y.tsx:1:B3"],"oversize":true}
+{"t":"group","id":"G0002","key":"class:modal","members":["z.tsx:1:M1","z.tsx:9:M2"],"oversize":false}
+{"t":"summary","rows":5,"eligible":5,"groups":2,"oversize":1,"singles":0}

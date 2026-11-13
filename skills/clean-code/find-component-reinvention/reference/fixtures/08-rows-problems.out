@@ -1,0 +1,11 @@
+{"t":"problem","id":"b.tsx:2:Pill","kind":"bad_widget"}
+{"t":"problem","id":"b.tsx:2:Pill","kind":"bad_relation"}
+{"t":"problem","id":"b.tsx:2:Pill","kind":"bad_effects"}
+{"t":"problem","id":"b.tsx:2:Pill","kind":"restates_name"}
+{"t":"problem","id":"c.tsx:9:JobState","kind":"bad_styling"}
+{"t":"problem","id":"c.tsx:9:JobState","kind":"bad_effects"}
+{"t":"problem","id":"c.tsx:9:JobState","kind":"empty_displays"}
+{"t":"problem","id":"c.tsx:9:JobState","kind":"wraps_not_imported"}
+{"t":"problem","id":"d.tsx:1:Empty","kind":"wraps_on_hand_rolled"}
+{"t":"problem","kind":"other_share","share":"0.2000"}
+{"t":"summary","rows":5,"rejected":3,"problems":10,"other":1,"other_share":"0.2000"}

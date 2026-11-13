@@ -1,0 +1,6 @@
+verify --check rows
+{"t":"row","id":"a.tsx:3:StatusBadge","name":"StatusBadge","widget":"badge","displays":"order status","relation":"wrapper","wraps":"Chip","styling":"tokens","effects":["pure"],"imports":["Chip","clsx"]}
+{"t":"row","id":"b.tsx:2:Pill","name":"Pill","widget":"pill","displays":"the pill","relation":"wrapped","wraps":"none","styling":"tokens","effects":["pure","store"],"imports":[]}
+{"t":"row","id":"c.tsx:9:JobState","name":"JobState","widget":"badge","displays":"  ","relation":"restyled","wraps":"Tag","styling":"inline","effects":[],"imports":["Chip"]}
+{"t":"row","id":"d.tsx:1:Empty","name":"Empty","widget":"empty-state","displays":"search results","relation":"hand-rolled","wraps":"Box","styling":"hardcoded","effects":["fetch"],"imports":["Box"]}
+{"t":"row","id":"e.tsx:1:Shell","name":"Shell","widget":"other","displays":"app frame","relation":"hand-rolled","wraps":"none","styling":"mixed","effects":["context","router"],"imports":[]}

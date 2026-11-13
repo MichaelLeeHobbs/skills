@@ -1,0 +1,2 @@
+verify --check rows
+{"t":"row","id":"a.tsx:1:A","name":"A","widget":"badge","displays":"order status","relation":"hand-rolled","wraps":"none","styling":"tokens","effects":["pure","pure"],"imports":[]}

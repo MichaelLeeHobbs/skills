@@ -1,0 +1,5 @@
+verify --check coverage --min-basis-points 9500 --max-adjusted-basis-points 5000
+{"t":"count","path":"m/models.py","parser":40,"pattern":46}
+{"t":"count","path":"m/views.py","parser":30,"pattern":30}
+{"t":"count","path":"m/utils.py","parser":10,"pattern":10}
+{"t":"adjust","path":"m/models.py","reason":"pattern counts def inside docstrings"}

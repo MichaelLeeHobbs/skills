@@ -1,0 +1,11 @@
+{"t":"outcome","member":"g","state":"s","outcome":"ok"}
+{"t":"outcome","member":"h","state":"s","outcome":"ok"}
+{"t":"outcome","member":"k","state":"s","outcome":"blank"}
+{"t":"outcome","member":"u","state":"s","outcome":"unstable"}
+{"t":"pair","state":"s","a":"g","b":"h","pixels":0,"region":0,"box":[],"noticeable":false}
+{"t":"looks","state":"s","looks":[["g","h"]]}
+{"t":"evidence","member":"g","result":"CONFIRMED","states":1,"mismatch":[]}
+{"t":"evidence","member":"h","result":"CONFIRMED","states":1,"mismatch":[]}
+{"t":"evidence","member":"k","result":"BLOCKED","states":0,"mismatch":[]}
+{"t":"evidence","member":"u","result":"BLOCKED","states":0,"mismatch":[]}
+{"t":"summary","cells":4,"ok":2,"unreachable":0,"unstable":1,"blank":1,"blocked":0,"problems":0,"pairs":1,"confirmed":2,"refuted":0,"unproven":2}

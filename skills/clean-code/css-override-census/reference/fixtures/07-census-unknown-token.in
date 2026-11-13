@@ -1,0 +1,5 @@
+census
+{"t":"prefix","prefix":"Mui","library":"mui","status":"internal"}
+{"t":"file","path":"a.css","canary":false}
+{"t":"rule","id":"r1","path":"a.css","line":1,"selector":".MuiX-root"}
+{"t":"presence","token":"MuiY-root","present":true}

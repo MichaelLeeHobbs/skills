@@ -1,0 +1,15 @@
+verify --check layers
+{"t":"z","value":1,"uses":1}
+{"t":"z","value":5,"uses":1}
+{"t":"z","value":9,"uses":1}
+{"t":"z","value":100,"uses":1}
+{"t":"z","value":50,"uses":1}
+{"t":"layer","name":"low","order":1}
+{"t":"layer","name":"high","order":2}
+{"t":"layer","name":"unused","order":3}
+{"t":"layer","name":"floor","order":0}
+{"t":"assign","value":1,"layer":"low"}
+{"t":"assign","value":5,"layer":"high"}
+{"t":"assign","value":9,"layer":"low"}
+{"t":"assign","value":100,"layer":"floor"}
+{"t":"assign","value":7,"layer":"high"}

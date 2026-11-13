@@ -1,0 +1,19 @@
+{"t":"m","id":"k.css:3","path":"k.css","line":3,"selectors":1,"spec":[0,1,0],"depth":1,"important":0,"internal":[],"bad":false,"canary":true}
+{"t":"m","id":"x.css:1","path":"x.css","line":1,"selectors":1,"spec":[0,1,0],"depth":1,"important":1,"internal":[],"bad":false,"canary":false}
+{"t":"m","id":"y.css:2","path":"y.css","line":2,"selectors":1,"spec":[0,1,0],"depth":1,"important":0,"internal":[],"bad":false,"canary":false}
+{"t":"head","head":"a","rules":1}
+{"t":"head","head":"b","rules":1}
+{"t":"z","value":-1,"uses":1,"files":1}
+{"t":"z","value":0,"uses":1,"files":1}
+{"t":"z","value":10,"uses":3,"files":2}
+{"t":"z","value":1300,"uses":2,"files":1}
+{"t":"zname","value":"$z-header","uses":1}
+{"t":"zname","value":"@z-menu","uses":1}
+{"t":"zname","value":"theme.zIndex.modal","uses":1}
+{"t":"zname","value":"var(--z-modal)","uses":2}
+{"t":"zname","value":"var(--z-pop, 30)","uses":1}
+{"t":"hot","rank":1,"id":"x.css:1","spec":[0,1,0],"depth":1}
+{"t":"hot","rank":2,"id":"y.css:2","spec":[0,1,0],"depth":1}
+{"t":"filestat","path":"x.css","rules":1,"important":1,"internal_rules":0,"deep_rules":0,"id_rules":0}
+{"t":"summary","files":2,"rules":2,"selectors":2,"bad":0,"important":1,"important_rules":1,"internal_rules":0,"internal_tokens":0,"dead_tokens":0,"unchecked_tokens":0,"deep_rules":0,"id_rules":0,"max_spec":[0,1,0],"z_uses":7,"z_distinct":4,"z_named_uses":6,"z_named_distinct":5,"z_expression_uses":7,"z_keyword_uses":2}
+{"t":"canaries","files":1,"rules":1,"bad":0,"important":0,"internal_rules":0,"dead_tokens":0,"deep_rules":0,"id_rules":0,"max_spec":[0,1,0],"z_uses":1,"z_named_uses":1}

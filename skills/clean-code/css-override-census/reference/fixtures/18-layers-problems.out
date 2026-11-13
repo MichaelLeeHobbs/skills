@@ -1,0 +1,6 @@
+{"t":"problem","kind":"unassigned","value":50}
+{"t":"problem","kind":"unused","value":7}
+{"t":"problem","kind":"inversion","value":9,"after":5}
+{"t":"problem","kind":"inversion","value":100,"after":9}
+{"t":"problem","kind":"empty_layer","layer":"unused"}
+{"t":"summary","values":5,"layers":4,"assigned":4,"problems":5}

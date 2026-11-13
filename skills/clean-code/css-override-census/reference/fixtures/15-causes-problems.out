@@ -1,0 +1,4 @@
+{"t":"problem","id":"d2","kind":"not_important"}
+{"t":"problem","id":"d3","kind":"missing"}
+{"t":"problem","id":"d9","kind":"unknown"}
+{"t":"summary","important":4,"classified":3,"problems":3,"by_cause":{"a11y-print":1,"inline-style":0,"library":2,"own-code":0,"unknown":0,"utility":0}}

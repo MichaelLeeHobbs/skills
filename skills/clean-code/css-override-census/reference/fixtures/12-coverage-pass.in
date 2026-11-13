@@ -1,0 +1,22 @@
+verify --check coverage --min-basis-points 9000
+{"t":"count","path":"a.css"}
+{"t":"count","path":"b.scss"}
+{"t":"count","path":"c.tsx"}
+{"t":"count","path":"d.vue"}
+{"t":"count","path":"e.less"}
+{"t":"count","path":"f.css"}
+{"t":"count","path":"g.css"}
+{"t":"count","path":"h.css"}
+{"t":"count","path":"i.css"}
+{"t":"count","path":"j.css"}
+{"t":"file","path":"a.css","canary":false,"parsed":true}
+{"t":"file","path":"b.scss","canary":false,"parsed":true}
+{"t":"file","path":"c.tsx","canary":false,"parsed":true}
+{"t":"file","path":"d.vue","canary":false,"parsed":true}
+{"t":"file","path":"f.css","canary":false,"parsed":true}
+{"t":"file","path":"g.css","canary":false,"parsed":true}
+{"t":"file","path":"h.css","canary":false,"parsed":true}
+{"t":"file","path":"i.css","canary":false,"parsed":true}
+{"t":"file","path":"j.css","canary":false,"parsed":true}
+{"t":"file","path":"e.less","canary":false,"parsed":false}
+{"t":"file","path":"canary/k.css","canary":true,"parsed":true}

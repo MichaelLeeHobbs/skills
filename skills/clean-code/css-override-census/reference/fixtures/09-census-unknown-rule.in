@@ -1,0 +1,5 @@
+census
+{"t":"file","path":"a.css","canary":false}
+{"t":"rule","id":"r1","path":"a.css","line":1,"selector":".a"}
+{"t":"decl","id":"d1","rule":"r2","prop":"color","value":"red","important":true}
+{"t":"rule","id":"r3","path":"b.css","line":1,"selector":".a"}

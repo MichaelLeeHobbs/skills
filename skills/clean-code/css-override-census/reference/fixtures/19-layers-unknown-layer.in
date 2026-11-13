@@ -1,0 +1,4 @@
+verify --check layers
+{"t":"z","value":1,"uses":1}
+{"t":"layer","name":"base","order":0}
+{"t":"assign","value":1,"layer":"modal"}

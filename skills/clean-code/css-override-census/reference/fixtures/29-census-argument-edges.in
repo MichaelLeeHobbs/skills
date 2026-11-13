@@ -1,0 +1,8 @@
+census
+{"t":"file","path":"e.css","canary":false}
+{"t":"rule","id":"e.css:1","path":"e.css","line":1,"selector":"a:lang([)"}
+{"t":"rule","id":"e.css:2","path":"e.css","line":2,"selector":"p:before(x)"}
+{"t":"rule","id":"e.css:3","path":"e.css","line":3,"selector":"a:lang(en])"}
+{"t":"rule","id":"e.css:4","path":"e.css","line":4,"selector":"li:nth-child(2n OF .sel)"}
+{"t":"rule","id":"e.css:5","path":"e.css","line":5,"selector":".a\t>\n.b"}
+{"t":"rule","id":"e.css:6","path":"e.css","line":6,"selector":"[class~=\"a b\"]"}

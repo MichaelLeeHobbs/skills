@@ -1,0 +1,18 @@
+census --top 3 --deep 3
+{"t":"prefix","prefix":"ant-","library":"antd","status":"internal"}
+{"t":"file","path":"b.css","canary":false}
+{"t":"file","path":"a.css","canary":false}
+{"t":"file","path":"quiet.css","canary":false}
+{"t":"file","path":"can.css","canary":true}
+{"t":"rule","id":"b.css:1","path":"b.css","line":0,"selector":".a .b .c"}
+{"t":"rule","id":"b.css:2","path":"b.css","line":0,"selector":".x.y.z"}
+{"t":"rule","id":"a.css:9","path":"a.css","line":0,"selector":"#id"}
+{"t":"rule","id":"a.css:1","path":"a.css","line":0,"selector":".p .q .r"}
+{"t":"rule","id":"a.css:5","path":"a.css","line":0,"selector":"&bad"}
+{"t":"rule","id":"quiet.css:1","path":"quiet.css","line":0,"selector":"p"}
+{"t":"rule","id":"can.css:1","path":"can.css","line":0,"selector":"#c .d .e .ant-x"}
+{"t":"rule","id":"can.css:2","path":"can.css","line":0,"selector":".ok"}
+{"t":"decl","id":"i1","rule":"a.css:5","prop":"color","value":"red","important":true}
+{"t":"decl","id":"i2","rule":"can.css:1","prop":"color","value":"red","important":true}
+{"t":"decl","id":"i3","rule":"can.css:2","prop":"z-index","value":"7777","important":true}
+{"t":"decl","id":"i4","rule":"b.css:2","prop":"color","value":"blue","important":false}

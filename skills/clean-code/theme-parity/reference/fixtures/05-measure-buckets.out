@@ -1,0 +1,11 @@
+{"t":"pair","id":"b1","screen":"home","theme":"light","key":"home|b1","bucket":"SKIPPED","reason":"hidden","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"b2","screen":"home","theme":"light","key":"home|b2","bucket":"EXEMPT","reason":"disabled","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"b3","screen":"home","theme":"light","key":"home|b3","bucket":"UNDECIDED","reason":"gradient","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--hero"}
+{"t":"pair","id":"b4","screen":"home","theme":"light","key":"home|b4","bucket":"UNDECIDED","reason":"colour","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--accent","bg_src":"--surface"}
+{"t":"pair","id":"b5","screen":"home","theme":"light","key":"home|b5","bucket":"UNDECIDED","reason":"colour","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--ghost"}
+{"t":"pair","id":"b6","screen":"home","theme":"light","key":"home|b6","bucket":"UNDECIDED","reason":"canvas","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"canvas"}
+{"t":"pair","id":"b7","screen":"home","theme":"light","key":"home|b7","bucket":"PASS","reason":"","ratio":"21.00","need":"4.5","large":false,"fg":"#000000","bg":"#ffffff","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"b8","screen":"list","theme":"light","key":"list|b8","bucket":"UNDECIDED","reason":"image","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"b9","screen":"home","theme":"light","key":"home|b9","bucket":"UNDECIDED","reason":"colour","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"b10","screen":"home","theme":"light","key":"home|b10","bucket":"UNDECIDED","reason":"colour","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--surface"}
+{"t":"summary","nodes":10,"PASS":1,"FAIL":0,"UNDECIDED":7,"SKIPPED":1,"EXEMPT":1,"undecided_by_reason":{"canvas":1,"colour":4,"gradient":1,"image":1},"undecided_share":"0.8750","colour_share":"0.5000","result":"FAIL"}

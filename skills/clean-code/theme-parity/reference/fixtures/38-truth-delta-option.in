@@ -1,0 +1,11 @@
+verify --check truth --max-channel-delta 3 --max-off-basis-points 0
+{"t":"sample","id":"n0","computed":"#1f2937","pixel":"rgb(31, 41, 55)"}
+{"t":"sample","id":"n1","computed":"#1f2937","pixel":"rgb(31, 41, 55)"}
+{"t":"sample","id":"n2","computed":"#1f2937","pixel":"rgb(31, 41, 55)"}
+{"t":"sample","id":"n3","computed":"#1f2937","pixel":"rgb(31, 41, 55)"}
+{"t":"sample","id":"n4","computed":"#1f2937","pixel":"rgb(31, 41, 55)"}
+{"t":"sample","id":"n5","computed":"#1f2937","pixel":"rgb(31, 41, 55)"}
+{"t":"sample","id":"n6","computed":"#1f2937","pixel":"rgb(31, 41, 55)"}
+{"t":"sample","id":"n7","computed":"#1f2937","pixel":"rgb(31, 41, 55)"}
+{"t":"sample","id":"n8","computed":"#1f2937","pixel":"rgb(31, 44, 55)"}
+{"t":"sample","id":"n9","computed":"#1f2937","pixel":"rgb(31, 41, 59)"}

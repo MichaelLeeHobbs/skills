@@ -1,0 +1,14 @@
+cluster
+{"t":"pair","id":"1","screen":"home","theme":"dark","key":"k1","bucket":"FAIL","reason":"","ratio":"3.03","need":"4.5","large":false,"fg":"#6b7280","bg":"#1f2937","fg_src":"--text-muted","bg_src":"--surface"}
+{"t":"pair","id":"2","screen":"list","theme":"dark","key":"k2","bucket":"FAIL","reason":"","ratio":"2.99","need":"4.5","large":false,"fg":"#6b7280","bg":"#1f2937","fg_src":"--text-muted","bg_src":"--surface"}
+{"t":"pair","id":"3","screen":"list","theme":"dark","key":"k3","bucket":"FAIL","reason":"","ratio":"3.10","need":"3.0","large":false,"fg":"#6b7280","bg":"#1f2937","fg_src":"--text-muted","bg_src":"--surface"}
+{"t":"pair","id":"4","screen":"home","theme":"dark","key":"k4","bucket":"FAIL","reason":"","ratio":"1.80","need":"4.5","large":false,"fg":"#333333","bg":"#1f2937","fg_src":"","bg_src":"--surface"}
+{"t":"pair","id":"5","screen":"home","theme":"dark","key":"k5","bucket":"FAIL","reason":"","ratio":"1.80","need":"4.5","large":false,"fg":"#333333","bg":"#111827","fg_src":"","bg_src":""}
+{"t":"pair","id":"6","screen":"home","theme":"light","key":"k6","bucket":"FAIL","reason":"","ratio":"4.10","need":"4.5","large":false,"fg":"#3b82f6","bg":"#ffffff","fg_src":"--link","bg_src":"--surface"}
+{"t":"pair","id":"7","screen":"home","theme":"dark","key":"k7","bucket":"FAIL","reason":"","ratio":"4.40","need":"4.5","large":false,"fg":"#3b82f6","bg":"#1f2937","fg_src":"--link","bg_src":"--surface"}
+{"t":"pair","id":"8","screen":"list","theme":"dark","key":"k8","bucket":"FAIL","reason":"","ratio":"4.21","need":"4.5","large":false,"fg":"#3b82f6","bg":"#1f2937","fg_src":"--link","bg_src":"--surface"}
+{"t":"pair","id":"9","screen":"home","theme":"dark","key":"k9","bucket":"PASS","reason":"","ratio":"15.20","need":"4.5","large":false,"fg":"#f9fafb","bg":"#1f2937","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"10","screen":"home","theme":"dark","key":"k10","bucket":"UNDECIDED","reason":"gradient","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--hero"}
+{"t":"pair","id":"11","screen":"list","theme":"dark","key":"k11","bucket":"UNDECIDED","reason":"gradient","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--hero"}
+{"t":"pair","id":"12","screen":"home","theme":"dark","key":"k12","bucket":"UNDECIDED","reason":"colour","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":""}
+{"t":"pair","id":"13","screen":"home","theme":"light","key":"k13","bucket":"SKIPPED","reason":"hidden","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--surface"}

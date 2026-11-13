@@ -1,0 +1,5 @@
+candidates
+{"t":"candidate","name":"a","color":"#9ca3af"}
+{"t":"target","src":"--x","theme":"dark","side":"fg"}
+{"t":"candidate","name":"a","color":"#d1d5db"}
+{"t":"target","src":"--y","theme":"dark","side":"fg"}

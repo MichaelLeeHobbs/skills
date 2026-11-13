@@ -1,0 +1,7 @@
+candidates
+{"t":"node","id":"g1","screen":"home","theme":"dark","key":"home|g1","fg":"#9ca3af","layers":[{"color":"rgb(55, 65, 81)","opacity":"1","src":"--surface-raised"},{"color":"rgb(31, 41, 55)","opacity":"1","src":"--surface"}],"canvas":"rgb(255, 255, 255)","size":"16","weight":400,"flags":[],"skip":"","exempt":"","fg_src":"--text-muted"}
+{"t":"node","id":"g2","screen":"home","theme":"dark","key":"home|g2","fg":"#e5e7eb","layers":[{"color":"rgba(55, 65, 81, 0.5)","opacity":"1","src":"--surface-raised"},{"color":"rgb(31, 41, 55)","opacity":"1","src":"--surface"}],"canvas":"rgb(255, 255, 255)","size":"16","weight":400,"flags":[],"skip":"","exempt":"","fg_src":"--text"}
+{"t":"node","id":"g3","screen":"home","theme":"dark","key":"home|g3","fg":"#9ca3af","layers":[{"color":"rgb(31, 41, 55)","opacity":"1","src":"--surface"}],"canvas":"rgb(255, 255, 255)","size":"16","weight":400,"flags":[],"skip":"","exempt":"","fg_src":"--text-muted"}
+{"t":"candidate","name":"gray-800","color":"#1f2937"}
+{"t":"candidate","name":"gray-600","color":"#4b5563"}
+{"t":"target","src":"--surface-raised","theme":"dark","side":"bg"}

@@ -1,0 +1,12 @@
+parity
+{"t":"pair","id":"1","screen":"home","theme":"light","key":"home|k1","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#333333","bg":"#ffffff","fg_src":"literal:src/a.css:4","bg_src":"--surface"}
+{"t":"pair","id":"2","screen":"home","theme":"dark","key":"home|k1","bucket":"FAIL","reason":"","ratio":"","need":"","large":false,"fg":"#333333","bg":"#1f2937","fg_src":"literal:src/a.css:4","bg_src":"--surface"}
+{"t":"pair","id":"3","screen":"home","theme":"light","key":"home|k2","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#ffffff","bg":"#2563eb","fg_src":"--on-brand","bg_src":"--brand"}
+{"t":"pair","id":"4","screen":"home","theme":"dark","key":"home|k2","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#ffffff","bg":"#2563eb","fg_src":"--on-brand","bg_src":"--brand"}
+{"t":"pair","id":"5","screen":"home","theme":"light","key":"home|k3","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#111111","bg":"#ffffff","fg_src":"","bg_src":""}
+{"t":"pair","id":"6","screen":"home","theme":"light","key":"home|k4","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#111111","bg":"#ffffff","fg_src":"","bg_src":""}
+{"t":"pair","id":"7","screen":"home","theme":"dark","key":"home|k4","bucket":"UNDECIDED","reason":"","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"","bg_src":""}
+{"t":"pair","id":"8","screen":"home","theme":"dark","key":"home|k5","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#eeeeee","bg":"#111111","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"9","screen":"home","theme":"light","key":"home|k5","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#111111","bg":"#ffffff","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"10","screen":"home","theme":"dark","key":"home|k6","bucket":"FAIL","reason":"","ratio":"","need":"","large":false,"fg":"#eeeeee","bg":"#ffffff","fg_src":"--text","bg_src":"literal:src/b.css:9"}
+{"t":"pair","id":"11","screen":"home","theme":"light","key":"home|k6","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#111111","bg":"#ffffff","fg_src":"--text","bg_src":"literal:src/b.css:9"}

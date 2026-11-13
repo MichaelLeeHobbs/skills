@@ -1,0 +1,2 @@
+verify --check truth
+{"t":"sample","id":"r1","computed":"#000000","pixel":"oklch(0 0 0)","pixel":"rgb(0, 0, 0)"}

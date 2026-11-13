@@ -1,0 +1,2 @@
+{"t":"pair","id":"i3","screen":"home","theme":"light","key":"home|i3","bucket":"PASS","reason":"","ratio":"21.00","need":"4.5","large":false,"fg":"#000000","bg":"#ffffff","fg_src":"--text","bg_src":"--surface"}
+{"t":"summary","nodes":1,"PASS":1,"FAIL":0,"UNDECIDED":0,"SKIPPED":0,"EXEMPT":0,"undecided_by_reason":{},"undecided_share":"0.0000","colour_share":"0.0000","result":"PASS"}

@@ -1,0 +1,8 @@
+{"t":"cluster","id":"C0001","theme":"dark","fg":"--text-muted","bg":"--surface","pairs":3,"screens":2,"worst":"2.99","need":"4.5"}
+{"t":"cluster","id":"C0002","theme":"dark","fg":"--link","bg":"--surface","pairs":2,"screens":2,"worst":"4.21","need":"4.5"}
+{"t":"cluster","id":"C0003","theme":"dark","fg":"#333333","bg":"#111827","pairs":1,"screens":1,"worst":"1.80","need":"4.5"}
+{"t":"cluster","id":"C0004","theme":"dark","fg":"#333333","bg":"--surface","pairs":1,"screens":1,"worst":"1.80","need":"4.5"}
+{"t":"cluster","id":"C0005","theme":"light","fg":"--link","bg":"--surface","pairs":1,"screens":1,"worst":"4.10","need":"4.5"}
+{"t":"undecided","theme":"dark","reason":"gradient","bg":"--hero","pairs":2,"screens":2}
+{"t":"undecided","theme":"dark","reason":"colour","bg":"","pairs":1,"screens":1}
+{"t":"summary","pairs":13,"fail":8,"clusters":5,"top3":6,"top3_share":""}

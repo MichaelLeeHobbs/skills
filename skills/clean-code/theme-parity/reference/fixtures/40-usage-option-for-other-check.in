@@ -1,0 +1,1 @@
+verify --check canaries --min-basis-points 1

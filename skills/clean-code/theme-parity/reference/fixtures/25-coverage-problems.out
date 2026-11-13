@@ -1,0 +1,7 @@
+{"t":"problem","screen":"admin","theme":"dark","reason":"missing","with":""}
+{"t":"problem","screen":"list","theme":"dark","reason":"no_reason","with":""}
+{"t":"problem","screen":"list","theme":"light","reason":"empty","with":""}
+{"t":"problem","screen":"home","theme":"hc","reason":"switch","with":"dark"}
+{"t":"problem","screen":"home","theme":"light","reason":"switch","with":"dark"}
+{"t":"problem","screen":"home","theme":"light","reason":"switch","with":"hc"}
+{"t":"summary","planned":7,"collected":4,"blocked":2,"skipped":0,"missing":1,"problems":6,"coverage":"0.5714","result":"FAIL"}

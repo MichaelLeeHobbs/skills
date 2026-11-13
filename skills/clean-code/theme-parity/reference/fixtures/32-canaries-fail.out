@@ -1,0 +1,7 @@
+{"t":"problem","id":"canary-token","reason":"src","want":"--canary-muted","got":"--text-muted"}
+{"t":"problem","id":"canary-literal","reason":"missing","want":"FAIL","got":""}
+{"t":"problem","id":"canary-opacity","reason":"bucket","want":"FAIL","got":"PASS"}
+{"t":"problem","id":"canary-gradient","reason":"bucket","want":"UNDECIDED","got":"FAIL"}
+{"t":"problem","id":"home|canary-literal","reason":"side","want":"fg","got":"both"}
+{"t":"problem","id":"home|missing","reason":"not_fixed","want":"fg","got":""}
+{"t":"summary","expected":6,"behaved":0,"result":"FAIL"}

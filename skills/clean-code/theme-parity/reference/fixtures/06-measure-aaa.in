@@ -1,0 +1,4 @@
+measure --level AAA
+{"t":"node","id":"x1","screen":"home","theme":"light","key":"home|x1","fg":"rgb(118, 118, 118)","layers":[{"color":"rgb(255, 255, 255)","opacity":"1","src":"--surface"}],"canvas":"rgb(255, 255, 255)","size":"16","weight":400,"flags":[],"skip":"","exempt":"","fg_src":"--text-muted"}
+{"t":"node","id":"x2","screen":"home","theme":"light","key":"home|x2","fg":"rgb(118, 118, 118)","layers":[{"color":"rgb(255, 255, 255)","opacity":"1","src":"--surface"}],"canvas":"rgb(255, 255, 255)","size":"18.6667","weight":700,"flags":[],"skip":"","exempt":"","fg_src":"--text-muted"}
+{"t":"node","id":"x3","screen":"home","theme":"light","key":"home|x3","fg":"rgb(89, 89, 89)","layers":[{"color":"rgb(255, 255, 255)","opacity":"1","src":"--surface"}],"canvas":"rgb(255, 255, 255)","size":"16","weight":400,"flags":[],"skip":"","exempt":"","fg_src":"--text"}

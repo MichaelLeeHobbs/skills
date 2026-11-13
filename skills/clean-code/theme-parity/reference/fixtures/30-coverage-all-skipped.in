@@ -1,0 +1,3 @@
+verify --check coverage
+{"t":"screen","screen":"a","theme":"light"}
+{"t":"render","screen":"a","theme":"light","status":"skipped","reason":"budget","nodes":120,"root":"rgb(255, 255, 255)","sentinel":"h-light"}

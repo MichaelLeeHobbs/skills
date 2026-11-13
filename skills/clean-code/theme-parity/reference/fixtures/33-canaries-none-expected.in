@@ -1,0 +1,2 @@
+verify --check canaries
+{"t":"pair","id":"a","bucket":"PASS","fg_src":""}

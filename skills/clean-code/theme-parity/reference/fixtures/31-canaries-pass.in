@@ -1,0 +1,16 @@
+verify --check canaries
+{"t":"pair","id":"canary-token","bucket":"FAIL","fg_src":"--canary-muted"}
+{"t":"pair","id":"canary-literal","bucket":"FAIL","fg_src":"literal"}
+{"t":"pair","id":"canary-opacity","bucket":"FAIL","fg_src":""}
+{"t":"pair","id":"canary-gradient","bucket":"UNDECIDED","fg_src":""}
+{"t":"pair","id":"canary-hidden","bucket":"SKIPPED","fg_src":""}
+{"t":"pair","id":"canary-large","bucket":"PASS","fg_src":""}
+{"t":"pair","id":"other","bucket":"PASS","fg_src":""}
+{"t":"fixed","key":"home|canary-literal","side":"fg"}
+{"t":"expect","id":"canary-token","bucket":"FAIL","fg_src":"--canary-muted"}
+{"t":"expect","id":"canary-literal","bucket":"FAIL","fg_src":""}
+{"t":"expect","id":"canary-opacity","bucket":"FAIL","fg_src":""}
+{"t":"expect","id":"canary-gradient","bucket":"UNDECIDED","fg_src":""}
+{"t":"expect","id":"canary-hidden","bucket":"SKIPPED","fg_src":""}
+{"t":"expect","id":"canary-large","bucket":"PASS","fg_src":""}
+{"t":"expect_fixed","key":"home|canary-literal","side":"fg"}

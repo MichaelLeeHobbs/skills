@@ -1,0 +1,3 @@
+cluster
+{"t":"pair","id":"1","screen":"home","theme":"dark","key":"k1","bucket":"FAIL","reason":"","ratio":"3.03","need":"4.5","large":false,"fg":"#6b7280","bg":"#1f2937","fg_src":"--text-muted","bg_src":"--surface"}
+{"t":"pair","id":"2","screen":"home","theme":"dark","key":"k2","bucket":"FAIL","reason":"","ratio":"3.0","need":"4.5","large":false,"fg":"#6b7280","bg":"#1f2937","fg_src":"--text-muted","bg_src":"--surface"}

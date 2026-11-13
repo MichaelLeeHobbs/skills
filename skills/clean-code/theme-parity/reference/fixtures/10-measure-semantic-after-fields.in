@@ -1,0 +1,4 @@
+measure
+{"t":"node","id":"p1","screen":"home","theme":"light","key":"home|p1","fg":"rgb(0, 0, 0)","layers":[{"color":"rgb(255, 255, 255)","opacity":"1","src":"--surface"}],"canvas":"rgb(255, 255, 255)","size":"16","weight":400,"flags":[],"skip":"","exempt":"","fg_src":"--text"}
+{"t":"node","id":"p1","screen":"home","theme":"light","key":"home|p1","fg":"rgb(0, 0, 0)","layers":[{"color":"rgb(255, 255, 255)","opacity":"1","src":"--surface"}],"canvas":"rgb(255, 255, 255)","size":"16","weight":400,"flags":[],"skip":"","exempt":"","fg_src":"--text"}
+{"t":"node","id":"p3","screen":"home","theme":"light","key":"home|p3","fg":"rgb(0, 0, 0)","layers":[{"color":"rgb(255, 255, 255)","opacity":"1","src":"--surface"}],"canvas":"rgb(255, 255, 255)","size":"16","weight":-1,"flags":[],"skip":"","exempt":"","fg_src":"--text"}

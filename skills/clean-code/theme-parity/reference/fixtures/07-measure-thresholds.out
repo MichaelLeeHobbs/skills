@@ -1,0 +1,6 @@
+{"t":"pair","id":"t1","screen":"home","theme":"light","key":"home|t1","bucket":"PASS","reason":"","ratio":"21.00","need":"4.5","large":false,"fg":"#000000","bg":"#ffffff","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"t2","screen":"home","theme":"light","key":"home|t2","bucket":"UNDECIDED","reason":"colour","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"t3","screen":"home","theme":"light","key":"home|t3","bucket":"UNDECIDED","reason":"gradient","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"t4","screen":"home","theme":"light","key":"home|t4","bucket":"PASS","reason":"","ratio":"21.00","need":"4.5","large":false,"fg":"#000000","bg":"#ffffff","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"t5","screen":"home","theme":"light","key":"home|t5","bucket":"PASS","reason":"","ratio":"21.00","need":"4.5","large":false,"fg":"#000000","bg":"#ffffff","fg_src":"--text","bg_src":"--surface"}
+{"t":"summary","nodes":5,"PASS":3,"FAIL":0,"UNDECIDED":2,"SKIPPED":0,"EXEMPT":0,"undecided_by_reason":{"colour":1,"gradient":1},"undecided_share":"0.4000","colour_share":"0.2000","result":"PASS"}

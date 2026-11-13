@@ -1,0 +1,9 @@
+verify --check coverage --min-basis-points 7500
+{"t":"screen","screen":"a","theme":"light"}
+{"t":"screen","screen":"a","theme":"dark"}
+{"t":"screen","screen":"b","theme":"light"}
+{"t":"screen","screen":"b","theme":"dark"}
+{"t":"render","screen":"a","theme":"light","status":"collected","reason":"","nodes":120,"root":"rgb(255, 255, 255)","sentinel":"h-light"}
+{"t":"render","screen":"a","theme":"dark","status":"collected","reason":"","nodes":120,"root":"rgb(17, 24, 39)","sentinel":"h-dark"}
+{"t":"render","screen":"b","theme":"light","status":"collected","reason":"","nodes":120,"root":"rgb(255, 255, 255)","sentinel":"h-light"}
+{"t":"render","screen":"b","theme":"dark","status":"blocked","reason":"error 500","nodes":120,"root":"rgb(17, 24, 39)","sentinel":"h-dark"}

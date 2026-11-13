@@ -1,0 +1,11 @@
+verify --check canaries
+{"t":"pair","id":"canary-token","bucket":"FAIL","fg_src":"--text-muted"}
+{"t":"pair","id":"canary-opacity","bucket":"PASS","fg_src":""}
+{"t":"pair","id":"canary-gradient","bucket":"FAIL","fg_src":""}
+{"t":"fixed","key":"home|canary-literal","side":"both"}
+{"t":"expect","id":"canary-token","bucket":"FAIL","fg_src":"--canary-muted"}
+{"t":"expect","id":"canary-literal","bucket":"FAIL","fg_src":""}
+{"t":"expect","id":"canary-opacity","bucket":"FAIL","fg_src":""}
+{"t":"expect","id":"canary-gradient","bucket":"UNDECIDED","fg_src":""}
+{"t":"expect_fixed","key":"home|canary-literal","side":"fg"}
+{"t":"expect_fixed","key":"home|missing","side":"fg"}

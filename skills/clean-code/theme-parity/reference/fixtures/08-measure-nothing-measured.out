@@ -1,0 +1,3 @@
+{"t":"pair","id":"s1","screen":"home","theme":"light","key":"home|s1","bucket":"SKIPPED","reason":"hidden","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"s2","screen":"home","theme":"light","key":"home|s2","bucket":"EXEMPT","reason":"logo","ratio":"","need":"","large":false,"fg":"","bg":"","fg_src":"--text","bg_src":"--surface"}
+{"t":"summary","nodes":2,"PASS":0,"FAIL":0,"UNDECIDED":0,"SKIPPED":1,"EXEMPT":1,"undecided_by_reason":{},"undecided_share":"0.0000","colour_share":"0.0000","result":"FAIL"}

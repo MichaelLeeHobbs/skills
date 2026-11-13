@@ -1,0 +1,4 @@
+{"t":"fixed","key":"home|k1","side":"fg","value":"#333333","src":"literal:src/a.css:4","fails_in":["dark"]}
+{"t":"fixed","key":"home|k2","side":"both","value":"#ffffff","src":"--on-brand","fails_in":[]}
+{"t":"fixed","key":"home|k6","side":"bg","value":"#ffffff","src":"literal:src/b.css:9","fails_in":["dark"]}
+{"t":"summary","themes":2,"keys":6,"joined":4,"missing":1,"undecided":1,"fixed_fg":1,"fixed_bg":1,"fixed_both":1,"fixed_failing":2}

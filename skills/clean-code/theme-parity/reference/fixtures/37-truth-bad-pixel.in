@@ -1,0 +1,3 @@
+verify --check truth
+{"t":"sample","id":"n1","computed":"#1f2937","pixel":"rgb(31, 41, 55)"}
+{"t":"sample","id":"n2","computed":"#1f2937","pixel":"oklch(0.3 0 0)"}

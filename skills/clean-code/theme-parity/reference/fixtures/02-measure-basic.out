@@ -1,0 +1,8 @@
+{"t":"pair","id":"n1","screen":"home","theme":"light","key":"home|n1","bucket":"PASS","reason":"","ratio":"21.00","need":"4.5","large":false,"fg":"#000000","bg":"#ffffff","fg_src":"--text","bg_src":"--surface"}
+{"t":"pair","id":"n2","screen":"home","theme":"light","key":"home|n2","bucket":"PASS","reason":"","ratio":"4.54","need":"4.5","large":false,"fg":"#767676","bg":"#ffffff","fg_src":"--text-muted","bg_src":"--surface"}
+{"t":"pair","id":"n3","screen":"home","theme":"light","key":"home|n3","bucket":"FAIL","reason":"","ratio":"4.47","need":"4.5","large":false,"fg":"#777777","bg":"#ffffff","fg_src":"--text-muted","bg_src":"--surface"}
+{"t":"pair","id":"n4","screen":"home","theme":"light","key":"home|n4","bucket":"PASS","reason":"","ratio":"3.03","need":"3.0","large":true,"fg":"#949494","bg":"#ffffff","fg_src":"--heading","bg_src":"--surface"}
+{"t":"pair","id":"n5","screen":"home","theme":"light","key":"home|n5","bucket":"FAIL","reason":"","ratio":"3.03","need":"4.5","large":false,"fg":"#949494","bg":"#ffffff","fg_src":"--heading","bg_src":"--surface"}
+{"t":"pair","id":"n6","screen":"home","theme":"light","key":"home|n6","bucket":"PASS","reason":"","ratio":"3.03","need":"3.0","large":true,"fg":"#949494","bg":"#ffffff","fg_src":"--heading","bg_src":"--surface"}
+{"t":"pair","id":"n7","screen":"home","theme":"dark","key":"home|n7","bucket":"FAIL","reason":"","ratio":"3.87","need":"4.5","large":false,"fg":"#6b7280","bg":"#121212","fg_src":"--text-muted","bg_src":"canvas"}
+{"t":"summary","nodes":7,"PASS":4,"FAIL":3,"UNDECIDED":0,"SKIPPED":0,"EXEMPT":0,"undecided_by_reason":{},"undecided_share":"0.0000","colour_share":"0.0000","result":"PASS"}

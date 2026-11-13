@@ -1,0 +1,9 @@
+verify --check coverage
+{"t":"screen","screen":"home","theme":"light"}
+{"t":"screen","screen":"home","theme":"dark"}
+{"t":"screen","screen":"list","theme":"light"}
+{"t":"screen","screen":"list","theme":"dark"}
+{"t":"render","screen":"home","theme":"light","status":"collected","reason":"","nodes":120,"root":"rgb(255, 255, 255)","sentinel":"h-light"}
+{"t":"render","screen":"home","theme":"dark","status":"collected","reason":"","nodes":120,"root":"rgb(17, 24, 39)","sentinel":"h-dark"}
+{"t":"render","screen":"list","theme":"light","status":"skipped","reason":"budget","nodes":120,"root":"rgb(255, 255, 255)","sentinel":"h-light"}
+{"t":"render","screen":"list","theme":"dark","status":"skipped","reason":"budget","nodes":120,"root":"rgb(17, 24, 39)","sentinel":"h-dark"}

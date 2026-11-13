@@ -1,0 +1,5 @@
+{"t":"cluster","id":"C0001","theme":"dark","fg":"--text-muted","bg":"--surface","pairs":20,"screens":7,"worst":"3.05","need":"4.5"}
+{"t":"cluster","id":"C0002","theme":"dark","fg":"--link","bg":"--surface","pairs":6,"screens":2,"worst":"3.04","need":"4.5"}
+{"t":"cluster","id":"C0003","theme":"dark","fg":"--border-text","bg":"--raised","pairs":3,"screens":1,"worst":"3.03","need":"4.5"}
+{"t":"cluster","id":"C0004","theme":"dark","fg":"literal:src/c.css:2","bg":"--surface","pairs":2,"screens":1,"worst":"3.10","need":"4.5"}
+{"t":"summary","pairs":31,"fail":31,"clusters":4,"top3":29,"top3_share":"0.9354"}

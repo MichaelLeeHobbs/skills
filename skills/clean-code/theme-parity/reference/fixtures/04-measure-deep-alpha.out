@@ -1,0 +1,3 @@
+{"t":"pair","id":"d1","screen":"home","theme":"light","key":"home|d1","bucket":"FAIL","reason":"","ratio":"1.13","need":"4.5","large":false,"fg":"#46413f","bg":"#4d4a40","fg_src":"--deep","bg_src":"--l0"}
+{"t":"pair","id":"d2","screen":"home","theme":"dark","key":"home|d2","bucket":"FAIL","reason":"","ratio":"1.05","need":"4.5","large":false,"fg":"#524d43","bg":"#4f4a3c","fg_src":"--deep","bg_src":"--l0"}
+{"t":"summary","nodes":2,"PASS":0,"FAIL":2,"UNDECIDED":0,"SKIPPED":0,"EXEMPT":0,"undecided_by_reason":{},"undecided_share":"0.0000","colour_share":"0.0000","result":"PASS"}

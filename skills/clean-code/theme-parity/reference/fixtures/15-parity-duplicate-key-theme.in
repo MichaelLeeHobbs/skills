@@ -1,0 +1,4 @@
+parity
+{"t":"pair","id":"1","screen":"home","theme":"light","key":"home|k1","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#333333","bg":"#ffffff","fg_src":"","bg_src":""}
+{"t":"pair","id":"2","screen":"home","theme":"dark","key":"home|k1","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#333333","bg":"#000000","fg_src":"","bg_src":""}
+{"t":"pair","id":"3","screen":"home","theme":"light","key":"home|k1","bucket":"PASS","reason":"","ratio":"","need":"","large":false,"fg":"#333333","bg":"#ffffff","fg_src":"","bg_src":""}

@@ -1,0 +1,5 @@
+{"t":"canary","id":"c1","pass":false,"got":"near"}
+{"t":"canary","id":"c2","pass":false,"got":"missing"}
+{"t":"canary","id":"c3","pass":false,"got":"missing"}
+{"t":"canary","id":"c4","pass":false,"got":"missing"}
+{"t":"summary","canaries":4,"passed":0,"pass":false}

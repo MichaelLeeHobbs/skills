@@ -1,0 +1,2 @@
+verify --check coverage
+{"t":"occ","path":"a.css","start":0,"len":4,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}

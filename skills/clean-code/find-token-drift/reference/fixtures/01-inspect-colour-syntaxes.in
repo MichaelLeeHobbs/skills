@@ -1,0 +1,44 @@
+inspect
+{"t":"colour","value":"#abc"}
+{"t":"colour","value":"#ABCD"}
+{"t":"colour","value":"#a1b2c3"}
+{"t":"colour","value":"#A1B2C380"}
+{"t":"colour","value":"rgb(10, 20, 30)"}
+{"t":"colour","value":"rgba(10,20,30,0.3)"}
+{"t":"colour","value":"rgb(10 20 30 / 50%)"}
+{"t":"colour","value":"RGB(100% 0% 50%)"}
+{"t":"colour","value":"rgb(none 300 -5)"}
+{"t":"colour","value":"rgb(1.5 2.5 254.5)"}
+{"t":"colour","value":"hsl(120 100% 25%)"}
+{"t":"colour","value":"hsla(240, 100%, 50%, .5)"}
+{"t":"colour","value":"hsl(30deg 50 40)"}
+{"t":"colour","value":"hsl(-120 100% 50%)"}
+{"t":"colour","value":"Gray"}
+{"t":"colour","value":"transparent"}
+{"t":"colour","value":"oklab(0.5 0.1 -0.1)"}
+{"t":"colour","value":"oklab(50% 25% -25%)"}
+{"t":"colour","value":"oklch(0.7 0.1 200)"}
+{"t":"colour","value":"oklch(70% 25% 200deg / 0.5)"}
+{"t":"colour","value":"oklch(0.5 0 none)"}
+{"t":"colour","value":"  #fff  "}
+{"t":"colour","value":"rgb(1,2)"}
+{"t":"colour","value":"rgb(1 2, 3)"}
+{"t":"colour","value":"#12"}
+{"t":"colour","value":"#12345"}
+{"t":"colour","value":"currentColor"}
+{"t":"colour","value":"color-mix(in srgb, red, blue)"}
+{"t":"colour","value":"rgb(var(--x))"}
+{"t":"colour","value":"hsl(1turn 50% 50%)"}
+{"t":"colour","value":"rgb(1e2 0 0)"}
+{"t":"colour","value":"rgba(0,0,0,.3)"}
+{"t":"colour","value":"rgba(0,0,0,30%)"}
+{"t":"colour","value":" #fff"}
+{"t":"colour","value":"RGB(1,2,3)\n"}
+{"t":"colour","value":"rgb(1\n2\t3)"}
+{"t":"colour","value":"#İİİ"}
+{"t":"colour","value":"rgb(1, 2 ,3)"}
+{"t":"colour","value":"rgb(1,2,3,)"}
+{"t":"colour","value":"rgb(1 2 3 / 0.5 / 1)"}
+{"t":"colour","value":"hsl(390 50% 50%)"}
+{"t":"colour","value":"oklch(0.7 -0.1 30)"}
+{"t":"colour","value":"rgb(-1.5, 255.5, 127.5)"}

@@ -1,0 +1,27 @@
+{"t":"badtoken","name":"--bad","mode":"default","cat":"colour","value":"color-mix(in srgb, red, blue)"}
+{"t":"tokenvalue","cat":"colour","value":"#333333","names":["--ok"],"neutral":true}
+{"t":"value","cat":"colour","value":"#333333","sample":"#333","uses":1,"status":"exact","anchor":"--ok","leader":"","distance":0,"neutral":true,"sites":["src/a/x.css:1"]}
+{"t":"value","cat":"colour","value":"#333344","sample":"#334","uses":2,"status":"near","anchor":"--ok","leader":"","distance":30,"neutral":true,"sites":["src/b/y.css:2","src/b/y.css:3"]}
+{"t":"value","cat":"spacing","value":"12px","sample":"12px","uses":1,"status":"lone","anchor":"","leader":"","distance":0,"neutral":false,"sites":["src/a/x.css:7"]}
+{"t":"tokenuse","token":"--ok","uses":1}
+{"t":"unparsed","cat":"colour","value":"color-mix(in srgb, red 50%, blue)","uses":1,"sites":["src/b/y.css:4"]}
+{"t":"unparsed","cat":"spacing","value":"calc(1px + 1rem)","uses":1,"sites":["src/a/x.css:8"]}
+{"t":"scope","scope":"all","cat":"colour","uses":3,"drift_uses":2,"ref_uses":1}
+{"t":"scope","scope":"all","cat":"spacing","uses":1,"drift_uses":1,"ref_uses":0}
+{"t":"scope","scope":"all","cat":"radius","uses":0,"drift_uses":0,"ref_uses":0}
+{"t":"scope","scope":"all","cat":"font-size","uses":0,"drift_uses":0,"ref_uses":0}
+{"t":"scope","scope":"all","cat":"shadow","uses":0,"drift_uses":0,"ref_uses":0}
+{"t":"scope","scope":"all","cat":"z-index","uses":0,"drift_uses":0,"ref_uses":0}
+{"t":"scope","scope":"team-b","cat":"colour","uses":2,"drift_uses":2,"ref_uses":1}
+{"t":"scope","scope":"team-b","cat":"spacing","uses":0,"drift_uses":0,"ref_uses":0}
+{"t":"scope","scope":"team-b","cat":"radius","uses":0,"drift_uses":0,"ref_uses":0}
+{"t":"scope","scope":"team-b","cat":"font-size","uses":0,"drift_uses":0,"ref_uses":0}
+{"t":"scope","scope":"team-b","cat":"shadow","uses":0,"drift_uses":0,"ref_uses":0}
+{"t":"scope","scope":"team-b","cat":"z-index","uses":0,"drift_uses":0,"ref_uses":0}
+{"t":"summary","cat":"colour","values":2,"uses":3,"token_values":1,"ref_uses":1,"unparsed_uses":1,"drift_values":1,"drift_uses":2,"matched_values":1,"matched_uses":1,"literal_share":"0.7500","by_status":{"exact":1,"near":1}}
+{"t":"summary","cat":"spacing","values":1,"uses":1,"token_values":0,"ref_uses":0,"unparsed_uses":1,"drift_values":1,"drift_uses":1,"matched_values":0,"matched_uses":0,"literal_share":"1.0000","by_status":{"lone":1}}
+{"t":"summary","cat":"radius","values":0,"uses":0,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":0,"drift_uses":0,"matched_values":0,"matched_uses":0,"literal_share":"0.0000","by_status":{}}
+{"t":"summary","cat":"font-size","values":0,"uses":0,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":0,"drift_uses":0,"matched_values":0,"matched_uses":0,"literal_share":"0.0000","by_status":{}}
+{"t":"summary","cat":"shadow","values":0,"uses":0,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":0,"drift_uses":0,"matched_values":0,"matched_uses":0,"literal_share":"0.0000","by_status":{}}
+{"t":"summary","cat":"z-index","values":0,"uses":0,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":0,"drift_uses":0,"matched_values":0,"matched_uses":0,"literal_share":"0.0000","by_status":{}}
+{"t":"summary","cat":"neutral","values":2,"uses":3,"token_values":1,"ref_uses":1,"unparsed_uses":0,"drift_values":1,"drift_uses":2,"matched_values":1,"matched_uses":1,"literal_share":"0.7500","by_status":{"exact":1,"near":1}}

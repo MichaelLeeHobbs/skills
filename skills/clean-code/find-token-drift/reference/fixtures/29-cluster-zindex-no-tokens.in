@@ -1,0 +1,4 @@
+cluster
+{"t":"occ","path":"a.css","start":150,"len":1,"line":15,"raw":"x","prop":"z-index","cat":"z-index","kind":"literal","value":"5"}
+{"t":"occ","path":"a.css","start":160,"len":1,"line":16,"raw":"x","prop":"z-index","cat":"z-index","kind":"literal","value":"50"}
+{"t":"occ","path":"a.css","start":170,"len":1,"line":17,"raw":"x","prop":"z-index","cat":"z-index","kind":"literal","value":"-20"}

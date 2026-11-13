@@ -1,0 +1,10 @@
+verify --check coverage --max-ignored-basis-points 2000
+{"t":"hit","path":"a.css","start":10,"len":4,"line":1,"kind":"colour","raw":"#fff"}
+{"t":"hit","path":"a.css","start":30,"len":4,"line":2,"kind":"length","raw":"12px"}
+{"t":"hit","path":"a.css","start":40,"len":4,"line":2,"kind":"length","raw":"13px"}
+{"t":"hit","path":"b.css","start":0,"len":4,"line":1,"kind":"colour","raw":"#abc"}
+{"t":"hit","path":"b.css","start":9,"len":4,"line":1,"kind":"colour","raw":"#add"}
+{"t":"occ","path":"a.css","start":14,"len":5,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}
+{"t":"occ","path":"a.css","start":34,"len":6,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}
+{"t":"ignore","path":"b.css","start":0,"len":4,"reason":"comment"}
+{"t":"ignore","path":"b.css","start":9,"len":4,"reason":"non-style"}

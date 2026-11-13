@@ -1,0 +1,17 @@
+cluster
+{"t":"occ","path":"a.css","start":10,"len":1,"line":1,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"10px"}
+{"t":"occ","path":"a.css","start":20,"len":1,"line":2,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"11px"}
+{"t":"occ","path":"a.css","start":30,"len":1,"line":3,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"12px"}
+{"t":"occ","path":"a.css","start":40,"len":1,"line":4,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"13px"}
+{"t":"occ","path":"a.css","start":50,"len":1,"line":5,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"14px"}
+{"t":"occ","path":"a.css","start":60,"len":1,"line":6,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"15px"}
+{"t":"occ","path":"a.css","start":70,"len":1,"line":7,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"16px"}
+{"t":"occ","path":"a.css","start":80,"len":1,"line":8,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"17px"}
+{"t":"occ","path":"a.css","start":90,"len":1,"line":9,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"18px"}
+{"t":"occ","path":"a.css","start":100,"len":1,"line":10,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"#282828"}
+{"t":"occ","path":"a.css","start":110,"len":1,"line":11,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"#282828"}
+{"t":"occ","path":"a.css","start":120,"len":1,"line":12,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"#282828"}
+{"t":"occ","path":"a.css","start":130,"len":1,"line":13,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"#353535"}
+{"t":"occ","path":"a.css","start":140,"len":1,"line":14,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"#353535"}
+{"t":"occ","path":"a.css","start":150,"len":1,"line":15,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"#2f2f2f"}
+{"t":"occ","path":"a.css","start":160,"len":1,"line":16,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"#3c3c3c"}

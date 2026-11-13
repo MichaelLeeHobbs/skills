@@ -1,0 +1,2 @@
+verify --check occ
+{"t":"src","path":"src/Button.module.css","text":".b {\n  color: #333;\n  padding: 12px 16px;\n  border: 1px solid #ccc;\n}\n"}

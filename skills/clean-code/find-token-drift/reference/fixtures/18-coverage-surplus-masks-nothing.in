@@ -1,0 +1,6 @@
+verify --check coverage
+{"t":"hit","path":"a.css","start":0,"len":4,"line":1,"kind":"colour","raw":"#fff"}
+{"t":"hit","path":"b.css","start":0,"len":4,"line":1,"kind":"colour","raw":"#000"}
+{"t":"occ","path":"a.css","start":0,"len":4,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}
+{"t":"occ","path":"a.css","start":0,"len":4,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}
+{"t":"occ","path":"a.css","start":20,"len":4,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}

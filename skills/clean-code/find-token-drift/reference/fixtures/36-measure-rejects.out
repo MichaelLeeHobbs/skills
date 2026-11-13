@@ -1,0 +1,13 @@
+{"t":"reject","line":6,"reason":"unknown_value"}
+{"t":"reject","line":8,"reason":"duplicate"}
+{"t":"reject","line":9,"reason":"unknown_token"}
+{"t":"reject","line":10,"reason":"bad_intent"}
+{"t":"reject","line":11,"reason":"bad_cite"}
+{"t":"result","cat":"colour","value":"#777777","action":"SNAP","token":"--a","verdict":"CONFIRMED","shift":"imperceptible","distance":10,"contrast":"kept","crossings":[]}
+{"t":"result","cat":"colour","value":"#888888","action":"SPLIT","token":"","verdict":"NONE","shift":"","distance":0,"contrast":"","crossings":[]}
+{"t":"summary","cat":"colour","before":2,"planned":2,"kept":0,"snapped":1,"visible":0,"refuted":0,"after":1}
+{"t":"summary","cat":"spacing","before":1,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":1}
+{"t":"summary","cat":"radius","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"font-size","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"shadow","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"z-index","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}

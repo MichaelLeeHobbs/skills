@@ -1,0 +1,4 @@
+cluster
+{"t":"token","name":"--a","mode":"default","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"ref","value":"--b"}
+{"t":"token","name":"--b","mode":"default","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"ref","value":"--c"}
+{"t":"token","name":"--c","mode":"default","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"ref","value":"--a"}

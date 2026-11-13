@@ -1,0 +1,9 @@
+{"t":"result","cat":"colour","value":"#333333","action":"NEW","token":"","verdict":"NONE","shift":"","distance":0,"contrast":"","crossings":[]}
+{"t":"result","cat":"colour","value":"#959595","action":"SNAP","token":"--fg","verdict":"CONFIRMED","shift":"imperceptible","distance":3,"contrast":"kept","crossings":[]}
+{"t":"result","cat":"colour","value":"#999999","action":"SNAP","token":"--fg","verdict":"CONFIRMED","shift":"imperceptible","distance":16,"contrast":"kept","crossings":[]}
+{"t":"summary","cat":"colour","before":3,"planned":3,"kept":0,"snapped":2,"visible":0,"refuted":0,"after":1}
+{"t":"summary","cat":"spacing","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"radius","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"font-size","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"shadow","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"z-index","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}

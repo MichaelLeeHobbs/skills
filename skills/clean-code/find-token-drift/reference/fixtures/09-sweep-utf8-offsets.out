@@ -1,0 +1,5 @@
+{"t":"hit","path":"Z.css","start":10,"len":4,"line":1,"kind":"length","raw":"2rem"}
+{"t":"hit","path":"a/x.vue","start":20,"len":13,"line":2,"kind":"colour","raw":"hsl(0 0% 50%)"}
+{"t":"hit","path":"b.tsx","start":35,"len":7,"line":2,"kind":"colour","raw":"#c0ffee"}
+{"t":"hit","path":"b.tsx","start":55,"len":3,"line":2,"kind":"length","raw":"4px"}
+{"t":"summary","files":3,"hits":4,"colour":2,"length":2}

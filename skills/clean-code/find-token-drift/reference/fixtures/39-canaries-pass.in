@@ -1,0 +1,9 @@
+verify --check canaries
+{"t":"expect","id":"c1","rec":"value","cat":"colour","value":"#777777","field":"anchor","want":"--a"}
+{"t":"expect","id":"c5","rec":"result","cat":"colour","value":"#767676","field":"verdict","want":"REFUTED"}
+{"t":"expect","id":"c8","rec":"occ","cat":"","value":"--canary-space","field":"kind","want":"ref"}
+{"t":"expect","id":"c6","rec":"value","cat":"z-index","value":"1001","field":"distance","want":"1"}
+{"t":"value","cat":"colour","value":"#777777","sample":"#777777","uses":5,"status":"near","anchor":"--a","leader":"","distance":3,"neutral":false,"sites":[]}
+{"t":"result","cat":"colour","value":"#767676","verdict":"REFUTED"}
+{"t":"occ","path":"c.tsx","value":"--canary-space","kind":"ref","cat":"spacing"}
+{"t":"value","cat":"z-index","value":"1001","status":"token_plus_n","distance":1}

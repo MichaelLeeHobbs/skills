@@ -1,0 +1,8 @@
+{"t":"result","cat":"colour","value":"#757575","action":"SNAP","token":"--g","verdict":"REFUTED","shift":"imperceptible","distance":6,"contrast":"crossed","crossings":["--page@default 4.55 4.42"]}
+{"t":"result","cat":"spacing","value":"0px","action":"SNAP","token":"--s","verdict":"VISIBLE","shift":"visible","distance":1600,"contrast":"none","crossings":[]}
+{"t":"summary","cat":"colour","before":1,"planned":1,"kept":0,"snapped":0,"visible":0,"refuted":1,"after":1}
+{"t":"summary","cat":"spacing","before":1,"planned":1,"kept":0,"snapped":0,"visible":1,"refuted":0,"after":1}
+{"t":"summary","cat":"radius","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"font-size","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"shadow","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"z-index","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}

@@ -1,0 +1,33 @@
+inspect
+{"t":"size","cat":"spacing","value":"16px"}
+{"t":"size","cat":"spacing","value":"1rem"}
+{"t":"size","cat":"spacing","value":"1.5rem"}
+{"t":"size","cat":"spacing","value":"0.5em"}
+{"t":"size","cat":"spacing","value":"50%"}
+{"t":"size","cat":"spacing","value":"0"}
+{"t":"size","cat":"spacing","value":"0rem"}
+{"t":"size","cat":"spacing","value":"-8px"}
+{"t":"size","cat":"spacing","value":"1.005px"}
+{"t":"size","cat":"spacing","value":"-1.005px"}
+{"t":"size","cat":"spacing","value":"2px"}
+{"t":"size","cat":"spacing","value":"2.01px"}
+{"t":"size","cat":"spacing","value":"16"}
+{"t":"size","cat":"spacing","value":"calc(1px + 2px)"}
+{"t":"size","cat":"spacing","value":"1e3px"}
+{"t":"size","cat":"spacing","value":"16PX"}
+{"t":"size","cat":"spacing","value":"+4px"}
+{"t":"size","cat":"spacing","value":" 12px "}
+{"t":"size","cat":"spacing","value":"12 px"}
+{"t":"size","cat":"spacing","value":"1.px"}
+{"t":"size","cat":"spacing","value":".5px"}
+{"t":"size","cat":"spacing","value":"10vh"}
+{"t":"size","cat":"spacing","value":"4pt"}
+{"t":"size","cat":"spacing","value":"auto"}
+{"t":"size","cat":"radius","value":"999px"}
+{"t":"size","cat":"radius","value":"9999px"}
+{"t":"size","cat":"radius","value":"998.99px"}
+{"t":"size","cat":"radius","value":"50%"}
+{"t":"size","cat":"radius","value":"4px"}
+{"t":"size","cat":"font-size","value":"14px"}
+{"t":"size","cat":"font-size","value":"0.875rem"}
+{"t":"size","cat":"font-size","value":"1.125em"}

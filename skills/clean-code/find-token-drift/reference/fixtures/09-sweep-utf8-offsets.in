@@ -1,0 +1,4 @@
+sweep
+{"t":"src","path":"b.tsx","text":"// café 😀\r\nconst s = { color: '#c0ffee', padding: '4px' }\r\n"}
+{"t":"src","path":"Z.css","text":"é{margin:2rem}"}
+{"t":"src","path":"a/x.vue","text":"<style>\n.x { color: hsl(0 0% 50%) }\n</style>"}

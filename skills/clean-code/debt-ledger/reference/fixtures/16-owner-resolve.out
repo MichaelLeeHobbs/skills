@@ -1,0 +1,14 @@
+{"t":"owner","path":"docs/guide.md","owner":"@acme/docs","source":"codeowners"}
+{"t":"owner","path":"docs/deep/guide.md","owner":"@acme/everyone","source":"codeowners"}
+{"t":"owner","path":"lib/x.py","owner":"@acme/python","source":"codeowners"}
+{"t":"owner","path":"apps/web/src/a.ts","owner":"@acme/web","source":"codeowners"}
+{"t":"owner","path":"apps/web","owner":"@acme/everyone","source":"codeowners"}
+{"t":"owner","path":"packages/core/sub/legacy/old.ts","owner":"packages/core/sub","source":"package"}
+{"t":"owner","path":"packages/core/legacy/old.ts","owner":"PROJ-12","source":"tag"}
+{"t":"owner","path":"packages/core/legacy/old.ts","owner":"@acme/legacy-team","source":"tag"}
+{"t":"owner","path":"packages/core/legacy/old.ts","owner":"packages/core","source":"package"}
+{"t":"owner","path":"tools/a.mjs","owner":"@acme/tools","source":"codeowners"}
+{"t":"owner","path":"tools/sub/a.mjs","owner":"@acme/everyone","source":"codeowners"}
+{"t":"owner","path":"src/build/out.js","owner":"@acme/build","source":"codeowners"}
+{"t":"owner","path":"src/build","owner":"@acme/everyone","source":"codeowners"}
+{"t":"summary","items":13,"by_source":{"codeowners":9,"package":2,"tag":2}}

@@ -1,0 +1,4 @@
+{"t":"entry","path":"src/Bar.php","rule":"message:d89fc62b826a66e6","count":1}
+{"t":"entry","path":"src/Foo.php","rule":"message:1a6586e99ec9f63c","count":1}
+{"t":"entry","path":"src/Foo.php","rule":"method.notFound","count":5}
+{"t":"summary","format":"phpstan","unit":"violations","entries":3,"units":7,"ruleoffs":0}

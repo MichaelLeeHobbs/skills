@@ -1,0 +1,4 @@
+tally
+{"t":"run","date":"2025-03-01","commit":"bbb","spec":"1","descends":false}
+{"t":"last","date":"2025-02-01","commit":"aaa","spec":"1","patterns":"4c0f5ce6a6f1c7b2cf13a8632bd5a5002ad87be08636587f9c06b16dc3bca5eb","markers":0,"inline":0,"blanket":0}
+{"t":"pattern","kind":"marker","lang":"ts","text":"//\\s*(TODO|FIXME|HACK|XXX)\\b"}

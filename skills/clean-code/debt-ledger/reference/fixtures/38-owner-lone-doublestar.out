@@ -1,0 +1,4 @@
+{"t":"owner","path":"deep/er/file.ts","owner":"@acme/any","source":"codeowners"}
+{"t":"owner","path":"x/a/b.ts","owner":"@acme/x","source":"codeowners"}
+{"t":"owner","path":"x","owner":"@acme/x","source":"codeowners"}
+{"t":"summary","items":3,"by_source":{"codeowners":3}}

@@ -1,0 +1,8 @@
+{"t":"change","source":"basedpyright-baseline.json","path":"m.py","rule":"reportAny","old":4,"new":0,"class":"moved-blanket","units":1}
+{"t":"change","source":"basedpyright-baseline.json","path":"m.py","rule":"reportAny","old":4,"new":0,"class":"fixed","units":3}
+{"t":"change","source":"eslint-suppressions.json","path":"a.ts","rule":"no-console","old":6,"new":0,"class":"moved-inline","units":6}
+{"t":"change","source":"eslint-suppressions.json","path":"b.ts","rule":"no-console","old":3,"new":1,"class":"moved-blanket","units":1}
+{"t":"change","source":"eslint-suppressions.json","path":"b.ts","rule":"no-console","old":3,"new":1,"class":"fixed","units":1}
+{"t":"source","source":"basedpyright-baseline.json","unit":"violations","old":4,"new":0,"in":0,"out":4,"grew":0,"added":0,"deleted_file":0,"moved_inline":0,"moved_blanket":1,"config_changed":0,"fixed":3,"rekeyed":0,"conserved":true}
+{"t":"source","source":"eslint-suppressions.json","unit":"violations","old":9,"new":1,"in":0,"out":8,"grew":0,"added":0,"deleted_file":0,"moved_inline":6,"moved_blanket":1,"config_changed":0,"fixed":1,"rekeyed":0,"conserved":true}
+{"t":"summary","sources":2,"changes":5,"fixed_reliable":false}

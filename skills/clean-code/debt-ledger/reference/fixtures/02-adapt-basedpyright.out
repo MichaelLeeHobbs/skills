@@ -1,0 +1,3 @@
+{"t":"entry","path":"pkg/mod.py","rule":"reportAny","count":1}
+{"t":"entry","path":"pkg/mod.py","rule":"reportUnknownMemberType","count":2}
+{"t":"summary","format":"basedpyright","unit":"violations","entries":2,"units":3,"ruleoffs":0}

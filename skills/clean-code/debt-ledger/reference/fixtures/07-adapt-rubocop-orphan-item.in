@@ -1,0 +1,4 @@
+adapt --format rubocop
+# header
+  - 'app/a.rb'
+Style/X:

@@ -1,0 +1,6 @@
+owner
+{"t":"package","path":"."}
+{"t":"package","path":"a"}
+{"t":"item","path":"a/x.ts","tag":""}
+{"t":"item","path":"ab/x.ts","tag":""}
+{"t":"item","path":"b.ts","tag":""}

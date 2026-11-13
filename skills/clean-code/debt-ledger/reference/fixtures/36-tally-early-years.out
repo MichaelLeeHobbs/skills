@@ -1,0 +1,8 @@
+{"t":"counts","markers":3,"inline":0,"blanket":0,"by_tag":{"TODO":3}}
+{"t":"owners","by_owner":{"src":3}}
+{"t":"ages","0-29":1,"30-89":1,"90-364":0,"365-729":0,"730+":1,"unknown":0}
+{"t":"oldest","path":"a.ts","line":1,"kind":"marker","rule":"TODO","owner":"src","days":36525}
+{"t":"oldest","path":"a.ts","line":2,"kind":"marker","rule":"TODO","owner":"src","days":60}
+{"t":"oldest","path":"a.ts","line":3,"kind":"marker","rule":"TODO","owner":"src","days":1}
+{"t":"history","date":"0100-03-01","commit":"c","spec":"1","patterns":"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855","markers":3,"inline":0,"blanket":0,"sources":{}}
+{"t":"trend","comparable":false,"reason":"first_run","markers":0,"inline":0,"blanket":0,"sources":{}}

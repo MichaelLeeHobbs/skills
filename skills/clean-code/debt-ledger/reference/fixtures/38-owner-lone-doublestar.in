@@ -1,0 +1,6 @@
+owner
+{"t":"line","text":"** @acme/any"}
+{"t":"line","text":"/x/** @acme/x"}
+{"t":"item","path":"deep/er/file.ts","tag":""}
+{"t":"item","path":"x/a/b.ts","tag":""}
+{"t":"item","path":"x","tag":""}

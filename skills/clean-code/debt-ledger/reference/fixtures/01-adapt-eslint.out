@@ -1,0 +1,5 @@
+{"t":"entry","path":"Z.ts","rule":"eqeqeq","count":1}
+{"t":"entry","path":"src/a.ts","rule":"no-console","count":3}
+{"t":"entry","path":"src/b.ts","rule":"@typescript-eslint/no-explicit-any","count":1}
+{"t":"entry","path":"src/b.ts","rule":"no-console","count":2}
+{"t":"summary","format":"eslint","unit":"violations","entries":4,"units":7,"ruleoffs":0}

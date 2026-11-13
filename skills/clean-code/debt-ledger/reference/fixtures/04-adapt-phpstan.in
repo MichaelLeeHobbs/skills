@@ -1,0 +1,21 @@
+adapt --format phpstan
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Call to an undefined method Foo\:\:bar\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: src/Foo.php
+
+		-
+			message: '#^Variable \$x might not be defined\.$#'
+			count: 1
+			path: 'src/Bar.php'
+
+		-
+			rawMessage: Parameter #1 expects int, string given.
+			path: src/Foo.php
+		-
+			identifier: method.notFound
+			count: 3
+			path: src/Foo.php

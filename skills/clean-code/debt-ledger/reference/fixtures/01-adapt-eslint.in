@@ -1,0 +1,21 @@
+adapt --format eslint
+{
+  "src/b.ts": {
+    "no-console": {
+      "count": 2
+    },
+    "@typescript-eslint/no-explicit-any": {
+      "count": 1
+    }
+  },
+  "src/a.ts": {
+    "no-console": {
+      "count": 3
+    }
+  },
+  "Z.ts": {
+    "eqeqeq": {
+      "count": 1
+    }
+  }
+}

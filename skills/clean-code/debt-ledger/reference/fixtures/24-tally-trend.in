@@ -1,0 +1,11 @@
+tally
+{"t":"last","date":"2025-02-01","commit":"aaa","spec":"1","patterns":"4c0f5ce6a6f1c7b2cf13a8632bd5a5002ad87be08636587f9c06b16dc3bca5eb","markers":4,"inline":1,"blanket":0}
+{"t":"lastsource","source":"eslint-suppressions.json","units":9}
+{"t":"lastsource","source":"phpstan-baseline.neon","units":2}
+{"t":"run","date":"2025-03-01","commit":"bbb","spec":"1","descends":true}
+{"t":"item","path":"a.ts","line":9,"kind":"marker","rule":"TODO","owner":"src","dated":"2025-01-01"}
+{"t":"item","path":"a.ts","line":10,"kind":"blanket","rule":"*","owner":"src","dated":"2025-01-01"}
+{"t":"pattern","kind":"marker","lang":"py","text":"#\\s*(TODO|FIXME|HACK|XXX)\\b"}
+{"t":"pattern","kind":"inline","lang":"ts","text":"eslint-disable(-next)?-line\\s+\\S"}
+{"t":"pattern","kind":"marker","lang":"ts","text":"//\\s*(TODO|FIXME|HACK|XXX)\\b"}
+{"t":"source","source":"eslint-suppressions.json","unit":"violations","units":6}

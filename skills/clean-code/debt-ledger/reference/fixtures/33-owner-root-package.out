@@ -1,0 +1,4 @@
+{"t":"owner","path":"a/x.ts","owner":"a","source":"package"}
+{"t":"owner","path":"ab/x.ts","owner":".","source":"package"}
+{"t":"owner","path":"b.ts","owner":".","source":"package"}
+{"t":"summary","items":3,"by_source":{"package":3}}

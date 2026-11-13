@@ -1,0 +1,9 @@
+reuse
+{"t":"old","path":"a.ts","kind":"inline","rule":"no-console","hash":"d78e0da7309463e1","ordinal":0,"dated":"2021-03-01","first_seen":"2024-06-01"}
+{"t":"old","path":"a.ts","kind":"inline","rule":"no-console","hash":"d78e0da7309463e1","ordinal":4,"dated":"2022-03-01","first_seen":"2024-07-01"}
+{"t":"old","path":"d.ts","kind":"marker","rule":"HACK","hash":"063c33a37c24bd03","ordinal":0,"dated":"2020-01-01","first_seen":"2024-06-01"}
+{"t":"old","path":"d.ts","kind":"marker","rule":"HACK","hash":"063c33a37c24bd03","ordinal":1,"dated":"2020-02-01","first_seen":"2024-06-01"}
+{"t":"new","path":"a.ts","line":30,"kind":"inline","rule":"no-console","text":"// eslint-disable-next-line no-console"}
+{"t":"new","path":"a.ts","line":5,"kind":"inline","rule":"no-console","text":"// eslint-disable-next-line no-console"}
+{"t":"new","path":"a.ts","line":18,"kind":"inline","rule":"no-console","text":"//   eslint-disable-next-line   no-console"}
+{"t":"new","path":"d.ts","line":7,"kind":"marker","rule":"HACK","text":"HACK: see below"}

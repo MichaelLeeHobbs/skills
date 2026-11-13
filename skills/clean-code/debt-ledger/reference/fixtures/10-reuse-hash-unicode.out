@@ -1,0 +1,4 @@
+{"t":"added","path":"Z.ts","line":1,"kind":"marker","rule":"XXX","hash":"9b38b8f5877f2395","ordinal":0}
+{"t":"added","path":"ü/ä.ts","line":1,"kind":"marker","rule":"TODO","hash":"b2dbd4d312277b40","ordinal":0}
+{"t":"added","path":"ü/ä.ts","line":2,"kind":"marker","rule":"TODO","hash":"e3b0c44298fc1c14","ordinal":0}
+{"t":"summary","old":0,"new":3,"reused":0,"redated":0,"added":3,"removed":0,"renamed":0}

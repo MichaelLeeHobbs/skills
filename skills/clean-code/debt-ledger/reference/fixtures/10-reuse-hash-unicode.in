@@ -1,0 +1,4 @@
+reuse
+{"t":"new","path":"ü/ä.ts","line":1,"kind":"marker","rule":"TODO","text":"TODO: café ☕ naïve"}
+{"t":"new","path":"ü/ä.ts","line":2,"kind":"marker","rule":"TODO","text":""}
+{"t":"new","path":"Z.ts","line":1,"kind":"marker","rule":"XXX","text":"\t XXX \t"}

@@ -1,0 +1,2 @@
+{"t":"short","path":"src/b.ts","found":9,"loose":10}
+{"t":"summary","files":5,"adjusted":0,"found":100,"loose":100,"covered":99,"coverage":"0.9900","adjusted_share":"0.0000","pass":true}

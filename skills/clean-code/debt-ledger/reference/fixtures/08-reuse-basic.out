@@ -1,0 +1,5 @@
+{"t":"added","path":"b.py","line":9,"kind":"blanket","rule":"*","hash":"bf4c4442afbe4fe2","ordinal":0}
+{"t":"reuse","path":"b.py","line":3,"kind":"inline","rule":"E501","hash":"f30ea688753e7d83","ordinal":0,"dated":"2024-02-29","first_seen":"2025-01-06"}
+{"t":"reuse","path":"src/a.ts","line":40,"kind":"marker","rule":"TODO","hash":"6e9d180b365e267b","ordinal":0,"dated":"2023-01-10","first_seen":"2025-01-06"}
+{"t":"removed","path":"c.ts","kind":"marker","rule":"FIXME","hash":"0000000000000000","ordinal":0,"dated":"2022-05-01","first_seen":"2025-01-06"}
+{"t":"summary","old":3,"new":3,"reused":2,"redated":0,"added":1,"removed":1,"renamed":1}

@@ -1,0 +1,21 @@
+baseline
+{"t":"source","source":"eslint-suppressions.json","linter":"eslint","unit":"violations"}
+{"t":"old","source":"eslint-suppressions.json","path":"src/gone.ts","rule":"no-console","count":4}
+{"t":"old","source":"eslint-suppressions.json","path":"src/moved.ts","rule":"no-console","count":5}
+{"t":"new","source":"eslint-suppressions.json","path":"src/moved.ts","rule":"no-console","count":1}
+{"t":"old","source":"eslint-suppressions.json","path":"src/blank.ts","rule":"eqeqeq","count":2}
+{"t":"old","source":"eslint-suppressions.json","path":"src/cfg.ts","rule":"@typescript-eslint/no-explicit-any","count":3}
+{"t":"old","source":"eslint-suppressions.json","path":"src/cfg.ts","rule":"no-explicit-any","count":2}
+{"t":"old","source":"eslint-suppressions.json","path":"src/fix.ts","rule":"prefer-const","count":2}
+{"t":"new","source":"eslint-suppressions.json","path":"src/fix.ts","rule":"prefer-const","count":1}
+{"t":"old","source":"eslint-suppressions.json","path":"old/ren.ts","rule":"no-var","count":2}
+{"t":"new","source":"eslint-suppressions.json","path":"src/ren.ts","rule":"no-var","count":2}
+{"t":"old","source":"eslint-suppressions.json","path":"src/grow.ts","rule":"no-console","count":1}
+{"t":"new","source":"eslint-suppressions.json","path":"src/grow.ts","rule":"no-console","count":4}
+{"t":"new","source":"eslint-suppressions.json","path":"src/new.ts","rule":"no-debugger","count":2}
+{"t":"gone","path":"src/gone.ts"}
+{"t":"rename","from":"old/ren.ts","to":"src/ren.ts"}
+{"t":"inline","linter":"eslint","path":"src/moved.ts","rule":"no-console","scope":"line","old":1,"new":4}
+{"t":"inline","linter":"eslint","path":"src/blank.ts","rule":"*","scope":"line","old":0,"new":1}
+{"t":"config","text":"    '@typescript-eslint/no-explicit-any': 'off',"}
+{"t":"config","text":"  \"no-explicit-any-x\": \"warn\""}

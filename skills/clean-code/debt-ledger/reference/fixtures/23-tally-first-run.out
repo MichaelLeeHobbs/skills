@@ -1,0 +1,12 @@
+{"t":"counts","markers":5,"inline":2,"blanket":1,"by_tag":{"FIXME":1,"HACK":1,"TODO":2,"XXX":1}}
+{"t":"owners","by_owner":{"10":1,"9":1,"@acme/web":4,"tools":2}}
+{"t":"ages","0-29":2,"30-89":0,"90-364":1,"365-729":1,"730+":3,"unknown":1}
+{"t":"oldest","path":"a.ts","line":2,"kind":"marker","rule":"TODO","owner":"@acme/web","days":1096}
+{"t":"oldest","path":"a.ts","line":9,"kind":"marker","rule":"TODO","owner":"@acme/web","days":1096}
+{"t":"oldest","path":"e.ts","line":1,"kind":"marker","rule":"XXX","owner":"9","days":730}
+{"t":"oldest","path":"b.py","line":1,"kind":"marker","rule":"FIXME","owner":"tools","days":366}
+{"t":"oldest","path":"c.ts","line":3,"kind":"inline","rule":"no-console","owner":"@acme/web","days":364}
+{"t":"oldest","path":"b.py","line":5,"kind":"inline","rule":"E501","owner":"tools","days":1}
+{"t":"oldest","path":"d.ts","line":1,"kind":"marker","rule":"HACK","owner":"10","days":0}
+{"t":"history","date":"2025-03-01","commit":"abc123","spec":"1","patterns":"4c0f5ce6a6f1c7b2cf13a8632bd5a5002ad87be08636587f9c06b16dc3bca5eb","markers":5,"inline":2,"blanket":1,"sources":{".rubocop_todo.yml":3,"eslint-suppressions.json":6}}
+{"t":"trend","comparable":false,"reason":"first_run","markers":0,"inline":0,"blanket":0,"sources":{".rubocop_todo.yml":0,"eslint-suppressions.json":0}}

@@ -1,0 +1,3 @@
+owner
+{"t":"item","path":"a","tag":""}
+{"t":"rule","pattern":"*","owners":"@a/b"}

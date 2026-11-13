@@ -1,0 +1,5 @@
+baseline
+{"t":"source","source":"eslint-suppressions.json","linter":"eslint","unit":"violations"}
+{"t":"new","source":"eslint-suppressions.json","path":"a.ts","rule":"r","count":1}
+{"t":"old","source":"other.json","path":"a.ts","rule":"r","count":1}
+{"t":"source","source":"eslint-suppressions.json","linter":"eslint","unit":"violations"}

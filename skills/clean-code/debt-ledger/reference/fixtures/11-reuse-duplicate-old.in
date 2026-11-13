@@ -1,0 +1,4 @@
+reuse
+{"t":"old","path":"x.ts","kind":"marker","rule":"TODO","hash":"aaaaaaaaaaaaaaaa","ordinal":0,"dated":"","first_seen":"2025-01-01"}
+{"t":"rename","from":"y.ts","to":"x.ts"}
+{"t":"old","path":"y.ts","kind":"marker","rule":"TODO","hash":"aaaaaaaaaaaaaaaa","ordinal":0,"dated":"","first_seen":"2025-01-01"}

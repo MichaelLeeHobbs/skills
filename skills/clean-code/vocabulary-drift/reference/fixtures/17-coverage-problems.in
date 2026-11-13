@@ -1,0 +1,16 @@
+verify --check coverage
+{"t":"tracked","path":"src/a.ts"}
+{"t":"tracked","path":"src/b.ts"}
+{"t":"tracked","path":"src/c.vue"}
+{"t":"tracked","path":"Makefile"}
+{"t":"file","path":"src/a.ts","bucket":"source"}
+{"t":"file","path":"src/b.ts","bucket":"source"}
+{"t":"file","path":"src/b.ts","bucket":"excluded-generated"}
+{"t":"file","path":"src/c.vue","bucket":"source"}
+{"t":"file","path":"gone.ts","bucket":"source"}
+{"t":"count","path":"src/a.ts","surface":"code","pattern":2}
+{"t":"count","path":"src/b.ts","surface":"code","pattern":3}
+{"t":"site","id":"src/a.ts:1:1","path":"src/a.ts","surface":"code","context":"src","text":"a"}
+{"t":"site","id":"src/a.ts:2:1","path":"src/a.ts","surface":"code","context":"src","text":"b"}
+{"t":"site","id":"src/c.vue:5:3","path":"src/c.vue","surface":"ui","context":"src","text":"Exam"}
+{"t":"site","id":"src/c.vue:9:3","path":"src/c.vue","surface":"code","context":"src","text":"exam"}

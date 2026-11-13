@@ -1,0 +1,5 @@
+{"t":"verdicts","SYNONYM":2,"DISTINCT":1,"HOMONYM":1,"GENERIC":0}
+{"t":"strength","structural":2,"usage":2}
+{"t":"candidates","judged":2,"total":3}
+{"t":"seeds","files":2,"lines":52,"read":52,"pass":true}
+{"t":"spend","total_cents":1035,"cap_cents":1000,"over_cap":true,"by_phase":{"judge":900,"map":135}}

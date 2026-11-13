@@ -1,0 +1,6 @@
+{"t":"concept","concept":"C0001","status":"reuse","reason":""}
+{"t":"concept","concept":"C0002","status":"rejudge","reason":"names"}
+{"t":"concept","concept":"C0003","status":"rejudge","reason":"cells"}
+{"t":"concept","concept":"C0004","status":"removed","reason":""}
+{"t":"concept","concept":"C0005","status":"added","reason":""}
+{"t":"summary","reuse":1,"rejudge":2,"added":1,"removed":1}

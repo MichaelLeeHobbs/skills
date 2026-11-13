@@ -1,0 +1,8 @@
+{"t":"candidate","candidate":"ORD","rank":1,"sites":2,"surfaces":2,"terms":["order"]}
+{"t":"pick","candidate":"ORD","term":"order","sites":2,"cells":2,"cells_picked":2,"picks":["a/z.sql:1:1","a/y.ts:1:1"]}
+{"t":"candidate","candidate":"PAT","rank":2,"sites":4,"surfaces":1,"terms":["patient","subject"]}
+{"t":"pick","candidate":"PAT","term":"patient","sites":3,"cells":1,"cells_picked":1,"picks":["b/s.ts:1:1","b/q.ts:1:1"]}
+{"t":"pick","candidate":"PAT","term":"subject","sites":2,"cells":1,"cells_picked":1,"picks":["b/s.ts:1:1","b/r.ts:1:1"]}
+{"t":"candidate","candidate":"NONE","rank":3,"sites":0,"surfaces":0,"terms":["widget"]}
+{"t":"pick","candidate":"NONE","term":"widget","sites":0,"cells":0,"cells_picked":0,"picks":[]}
+{"t":"summary","candidates":3,"picks":6}

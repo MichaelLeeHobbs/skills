@@ -1,0 +1,20 @@
+{"t":"term","term":"address","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["addresses"],"names":[{"text":"patients cases bus addresses XMLParser HTTPRequests","sites":1}]}
+{"t":"term","term":"alias","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["alias","aliases"],"names":[{"text":"aliases alias analyses statuses status series","sites":1}]}
+{"t":"term","term":"analysis","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["analyses"],"names":[{"text":"aliases alias analyses statuses status series","sites":1}]}
+{"t":"term","term":"box","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["boxes"],"names":[{"text":"classes boxes matches movies indices gas lens news","sites":1}]}
+{"t":"term","term":"bus","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["bus"],"names":[{"text":"patients cases bus addresses XMLParser HTTPRequests","sites":1}]}
+{"t":"term","term":"case","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["cases"],"names":[{"text":"patients cases bus addresses XMLParser HTTPRequests","sites":1}]}
+{"t":"term","term":"gas","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["gas"],"names":[{"text":"classes boxes matches movies indices gas lens news","sites":1}]}
+{"t":"term","term":"http","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["http"],"names":[{"text":"patients cases bus addresses XMLParser HTTPRequests","sites":1}]}
+{"t":"term","term":"index","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["indices"],"names":[{"text":"classes boxes matches movies indices gas lens news","sites":1}]}
+{"t":"term","term":"lens","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["lens"],"names":[{"text":"classes boxes matches movies indices gas lens news","sites":1}]}
+{"t":"term","term":"match","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["matches"],"names":[{"text":"classes boxes matches movies indices gas lens news","sites":1}]}
+{"t":"term","term":"movie","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["movies"],"names":[{"text":"classes boxes matches movies indices gas lens news","sites":1}]}
+{"t":"term","term":"news","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["news"],"names":[{"text":"classes boxes matches movies indices gas lens news","sites":1}]}
+{"t":"term","term":"parser","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["parser"],"names":[{"text":"patients cases bus addresses XMLParser HTTPRequests","sites":1}]}
+{"t":"term","term":"patient","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["patients"],"names":[{"text":"patients cases bus addresses XMLParser HTTPRequests","sites":1}]}
+{"t":"term","term":"request","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["requests"],"names":[{"text":"patients cases bus addresses XMLParser HTTPRequests","sites":1}]}
+{"t":"term","term":"series","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["series"],"names":[{"text":"aliases alias analyses statuses status series","sites":1}]}
+{"t":"term","term":"status","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["status","statuses"],"names":[{"text":"aliases alias analyses statuses status series","sites":1}]}
+{"t":"term","term":"xml","sites":1,"files":1,"by_surface":{"code":1},"contexts":["a"],"forms":["xml"],"names":[{"text":"patients cases bus addresses XMLParser HTTPRequests","sites":1}]}
+{"t":"summary","sites":3,"tokens":22,"kept":21,"stopped":1,"short":0,"terms":19}

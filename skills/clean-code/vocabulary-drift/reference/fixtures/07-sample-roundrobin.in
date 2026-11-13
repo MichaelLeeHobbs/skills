@@ -1,0 +1,11 @@
+sample
+{"t":"site","id":"api/db/schema.sql:4:1","path":"api/db/schema.sql","surface":"schema","context":"api","text":"exam_id"}
+{"t":"site","id":"api/types.ts:2:1","path":"api/types.ts","surface":"type","context":"api","text":"Exam"}
+{"t":"site","id":"api/types.ts:8:1","path":"api/types.ts","surface":"type","context":"api","text":"ExamStatus"}
+{"t":"site","id":"api/types.ts:9:1","path":"api/types.ts","surface":"type","context":"api","text":"examDate"}
+{"t":"site","id":"web/a.tsx:1:1","path":"web/a.tsx","surface":"code","context":"web","text":"examList"}
+{"t":"site","id":"web/b.tsx:1:1","path":"web/b.tsx","surface":"code","context":"web","text":"selectedExam"}
+{"t":"site","id":"web/en.json:1:1","path":"web/en.json","surface":"ui","context":"web","text":"Exam"}
+{"t":"site","id":"sched/c.ts:1:1","path":"sched/c.ts","surface":"code","context":"sched","text":"examSlot"}
+{"t":"site","id":"web/d.tsx:1:1","path":"web/d.tsx","surface":"code","context":"web","text":"studyId"}
+{"t":"want","candidate":"K1","term":"exam","exclude":[]}

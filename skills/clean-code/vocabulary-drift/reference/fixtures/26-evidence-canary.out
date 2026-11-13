@@ -1,0 +1,5 @@
+{"t":"claim","id":"CAN-dist","verdict":"SYNONYM","strength":"structural","cites":2,"problems":0}
+{"t":"claim","id":"CAN-syn","verdict":"SYNONYM","strength":"structural","cites":2,"problems":0}
+{"t":"problem","kind":"canary_wrong","claim":"CAN-dist","detail":"expected DISTINCT got SYNONYM"}
+{"t":"problem","kind":"missing","claim":"CAN-hom","detail":""}
+{"t":"summary","claims":2,"structural":2,"usage":0,"canaries":3,"canaries_passed":1,"problems":2,"pass":false}

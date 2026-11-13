@@ -1,0 +1,17 @@
+{"t":"claim","id":"H1","verdict":"HOMONYM","strength":"usage","cites":2,"problems":0}
+{"t":"sense","claim":"H1","term":"exam","concept":"C-order","prefix":"sched/","sites":2}
+{"t":"sense","claim":"H1","term":"exam","concept":"C-study","prefix":"","sites":2}
+{"t":"claim","id":"H2","verdict":"HOMONYM","strength":"usage","cites":1,"problems":3}
+{"t":"sense","claim":"H2","term":"exam","concept":"C-study","prefix":"web/","sites":2}
+{"t":"sense","claim":"H2","term":"exam","concept":"C-order","prefix":"sched/","sites":2}
+{"t":"claim","id":"H3","verdict":"HOMONYM","strength":"usage","cites":2,"problems":1}
+{"t":"sense","claim":"H3","term":"exam","concept":"C-billing","prefix":"billing/","sites":0}
+{"t":"sense","claim":"H3","term":"exam","concept":"C-study","prefix":"","sites":4}
+{"t":"claim","id":"H4","verdict":"HOMONYM","strength":"usage","cites":2,"problems":1}
+{"t":"sense","claim":"H4","term":"exam","concept":"C-study","prefix":"","sites":4}
+{"t":"problem","kind":"too_few_cites","claim":"H2","detail":""}
+{"t":"problem","kind":"no_catch_all","claim":"H2","detail":"exam"}
+{"t":"problem","kind":"bad_sense","claim":"H2","detail":"study"}
+{"t":"problem","kind":"empty_sense","claim":"H3","detail":"C-billing"}
+{"t":"problem","kind":"no_senses","claim":"H4","detail":"exam"}
+{"t":"summary","claims":4,"structural":0,"usage":4,"canaries":0,"canaries_passed":0,"problems":5,"pass":false}

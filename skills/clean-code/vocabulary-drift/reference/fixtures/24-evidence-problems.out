@@ -1,0 +1,14 @@
+{"t":"claim","id":"B1","verdict":"SYNONYM","strength":"usage","cites":3,"problems":4}
+{"t":"claim","id":"B2","verdict":"DISTINCT","strength":"usage","cites":1,"problems":3}
+{"t":"claim","id":"B3","verdict":"GENERIC","strength":"usage","cites":0,"problems":3}
+{"t":"problem","kind":"not_sampled","claim":"B1","detail":"web/en.json:2:1"}
+{"t":"problem","kind":"unknown_site","claim":"B1","detail":"nope.ts:1:1"}
+{"t":"problem","kind":"too_few_names","claim":"B1","detail":""}
+{"t":"problem","kind":"bad_relation","claim":"B1","detail":""}
+{"t":"problem","kind":"not_sampled","claim":"B2","detail":"web/exam.tsx:4:1"}
+{"t":"problem","kind":"name_not_cited","claim":"B2","detail":"patient"}
+{"t":"problem","kind":"no_relation","claim":"B2","detail":""}
+{"t":"problem","kind":"no_cites","claim":"B3","detail":""}
+{"t":"problem","kind":"too_few_names","claim":"B3","detail":""}
+{"t":"problem","kind":"bad_sense","claim":"B3","detail":"exam"}
+{"t":"summary","claims":3,"structural":0,"usage":3,"canaries":0,"canaries_passed":0,"problems":10,"pass":false}

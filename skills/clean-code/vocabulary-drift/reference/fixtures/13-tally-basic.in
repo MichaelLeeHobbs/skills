@@ -1,0 +1,14 @@
+tally
+{"t":"claim","verdict":"SYNONYM","strength":"structural","id":"V1","cites":3}
+{"t":"claim","verdict":"SYNONYM","strength":"usage"}
+{"t":"claim","verdict":"HOMONYM","strength":"usage"}
+{"t":"claim","verdict":"DISTINCT","strength":"structural"}
+{"t":"candidate","status":"judged"}
+{"t":"candidate","status":"judged"}
+{"t":"candidate","status":"cut"}
+{"t":"seed","file":"domains.jsonl","lines":12,"read":12}
+{"t":"seed","file":"mapping.jsonl","lines":40,"read":40}
+{"t":"spend","phase":"map","usd_cents":125}
+{"t":"spend","phase":"judge","usd_cents":900}
+{"t":"spend","phase":"map","usd_cents":10}
+{"t":"cap","usd_cents":1000}

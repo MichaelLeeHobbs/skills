@@ -1,0 +1,14 @@
+verify --check evidence
+{"t":"site","id":"api/types.ts:3:1","path":"api/types.ts","surface":"type","context":"api","text":"Study"}
+{"t":"site","id":"api/db.sql:7:1","path":"api/db.sql","surface":"schema","context":"api","text":"studies"}
+{"t":"site","id":"web/exam.tsx:4:1","path":"web/exam.tsx","surface":"code","context":"web","text":"examId"}
+{"t":"site","id":"web/en.json:2:1","path":"web/en.json","surface":"ui","context":"web","text":"Exam"}
+{"t":"site","id":"sched/slot.ts:5:1","path":"sched/slot.ts","surface":"code","context":"sched","text":"examSlot"}
+{"t":"site","id":"sched/book.ts:9:1","path":"sched/book.ts","surface":"code","context":"sched","text":"bookExam"}
+{"t":"site","id":"api/types.ts:20:1","path":"api/types.ts","surface":"type","context":"api","text":"Order"}
+{"t":"site","id":"api/types.ts:21:1","path":"api/types.ts","surface":"type","context":"api","text":"orderStudies"}
+{"t":"pick","candidate":"K1","term":"exam","picks":["web/exam.tsx:4:1"]}
+{"t":"claim","id":"B1","candidate":"K1","verdict":"SYNONYM","names":["exam"],"cites":["web/exam.tsx:4:1","web/en.json:2:1","nope.ts:1:1"],"relation":"peer"}
+{"t":"claim","id":"B2","candidate":"K9","verdict":"DISTINCT","names":["exam","patient"],"cites":["web/exam.tsx:4:1"],"relation":""}
+{"t":"claim","id":"B3","candidate":"K1","verdict":"GENERIC","names":[],"cites":[],"relation":""}
+{"t":"sense","claim":"B3","term":"exam","concept":"C1","prefix":""}

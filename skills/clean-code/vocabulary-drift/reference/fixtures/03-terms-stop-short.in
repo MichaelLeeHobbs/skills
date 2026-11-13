@@ -1,0 +1,6 @@
+terms
+{"t":"site","id":"b.py:1:1","path":"b.py","surface":"code","context":"b","text":"get_patient_id"}
+{"t":"site","id":"b.py:2:1","path":"b.py","surface":"code","context":"b","text":"x y2 404 dx Rx"}
+{"t":"site","id":"b.py:3:1","path":"b.py","surface":"code","context":"b","text":"the values of the data items"}
+{"t":"site","id":"b.py:4:1","path":"b.py","surface":"ui","context":"b","text":"Café résumé"}
+{"t":"site","id":"b.py:5:1","path":"b.py","surface":"doc","context":"b","text":""}

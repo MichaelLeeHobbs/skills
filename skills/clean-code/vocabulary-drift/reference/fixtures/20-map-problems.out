@@ -1,0 +1,6 @@
+{"t":"problem","kind":"unmapped","term":"accession","concept":""}
+{"t":"problem","kind":"unmapped","term":"exam","concept":""}
+{"t":"problem","kind":"unknown_term","term":"requisition","concept":"C0002"}
+{"t":"problem","kind":"unknown_concept","term":"study","concept":"C0009"}
+{"t":"problem","kind":"unused_concept","term":"","concept":"C0003"}
+{"t":"summary","terms":5,"required":4,"mapped":2,"concepts":3,"multi":2,"pass":false}

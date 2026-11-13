@@ -1,0 +1,9 @@
+{"t":"problem","kind":"unbucketed","path":"Makefile","surface":"","pattern":0,"sites":0}
+{"t":"problem","kind":"double","path":"src/b.ts","surface":"","pattern":0,"sites":0}
+{"t":"problem","kind":"untracked","path":"gone.ts","surface":"","pattern":0,"sites":0}
+{"t":"problem","kind":"uncounted","path":"src/c.vue","surface":"code","pattern":0,"sites":1}
+{"t":"problem","kind":"uncounted","path":"src/c.vue","surface":"ui","pattern":0,"sites":1}
+{"t":"problem","kind":"unmeasured","path":"","surface":"ui","pattern":0,"sites":1}
+{"t":"problem","kind":"no_sites","path":"src/b.ts","surface":"code","pattern":3,"sites":0}
+{"t":"group","surface":"code","ext":"ts","pattern":5,"sites":2,"matched":2,"coverage":"0.4000","pass":false}
+{"t":"summary","tracked":4,"files":4,"by_bucket":{"source":4},"groups":1,"failed_groups":1,"problems":7,"pass":false}

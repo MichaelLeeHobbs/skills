@@ -1,0 +1,15 @@
+verify --check coverage
+{"t":"tracked","path":"src/a.ts"}
+{"t":"tracked","path":"src/b.ts"}
+{"t":"tracked","path":"README.md"}
+{"t":"file","path":"src/a.ts","bucket":"source"}
+{"t":"file","path":"src/b.ts","bucket":"source"}
+{"t":"file","path":"README.md","bucket":"doc"}
+{"t":"count","path":"src/a.ts","surface":"code","pattern":2}
+{"t":"count","path":"src/b.ts","surface":"code","pattern":1}
+{"t":"count","path":"README.md","surface":"doc","pattern":1}
+{"t":"site","id":"src/a.ts:1:1","path":"src/a.ts","surface":"code","context":"src","text":"loadStudy"}
+{"t":"site","id":"src/a.ts:2:1","path":"src/a.ts","surface":"code","context":"src","text":"saveStudy"}
+{"t":"site","id":"src/a.ts:3:1","path":"src/a.ts","surface":"code","context":"src","text":"extraStudy"}
+{"t":"site","id":"src/b.ts:1:1","path":"src/b.ts","surface":"code","context":"src","text":"orderId"}
+{"t":"site","id":"README.md:4:1","path":"README.md","surface":"doc","context":"root","text":"Studies and orders"}

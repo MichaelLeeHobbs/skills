@@ -1,0 +1,13 @@
+{"t":"site","id":"src/a.ts:5:1:log","job":"log","family":"handler:console>console","path":"src/a.ts"}
+{"t":"site","id":"src/b.ts:9:1:log","job":"log","family":"effect:console>console","path":"src/b.ts"}
+{"t":"site","id":"src/c.ts:3:1:log","job":"log","family":"handler:console>console","path":"src/c.ts"}
+{"t":"site","id":"src/f.ts:1:1:log","job":"log","family":"module:console>console","path":"src/f.ts"}
+{"t":"site","id":"src/g.ts:1:1:log","job":"log","family":"thunk:console>console","path":"src/g.ts"}
+{"t":"site","id":"src/lib/save.ts:6:1:log","job":"log","family":"server:console>console","path":"src/lib/save.ts"}
+{"t":"site","id":"src/lib/unused.ts:2:1:log","job":"log","family":"other:console>console","path":"src/lib/unused.ts"}
+{"t":"site","id":"src/ui/ErrorBox.tsx:4:1:log","job":"log","family":"render:console>console","path":"src/ui/ErrorBox.tsx"}
+{"t":"conduit","symbol":"src/lib/log.ts#logError","job":"log","terminal":"console","source":"auto","uses":3}
+{"t":"conduit","symbol":"src/lib/once.ts#logOnce","job":"log","terminal":"console","source":"auto","uses":1}
+{"t":"conduit","symbol":"src/lib/report.ts#report","job":"log","terminal":"console","source":"auto","uses":2}
+{"t":"count","job":"log","sites":8,"same_as":0,"inside_conduit":3,"blocked":0}
+{"t":"summary","calls":16,"refs":0,"unresolved":0,"opaque":0,"hits":11,"sites":8,"blocked":0,"not_site":0,"problems":0}

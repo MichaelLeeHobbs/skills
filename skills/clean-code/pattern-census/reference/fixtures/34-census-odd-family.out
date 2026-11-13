@@ -1,0 +1,5 @@
+{"t":"family","job":"j","family":"plain","sites":1}
+{"t":"family","job":"j","family":"x:y>z","sites":1}
+{"t":"convention","id":"C1","job":"j","in_scope":2,"conforming":1,"low":"0.2000","high":"0.8000","withheld":"range"}
+{"t":"job","job":"j","grade":"partial","sites":2,"blocked":0,"files":2,"escapes":0,"bound":3,"state":"ok"}
+{"t":"summary","jobs":1,"sites":2,"conventions":1,"withheld":1,"pass":true}

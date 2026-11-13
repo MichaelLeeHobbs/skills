@@ -1,0 +1,7 @@
+owners
+{"t":"rule","line":1,"pattern":"**","owners":["@all"],"section":""}
+{"t":"rule","line":2,"pattern":"a**b.ts","owners":["@ab"],"section":""}
+{"t":"site","id":"s1","job":"j","family":"x:y>z","path":"deep/er/z.ts"}
+{"t":"site","id":"s2","job":"j","family":"x:y>z","path":"pkg/a/c/b.ts"}
+{"t":"site","id":"s3","job":"j","family":"x:y>z","path":"ab.ts"}
+{"t":"nope","t":"site","id":"s4","job":"j","family":"x:y>z","path":"q/a1b.ts"}

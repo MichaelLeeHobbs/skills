@@ -1,0 +1,4 @@
+{"t":"disagree","id":"src/b.ts:1:1:fetch","scanner":"handler:apiClient>apiClient","worker":"effect:apiClient>apiClient","ruling":"worker"}
+{"t":"disagree","id":"src/c.ts:1:1:fetch","scanner":"effect:apiClient>apiClient","worker":"query-hook:react-query>apiClient","ruling":""}
+{"t":"missing","id":"src/d.ts:1:1:fetch"}
+{"t":"summary","sampled":5,"labelled":4,"agree":2,"disagree":2,"upheld":1,"unruled":1,"missing":1,"pass":false}

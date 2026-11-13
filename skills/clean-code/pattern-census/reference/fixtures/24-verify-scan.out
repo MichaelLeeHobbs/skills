@@ -1,0 +1,4 @@
+{"t":"problem","case":"barrel-alias","id":"app.ts:3:1:fetch","kind":"missing","expected":"effect:fetch>fetch","got":""}
+{"t":"problem","case":"lookalike","id":"c.ts:1:1:fetch","kind":"extra","expected":"","got":"module:fetch>fetch"}
+{"t":"problem","case":"wrong-in-use","id":"w.ts:2:1:fetch","kind":"family","expected":"effect:apiClient>apiClient","got":"query-hook:react-query>apiClient"}
+{"t":"summary","cases":3,"expected":3,"got":3,"problems":3}

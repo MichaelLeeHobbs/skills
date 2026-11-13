@@ -1,0 +1,4 @@
+{"t":"family","job":"fetch","family":"effect:fetch>fetch","sites":1}
+{"t":"convention","id":"C1","job":"fetch","in_scope":1,"conforming":1,"low":"","high":"","withheld":"unsampled"}
+{"t":"job","job":"fetch","grade":"closed","sites":1,"blocked":0,"files":1,"escapes":0,"bound":0,"state":"unsampled"}
+{"t":"summary","jobs":1,"sites":1,"conventions":1,"withheld":1,"pass":false}

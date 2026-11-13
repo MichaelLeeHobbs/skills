@@ -1,0 +1,13 @@
+{"t":"site","id":"src/x.ts:4:1:errorui","job":"errorui","family":"handler:toast>toast","path":"src/x.ts"}
+{"t":"site","id":"src/x.ts:4:1:log","job":"log","family":"handler:sentry>sentry","path":"src/x.ts"}
+{"t":"site","id":"src/y.ts:8:1:errorui","job":"errorui","family":"effect:toast>toast","path":"src/y.ts"}
+{"t":"site","id":"src/y.ts:8:1:log","job":"log","family":"effect:sentry>sentry","path":"src/y.ts"}
+{"t":"site","id":"src/z.ts:3:1:fetch","job":"fetch","family":"effect:axios>axios","path":"src/z.ts"}
+{"t":"conduit","symbol":"src/lib/fail.ts#notifyFailure","job":"errorui","terminal":"toast","source":"declared","uses":2}
+{"t":"conduit","symbol":"src/lib/fail.ts#notifyFailure","job":"log","terminal":"sentry","source":"declared","uses":2}
+{"t":"problem","id":"src/z.ts:7:1","kind":"stale"}
+{"t":"problem","id":"src/z.ts:9:1","kind":"undisposed"}
+{"t":"count","job":"errorui","sites":2,"same_as":0,"inside_conduit":1,"blocked":0}
+{"t":"count","job":"fetch","sites":1,"same_as":0,"inside_conduit":0,"blocked":1}
+{"t":"count","job":"log","sites":2,"same_as":0,"inside_conduit":1,"blocked":1}
+{"t":"summary","calls":4,"refs":0,"unresolved":5,"opaque":1,"hits":7,"sites":5,"blocked":2,"not_site":1,"problems":2}

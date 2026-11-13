@@ -1,0 +1,3 @@
+close
+{"t":"sink","symbol":"global#fetch","job":"fetch","marker":"fetch"}
+{"t":"conduit","symbol":"global#fetch","job":"fetch","terminal":"fetch"}

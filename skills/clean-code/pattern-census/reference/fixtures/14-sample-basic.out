@@ -1,0 +1,6 @@
+{"t":"pick","stratum":"hit","id":"src/a.ts","rank":1,"hash":"39931111"}
+{"t":"pick","stratum":"hit","id":"src/d.ts","rank":2,"hash":"53674728"}
+{"t":"pick","stratum":"nohit","id":"src/g.ts","rank":1,"hash":"45ecc3d3"}
+{"t":"pick","stratum":"nohit","id":"src/f.ts","rank":2,"hash":"4c1a8156"}
+{"t":"pick","stratum":"nohit","id":"src/e.ts","rank":3,"hash":"f033029d"}
+{"t":"summary","items":8,"strata":3,"picked":5}

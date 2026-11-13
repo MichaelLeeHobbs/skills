@@ -1,0 +1,8 @@
+owners
+{"t":"rule","line":1,"pattern":"*","owners":["@default"],"section":""}
+{"t":"rule","line":3,"pattern":"/src/","owners":["@fe"],"section":"Frontend"}
+{"t":"rule","line":4,"pattern":"/src/admin/","owners":["@admin"],"section":"Frontend"}
+{"t":"rule","line":6,"pattern":"auth","owners":["@sec"],"section":"Security"}
+{"t":"site","id":"src/admin/auth/x.ts:1:1:fetch","job":"fetch","family":"query-hook:react-query>apiClient","path":"src/admin/auth/x.ts"}
+{"t":"site","id":"src/app.ts:1:1:fetch","job":"fetch","family":"query-hook:react-query>apiClient","path":"src/app.ts"}
+{"t":"site","id":"bin/auth:1:1:fetch","job":"fetch","family":"query-hook:react-query>apiClient","path":"bin/auth"}

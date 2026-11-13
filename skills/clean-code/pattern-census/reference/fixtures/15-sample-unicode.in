@@ -1,0 +1,7 @@
+sample
+{"t":"seed","value":"café"}
+{"t":"item","id":"ü.ts","stratum":"s"}
+{"t":"item","id":"a.ts","stratum":"s"}
+{"t":"item","id":"日本.ts","stratum":"s"}
+{"t":"item","id":"Z.ts","stratum":"s"}
+{"t":"quota","stratum":"s","n":4}

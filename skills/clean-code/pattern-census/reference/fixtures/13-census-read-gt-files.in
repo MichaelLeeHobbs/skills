@@ -1,0 +1,3 @@
+census
+{"t":"job","job":"fetch","grade":"closed"}
+{"t":"stratum","name":"s","files":3,"read":5}

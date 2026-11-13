@@ -1,0 +1,5 @@
+{"t":"owner","job":"fetch","family":"query-hook:react-query>apiClient","owner":"@default","source":"codeowners","sites":3}
+{"t":"owner","job":"fetch","family":"query-hook:react-query>apiClient","owner":"@sec","source":"codeowners","sites":2}
+{"t":"owner","job":"fetch","family":"query-hook:react-query>apiClient","owner":"@admin","source":"codeowners","sites":1}
+{"t":"owner","job":"fetch","family":"query-hook:react-query>apiClient","owner":"@fe","source":"codeowners","sites":1}
+{"t":"summary","sites":3,"codeowners":3,"history":0,"unowned":0}

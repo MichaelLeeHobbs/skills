@@ -1,0 +1,12 @@
+{"t":"family","job":"auth","family":"handler:useAuth>useAuth","sites":2}
+{"t":"family","job":"auth","family":"render:roleCheck>roleCheck","sites":1}
+{"t":"family","job":"log","family":"module:console>console","sites":2}
+{"t":"convention","id":"A1","job":"auth","in_scope":0,"conforming":0,"low":"0.0000","high":"1.0000","withheld":"not_applicable"}
+{"t":"convention","id":"A2","job":"auth","in_scope":3,"conforming":0,"low":"0.0000","high":"0.9268","withheld":"stale"}
+{"t":"convention","id":"A3","job":"auth","in_scope":3,"conforming":2,"low":"0.0487","high":"0.9756","withheld":"range"}
+{"t":"convention","id":"F1","job":"form","in_scope":0,"conforming":0,"low":"0.0000","high":"1.0000","withheld":"not_applicable"}
+{"t":"convention","id":"L1","job":"log","in_scope":2,"conforming":2,"low":"0.2222","high":"1.0000","withheld":"residual"}
+{"t":"job","job":"auth","grade":"partial","sites":3,"blocked":0,"files":1,"escapes":2,"bound":38,"state":"ok"}
+{"t":"job","job":"form","grade":"partial","sites":0,"blocked":0,"files":0,"escapes":0,"bound":6,"state":"ok"}
+{"t":"job","job":"log","grade":"closed","sites":2,"blocked":1,"files":2,"escapes":0,"bound":6,"state":"ok"}
+{"t":"summary","jobs":3,"sites":5,"conventions":5,"withheld":5,"pass":true}

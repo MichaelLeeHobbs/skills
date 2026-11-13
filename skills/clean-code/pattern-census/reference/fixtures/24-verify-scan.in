@@ -1,0 +1,7 @@
+verify --check scan
+{"t":"expect","case":"barrel-alias","id":"app.ts:3:1:fetch","family":"effect:fetch>fetch"}
+{"t":"expect","case":"barrel-alias","id":"app.ts:5:1:fetch","family":"effect:apiClient>apiClient"}
+{"t":"expect","case":"wrong-in-use","id":"w.ts:2:1:fetch","family":"effect:apiClient>apiClient"}
+{"t":"got","case":"barrel-alias","id":"app.ts:5:1:fetch","family":"effect:apiClient>apiClient"}
+{"t":"got","case":"wrong-in-use","id":"w.ts:2:1:fetch","family":"query-hook:react-query>apiClient"}
+{"t":"got","case":"lookalike","id":"c.ts:1:1:fetch","family":"module:fetch>fetch"}

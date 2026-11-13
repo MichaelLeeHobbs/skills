@@ -1,0 +1,11 @@
+audit
+{"t":"scan","id":"src/e.ts:1:1:fetch","family":"effect:fetch>fetch"}
+{"t":"scan","id":"src/d.ts:1:1:fetch","family":"effect:fetch>fetch"}
+{"t":"scan","id":"src/c.ts:1:1:fetch","family":"effect:apiClient>apiClient"}
+{"t":"scan","id":"src/b.ts:1:1:fetch","family":"handler:apiClient>apiClient"}
+{"t":"scan","id":"src/a.ts:1:1:fetch","family":"query-hook:react-query>apiClient"}
+{"t":"label","id":"src/a.ts:1:1:fetch","family":"query-hook:react-query>apiClient"}
+{"t":"label","id":"src/b.ts:1:1:fetch","family":"effect:apiClient>apiClient"}
+{"t":"label","id":"src/c.ts:1:1:fetch","family":"query-hook:react-query>apiClient"}
+{"t":"label","id":"src/e.ts:1:1:fetch","family":"effect:fetch>fetch"}
+{"t":"ruling","id":"src/b.ts:1:1:fetch","winner":"worker"}

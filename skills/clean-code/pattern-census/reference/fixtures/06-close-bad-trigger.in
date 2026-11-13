@@ -1,0 +1,4 @@
+close
+{"t":"call","id":"src/b.ts:1:1","path":"src/b.ts","callee":"global#fetch","in_fn":"","in_site":"","trigger":"effect"}
+{"t":"call","id":"src/b.ts:1:1","path":"src/b.ts","callee":"global#fetch","in_fn":"","in_site":"","trigger":"effect"}
+{"t":"call","id":"src/c.ts:1:1","path":"src/c.ts","callee":"global#fetch","in_fn":"","in_site":"","trigger":"click"}

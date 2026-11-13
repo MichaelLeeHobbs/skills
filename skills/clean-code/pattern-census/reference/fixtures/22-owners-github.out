@@ -1,0 +1,9 @@
+{"t":"owner","job":"fetch","family":"query-hook:react-query>apiClient","owner":"@web","source":"codeowners","sites":3}
+{"t":"owner","job":"fetch","family":"query-hook:react-query>apiClient","owner":"@api","source":"codeowners","sites":2}
+{"t":"owner","job":"fetch","family":"query-hook:react-query>apiClient","owner":"@qa","source":"codeowners","sites":1}
+{"t":"owner","job":"fetch","family":"thunk:axios>axios","owner":"@legacy","source":"codeowners","sites":2}
+{"t":"owner","job":"fetch","family":"thunk:axios>axios","owner":"unowned","source":"none","sites":1}
+{"t":"owner","job":"log","family":"module:console>console","owner":"@alice","source":"history","sites":1}
+{"t":"owner","job":"log","family":"module:console>console","owner":"@docs","source":"codeowners","sites":1}
+{"t":"owner","job":"log","family":"module:console>console","owner":"unowned","source":"none","sites":1}
+{"t":"summary","sites":10,"codeowners":7,"history":1,"unowned":2}

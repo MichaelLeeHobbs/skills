@@ -1,0 +1,4 @@
+audit
+{"t":"scan","id":"a","family":"x:y>z"}
+{"t":"label","id":"a","family":"x:y>z"}
+{"t":"ruling","id":"a","winner":"scanner"}

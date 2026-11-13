@@ -1,0 +1,15 @@
+tally
+{"t":"run","date":"2025-03-01","commit":"abc123","spec":"1","descends":true}
+{"t":"item","path":"a.ts","line":9,"kind":"marker","rule":"TODO","owner":"@acme/web","dated":"2022-03-01"}
+{"t":"item","path":"a.ts","line":2,"kind":"marker","rule":"TODO","owner":"@acme/web","dated":"2022-03-01"}
+{"t":"item","path":"b.py","line":1,"kind":"marker","rule":"FIXME","owner":"tools","dated":"2024-02-29"}
+{"t":"item","path":"b.py","line":5,"kind":"inline","rule":"E501","owner":"tools","dated":"2025-02-28"}
+{"t":"item","path":"c.ts","line":3,"kind":"inline","rule":"no-console","owner":"@acme/web","dated":"2024-03-02"}
+{"t":"item","path":"c.ts","line":4,"kind":"blanket","rule":"*","owner":"@acme/web","dated":""}
+{"t":"item","path":"d.ts","line":1,"kind":"marker","rule":"HACK","owner":"10","dated":"2025-03-05"}
+{"t":"item","path":"e.ts","line":1,"kind":"marker","rule":"XXX","owner":"9","dated":"2023-03-02"}
+{"t":"pattern","kind":"marker","lang":"ts","text":"//\\s*(TODO|FIXME|HACK|XXX)\\b"}
+{"t":"pattern","kind":"inline","lang":"ts","text":"eslint-disable(-next)?-line\\s+\\S"}
+{"t":"pattern","kind":"marker","lang":"py","text":"#\\s*(TODO|FIXME|HACK|XXX)\\b"}
+{"t":"source","source":"eslint-suppressions.json","unit":"violations","units":6}
+{"t":"source","source":".rubocop_todo.yml","unit":"pairs","units":3}

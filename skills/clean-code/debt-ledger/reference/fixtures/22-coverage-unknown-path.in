@@ -1,0 +1,3 @@
+verify --check coverage
+{"t":"adjust","path":"x","reason":"y"}
+{"t":"count","path":"a","found":1,"loose":1}

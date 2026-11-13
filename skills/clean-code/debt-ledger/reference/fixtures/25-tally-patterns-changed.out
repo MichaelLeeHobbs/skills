@@ -1,0 +1,5 @@
+{"t":"counts","markers":0,"inline":0,"blanket":0,"by_tag":{}}
+{"t":"owners","by_owner":{}}
+{"t":"ages","0-29":0,"30-89":0,"90-364":0,"365-729":0,"730+":0,"unknown":0}
+{"t":"history","date":"2025-03-01","commit":"bbb","spec":"1","patterns":"431a4c0e952a89e18c1619b3562a3809641227b658d740f6e525b14f60f9beec","markers":0,"inline":0,"blanket":0,"sources":{}}
+{"t":"trend","comparable":false,"reason":"patterns_changed","markers":0,"inline":0,"blanket":0,"sources":{}}

@@ -1,0 +1,3 @@
+reuse
+{"t":"new","path":"a.ts","line":1,"kind":"marker","rule":"TODO","text":"TODO ok"}
+{"t":"new","path":"a.ts","line":2,"kind":"marker","rule":"TODO","text":"TODO \ud800"}

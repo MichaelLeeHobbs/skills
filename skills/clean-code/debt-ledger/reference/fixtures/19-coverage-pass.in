@@ -1,0 +1,6 @@
+verify --check coverage
+{"t":"count","path":"src/a.ts","found":40,"loose":40}
+{"t":"count","path":"src/b.ts","found":9,"loose":10}
+{"t":"count","path":"README.md","found":0,"loose":0}
+{"t":"count","path":"src/c.ts","found":12,"loose":11}
+{"t":"count","path":"src/d.ts","found":39,"loose":39}

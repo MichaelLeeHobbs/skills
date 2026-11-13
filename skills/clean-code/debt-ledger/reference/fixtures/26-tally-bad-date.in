@@ -1,0 +1,3 @@
+tally
+{"t":"run","date":"2025-03-01","commit":"bbb","spec":"1","descends":true}
+{"t":"item","path":"a.ts","line":1,"kind":"marker","rule":"TODO","owner":"src","dated":"2023-02-29"}

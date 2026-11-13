@@ -1,0 +1,6 @@
+adapt --format phpstan
+parameters:
+	ignoreErrors:
+		-
+			identifier: a.b
+			path: ''

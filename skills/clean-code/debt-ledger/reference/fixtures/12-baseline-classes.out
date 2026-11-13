@@ -1,0 +1,12 @@
+{"t":"change","source":"eslint-suppressions.json","path":"src/blank.ts","rule":"eqeqeq","old":2,"new":0,"class":"moved-blanket","units":1}
+{"t":"change","source":"eslint-suppressions.json","path":"src/blank.ts","rule":"eqeqeq","old":2,"new":0,"class":"fixed","units":1}
+{"t":"change","source":"eslint-suppressions.json","path":"src/cfg.ts","rule":"@typescript-eslint/no-explicit-any","old":3,"new":0,"class":"config-changed","units":3}
+{"t":"change","source":"eslint-suppressions.json","path":"src/cfg.ts","rule":"no-explicit-any","old":2,"new":0,"class":"fixed","units":2}
+{"t":"change","source":"eslint-suppressions.json","path":"src/fix.ts","rule":"prefer-const","old":2,"new":1,"class":"fixed","units":1}
+{"t":"change","source":"eslint-suppressions.json","path":"src/gone.ts","rule":"no-console","old":4,"new":0,"class":"deleted-file","units":4}
+{"t":"change","source":"eslint-suppressions.json","path":"src/grow.ts","rule":"no-console","old":1,"new":4,"class":"grew","units":3}
+{"t":"change","source":"eslint-suppressions.json","path":"src/moved.ts","rule":"no-console","old":5,"new":1,"class":"moved-inline","units":3}
+{"t":"change","source":"eslint-suppressions.json","path":"src/moved.ts","rule":"no-console","old":5,"new":1,"class":"fixed","units":1}
+{"t":"change","source":"eslint-suppressions.json","path":"src/new.ts","rule":"no-debugger","old":0,"new":2,"class":"added","units":2}
+{"t":"source","source":"eslint-suppressions.json","unit":"violations","old":21,"new":10,"in":5,"out":16,"grew":3,"added":2,"deleted_file":4,"moved_inline":3,"moved_blanket":1,"config_changed":3,"fixed":5,"rekeyed":1,"conserved":true}
+{"t":"summary","sources":1,"changes":10,"fixed_reliable":true}

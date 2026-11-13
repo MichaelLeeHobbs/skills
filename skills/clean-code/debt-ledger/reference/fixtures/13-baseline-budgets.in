@@ -1,0 +1,14 @@
+baseline
+{"t":"source","source":"eslint-suppressions.json","linter":"eslint","unit":"violations"}
+{"t":"source","source":"basedpyright-baseline.json","linter":"basedpyright","unit":"violations"}
+{"t":"old","source":"eslint-suppressions.json","path":"a.ts","rule":"no-console","count":6}
+{"t":"new","source":"eslint-suppressions.json","path":"a.ts","rule":"no-console","count":0}
+{"t":"old","source":"eslint-suppressions.json","path":"b.ts","rule":"no-console","count":3}
+{"t":"new","source":"eslint-suppressions.json","path":"b.ts","rule":"no-console","count":1}
+{"t":"old","source":"basedpyright-baseline.json","path":"m.py","rule":"reportAny","count":4}
+{"t":"inline","linter":"eslint","path":"a.ts","rule":"no-console","scope":"block","old":0,"new":1}
+{"t":"inline","linter":"eslint","path":"a.ts","rule":"no-console","scope":"line","old":0,"new":2}
+{"t":"inline","linter":"eslint","path":"b.ts","rule":"*","scope":"line","old":2,"new":3}
+{"t":"inline","linter":"basedpyright","path":"m.py","rule":"*","scope":"line","old":0,"new":1}
+{"t":"inline","linter":"tsc","path":"b.ts","rule":"*","scope":"block","old":0,"new":1}
+{"t":"toolchain"}

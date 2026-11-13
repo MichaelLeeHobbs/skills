@@ -1,0 +1,5 @@
+verify --check coverage --min-basis-points 9900 --max-adjusted-basis-points 3000
+{"t":"count","path":"src/a.ts","found":40,"loose":40}
+{"t":"count","path":"src/b.ts","found":8,"loose":10}
+{"t":"count","path":"vendor/x.js","found":0,"loose":500}
+{"t":"adjust","path":"vendor/x.js","reason":"minified, one line"}

@@ -1,0 +1,5 @@
+tally
+{"t":"run","date":"0100-03-01","commit":"c","spec":"1","descends":true}
+{"t":"item","path":"a.ts","line":1,"kind":"marker","rule":"TODO","owner":"src","dated":"0000-02-29"}
+{"t":"item","path":"a.ts","line":2,"kind":"marker","rule":"TODO","owner":"src","dated":"0099-12-31"}
+{"t":"item","path":"a.ts","line":3,"kind":"marker","rule":"TODO","owner":"src","dated":"0100-02-28"}

@@ -1,0 +1,3 @@
+{"t":"short","path":"src/b.ts","found":8,"loose":10}
+{"t":"adjusted","path":"vendor/x.js","reason":"minified, one line"}
+{"t":"summary","files":3,"adjusted":1,"found":48,"loose":50,"covered":48,"coverage":"0.9600","adjusted_share":"0.3333","pass":false}

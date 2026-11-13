@@ -1,0 +1,7 @@
+{"t":"entry","path":"app/legacy/x.rb","rule":"Naming/MethodName","count":1}
+{"t":"entry","path":"app/models/order.rb","rule":"Layout/LineLength","count":1}
+{"t":"entry","path":"app/models/user.rb","rule":"Layout/LineLength","count":1}
+{"t":"entry","path":"app/models/user.rb","rule":"Naming/MethodName","count":1}
+{"t":"entry","path":"lib/tasks/import.rake","rule":"Layout/LineLength","count":1}
+{"t":"ruleoff","rule":"Style/Documentation"}
+{"t":"summary","format":"rubocop","unit":"pairs","entries":5,"units":5,"ruleoffs":1}

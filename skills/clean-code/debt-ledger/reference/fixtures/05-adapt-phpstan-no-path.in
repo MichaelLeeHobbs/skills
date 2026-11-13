@@ -1,0 +1,9 @@
+adapt --format phpstan
+parameters:
+	ignoreErrors:
+		-
+			identifier: a.b
+			path: src/A.php
+		-
+			identifier: c.d
+			count: 2

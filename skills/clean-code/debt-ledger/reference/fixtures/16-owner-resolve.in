@@ -1,0 +1,27 @@
+owner
+{"t":"line","text":"# CODEOWNERS"}
+{"t":"line","text":"*   @acme/everyone"}
+{"t":"line","text":"[Docs] @acme/docs"}
+{"t":"line","text":"^[Optional section]"}
+{"t":"line","text":"/docs/*  @acme/docs"}
+{"t":"line","text":"*.py @acme/python @jane"}
+{"t":"line","text":"apps/web/ @acme/web jane@example.com"}
+{"t":"line","text":"/packages/**/legacy/ @bob"}
+{"t":"line","text":"/tools/*.mjs\t@acme/tools"}
+{"t":"line","text":"build/ @acme/build"}
+{"t":"package","path":"packages/core"}
+{"t":"package","path":"packages/core/sub"}
+{"t":"package","path":"packages"}
+{"t":"item","path":"docs/guide.md","tag":""}
+{"t":"item","path":"docs/deep/guide.md","tag":""}
+{"t":"item","path":"lib/x.py","tag":""}
+{"t":"item","path":"apps/web/src/a.ts","tag":""}
+{"t":"item","path":"apps/web","tag":""}
+{"t":"item","path":"packages/core/sub/legacy/old.ts","tag":""}
+{"t":"item","path":"packages/core/legacy/old.ts","tag":"PROJ-12"}
+{"t":"item","path":"packages/core/legacy/old.ts","tag":"@acme/legacy-team"}
+{"t":"item","path":"packages/core/legacy/old.ts","tag":"alice"}
+{"t":"item","path":"tools/a.mjs","tag":""}
+{"t":"item","path":"tools/sub/a.mjs","tag":""}
+{"t":"item","path":"src/build/out.js","tag":""}
+{"t":"item","path":"src/build","tag":""}

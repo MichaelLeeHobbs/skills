@@ -1,0 +1,12 @@
+baseline
+{"t":"source","source":".rubocop_todo.yml","linter":"rubocop","unit":"pairs"}
+{"t":"old","source":".rubocop_todo.yml","path":"app/a.rb","rule":"Layout/LineLength","count":1}
+{"t":"old","source":".rubocop_todo.yml","path":"app/b.rb","rule":"Layout/LineLength","count":1}
+{"t":"old","source":".rubocop_todo.yml","path":"app/c.rb","rule":"Layout/LineLength","count":1}
+{"t":"old","source":".rubocop_todo.yml","path":"app/d.rb","rule":"Layout/LineLength","count":1}
+{"t":"new","source":".rubocop_todo.yml","path":"app/e.rb","rule":"Layout/LineLength","count":1}
+{"t":"new","source":".rubocop_todo.yml","path":"app/a.rb","rule":"Style/Foo","count":1}
+{"t":"old","source":".rubocop_todo.yml","path":"app/x.rb","rule":"Style/Merge","count":1}
+{"t":"old","source":".rubocop_todo.yml","path":"app/y.rb","rule":"Style/Merge","count":1}
+{"t":"rename","from":"app/y.rb","to":"app/x.rb"}
+{"t":"new","source":".rubocop_todo.yml","path":"app/x.rb","rule":"Style/Merge","count":1}

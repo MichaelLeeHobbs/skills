@@ -1,0 +1,4 @@
+owner
+{"t":"line","text":"* @acme/all"}
+{"t":"line","text":"/src/[ab]*.ts @acme/x"}
+{"t":"item","path":"a.ts","tag":""}

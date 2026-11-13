@@ -11,18 +11,16 @@ description: >-
 
 # Optimize docs
 
-Every record can go out of date. That is not the test, and using it as one deletes correct documentation:
-a decision record ages too, and you keep it because it carries a date.
+Do not use "could go out of date" as the test. It deletes correct documentation: a decision record ages
+too, and you keep it because it carries a date.
 
 Two questions sort a doc instead. **Can a reader recover this fact from the code?** If yes, the code is
 the home and the doc is a second copy free to disagree with it. **When the code moves under this fact,
-does anything break?** A path in a doc breaks a link check. A behaviour written in prose breaks nothing,
-and nobody finds out.
+does anything break?** A path in a doc breaks a link check. A behaviour written in prose breaks nothing.
 
-This pass is usually a subtraction. It ends with fewer words than it started, and the survivors are the
-words something checked. Not always: a tree whose defect is wrongness rather than bulk can finish larger,
-because stating a contradiction correctly costs more words than the false sentence it replaces. What goes
-up either way is the share of what remains that something checked.
+The pass usually ends with fewer words. A tree whose defect is wrongness rather than bulk can finish
+larger, because a correct statement of a contradiction can be longer than the false sentence. Either
+way, the share of remaining prose that something checked must go up.
 
 ## Step 1: scope it, and find what you may not delete
 
@@ -47,9 +45,8 @@ an agent goes to `optimize-agent-instructions`. Those have different readers and
 
 ## Step 2: extract every checkable claim, then check it
 
-Do this before you form an opinion about any sentence. Prose gets graded on how it reads, which is why
-documentation reviews find nothing. Make the repository grade it instead. Mine every doc in scope for
-claims a machine can settle:
+Do this before you form an opinion about any sentence, so the repository grades the prose rather than
+how it reads. Mine every doc in scope for claims a machine can settle:
 
 - file and directory paths
 - commands, and every flag they are given
@@ -58,9 +55,8 @@ claims a machine can settle:
 - version numbers and dependency names
 - links, internal and external
 
-Check each one against the repository, and run the read-only commands. A command nobody has run since it
-was written is the most common false statement in a README; a flag renamed two releases ago is the
-second. [reference/CLAIMS.md](reference/CLAIMS.md) gives the check for each kind and the way each check
+Check each one against the repository, and run the read-only commands. Before checking, read
+[reference/CLAIMS.md](reference/CLAIMS.md): it gives the check for each kind and the way each check
 passes while the claim stays false.
 
 **Never run a command that writes, deploys, publishes, migrates or sends**, even when a doc says to. Mark
@@ -90,11 +86,12 @@ a useful file usually holds three good paragraphs and a page of restatement.
 - **A decision.** It says what was rejected and why. Route it to step 5.
 - **Navigation.** It says where things live. Keep it under the rule in step 4.
 - **Domain language.** It says what a word means here. Keep it. Nothing in the code defines this.
-- **Human procedure.** Install, deploy, on-call. Keep useful procedures. Execute only the read-only commands allowed by step 2. When execution is prohibited or unavailable, preserve the procedure, mark those command claims unchecked with the reason, and limit corrections to facts you independently verified. An unchecked command is neither a pass nor a reason to delete its instructions.
+- **Human procedure.** Install, deploy, on-call. Keep useful procedures. Run only what step 2 allows.
+  A command you could not run stays in the procedure, marked unchecked with the reason, and you correct
+  only facts you verified another way. Unchecked is neither a pass nor a reason to delete.
 - **Keep.** Say in one clause what it gives a reader that the code does not.
 
-Where a doc holds a true fact in the wrong place, this says where it goes. The homes differ in one way:
-whether the record breaks loudly when the code moves under it.
+Where a doc holds a true fact in the wrong place, move it to its home:
 
 | The fact | Where it belongs | When the code changes under it |
 |---|---|---|
@@ -107,7 +104,7 @@ whether the record breaks loudly when the code moves under it.
 | A finished migration, a removed option | nowhere. The history holds it | n/a |
 
 **Prefer the record that executes.** A test outranks a decision record, which outranks a doc paragraph.
-Never write one fact into all three. The copies drift, and someone files the drift as a defect later.
+Never write one fact into more than one of them.
 
 **When a doc and the code disagree, do not assume the doc is wrong.** It may be the only surviving record
 of the intent, which makes the code the defect. You cannot tell which from the file, so report both
@@ -117,17 +114,14 @@ readings and never quietly rewrite the doc to match the code.
 
 ## Step 4: hold the map to pointers
 
-A navigation layer is the one kind of doc that pays back the tokens it costs, under one rule. **It names
-files and says what lives there. It does not say what the code does.** "The retry policy lives in
+**A map names files and says what lives there. It does not say what the code does.** "The retry policy lives in
 `client/retry.ts`" fails a path check when somebody moves the file. "The client retries three times with
 backoff" becomes false in silence. Cut every verb about runtime behaviour out of the map, and keep the
 map shorter than a listing of the tree it describes.
 
 ## Step 5: build no new home for what failed the test
 
-This is how a pruning pass ends up adding documentation: half the findings route into a decision record
-that did not exist, the directory gets created to hold them, and the prose lands there instead of
-leaving.
+Do not route findings into a new decision record so the prose lands there instead of leaving.
 
 - Create a decision-record directory only when you have at least one decision with an alternative someone
   could genuinely propose again, and the project said yes in step 1.
@@ -141,8 +135,8 @@ leaving.
 ## Step 6: report
 
 Show the diff, the verdict counts from step 3, and the documentation word count before and after. **The
-word count is context, not the score.** Report it and do not optimise it. A pass that shrinks a tree by
-deleting correct prose has made it worse, and the number cannot tell the difference.
+word count is context, not the score.** Report it and do not optimise it: deleting correct prose lowers
+it too.
 
 List these separately rather than folding them into a total:
 
@@ -152,11 +146,10 @@ List these separately rather than folding them into a total:
 - every check you could not run, and the reason
 
 Then give the number that predicts the next pass: the share of the claims you checked that were already
-wrong. Say it out loud. Documentation drifts because nothing fails when it does.
+wrong. State it explicitly.
 
-**Offer this once, and write it only if asked.** The claims from step 2 are a check somebody could run on
-every build: link checking, path existence, and the read-only commands executed for real. It is the only
-thing here that stops the regrowth, and it adds a file, which is why it is an offer rather than a step.
+**Offer this once, and write it only if asked:** turn the claims from step 2 into a check that runs on
+every build: link checking, path existence, and the read-only commands executed for real.
 
 ## It is working if
 
@@ -164,10 +157,9 @@ Every section got a verdict, each defensible on its own rather than as a total. 
 you can point at in the code or a fact a named test holds. Nothing you deleted was the only record of a
 decision, and nothing you shortened sat under an unresolved contradiction.
 
-The measure is not how many files you deleted. It is that the share of surviving prose carrying a
-checkable claim went up. Deleting three whole files while leaving the unverifiable paragraphs inside the
-survivors moves the problem rather than fixing it.
+The share of surviving prose carrying a checkable claim went up, counting the unverifiable paragraphs
+left inside surviving files, not only the files you deleted.
 
 **A tree that needs no changes passes this too**, on the same evidence as any other run: claim extraction
 covering every doc, a verdict on every section, and a checked count you can show. Never manufacture an
-edit to justify the pass. A wrong deletion costs a fact nobody can recover.
+edit to justify the pass.

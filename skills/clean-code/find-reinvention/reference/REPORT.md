@@ -26,8 +26,7 @@ If any line says FAIL, say first, above the header, that the run failed and whic
 
 ## Decision list
 
-What a lead forwards to whoever decides product behaviour. One numbered item per disagreement across a
-job family, not per group:
+One numbered item per disagreement across a job family, not per group:
 
 ```
 1. Empty date. "-" (4 copies, 31 importers) vs "" (2 copies, 3 importers) vs "Invalid Date" (1, 2).
@@ -82,8 +81,7 @@ Drafts for the user to apply. The skill edits nothing.
 
 - Every group with its verdicts and tables (`verdicts.jsonl`).
 - Removed since last run: the functions `reuse` reported removed, and any group they leave with one
-  member, which is a resolved duplicate. A falling "jobs implemented 2+ times" with resolved groups
-  listed is how a cleanup shows its progress.
+  member, which is a resolved duplicate.
 - Per-key unique hits: for each grouping key and optional source, how many confirmed groups only it
   found. A key that finds nothing unique over two runs is a candidate to drop.
 - The domain mapping and its version.

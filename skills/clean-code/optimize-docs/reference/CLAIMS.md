@@ -1,8 +1,7 @@
 # Checking the claims a doc makes
 
 Read this during step 2, before you check anything. Every claim type here has a check, and a way that
-check passes while the claim stays false. The second half is the part that matters, because a checking
-pass that reports a clean result on a lying doc is worse than no pass at all.
+check passes while the claim stays false. Rule out the second before you record a pass.
 
 ## Paths and directories
 
@@ -72,6 +71,4 @@ A dead anchor still loads the page. Check the fragment, not only the URL.
 
 ## A claim you cannot check
 
-Say so, name the reason, and count it separately. An unchecked claim is not a passing claim. Folding the
-two together is the exact failure this step exists to prevent, and it produces a report that says the
-docs are fine when nobody looked.
+Say so, name the reason, and count it separately. Never fold unchecked claims into the passing count.

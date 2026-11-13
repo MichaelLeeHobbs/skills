@@ -13,7 +13,8 @@ npx skills add MichaelLeeHobbs/skills --skill write-tests
 | Area | What goes here |
 |---|---|
 | `thinking/` | Reaching a decision. Exploring an option space, stress-testing a plan, settling an argument. Nothing here touches code. |
-| `engineering/` | Writing and reviewing code. Tests, reviews, refactors, scaffolding, the docs that describe code. |
+| `engineering/` | Writing and reviewing code. Tests, reviews, refactors, scaffolding. |
+| `clean-code/` | Gardening an existing codebase. Finding what is duplicated, dead, drifted or bloated (code, comments, docs, styles), proving it with evidence, and reporting what to cut. |
 | `operations/` | Running things that are already live. Incidents, investigations, audits, infrastructure health. |
 | `agent-workflow/` | Directing the agent itself. Delegation, context files, orchestration. Meta-work rather than the work. |
 | `clean-room/` | Specifying a system you can observe but must not copy. Reverse-engineering by operating the thing, capturing behaviour without transcribing implementation. |
@@ -21,7 +22,7 @@ npx skills add MichaelLeeHobbs/skills --skill write-tests
 
 Add an area when three skills want it, or when one skill names a mode of work no existing area covers.
 `clean-room/` is the second case: specifying from observation, without copying implementation, is a
-different job from anything in `engineering/`. `engineering/` will likely split once the docs and scaffolding skills
-land.
+different job from anything in `engineering/`. `clean-code/` is the first case: three skills (reinvention,
+comments, docs) that tend an existing codebase rather than write new code.
 
 Required shape and the rules every skill follows: [../AGENTS.md](../AGENTS.md).

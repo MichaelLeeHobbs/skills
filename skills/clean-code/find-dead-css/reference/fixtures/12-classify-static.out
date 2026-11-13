@@ -1,0 +1,7 @@
+{"t":"member","rule":"r1","n":0,"verdict":"UNPROVEN","reason":"static-only","token":"c:b"}
+{"t":"member","rule":"r2","n":0,"verdict":"UNPROVEN","reason":"fragment","token":"c:c"}
+{"t":"member","rule":"r3","n":0,"verdict":"KEEP","reason":"","token":"c:d"}
+{"t":"member","rule":"r4","n":0,"verdict":"UNDECIDABLE","reason":"","token":""}
+{"t":"member","rule":"zz","n":0,"verdict":"UNPROVEN","reason":"static-only","token":"c:zz-dead-3"}
+{"t":"canary","rule":"zz","expect":"UNPROVEN:static-only","got":"UNPROVEN:static-only","ok":true}
+{"t":"summary","mode":"static","members":4,"dead":0,"keep":1,"seen":0,"undecidable":1,"unproven":2,"by_unproven":{"fragment":1,"static-only":1},"rules_dead":0,"rules_trim":0,"files_dead":0,"cells":0,"reached":0,"blocked":0,"blocked_bp":"0.0000","canaries":1,"canaries_ok":1}

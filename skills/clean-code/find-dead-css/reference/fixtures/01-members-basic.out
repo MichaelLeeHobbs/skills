@@ -1,0 +1,6 @@
+{"t":"member","rule":"r1","n":0,"sheet":"app.css","file":"src/a.scss","line":4,"selector":".card .title","tokens":["c:card","c:title"]}
+{"t":"member","rule":"r1","n":1,"sheet":"app.css","file":"src/a.scss","line":4,"selector":"#main > .card:hover::before","tokens":["c:card","i:main"]}
+{"t":"member","rule":"r1","n":2,"sheet":"app.css","file":"src/a.scss","line":4,"selector":"[data-State=\"open\"] .x","tokens":["a:data-state","c:x"]}
+{"t":"member","rule":"r2","n":0,"sheet":"app.css","file":"src/b.scss","line":9,"selector":"table td","tokens":[]}
+{"t":"member","rule":"r3","n":0,"sheet":"app.css","file":"","line":0,"selector":".a:not(.b):is(.c, .d) svg|rect[xlink|href] .a","tokens":["a:href","c:a"]}
+{"t":"summary","rules":3,"members":5,"untokened":1}

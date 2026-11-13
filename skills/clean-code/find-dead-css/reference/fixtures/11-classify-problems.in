@@ -1,0 +1,17 @@
+classify
+{"t":"plan","cell":"p1","route":"/"}
+{"t":"plan","cell":"p2","route":"/admin"}
+{"t":"plan","cell":"p3","route":"/admin"}
+{"t":"plan","cell":"p4","route":"/settings"}
+{"t":"cell","cell":"p1","status":"reached","sheets":["app.css"]}
+{"t":"cell","cell":"p2","status":"blocked","sheets":["app.css"]}
+{"t":"cell","cell":"p4","status":"blocked","sheets":[]}
+{"t":"seen","token":"c:q"}
+{"t":"member","rule":"zz2","n":1,"sheet":"app.css","file":"","tokens":["c:q"]}
+{"t":"member","rule":"zz2","n":0,"sheet":"app.css","file":"","tokens":[]}
+{"t":"member","rule":"zz","n":0,"sheet":"app.css","file":"","tokens":["c:zz-dead-1"]}
+{"t":"member","rule":"r1","n":0,"sheet":"app.css","file":"src/a.css","tokens":["c:a"]}
+{"t":"ref","token":"c:a","kind":"none"}
+{"t":"ref","token":"c:zz-dead-1","kind":"exact"}
+{"t":"canary","rule":"zz2","expect":"SEEN"}
+{"t":"canary","rule":"zz","expect":"DEAD"}

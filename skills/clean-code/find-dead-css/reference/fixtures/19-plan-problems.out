@@ -1,0 +1,14 @@
+{"t":"problem","reason":"route_unplanned","key":"/admin"}
+{"t":"problem","reason":"unknown_route","key":"/gone"}
+{"t":"problem","reason":"route_unplanned","key":"/users"}
+{"t":"problem","reason":"denied","key":"a#1"}
+{"t":"problem","reason":"pii_shape","key":"a#2"}
+{"t":"problem","reason":"unsafe_value","key":"a#2"}
+{"t":"problem","reason":"bad_step","key":"a#3"}
+{"t":"problem","reason":"bad_step","key":"a#4"}
+{"t":"problem","reason":"unknown_allow","key":"a#9"}
+{"t":"problem","reason":"unknown_route","key":"b"}
+{"t":"problem","reason":"pii_shape","key":"b#0"}
+{"t":"problem","reason":"unsafe_value","key":"b#1"}
+{"t":"problem","reason":"unknown_allow","key":"zz#0"}
+{"t":"summary","routes":3,"excluded":1,"cells":2,"steps":8,"problems":13}

@@ -1,0 +1,11 @@
+proof
+{"t":"before","key":"|.a","decl":"h1"}
+{"t":"before","key":"|.b","decl":"h2"}
+{"t":"before","key":"@media (max-width:600px)|.a","decl":"h3"}
+{"t":"before","key":"|.dup","decl":"h4"}
+{"t":"before","key":"|.dup","decl":"h4"}
+{"t":"after","key":"|.dup","decl":"h4"}
+{"t":"after","key":"@media (max-width:600px)|.a","decl":"h3"}
+{"t":"after","key":"|.a","decl":"h1"}
+{"t":"expect","key":"|.dup"}
+{"t":"expect","key":"|.b"}

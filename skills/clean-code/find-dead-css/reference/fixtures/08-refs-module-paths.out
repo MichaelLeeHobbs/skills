@@ -1,0 +1,5 @@
+{"t":"ref","token":"c:Button_ghost_x2","kind":"none","path":"","line":0,"via":""}
+{"t":"ref","token":"c:Button_primary_x1","kind":"exact","path":"src/Button.tsx","line":2,"via":""}
+{"t":"ref","token":"c:Button_secondary_x3","kind":"none","path":"","line":0,"via":""}
+{"t":"ref","token":"c:secondary","kind":"exact","path":"src/Other.tsx","line":1,"via":""}
+{"t":"summary","wants":4,"exact":2,"fragment":0,"none":2}

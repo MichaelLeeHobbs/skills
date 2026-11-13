@@ -1,0 +1,7 @@
+classify
+{"t":"plan","cell":"p1","route":"/"}
+{"t":"cell","cell":"p1","status":"reached","sheets":["a.css"]}
+{"t":"member","rule":"r1","n":0,"sheet":"a.css","file":"","tokens":["c:x"]}
+{"t":"seen","token":"c:x"}
+{"t":"member","rule":"r2","n":0,"sheet":"a.css","file":"","tokens":["c:y","c:z"]}
+{"t":"ref","token":"c:y","kind":"none"}

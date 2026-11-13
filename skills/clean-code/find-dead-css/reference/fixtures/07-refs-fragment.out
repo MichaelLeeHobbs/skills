@@ -1,0 +1,6 @@
+{"t":"ref","token":"c:btn-ghost","kind":"fragment","path":"src/a.tsx","line":1,"via":"btn-"}
+{"t":"ref","token":"c:card__title","kind":"fragment","path":"src/a.tsx","line":2,"via":"__title"}
+{"t":"ref","token":"c:chip-x","kind":"exact","path":"src/c.ts","line":1,"via":""}
+{"t":"ref","token":"c:pill-on","kind":"fragment","path":"src/b.ts","line":2,"via":"pill-"}
+{"t":"ref","token":"c:tag-red","kind":"none","path":"","line":0,"via":""}
+{"t":"summary","wants":5,"exact":1,"fragment":3,"none":1}

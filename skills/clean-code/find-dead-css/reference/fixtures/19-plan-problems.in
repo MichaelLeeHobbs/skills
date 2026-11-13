@@ -1,0 +1,9 @@
+verify --check plan
+{"t":"route","route":"/"}
+{"t":"route","route":"/admin"}
+{"t":"route","route":"/users"}
+{"t":"exclude","route":"/gone","reason":"removed"}
+{"t":"cell","cell":"a","route":"/","role":"anon","state":"default","steps":[["goto","/"],["click","button","Log out"],["fill","textbox","Email","jo@example.com"],["open","/x"],["press"]],"expect":"main"}
+{"t":"cell","cell":"b","route":"/nowhere","role":"admin","state":"default","steps":[["goto","/users/5551234567"],["fill","textbox","Password","hunter2"],["fill","textbox","Token","env:API_TOKEN"]],"expect":"main"}
+{"t":"allow","cell":"a","step":9}
+{"t":"allow","cell":"zz","step":0}

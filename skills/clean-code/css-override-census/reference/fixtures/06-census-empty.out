@@ -1,0 +1,2 @@
+{"t":"summary","files":0,"rules":0,"selectors":0,"bad":0,"important":0,"important_rules":0,"internal_rules":0,"internal_tokens":0,"dead_tokens":0,"unchecked_tokens":0,"deep_rules":0,"id_rules":0,"max_spec":[0,0,0],"z_uses":0,"z_distinct":0,"z_named_uses":0,"z_named_distinct":0,"z_expression_uses":0,"z_keyword_uses":0}
+{"t":"canaries","files":0,"rules":0,"bad":0,"important":0,"internal_rules":0,"dead_tokens":0,"deep_rules":0,"id_rules":0,"max_spec":[0,0,0],"z_uses":0,"z_named_uses":0}

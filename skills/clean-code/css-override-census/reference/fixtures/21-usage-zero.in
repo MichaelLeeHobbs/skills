@@ -1,0 +1,2 @@
+census --deep 0
+{"t":"file","path":"a.css","canary":false}

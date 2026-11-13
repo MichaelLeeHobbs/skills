@@ -1,0 +1,18 @@
+census
+{"t":"file","path":"b.scss","canary":false}
+{"t":"rule","id":"b.scss:1","path":"b.scss","line":1,"selector":"&:hover"}
+{"t":"rule","id":"b.scss:2","path":"b.scss","line":2,"selector":".a &"}
+{"t":"rule","id":"b.scss:3","path":"b.scss","line":3,"selector":"%placeholder"}
+{"t":"rule","id":"b.scss:4","path":"b.scss","line":4,"selector":"svg|rect"}
+{"t":"rule","id":"b.scss:5","path":"b.scss","line":5,"selector":".a >"}
+{"t":"rule","id":"b.scss:6","path":"b.scss","line":6,"selector":".a, , .b"}
+{"t":"rule","id":"b.scss:7","path":"b.scss","line":7,"selector":".a,"}
+{"t":"rule","id":"b.scss:8","path":"b.scss","line":8,"selector":"[data-x=\"open]"}
+{"t":"rule","id":"b.scss:9","path":"b.scss","line":9,"selector":".a:is(.b"}
+{"t":"rule","id":"b.scss:10","path":"b.scss","line":10,"selector":".a /* x */ .b"}
+{"t":"rule","id":"b.scss:11","path":"b.scss","line":11,"selector":".a\\"}
+{"t":"rule","id":"b.scss:12","path":"b.scss","line":12,"selector":"50%"}
+{"t":"rule","id":"b.scss:13","path":"b.scss","line":13,"selector":".a ]"}
+{"t":"rule","id":"b.scss:14","path":"b.scss","line":14,"selector":":not(> .a)"}
+{"t":"rule","id":"b.scss:15","path":"b.scss","line":15,"selector":".ok"}
+{"t":"decl","id":"b.scss:1:color","rule":"b.scss:1","prop":"color","value":"red","important":true}

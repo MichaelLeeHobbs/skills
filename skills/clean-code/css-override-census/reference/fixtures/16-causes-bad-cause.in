@@ -1,0 +1,3 @@
+verify --check causes
+{"t":"decl","id":"d1","important":true}
+{"t":"cause","id":"d1","cause":"Library"}

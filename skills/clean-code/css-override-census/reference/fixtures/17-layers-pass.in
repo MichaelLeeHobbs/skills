@@ -1,0 +1,14 @@
+verify --check layers
+{"t":"z","value":1300,"uses":4}
+{"t":"z","value":-1,"uses":1}
+{"t":"z","value":10,"uses":2}
+{"t":"z","value":1200,"uses":1}
+{"t":"z","value":9999,"uses":1}
+{"t":"layer","name":"base","order":0}
+{"t":"layer","name":"overlay","order":20}
+{"t":"layer","name":"toast","order":30}
+{"t":"assign","value":-1,"layer":"base"}
+{"t":"assign","value":10,"layer":"base"}
+{"t":"assign","value":1200,"layer":"overlay"}
+{"t":"assign","value":1300,"layer":"overlay"}
+{"t":"assign","value":9999,"layer":"toast"}

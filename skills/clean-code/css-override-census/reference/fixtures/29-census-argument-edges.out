@@ -1,0 +1,16 @@
+{"t":"m","id":"e.css:1","path":"e.css","line":1,"selectors":0,"spec":[0,0,0],"depth":0,"important":0,"internal":[],"bad":true,"canary":false}
+{"t":"m","id":"e.css:2","path":"e.css","line":2,"selectors":1,"spec":[0,1,1],"depth":1,"important":0,"internal":[],"bad":false,"canary":false}
+{"t":"m","id":"e.css:3","path":"e.css","line":3,"selectors":0,"spec":[0,0,0],"depth":0,"important":0,"internal":[],"bad":true,"canary":false}
+{"t":"m","id":"e.css:4","path":"e.css","line":4,"selectors":1,"spec":[0,2,1],"depth":1,"important":0,"internal":[],"bad":false,"canary":false}
+{"t":"m","id":"e.css:5","path":"e.css","line":5,"selectors":1,"spec":[0,2,0],"depth":2,"important":0,"internal":[],"bad":false,"canary":false}
+{"t":"m","id":"e.css:6","path":"e.css","line":6,"selectors":1,"spec":[0,1,0],"depth":1,"important":0,"internal":[],"bad":false,"canary":false}
+{"t":"head","head":"a","rules":1}
+{"t":"head","head":"a b","rules":1}
+{"t":"head","head":"b","rules":1}
+{"t":"head","head":"sel","rules":1}
+{"t":"hot","rank":1,"id":"e.css:4","spec":[0,2,1],"depth":1}
+{"t":"hot","rank":2,"id":"e.css:5","spec":[0,2,0],"depth":2}
+{"t":"hot","rank":3,"id":"e.css:2","spec":[0,1,1],"depth":1}
+{"t":"hot","rank":4,"id":"e.css:6","spec":[0,1,0],"depth":1}
+{"t":"summary","files":1,"rules":6,"selectors":4,"bad":2,"important":0,"important_rules":0,"internal_rules":0,"internal_tokens":0,"dead_tokens":0,"unchecked_tokens":0,"deep_rules":0,"id_rules":0,"max_spec":[0,2,1],"z_uses":0,"z_distinct":0,"z_named_uses":0,"z_named_distinct":0,"z_expression_uses":0,"z_keyword_uses":0}
+{"t":"canaries","files":0,"rules":0,"bad":0,"important":0,"internal_rules":0,"dead_tokens":0,"deep_rules":0,"id_rules":0,"max_spec":[0,0,0],"z_uses":0,"z_named_uses":0}

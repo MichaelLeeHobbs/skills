@@ -1,0 +1,26 @@
+census
+{"t":"prefix","prefix":"Mui","library":"mui","status":"internal"}
+{"t":"prefix","prefix":"MuiButton-root","library":"mui","status":"public"}
+{"t":"prefix","prefix":"css-","library":"emotion","status":"hashed"}
+{"t":"prefix","prefix":"ant-","library":"antd","status":"internal"}
+{"t":"file","path":"src/z.css","canary":false}
+{"t":"file","path":"src/a.css","canary":false}
+{"t":"file","path":"canary/c.css","canary":true}
+{"t":"rule","id":"src/a.css:1","path":"src/a.css","line":1,"selector":".MuiButton-root .MuiButton-label"}
+{"t":"rule","id":"src/a.css:2","path":"src/a.css","line":2,"selector":".MuiButton-rootish"}
+{"t":"rule","id":"src/a.css:3","path":"src/a.css","line":3,"selector":".page .css-1x2y3z"}
+{"t":"rule","id":"src/a.css:4","path":"src/a.css","line":4,"selector":"[class*=\"ant-select\"] .x"}
+{"t":"rule","id":"src/a.css:5","path":"src/a.css","line":5,"selector":":not(.MuiInput-input):is(.MuiPaper-root)"}
+{"t":"rule","id":"src/a.css:6","path":"src/a.css","line":6,"selector":".Mui\\Chip-root"}
+{"t":"rule","id":"src/a.css:7","path":"src/a.css","line":7,"selector":".mui-lower"}
+{"t":"rule","id":"src/a.css:8","path":"src/a.css","line":8,"selector":"[CLASS^=ant-btn]"}
+{"t":"rule","id":"src/a.css:9","path":"src/a.css","line":9,"selector":"[class=\"\"]"}
+{"t":"rule","id":"src/z.css:10","path":"src/z.css","line":10,"selector":".MuiButton-label"}
+{"t":"rule","id":"canary/c.css:11","path":"canary/c.css","line":11,"selector":".MuiFakeWidget-root"}
+{"t":"rule","id":"canary/c.css:12","path":"canary/c.css","line":12,"selector":".MuiButton-label > span"}
+{"t":"presence","token":"MuiButton-label","present":true}
+{"t":"presence","token":"MuiFakeWidget-root","present":false}
+{"t":"presence","token":"ant-select","present":false}
+{"t":"decl","id":"imp1","rule":"src/a.css:1","prop":"color","value":"red","important":true}
+{"t":"decl","id":"imp2","rule":"src/a.css:1","prop":"margin","value":"0","important":true}
+{"t":"decl","id":"imp3","rule":"canary/c.css:11","prop":"color","value":"red","important":true}

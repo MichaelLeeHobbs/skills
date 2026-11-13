@@ -1,0 +1,11 @@
+verify --check causes
+{"t":"decl","id":"d3","important":true}
+{"t":"decl","id":"d1","important":true}
+{"t":"decl","id":"d2","important":false}
+{"t":"decl","id":"d4","important":true}
+{"t":"decl","id":"d5","important":true}
+{"t":"cause","id":"d1","cause":"library"}
+{"t":"cause","id":"d2","cause":"utility"}
+{"t":"cause","id":"d9","cause":"own-code"}
+{"t":"cause","id":"d4","cause":"a11y-print"}
+{"t":"cause","id":"d5","cause":"library"}

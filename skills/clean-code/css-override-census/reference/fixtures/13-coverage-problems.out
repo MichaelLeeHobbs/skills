@@ -1,0 +1,4 @@
+{"t":"problem","path":"A.css","kind":"extra"}
+{"t":"problem","path":"a.css","kind":"unparsed"}
+{"t":"problem","path":"b.css","kind":"missing"}
+{"t":"summary","counted":3,"parsed":1,"unparsed":1,"missing":1,"extra":1,"coverage":"0.3333","pass":false}

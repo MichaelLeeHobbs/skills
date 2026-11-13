@@ -1,0 +1,11 @@
+slice --max-bytes 1000
+{"t":"file","path":"b.css","bytes":400}
+{"t":"file","path":"a.css","bytes":500}
+{"t":"file","path":"c.css","bytes":200}
+{"t":"file","path":"none.css","bytes":999}
+{"t":"file","path":"Z.css","bytes":100}
+{"t":"item","id":"b1","path":"b.css"}
+{"t":"item","id":"a2","path":"a.css"}
+{"t":"item","id":"a1","path":"a.css"}
+{"t":"item","id":"c1","path":"c.css"}
+{"t":"item","id":"z1","path":"Z.css"}

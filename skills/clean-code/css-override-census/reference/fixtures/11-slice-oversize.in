@@ -1,0 +1,7 @@
+slice --max-bytes 100
+{"t":"file","path":"a.css","bytes":50}
+{"t":"file","path":"big.css","bytes":5000}
+{"t":"file","path":"c.css","bytes":50}
+{"t":"item","id":"x","path":"big.css"}
+{"t":"item","id":"y","path":"a.css"}
+{"t":"item","id":"w","path":"c.css"}

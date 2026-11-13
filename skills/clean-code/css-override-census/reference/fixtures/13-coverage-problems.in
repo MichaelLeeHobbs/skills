@@ -1,0 +1,7 @@
+verify --check coverage
+{"t":"count","path":"b.css"}
+{"t":"count","path":"a.css"}
+{"t":"count","path":"c.css"}
+{"t":"file","path":"a.css","canary":false,"parsed":false}
+{"t":"file","path":"c.css","canary":false,"parsed":true}
+{"t":"file","path":"A.css","canary":false,"parsed":true}

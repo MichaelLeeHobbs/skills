@@ -1,0 +1,22 @@
+group
+{"t":"shape","id":"g/api.ts:1:UserDto","side":"client","origin":"generated","bytes":100,"importers":0,"hash":"h-UserDto"}
+{"t":"shape","id":"g/api.ts:9:UserResponse","side":"client","origin":"generated","bytes":100,"importers":0,"hash":"h-UserResponse"}
+{"t":"shape","id":"g/api.ts:20:OrderDto","side":"client","origin":"generated","bytes":100,"importers":0,"hash":"h-OrderDto"}
+{"t":"shape","id":"g/api.ts:30:Order","side":"client","origin":"generated","bytes":100,"importers":0,"hash":"h-Order"}
+{"t":"shape","id":"s/U.kt:1:User","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-User"}
+{"t":"shape","id":"c/u.ts:1:UserView","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserView"}
+{"t":"shape","id":"c/v.ts:1:UserViewModel","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserViewModel"}
+{"t":"binding","shape":"s/U.kt:1:User","route":"GET /me","direction":"response","role":"produces","source":"s/U.kt:1"}
+{"t":"binding","shape":"c/u.ts:1:UserView","route":"GET /me","direction":"response","role":"consumes","source":"c/u.ts:1"}
+{"t":"binding","shape":"c/v.ts:1:UserViewModel","route":"GET /me","direction":"response","role":"consumes","source":"c/v.ts:1"}
+{"t":"binding","shape":"s/U.kt:1:User","route":"GET /me/short","direction":"response","role":"produces","source":"s/U.kt:1"}
+{"t":"binding","shape":"c/u.ts:1:UserView","route":"GET /me/short","direction":"response","role":"consumes","source":"c/u.ts:1"}
+{"t":"binding","shape":"s/U.kt:1:User","route":"GET /u","direction":"response","role":"produces","source":"s/U.kt:1"}
+{"t":"binding","shape":"g/api.ts:1:UserDto","route":"GET /u","direction":"response","role":"consumes","source":"g/api.ts:1"}
+{"t":"shape","id":"c/w.ts:1:Card","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Card"}
+{"t":"shape","id":"c/x.ts:1:CardProps","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-CardProps"}
+{"t":"field","shape":"c/x.ts:1:CardProps","name":"onClick","type":"function","match":"on click"}
+{"t":"shape","id":"c/y.ts:1:Banner","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Banner"}
+{"t":"field","shape":"c/y.ts:1:Banner","name":"render","type":"function","match":"render"}
+{"t":"binding","shape":"c/w.ts:1:Card","route":"GET /cards","direction":"response","role":"consumes","source":"c/w.ts:1"}
+{"t":"binding","shape":"c/x.ts:1:CardProps","route":"GET /cards","direction":"response","role":"consumes","source":"c/x.ts:1"}

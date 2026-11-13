@@ -1,0 +1,4 @@
+{"t":"group","id":"G0001","keys":["bind:GET /users/{id} response"],"members":["c/a/user.ts:1:UserDto","c/b/types.ts:4:Member","s/U.kt:3:UserResponse"]}
+{"t":"group","id":"G0002","keys":["bind:POST /users request"],"members":["c/a/create.ts:1:NewUser","s/C.kt:1:CreateUser"]}
+{"t":"alone","shape":"s/H.kt:1:Health","reason":"no_key"}
+{"t":"summary","shapes":6,"groups":2,"alone":1,"stopstems":0,"hubs":0,"wrappers":0,"keeps":0}

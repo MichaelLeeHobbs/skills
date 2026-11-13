@@ -1,0 +1,5 @@
+{"t":"wrapper","shape":"s/P.kt:1:Page","routes":3}
+{"t":"alone","shape":"c/a.ts:1:OrderList","reason":"no_key"}
+{"t":"alone","shape":"c/b.ts:1:InvoiceList","reason":"no_key"}
+{"t":"alone","shape":"s/P.kt:1:Page","reason":"wrapper"}
+{"t":"summary","shapes":3,"groups":0,"alone":3,"stopstems":0,"hubs":0,"wrappers":1,"keeps":0}

@@ -1,0 +1,14 @@
+group
+{"t":"shape","id":"s/U.kt:3:UserResponse","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-UserResponse"}
+{"t":"shape","id":"c/a/user.ts:1:UserDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserDto"}
+{"t":"shape","id":"c/b/types.ts:4:Member","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Member"}
+{"t":"shape","id":"s/C.kt:1:CreateUser","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-CreateUser"}
+{"t":"shape","id":"c/a/create.ts:1:NewUser","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-NewUser"}
+{"t":"shape","id":"s/H.kt:1:Health","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-Health"}
+{"t":"binding","shape":"s/U.kt:3:UserResponse","route":"GET /users/{id}","direction":"response","role":"produces","source":"s/U.kt:1"}
+{"t":"binding","shape":"c/a/user.ts:1:UserDto","route":"GET /users/{id}","direction":"response","role":"consumes","source":"c/a/user.ts:1"}
+{"t":"binding","shape":"c/b/types.ts:4:Member","route":"GET /users/{id}","direction":"response","role":"consumes","source":"c/b/types.ts:1"}
+{"t":"binding","shape":"c/a/create.ts:1:NewUser","route":"POST /users","direction":"request","role":"produces","source":"c/a/create.ts:1"}
+{"t":"binding","shape":"s/C.kt:1:CreateUser","route":"POST /users","direction":"request","role":"consumes","source":"s/C.kt:1"}
+{"t":"binding","shape":"s/U.kt:3:UserResponse","route":"POST /users","direction":"response","role":"produces","source":"s/U.kt:1"}
+{"t":"binding","shape":"s/H.kt:1:Health","route":"GET /health","direction":"response","role":"produces","source":"s/H.kt:1"}

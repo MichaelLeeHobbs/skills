@@ -1,0 +1,11 @@
+diff
+{"t":"shape","id":"c/new2.ts:1:NewOrder","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-NewOrder"}
+{"t":"shape","id":"s/O.kt:1:CreateOrder","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-CreateOrder"}
+{"t":"eff","shape":"c/new2.ts:1:NewOrder","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"s/O.kt:1:CreateOrder","naming":"identity","naming_at":"path:s/","inclusion":"always","inclusion_at":"path:s/","unknown_properties":"ignore","unknown_properties_at":"path:s/","unknown_enum":"null","unknown_enum_at":"path:s/","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"c/new2.ts:1:NewOrder","name":"kind","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["a","b","c"],"pos":0,"match":"kind","wire":"kind","note":""}
+{"t":"field","shape":"c/new2.ts:1:NewOrder","name":"extra","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"extra","wire":"extra","note":""}
+{"t":"field","shape":"s/O.kt:1:CreateOrder","name":"kind","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["a","b"],"pos":0,"match":"kind","wire":"kind","note":""}
+{"t":"binding","shape":"c/new2.ts:1:NewOrder","route":"POST /orders","direction":"request","role":"produces","source":"c/new2.ts:1"}
+{"t":"binding","shape":"s/O.kt:1:CreateOrder","route":"POST /orders","direction":"request","role":"consumes","source":"s/O.kt:1"}
+{"t":"group","id":"G0001","keys":["bind:POST /orders request"],"members":["c/new2.ts:1:NewOrder","s/O.kt:1:CreateOrder"]}

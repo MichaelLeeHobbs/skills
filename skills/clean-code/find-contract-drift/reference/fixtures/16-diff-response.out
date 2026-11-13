@@ -1,0 +1,9 @@
+{"t":"gdiff","group":"G0001","mode":"directional","anchor":"s/U.kt:3:UserResponse","members":[{"id":"c/user.ts:1:UserDto","hash":"h-UserDto","eff":"naming=identity;inclusion=always;unknown_properties=fail;unknown_enum=unknown;date_write=unknown"},{"id":"s/U.kt:3:UserResponse","hash":"h-UserResponse","eff":"naming=identity;inclusion=always;unknown_properties=ignore;unknown_enum=unknown;date_write=unknown"}],"hints":0,"judge":true}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"","m_field":"avatarUrl","kind":"MISSING","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"","m_field":"bio","kind":"MISSING","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"email","m_field":"email","kind":"NULLABILITY","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"id","m_field":"id","kind":"PRESENCE","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"internalScore","m_field":"","kind":"EXTRA","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"nickname","m_field":"nickname","kind":"PRESENCE","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"role","m_field":"role","kind":"NULLABILITY","dir":"LOOSE","cause":""}
+{"t":"summary","groups":1,"cells":7,"BREAKING":4,"LATENT":0,"LOOSE":3,"DISAGREE":0,"UNRESOLVED":0,"renames":0,"accepted":0,"reopened":0,"judge":1}

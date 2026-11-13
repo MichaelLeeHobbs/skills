@@ -1,0 +1,9 @@
+reuse
+{"t":"old","group":"G0007","members":[{"id":"a","hash":"1","eff":"n=x"},{"id":"b","hash":"2","eff":"n=x"}]}
+{"t":"old","group":"G0002","members":[{"id":"a","hash":"1","eff":"n=x"},{"id":"b","hash":"2","eff":"n=x"}]}
+{"t":"old","group":"G0003","members":[{"id":"c","hash":"3","eff":"n=x"},{"id":"d","hash":"4","eff":"n=x"}]}
+{"t":"old","group":"G0004","members":[{"id":"e","hash":"5","eff":"n=x"},{"id":"f","hash":"6","eff":"n=x"}]}
+{"t":"new","group":"G0001","members":[{"id":"b","hash":"2","eff":"n=x"},{"id":"a","hash":"1","eff":"n=x"}]}
+{"t":"new","group":"G0002","members":[{"id":"c","hash":"3","eff":"n=x"},{"id":"d","hash":"9","eff":"n=x"}]}
+{"t":"new","group":"G0003","members":[{"id":"e","hash":"5","eff":"n=y"},{"id":"f","hash":"6","eff":"n=x"}]}
+{"t":"new","group":"G0004","members":[{"id":"g","hash":"7","eff":"n=x"},{"id":"h","hash":"8","eff":"n=x"}]}

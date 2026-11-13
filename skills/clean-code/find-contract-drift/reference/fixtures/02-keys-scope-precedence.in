@@ -1,0 +1,17 @@
+keys
+{"t":"shape","id":"s/api/user/U.kt:3:UserResponse","side":"server"}
+{"t":"shape","id":"s/api/order/O.kt:9:Order","side":"server"}
+{"t":"shape","id":"s/other/X.kt:1:X","side":"server"}
+{"t":"shape","id":"c/a.ts:1:A","side":"client"}
+{"t":"field","shape":"s/api/user/U.kt:3:UserResponse","name":"createdAt","alias":"","type":"date","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0}
+{"t":"field","shape":"s/api/user/U.kt:3:UserResponse","name":"mailAddress","alias":"email","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1}
+{"t":"field","shape":"s/api/order/O.kt:9:Order","name":"placedAt","alias":"","type":"date","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0}
+{"t":"field","shape":"s/other/X.kt:1:X","name":"whenDone","alias":"","type":"date","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0}
+{"t":"field","shape":"c/a.ts:1:A","name":"whenDone","alias":"","type":"date","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0}
+{"t":"config","scope":"path:s/","setting":"naming","value":"snake","basis":"stated","source":"cfg.yml:1"}
+{"t":"config","scope":"path:s/api/","setting":"naming","value":"kebab","basis":"stated","source":"cfg.yml:1"}
+{"t":"config","scope":"shape:s/api/user/U.kt:3:UserResponse","setting":"naming","value":"upper_camel","basis":"stated","source":"cfg.yml:1"}
+{"t":"config","scope":"path:s/","setting":"date_write","value":"epoch-ms","basis":"stated","source":"cfg.yml:1"}
+{"t":"config","scope":"path:s/api/","setting":"date_write","value":"iso","basis":"stated","source":"cfg.yml:1"}
+{"t":"config","scope":"path:s/other/","setting":"date_write","value":"unknown","basis":"stated","source":"cfg.yml:1"}
+{"t":"config","scope":"path:s/api/","setting":"inclusion","value":"non-null","basis":"documented-default","source":"build.gradle:12"}

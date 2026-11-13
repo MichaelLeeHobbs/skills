@@ -1,0 +1,5 @@
+{"t":"group","id":"G0001","keys":["contain:c/a.ts:1:Alpha"],"members":["c/a.ts:1:Alpha","c/b.ts:1:Beta","c/f.ts:1:Zeta"]}
+{"t":"alone","shape":"c/c.ts:1:Gamma","reason":"no_key"}
+{"t":"alone","shape":"c/d.ts:1:Delta","reason":"no_key"}
+{"t":"alone","shape":"c/e.ts:1:Epsilon","reason":"no_key"}
+{"t":"summary","shapes":6,"groups":1,"alone":3,"stopstems":0,"hubs":0,"wrappers":0,"keeps":0}

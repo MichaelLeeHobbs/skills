@@ -1,0 +1,9 @@
+{"t":"group","id":"G0001","keys":["bind:GET /cards response"],"members":["c/w.ts:1:Card","c/x.ts:1:CardProps"]}
+{"t":"group","id":"G0002","keys":["bind:GET /me response"],"members":["c/u.ts:1:UserView","c/v.ts:1:UserViewModel","s/U.kt:1:User"]}
+{"t":"group","id":"G0003","keys":["bind:GET /u response"],"members":["g/api.ts:1:UserDto","s/U.kt:1:User"]}
+{"t":"group","id":"G0004","keys":["stem:user"],"members":["g/api.ts:1:UserDto","g/api.ts:9:UserResponse","s/U.kt:1:User"]}
+{"t":"keep","a":"G0003","b":"G0004","shared":2}
+{"t":"alone","shape":"c/y.ts:1:Banner","reason":"function"}
+{"t":"alone","shape":"g/api.ts:20:OrderDto","reason":"no_key"}
+{"t":"alone","shape":"g/api.ts:30:Order","reason":"no_key"}
+{"t":"summary","shapes":10,"groups":4,"alone":3,"stopstems":0,"hubs":0,"wrappers":0,"keeps":1}

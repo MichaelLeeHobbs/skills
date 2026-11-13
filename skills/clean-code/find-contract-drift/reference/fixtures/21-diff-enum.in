@@ -1,0 +1,20 @@
+diff
+{"t":"shape","id":"s/U.kt:3:UserResponse","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-UserResponse"}
+{"t":"shape","id":"c/user.ts:1:UserDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserDto"}
+{"t":"eff","shape":"s/U.kt:3:UserResponse","naming":"identity","naming_at":"path:s/","inclusion":"always","inclusion_at":"path:s/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"c/user.ts:1:UserDto","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"ignore","unknown_properties_at":"path:c/","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"role","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["ADMIN","USER","AUDITOR"],"pos":0,"match":"role","wire":"role","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"role","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["ADMIN","USER"],"pos":0,"match":"role","wire":"role","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"state","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["OPEN","CLOSED"],"pos":1,"match":"state","wire":"state","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"state","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["open","closed"],"pos":1,"match":"state","wire":"state","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"tier","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["A"],"pos":2,"match":"tier","wire":"tier","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"tier","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["A","B"],"pos":2,"match":"tier","wire":"tier","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"color","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":3,"match":"color","wire":"color","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"color","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["red"],"pos":3,"match":"color","wire":"color","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"shape","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["x","y"],"pos":4,"match":"shape","wire":"shape","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"shape","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":4,"match":"shape","wire":"shape","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"size","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["S","M"],"pos":5,"match":"size","wire":"size","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"size","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["M","S"],"pos":5,"match":"size","wire":"size","note":""}
+{"t":"binding","shape":"s/U.kt:3:UserResponse","route":"GET /users","direction":"response","role":"produces","source":"s/U.kt:1"}
+{"t":"binding","shape":"c/user.ts:1:UserDto","route":"GET /users","direction":"response","role":"consumes","source":"c/user.ts:1"}
+{"t":"group","id":"G0001","keys":["bind:GET /users response"],"members":["c/user.ts:1:UserDto","s/U.kt:3:UserResponse"]}

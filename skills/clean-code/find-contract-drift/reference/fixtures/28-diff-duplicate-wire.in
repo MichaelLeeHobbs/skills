@@ -1,0 +1,5 @@
+diff
+{"t":"shape","id":"c/user.ts:1:UserDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserDto"}
+{"t":"eff","shape":"c/user.ts:1:UserDto","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"a","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"a","wire":"x","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"b","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"b","wire":"x","note":""}

@@ -1,0 +1,5 @@
+{"t":"gdiff","group":"G0001","mode":"directional","anchor":"c/new2.ts:1:NewOrder","members":[{"id":"c/new2.ts:1:NewOrder","hash":"h-NewOrder","eff":"naming=identity;inclusion=always;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"},{"id":"s/O.kt:1:CreateOrder","hash":"h-CreateOrder","eff":"naming=identity;inclusion=always;unknown_properties=ignore;unknown_enum=null;date_write=unknown"}],"hints":0,"judge":false}
+{"t":"cell","group":"G0001","anchor":"c/new2.ts:1:NewOrder","member":"s/O.kt:1:CreateOrder","a_field":"extra","m_field":"","kind":"EXTRA","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"c/new2.ts:1:NewOrder","member":"s/O.kt:1:CreateOrder","a_field":"kind","m_field":"kind","kind":"PRESENCE","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"c/new2.ts:1:NewOrder","member":"s/O.kt:1:CreateOrder","a_field":"kind","m_field":"kind","kind":"ENUM_VALUES","dir":"LOOSE","cause":""}
+{"t":"summary","groups":1,"cells":3,"BREAKING":0,"LATENT":0,"LOOSE":3,"DISAGREE":0,"UNRESOLVED":0,"renames":0,"accepted":0,"reopened":0,"judge":0}

@@ -1,0 +1,3 @@
+verify --check coverage --max-adjusted-basis-points 5000
+{"t":"count","path":"m/models.py","parser":3,"pattern":9}
+{"t":"adjust","path":"m/models.py","reason":"pattern counts class inside docstrings"}

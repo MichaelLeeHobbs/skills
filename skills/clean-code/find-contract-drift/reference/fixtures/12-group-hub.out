@@ -1,0 +1,6 @@
+{"t":"group","id":"G0001","keys":["contain:c/d.ts:1:Lone"],"members":["c/d.ts:1:Lone","c/e.ts:1:Twin"]}
+{"t":"hub","shape":"c/a.ts:1:Hubby","partners":2}
+{"t":"alone","shape":"c/a.ts:1:Hubby","reason":"hub"}
+{"t":"alone","shape":"c/b.ts:1:Pa","reason":"no_key"}
+{"t":"alone","shape":"c/c.ts:1:Pb","reason":"no_key"}
+{"t":"summary","shapes":5,"groups":1,"alone":3,"stopstems":0,"hubs":1,"wrappers":0,"keeps":0}

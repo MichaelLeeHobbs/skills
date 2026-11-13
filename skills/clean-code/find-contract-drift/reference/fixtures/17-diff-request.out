@@ -1,0 +1,8 @@
+{"t":"gdiff","group":"G0001","mode":"directional","anchor":"c/new.ts:1:NewUser","members":[{"id":"c/new.ts:1:NewUser","hash":"h-NewUser","eff":"naming=identity;inclusion=always;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"},{"id":"s/C.kt:1:CreateUser","hash":"h-CreateUser","eff":"naming=identity;inclusion=always;unknown_properties=fail;unknown_enum=fail;date_write=unknown"}],"hints":0,"judge":true}
+{"t":"cell","group":"G0001","anchor":"c/new.ts:1:NewUser","member":"s/C.kt:1:CreateUser","a_field":"","m_field":"tenant","kind":"MISSING","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"c/new.ts:1:NewUser","member":"s/C.kt:1:CreateUser","a_field":"email","m_field":"email","kind":"PRESENCE","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"c/new.ts:1:NewUser","member":"s/C.kt:1:CreateUser","a_field":"role","m_field":"role","kind":"PRESENCE","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"c/new.ts:1:NewUser","member":"s/C.kt:1:CreateUser","a_field":"role","m_field":"role","kind":"ENUM_VALUES","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"c/new.ts:1:NewUser","member":"s/C.kt:1:CreateUser","a_field":"utm","m_field":"","kind":"EXTRA","dir":"BREAKING","cause":""}
+{"t":"rename","group":"G0001","member":"s/C.kt:1:CreateUser","a_field":"utm","m_field":"tenant","shared":0}
+{"t":"summary","groups":1,"cells":5,"BREAKING":3,"LATENT":0,"LOOSE":2,"DISAGREE":0,"UNRESOLVED":0,"renames":1,"accepted":0,"reopened":0,"judge":1}

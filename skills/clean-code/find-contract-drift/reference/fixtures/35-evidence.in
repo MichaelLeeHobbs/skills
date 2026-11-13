@@ -1,0 +1,17 @@
+verify --check evidence
+{"t":"cell","group":"G0001","member":"c/u.ts:1:U","a_field":"role","m_field":"role","kind":"ENUM_VALUES","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","member":"c/u.ts:1:U","a_field":"createdAt","m_field":"createdAt","kind":"WIRE_NAME","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","member":"c/u.ts:1:U","a_field":"when","m_field":"when","kind":"FORMAT","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","member":"c/u.ts:1:U","a_field":"email","m_field":"email","kind":"NULLABILITY","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","member":"c/u.ts:1:U","a_field":"size","m_field":"size","kind":"WIDTH","dir":"LATENT","cause":""}
+{"t":"cell","group":"G0001","member":"c/u.ts:1:U","a_field":"tier","m_field":"tier","kind":"ENUM_VALUES","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","member":"c/u.ts:1:U","a_field":"count","m_field":"count","kind":"TYPE","dir":"BREAKING","cause":""}
+{"t":"run","class":"P1"}
+{"t":"evidence","group":"G0001","member":"c/u.ts:1:U","a_field":"role","m_field":"role","kind":"ENUM_VALUES","verdict":"CONFIRMED","basis":"run","class":"P2"}
+{"t":"evidence","group":"G0001","member":"c/u.ts:1:U","a_field":"createdAt","m_field":"createdAt","kind":"WIRE_NAME","verdict":"CONFIRMED","basis":"typecheck","class":""}
+{"t":"evidence","group":"G0001","member":"c/u.ts:1:U","a_field":"when","m_field":"when","kind":"FORMAT","verdict":"BLOCKED","basis":"diffed","class":""}
+{"t":"evidence","group":"G0001","member":"c/u.ts:1:U","a_field":"email","m_field":"email","kind":"NULLABILITY","verdict":"CONFIRMED","basis":"sample","class":"P1"}
+{"t":"evidence","group":"G0001","member":"c/u.ts:1:U","a_field":"size","m_field":"size","kind":"WIDTH","verdict":"CONFIRMED","basis":"run","class":"P1"}
+{"t":"evidence","group":"G0001","member":"c/u.ts:1:U","a_field":"ghost","m_field":"ghost","kind":"TYPE","verdict":"BLOCKED","basis":"uncited","class":""}
+{"t":"transform","group":"G0001","member":"c/u.ts:1:U","a_field":"tier","m_field":"tier","kind":"ENUM_VALUES","cite":"c/map.ts:99"}
+{"t":"file","path":"c/map.ts","lines":40}

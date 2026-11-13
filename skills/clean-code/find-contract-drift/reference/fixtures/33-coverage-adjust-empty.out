@@ -1,0 +1,2 @@
+{"t":"adjusted","path":"m/models.py","reason":"pattern counts class inside docstrings"}
+{"t":"summary","files":1,"adjusted":1,"parser":0,"pattern":0,"covered":0,"coverage":"0.0000","adjusted_share":"1.0000","pass":false}

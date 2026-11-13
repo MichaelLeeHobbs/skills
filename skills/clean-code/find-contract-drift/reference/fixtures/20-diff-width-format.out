@@ -1,0 +1,12 @@
+{"t":"gdiff","group":"G0001","mode":"directional","anchor":"s/U.kt:3:UserResponse","members":[{"id":"c/user.ts:1:UserDto","hash":"h-UserDto","eff":"naming=identity;inclusion=always;unknown_properties=ignore;unknown_enum=unknown;date_write=unknown"},{"id":"s/U.kt:3:UserResponse","hash":"h-UserResponse","eff":"naming=identity;inclusion=always;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"}],"hints":0,"judge":true}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"a","m_field":"a","kind":"WIDTH","dir":"LATENT","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"b","m_field":"b","kind":"WIDTH","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"c","m_field":"c","kind":"WIDTH","dir":"LATENT","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"d","m_field":"d","kind":"TYPE","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"e","m_field":"e","kind":"FORMAT","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"f","m_field":"f","kind":"FORMAT","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"i","m_field":"i","kind":"WIDTH","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"j","m_field":"j","kind":"WIDTH","dir":"LATENT","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"k","m_field":"k","kind":"WIDTH","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"m","m_field":"m","kind":"TYPE","dir":"BREAKING","cause":""}
+{"t":"summary","groups":1,"cells":10,"BREAKING":4,"LATENT":3,"LOOSE":3,"DISAGREE":0,"UNRESOLVED":0,"renames":0,"accepted":0,"reopened":0,"judge":1}

@@ -1,0 +1,36 @@
+group --min-stop 2
+{"t":"shape","id":"c/a.ts:1:Aa","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Aa"}
+{"t":"field","shape":"c/a.ts:1:Aa","name":"id","type":"string","match":"id"}
+{"t":"field","shape":"c/a.ts:1:Aa","name":"createdAt","type":"string","match":"created at"}
+{"t":"field","shape":"c/a.ts:1:Aa","name":"title","type":"string","match":"title"}
+{"t":"field","shape":"c/a.ts:1:Aa","name":"body","type":"string","match":"body"}
+{"t":"field","shape":"c/a.ts:1:Aa","name":"author","type":"string","match":"author"}
+{"t":"field","shape":"c/a.ts:1:Aa","name":"tags","type":"string","match":"tags"}
+{"t":"shape","id":"c/b.ts:1:Bb","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Bb"}
+{"t":"field","shape":"c/b.ts:1:Bb","name":"id","type":"string","match":"id"}
+{"t":"field","shape":"c/b.ts:1:Bb","name":"createdAt","type":"string","match":"created at"}
+{"t":"field","shape":"c/b.ts:1:Bb","name":"title","type":"string","match":"title"}
+{"t":"field","shape":"c/b.ts:1:Bb","name":"body","type":"string","match":"body"}
+{"t":"field","shape":"c/b.ts:1:Bb","name":"author","type":"string","match":"author"}
+{"t":"field","shape":"c/b.ts:1:Bb","name":"slug","type":"string","match":"slug"}
+{"t":"shape","id":"c/c.ts:1:Cc","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Cc"}
+{"t":"field","shape":"c/c.ts:1:Cc","name":"id","type":"string","match":"id"}
+{"t":"field","shape":"c/c.ts:1:Cc","name":"createdAt","type":"string","match":"created at"}
+{"t":"field","shape":"c/c.ts:1:Cc","name":"title","type":"string","match":"title"}
+{"t":"field","shape":"c/c.ts:1:Cc","name":"body","type":"string","match":"body"}
+{"t":"field","shape":"c/c.ts:1:Cc","name":"price","type":"string","match":"price"}
+{"t":"field","shape":"c/c.ts:1:Cc","name":"sku","type":"string","match":"sku"}
+{"t":"shape","id":"c/z.ts:1:Dd","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Dd"}
+{"t":"field","shape":"c/z.ts:1:Dd","name":"otherDd","type":"string","match":"other dd"}
+{"t":"shape","id":"c/z.ts:1:Ee","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Ee"}
+{"t":"field","shape":"c/z.ts:1:Ee","name":"otherEe","type":"string","match":"other ee"}
+{"t":"shape","id":"c/z.ts:1:Ff","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Ff"}
+{"t":"field","shape":"c/z.ts:1:Ff","name":"otherFf","type":"string","match":"other ff"}
+{"t":"shape","id":"c/z.ts:1:Gg","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Gg"}
+{"t":"field","shape":"c/z.ts:1:Gg","name":"otherGg","type":"string","match":"other gg"}
+{"t":"shape","id":"c/z.ts:1:Hh","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Hh"}
+{"t":"field","shape":"c/z.ts:1:Hh","name":"otherHh","type":"string","match":"other hh"}
+{"t":"shape","id":"c/z.ts:1:Ii","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Ii"}
+{"t":"field","shape":"c/z.ts:1:Ii","name":"otherIi","type":"string","match":"other ii"}
+{"t":"shape","id":"c/z.ts:1:Jj","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Jj"}
+{"t":"field","shape":"c/z.ts:1:Jj","name":"otherJj","type":"string","match":"other jj"}

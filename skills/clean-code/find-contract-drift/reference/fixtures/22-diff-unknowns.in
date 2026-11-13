@@ -1,0 +1,25 @@
+diff
+{"t":"shape","id":"s/U.kt:3:UserResponse","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-UserResponse"}
+{"t":"shape","id":"c/user.ts:1:UserDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserDto"}
+{"t":"eff","shape":"s/U.kt:3:UserResponse","naming":"identity","naming_at":"path:s/","inclusion":"unknown","inclusion_at":"*","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"path:s/"}
+{"t":"eff","shape":"c/user.ts:1:UserDto","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"a","type":"string","presence":"required","nullable":"unknown","validated":"no","enum":[],"pos":0,"match":"a","wire":"a","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"a","type":"string","presence":"required","nullable":"yes","validated":"no","enum":[],"pos":0,"match":"a","wire":"a","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"b","type":"string","presence":"required","nullable":"unknown","validated":"no","enum":[],"pos":1,"match":"b","wire":"b","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"b","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"b","wire":"b","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"c","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":2,"match":"c","wire":"c","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"c","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":2,"match":"c","wire":"c","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"d","type":"date","presence":"required","nullable":"no","validated":"no","enum":[],"pos":3,"match":"d","wire":"d","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"d","type":"date-iso","presence":"required","nullable":"no","validated":"no","enum":[],"pos":3,"match":"d","wire":"d","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"e","type":"date","presence":"required","nullable":"no","validated":"no","enum":[],"pos":4,"match":"e","wire":"e","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"e","type":"date-object","presence":"required","nullable":"no","validated":"no","enum":[],"pos":4,"match":"e","wire":"e","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"f","type":"any","presence":"required","nullable":"no","validated":"no","enum":[],"pos":5,"match":"f","wire":"f","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"f","type":"number","presence":"required","nullable":"no","validated":"no","enum":[],"pos":5,"match":"f","wire":"f","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"g","type":"number","presence":"required","nullable":"no","validated":"no","enum":[],"pos":6,"match":"g","wire":"g","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"g","type":"any","presence":"required","nullable":"no","validated":"no","enum":[],"pos":6,"match":"g","wire":"g","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"h","type":"string","presence":"unknown","nullable":"no","validated":"no","enum":[],"pos":7,"match":"h","wire":"h","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"h","type":"string","presence":"optional","nullable":"no","validated":"no","enum":[],"pos":7,"match":"h","wire":"h","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"x","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":8,"match":"x","wire":"x","note":""}
+{"t":"binding","shape":"s/U.kt:3:UserResponse","route":"GET /users","direction":"response","role":"produces","source":"s/U.kt:1"}
+{"t":"binding","shape":"c/user.ts:1:UserDto","route":"GET /users","direction":"response","role":"consumes","source":"c/user.ts:1"}
+{"t":"group","id":"G0001","keys":["bind:GET /users response"],"members":["c/user.ts:1:UserDto","s/U.kt:3:UserResponse"]}

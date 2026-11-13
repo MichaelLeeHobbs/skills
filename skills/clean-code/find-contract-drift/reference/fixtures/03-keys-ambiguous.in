@@ -1,0 +1,11 @@
+keys
+{"t":"shape","id":"c/x.ts:1:X","side":"client"}
+{"t":"shape","id":"c/y.ts:1:Y","side":"client"}
+{"t":"field","shape":"c/x.ts:1:X","name":"userID","alias":"","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0}
+{"t":"field","shape":"c/x.ts:1:X","name":"address2","alias":"","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1}
+{"t":"field","shape":"c/x.ts:1:X","name":"HTTPStatus","alias":"","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":2}
+{"t":"field","shape":"c/x.ts:1:X","name":"plainName","alias":"","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":3}
+{"t":"field","shape":"c/x.ts:1:X","name":"x2y","alias":"x2y","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":4}
+{"t":"field","shape":"c/y.ts:1:Y","name":"userID","alias":"","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0}
+{"t":"field","shape":"c/y.ts:1:Y","name":"id","alias":"","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1}
+{"t":"config","scope":"path:c/x","setting":"naming","value":"snake","basis":"stated","source":"cfg.yml:1"}

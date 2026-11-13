@@ -1,0 +1,9 @@
+group --max-routes 2
+{"t":"shape","id":"s/P.kt:1:Page","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-Page"}
+{"t":"shape","id":"c/a.ts:1:OrderList","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-OrderList"}
+{"t":"shape","id":"c/b.ts:1:InvoiceList","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-InvoiceList"}
+{"t":"binding","shape":"s/P.kt:1:Page","route":"GET /orders","direction":"response","role":"produces","source":"s/P.kt:1"}
+{"t":"binding","shape":"s/P.kt:1:Page","route":"GET /invoices","direction":"response","role":"produces","source":"s/P.kt:1"}
+{"t":"binding","shape":"s/P.kt:1:Page","route":"GET /users","direction":"response","role":"produces","source":"s/P.kt:1"}
+{"t":"binding","shape":"c/a.ts:1:OrderList","route":"GET /orders","direction":"response","role":"consumes","source":"c/a.ts:1"}
+{"t":"binding","shape":"c/b.ts:1:InvoiceList","route":"GET /invoices","direction":"response","role":"consumes","source":"c/b.ts:1"}

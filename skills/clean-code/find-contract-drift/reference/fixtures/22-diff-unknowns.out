@@ -1,0 +1,9 @@
+{"t":"gdiff","group":"G0001","mode":"directional","anchor":"s/U.kt:3:UserResponse","members":[{"id":"c/user.ts:1:UserDto","hash":"h-UserDto","eff":"naming=identity;inclusion=always;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"},{"id":"s/U.kt:3:UserResponse","hash":"h-UserResponse","eff":"naming=identity;inclusion=unknown;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"}],"hints":0,"judge":true}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"a","m_field":"a","kind":"PRESENCE","dir":"UNRESOLVED","cause":"config:inclusion@*"}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"b","m_field":"b","kind":"PRESENCE","dir":"UNRESOLVED","cause":"config:inclusion@*"}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"b","m_field":"b","kind":"NULLABILITY","dir":"UNRESOLVED","cause":"config:inclusion@*"}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"d","m_field":"d","kind":"FORMAT","dir":"UNRESOLVED","cause":"config:date_write@path:s/"}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"e","m_field":"e","kind":"FORMAT","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"f","m_field":"f","kind":"TYPE","dir":"UNRESOLVED","cause":"local"}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"x","m_field":"","kind":"EXTRA","dir":"UNRESOLVED","cause":"config:unknown_properties@*"}
+{"t":"summary","groups":1,"cells":7,"BREAKING":1,"LATENT":0,"LOOSE":0,"DISAGREE":0,"UNRESOLVED":6,"renames":0,"accepted":0,"reopened":0,"judge":1}

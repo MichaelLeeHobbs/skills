@@ -1,0 +1,12 @@
+verify --check groups
+{"t":"shape","id":"a"}
+{"t":"shape","id":"b"}
+{"t":"shape","id":"c"}
+{"t":"shape","id":"d"}
+{"t":"shape","id":"e"}
+{"t":"group","id":"G0001","members":["a","b","c"]}
+{"t":"group","id":"G0002","members":["a","b","z"]}
+{"t":"group","id":"G0003","members":["b","c"]}
+{"t":"alone","shape":"c","reason":"no_key"}
+{"t":"alone","shape":"y","reason":"no_key"}
+{"t":"keep","a":"G0003","b":"G0001"}

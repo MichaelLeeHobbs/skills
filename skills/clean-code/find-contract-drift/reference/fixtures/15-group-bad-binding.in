@@ -1,0 +1,3 @@
+group
+{"t":"shape","id":"c/a.ts:1:A","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-A"}
+{"t":"binding","shape":"c/a.ts:1:A","route":"GET /a","direction":"reply","role":"produces","source":"c/a.ts:1"}

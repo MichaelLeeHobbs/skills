@@ -1,0 +1,4 @@
+verify --check rows
+{"t":"shape","id":"c/a.ts:1:A","side":"client","origin":"hand","bytes":10,"importers":0,"hash":"h"}
+{"t":"field","shape":"c/a.ts:1:A","name":"when","alias":"","type":"date-iso","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0}
+{"t":"config","scope":"shape:c/a.ts:1:A","setting":"date_write","value":"iso","basis":"stated","source":"a.ts:2"}

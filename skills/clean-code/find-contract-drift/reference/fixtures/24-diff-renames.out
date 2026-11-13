@@ -1,0 +1,17 @@
+{"t":"gdiff","group":"G0001","mode":"directional","anchor":"s/U.kt:3:UserResponse","members":[{"id":"c/user.ts:1:UserDto","hash":"h-UserDto","eff":"naming=identity;inclusion=always;unknown_properties=ignore;unknown_enum=unknown;date_write=unknown"},{"id":"s/U.kt:3:UserResponse","hash":"h-UserResponse","eff":"naming=identity;inclusion=always;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"}],"hints":0,"judge":true}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"","m_field":"active","kind":"MISSING","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"","m_field":"activeFlag","kind":"MISSING","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"","m_field":"phone","kind":"MISSING","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"","m_field":"points","kind":"MISSING","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"","m_field":"since","kind":"MISSING","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"","m_field":"zip","kind":"MISSING","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"flag","m_field":"","kind":"EXTRA","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"joined","m_field":"","kind":"EXTRA","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"phoneExt","m_field":"","kind":"EXTRA","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"phoneNumber","m_field":"","kind":"EXTRA","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"postalCode","m_field":"","kind":"EXTRA","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"score","m_field":"","kind":"EXTRA","dir":"LOOSE","cause":""}
+{"t":"rename","group":"G0001","member":"c/user.ts:1:UserDto","a_field":"flag","m_field":"activeFlag","shared":1}
+{"t":"rename","group":"G0001","member":"c/user.ts:1:UserDto","a_field":"phoneNumber","m_field":"phone","shared":1}
+{"t":"rename","group":"G0001","member":"c/user.ts:1:UserDto","a_field":"score","m_field":"points","shared":0}
+{"t":"summary","groups":1,"cells":12,"BREAKING":5,"LATENT":0,"LOOSE":7,"DISAGREE":0,"UNRESOLVED":0,"renames":3,"accepted":0,"reopened":0,"judge":1}

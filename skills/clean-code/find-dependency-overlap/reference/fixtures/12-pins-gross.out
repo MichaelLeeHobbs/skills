@@ -1,0 +1,4 @@
+{"t":"drop","app":"web","names":["moment","moment-timezone"],"status":"gross","pinned_by":[],"closure":["moment","moment-timezone","tz-data"],"initial":69000,"lazy":31000}
+{"t":"drop","app":"web","names":["luxon"],"status":"gross","pinned_by":[],"closure":["luxon"],"initial":20000,"lazy":0}
+{"t":"drop","app":"web","names":["left-pad"],"status":"absent","pinned_by":[],"closure":[],"initial":0,"lazy":0}
+{"t":"summary","drops":3,"gross":2,"pinned":0,"absent":1}

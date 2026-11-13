@@ -1,0 +1,6 @@
+{"t":"unlisted","path":"apps/admin/Card.vue"}
+{"t":"short","path":"apps/admin/b.ts","parser":9,"pattern":10}
+{"t":"adjusted","path":"apps/web/gen.ts","reason":"generated"}
+{"t":"workspace","workspace":"admin","parser":9,"pattern":10,"covered":9,"coverage":"0.9000","pass":false}
+{"t":"workspace","workspace":"web","parser":1000,"pattern":1000,"covered":1000,"coverage":"1.0000","pass":true}
+{"t":"summary","files":3,"adjusted":1,"unlisted":1,"parser":1009,"pattern":1010,"covered":1009,"coverage":"0.9990","adjusted_share":"0.3333","pass":false}

@@ -1,0 +1,5 @@
+sites
+{"t":"workspace","name":".","package":""}
+{"t":"pkg","workspace":".","name":"moment","kind":"prod","real":""}
+{"t":"pkg","workspace":".","name":"moment","kind":"prod","real":""}
+{"t":"import","file":"a.ts","workspace":".","lang":"js","spec":"moment","form":"static","area":"shipped"}

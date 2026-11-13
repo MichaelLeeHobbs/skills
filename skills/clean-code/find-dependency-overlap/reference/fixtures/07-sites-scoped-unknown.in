@@ -1,0 +1,5 @@
+sites
+{"t":"workspace","name":".","package":""}
+{"t":"import","file":"x.ts","workspace":".","lang":"js","spec":"@scope","form":"static","area":"shipped","refs":1}
+{"t":"import","file":"x.ts","workspace":".","lang":"js","spec":"@scope/","form":"static","area":"shipped","refs":1}
+{"t":"import","file":"x.ts","workspace":".","lang":"js","spec":"lodash","form":"dynamic","area":"shipped","refs":1}

@@ -1,0 +1,4 @@
+{"t":"family","id":"F0001","job":"J01","runtime":"browser:web","primaries":["luxon","moment"],"attached":["@types/luxon","chartjs-adapter-moment","moment-timezone"]}
+{"t":"family","id":"F0002","job":"J02","runtime":"node:api","primaries":["axios","got"],"attached":[]}
+{"t":"family","id":"F0003","job":"J04","runtime":"tooling","primaries":["jest","vitest"],"attached":[]}
+{"t":"summary","packages":10,"mapped":10,"families":3,"problems":0}

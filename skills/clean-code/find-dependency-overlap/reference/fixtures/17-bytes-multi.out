@@ -1,0 +1,4 @@
+{"t":"size","app":"admin","package":"lodash","initial":20,"lazy":8,"copies":3}
+{"t":"app","app":"admin","total":43,"first_party":0,"unattributed":15,"coverage":"0.6511","pass":false}
+{"t":"app","app":"web","total":20,"first_party":20,"unattributed":0,"coverage":"1.0000","pass":true}
+{"t":"summary","apps":2,"chunks":3,"failed":1}

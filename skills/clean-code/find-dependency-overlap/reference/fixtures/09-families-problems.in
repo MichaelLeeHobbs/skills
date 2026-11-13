@@ -1,0 +1,13 @@
+families
+{"t":"runtime","workspace":".","runtime":"browser:app"}
+{"t":"job","id":"J01","name":"dates"}
+{"t":"pkg","workspace":".","name":"moment","kind":"prod","real":""}
+{"t":"pkg","workspace":".","name":"luxon","kind":"prod","real":""}
+{"t":"pkg","workspace":".","name":"left-pad","kind":"prod","real":""}
+{"t":"pkg","workspace":".","name":"my-lodash","kind":"prod","real":"lodash"}
+{"t":"pkg","workspace":".","name":"date-fns-tz","kind":"prod","real":""}
+{"t":"map","package":"moment","job":"J01","role":"primary","extends":""}
+{"t":"map","package":"luxon","job":"J01","role":"primary","extends":"moment"}
+{"t":"map","package":"lodash","job":"J09","role":"primary","extends":""}
+{"t":"map","package":"date-fns-tz","job":"J01","role":"complement","extends":"date-fns"}
+{"t":"map","package":"ghost","job":"J01","role":"adapter","extends":"moment"}

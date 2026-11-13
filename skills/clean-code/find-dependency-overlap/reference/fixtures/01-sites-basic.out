@@ -1,0 +1,9 @@
+{"t":"package","package":"@tanstack/query-core","files":1,"statements":1,"refs":2,"forms":{"static":1},"areas":{"shipped":1},"workspaces":["apps/web"],"carriers":0,"affected":1}
+{"t":"package","package":"lodash","files":1,"statements":1,"refs":1,"forms":{"static":1},"areas":{"shipped":1},"workspaces":["apps/web"],"carriers":0,"affected":1}
+{"t":"package","package":"luxon","files":1,"statements":2,"refs":6,"forms":{"static":1,"type_only":1},"areas":{"shipped":1},"workspaces":["apps/web"],"carriers":0,"affected":1}
+{"t":"package","package":"moment","files":2,"statements":3,"refs":8,"forms":{"side_effect":1,"static":2},"areas":{"shipped":2},"workspaces":["apps/web"],"carriers":0,"affected":2}
+{"t":"package","package":"zod","files":1,"statements":1,"refs":1,"forms":{"static":1},"areas":{"test":1},"workspaces":["apps/web"],"carriers":0,"affected":1}
+{"t":"unused","workspace":".","package":"@types/node"}
+{"t":"unused","workspace":"apps/web","package":"left-pad"}
+{"t":"undeclared","workspace":"apps/web","package":"zod"}
+{"t":"summary","imports":13,"ignored":5,"packages":5,"unused":2,"undeclared":1,"unknown":0}

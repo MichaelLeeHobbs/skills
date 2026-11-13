@@ -1,0 +1,4 @@
+{"t":"size","app":"x","package":"a","initial":0,"lazy":16,"copies":1}
+{"t":"size","app":"x","package":"b","initial":0,"lazy":28,"copies":1}
+{"t":"app","app":"x","total":60,"first_party":0,"unattributed":16,"coverage":"0.7333","pass":false}
+{"t":"summary","apps":1,"chunks":1,"failed":1}

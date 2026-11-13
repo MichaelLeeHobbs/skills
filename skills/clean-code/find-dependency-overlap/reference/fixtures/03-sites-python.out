@@ -1,0 +1,8 @@
+{"t":"package","package":"google-cloud-storage","files":1,"statements":1,"refs":2,"forms":{"static":1},"areas":{"shipped":1},"workspaces":["."],"carriers":0,"affected":1}
+{"t":"package","package":"httpx","files":2,"statements":2,"refs":4,"forms":{"static":1,"type_only":1},"areas":{"shipped":2},"workspaces":["."],"carriers":0,"affected":2}
+{"t":"package","package":"protobuf","files":1,"statements":1,"refs":1,"forms":{"static":1},"areas":{"shipped":1},"workspaces":["."],"carriers":0,"affected":1}
+{"t":"package","package":"pyyaml","files":1,"statements":1,"refs":1,"forms":{"static":1},"areas":{"shipped":1},"workspaces":["."],"carriers":0,"affected":1}
+{"t":"package","package":"requests","files":1,"statements":1,"refs":4,"forms":{"static":1},"areas":{"shipped":1},"workspaces":["."],"carriers":0,"affected":1}
+{"t":"unknown","file":"api/conf.py","spec":"osmosis"}
+{"t":"unknown","file":"api/store.py","spec":"google.cloud"}
+{"t":"summary","imports":10,"ignored":2,"packages":5,"unused":0,"undeclared":0,"unknown":2}

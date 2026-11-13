@@ -1,0 +1,3 @@
+pins
+{"t":"app","app":"web","root":"web@1.0.0"}
+{"t":"drop","app":"admin","names":["moment"]}

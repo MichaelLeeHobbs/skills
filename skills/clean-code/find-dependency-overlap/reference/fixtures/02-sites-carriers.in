@@ -1,0 +1,11 @@
+sites
+{"t":"workspace","name":".","package":""}
+{"t":"pkg","workspace":".","name":"moment","kind":"prod","real":""}
+{"t":"import","file":"src/date.ts","workspace":".","lang":"js","spec":"moment","form":"reexport","area":"shipped","refs":0}
+{"t":"import","file":"src/d.ts","workspace":".","lang":"js","spec":"moment","form":"static","area":"shipped","refs":2}
+{"t":"edge","from":"src/util/index.ts","to":"src/date.ts","form":"reexport"}
+{"t":"edge","from":"src/date.ts","to":"src/util/index.ts","form":"reexport"}
+{"t":"edge","from":"src/a.ts","to":"src/util/index.ts","form":"import"}
+{"t":"edge","from":"src/b.ts","to":"src/date.ts","form":"import"}
+{"t":"edge","from":"src/c.ts","to":"src/b.ts","form":"import"}
+{"t":"edge","from":"src/d.ts","to":"src/date.ts","form":"import"}

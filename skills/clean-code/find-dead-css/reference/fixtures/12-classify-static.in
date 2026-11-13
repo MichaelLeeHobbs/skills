@@ -1,0 +1,13 @@
+classify --mode static
+{"t":"member","rule":"r1","n":0,"sheet":"app.css","file":"src/a.css","tokens":["c:a","c:b"]}
+{"t":"member","rule":"r2","n":0,"sheet":"app.css","file":"src/a.css","tokens":["c:c"]}
+{"t":"member","rule":"r3","n":0,"sheet":"app.css","file":"src/a.css","tokens":["c:d"]}
+{"t":"member","rule":"r4","n":0,"sheet":"app.css","file":"src/a.css","tokens":[]}
+{"t":"member","rule":"zz","n":0,"sheet":"app.css","file":"","tokens":["c:zz-dead-3"]}
+{"t":"foreign","sheet":"app.css"}
+{"t":"ref","token":"c:a","kind":"exact"}
+{"t":"ref","token":"c:b","kind":"none"}
+{"t":"ref","token":"c:c","kind":"fragment"}
+{"t":"ref","token":"c:d","kind":"exact"}
+{"t":"ref","token":"c:zz-dead-3","kind":"none"}
+{"t":"canary","rule":"zz","expect":"UNPROVEN:static-only"}

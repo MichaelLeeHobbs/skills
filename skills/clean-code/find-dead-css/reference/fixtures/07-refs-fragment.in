@@ -1,0 +1,9 @@
+refs
+{"t":"src","path":"src/c.ts","text":"class='chip-x'"}
+{"t":"src","path":"src/b.ts","text":"b = 'btn-' + v;\np = \"pill-\" + on"}
+{"t":"src","path":"src/a.tsx","text":"const c = `btn-${variant}`;\nconst t = block + '__title';\nx = 'chip-' + s;\ny = `xtag-${c}`;\nz = `${a}-redx`;"}
+{"t":"want","token":"c:tag-red"}
+{"t":"want","token":"c:pill-on"}
+{"t":"want","token":"c:chip-x"}
+{"t":"want","token":"c:card__title"}
+{"t":"want","token":"c:btn-ghost"}

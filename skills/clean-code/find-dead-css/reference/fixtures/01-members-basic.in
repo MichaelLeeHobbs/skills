@@ -1,0 +1,4 @@
+members
+{"t":"rule","id":"r2","sheet":"app.css","file":"src/b.scss","line":9,"selector":"table td"}
+{"t":"rule","id":"r1","sheet":"app.css","file":"src/a.scss","line":4,"selector":".card .title, #main > .card:hover::before ,  [data-State=\"open\"] .x"}
+{"t":"rule","id":"r3","sheet":"app.css","file":"","line":0,"selector":".a:not(.b):is(.c, .d) svg|rect[xlink|href] .a"}

@@ -1,0 +1,7 @@
+refs
+{"t":"src","path":"src/Other.tsx","text":"const ghost = 1; s.secondary"}
+{"t":"src","path":"src/Button.tsx","text":"import s from './Button.module.css';\n<b className={s.primary} />"}
+{"t":"want","token":"c:Button_primary_x1","needle":"primary","paths":["src/Button.tsx"]}
+{"t":"want","token":"c:Button_ghost_x2","needle":"ghost","paths":["src/Button.tsx"]}
+{"t":"want","token":"c:Button_secondary_x3","needle":"secondary","paths":["src/Button.tsx"]}
+{"t":"want","token":"c:secondary"}

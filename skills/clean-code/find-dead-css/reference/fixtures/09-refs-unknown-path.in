@@ -1,0 +1,3 @@
+refs
+{"t":"src","path":"a.ts","text":"x"}
+{"t":"want","token":"c:x","paths":["b.ts"]}

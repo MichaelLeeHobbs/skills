@@ -1,0 +1,8 @@
+refs
+{"t":"src","path":"src/z.ts","text":"cls = 'card'"}
+{"t":"src","path":"src/b.tsx","text":"<div className=\"card-body md:flex\">\n<i class=\"title\"/>"}
+{"t":"src","path":"src/a.ts","text":"const cardx = 1; // card-body"}
+{"t":"want","token":"c:title"}
+{"t":"want","token":"c:card"}
+{"t":"want","token":"i:main"}
+{"t":"want","token":"c:md:flex"}

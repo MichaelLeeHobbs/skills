@@ -1,0 +1,4 @@
+members
+{"t":"rule","id":"r1","sheet":"s.css","file":"","line":0,"selector":".a"}
+{"t":"rule","id":"r1","sheet":"s.css","file":"","line":0,"selector":".b"}
+{"t":"rule","id":"r2","sheet":"s.css","file":"","line":0,"selector":".c("}

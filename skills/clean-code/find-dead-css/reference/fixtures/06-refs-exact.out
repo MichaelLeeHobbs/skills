@@ -1,0 +1,5 @@
+{"t":"ref","token":"c:card","kind":"exact","path":"src/z.ts","line":1,"via":""}
+{"t":"ref","token":"c:md:flex","kind":"exact","path":"src/b.tsx","line":1,"via":""}
+{"t":"ref","token":"c:title","kind":"exact","path":"src/b.tsx","line":2,"via":""}
+{"t":"ref","token":"i:main","kind":"none","path":"","line":0,"via":""}
+{"t":"summary","wants":4,"exact":3,"fragment":0,"none":1}

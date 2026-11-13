@@ -1,0 +1,11 @@
+classify --fold-case yes
+{"t":"plan","cell":"p1","route":"/"}
+{"t":"cell","cell":"p1","status":"reached","sheets":["s.css"]}
+{"t":"seen","token":"c:foo"}
+{"t":"seen","token":"i:MAIN"}
+{"t":"seen","token":"a:data-x"}
+{"t":"member","rule":"r1","n":0,"sheet":"s.css","file":"","tokens":["c:Foo"]}
+{"t":"member","rule":"r2","n":0,"sheet":"s.css","file":"","tokens":["i:Main"]}
+{"t":"member","rule":"r3","n":0,"sheet":"s.css","file":"","tokens":["a:data-x"]}
+{"t":"member","rule":"r4","n":0,"sheet":"s.css","file":"","tokens":["c:qux"]}
+{"t":"ref","token":"c:qux","kind":"none"}

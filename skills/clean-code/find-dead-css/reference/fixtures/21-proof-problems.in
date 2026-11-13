@@ -1,0 +1,10 @@
+proof
+{"t":"before","key":"|.a","decl":"h1"}
+{"t":"before","key":"|.b","decl":"h2"}
+{"t":"before","key":"|.c","decl":"h3"}
+{"t":"before","key":"|.d","decl":"h4"}
+{"t":"after","key":"|.a","decl":"h1x"}
+{"t":"after","key":"|.c","decl":"h3"}
+{"t":"after","key":"|.e","decl":"h5"}
+{"t":"expect","key":"|.z"}
+{"t":"expect","key":"|.c"}

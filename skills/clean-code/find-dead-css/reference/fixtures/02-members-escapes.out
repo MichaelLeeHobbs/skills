@@ -1,0 +1,8 @@
+{"t":"member","rule":"r1","n":0,"sheet":"s.css","file":"src/t.css","line":1,"selector":".md\\:flex","tokens":["c:md:flex"]}
+{"t":"member","rule":"r1","n":1,"sheet":"s.css","file":"src/t.css","line":1,"selector":".w-\\[13px\\]","tokens":["c:w-[13px]"]}
+{"t":"member","rule":"r1","n":2,"sheet":"s.css","file":"src/t.css","line":1,"selector":".bg-black\\/50","tokens":["c:bg-black/50"]}
+{"t":"member","rule":"r2","n":0,"sheet":"s.css","file":"src/t.css","line":1,"selector":".\\31 0x","tokens":["c:10x"]}
+{"t":"member","rule":"r3","n":0,"sheet":"s.css","file":"src/t.css","line":1,"selector":"[title=\"a]b\"].q","tokens":["a:title","c:q"]}
+{"t":"member","rule":"r4","n":0,"sheet":"s.css","file":"src/t.css","line":1,"selector":".\\[\\&\\>\\*\\]\\:p-4","tokens":["c:[&>*]:p-4"]}
+{"t":"member","rule":"r5","n":0,"sheet":"s.css","file":"src/t.css","line":1,"selector":".caf\\E9 .x\\0 y","tokens":["c:café","c:x�y"]}
+{"t":"summary","rules":5,"members":7,"untokened":0}

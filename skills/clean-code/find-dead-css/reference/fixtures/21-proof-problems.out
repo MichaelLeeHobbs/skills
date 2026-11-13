@@ -1,0 +1,8 @@
+{"t":"problem","reason":"changed","key":"|.a"}
+{"t":"problem","reason":"extra_removed","key":"|.b"}
+{"t":"problem","reason":"not_removed","key":"|.c"}
+{"t":"problem","reason":"extra_removed","key":"|.d"}
+{"t":"problem","reason":"not_removed","key":"|.e"}
+{"t":"problem","reason":"changed","key":"|.e"}
+{"t":"problem","reason":"expect_absent","key":"|.z"}
+{"t":"summary","keys":6,"before":4,"after":3,"expected":2,"removed":2,"problems":7}

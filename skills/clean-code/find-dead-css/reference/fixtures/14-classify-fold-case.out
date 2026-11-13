@@ -1,0 +1,6 @@
+{"t":"member","rule":"r1","n":0,"verdict":"SEEN","reason":"","token":""}
+{"t":"member","rule":"r2","n":0,"verdict":"SEEN","reason":"","token":""}
+{"t":"member","rule":"r3","n":0,"verdict":"SEEN","reason":"","token":""}
+{"t":"member","rule":"r4","n":0,"verdict":"DEAD","reason":"","token":"c:qux"}
+{"t":"rule","rule":"r4","verdict":"DEAD","file":"","dead":[0]}
+{"t":"summary","mode":"crawl","members":4,"dead":1,"keep":0,"seen":3,"undecidable":0,"unproven":0,"by_unproven":{},"rules_dead":1,"rules_trim":0,"files_dead":0,"cells":1,"reached":1,"blocked":0,"blocked_bp":"0.0000","canaries":0,"canaries_ok":0}

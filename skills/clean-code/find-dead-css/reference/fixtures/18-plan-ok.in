@@ -1,0 +1,9 @@
+verify --check plan
+{"t":"route","route":"/"}
+{"t":"route","route":"/orders"}
+{"t":"route","route":"/debug"}
+{"t":"exclude","route":"/debug","reason":"dev only"}
+{"t":"cell","cell":"home-anon","route":"/","role":"anon","state":"default","steps":[["goto","/"]],"expect":"heading Welcome"}
+{"t":"cell","cell":"orders-clerk-empty","route":"/orders","role":"clerk","state":"empty","steps":[["auth","clerk"],["goto","/orders"],["fill","searchbox","Search","zz-nomatch"],["press","Enter"],["wait","status","No orders"]],"expect":"status No orders"}
+{"t":"cell","cell":"orders-clerk-confirm","route":"/orders","role":"clerk","state":"confirm-dialog","steps":[["auth","clerk"],["goto","/orders"],["click","button","Delete order"]],"expect":"alertdialog"}
+{"t":"allow","cell":"orders-clerk-confirm","step":2}

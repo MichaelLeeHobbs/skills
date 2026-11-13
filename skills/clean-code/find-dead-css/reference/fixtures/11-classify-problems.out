@@ -1,0 +1,14 @@
+{"t":"member","rule":"r1","n":0,"verdict":"DEAD","reason":"","token":"c:a"}
+{"t":"member","rule":"zz","n":0,"verdict":"KEEP","reason":"","token":"c:zz-dead-1"}
+{"t":"member","rule":"zz2","n":0,"verdict":"UNDECIDABLE","reason":"","token":""}
+{"t":"member","rule":"zz2","n":1,"verdict":"SEEN","reason":"","token":""}
+{"t":"rule","rule":"r1","verdict":"DEAD","file":"src/a.css","dead":[0]}
+{"t":"file","file":"src/a.css","rules":1}
+{"t":"canary","rule":"zz","expect":"DEAD","got":"KEEP","ok":false}
+{"t":"canary","rule":"zz2","expect":"SEEN","got":"MIXED","ok":false}
+{"t":"problem","reason":"canary","key":"zz"}
+{"t":"problem","reason":"canary","key":"zz2"}
+{"t":"problem","reason":"route_unreached","key":"/admin"}
+{"t":"problem","reason":"route_unreached","key":"/settings"}
+{"t":"problem","reason":"blocked_over","key":""}
+{"t":"summary","mode":"crawl","members":1,"dead":1,"keep":0,"seen":0,"undecidable":0,"unproven":0,"by_unproven":{},"rules_dead":1,"rules_trim":0,"files_dead":1,"cells":4,"reached":1,"blocked":3,"blocked_bp":"0.7500","canaries":2,"canaries_ok":0}

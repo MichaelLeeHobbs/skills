@@ -1,0 +1,34 @@
+join
+{"t":"run","date":"2026-11-13"}
+{"t":"policy","kind":"route","floor":5}
+{"t":"source","source":"logs","kinds":["route"],"sampled":false,"success_logged":true,"scope_confirmed":true,"absent_is_zero":true}
+{"t":"day","source":"logs","date":"2026-11-01","records":1000}
+{"t":"day","source":"logs","date":"2026-11-02","records":1000}
+{"t":"day","source":"logs","date":"2026-11-03","records":1000}
+{"t":"day","source":"logs","date":"2026-11-04","records":1000}
+{"t":"day","source":"logs","date":"2026-11-05","records":1000}
+{"t":"day","source":"logs","date":"2026-11-06","records":1000}
+{"t":"day","source":"logs","date":"2026-11-07","records":1000}
+{"t":"day","source":"logs","date":"2026-11-08","records":1000}
+{"t":"day","source":"logs","date":"2026-11-09","records":1000}
+{"t":"day","source":"logs","date":"2026-11-10","records":1000}
+{"t":"day","source":"logs","date":"2026-11-11","records":1000}
+{"t":"day","source":"logs","date":"2026-11-12","records":1000}
+{"t":"unmatched","source":"logs","kind":"route","matched":9900,"unmatched":100}
+{"t":"entry","id":"route:GET /healthz","kind":"route","role":"control_live","source":"logs","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"hit","source":"logs","id":"route:GET /healthz","arm":"","real":40,"synthetic":0,"last":"2026-11-12"}
+{"t":"entry","id":"route:GET /zz-nonexistent","kind":"route","role":"control_zero","source":"logs","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"entry","id":"route:GET /zz-canary","kind":"route","role":"canary","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":"UNUSED"}
+{"t":"entry","id":"route:GET /dyn","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":true,"expect":""}
+{"t":"entry","id":"route:GET /kept","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"keep","id":"route:GET /kept","review_by":"2027-01-01"}
+{"t":"entry","id":"route:GET /new","kind":"route","role":"candidate","source":"","callers":0,"age_days":2,"period_days":0,"dynamic":false,"expect":""}
+{"t":"entry","id":"route:GET /monitored","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"hit","source":"logs","id":"route:GET /monitored","arm":"","real":0,"synthetic":7,"last":""}
+{"t":"entry","id":"route:POST /webhook","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"demote","id":"route:POST /webhook","reason":"external"}
+{"t":"entry","id":"route:GET /two-demotes","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"demote","id":"route:GET /two-demotes","reason":"pending"}
+{"t":"demote","id":"route:GET /two-demotes","reason":"recheck"}
+{"t":"entry","id":"route:GET /many","kind":"route","role":"candidate","source":"","callers":0,"age_days":1,"period_days":0,"dynamic":true,"expect":""}
+{"t":"demote","id":"route:GET /many","reason":"pending"}

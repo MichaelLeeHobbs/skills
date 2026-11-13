@@ -1,0 +1,5 @@
+join
+{"t":"run","date":"2026-11-13"}
+{"t":"hit","source":"logs","id":"route:GET /nowhere","arm":"","real":1,"synthetic":0,"last":"2026-11-01"}
+{"t":"source","source":"logs","kinds":["route"],"sampled":false,"success_logged":true,"scope_confirmed":true,"absent_is_zero":true}
+{"t":"entry","id":"route:GET /x","kind":"page","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}

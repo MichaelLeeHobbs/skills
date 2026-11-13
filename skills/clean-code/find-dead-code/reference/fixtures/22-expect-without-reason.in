@@ -1,0 +1,3 @@
+join
+{"t":"run","date":"2026-11-13"}
+{"t":"entry","id":"route:GET /zz-canary","kind":"route","role":"canary","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":"UNPROVEN"}

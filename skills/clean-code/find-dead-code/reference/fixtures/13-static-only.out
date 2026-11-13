@@ -1,0 +1,5 @@
+{"t":"canary","id":"route:GET /zz-canary","need":110,"expect":"UNPROVEN/no_source","got":"UNPROVEN/no_source","pass":true}
+{"t":"verdict","id":"flag:new-checkout","kind":"flag","need":30,"class":"UNPROVEN","reason":"no_source","reasons":["no_source"],"revived":false}
+{"t":"verdict","id":"route:GET /legacy","kind":"route","need":110,"class":"UNPROVEN","reason":"no_source","reasons":["no_source"],"revived":false}
+{"t":"verdict","id":"route:GET /plugin","kind":"route","need":110,"class":"UNPROVEN","reason":"dynamic","reasons":["dynamic","no_source"],"revived":false}
+{"t":"summary","candidates":3,"by_class":{"ENTRY_UNUSED":0,"LIVE":0,"STUCK":0,"UNPROVEN":3,"UNUSED":0},"by_reason":{"dynamic":1,"no_source":2},"revived":0,"keep_redundant":0,"keep_expired":0,"keep_orphan":0,"gates_failed":0,"canaries":1,"canaries_failed":0}

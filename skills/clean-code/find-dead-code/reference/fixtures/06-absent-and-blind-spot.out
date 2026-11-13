@@ -1,0 +1,11 @@
+{"t":"gate","source":"analytics","kind":"screen","pass":false,"reason":"blind_spot","live_controls":1,"zero_controls":1,"failed_controls":0,"unmatched":"0.0000"}
+{"t":"gate","source":"queue","kind":"handler","pass":true,"reason":"","live_controls":1,"zero_controls":1,"failed_controls":0,"unmatched":""}
+{"t":"control","id":"handler:orders.created","source":"queue","role":"control_live","real":300,"synthetic":0,"pass":true}
+{"t":"control","id":"handler:zz-none","source":"queue","role":"control_zero","real":0,"synthetic":0,"pass":true}
+{"t":"control","id":"screen:/home","source":"analytics","role":"control_live","real":77,"synthetic":0,"pass":true}
+{"t":"control","id":"screen:/zz-none","source":"analytics","role":"control_zero","real":0,"synthetic":0,"pass":true}
+{"t":"canary","id":"handler:zz-canary","need":5,"expect":"UNUSED","got":"UNUSED","pass":true}
+{"t":"verdict","id":"handler:invoice.reissued","kind":"handler","need":5,"class":"UNUSED","reason":"","reasons":[],"revived":false}
+{"t":"verdict","id":"handler:orphan-type","kind":"handler","need":5,"class":"UNPROVEN","reason":"no_evidence","reasons":["no_evidence"],"revived":false}
+{"t":"verdict","id":"screen:/admin/old","kind":"screen","need":5,"class":"UNPROVEN","reason":"blind_spot","reasons":["blind_spot"],"revived":false}
+{"t":"summary","candidates":3,"by_class":{"ENTRY_UNUSED":0,"LIVE":0,"STUCK":0,"UNPROVEN":2,"UNUSED":1},"by_reason":{"blind_spot":1,"no_evidence":1},"revived":0,"keep_redundant":0,"keep_expired":0,"keep_orphan":0,"gates_failed":0,"canaries":1,"canaries_failed":0}

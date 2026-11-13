@@ -1,0 +1,10 @@
+{"t":"gate","source":"flags","kind":"flag","pass":true,"reason":"","live_controls":1,"zero_controls":1,"failed_controls":0,"unmatched":""}
+{"t":"control","id":"flag:kill-all","source":"flags","role":"control_live","real":5,"synthetic":0,"pass":true}
+{"t":"control","id":"flag:zz-none","source":"flags","role":"control_zero","real":0,"synthetic":0,"pass":true}
+{"t":"canary","id":"flag:zz-canary","need":4,"expect":"UNUSED","got":"UNUSED","pass":true}
+{"t":"verdict","id":"flag:ab-test","kind":"flag","need":4,"class":"LIVE","reason":"","reasons":[],"revived":false}
+{"t":"verdict","id":"flag:flipped","kind":"flag","need":4,"class":"STUCK","reason":"","reasons":[],"revived":false}
+{"t":"verdict","id":"flag:never","kind":"flag","need":4,"class":"UNUSED","reason":"","reasons":[],"revived":false}
+{"t":"verdict","id":"flag:new-checkout","kind":"flag","need":4,"class":"STUCK","reason":"","reasons":[],"revived":false}
+{"t":"verdict","id":"flag:unknown-key","kind":"flag","need":4,"class":"UNPROVEN","reason":"no_evidence","reasons":["no_evidence"],"revived":false}
+{"t":"summary","candidates":5,"by_class":{"ENTRY_UNUSED":0,"LIVE":1,"STUCK":2,"UNPROVEN":1,"UNUSED":1},"by_reason":{"no_evidence":1},"revived":0,"keep_redundant":0,"keep_expired":0,"keep_orphan":0,"gates_failed":0,"canaries":1,"canaries_failed":0}

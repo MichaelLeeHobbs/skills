@@ -1,0 +1,28 @@
+join
+{"t":"run","date":"2026-11-13"}
+{"t":"policy","kind":"route","floor":5}
+{"t":"policy","kind":"screen","floor":5}
+{"t":"source","source":"edge","kinds":["route","screen"],"sampled":false,"success_logged":true,"scope_confirmed":true,"absent_is_zero":true}
+{"t":"day","source":"edge","date":"2026-11-01","records":1000}
+{"t":"day","source":"edge","date":"2026-11-02","records":1000}
+{"t":"day","source":"edge","date":"2026-11-03","records":1000}
+{"t":"day","source":"edge","date":"2026-11-04","records":1000}
+{"t":"day","source":"edge","date":"2026-11-05","records":1000}
+{"t":"day","source":"edge","date":"2026-11-06","records":1000}
+{"t":"day","source":"edge","date":"2026-11-07","records":1000}
+{"t":"day","source":"edge","date":"2026-11-08","records":1000}
+{"t":"day","source":"edge","date":"2026-11-09","records":1000}
+{"t":"day","source":"edge","date":"2026-11-10","records":1000}
+{"t":"day","source":"edge","date":"2026-11-11","records":1000}
+{"t":"day","source":"edge","date":"2026-11-12","records":1000}
+{"t":"unmatched","source":"edge","kind":"route","matched":9799,"unmatched":201}
+{"t":"unmatched","source":"edge","kind":"screen","matched":9800,"unmatched":200}
+{"t":"entry","id":"route:GET /healthz","kind":"route","role":"control_live","source":"edge","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"hit","source":"edge","id":"route:GET /healthz","arm":"","real":40,"synthetic":0,"last":"2026-11-12"}
+{"t":"entry","id":"route:GET /zz-nonexistent","kind":"route","role":"control_zero","source":"edge","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"entry","id":"screen:/home","kind":"screen","role":"control_live","source":"edge","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"hit","source":"edge","id":"screen:/home","arm":"","real":40,"synthetic":0,"last":"2026-11-12"}
+{"t":"entry","id":"screen:/zz-none","kind":"screen","role":"control_zero","source":"edge","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"entry","id":"screen:/zz-canary","kind":"screen","role":"canary","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":"UNUSED"}
+{"t":"entry","id":"route:GET /legacy","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"entry","id":"screen:/old","kind":"screen","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}

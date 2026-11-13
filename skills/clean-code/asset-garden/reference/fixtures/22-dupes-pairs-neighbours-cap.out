@@ -1,0 +1,5 @@
+{"t":"group","id":"B0001","tier":"bytes","members":["img/a-copy.png","img/a.png"],"reclaim":1000}
+{"t":"pair","algo":"dhash","a":"img/a-copy.png","b":"img/e.png","distance":0}
+{"t":"pair","algo":"phash","a":"img/a.png","b":"img/b.jpg","distance":1}
+{"t":"pair","algo":"dhash","a":"img/c.png","b":"img/d.png","distance":1}
+{"t":"summary","files":9,"bytes_groups":1,"strict_groups":0,"loose_groups":0,"pairs":3,"capped":true,"degenerate":2,"reclaim":1000}

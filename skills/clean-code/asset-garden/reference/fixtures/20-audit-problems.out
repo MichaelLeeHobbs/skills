@@ -1,0 +1,10 @@
+{"t":"problem","kind":"underread","path":"img/b.png"}
+{"t":"problem","kind":"gap","path":"img/c.png"}
+{"t":"problem","kind":"bad_skip","path":"img/e.png"}
+{"t":"problem","kind":"inconsistent","path":"img/f.png"}
+{"t":"problem","kind":"missing","path":"img/g.png"}
+{"t":"problem","kind":"extra","path":"img/h.png"}
+{"t":"problem","kind":"inconsistent","path":"img/i.png"}
+{"t":"problem","kind":"underread","path":"img/j.png"}
+{"t":"problem","kind":"gap","path":"img/j.png"}
+{"t":"summary","candidates":10,"audited":9,"gaps":2,"problems":9}

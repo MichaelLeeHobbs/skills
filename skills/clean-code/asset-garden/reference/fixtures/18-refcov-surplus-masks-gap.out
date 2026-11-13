@@ -1,0 +1,4 @@
+{"t":"short","path":"b.html","kind":"html","extracted":3,"pattern":5}
+{"t":"kind","kind":"css","files":1,"extracted":2,"pattern":2,"covered":2,"coverage":"1.0000","pass":true}
+{"t":"kind","kind":"html","files":2,"extracted":8,"pattern":8,"covered":6,"coverage":"0.7500","pass":false}
+{"t":"summary","files":3,"kinds":2,"pass":false}

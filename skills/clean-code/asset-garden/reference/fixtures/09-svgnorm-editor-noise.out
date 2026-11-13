@@ -1,0 +1,3 @@
+{"t":"norm","path":"a/noisy.svg","strict":"<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M 10 20 L 30.5 40\" fill=\"none\" stroke-width=\"2\"/></svg>","loose":"<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M 10 20 L 30.5 40\" fill=\"none\" stroke-width=\"2\"/></svg>","sprite":false,"raster":false}
+{"t":"norm","path":"b/clean.svg","strict":"<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M 10 20 L 30.5 40\" fill=\"none\" stroke-width=\"2\"/></svg>","loose":"<svg viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M 10 20 L 30.5 40\" fill=\"none\" stroke-width=\"2\"/></svg>","sprite":false,"raster":false}
+{"t":"summary","svgs":2,"normalised":2,"unparsed":0}

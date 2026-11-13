@@ -1,0 +1,2 @@
+{"t":"norm","path":"n.svg","strict":"<svg viewBox=\"0 0 24 24\"><path d=\"M 1.5 0.5 -2e3 1.1 L 0.5 0 0 1 . 007\"/><polygon points=\"1 e 2E+3 4 E -\"/><g transform=\"translate ( 10 20 ) scale ( 2 )\"/></svg>","loose":"<svg viewBox=\"0 0 24 24\"><path d=\"M 1.5 0.5 -2e3 1.1 L 0.5 0 0 1 . 007\"/><polygon points=\"1 e 2E+3 4 E -\"/><g transform=\"translate ( 10 20 ) scale ( 2 )\"/></svg>","sprite":false,"raster":false}
+{"t":"summary","svgs":1,"normalised":1,"unparsed":0}

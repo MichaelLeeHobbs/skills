@@ -1,0 +1,10 @@
+{"t":"asset","path":"lib/x.png","status":"unreferenced"}
+{"t":"asset","path":"public/favicon.ico","status":"convention"}
+{"t":"asset","path":"public/img/a b.png","status":"referenced"}
+{"t":"asset","path":"src/assets/Icon.png","status":"unreferenced"}
+{"t":"asset","path":"src/assets/logo.svg","status":"referenced"}
+{"t":"dangling","from":"src/App.tsx","value":"../../x.png","reason":"escapes"}
+{"t":"dangling","from":"src/App.tsx","value":"./assets/icon.png","reason":"case_only","other":"src/assets/Icon.png"}
+{"t":"dangling","from":"src/App.tsx","value":"/img/%E0%A4.png","reason":"no_asset"}
+{"t":"dangling","from":"src/App.tsx","value":"/nope.png","reason":"no_asset"}
+{"t":"summary","assets":5,"referenced":2,"convention":1,"hit":0,"pattern":0,"served":0,"kept":0,"weak":0,"unreferenced":2,"candidates":2,"dangling":4,"unmatched_hits":0,"external":2,"pattern_share":"0.0000"}

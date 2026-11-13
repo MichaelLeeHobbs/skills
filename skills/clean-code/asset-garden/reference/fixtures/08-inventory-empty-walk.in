@@ -1,0 +1,3 @@
+verify --check inventory
+{"t":"listed","by":"vcs","path":"b.png"}
+{"t":"listed","by":"vcs","path":"a.png"}

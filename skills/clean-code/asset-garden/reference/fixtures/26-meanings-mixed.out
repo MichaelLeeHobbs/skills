@@ -1,0 +1,3 @@
+{"t":"meaning","meaning":"add","families":[{"family":"custom","sites":1,"designs":1},{"family":"lib-a","sites":1,"designs":1}]}
+{"t":"meaning","meaning":"close","families":[{"family":"lib-a","sites":3,"designs":1},{"family":"custom","sites":2,"designs":2},{"family":"lib-b","sites":1,"designs":1}]}
+{"t":"summary","icons":8,"sites":11,"meanings":4,"mixed":2,"other":1,"uncounted":5}

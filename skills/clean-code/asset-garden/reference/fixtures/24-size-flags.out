@@ -1,0 +1,10 @@
+{"t":"flag","path":"fonts/Inter.TTF","rule":"over_cap","value":300000,"limit":153600}
+{"t":"flag","path":"fonts/Inter.TTF","rule":"legacy_font","value":300000,"limit":0}
+{"t":"flag","path":"icons/big.svg","rule":"over_cap","value":30000,"limit":20480}
+{"t":"flag","path":"icons/big.svg","rule":"embedded_raster","value":30000,"limit":0}
+{"t":"flag","path":"img/borderline.png","rule":"optimise","value":10240,"limit":10240}
+{"t":"flag","path":"img/hero.png","rule":"over_cap","value":600000,"limit":512000}
+{"t":"flag","path":"img/hero.png","rule":"pixels","value":4000,"limit":3600}
+{"t":"flag","path":"img/hero.png","rule":"optimise","value":200000,"limit":10240}
+{"t":"no_render","path":"img/old.png"}
+{"t":"summary","files":9,"flagged":4,"flags":8,"no_render":1,"saving":210240}

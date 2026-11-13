@@ -1,0 +1,9 @@
+dupes
+{"t":"file","path":"img/x.png","sha":"1111111111111111111111111111111111111111111111111111111111111111","bytes":1}
+{"t":"file","path":"img/y.png","sha":"2222222222222222222222222222222222222222222222222222222222222222","bytes":1}
+{"t":"file","path":"img/z.png","sha":"3333333333333333333333333333333333333333333333333333333333333333","bytes":1}
+{"t":"file","path":"img/w.png","sha":"4444444444444444444444444444444444444444444444444444444444444444","bytes":1}
+{"t":"hash","path":"img/x.png","algo":"dhash","hash":"0f0f0f0f0f0f0f0f","width":100,"height":50}
+{"t":"hash","path":"img/y.png","algo":"dhash","hash":"0f0f0f0f0f0f0f00","width":102,"height":50}
+{"t":"hash","path":"img/z.png","algo":"dhash","hash":"0f0f0f0f0f0f0f0f","width":103,"height":50}
+{"t":"hash","path":"img/w.png","algo":"dhash","hash":"0f0f0f0f0f0f0e00","width":100,"height":50}

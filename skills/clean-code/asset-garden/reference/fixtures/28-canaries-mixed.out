@@ -1,0 +1,9 @@
+{"t":"canary","line":9,"expect":"status","pass":true}
+{"t":"canary","line":10,"expect":"status","pass":false}
+{"t":"canary","line":11,"expect":"group","pass":true}
+{"t":"canary","line":12,"expect":"group","pass":true}
+{"t":"canary","line":13,"expect":"apart","pass":true}
+{"t":"canary","line":14,"expect":"apart","pass":false}
+{"t":"canary","line":15,"expect":"meaning","pass":true}
+{"t":"canary","line":16,"expect":"meaning","pass":false}
+{"t":"summary","canaries":8,"passed":5,"failed":3}

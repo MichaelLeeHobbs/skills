@@ -1,0 +1,6 @@
+{"t":"problem","kind":"too_many","icon":"custom/a.svg"}
+{"t":"problem","kind":"unlabelled","icon":"custom/none.svg"}
+{"t":"problem","kind":"unknown_meaning","icon":"lib:Trash","meaning":"bin"}
+{"t":"problem","kind":"extra","icon":"lib:Unused"}
+{"t":"problem","kind":"repeated","icon":"lib:X"}
+{"t":"summary","icons":5,"labels":6,"problems":5}

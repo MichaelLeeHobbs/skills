@@ -1,0 +1,6 @@
+refs
+{"t":"asset","path":"a.png","unit":""}
+{"t":"asset","path":"b.png","unit":""}
+{"t":"keep","path":"c.png","reason":"x"}
+{"t":"ref","from":"x.ts","value":"./a.png"}
+{"t":"asset","path":"a.png","unit":""}

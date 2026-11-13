@@ -1,0 +1,19 @@
+refs
+{"t":"asset","path":"src/assets/logo.svg","unit":""}
+{"t":"asset","path":"src/assets/Icon.png","unit":""}
+{"t":"asset","path":"public/img/a b.png","unit":""}
+{"t":"asset","path":"public/favicon.ico","unit":""}
+{"t":"asset","path":"lib/x.png","unit":""}
+{"t":"alias","prefix":"~","dir":"lib"}
+{"t":"alias","prefix":"~assets/","dir":"src/assets"}
+{"t":"root","dir":"public","url":"/"}
+{"t":"ref","from":"src/App.tsx","value":"./assets/logo.svg?url#frag"}
+{"t":"ref","from":"src/App.tsx","value":"/img/a%20b.png"}
+{"t":"ref","from":"src/App.tsx","value":"./assets/icon.png"}
+{"t":"ref","from":"src/App.tsx","value":"../../x.png"}
+{"t":"ref","from":"src/App.tsx","value":"https://cdn.example/x.png"}
+{"t":"ref","from":"src/App.tsx","value":"//cdn/x.png"}
+{"t":"ref","from":"src/App.tsx","value":"~assets/logo.svg"}
+{"t":"ref","from":"src/App.tsx","value":"/nope.png"}
+{"t":"ref","from":"src/App.tsx","value":"./assets/icon.png"}
+{"t":"ref","from":"src/App.tsx","value":"/img/%E0%A4.png"}

@@ -1,0 +1,6 @@
+group --max-stem 2
+{"t":"shape","id":"c/a.ts:1:Item","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Item"}
+{"t":"shape","id":"c/b.ts:1:ItemDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-ItemDto"}
+{"t":"shape","id":"c/c.ts:1:ItemModel","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-ItemModel"}
+{"t":"shape","id":"c/d.ts:1:Order","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Order"}
+{"t":"shape","id":"c/e.ts:1:OrderDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-OrderDto"}

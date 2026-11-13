@@ -1,0 +1,6 @@
+{"t":"group","id":"G0001","keys":["stem:order"],"members":["c/d.ts:1:Order","c/e.ts:1:OrderDto"]}
+{"t":"stopstem","stem":"item","shapes":3}
+{"t":"alone","shape":"c/a.ts:1:Item","reason":"stopstem"}
+{"t":"alone","shape":"c/b.ts:1:ItemDto","reason":"stopstem"}
+{"t":"alone","shape":"c/c.ts:1:ItemModel","reason":"stopstem"}
+{"t":"summary","shapes":5,"groups":1,"alone":3,"stopstems":1,"hubs":0,"wrappers":0,"keeps":0}

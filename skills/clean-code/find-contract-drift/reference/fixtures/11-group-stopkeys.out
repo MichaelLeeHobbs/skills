@@ -1,0 +1,11 @@
+{"t":"alone","shape":"c/a.ts:1:Aa","reason":"no_key"}
+{"t":"alone","shape":"c/b.ts:1:Bb","reason":"no_key"}
+{"t":"alone","shape":"c/c.ts:1:Cc","reason":"no_key"}
+{"t":"alone","shape":"c/z.ts:1:Dd","reason":"no_key"}
+{"t":"alone","shape":"c/z.ts:1:Ee","reason":"no_key"}
+{"t":"alone","shape":"c/z.ts:1:Ff","reason":"no_key"}
+{"t":"alone","shape":"c/z.ts:1:Gg","reason":"no_key"}
+{"t":"alone","shape":"c/z.ts:1:Hh","reason":"no_key"}
+{"t":"alone","shape":"c/z.ts:1:Ii","reason":"no_key"}
+{"t":"alone","shape":"c/z.ts:1:Jj","reason":"no_key"}
+{"t":"summary","shapes":10,"groups":0,"alone":10,"stopstems":0,"hubs":0,"wrappers":0,"keeps":0}

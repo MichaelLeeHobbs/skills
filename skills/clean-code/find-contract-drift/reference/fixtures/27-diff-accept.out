@@ -1,0 +1,5 @@
+{"t":"gdiff","group":"G0001","mode":"directional","anchor":"s/U.kt:3:UserResponse","members":[{"id":"c/user.ts:1:UserDto","hash":"d1","eff":"naming=identity;inclusion=always;unknown_properties=ignore;unknown_enum=unknown;date_write=unknown"},{"id":"s/U.kt:3:UserResponse","hash":"u2","eff":"naming=identity;inclusion=always;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"}],"hints":0,"judge":true}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"email","m_field":"email","kind":"NULLABILITY","dir":"BREAKING","cause":""}
+{"t":"reopened","group":"G0001","member":"c/user.ts:1:UserDto","a_field":"email","m_field":"email","kind":"NULLABILITY"}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"note","m_field":"note","kind":"NULLABILITY","dir":"BREAKING","cause":""}
+{"t":"summary","groups":1,"cells":2,"BREAKING":2,"LATENT":0,"LOOSE":0,"DISAGREE":0,"UNRESOLVED":0,"renames":0,"accepted":1,"reopened":1,"judge":1}

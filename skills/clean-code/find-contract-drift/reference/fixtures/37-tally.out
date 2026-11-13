@@ -1,0 +1,7 @@
+{"t":"shapes","total":3,"by_side":{"client":2,"server":1},"by_origin":{"generated":1,"hand":2}}
+{"t":"excluded","total":16,"by_reason":{"generated":13,"test":3}}
+{"t":"groups","total":3,"judge":1,"reused":1}
+{"t":"cells","BREAKING":1,"LATENT":0,"LOOSE":1,"DISAGREE":0,"UNRESOLVED":4}
+{"t":"causes","local":1,"by_cause":{"config:naming@*":1,"lang-nullability":2}}
+{"t":"evidence","CONFIRMED":1,"REFUTED":0,"BLOCKED":1,"by_basis":{"run":1,"sample":1}}
+{"t":"spend","total_cents":3025,"cap_cents":2500,"over_cap":true,"by_phase":{"judge":2900,"prove":125}}

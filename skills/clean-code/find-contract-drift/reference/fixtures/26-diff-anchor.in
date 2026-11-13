@@ -1,0 +1,21 @@
+diff
+{"t":"shape","id":"c/a.ts:1:AccountDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-AccountDto"}
+{"t":"shape","id":"c/b.ts:1:AccountView","side":"client","origin":"hand","bytes":100,"importers":9,"hash":"h-AccountView"}
+{"t":"shape","id":"api/spec.yaml:40:Account","side":"spec","origin":"hand","bytes":100,"importers":0,"hash":"h-Account"}
+{"t":"shape","id":"c/gen/api.ts:9:Account","side":"client","origin":"generated","bytes":100,"importers":0,"hash":"h-Account"}
+{"t":"shape","id":"s/A.kt:1:Account","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-Account"}
+{"t":"eff","shape":"c/a.ts:1:AccountDto","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"c/b.ts:1:AccountView","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"api/spec.yaml:40:Account","naming":"identity","naming_at":"path:api/","inclusion":"always","inclusion_at":"path:api/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"c/gen/api.ts:9:Account","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"s/A.kt:1:Account","naming":"identity","naming_at":"path:s/","inclusion":"always","inclusion_at":"path:s/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"c/a.ts:1:AccountDto","name":"id","type":"string","presence":"optional","nullable":"no","validated":"no","enum":[],"pos":0,"match":"id","wire":"id","note":""}
+{"t":"field","shape":"c/b.ts:1:AccountView","name":"id","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"id","wire":"id","note":""}
+{"t":"field","shape":"api/spec.yaml:40:Account","name":"id","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"id","wire":"id","note":""}
+{"t":"field","shape":"c/gen/api.ts:9:Account","name":"id","type":"string","presence":"required","nullable":"yes","validated":"no","enum":[],"pos":0,"match":"id","wire":"id","note":""}
+{"t":"field","shape":"s/A.kt:1:Account","name":"id","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"id","wire":"id","note":""}
+{"t":"binding","shape":"c/a.ts:1:AccountDto","route":"GET /accounts","direction":"response","role":"consumes","source":"c/a.ts:1"}
+{"t":"binding","shape":"c/b.ts:1:AccountView","route":"GET /accounts","direction":"response","role":"consumes","source":"c/b.ts:1"}
+{"t":"group","id":"G0001","keys":["bind:GET /accounts response"],"members":["c/a.ts:1:AccountDto","c/b.ts:1:AccountView"]}
+{"t":"group","id":"G0002","keys":["stem:account"],"members":["c/a.ts:1:AccountDto","c/b.ts:1:AccountView","c/gen/api.ts:9:Account","api/spec.yaml:40:Account"]}
+{"t":"group","id":"G0003","keys":["stem:account","contain:c/a.ts:1:AccountDto"],"members":["c/a.ts:1:AccountDto","c/b.ts:1:AccountView","c/gen/api.ts:9:Account","s/A.kt:1:Account","api/spec.yaml:40:Account"]}

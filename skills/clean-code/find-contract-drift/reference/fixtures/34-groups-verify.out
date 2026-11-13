@@ -1,0 +1,7 @@
+{"t":"problem","kind":"unplaced","id":"d"}
+{"t":"problem","kind":"unplaced","id":"e"}
+{"t":"problem","kind":"unknown_member","id":"y"}
+{"t":"problem","kind":"unknown_member","id":"z"}
+{"t":"problem","kind":"both","id":"c"}
+{"t":"problem","kind":"overlap","id":"G0001","other":"G0002","shared":2}
+{"t":"summary","shapes":5,"groups":3,"alone":2,"problems":6}

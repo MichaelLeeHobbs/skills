@@ -1,0 +1,5 @@
+diff
+{"t":"shape","id":"c/user.ts:1:UserDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserDto"}
+{"t":"shape","id":"s/U.kt:3:UserResponse","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-UserResponse"}
+{"t":"eff","shape":"c/user.ts:1:UserDto","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"group","id":"G0001","keys":["bind:GET /users response"],"members":["c/user.ts:1:UserDto","s/U.kt:3:UserResponse"]}

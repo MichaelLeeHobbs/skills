@@ -1,0 +1,6 @@
+{"t":"gdiff","group":"G0001","mode":"directional","anchor":"s/U.kt:3:UserResponse","members":[{"id":"c/user.ts:1:UserDto","hash":"h-UserDto","eff":"naming=identity;inclusion=always;unknown_properties=ignore;unknown_enum=unknown;date_write=unknown"},{"id":"s/U.kt:3:UserResponse","hash":"h-UserResponse","eff":"naming=identity;inclusion=always;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"}],"hints":0,"judge":true}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"color","m_field":"color","kind":"ENUM_VALUES","dir":"UNRESOLVED","cause":"local"}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"role","m_field":"role","kind":"ENUM_VALUES","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"state","m_field":"state","kind":"ENUM_SPELLING","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"tier","m_field":"tier","kind":"ENUM_VALUES","dir":"LOOSE","cause":""}
+{"t":"summary","groups":1,"cells":4,"BREAKING":2,"LATENT":0,"LOOSE":1,"DISAGREE":0,"UNRESOLVED":1,"renames":0,"accepted":0,"reopened":0,"judge":1}

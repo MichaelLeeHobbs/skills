@@ -1,0 +1,8 @@
+{"t":"problem","kind":"confirmed_without_run","group":"G0001","member":"c/u.ts:1:U","a_field":"role","m_field":"role","cell_kind":"ENUM_VALUES"}
+{"t":"problem","kind":"confirmed_without_run","group":"G0001","member":"c/u.ts:1:U","a_field":"createdAt","m_field":"createdAt","cell_kind":"WIRE_NAME"}
+{"t":"problem","kind":"diffed_config_kind","group":"G0001","member":"c/u.ts:1:U","a_field":"when","m_field":"when","cell_kind":"FORMAT"}
+{"t":"problem","kind":"not_confirmable","group":"G0001","member":"c/u.ts:1:U","a_field":"email","m_field":"email","cell_kind":"NULLABILITY"}
+{"t":"problem","kind":"unknown_cell","group":"G0001","member":"c/u.ts:1:U","a_field":"ghost","m_field":"ghost","cell_kind":"TYPE"}
+{"t":"problem","kind":"bad_cite","group":"G0001","member":"c/u.ts:1:U","a_field":"tier","m_field":"tier","cell_kind":"ENUM_VALUES"}
+{"t":"problem","kind":"no_evidence","group":"G0001","member":"c/u.ts:1:U","a_field":"count","m_field":"count","cell_kind":"TYPE"}
+{"t":"summary","cells":7,"evidence":6,"transforms":1,"problems":7}

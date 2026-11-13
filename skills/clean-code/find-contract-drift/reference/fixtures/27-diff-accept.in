@@ -1,0 +1,15 @@
+diff
+{"t":"shape","id":"s/U.kt:3:UserResponse","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"u2"}
+{"t":"shape","id":"c/user.ts:1:UserDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"d1"}
+{"t":"eff","shape":"s/U.kt:3:UserResponse","naming":"identity","naming_at":"path:s/","inclusion":"always","inclusion_at":"path:s/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"c/user.ts:1:UserDto","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"ignore","unknown_properties_at":"path:c/","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"email","type":"string","presence":"required","nullable":"yes","validated":"no","enum":[],"pos":0,"match":"email","wire":"email","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"legacy","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"legacy","wire":"legacy","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"note","type":"string","presence":"required","nullable":"yes","validated":"no","enum":[],"pos":2,"match":"note","wire":"note","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"email","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"email","wire":"email","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"note","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":2,"match":"note","wire":"note","note":""}
+{"t":"accept","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"legacy","m_field":"","kind":"EXTRA","anchor_hash":"u2","member_hash":"d1"}
+{"t":"accept","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"email","m_field":"email","kind":"NULLABILITY","anchor_hash":"u1","member_hash":"d1"}
+{"t":"binding","shape":"s/U.kt:3:UserResponse","route":"GET /users","direction":"response","role":"produces","source":"s/U.kt:1"}
+{"t":"binding","shape":"c/user.ts:1:UserDto","route":"GET /users","direction":"response","role":"consumes","source":"c/user.ts:1"}
+{"t":"group","id":"G0001","keys":["bind:GET /users response"],"members":["c/user.ts:1:UserDto","s/U.kt:3:UserResponse"]}

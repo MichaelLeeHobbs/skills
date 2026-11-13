@@ -1,0 +1,7 @@
+{"t":"group","id":"G0001","keys":["stem:address"],"members":["c/d.ts:1:Address","c/e.ts:1:AddressSchema"]}
+{"t":"group","id":"G0002","keys":["stem:statu"],"members":["c/f.ts:1:Status","c/g.ts:1:StatusProps"]}
+{"t":"group","id":"G0003","keys":["stem:user"],"members":["c/a.ts:1:IUser","c/b.ts:1:UserDto","c/c.ts:1:Users","c/k.ts:1:UserResponseDto","s/U.kt:1:UserResponse"]}
+{"t":"alone","shape":"c/h.ts:1:Props","reason":"no_key"}
+{"t":"alone","shape":"c/i.ts:1:ID","reason":"no_key"}
+{"t":"alone","shape":"c/j.ts:1:IPAddress","reason":"no_key"}
+{"t":"summary","shapes":12,"groups":3,"alone":3,"stopstems":0,"hubs":0,"wrappers":0,"keeps":0}

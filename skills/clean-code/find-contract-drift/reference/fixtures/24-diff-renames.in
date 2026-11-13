@@ -1,0 +1,20 @@
+diff
+{"t":"shape","id":"s/U.kt:3:UserResponse","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-UserResponse"}
+{"t":"shape","id":"c/user.ts:1:UserDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserDto"}
+{"t":"eff","shape":"s/U.kt:3:UserResponse","naming":"identity","naming_at":"path:s/","inclusion":"always","inclusion_at":"path:s/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"c/user.ts:1:UserDto","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"ignore","unknown_properties_at":"path:c/","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"postalCode","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"postal code","wire":"postalCode","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"phoneNumber","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"phone number","wire":"phoneNumber","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"phoneExt","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":2,"match":"phone ext","wire":"phoneExt","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"score","type":"int32","presence":"required","nullable":"no","validated":"no","enum":[],"pos":3,"match":"score","wire":"score","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"joined","type":"date-iso","presence":"required","nullable":"no","validated":"no","enum":[],"pos":4,"match":"joined","wire":"joined","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"flag","type":"boolean","presence":"required","nullable":"no","validated":"no","enum":[],"pos":5,"match":"flag","wire":"flag","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"zip","type":"string","presence":"optional","nullable":"no","validated":"no","enum":[],"pos":0,"match":"zip","wire":"zip","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"phone","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"phone","wire":"phone","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"points","type":"number","presence":"required","nullable":"no","validated":"no","enum":[],"pos":3,"match":"points","wire":"points","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"since","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":4,"match":"since","wire":"since","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"active","type":"boolean","presence":"required","nullable":"no","validated":"no","enum":[],"pos":5,"match":"active","wire":"active","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"activeFlag","type":"boolean","presence":"required","nullable":"no","validated":"no","enum":[],"pos":6,"match":"active flag","wire":"activeFlag","note":""}
+{"t":"binding","shape":"s/U.kt:3:UserResponse","route":"GET /users","direction":"response","role":"produces","source":"s/U.kt:1"}
+{"t":"binding","shape":"c/user.ts:1:UserDto","route":"GET /users","direction":"response","role":"consumes","source":"c/user.ts:1"}
+{"t":"group","id":"G0001","keys":["bind:GET /users response"],"members":["c/user.ts:1:UserDto","s/U.kt:3:UserResponse"]}

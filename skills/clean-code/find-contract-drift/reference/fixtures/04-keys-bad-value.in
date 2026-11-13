@@ -1,0 +1,4 @@
+keys
+{"t":"shape","id":"c/x.ts:1:X","side":"client"}
+{"t":"field","shape":"c/x.ts:1:X","name":"a","alias":"","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0}
+{"t":"config","scope":"path:c/","setting":"naming","value":"camel","basis":"stated","source":"cfg.yml:1"}

@@ -1,0 +1,13 @@
+group
+{"t":"shape","id":"c/a.ts:1:IUser","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-IUser"}
+{"t":"shape","id":"c/b.ts:1:UserDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserDto"}
+{"t":"shape","id":"s/U.kt:1:UserResponse","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-UserResponse"}
+{"t":"shape","id":"c/c.ts:1:Users","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Users"}
+{"t":"shape","id":"c/d.ts:1:Address","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Address"}
+{"t":"shape","id":"c/e.ts:1:AddressSchema","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-AddressSchema"}
+{"t":"shape","id":"c/f.ts:1:Status","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Status"}
+{"t":"shape","id":"c/g.ts:1:StatusProps","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-StatusProps"}
+{"t":"shape","id":"c/h.ts:1:Props","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-Props"}
+{"t":"shape","id":"c/i.ts:1:ID","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-ID"}
+{"t":"shape","id":"c/j.ts:1:IPAddress","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-IPAddress"}
+{"t":"shape","id":"c/k.ts:1:UserResponseDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserResponseDto"}

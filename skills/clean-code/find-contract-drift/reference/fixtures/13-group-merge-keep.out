@@ -1,0 +1,4 @@
+{"t":"group","id":"G0001","keys":["contain:c/a.ts:1:Alpha","contain:c/d.ts:1:Delta"],"members":["c/a.ts:1:Alpha","c/b.ts:1:Bravo","c/c.ts:1:Charlie","c/d.ts:1:Delta"]}
+{"t":"group","id":"G0002","keys":["contain:c/e.ts:1:Echo"],"members":["c/b.ts:1:Bravo","c/c.ts:1:Charlie","c/e.ts:1:Echo"]}
+{"t":"keep","a":"G0001","b":"G0002","shared":2}
+{"t":"summary","shapes":5,"groups":2,"alone":0,"stopstems":0,"hubs":0,"wrappers":0,"keeps":1}

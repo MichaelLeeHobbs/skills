@@ -1,0 +1,11 @@
+verify --check rows
+{"t":"shape","id":"c/a.ts:1:A","side":"browser","origin":"hand","bytes":10,"importers":0,"hash":"h"}
+{"t":"shape","id":"s/B.kt:1:B","side":"server","origin":"hand","bytes":10,"importers":0,"hash":"h"}
+{"t":"field","shape":"c/a.ts:1:A","name":"when","alias":"","type":"datetime","presence":"maybe","nullable":"no","validated":"no","enum":[],"pos":0}
+{"t":"field","shape":"c/a.ts:1:A","name":"when","alias":"","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1}
+{"t":"field","shape":"c/z.ts:1:Z","name":"q","alias":"","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0}
+{"t":"binding","shape":"s/B.kt:1:B","route":"GET /b","direction":"response","role":"serves","source":"s/B.kt:4"}
+{"t":"config","scope":"path:s/","setting":"naming","value":"camel","basis":"stated","source":"a.yml:1"}
+{"t":"config","scope":"path:s/","setting":"naming","value":"snake","basis":"guessed","source":"a.yml:2"}
+{"t":"config","scope":"module:s","setting":"casing","value":"x","basis":"stated","source":"a.yml:3"}
+{"t":"config","scope":"shape:c/q.ts:1:Q","setting":"inclusion","value":"always","basis":"stated","source":"a.yml:4"}

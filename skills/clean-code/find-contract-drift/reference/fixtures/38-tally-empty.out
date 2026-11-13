@@ -1,0 +1,7 @@
+{"t":"shapes","total":0,"by_side":{},"by_origin":{}}
+{"t":"excluded","total":0,"by_reason":{}}
+{"t":"groups","total":0,"judge":0,"reused":0}
+{"t":"cells","BREAKING":0,"LATENT":0,"LOOSE":0,"DISAGREE":0,"UNRESOLVED":0}
+{"t":"causes","local":0,"by_cause":{}}
+{"t":"evidence","CONFIRMED":0,"REFUTED":0,"BLOCKED":0,"by_basis":{}}
+{"t":"spend","total_cents":0,"cap_cents":0,"over_cap":false,"by_phase":{}}

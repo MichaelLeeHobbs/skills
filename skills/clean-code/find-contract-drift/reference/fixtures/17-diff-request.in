@@ -1,0 +1,16 @@
+diff
+{"t":"shape","id":"c/new.ts:1:NewUser","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-NewUser"}
+{"t":"shape","id":"s/C.kt:1:CreateUser","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-CreateUser"}
+{"t":"eff","shape":"c/new.ts:1:NewUser","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"s/C.kt:1:CreateUser","naming":"identity","naming_at":"path:s/","inclusion":"always","inclusion_at":"path:s/","unknown_properties":"fail","unknown_properties_at":"path:s/","unknown_enum":"fail","unknown_enum_at":"path:s/","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"c/new.ts:1:NewUser","name":"name","type":"string","presence":"optional","nullable":"no","validated":"no","enum":[],"pos":0,"match":"name","wire":"name","note":""}
+{"t":"field","shape":"c/new.ts:1:NewUser","name":"email","type":"string","presence":"optional","nullable":"no","validated":"no","enum":[],"pos":1,"match":"email","wire":"email","note":""}
+{"t":"field","shape":"c/new.ts:1:NewUser","name":"role","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["admin","user","auditor"],"pos":2,"match":"role","wire":"role","note":""}
+{"t":"field","shape":"c/new.ts:1:NewUser","name":"utm","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":3,"match":"utm","wire":"utm","note":""}
+{"t":"field","shape":"s/C.kt:1:CreateUser","name":"name","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"name","wire":"name","note":""}
+{"t":"field","shape":"s/C.kt:1:CreateUser","name":"email","type":"string","presence":"required","nullable":"no","validated":"yes","enum":[],"pos":1,"match":"email","wire":"email","note":""}
+{"t":"field","shape":"s/C.kt:1:CreateUser","name":"role","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["admin","user"],"pos":2,"match":"role","wire":"role","note":""}
+{"t":"field","shape":"s/C.kt:1:CreateUser","name":"tenant","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":3,"match":"tenant","wire":"tenant","note":""}
+{"t":"binding","shape":"c/new.ts:1:NewUser","route":"POST /users","direction":"request","role":"produces","source":"c/new.ts:1"}
+{"t":"binding","shape":"s/C.kt:1:CreateUser","route":"POST /users","direction":"request","role":"consumes","source":"s/C.kt:1"}
+{"t":"group","id":"G0001","keys":["bind:POST /users request"],"members":["c/new.ts:1:NewUser","s/C.kt:1:CreateUser"]}

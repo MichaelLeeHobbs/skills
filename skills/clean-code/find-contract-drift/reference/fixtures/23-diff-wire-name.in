@@ -1,0 +1,16 @@
+diff
+{"t":"shape","id":"s/U.kt:3:UserResponse","side":"server","origin":"hand","bytes":100,"importers":0,"hash":"h-UserResponse"}
+{"t":"shape","id":"c/user.ts:1:UserDto","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserDto"}
+{"t":"shape","id":"c/other.ts:1:UserLite","side":"client","origin":"hand","bytes":100,"importers":0,"hash":"h-UserLite"}
+{"t":"eff","shape":"s/U.kt:3:UserResponse","naming":"snake","naming_at":"path:s/","inclusion":"always","inclusion_at":"path:s/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"c/user.ts:1:UserDto","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"ignore","unknown_properties_at":"path:c/","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"c/other.ts:1:UserLite","naming":"unknown","naming_at":"*","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"createdAt","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"created at","wire":"created_at","note":""}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"createdAt","type":"string","presence":"optional","nullable":"no","validated":"no","enum":[],"pos":0,"match":"created at","wire":"createdAt","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"userID","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"user id","wire":"user_id","note":"ambiguous"}
+{"t":"field","shape":"c/user.ts:1:UserDto","name":"userId","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"user id","wire":"userId","note":""}
+{"t":"field","shape":"s/U.kt:3:UserResponse","name":"lastName","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":2,"match":"last name","wire":"last_name","note":""}
+{"t":"field","shape":"c/other.ts:1:UserLite","name":"lastName","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"last name","wire":"lastName","note":"naming_unknown"}
+{"t":"binding","shape":"s/U.kt:3:UserResponse","route":"GET /users","direction":"response","role":"produces","source":"s/U.kt:1"}
+{"t":"binding","shape":"c/user.ts:1:UserDto","route":"GET /users","direction":"response","role":"consumes","source":"c/user.ts:1"}
+{"t":"group","id":"G0001","keys":["bind:GET /users response"],"members":["c/other.ts:1:UserLite","c/user.ts:1:UserDto","s/U.kt:3:UserResponse"]}

@@ -1,0 +1,8 @@
+{"t":"gdiff","group":"G0001","mode":"peer","anchor":"c/b/user.ts:1:UserModel","members":[{"id":"c/a/user.ts:1:User","hash":"h-User","eff":"naming=identity;inclusion=always;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"},{"id":"c/b/user.ts:1:UserModel","hash":"h-UserModel","eff":"naming=identity;inclusion=always;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"},{"id":"c/c/u.ts:1:UserX","hash":"h-UserX","eff":"naming=identity;inclusion=always;unknown_properties=unknown;unknown_enum=unknown;date_write=unknown"}],"hints":6,"judge":true}
+{"t":"cell","group":"G0001","anchor":"c/b/user.ts:1:UserModel","member":"c/a/user.ts:1:User","a_field":"count","m_field":"count","kind":"WIDTH","dir":"LATENT","cause":""}
+{"t":"cell","group":"G0001","anchor":"c/b/user.ts:1:UserModel","member":"c/a/user.ts:1:User","a_field":"email","m_field":"email","kind":"NULLABILITY","dir":"DISAGREE","cause":""}
+{"t":"cell","group":"G0001","anchor":"c/b/user.ts:1:UserModel","member":"c/a/user.ts:1:User","a_field":"role","m_field":"role","kind":"ENUM_VALUES","dir":"DISAGREE","cause":""}
+{"t":"cell","group":"G0001","anchor":"c/b/user.ts:1:UserModel","member":"c/a/user.ts:1:User","a_field":"when","m_field":"when","kind":"FORMAT","dir":"DISAGREE","cause":""}
+{"t":"cell","group":"G0001","anchor":"c/b/user.ts:1:UserModel","member":"c/c/u.ts:1:UserX","a_field":"id","m_field":"id","kind":"PRESENCE","dir":"UNRESOLVED","cause":"lang-nullability"}
+{"t":"rename","group":"G0001","member":"c/a/user.ts:1:User","a_field":"createdAt","m_field":"onlyHere","shared":0}
+{"t":"summary","groups":1,"cells":5,"BREAKING":0,"LATENT":1,"LOOSE":0,"DISAGREE":3,"UNRESOLVED":1,"renames":1,"accepted":0,"reopened":0,"judge":1}

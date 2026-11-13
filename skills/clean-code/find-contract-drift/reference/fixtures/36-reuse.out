@@ -1,0 +1,5 @@
+{"t":"reuse","group":"G0001","from":"G0002"}
+{"t":"judge","group":"G0002","reason":"hash"}
+{"t":"judge","group":"G0003","reason":"config"}
+{"t":"judge","group":"G0004","reason":"new"}
+{"t":"summary","old":4,"new":4,"reused":1,"judge":3}

@@ -1,0 +1,10 @@
+{"t":"eff","shape":"c/x.ts:1:X","naming":"snake","naming_at":"path:c/x","inclusion":"unknown","inclusion_at":"*","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"c/y.ts:1:Y","naming":"unknown","naming_at":"*","inclusion":"unknown","inclusion_at":"*","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"c/x.ts:1:X","name":"userID","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"user id","wire":"user_id","note":"ambiguous"}
+{"t":"field","shape":"c/x.ts:1:X","name":"address2","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"address2","wire":"address2","note":"ambiguous"}
+{"t":"field","shape":"c/x.ts:1:X","name":"HTTPStatus","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":2,"match":"http status","wire":"http_status","note":"ambiguous"}
+{"t":"field","shape":"c/x.ts:1:X","name":"plainName","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":3,"match":"plain name","wire":"plain_name","note":""}
+{"t":"field","shape":"c/x.ts:1:X","name":"x2y","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":4,"match":"x2y","wire":"x2y","note":""}
+{"t":"field","shape":"c/y.ts:1:Y","name":"userID","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"user id","wire":"userID","note":"naming_unknown"}
+{"t":"field","shape":"c/y.ts:1:Y","name":"id","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"id","wire":"id","note":"naming_unknown"}
+{"t":"summary","shapes":2,"fields":7,"ambiguous":3,"naming_unknown":2}

@@ -1,0 +1,13 @@
+{"t":"problem","record":"shape","key":"c/a.ts:1:A","kind":"bad_value","field":"side"}
+{"t":"problem","record":"field","key":"c/a.ts:1:A.when","kind":"bad_value","field":"type"}
+{"t":"problem","record":"field","key":"c/a.ts:1:A.when","kind":"bad_value","field":"presence"}
+{"t":"problem","record":"field","key":"c/a.ts:1:A.when","kind":"duplicate_field"}
+{"t":"problem","record":"field","key":"c/z.ts:1:Z.q","kind":"unknown_shape"}
+{"t":"problem","record":"binding","key":"s/B.kt:1:B GET /b","kind":"bad_value","field":"role"}
+{"t":"problem","record":"config","key":"path:s/ naming","kind":"bad_value","field":"value"}
+{"t":"problem","record":"config","key":"path:s/ naming","kind":"bad_value","field":"basis"}
+{"t":"problem","record":"config","key":"path:s/ naming","kind":"duplicate_config"}
+{"t":"problem","record":"config","key":"module:s casing","kind":"bad_value","field":"setting"}
+{"t":"problem","record":"config","key":"module:s casing","kind":"bad_scope"}
+{"t":"problem","record":"config","key":"shape:c/q.ts:1:Q inclusion","kind":"unknown_shape"}
+{"t":"summary","shapes":2,"fields":3,"bindings":1,"configs":4,"problems":12}

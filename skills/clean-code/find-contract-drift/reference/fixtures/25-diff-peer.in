@@ -1,0 +1,22 @@
+diff
+{"t":"shape","id":"c/a/user.ts:1:User","side":"client","origin":"hand","bytes":100,"importers":3,"hash":"h-User"}
+{"t":"shape","id":"c/b/user.ts:1:UserModel","side":"client","origin":"hand","bytes":100,"importers":7,"hash":"h-UserModel"}
+{"t":"shape","id":"c/c/u.ts:1:UserX","side":"client","origin":"hand","bytes":100,"importers":7,"hash":"h-UserX"}
+{"t":"eff","shape":"c/a/user.ts:1:User","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"c/b/user.ts:1:UserModel","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"eff","shape":"c/c/u.ts:1:UserX","naming":"identity","naming_at":"path:c/","inclusion":"always","inclusion_at":"path:c/","unknown_properties":"unknown","unknown_properties_at":"*","unknown_enum":"unknown","unknown_enum_at":"*","date_write":"unknown","date_write_at":"*"}
+{"t":"field","shape":"c/a/user.ts:1:User","name":"id","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"id","wire":"id","note":""}
+{"t":"field","shape":"c/a/user.ts:1:User","name":"email","type":"string","presence":"required","nullable":"yes","validated":"no","enum":[],"pos":1,"match":"email","wire":"email","note":""}
+{"t":"field","shape":"c/a/user.ts:1:User","name":"count","type":"int64","presence":"required","nullable":"no","validated":"no","enum":[],"pos":2,"match":"count","wire":"count","note":""}
+{"t":"field","shape":"c/a/user.ts:1:User","name":"role","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["a","b","c"],"pos":3,"match":"role","wire":"role","note":""}
+{"t":"field","shape":"c/a/user.ts:1:User","name":"when","type":"date-object","presence":"required","nullable":"no","validated":"no","enum":[],"pos":4,"match":"when","wire":"when","note":""}
+{"t":"field","shape":"c/a/user.ts:1:User","name":"onlyHere","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":5,"match":"only here","wire":"onlyHere","note":""}
+{"t":"field","shape":"c/b/user.ts:1:UserModel","name":"id","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":0,"match":"id","wire":"id","note":""}
+{"t":"field","shape":"c/b/user.ts:1:UserModel","name":"email","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"email","wire":"email","note":""}
+{"t":"field","shape":"c/b/user.ts:1:UserModel","name":"count","type":"number","presence":"required","nullable":"no","validated":"no","enum":[],"pos":2,"match":"count","wire":"count","note":""}
+{"t":"field","shape":"c/b/user.ts:1:UserModel","name":"role","type":"enum","presence":"required","nullable":"no","validated":"no","enum":["a","b"],"pos":3,"match":"role","wire":"role","note":""}
+{"t":"field","shape":"c/b/user.ts:1:UserModel","name":"when","type":"date-iso","presence":"required","nullable":"no","validated":"no","enum":[],"pos":4,"match":"when","wire":"when","note":""}
+{"t":"field","shape":"c/b/user.ts:1:UserModel","name":"createdAt","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":5,"match":"created at","wire":"createdAt","note":""}
+{"t":"field","shape":"c/c/u.ts:1:UserX","name":"id","type":"string","presence":"unknown","nullable":"no","validated":"no","enum":[],"pos":0,"match":"id","wire":"id","note":""}
+{"t":"field","shape":"c/c/u.ts:1:UserX","name":"email","type":"string","presence":"required","nullable":"no","validated":"no","enum":[],"pos":1,"match":"email","wire":"email","note":""}
+{"t":"group","id":"G0001","keys":["stem:user"],"members":["c/a/user.ts:1:User","c/b/user.ts:1:UserModel","c/c/u.ts:1:UserX"]}

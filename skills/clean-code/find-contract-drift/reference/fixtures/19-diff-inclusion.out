@@ -1,0 +1,6 @@
+{"t":"gdiff","group":"G0001","mode":"directional","anchor":"s/U.kt:3:UserResponse","members":[{"id":"c/user.ts:1:UserDto","hash":"h-UserDto","eff":"naming=identity;inclusion=always;unknown_properties=ignore;unknown_enum=unknown;date_write=unknown"},{"id":"s/U.kt:3:UserResponse","hash":"h-UserResponse","eff":"naming=identity;inclusion=non-null;unknown_properties=ignore;unknown_enum=unknown;date_write=unknown"}],"hints":0,"judge":true}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"fax","m_field":"fax","kind":"PRESENCE","dir":"UNRESOLVED","cause":"lang-nullability"}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"middleName","m_field":"middleName","kind":"PRESENCE","dir":"BREAKING","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"middleName","m_field":"middleName","kind":"NULLABILITY","dir":"LOOSE","cause":""}
+{"t":"cell","group":"G0001","anchor":"s/U.kt:3:UserResponse","member":"c/user.ts:1:UserDto","a_field":"phone","m_field":"phone","kind":"NULLABILITY","dir":"LOOSE","cause":""}
+{"t":"summary","groups":1,"cells":4,"BREAKING":1,"LATENT":0,"LOOSE":2,"DISAGREE":0,"UNRESOLVED":1,"renames":0,"accepted":0,"reopened":0,"judge":1}

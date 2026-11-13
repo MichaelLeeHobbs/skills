@@ -1,0 +1,3 @@
+{"t":"flaky","id":"a","cost_ms_day":7,"events":1,"contradicted":0,"retry_passed":1,"observed":1,"rate_bp":10000,"first_day":2,"last_day":2}
+{"t":"burst","commit":"c1","events":2,"observed":3}
+{"t":"summary","outcomes":6,"pairs":6,"events":1,"burst_commits":1,"flaky":1,"below_min":0,"red":0,"single_fail":0}

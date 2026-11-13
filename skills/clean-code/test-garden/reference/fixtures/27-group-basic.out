@@ -1,0 +1,6 @@
+{"t":"group","id":"G0001","key":"same:tests/a/factory.ts:3:makeUser","members":["tests/a/factory.ts:3:makeUser","tests/b/util.ts:9:buildUser","tests/d/x.ts:4:defaultAccount"]}
+{"t":"group","id":"G0002","key":"stem:order","members":["tests/e/o.ts:1:order","tests/f/o.ts:2:getOrder"]}
+{"t":"group","id":"G0003","key":"stem:setup","members":["tests/x/s.ts:1:setup","tests/y/s.ts:1:setup"]}
+{"t":"group","id":"G0004","key":"stem:user","members":["tests/a/factory.ts:3:makeUser","tests/b/util.ts:9:buildUser","tests/c/mk.ts:1:createUser"]}
+{"t":"group","id":"G0005","key":"stem:xmlparser","members":["tests/g/p.ts:1:makeXMLParser","tests/h/p.ts:1:xmlParser"]}
+{"t":"summary","helpers":11,"groups":5,"stopstems":0}

@@ -1,0 +1,6 @@
+{"t":"never_ran","path":"tests/Z.test.ts","declared":1}
+{"t":"never_ran","path":"tests/b.test.ts","declared":4}
+{"t":"shortfall","path":"tests/c.test.ts","declared":5,"listed":3,"missing":2}
+{"t":"excepted","path":"tests/d.test.ts","declared":6,"listed":2,"reason":"declared in a loop"}
+{"t":"broken","path":"tests/e.test.ts"}
+{"t":"summary","files":7,"declared":23,"listed":14,"missing":7,"excepted":1,"problems":4}

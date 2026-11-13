@@ -1,0 +1,4 @@
+{"t":"count","report":"r2","expected":3,"got":2}
+{"t":"time","report":"r3","total_ms":120000,"sum_ms":5}
+{"t":"time","report":"r4","total_ms":10,"sum_ms":700}
+{"t":"summary","reports":5,"samples":7,"problems":3}

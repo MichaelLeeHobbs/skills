@@ -1,0 +1,5 @@
+{"t":"flaky","id":"A","cost_ms_day":66000,"events":2,"contradicted":1,"retry_passed":1,"observed":4,"rate_bp":5000,"first_day":2,"last_day":5}
+{"t":"flaky","id":"E","cost_ms_day":66000,"events":2,"contradicted":1,"retry_passed":1,"observed":2,"rate_bp":10000,"first_day":3,"last_day":5}
+{"t":"red","id":"D","commits":2}
+{"t":"red","id":"A","commits":1}
+{"t":"summary","outcomes":19,"pairs":11,"events":5,"burst_commits":0,"flaky":2,"below_min":1,"red":2,"single_fail":1}

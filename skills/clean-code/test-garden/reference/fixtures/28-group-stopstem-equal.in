@@ -1,0 +1,6 @@
+group --max-stem 2
+{"t":"helper","id":"a:1:makeUser","name":"makeUser","body":"x"}
+{"t":"helper","id":"b:1:buildUser","name":"buildUser","body":"y"}
+{"t":"helper","id":"c:1:user","name":"user","body":"z"}
+{"t":"helper","id":"d:1:makeCart","name":"makeCart","body":"same body"}
+{"t":"helper","id":"e:1:cart","name":"cart","body":"same  body"}

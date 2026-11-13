@@ -1,0 +1,13 @@
+verify --check reports
+{"t":"report","id":"r1","tests":2,"ms":1000}
+{"t":"report","id":"r2","tests":3,"ms":900}
+{"t":"report","id":"r3","tests":2,"ms":120000}
+{"t":"report","id":"r4","tests":1,"ms":10}
+{"t":"report","id":"r5","tests":0,"ms":0}
+{"t":"sample","report":"r1","test":"a","ms":400,"status":"pass"}
+{"t":"sample","report":"r1","test":"b","ms":500,"status":"fail"}
+{"t":"sample","report":"r2","test":"a","ms":300,"status":"pass"}
+{"t":"sample","report":"r2","test":"b","ms":0,"status":"skip"}
+{"t":"sample","report":"r3","test":"a","ms":2,"status":"pass"}
+{"t":"sample","report":"r3","test":"b","ms":3,"status":"flaky"}
+{"t":"sample","report":"r4","test":"a","ms":700,"status":"pass"}

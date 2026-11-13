@@ -1,0 +1,2 @@
+verify --check reports
+{"t":"file","path":"a","declared":1}

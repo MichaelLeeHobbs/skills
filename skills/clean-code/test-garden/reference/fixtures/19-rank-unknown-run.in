@@ -1,0 +1,4 @@
+rank
+{"t":"window","days":1}
+{"t":"test","id":"a","path":"a"}
+{"t":"sample","run":"r1","test":"a","ms":1,"status":"pass"}

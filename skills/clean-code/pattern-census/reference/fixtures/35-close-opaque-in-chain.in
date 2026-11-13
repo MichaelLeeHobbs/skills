@@ -1,0 +1,8 @@
+close
+{"t":"sink","symbol":"global#fetch","job":"fetch","marker":"fetch"}
+{"t":"sink","symbol":"pkg:react-query#useQuery","job":"fetch","marker":"react-query"}
+{"t":"opaque","path":"src/lib/q.ts"}
+{"t":"call","id":"src/a.tsx:2:1","path":"src/a.tsx","callee":"pkg:react-query#useQuery","in_fn":"","in_site":"","trigger":"query-hook"}
+{"t":"call","id":"src/lib/q.ts:9:1","path":"src/lib/q.ts","callee":"src/lib/q.ts#wrap","in_fn":"","in_site":"src/a.tsx:2:1","trigger":"other"}
+{"t":"call","id":"src/a.tsx:3:1","path":"src/a.tsx","callee":"global#fetch","in_fn":"","in_site":"src/lib/q.ts:9:1","trigger":"query-hook"}
+{"t":"call","id":"src/lib/q.ts:10:1","path":"src/lib/q.ts","callee":"global#fetch","in_fn":"","in_site":"","trigger":"other"}

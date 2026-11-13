@@ -1,0 +1,7 @@
+{"t":"family","job":"auth","family":"x:y>z","sites":1}
+{"t":"family","job":"fetch","family":"effect:fetch>fetch","sites":1}
+{"t":"convention","id":"A1","job":"auth","in_scope":1,"conforming":1,"low":"","high":"","withheld":"escapes"}
+{"t":"convention","id":"C1","job":"fetch","in_scope":1,"conforming":1,"low":"0.0909","high":"1.0000","withheld":"range"}
+{"t":"job","job":"auth","grade":"partial","sites":1,"blocked":0,"files":1,"escapes":11,"bound":0,"state":"escapes"}
+{"t":"job","job":"fetch","grade":"closed","sites":1,"blocked":0,"files":1,"escapes":1,"bound":10,"state":"ok"}
+{"t":"summary","jobs":2,"sites":2,"conventions":2,"withheld":2,"pass":false}

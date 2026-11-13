@@ -1,0 +1,4 @@
+census
+{"t":"job","job":"fetch","grade":"closed"}
+{"t":"site","id":"src/a.ts:1:1:fetch","job":"fetch","family":"effect:fetch>fetch","path":"src/a.ts"}
+{"t":"convention","id":"C1","job":"fetch","status":"stated","allow":["*:*>*"],"deny":[],"scope":[]}

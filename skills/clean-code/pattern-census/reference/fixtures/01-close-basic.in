@@ -1,0 +1,16 @@
+close
+{"t":"sink","symbol":"pkg:react-query#useQuery","job":"fetch","marker":"react-query"}
+{"t":"sink","symbol":"src/api/client.ts#apiClient.get","job":"fetch","marker":"apiClient"}
+{"t":"sink","symbol":"global#fetch","job":"fetch","marker":"fetch"}
+{"t":"opaque","path":"src/api/client.ts"}
+{"t":"call","id":"src/api/client.ts:5:1","path":"src/api/client.ts","callee":"global#fetch","in_fn":"","in_site":"","trigger":"other"}
+{"t":"fn","symbol":"src/users/api.ts#fetchUsers","path":"src/users/api.ts","component":false,"wraps":"src/users/api.ts:3:1"}
+{"t":"fn","symbol":"src/users/Users.tsx#Users","path":"src/users/Users.tsx","component":true,"wraps":""}
+{"t":"call","id":"src/users/api.ts:3:1","path":"src/users/api.ts","callee":"src/api/client.ts#apiClient.get","in_fn":"src/users/api.ts#fetchUsers","in_site":"","trigger":"other"}
+{"t":"call","id":"src/users/Users.tsx:7:1","path":"src/users/Users.tsx","callee":"pkg:react-query#useQuery","in_fn":"src/users/Users.tsx#Users","in_site":"","trigger":"query-hook"}
+{"t":"ref","id":"src/users/Users.tsx:8:1","path":"src/users/Users.tsx","symbol":"src/users/api.ts#fetchUsers","in_fn":"src/users/Users.tsx#Users","in_site":"src/users/Users.tsx:7:1","trigger":"query-hook"}
+{"t":"call","id":"src/admin/Admin.tsx:12:1","path":"src/admin/Admin.tsx","callee":"src/users/api.ts#fetchUsers","in_fn":"","in_site":"","trigger":"handler"}
+{"t":"call","id":"src/orders/Orders.tsx:10:1","path":"src/orders/Orders.tsx","callee":"pkg:react-query#useQuery","in_fn":"","in_site":"","trigger":"query-hook"}
+{"t":"call","id":"src/orders/Orders.tsx:10:2","path":"src/orders/Orders.tsx","callee":"global#fetch","in_fn":"","in_site":"src/orders/Orders.tsx:10:1","trigger":"query-hook"}
+{"t":"call","id":"src/cart/Cart.tsx:20:1","path":"src/cart/Cart.tsx","callee":"src/api/client.ts#apiClient.get","in_fn":"","in_site":"","trigger":"effect"}
+{"t":"call","id":"src/cart/Cart.tsx:21:1","path":"src/cart/Cart.tsx","callee":"src/cart/Cart.tsx#setItems","in_fn":"","in_site":"","trigger":"effect"}

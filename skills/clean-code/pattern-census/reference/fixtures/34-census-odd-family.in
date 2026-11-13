@@ -1,0 +1,6 @@
+census
+{"t":"job","job":"j","grade":"partial"}
+{"t":"site","id":"a.ts:1:1:j","job":"j","family":"plain","path":"a.ts"}
+{"t":"site","id":"b.ts:1:1:j","job":"j","family":"x:y>z","path":"b.ts"}
+{"t":"convention","id":"C1","job":"j","status":"stated","allow":["*:*>*"],"deny":[],"scope":[]}
+{"t":"stratum","name":"s","files":2,"read":2}

@@ -1,0 +1,8 @@
+owners
+{"t":"rule","line":1,"pattern":"a+b.ts","owners":["@plus"],"section":""}
+{"t":"rule","line":2,"pattern":"/","owners":["@root"],"section":""}
+{"t":"rule","line":3,"pattern":"[x].ts","owners":["@brackets"],"section":""}
+{"t":"site","id":"s1","job":"j","family":"x:y>z","path":"src/a+b.ts"}
+{"t":"site","id":"s2","job":"j","family":"x:y>z","path":"src/aab.ts"}
+{"t":"site","id":"s3","job":"j","family":"x:y>z","path":"src/x.ts"}
+{"t":"site","id":"s4","job":"j","family":"x:y>z","path":"lib/[x].ts"}

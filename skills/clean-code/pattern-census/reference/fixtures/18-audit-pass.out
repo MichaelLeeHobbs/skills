@@ -1,0 +1,2 @@
+{"t":"disagree","id":"src/c.ts:3:1:fetch","scanner":"handler:apiClient>apiClient","worker":"effect:apiClient>apiClient","ruling":"scanner"}
+{"t":"summary","sampled":3,"labelled":3,"agree":2,"disagree":1,"upheld":0,"unruled":0,"missing":0,"pass":true}

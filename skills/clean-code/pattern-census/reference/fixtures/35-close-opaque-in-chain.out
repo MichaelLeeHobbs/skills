@@ -1,0 +1,3 @@
+{"t":"site","id":"src/a.tsx:2:1:fetch","job":"fetch","family":"query-hook:react-query>fetch","path":"src/a.tsx"}
+{"t":"count","job":"fetch","sites":1,"same_as":1,"inside_conduit":0,"blocked":0}
+{"t":"summary","calls":4,"refs":0,"unresolved":0,"opaque":2,"hits":2,"sites":1,"blocked":0,"not_site":0,"problems":0}

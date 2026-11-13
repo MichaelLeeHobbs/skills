@@ -1,0 +1,7 @@
+{"t":"site","id":"src/admin/Admin.tsx:12:1:fetch","job":"fetch","family":"handler:apiClient>apiClient","path":"src/admin/Admin.tsx"}
+{"t":"site","id":"src/cart/Cart.tsx:20:1:fetch","job":"fetch","family":"effect:apiClient>apiClient","path":"src/cart/Cart.tsx"}
+{"t":"site","id":"src/orders/Orders.tsx:10:1:fetch","job":"fetch","family":"query-hook:react-query>fetch","path":"src/orders/Orders.tsx"}
+{"t":"site","id":"src/users/Users.tsx:7:1:fetch","job":"fetch","family":"query-hook:react-query>apiClient","path":"src/users/Users.tsx"}
+{"t":"conduit","symbol":"src/users/api.ts#fetchUsers","job":"fetch","terminal":"apiClient","source":"auto","uses":2}
+{"t":"count","job":"fetch","sites":4,"same_as":2,"inside_conduit":1,"blocked":0}
+{"t":"summary","calls":8,"refs":1,"unresolved":0,"opaque":1,"hits":7,"sites":4,"blocked":0,"not_site":0,"problems":0}

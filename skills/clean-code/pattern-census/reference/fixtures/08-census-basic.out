@@ -1,0 +1,9 @@
+{"t":"family","job":"fetch","family":"query-hook:react-query>apiClient","sites":60}
+{"t":"family","job":"fetch","family":"effect:apiClient>apiClient","sites":20}
+{"t":"family","job":"fetch","family":"effect:fetch>fetch","sites":12}
+{"t":"family","job":"fetch","family":"thunk:axios>axios","sites":8}
+{"t":"convention","id":"C1","job":"fetch","in_scope":100,"conforming":60,"low":"0.5000","high":"0.6666","withheld":""}
+{"t":"convention","id":"C2","job":"fetch","in_scope":80,"conforming":20,"low":"0.2000","high":"0.4000","withheld":""}
+{"t":"convention","id":"C3","job":"fetch","in_scope":100,"conforming":60,"low":"0.5000","high":"0.6666","withheld":"vague"}
+{"t":"job","job":"fetch","grade":"closed","sites":100,"blocked":2,"files":90,"escapes":0,"bound":18,"state":"ok"}
+{"t":"summary","jobs":1,"sites":100,"conventions":3,"withheld":1,"pass":true}

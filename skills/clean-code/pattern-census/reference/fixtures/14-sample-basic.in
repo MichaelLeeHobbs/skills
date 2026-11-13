@@ -1,0 +1,13 @@
+sample
+{"t":"item","id":"src/a.ts","stratum":"hit"}
+{"t":"item","id":"src/b.ts","stratum":"hit"}
+{"t":"item","id":"src/c.ts","stratum":"hit"}
+{"t":"item","id":"src/d.ts","stratum":"hit"}
+{"t":"item","id":"src/e.ts","stratum":"nohit"}
+{"t":"item","id":"src/f.ts","stratum":"nohit"}
+{"t":"item","id":"src/g.ts","stratum":"nohit"}
+{"t":"item","id":"src/h.ts","stratum":"other"}
+{"t":"quota","stratum":"nohit","n":5}
+{"t":"quota","stratum":"hit","n":2}
+{"t":"quota","stratum":"empty","n":3}
+{"t":"seed","value":"abc1234:r1"}

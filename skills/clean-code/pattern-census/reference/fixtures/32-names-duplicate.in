@@ -1,0 +1,3 @@
+owners
+{"t":"site","id":"a","job":"j","family":"x:y>z","path":"a"}
+{"t":"rule","line":1,"pattern":"*","owners":["@a","@a"],"section":""}

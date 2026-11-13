@@ -1,0 +1,5 @@
+verify --check scan
+{"t":"expect","case":"two-on-a-line","id":"a.ts:1:1:fetch","family":"effect:fetch>fetch"}
+{"t":"expect","case":"two-on-a-line","id":"a.ts:1:2:fetch","family":"effect:fetch>fetch"}
+{"t":"got","case":"two-on-a-line","id":"a.ts:1:2:fetch","family":"effect:fetch>fetch"}
+{"t":"got","case":"two-on-a-line","id":"a.ts:1:1:fetch","family":"effect:fetch>fetch"}

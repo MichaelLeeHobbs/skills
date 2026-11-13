@@ -1,0 +1,5 @@
+close
+{"t":"sink","symbol":"global#fetch","job":"fetch","marker":"fetch"}
+{"t":"call","id":"src/a.ts:1:1","path":"src/a.ts","callee":"global#fetch","in_fn":"","in_site":"src/a.ts:9:9","trigger":"effect"}
+{"t":"call","id":"src/b.ts:1:1","path":"src/b.ts","callee":"global#fetch","in_fn":"","in_site":"","trigger":"effect"}
+{"t":"call","id":"src/b.ts:1:1","path":"src/b.ts","callee":"global#fetch","in_fn":"","in_site":"","trigger":"handler"}

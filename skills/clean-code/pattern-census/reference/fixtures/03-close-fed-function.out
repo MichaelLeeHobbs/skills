@@ -1,0 +1,10 @@
+{"t":"site","id":"src/p.tsx:4:1:fetch","job":"fetch","family":"query-hook:react-query>mixed","path":"src/p.tsx"}
+{"t":"site","id":"src/r.ts:2:1:fetch","job":"fetch","family":"other:apiClient>apiClient","path":"src/r.ts"}
+{"t":"site","id":"src/s.tsx:2:1:fetch","job":"fetch","family":"query-hook:react-query>react-query","path":"src/s.tsx"}
+{"t":"site","id":"src/t.tsx:6:1:fetch","job":"fetch","family":"query-hook:react-query>react-query","path":"src/t.tsx"}
+{"t":"site","id":"src/u.tsx:1:1:fetch","job":"fetch","family":"query-hook:react-query>fetch","path":"src/u.tsx"}
+{"t":"site","id":"src/v.ts:4:1:fetch","job":"fetch","family":"query-hook:react-query>fetch","path":"src/v.ts"}
+{"t":"site","id":"src/w.ts:2:1:fetch","job":"fetch","family":"query-hook:react-query>react-query","path":"src/w.ts"}
+{"t":"site","id":"src/w.ts:6:1:fetch","job":"fetch","family":"query-hook:react-query>react-query","path":"src/w.ts"}
+{"t":"count","job":"fetch","sites":8,"same_as":4,"inside_conduit":0,"blocked":0}
+{"t":"summary","calls":13,"refs":6,"unresolved":0,"opaque":0,"hits":12,"sites":8,"blocked":0,"not_site":0,"problems":0}

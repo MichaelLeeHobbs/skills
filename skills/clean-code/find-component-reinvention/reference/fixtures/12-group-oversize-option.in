@@ -1,0 +1,6 @@
+group --max-members 2
+{"t":"row","id":"x.tsx:1:B1","widget":"badge"}
+{"t":"row","id":"X.tsx:1:B2","widget":"badge"}
+{"t":"row","id":"y.tsx:1:B3","widget":"badge"}
+{"t":"row","id":"z.tsx:1:M1","widget":"modal"}
+{"t":"row","id":"z.tsx:9:M2","widget":"modal"}

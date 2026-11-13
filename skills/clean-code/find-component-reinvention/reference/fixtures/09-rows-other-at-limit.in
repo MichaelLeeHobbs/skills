@@ -1,0 +1,5 @@
+verify --check rows --max-other-basis-points 2500
+{"t":"row","id":"a.tsx:1:UnreadBadge","name":"UnreadBadge","widget":"badge","displays":"message count","relation":"hand-rolled","wraps":"none","styling":"hardcoded","effects":["pure"],"imports":[]}
+{"t":"row","id":"a.tsx:9:Frame","name":"Frame","widget":"other","displays":"page chrome","relation":"hand-rolled","wraps":" none ","styling":"inherited","effects":["context"],"imports":[]}
+{"t":"row","id":"b.tsx:4:UserTable","name":"UserTable","widget":"table","displays":"user accounts","relation":"restyled","wraps":"DataGrid","styling":"mixed","effects":["fetch","router"],"imports":["DataGrid","useQuery"]}
+{"t":"row","id":"c.tsx:2:NoResults","name":"NoResults","widget":"empty-state","displays":"search results","relation":"library","wraps":"none","styling":"tokens","effects":["pure"],"imports":[]}

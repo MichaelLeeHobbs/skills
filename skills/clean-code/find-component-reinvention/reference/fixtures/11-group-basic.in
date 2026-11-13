@@ -1,0 +1,8 @@
+group
+{"t":"row","id":"b.tsx:9:Pill","widget":"badge"}
+{"t":"row","id":"a.tsx:3:StatusBadge","widget":"badge"}
+{"t":"row","id":"p.tsx:1:JobsPage","widget":"page"}
+{"t":"row","id":"e.tsx:2:NoJobs","widget":"empty-state"}
+{"t":"row","id":"d.tsx:5:NothingHere","widget":"empty-state"}
+{"t":"row","id":"t.tsx:1:Tip","widget":"tooltip"}
+{"t":"row","id":"c.tsx:2:Tag","widget":"badge"}

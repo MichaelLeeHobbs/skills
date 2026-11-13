@@ -1,0 +1,7 @@
+tally
+{"t":"excluded","reason":"9","count":1}
+{"t":"excluded","reason":"10","count":2}
+{"t":"excluded","reason":"b","count":3}
+{"t":"spend","phase":"9","usd_cents":300}
+{"t":"spend","phase":"10","usd_cents":200}
+{"t":"cap","usd_cents":400}

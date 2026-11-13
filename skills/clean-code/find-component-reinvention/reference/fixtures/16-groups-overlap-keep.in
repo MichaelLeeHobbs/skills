@@ -1,0 +1,6 @@
+verify --check groups
+{"t":"group","id":"G1","members":["a","b","c"]}
+{"t":"group","id":"G2","members":["b","c","d"]}
+{"t":"group","id":"G3","members":["c","d","e"]}
+{"t":"group","id":"G4","members":["x","y"]}
+{"t":"keep","a":"G3","b":"G2"}

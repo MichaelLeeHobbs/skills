@@ -1,0 +1,10 @@
+reuse
+{"t":"old","id":"a.ts:10:formatDate","hash":"h1"}
+{"t":"old","id":"a.ts:20:formatBytes","hash":"h2"}
+{"t":"old","id":"b.ts:5:hasText","hash":"h3"}
+{"t":"old","id":"c.ts:1:legacy","hash":"h4"}
+{"t":"new","id":"f.ts:2:hasText","hash":"h3"}
+{"t":"new","id":"a.ts:12:formatDate","hash":"h1"}
+{"t":"new","id":"a.ts:22:formatBytes","hash":"h9"}
+{"t":"new","id":"d.ts:3:hasText","hash":"h3"}
+{"t":"new","id":"e.ts:1:slugify","hash":"h7"}

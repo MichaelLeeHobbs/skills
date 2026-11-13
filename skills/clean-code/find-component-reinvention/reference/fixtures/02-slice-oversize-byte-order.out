@@ -1,0 +1,4 @@
+{"t":"slice","slice":"S0001","bytes":40,"files":["Z.ts","x.ts"],"rows":["Z.ts:1:d","x.ts:1:a"]}
+{"t":"slice","slice":"S0002","bytes":250,"files":["y.ts"],"rows":["y.ts:1:b"]}
+{"t":"slice","slice":"S0003","bytes":20,"files":["z.ts"],"rows":["z.ts:1:c"]}
+{"t":"summary","slices":3,"files":4,"rows":4,"bytes":310}

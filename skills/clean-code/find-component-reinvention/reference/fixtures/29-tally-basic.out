@@ -1,0 +1,10 @@
+{"t":"rows","total":3,"eligible":2,"by_widget":{"badge":2,"page":1},"by_relation":{"hand-rolled":2,"wrapper":1}}
+{"t":"excluded","total":54,"by_reason":{"story":12,"test":42}}
+{"t":"slices","done":2,"blocked":1}
+{"t":"verdicts","SAME":2,"VARIANT":1,"DIFFERENT":1}
+{"t":"evidence","CONFIRMED":1,"REFUTED":0,"BLOCKED":1}
+{"t":"cells","ok":2,"unreachable":1,"unstable":0,"blank":1,"blocked":2,"by_reason":{"cap_reached":1,"render_threw":1}}
+{"t":"family","group":"G0001","copies":1,"wrappers":0,"sites":0}
+{"t":"family","group":"G0002","copies":2,"wrappers":1,"sites":17}
+{"t":"reinvented","groups":2}
+{"t":"spend","total_cents":1025,"cap_cents":2500,"over_cap":false,"by_phase":{"describe":125,"judge":900}}

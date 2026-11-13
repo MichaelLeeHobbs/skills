@@ -1,0 +1,3 @@
+{"t":"group","id":"G0001","key":"class:badge","members":["a.tsx:3:StatusBadge","b.tsx:9:Pill","c.tsx:2:Tag"],"oversize":false}
+{"t":"group","id":"G0002","key":"class:empty-state","members":["d.tsx:5:NothingHere","e.tsx:2:NoJobs"],"oversize":false}
+{"t":"summary","rows":7,"eligible":6,"groups":2,"oversize":0,"singles":1}

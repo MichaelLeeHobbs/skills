@@ -1,0 +1,7 @@
+{"t":"reuse","id":"a.ts:12:formatDate","from":"a.ts:10:formatDate"}
+{"t":"changed","id":"a.ts:22:formatBytes","from":"a.ts:20:formatBytes"}
+{"t":"reuse","id":"d.ts:3:hasText","from":"b.ts:5:hasText"}
+{"t":"added","id":"e.ts:1:slugify"}
+{"t":"reuse","id":"f.ts:2:hasText","from":"b.ts:5:hasText"}
+{"t":"removed","id":"c.ts:1:legacy"}
+{"t":"summary","old":4,"new":5,"reused":3,"changed":1,"added":1,"removed":1}

@@ -1,0 +1,9 @@
+slice --max-bytes 100
+{"t":"file","path":"x.ts","bytes":30}
+{"t":"file","path":"y.ts","bytes":250}
+{"t":"file","path":"z.ts","bytes":20}
+{"t":"file","path":"Z.ts","bytes":10}
+{"t":"row","id":"x.ts:1:a","path":"x.ts"}
+{"t":"row","id":"y.ts:1:b","path":"y.ts"}
+{"t":"row","id":"z.ts:1:c","path":"z.ts"}
+{"t":"row","id":"Z.ts:1:d","path":"Z.ts"}

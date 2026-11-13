@@ -1,0 +1,5 @@
+join
+{"t":"run","date":"2026-11-13"}
+{"t":"source","source":"logs","kinds":["route"],"sampled":false,"success_logged":true,"scope_confirmed":true,"absent_is_zero":true}
+{"t":"day","source":"logs","date":"2026-11-01","records":1}
+{"t":"day","source":"logs","date":"2026-11-01","records":2}

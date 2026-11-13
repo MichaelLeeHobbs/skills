@@ -1,0 +1,6 @@
+join
+{"t":"run","date":"2026-11-13"}
+{"t":"entry","id":"route:GET /zz-canary","kind":"route","role":"canary","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":"UNPROVEN/no_source"}
+{"t":"entry","id":"route:GET /legacy","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"entry","id":"route:GET /plugin","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":true,"expect":""}
+{"t":"entry","id":"flag:new-checkout","kind":"flag","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}

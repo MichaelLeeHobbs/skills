@@ -1,0 +1,28 @@
+join
+{"t":"run","date":"2026-11-13"}
+{"t":"policy","kind":"route","floor":5}
+{"t":"source","source":"logs","kinds":["route"],"sampled":false,"success_logged":true,"scope_confirmed":true,"absent_is_zero":true}
+{"t":"day","source":"logs","date":"2026-11-01","records":1000}
+{"t":"day","source":"logs","date":"2026-11-02","records":1000}
+{"t":"day","source":"logs","date":"2026-11-03","records":1000}
+{"t":"day","source":"logs","date":"2026-11-04","records":1000}
+{"t":"day","source":"logs","date":"2026-11-05","records":1000}
+{"t":"day","source":"logs","date":"2026-11-06","records":1000}
+{"t":"day","source":"logs","date":"2026-11-07","records":1000}
+{"t":"day","source":"logs","date":"2026-11-08","records":1000}
+{"t":"day","source":"logs","date":"2026-11-09","records":1000}
+{"t":"day","source":"logs","date":"2026-11-10","records":1000}
+{"t":"day","source":"logs","date":"2026-11-11","records":1000}
+{"t":"day","source":"logs","date":"2026-11-12","records":1000}
+{"t":"unmatched","source":"logs","kind":"route","matched":9900,"unmatched":100}
+{"t":"entry","id":"route:GET /healthz","kind":"route","role":"control_live","source":"logs","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"hit","source":"logs","id":"route:GET /healthz","arm":"","real":40,"synthetic":0,"last":"2026-11-12"}
+{"t":"entry","id":"route:GET /zz-nonexistent","kind":"route","role":"control_zero","source":"logs","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"entry","id":"route:GET /zz-canary","kind":"route","role":"canary","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":"UNUSED"}
+{"t":"entry","id":"route:GET /legacy","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"entry","id":"route:GET /orders","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"hit","source":"logs","id":"route:GET /orders","arm":"","real":12,"synthetic":0,"last":"2026-11-10"}
+{"t":"entry","id":"route:POST /export","kind":"route","role":"candidate","source":"","callers":2,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"hit","source":"logs","id":"route:POST /export","arm":"","real":0,"synthetic":0,"last":""}
+{"t":"entry","id":"route:GET /old-hit","kind":"route","role":"candidate","source":"","callers":0,"age_days":400,"period_days":0,"dynamic":false,"expect":""}
+{"t":"hit","source":"logs","id":"route:GET /old-hit","arm":"","real":3,"synthetic":0,"last":"2026-11-01"}

@@ -1,0 +1,12 @@
+{"t":"gate","source":"logs","kind":"route","pass":true,"reason":"","live_controls":1,"zero_controls":1,"failed_controls":0,"unmatched":"0.0100"}
+{"t":"control","id":"route:GET /healthz","source":"logs","role":"control_live","real":40,"synthetic":0,"pass":true}
+{"t":"control","id":"route:GET /zz-nonexistent","source":"logs","role":"control_zero","real":0,"synthetic":0,"pass":true}
+{"t":"canary","id":"route:GET /zz-canary","need":5,"expect":"UNUSED","got":"UNUSED","pass":true}
+{"t":"verdict","id":"route:GET /dyn","kind":"route","need":5,"class":"UNPROVEN","reason":"dynamic","reasons":["dynamic"],"revived":false}
+{"t":"verdict","id":"route:GET /kept","kind":"route","need":5,"class":"UNPROVEN","reason":"kept","reasons":["kept"],"revived":false}
+{"t":"verdict","id":"route:GET /many","kind":"route","need":5,"class":"UNPROVEN","reason":"dynamic","reasons":["dynamic","too_new","pending"],"revived":false}
+{"t":"verdict","id":"route:GET /monitored","kind":"route","need":5,"class":"UNPROVEN","reason":"synthetic_only","reasons":["synthetic_only"],"revived":false}
+{"t":"verdict","id":"route:GET /new","kind":"route","need":5,"class":"UNPROVEN","reason":"too_new","reasons":["too_new"],"revived":false}
+{"t":"verdict","id":"route:GET /two-demotes","kind":"route","need":5,"class":"UNPROVEN","reason":"recheck","reasons":["recheck","pending"],"revived":false}
+{"t":"verdict","id":"route:POST /webhook","kind":"route","need":5,"class":"UNPROVEN","reason":"external","reasons":["external"],"revived":false}
+{"t":"summary","candidates":7,"by_class":{"ENTRY_UNUSED":0,"LIVE":0,"STUCK":0,"UNPROVEN":7,"UNUSED":0},"by_reason":{"dynamic":2,"external":1,"kept":1,"recheck":1,"synthetic_only":1,"too_new":1},"revived":0,"keep_redundant":0,"keep_expired":0,"keep_orphan":0,"gates_failed":0,"canaries":1,"canaries_failed":0}

@@ -1,0 +1,10 @@
+{"t":"gate","source":"scheduler","kind":"job","pass":true,"reason":"","live_controls":1,"zero_controls":1,"failed_controls":0,"unmatched":""}
+{"t":"control","id":"job:heartbeat","source":"scheduler","role":"control_live","real":12,"synthetic":0,"pass":true}
+{"t":"control","id":"job:zz-none","source":"scheduler","role":"control_zero","real":0,"synthetic":0,"pass":true}
+{"t":"canary","id":"job:zz-yearly-canary","need":402,"expect":"UNPROVEN/short_window","got":"UNPROVEN/short_window","pass":true}
+{"t":"verdict","id":"job:monthly","kind":"job","need":35,"class":"UNPROVEN","reason":"short_window","reasons":["short_window"],"revived":false}
+{"t":"verdict","id":"job:nightly","kind":"job","need":5,"class":"UNUSED","reason":"","reasons":[],"revived":false}
+{"t":"verdict","id":"job:weekly-ish","kind":"job","need":6,"class":"UNUSED","reason":"","reasons":[],"revived":false}
+{"t":"verdict","id":"job:yearly","kind":"job","need":402,"class":"UNPROVEN","reason":"short_window","reasons":["short_window"],"revived":false}
+{"t":"verdict","id":"job:young","kind":"job","need":5,"class":"UNPROVEN","reason":"too_new","reasons":["too_new"],"revived":false}
+{"t":"summary","candidates":5,"by_class":{"ENTRY_UNUSED":0,"LIVE":0,"STUCK":0,"UNPROVEN":3,"UNUSED":2},"by_reason":{"short_window":2,"too_new":1},"revived":0,"keep_redundant":0,"keep_expired":0,"keep_orphan":0,"gates_failed":0,"canaries":1,"canaries_failed":0}

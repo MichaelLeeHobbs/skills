@@ -1,0 +1,10 @@
+{"t":"gate","source":"edge","kind":"route","pass":false,"reason":"control","live_controls":1,"zero_controls":1,"failed_controls":0,"unmatched":"0.0201"}
+{"t":"gate","source":"edge","kind":"screen","pass":true,"reason":"","live_controls":1,"zero_controls":1,"failed_controls":0,"unmatched":"0.0200"}
+{"t":"control","id":"route:GET /healthz","source":"edge","role":"control_live","real":40,"synthetic":0,"pass":true}
+{"t":"control","id":"route:GET /zz-nonexistent","source":"edge","role":"control_zero","real":0,"synthetic":0,"pass":true}
+{"t":"control","id":"screen:/home","source":"edge","role":"control_live","real":40,"synthetic":0,"pass":true}
+{"t":"control","id":"screen:/zz-none","source":"edge","role":"control_zero","real":0,"synthetic":0,"pass":true}
+{"t":"canary","id":"screen:/zz-canary","need":5,"expect":"UNUSED","got":"UNUSED","pass":true}
+{"t":"verdict","id":"route:GET /legacy","kind":"route","need":5,"class":"UNPROVEN","reason":"control","reasons":["control"],"revived":false}
+{"t":"verdict","id":"screen:/old","kind":"screen","need":5,"class":"UNUSED","reason":"","reasons":[],"revived":false}
+{"t":"summary","candidates":2,"by_class":{"ENTRY_UNUSED":0,"LIVE":0,"STUCK":0,"UNPROVEN":1,"UNUSED":1},"by_reason":{"control":1},"revived":0,"keep_redundant":0,"keep_expired":0,"keep_orphan":0,"gates_failed":1,"canaries":1,"canaries_failed":0}

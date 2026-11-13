@@ -1,0 +1,9 @@
+{"t":"gate","source":"logs","kind":"route","pass":true,"reason":"","live_controls":1,"zero_controls":1,"failed_controls":0,"unmatched":"0.0100"}
+{"t":"control","id":"route:GET /healthz","source":"logs","role":"control_live","real":40,"synthetic":0,"pass":true}
+{"t":"control","id":"route:GET /zz-nonexistent","source":"logs","role":"control_zero","real":0,"synthetic":0,"pass":true}
+{"t":"canary","id":"route:GET /zz-canary","need":5,"expect":"UNUSED","got":"UNUSED","pass":true}
+{"t":"verdict","id":"route:GET /legacy","kind":"route","need":5,"class":"UNUSED","reason":"","reasons":[],"revived":false}
+{"t":"verdict","id":"route:GET /old-hit","kind":"route","need":5,"class":"UNUSED","reason":"","reasons":[],"revived":false}
+{"t":"verdict","id":"route:GET /orders","kind":"route","need":5,"class":"LIVE","reason":"","reasons":[],"revived":false}
+{"t":"verdict","id":"route:POST /export","kind":"route","need":5,"class":"ENTRY_UNUSED","reason":"","reasons":[],"revived":false}
+{"t":"summary","candidates":4,"by_class":{"ENTRY_UNUSED":1,"LIVE":1,"STUCK":0,"UNPROVEN":0,"UNUSED":2},"by_reason":{},"revived":0,"keep_redundant":0,"keep_expired":0,"keep_orphan":0,"gates_failed":0,"canaries":1,"canaries_failed":0}

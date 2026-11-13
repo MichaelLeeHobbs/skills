@@ -1,0 +1,5 @@
+{"t":"verdicts","SYNONYM":0,"DISTINCT":0,"HOMONYM":0,"GENERIC":0}
+{"t":"strength","structural":0,"usage":0}
+{"t":"candidates","judged":0,"total":0}
+{"t":"seeds","files":1,"lines":40,"read":0,"pass":false}
+{"t":"spend","total_cents":0,"cap_cents":0,"over_cap":false,"by_phase":{}}

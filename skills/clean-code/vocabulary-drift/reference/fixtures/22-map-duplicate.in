@@ -1,0 +1,4 @@
+verify --check map
+{"t":"concept","id":"C0001","name":"study"}
+{"t":"map","term":"exam","to":"C0001"}
+{"t":"map","term":"exam","to":"C0001"}

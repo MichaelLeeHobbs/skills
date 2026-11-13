@@ -1,0 +1,4 @@
+{"t":"claim","id":"V1","verdict":"SYNONYM","strength":"structural","cites":2,"problems":0}
+{"t":"claim","id":"V2","verdict":"DISTINCT","strength":"structural","cites":1,"problems":0}
+{"t":"claim","id":"V3","verdict":"GENERIC","strength":"usage","cites":1,"problems":0}
+{"t":"summary","claims":3,"structural":2,"usage":1,"canaries":0,"canaries_passed":0,"problems":0,"pass":true}

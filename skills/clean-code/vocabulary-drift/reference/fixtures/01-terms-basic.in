@@ -1,0 +1,6 @@
+terms
+{"t":"site","id":"api/models/study.ts:3:14","path":"api/models/study.ts","surface":"type","context":"api","text":"Study"}
+{"t":"site","id":"api/models/study.ts:9:3","path":"api/models/study.ts","surface":"type","context":"api","text":"studyDate"}
+{"t":"site","id":"web/exam/ExamList.tsx:12:7","path":"web/exam/ExamList.tsx","surface":"code","context":"web","text":"loadExamStudies"}
+{"t":"site","id":"web/i18n/en.json:4:12","path":"web/i18n/en.json","surface":"ui","context":"web","text":"Exam date"}
+{"t":"site","id":"api/routes.ts:20:9","path":"api/routes.ts","surface":"route","context":"api","text":"/api/studies/:studyId"}

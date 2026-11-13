@@ -1,0 +1,4 @@
+verify --check coverage
+{"t":"tracked","path":"a.ts"}
+{"t":"file","path":"a.ts","bucket":"source"}
+{"t":"site","id":"b.ts:1:1","path":"b.ts","surface":"code","context":"x","text":"f"}

@@ -1,0 +1,3 @@
+{"t":"group","surface":"code","ext":"ts","pattern":20,"sites":18,"matched":18,"coverage":"0.9000","pass":false}
+{"t":"group","surface":"type","ext":"py","pattern":1,"sites":1,"matched":1,"coverage":"1.0000","pass":true}
+{"t":"summary","tracked":4,"files":4,"by_bucket":{"excluded-config":1,"source":3},"groups":2,"failed_groups":1,"problems":0,"pass":false}

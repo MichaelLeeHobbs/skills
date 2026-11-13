@@ -1,0 +1,15 @@
+verify --check map
+{"t":"term","term":"exam","sites":7,"by_surface":{"code":7}}
+{"t":"term","term":"study","sites":2,"by_surface":{"type":1,"ui":1}}
+{"t":"term","term":"accession","sites":1,"by_surface":{"route":1}}
+{"t":"term","term":"widget","sites":4,"by_surface":{"code":4}}
+{"t":"term","term":"order","sites":9,"by_surface":{"code":6,"schema":3}}
+{"t":"concept","id":"C0001","name":"study"}
+{"t":"concept","id":"C0002","name":"order"}
+{"t":"concept","id":"C0003","name":"patient"}
+{"t":"map","term":"study","to":"C0001"}
+{"t":"map","term":"order","to":"C0002"}
+{"t":"map","term":"order","to":"not-domain"}
+{"t":"map","term":"order","to":"C0001"}
+{"t":"map","term":"requisition","to":"C0002"}
+{"t":"map","term":"study","to":"C0009"}

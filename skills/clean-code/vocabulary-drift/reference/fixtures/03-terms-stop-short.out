@@ -1,0 +1,7 @@
+{"t":"term","term":"caf","sites":1,"files":1,"by_surface":{"ui":1},"contexts":["b"],"forms":["caf"],"names":[{"text":"Café résumé","sites":1}]}
+{"t":"term","term":"dx","sites":1,"files":1,"by_surface":{"code":1},"contexts":["b"],"forms":["dx"],"names":[{"text":"x y2 404 dx Rx","sites":1}]}
+{"t":"term","term":"patient","sites":1,"files":1,"by_surface":{"code":1},"contexts":["b"],"forms":["patient"],"names":[{"text":"get_patient_id","sites":1}]}
+{"t":"term","term":"rx","sites":1,"files":1,"by_surface":{"code":1},"contexts":["b"],"forms":["rx"],"names":[{"text":"x y2 404 dx Rx","sites":1}]}
+{"t":"term","term":"sum","sites":1,"files":1,"by_surface":{"ui":1},"contexts":["b"],"forms":["sum"],"names":[{"text":"Café résumé","sites":1}]}
+{"t":"term","term":"y2","sites":1,"files":1,"by_surface":{"code":1},"contexts":["b"],"forms":["y2"],"names":[{"text":"x y2 404 dx Rx","sites":1}]}
+{"t":"summary","sites":5,"tokens":17,"kept":6,"stopped":8,"short":3,"terms":6}

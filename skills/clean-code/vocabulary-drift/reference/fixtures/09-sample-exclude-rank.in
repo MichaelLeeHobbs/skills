@@ -1,0 +1,13 @@
+sample --per-term 2
+{"t":"site","id":"a/x.ts:1:1","path":"a/x.ts","surface":"code","context":"a","text":"sortOrder"}
+{"t":"site","id":"a/x.ts:2:1","path":"a/x.ts","surface":"code","context":"a","text":" sortOrder "}
+{"t":"site","id":"a/y.ts:1:1","path":"a/y.ts","surface":"code","context":"a","text":"placeOrder"}
+{"t":"site","id":"a/z.sql:1:1","path":"a/z.sql","surface":"schema","context":"a","text":"orders"}
+{"t":"site","id":"b/p.ts:1:1","path":"b/p.ts","surface":"code","context":"b","text":"Patient"}
+{"t":"site","id":"b/q.ts:1:1","path":"b/q.ts","surface":"code","context":"b","text":"patientName"}
+{"t":"site","id":"b/r.ts:1:1","path":"b/r.ts","surface":"code","context":"b","text":"subjectId"}
+{"t":"site","id":"b/s.ts:1:1","path":"b/s.ts","surface":"code","context":"b","text":"patientSubject"}
+{"t":"want","candidate":"ORD","term":"order","exclude":["sortOrder","orderBy"]}
+{"t":"want","candidate":"PAT","term":"subject","exclude":[]}
+{"t":"want","candidate":"PAT","term":"patient","exclude":[]}
+{"t":"want","candidate":"NONE","term":"widget","exclude":[]}

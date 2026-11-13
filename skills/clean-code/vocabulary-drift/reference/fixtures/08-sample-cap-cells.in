@@ -1,0 +1,8 @@
+sample --per-term 3
+{"t":"site","id":"p1/a.ts:1:1","path":"p1/a.ts","surface":"code","context":"p1","text":"order"}
+{"t":"site","id":"p2/a.ts:1:1","path":"p2/a.ts","surface":"code","context":"p2","text":"order"}
+{"t":"site","id":"p3/a.ts:1:1","path":"p3/a.ts","surface":"code","context":"p3","text":"order"}
+{"t":"site","id":"p4/a.ts:1:1","path":"p4/a.ts","surface":"code","context":"p4","text":"order"}
+{"t":"site","id":"p1/s.sql:1:1","path":"p1/s.sql","surface":"schema","context":"p1","text":"orders"}
+{"t":"site","id":"p1/r.ts:1:1","path":"p1/r.ts","surface":"route","context":"p1","text":"/orders/:id"}
+{"t":"want","candidate":"K1","term":"order","exclude":[]}

@@ -1,0 +1,5 @@
+{"t":"term","term":"api","sites":1,"files":1,"by_surface":{"route":1},"contexts":["api"],"forms":["api"],"names":[{"text":"/api/studies/:studyId","sites":1}]}
+{"t":"term","term":"date","sites":2,"files":2,"by_surface":{"type":1,"ui":1},"contexts":["api","web"],"forms":["date"],"names":[{"text":"Exam date","sites":1},{"text":"studyDate","sites":1}]}
+{"t":"term","term":"exam","sites":2,"files":2,"by_surface":{"code":1,"ui":1},"contexts":["web"],"forms":["exam"],"names":[{"text":"Exam date","sites":1},{"text":"loadExamStudies","sites":1}]}
+{"t":"term","term":"study","sites":4,"files":3,"by_surface":{"code":1,"route":1,"type":2},"contexts":["api","web"],"forms":["studies","study"],"names":[{"text":"/api/studies/:studyId","sites":1},{"text":"Study","sites":1},{"text":"loadExamStudies","sites":1},{"text":"studyDate","sites":1}]}
+{"t":"summary","sites":5,"tokens":12,"kept":10,"stopped":2,"short":0,"terms":4}

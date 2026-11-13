@@ -1,0 +1,9 @@
+reuse
+{"t":"old","concept":"C0001","names":["study","exam"],"cells":["type|api","ui|web"]}
+{"t":"new","concept":"C0001","names":["exam","study"],"cells":["type|api"]}
+{"t":"old","concept":"C0002","names":["order"],"cells":["type|api"]}
+{"t":"new","concept":"C0002","names":["order","requisition"],"cells":["type|api"]}
+{"t":"old","concept":"C0003","names":["patient"],"cells":["type|api"]}
+{"t":"new","concept":"C0003","names":["patient"],"cells":["type|api","code|web"]}
+{"t":"old","concept":"C0004","names":["site"],"cells":[]}
+{"t":"new","concept":"C0005","names":["tenant"],"cells":["type|api"]}

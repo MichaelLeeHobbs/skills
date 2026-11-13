@@ -1,0 +1,5 @@
+verify --check map --min-sites 3
+{"t":"term","term":"exam","sites":3,"by_surface":{"code":3},"files":2,"forms":["exam","exams"]}
+{"t":"term","term":"widget","sites":2,"by_surface":{"code":2}}
+{"t":"concept","id":"C0001","name":"study"}
+{"t":"map","term":"exam","to":"C0001"}

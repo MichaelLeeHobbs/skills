@@ -7,9 +7,10 @@ description: >-
   folder", "re-run the asset audit". Weeds a project's static assets: byte-identical and
   same-drawing SVGs and images under different names, unused images and fonts, oversized files, and one
   meaning drawn by several icon families. Proves each finding before reporting it and keeps a small
-  catalog in the repo for re-runs. Expensive and user-invoked. NOT for unused code (dead-code), unused
-  CSS rules (dead-css), choosing between installed icon packages (dependency-overlap), colours inside
-  SVGs (token-drift), duplicate icon wrapper components (component-reinvent), or deleting anything.
+  catalog in the repo for re-runs. Expensive and user-invoked. NOT for unused code (find-dead-code),
+  unused CSS rules (find-dead-css), choosing between installed icon packages (find-dependency-overlap),
+  colours inside SVGs (find-token-drift), duplicate icon wrapper components (find-component-reinvention),
+  or deleting anything.
 ---
 
 # Asset garden

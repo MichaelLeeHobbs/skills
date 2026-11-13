@@ -1,0 +1,5 @@
+inspect --root-px 10
+{"t":"size","cat":"spacing","value":"1rem"}
+{"t":"size","cat":"spacing","value":"1.6rem"}
+{"t":"size","cat":"spacing","value":"0.05rem"}
+{"t":"size","cat":"spacing","value":"0.15rem"}

@@ -1,0 +1,9 @@
+measure
+{"t":"token","name":"--s","mode":"default","cat":"spacing","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"16px"}
+{"t":"token","name":"--g","mode":"default","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"#737373"}
+{"t":"token","name":"--page","mode":"default","cat":"spacing","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"#000000"}
+{"t":"surface","token":"--page"}
+{"t":"occ","path":"a.css","start":10,"len":1,"line":1,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"0em"}
+{"t":"occ","path":"a.css","start":20,"len":1,"line":2,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"#757575"}
+{"t":"plan","cat":"spacing","value":"0px","action":"SNAP","token":"--s","intent":"","cite":""}
+{"t":"plan","cat":"colour","value":"#757575","action":"SNAP","token":"--g","intent":"","cite":""}

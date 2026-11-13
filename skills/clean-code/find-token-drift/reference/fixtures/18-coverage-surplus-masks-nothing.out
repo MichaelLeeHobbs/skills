@@ -1,0 +1,2 @@
+{"t":"gap","path":"b.css","start":0,"len":4,"line":1,"raw":"#000"}
+{"t":"summary","hits":2,"occ":1,"token":0,"ignored":0,"by_reason":{"comment":0,"non-style":0},"gaps":1,"coverage":"0.5000","ignored_share":"0.0000","pass":false}

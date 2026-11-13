@@ -1,0 +1,32 @@
+{"t":"size","cat":"spacing","value":"16px","key":"16px","class":"normal"}
+{"t":"size","cat":"spacing","value":"1rem","key":"16px","class":"normal"}
+{"t":"size","cat":"spacing","value":"1.5rem","key":"24px","class":"normal"}
+{"t":"size","cat":"spacing","value":"0.5em","key":"0.5em","class":"relative"}
+{"t":"size","cat":"spacing","value":"50%","key":"50%","class":"relative"}
+{"t":"size","cat":"spacing","value":"0","key":"0px","class":"zero"}
+{"t":"size","cat":"spacing","value":"0rem","key":"0px","class":"zero"}
+{"t":"size","cat":"spacing","value":"-8px","key":"-8px","class":"normal"}
+{"t":"size","cat":"spacing","value":"1.005px","key":"1.01px","class":"hairline"}
+{"t":"size","cat":"spacing","value":"-1.005px","key":"-1.01px","class":"hairline"}
+{"t":"size","cat":"spacing","value":"2px","key":"2px","class":"hairline"}
+{"t":"size","cat":"spacing","value":"2.01px","key":"2.01px","class":"normal"}
+{"t":"size","cat":"spacing","value":"16","key":"","class":""}
+{"t":"size","cat":"spacing","value":"calc(1px + 2px)","key":"","class":""}
+{"t":"size","cat":"spacing","value":"1e3px","key":"","class":""}
+{"t":"size","cat":"spacing","value":"16PX","key":"16px","class":"normal"}
+{"t":"size","cat":"spacing","value":"+4px","key":"4px","class":"normal"}
+{"t":"size","cat":"spacing","value":" 12px ","key":"12px","class":"normal"}
+{"t":"size","cat":"spacing","value":"12 px","key":"","class":""}
+{"t":"size","cat":"spacing","value":"1.px","key":"1px","class":"hairline"}
+{"t":"size","cat":"spacing","value":".5px","key":"0.5px","class":"hairline"}
+{"t":"size","cat":"spacing","value":"10vh","key":"10vh","class":"relative"}
+{"t":"size","cat":"spacing","value":"4pt","key":"","class":""}
+{"t":"size","cat":"spacing","value":"auto","key":"","class":""}
+{"t":"size","cat":"radius","value":"999px","key":"full","class":"full"}
+{"t":"size","cat":"radius","value":"9999px","key":"full","class":"full"}
+{"t":"size","cat":"radius","value":"998.99px","key":"998.99px","class":"normal"}
+{"t":"size","cat":"radius","value":"50%","key":"50%","class":"relative"}
+{"t":"size","cat":"radius","value":"4px","key":"4px","class":"normal"}
+{"t":"size","cat":"font-size","value":"14px","key":"14px","class":"normal"}
+{"t":"size","cat":"font-size","value":"0.875rem","key":"14px","class":"normal"}
+{"t":"size","cat":"font-size","value":"1.125em","key":"1.13em","class":"relative"}

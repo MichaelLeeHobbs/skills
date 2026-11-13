@@ -1,0 +1,5 @@
+verify --check canaries
+{"t":"value","cat":"colour","value":"#777777","sample":"#777777","uses":5,"status":"near","anchor":"--a","leader":"","distance":3,"neutral":false,"sites":[]}
+{"t":"result","cat":"colour","value":"#767676","verdict":"REFUTED"}
+{"t":"occ","path":"c.tsx","value":"--canary-space","kind":"ref","cat":"spacing"}
+{"t":"value","cat":"z-index","value":"1001","status":"token_plus_n","distance":1}

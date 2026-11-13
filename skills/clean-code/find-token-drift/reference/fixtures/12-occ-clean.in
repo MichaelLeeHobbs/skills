@@ -1,0 +1,10 @@
+verify --check occ
+{"t":"src","path":"src/Button.module.css","text":".b {\n  color: #333;\n  padding: 12px 16px;\n  border: 1px solid #ccc;\n}\n"}
+{"t":"src","path":"src/tokens.css","text":":root {\n  --grey-800: #333;\n  --space-3: var(--space-2);\n}\n"}
+{"t":"occ","path":"src/Button.module.css","start":14,"len":4,"line":2,"raw":"#333","prop":"color","cat":"colour","kind":"literal","value":"#333"}
+{"t":"occ","path":"src/Button.module.css","start":31,"len":4,"line":3,"raw":"12px","prop":"padding","cat":"spacing","kind":"literal","value":"12px"}
+{"t":"occ","path":"src/Button.module.css","start":36,"len":4,"line":3,"raw":"16px","prop":"padding","cat":"spacing","kind":"literal","value":"16px"}
+{"t":"occ","path":"src/Button.module.css","start":52,"len":3,"line":4,"raw":"1px","prop":"border-width","cat":"other","kind":"literal","value":"1px"}
+{"t":"occ","path":"src/Button.module.css","start":62,"len":4,"line":4,"raw":"#ccc","prop":"border-color","cat":"colour","kind":"literal","value":"#ccc"}
+{"t":"token","name":"--grey-800","mode":"default","cat":"colour","path":"src/tokens.css","start":22,"len":4,"raw":"#333","kind":"literal","value":"#333"}
+{"t":"token","name":"--space-3","mode":"default","cat":"spacing","path":"src/tokens.css","start":41,"len":14,"raw":"var(--space-2)","kind":"ref","value":"--space-2"}

@@ -1,0 +1,16 @@
+{"t":"hit","path":"a.css","start":11,"len":4,"line":1,"kind":"colour","raw":"#fff"}
+{"t":"hit","path":"a.css","start":29,"len":16,"line":1,"kind":"colour","raw":"rgb(0 0 0 / 50%)"}
+{"t":"hit","path":"a.css","start":56,"len":6,"line":1,"kind":"length","raw":"1.5rem"}
+{"t":"hit","path":"a.css","start":63,"len":4,"line":1,"kind":"length","raw":".5em"}
+{"t":"hit","path":"a.css","start":77,"len":4,"line":1,"kind":"length","raw":"10px"}
+{"t":"hit","path":"a.css","start":139,"len":15,"line":2,"kind":"colour","raw":"RGBA(1,2,3,0.5)"}
+{"t":"hit","path":"a.css","start":245,"len":4,"line":4,"kind":"colour","raw":"#add"}
+{"t":"hit","path":"a.css","start":264,"len":3,"line":4,"kind":"length","raw":"8px"}
+{"t":"hit","path":"a.css","start":273,"len":4,"line":4,"kind":"length","raw":"12px"}
+{"t":"hit","path":"a.css","start":312,"len":3,"line":5,"kind":"length","raw":"1px"}
+{"t":"hit","path":"a.css","start":322,"len":9,"line":5,"kind":"colour","raw":"#abcdef12"}
+{"t":"hit","path":"a.css","start":343,"len":3,"line":5,"kind":"length","raw":"1px"}
+{"t":"hit","path":"a.css","start":347,"len":3,"line":5,"kind":"length","raw":"2px"}
+{"t":"hit","path":"a.css","start":351,"len":5,"line":5,"kind":"colour","raw":"#0003"}
+{"t":"hit","path":"a.css","start":373,"len":3,"line":5,"kind":"length","raw":"3em"}
+{"t":"summary","files":1,"hits":15,"colour":6,"length":9}

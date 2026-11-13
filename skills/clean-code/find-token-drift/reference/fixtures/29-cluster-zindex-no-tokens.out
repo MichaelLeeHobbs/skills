@@ -1,0 +1,10 @@
+{"t":"value","cat":"z-index","value":"-20","sample":"-20","uses":1,"status":"off_ladder","anchor":"","leader":"","distance":0,"neutral":false,"sites":["a.css:17"]}
+{"t":"value","cat":"z-index","value":"5","sample":"5","uses":1,"status":"local","anchor":"","leader":"","distance":0,"neutral":false,"sites":["a.css:15"]}
+{"t":"value","cat":"z-index","value":"50","sample":"50","uses":1,"status":"off_ladder","anchor":"","leader":"","distance":0,"neutral":false,"sites":["a.css:16"]}
+{"t":"summary","cat":"colour","values":0,"uses":0,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":0,"drift_uses":0,"matched_values":0,"matched_uses":0,"literal_share":"0.0000","by_status":{}}
+{"t":"summary","cat":"spacing","values":0,"uses":0,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":0,"drift_uses":0,"matched_values":0,"matched_uses":0,"literal_share":"0.0000","by_status":{}}
+{"t":"summary","cat":"radius","values":0,"uses":0,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":0,"drift_uses":0,"matched_values":0,"matched_uses":0,"literal_share":"0.0000","by_status":{}}
+{"t":"summary","cat":"font-size","values":0,"uses":0,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":0,"drift_uses":0,"matched_values":0,"matched_uses":0,"literal_share":"0.0000","by_status":{}}
+{"t":"summary","cat":"shadow","values":0,"uses":0,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":0,"drift_uses":0,"matched_values":0,"matched_uses":0,"literal_share":"0.0000","by_status":{}}
+{"t":"summary","cat":"z-index","values":3,"uses":3,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":2,"drift_uses":2,"matched_values":0,"matched_uses":0,"literal_share":"1.0000","by_status":{"local":1,"off_ladder":2}}
+{"t":"summary","cat":"neutral","values":0,"uses":0,"token_values":0,"ref_uses":0,"unparsed_uses":0,"drift_values":0,"drift_uses":0,"matched_values":0,"matched_uses":0,"literal_share":"0.0000","by_status":{}}

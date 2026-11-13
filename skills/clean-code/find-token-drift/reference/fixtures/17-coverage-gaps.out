@@ -1,0 +1,4 @@
+{"t":"gap","path":"a.css","start":10,"len":4,"line":1,"raw":"#fff"}
+{"t":"gap","path":"a.css","start":30,"len":4,"line":2,"raw":"12px"}
+{"t":"gap","path":"a.css","start":40,"len":4,"line":2,"raw":"13px"}
+{"t":"summary","hits":5,"occ":0,"token":0,"ignored":2,"by_reason":{"comment":1,"non-style":1},"gaps":3,"coverage":"0.0000","ignored_share":"0.4000","pass":false}

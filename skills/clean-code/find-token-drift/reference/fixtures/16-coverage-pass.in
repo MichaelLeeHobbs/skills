@@ -1,0 +1,12 @@
+verify --check coverage
+{"t":"hit","path":"a.css","start":10,"len":4,"line":1,"kind":"colour","raw":"#fff"}
+{"t":"hit","path":"a.css","start":30,"len":4,"line":2,"kind":"length","raw":"12px"}
+{"t":"hit","path":"a.css","start":50,"len":15,"line":3,"kind":"colour","raw":"rgb(0 0 0 / 5%)"}
+{"t":"hit","path":"t.css","start":5,"len":4,"line":1,"kind":"colour","raw":"#333"}
+{"t":"hit","path":"b.css","start":0,"len":3,"line":1,"kind":"length","raw":"1px"}
+{"t":"occ","path":"a.css","start":8,"len":4,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}
+{"t":"occ","path":"a.css","start":20,"len":11,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}
+{"t":"occ","path":"a.css","start":45,"len":30,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}
+{"t":"token","name":"--t","mode":"default","cat":"colour","path":"t.css","start":5,"len":4,"raw":"x","kind":"literal","value":"x"}
+{"t":"ignore","path":"b.css","start":0,"len":10,"reason":"comment"}
+{"t":"occ","path":"b.css","start":0,"len":3,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}

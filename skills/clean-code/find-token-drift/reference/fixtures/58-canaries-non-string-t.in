@@ -1,0 +1,3 @@
+verify --check canaries
+{"t":"expect","id":"c1","rec":"value","cat":"","value":"x","field":"y","want":"z"}
+{"t":5,"value":"x"}

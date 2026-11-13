@@ -1,0 +1,10 @@
+verify --check occ
+{"t":"src","path":"app/x.tsx","text":"const a = { padding: 16, color: '#fafafa' }\né <div style={{ zIndex: 10 }} />\n"}
+{"t":"occ","path":"app/x.tsx","start":21,"len":2,"line":1,"raw":"16","prop":"padding","cat":"spacing","kind":"literal","value":"16px"}
+{"t":"occ","path":"app/x.tsx","start":33,"len":7,"line":1,"raw":"#fafafb","prop":"color","cat":"colour","kind":"literal","value":"#fafafa"}
+{"t":"occ","path":"app/x.tsx","start":69,"len":2,"line":1,"raw":"10","prop":"z-index","cat":"z-index","kind":"literal","value":"10"}
+{"t":"occ","path":"app/x.tsx","start":21,"len":2,"line":1,"raw":"16","prop":"padding","cat":"colour","kind":"literal","value":"16px"}
+{"t":"occ","path":"app/x.tsx","start":21,"len":2,"line":1,"raw":"16","prop":"width","cat":"spacing","kind":"literal","value":"16px"}
+{"t":"occ","path":"app/x.tsx","start":70,"len":40,"line":2,"raw":"zz","prop":"margin","cat":"colour","kind":"literal","value":"zz"}
+{"t":"token","name":"--a","mode":"default","cat":"colour","path":"app/x.tsx","start":32,"len":7,"raw":"#fafaf","kind":"literal","value":"#fafaf"}
+{"t":"occ","path":"app/x.tsx","start":69,"len":2,"line":2,"raw":"10","prop":"zIndex","cat":"z-index","kind":"literal","value":"10"}

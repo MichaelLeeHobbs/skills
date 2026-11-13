@@ -1,0 +1,21 @@
+inspect
+{"t":"colour","value":"oklch(0.7 0.1 0)"}
+{"t":"colour","value":"oklch(0.7 0.1 30)"}
+{"t":"colour","value":"oklch(0.7 0.1 45)"}
+{"t":"colour","value":"oklch(0.7 0.1 45.5)"}
+{"t":"colour","value":"oklch(0.7 0.1 60)"}
+{"t":"colour","value":"oklch(0.7 0.1 90)"}
+{"t":"colour","value":"oklch(0.7 0.1 135)"}
+{"t":"colour","value":"oklch(0.7 0.1 180)"}
+{"t":"colour","value":"oklch(0.7 0.1 225)"}
+{"t":"colour","value":"oklch(0.7 0.1 270)"}
+{"t":"colour","value":"oklch(0.7 0.1 315)"}
+{"t":"colour","value":"oklch(0.7 0.1 359.9)"}
+{"t":"colour","value":"oklch(0.7 0.1 -30)"}
+{"t":"colour","value":"oklch(0.7 0.1 720)"}
+{"t":"colour","value":"oklch(0.7 0.1 12.345)"}
+{"t":"colour","value":"oklch(0.7 0.4 30)"}
+{"t":"colour","value":"oklch(0.2 0.3 270)"}
+{"t":"colour","value":"oklch(1 0 0)"}
+{"t":"colour","value":"oklch(0 0 0)"}
+{"t":"colour","value":"oklab(0.6 -0.2 0.05)"}

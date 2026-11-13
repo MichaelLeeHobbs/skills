@@ -1,0 +1,17 @@
+cluster
+{"t":"token","name":"--surface","mode":"default","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"#ffffff"}
+{"t":"token","name":"--surface","mode":"dark","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"#121212"}
+{"t":"token","name":"--text","mode":"default","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"ref","value":"--grey-900"}
+{"t":"token","name":"--text","mode":"dark","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"ref","value":"--grey-100"}
+{"t":"token","name":"--grey-900","mode":"default","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"#111111"}
+{"t":"token","name":"--grey-100","mode":"default","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"#f5f5f5"}
+{"t":"token","name":"--muted","mode":"dark","cat":"colour","path":"t.css","start":0,"len":1,"raw":"x","kind":"ref","value":"--grey-900"}
+{"t":"token","name":"--space-2","mode":"default","cat":"spacing","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"8px"}
+{"t":"token","name":"--space-gap","mode":"default","cat":"spacing","path":"t.css","start":0,"len":1,"raw":"x","kind":"ref","value":"--space-2"}
+{"t":"occ","path":"a.css","start":10,"len":1,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"#111"}
+{"t":"occ","path":"b.css","start":20,"len":1,"line":2,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"#f5f5f5"}
+{"t":"occ","path":"a.css","start":30,"len":1,"line":3,"raw":"x","prop":"color","cat":"colour","kind":"ref","value":"--text"}
+{"t":"occ","path":"b.css","start":40,"len":1,"line":4,"raw":"x","prop":"color","cat":"colour","kind":"ref","value":"--text"}
+{"t":"occ","path":"a.css","start":50,"len":1,"line":5,"raw":"x","prop":"color","cat":"colour","kind":"ref","value":"--nope"}
+{"t":"occ","path":"a.css","start":60,"len":1,"line":6,"raw":"x","prop":"padding","cat":"spacing","kind":"ref","value":"--space-gap"}
+{"t":"occ","path":"a.css","start":70,"len":1,"line":7,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"8px"}

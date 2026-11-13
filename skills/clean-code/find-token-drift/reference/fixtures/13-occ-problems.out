@@ -1,0 +1,9 @@
+{"t":"problem","line":3,"check":"raw","path":"app/x.tsx","start":33}
+{"t":"problem","line":4,"check":"line","path":"app/x.tsx","start":69}
+{"t":"problem","line":5,"check":"category","path":"app/x.tsx","start":21}
+{"t":"problem","line":6,"check":"category","path":"app/x.tsx","start":21}
+{"t":"problem","line":7,"check":"span","path":"app/x.tsx","start":70}
+{"t":"problem","line":7,"check":"category","path":"app/x.tsx","start":70}
+{"t":"problem","line":8,"check":"raw","path":"app/x.tsx","start":32}
+{"t":"problem","line":9,"check":"category","path":"app/x.tsx","start":69}
+{"t":"summary","occ":7,"tokens":1,"problems":8}

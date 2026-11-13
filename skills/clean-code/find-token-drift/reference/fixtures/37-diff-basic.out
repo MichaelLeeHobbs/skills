@@ -1,0 +1,6 @@
+{"t":"change","cat":"colour","value":"#777777","kind":"uses","old_uses":4,"new_uses":5,"old_anchor":"--a","new_anchor":"--a"}
+{"t":"change","cat":"colour","value":"#888888","kind":"anchor","old_uses":2,"new_uses":2,"old_anchor":"","new_anchor":"--b"}
+{"t":"change","cat":"colour","value":"#999999","kind":"added","old_uses":0,"new_uses":1,"old_anchor":"","new_anchor":""}
+{"t":"change","cat":"shadow","value":"0px 1px 2px 0px #000000","kind":"added","old_uses":0,"new_uses":1,"old_anchor":"","new_anchor":""}
+{"t":"change","cat":"z-index","value":"5","kind":"removed","old_uses":1,"new_uses":0,"old_anchor":"","new_anchor":""}
+{"t":"summary","added":2,"removed":1,"anchor":1,"uses":1,"same":1}

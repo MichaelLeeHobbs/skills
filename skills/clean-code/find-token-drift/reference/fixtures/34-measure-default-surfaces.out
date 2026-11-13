@@ -1,0 +1,18 @@
+{"t":"result","cat":"colour","value":"#00000085","action":"SNAP","token":"--scrim","verdict":"VISIBLE","shift":"visible","distance":0,"contrast":"unmeasured","crossings":[]}
+{"t":"result","cat":"colour","value":"#5a5a5a","action":"SNAP","token":"--grey-700","verdict":"CONFIRMED","shift":"imperceptible","distance":18,"contrast":"kept","crossings":[]}
+{"t":"result","cat":"colour","value":"#767676","action":"SNAP","token":"--grey-500","verdict":"REFUTED","shift":"imperceptible","distance":13,"contrast":"crossed","crossings":["#ffffff@default 4.54 4.29"]}
+{"t":"result","cat":"colour","value":"#787878","action":"SNAP","token":"--grey-500","verdict":"CONFIRMED","shift":"imperceptible","distance":6,"contrast":"kept","crossings":[]}
+{"t":"result","cat":"colour","value":"#7b7b7b","action":"SNAP","token":"--grey-500","verdict":"CONFIRMED","shift":"imperceptible","distance":3,"contrast":"kept","crossings":[]}
+{"t":"result","cat":"colour","value":"#7c7c7c","action":"SNAP","token":"--grey-500","verdict":"CONFIRMED","shift":"imperceptible","distance":6,"contrast":"none","crossings":[]}
+{"t":"result","cat":"colour","value":"#ff0000","action":"KEEP","token":"","verdict":"NONE","shift":"","distance":0,"contrast":"","crossings":[]}
+{"t":"result","cat":"spacing","value":"1em","action":"SNAP","token":"--s-4","verdict":"VISIBLE","shift":"visible","distance":0,"contrast":"none","crossings":[]}
+{"t":"result","cat":"spacing","value":"14px","action":"SNAP","token":"--s-4","verdict":"VISIBLE","shift":"visible","distance":200,"contrast":"none","crossings":[]}
+{"t":"result","cat":"spacing","value":"15px","action":"SNAP","token":"--s-4","verdict":"CONFIRMED","shift":"within-floor","distance":100,"contrast":"none","crossings":[]}
+{"t":"result","cat":"shadow","value":"0px 1px 3px 0px #0000001f","action":"SNAP","token":"--sh","verdict":"VISIBLE","shift":"visible","distance":100,"contrast":"none","crossings":[]}
+{"t":"result","cat":"z-index","value":"1001","action":"SNAP","token":"--z-modal","verdict":"VISIBLE","shift":"visible","distance":1,"contrast":"none","crossings":[]}
+{"t":"summary","cat":"colour","before":7,"planned":7,"kept":1,"snapped":4,"visible":1,"refuted":1,"after":3}
+{"t":"summary","cat":"spacing","before":3,"planned":3,"kept":0,"snapped":1,"visible":2,"refuted":0,"after":2}
+{"t":"summary","cat":"radius","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"font-size","before":0,"planned":0,"kept":0,"snapped":0,"visible":0,"refuted":0,"after":0}
+{"t":"summary","cat":"shadow","before":1,"planned":1,"kept":0,"snapped":0,"visible":1,"refuted":0,"after":1}
+{"t":"summary","cat":"z-index","before":1,"planned":1,"kept":0,"snapped":0,"visible":1,"refuted":0,"after":1}

@@ -1,0 +1,5 @@
+cluster
+{"t":"token","name":"--b","mode":"default","cat":"spacing","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"16px"}
+{"t":"token","name":"--a","mode":"default","cat":"spacing","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"15px"}
+{"t":"token","name":"--c","mode":"default","cat":"spacing","path":"t.css","start":0,"len":1,"raw":"x","kind":"literal","value":"15PX"}
+{"t":"occ","path":"a.css","start":10,"len":1,"line":1,"raw":"x","prop":"padding","cat":"spacing","kind":"literal","value":"15.5px"}

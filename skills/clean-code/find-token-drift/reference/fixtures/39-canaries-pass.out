@@ -1,0 +1,5 @@
+{"t":"canary","id":"c1","pass":true,"got":"--a"}
+{"t":"canary","id":"c5","pass":true,"got":"REFUTED"}
+{"t":"canary","id":"c8","pass":true,"got":"ref"}
+{"t":"canary","id":"c6","pass":true,"got":"1"}
+{"t":"summary","canaries":4,"passed":4,"pass":true}

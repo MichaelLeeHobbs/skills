@@ -1,0 +1,5 @@
+verify --check occ
+{"t":"src","path":"a.css","text":"x"}
+{"t":"occ","path":"b.css","start":0,"len":1,"line":1,"raw":"x","prop":"color","cat":"colour","kind":"literal","value":"x"}
+{"t":"src","path":"a.css","text":"y"}
+{"t":"src","path":"b.css","text":"z"}

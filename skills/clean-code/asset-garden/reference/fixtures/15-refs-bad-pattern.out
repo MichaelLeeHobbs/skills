@@ -1,0 +1,7 @@
+{"t":"asset","path":"b.png","status":"unreferenced"}
+{"t":"asset","path":"src/a.png","status":"pattern"}
+{"t":"bad_pattern","from":"App.tsx","glob":"**/*.png"}
+{"t":"bad_pattern","from":"src/a.ts","glob":"../../*.png"}
+{"t":"pattern","from":"src/a.ts","glob":"./*.png","matched":1}
+{"t":"bad_pattern","from":"src/a.ts","glob":"/x/*.png"}
+{"t":"summary","assets":2,"referenced":0,"convention":0,"hit":0,"pattern":1,"served":0,"kept":0,"weak":0,"unreferenced":1,"candidates":1,"dangling":0,"unmatched_hits":0,"external":0,"pattern_share":"0.5000"}

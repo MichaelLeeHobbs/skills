@@ -1,0 +1,7 @@
+refs
+{"t":"asset","path":"src/a.png","unit":""}
+{"t":"asset","path":"b.png","unit":""}
+{"t":"pattern","from":"App.tsx","glob":"**/*.png"}
+{"t":"pattern","from":"src/a.ts","glob":"/x/*.png"}
+{"t":"pattern","from":"src/a.ts","glob":"../../*.png"}
+{"t":"pattern","from":"src/a.ts","glob":"./*.png"}

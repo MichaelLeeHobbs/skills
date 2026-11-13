@@ -1,0 +1,21 @@
+verify --check audit
+{"t":"candidate","path":"img/a.png"}
+{"t":"candidate","path":"img/b.png"}
+{"t":"candidate","path":"img/c.png"}
+{"t":"candidate","path":"img/d.png"}
+{"t":"candidate","path":"img/e.png"}
+{"t":"candidate","path":"img/f.png"}
+{"t":"candidate","path":"img/g.png"}
+{"t":"candidate","path":"img/i.png"}
+{"t":"candidate","path":"img/j.png"}
+{"t":"candidate","path":"img/k.png"}
+{"t":"audit","path":"img/a.png","stem":"alpha","hits":0,"read":0,"result":"none"}
+{"t":"audit","path":"img/b.png","stem":"bravo","hits":10,"read":2,"result":"noise"}
+{"t":"audit","path":"img/c.png","stem":"charlie","hits":1,"read":1,"result":"gap"}
+{"t":"audit","path":"img/d.png","stem":"ab","hits":0,"read":0,"result":"skipped"}
+{"t":"audit","path":"img/e.png","stem":"close","hits":0,"read":0,"result":"skipped"}
+{"t":"audit","path":"img/f.png","stem":"foxtrot","hits":2,"read":0,"result":"none"}
+{"t":"audit","path":"img/h.png","stem":"hotel","hits":0,"read":0,"result":"none"}
+{"t":"audit","path":"img/i.png","stem":"india","hits":2,"read":3,"result":"noise"}
+{"t":"audit","path":"img/j.png","stem":"juliet","hits":5,"read":1,"result":"gap"}
+{"t":"audit","path":"img/k.png","stem":"日本語","hits":0,"read":0,"result":"skipped"}

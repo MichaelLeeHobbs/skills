@@ -1,0 +1,14 @@
+svgnorm
+{"t":"svg","path":"u01.svg","text":"<!DOCTYPE svg><svg/>"}
+{"t":"svg","path":"u02.svg","text":"<svg><![CDATA[x]]></svg>"}
+{"t":"svg","path":"u03.svg","text":"<svg><?foo bar?></svg>"}
+{"t":"svg","path":"u04.svg","text":"<svg><text>a&nbsp;b</text></svg>"}
+{"t":"svg","path":"u05.svg","text":"<svg><script>x()</script></svg>"}
+{"t":"svg","path":"u06.svg","text":"<html/>"}
+{"t":"svg","path":"u07.svg","text":"<svg><g></svg>"}
+{"t":"svg","path":"u08.svg","text":"<svg disabled/>"}
+{"t":"svg","path":"u09.svg","text":"<svg/><svg/>"}
+{"t":"svg","path":"u10.svg","text":"hello <svg/>"}
+{"t":"svg","path":"u11.svg","text":"<svg><!-- open </svg>"}
+{"t":"svg","path":"u12.svg","text":""}
+{"t":"svg","path":"v1.svg","text":"<svg a='say \"hi\" &amp; go' style=\"Stroke : blue; fill:red;;fill:green\"><g style=' ; '>  <text>  a   &lt;b </text></g></svg>"}

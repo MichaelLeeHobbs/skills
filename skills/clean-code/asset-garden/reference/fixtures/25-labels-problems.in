@@ -1,0 +1,15 @@
+verify --check labels
+{"t":"vocab","meaning":"close"}
+{"t":"vocab","meaning":"delete"}
+{"t":"vocab","meaning":"settings"}
+{"t":"use","file":"a.tsx","icon":"lib:X","family":"lib","design":"d1"}
+{"t":"use","file":"a.tsx","icon":"lib:Trash","family":"lib","design":"d2"}
+{"t":"use","file":"b.tsx","icon":"custom/a.svg","family":"custom","design":"d3"}
+{"t":"use","file":"b.tsx","icon":"custom/none.svg","family":"custom","design":"d4"}
+{"t":"use","file":"c.tsx","icon":"custom/misc.svg","family":"custom","design":"d5"}
+{"t":"label","icon":"lib:X","meanings":["close"]}
+{"t":"label","icon":"lib:Trash","meanings":["bin"]}
+{"t":"label","icon":"custom/a.svg","meanings":["close","delete","settings"]}
+{"t":"label","icon":"lib:Unused","meanings":["close"]}
+{"t":"label","icon":"lib:X","meanings":["delete"]}
+{"t":"label","icon":"custom/misc.svg","meanings":["other"]}

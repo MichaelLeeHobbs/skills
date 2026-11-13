@@ -1,0 +1,4 @@
+{"t":"problem","kind":"empty","by":"walk"}
+{"t":"problem","kind":"missing_from_walk","path":"a.png"}
+{"t":"problem","kind":"missing_from_walk","path":"b.png"}
+{"t":"summary","vcs":2,"walk":0,"problems":3}

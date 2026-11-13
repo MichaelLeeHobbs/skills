@@ -1,0 +1,17 @@
+verify --check canaries
+{"t":"asset","path":"canary/unref.png","status":"unreferenced"}
+{"t":"asset","path":"canary/tmpl.png","status":"unreferenced"}
+{"t":"group","id":"S0001","tier":"strict","members":["canary/fmt.svg","icons/menu.svg"],"reclaim":0}
+{"t":"group","id":"L0001","tier":"loose","members":["canary/moved.svg","icons/menu.svg"],"reclaim":0}
+{"t":"pair","algo":"dhash","a":"canary/half.jpg","b":"img/photo.png","distance":2}
+{"t":"label","icon":"canary/close.svg","meanings":["close"]}
+{"t":"summary","files":3}
+{"t":"dangling","from":"a","value":"b","reason":"no_asset"}
+{"t":"expect_status","path":"canary/unref.png","status":"unreferenced"}
+{"t":"expect_status","path":"canary/tmpl.png","status":"pattern"}
+{"t":"expect_group","a":"icons/menu.svg","b":"canary/fmt.svg","tier":"strict"}
+{"t":"expect_group","a":"img/photo.png","b":"canary/half.jpg","tier":"pair"}
+{"t":"expect_apart","a":"img/photo.png","b":"canary/mirror.png"}
+{"t":"expect_apart","a":"icons/menu.svg","b":"canary/moved.svg"}
+{"t":"expect_meaning","icon":"canary/close.svg","meaning":"close"}
+{"t":"expect_meaning","icon":"canary/close.svg","meaning":"delete"}

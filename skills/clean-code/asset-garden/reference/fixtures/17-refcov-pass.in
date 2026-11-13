@@ -1,0 +1,4 @@
+verify --check refcov
+{"t":"count","path":"src/a.css","kind":"css","extracted":4,"pattern":4}
+{"t":"count","path":"src/b.css","kind":"css","extracted":50,"pattern":49}
+{"t":"count","path":"README.md","kind":"md","extracted":0,"pattern":0}

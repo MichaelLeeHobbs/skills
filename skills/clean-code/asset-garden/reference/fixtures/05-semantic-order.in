@@ -1,0 +1,5 @@
+dupes
+{"t":"file","path":"a.png","sha":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","bytes":1}
+{"t":"hash","path":"missing.png","algo":"dhash","hash":"0f0f0f0f0f0f0f0f","width":1,"height":1}
+{"t":"file","path":"b.png","sha":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","bytes":1}
+{"t":"file","path":"a.png","sha":"cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc","bytes":1}

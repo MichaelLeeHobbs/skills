@@ -1,0 +1,4 @@
+{"t":"pair","algo":"dhash","a":"img/w.png","b":"img/y.png","distance":1}
+{"t":"pair","algo":"dhash","a":"img/x.png","b":"img/y.png","distance":4}
+{"t":"pair","algo":"dhash","a":"img/y.png","b":"img/z.png","distance":4}
+{"t":"summary","files":4,"bytes_groups":0,"strict_groups":0,"loose_groups":0,"pairs":3,"capped":false,"degenerate":0,"reclaim":0}

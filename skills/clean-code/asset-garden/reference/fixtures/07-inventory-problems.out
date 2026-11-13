@@ -1,0 +1,4 @@
+{"t":"problem","kind":"missing_from_vcs","path":"extra.svg"}
+{"t":"problem","kind":"case_only","path":"img/Logo.png","other":"img/logo.png"}
+{"t":"problem","kind":"missing_from_walk","path":"img/gone.png"}
+{"t":"summary","vcs":3,"walk":3,"problems":3}

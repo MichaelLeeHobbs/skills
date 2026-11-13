@@ -1,0 +1,3 @@
+{"t":"kind","kind":"css","files":2,"extracted":54,"pattern":53,"covered":53,"coverage":"1.0000","pass":true}
+{"t":"kind","kind":"md","files":1,"extracted":0,"pattern":0,"covered":0,"coverage":"1.0000","pass":true}
+{"t":"summary","files":3,"kinds":2,"pass":true}

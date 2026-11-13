@@ -1,0 +1,6 @@
+{"t":"group","id":"B0001","tier":"bytes","members":["a/close.svg","b/x.svg"],"reclaim":300}
+{"t":"group","id":"B0002","tier":"bytes","members":["f/one.svg","g/one.svg"],"reclaim":50}
+{"t":"group","id":"B0003","tier":"bytes","members":["img/p-copy.png","img/p.png"],"reclaim":100}
+{"t":"group","id":"S0001","tier":"strict","members":["a/close.svg","b/x.svg","c/close2.svg"],"reclaim":0}
+{"t":"group","id":"L0001","tier":"loose","members":["a/close.svg","b/x.svg","c/close2.svg","d/close-red.svg"],"reclaim":0}
+{"t":"summary","files":10,"bytes_groups":3,"strict_groups":1,"loose_groups":1,"pairs":0,"capped":false,"degenerate":0,"reclaim":450}

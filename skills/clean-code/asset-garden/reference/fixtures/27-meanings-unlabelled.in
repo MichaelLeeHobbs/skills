@@ -1,0 +1,5 @@
+meanings
+{"t":"use","file":"f1.tsx","icon":"lib-a:X","family":"lib-a","design":"dA"}
+{"t":"use","file":"f2.tsx","icon":"lib-a:Y","family":"lib-a","design":"dY"}
+{"t":"label","icon":"lib-a:X","meanings":["close"]}
+{"t":"label","icon":"lib-a:X","meanings":["close"]}

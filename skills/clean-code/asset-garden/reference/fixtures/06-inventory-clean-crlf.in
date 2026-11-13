@@ -1,0 +1,5 @@
+verify --check inventory
+{"t":"listed","by":"vcs","path":"img/a.png"}
+{"t":"listed","by":"walk","path":"img/a.png"}
+{"t":"listed","by":"vcs","path":"Z.svg"}
+{"t":"listed","by":"walk","path":"Z.svg"}

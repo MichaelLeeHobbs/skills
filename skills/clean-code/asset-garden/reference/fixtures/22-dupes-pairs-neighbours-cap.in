@@ -1,0 +1,21 @@
+dupes --neighbours 1 --max-pairs 3
+{"t":"file","path":"img/a.png","sha":"1111111111111111111111111111111111111111111111111111111111111111","bytes":1000}
+{"t":"file","path":"img/a-copy.png","sha":"1111111111111111111111111111111111111111111111111111111111111111","bytes":1000}
+{"t":"file","path":"img/b.jpg","sha":"2222222222222222222222222222222222222222222222222222222222222222","bytes":400}
+{"t":"file","path":"img/c.png","sha":"3333333333333333333333333333333333333333333333333333333333333333","bytes":900}
+{"t":"file","path":"img/d.png","sha":"4444444444444444444444444444444444444444444444444444444444444444","bytes":900}
+{"t":"file","path":"img/e.png","sha":"5555555555555555555555555555555555555555555555555555555555555555","bytes":900}
+{"t":"file","path":"img/tall.png","sha":"6666666666666666666666666666666666666666666666666666666666666666","bytes":900}
+{"t":"file","path":"img/zero.png","sha":"7777777777777777777777777777777777777777777777777777777777777777","bytes":10}
+{"t":"file","path":"img/full.png","sha":"8888888888888888888888888888888888888888888888888888888888888888","bytes":10}
+{"t":"hash","path":"img/a.png","algo":"dhash","hash":"0f0f0f0f0f0f0f0f","width":100,"height":50}
+{"t":"hash","path":"img/a-copy.png","algo":"dhash","hash":"0f0f0f0f0f0f0f0f","width":100,"height":50}
+{"t":"hash","path":"img/b.jpg","algo":"dhash","hash":"0f0f0f0f0f0f0f0c","width":50,"height":25}
+{"t":"hash","path":"img/c.png","algo":"dhash","hash":"0f0f0f0f0f0f0f00","width":100,"height":50}
+{"t":"hash","path":"img/d.png","algo":"dhash","hash":"0f0f0f0f0f0f0e00","width":100,"height":50}
+{"t":"hash","path":"img/e.png","algo":"dhash","hash":"0f0f0f0f0f0f0f0f","width":101,"height":50}
+{"t":"hash","path":"img/tall.png","algo":"dhash","hash":"0f0f0f0f0f0f0f0f","width":50,"height":100}
+{"t":"hash","path":"img/zero.png","algo":"dhash","hash":"0000000000000001","width":10,"height":10}
+{"t":"hash","path":"img/full.png","algo":"dhash","hash":"ffffffffffffffff","width":10,"height":10}
+{"t":"hash","path":"img/a.png","algo":"phash","hash":"00000000ffffffff","width":100,"height":50}
+{"t":"hash","path":"img/b.jpg","algo":"phash","hash":"00000000fffffffe","width":50,"height":25}

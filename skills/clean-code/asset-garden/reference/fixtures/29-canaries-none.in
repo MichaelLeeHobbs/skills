@@ -1,0 +1,2 @@
+verify --check canaries
+{"t":"asset","path":"a.png","status":"referenced"}

@@ -1,0 +1,4 @@
+svgnorm
+{"t":"svg","path":"icons/close.svg","text":"<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24.005 24\"><title>Close</title><defs><linearGradient id=\"grad-a\"><stop offset=\"0.5\" stop-color=\"#FF0000\"/></linearGradient><clipPath id=\"c1\"><rect x=\"9.995\" y=\"-0.004\" width=\"1\" height=\"1\"/></clipPath></defs><path id=\"p\" d=\"M1.125-1.115\" fill=\"url(#grad-a)\" stroke=\"none\" style=\"fill:red;stroke-width:2;color:#000\" clip-path=\"url(#c1)\"/><use href=\"#p\" xlink:href=\"#missing\"/><style>.a{fill:url(#c1)}</style></svg>"}
+{"t":"svg","path":"icons/sprite.svg","text":"<svg viewBox=\"0 0 24 24\"><symbol id=\"close\"><path d=\"M1 1\"/></symbol></svg>"}
+{"t":"svg","path":"icons/photo.svg","text":"<svg viewBox=\"0 0 1 1\"><image href=\"data:image/png;base64,AAAA\"/></svg>"}

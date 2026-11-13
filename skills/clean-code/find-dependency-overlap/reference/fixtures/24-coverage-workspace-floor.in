@@ -1,0 +1,9 @@
+verify --check coverage --max-adjusted-basis-points 5000
+{"t":"count","path":"apps/web/a.ts","workspace":"web","parser":1000,"pattern":1000}
+{"t":"count","path":"apps/web/gen.ts","workspace":"web","parser":0,"pattern":7}
+{"t":"count","path":"apps/admin/b.ts","workspace":"admin","parser":9,"pattern":10}
+{"t":"adjust","path":"apps/web/gen.ts","reason":"generated"}
+{"t":"tracked","path":"apps/web/a.ts"}
+{"t":"tracked","path":"apps/web/gen.ts"}
+{"t":"tracked","path":"apps/admin/b.ts"}
+{"t":"tracked","path":"apps/admin/Card.vue"}

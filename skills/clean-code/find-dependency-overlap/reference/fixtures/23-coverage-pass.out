@@ -1,0 +1,4 @@
+{"t":"short","path":"apps/web/b.ts","parser":49,"pattern":50}
+{"t":"workspace","workspace":"api","parser":10,"pattern":9,"covered":9,"coverage":"1.0000","pass":true}
+{"t":"workspace","workspace":"web","parser":149,"pattern":150,"covered":149,"coverage":"0.9933","pass":true}
+{"t":"summary","files":3,"adjusted":0,"unlisted":0,"parser":159,"pattern":159,"covered":158,"coverage":"0.9937","adjusted_share":"0.0000","pass":true}

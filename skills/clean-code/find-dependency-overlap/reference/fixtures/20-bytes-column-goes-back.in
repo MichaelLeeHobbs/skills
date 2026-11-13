@@ -1,0 +1,3 @@
+bytes
+{"t":"chunk","app":"x","chunk":"a.js","initial":true,"sources":["a.js"],"mappings":"AAAA,KAAA","lines":[10]}
+{"t":"chunk","app":"x","chunk":"b.js","initial":true,"sources":["a.js"],"mappings":"KAAA,DAAA","lines":[10]}

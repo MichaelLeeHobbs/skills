@@ -1,0 +1,5 @@
+{"t":"drop","app":"web","names":["moment"],"status":"pinned","pinned_by":["chartjs-adapter-moment@1.0.1"],"closure":[],"initial":0,"lazy":0}
+{"t":"drop","app":"web","names":["chartjs-adapter-moment","moment"],"status":"gross","pinned_by":[],"closure":["chartjs-adapter-moment","moment"],"initial":0,"lazy":0}
+{"t":"drop","app":"admin","names":["moment"],"status":"gross","pinned_by":[],"closure":["moment"],"initial":70000,"lazy":0}
+{"t":"drop","app":"admin","names":["date-fns"],"status":"absent","pinned_by":[],"closure":[],"initial":0,"lazy":0}
+{"t":"summary","drops":4,"gross":2,"pinned":1,"absent":1}

@@ -1,0 +1,5 @@
+bytes
+{"t":"rename","alias":"my-lodash","package":"lodash"}
+{"t":"chunk","app":"web","chunk":"m.js","initial":true,"sources":["src/a.ts"],"mappings":"AAAA","lines":[20]}
+{"t":"chunk","app":"admin","chunk":"a.js","initial":true,"sources":["node_modules/my-lodash/get.js","packages/x/node_modules/lodash/get.js","node_modules/.pnpm/lock.yaml"],"mappings":"AAAA;ACAA;ACAA","lines":[10,10,5]}
+{"t":"chunk","app":"admin","chunk":"b.js","initial":false,"sources":["node_modules/lodash/map.js","src/x.ts"],"mappings":"AAAA,QCAA","lines":[8,4,6]}

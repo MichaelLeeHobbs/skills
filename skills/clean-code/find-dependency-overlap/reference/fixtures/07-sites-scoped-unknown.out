@@ -1,0 +1,5 @@
+{"t":"package","package":"lodash","files":1,"statements":1,"refs":1,"forms":{"dynamic":1},"areas":{"shipped":1},"workspaces":["."],"carriers":0,"affected":1}
+{"t":"undeclared","workspace":".","package":"lodash"}
+{"t":"unknown","file":"x.ts","spec":"@scope"}
+{"t":"unknown","file":"x.ts","spec":"@scope/"}
+{"t":"summary","imports":3,"ignored":0,"packages":1,"unused":0,"undeclared":1,"unknown":2}

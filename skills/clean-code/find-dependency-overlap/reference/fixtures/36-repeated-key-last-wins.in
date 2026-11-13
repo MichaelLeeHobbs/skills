@@ -1,0 +1,2 @@
+verify --check coverage
+{"t":"count","path":"a.ts","workspace":".","parser":"x","pattern":4,"parser":4}

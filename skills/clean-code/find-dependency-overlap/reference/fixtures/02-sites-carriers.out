@@ -1,0 +1,2 @@
+{"t":"package","package":"moment","files":2,"statements":2,"refs":2,"forms":{"reexport":1,"static":1},"areas":{"shipped":2},"workspaces":["."],"carriers":2,"affected":5}
+{"t":"summary","imports":2,"ignored":0,"packages":1,"unused":0,"undeclared":0,"unknown":0}

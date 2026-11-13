@@ -1,0 +1,3 @@
+verify --check coverage
+{"t":"count","path":"a.ts","workspace":".","parser":1,"pattern":1}
+{"t":"adjust","path":"b.ts","reason":"generated"}

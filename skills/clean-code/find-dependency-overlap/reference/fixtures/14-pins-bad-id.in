@@ -1,0 +1,4 @@
+pins
+{"t":"dep","from":"web@1.0.0","to":"@types/node","kind":"prod"}
+{"t":"app","app":"web","root":"web@1.0.0"}
+{"t":"app","app":"web","root":"web@1.0.0"}

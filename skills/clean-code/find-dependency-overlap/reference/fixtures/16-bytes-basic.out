@@ -1,0 +1,5 @@
+{"t":"size","app":"web","package":"@tanstack/query-core","initial":20,"lazy":0,"copies":1}
+{"t":"size","app":"web","package":"luxon","initial":30,"lazy":0,"copies":1}
+{"t":"size","app":"web","package":"moment","initial":30,"lazy":0,"copies":1}
+{"t":"app","app":"web","total":150,"first_party":40,"unattributed":30,"coverage":"0.8000","pass":true}
+{"t":"summary","apps":1,"chunks":1,"failed":0}

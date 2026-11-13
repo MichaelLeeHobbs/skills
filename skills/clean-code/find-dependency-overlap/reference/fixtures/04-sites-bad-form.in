@@ -1,0 +1,3 @@
+sites
+{"t":"workspace","name":".","package":""}
+{"t":"import","file":"a.ts","workspace":".","lang":"js","spec":"x","form":"static_import","area":"shipped","refs":0}

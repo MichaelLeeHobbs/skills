@@ -1,0 +1,4 @@
+sites
+{"t":"workspace","name":".","package":""}
+{"t":"pkg","workspace":"apps/x","name":"moment","kind":"prod","real":""}
+{"t":"workspace","name":".","package":""}

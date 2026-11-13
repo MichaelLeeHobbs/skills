@@ -1,0 +1,2 @@
+bytes --min-basis-points 8000
+{"t":"chunk","app":"web","chunk":"assets/index.js","initial":true,"sources":["webpack://web/./node_modules/moment/moment.js","../../node_modules/.pnpm/luxon@3.4.4/node_modules/luxon/src/datetime.js","src/main.ts","/repo/node_modules/@tanstack/query-core/build/index.js",""],"mappings":"UAAA,8BCAA,8B,UCAA;ACAA,oBCAA,UFAA","lines":[100,50]}

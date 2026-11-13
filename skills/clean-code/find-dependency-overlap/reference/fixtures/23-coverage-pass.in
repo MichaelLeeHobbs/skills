@@ -1,0 +1,9 @@
+verify --check coverage
+{"t":"count","path":"apps/web/a.ts","workspace":"web","parser":100,"pattern":100}
+{"t":"count","path":"apps/web/b.ts","workspace":"web","parser":49,"pattern":50}
+{"t":"count","path":"apps/api/m.py","workspace":"api","parser":10,"pattern":9}
+{"t":"tracked","path":"apps/web/a.ts"}
+{"t":"tracked","path":"apps/web/b.ts"}
+{"t":"tracked","path":"apps/api/m.py"}
+{"t":"tracked","path":"apps/web/x.svelte"}
+{"t":"exclude","path":"apps/web/x.svelte","reason":"no svelte compiler installed"}

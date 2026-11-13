@@ -1,0 +1,6 @@
+{"t":"problem","kind":"unmapped","package":"left-pad","job":""}
+{"t":"problem","kind":"unknown_job","package":"lodash","job":"J09"}
+{"t":"problem","kind":"bad_extends","package":"date-fns-tz","job":"J01"}
+{"t":"problem","kind":"bad_extends","package":"luxon","job":"J01"}
+{"t":"family","id":"F0001","job":"J01","runtime":"browser:app","primaries":["luxon","moment"],"attached":[]}
+{"t":"summary","packages":5,"mapped":4,"families":1,"problems":4}

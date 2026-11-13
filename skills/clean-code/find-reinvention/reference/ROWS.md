@@ -4,9 +4,8 @@
 
 Every named callable in tracked source, found by the language's parser (a compiler API, a tree-sitter
 grammar, the language's own AST module). Assign `kind` from the syntax, never from the file or folder it
-sits in. A formatter declared as a private top-level const inside a page component is a `utility`, and
-it is exactly the kind of copy this skill exists to find. Take the first row of this table that matches,
-top to bottom: a component that calls hooks is a `component`.
+sits in. A formatter declared as a private top-level const inside a page component is a `utility`. Take the first row of
+this table that matches, top to bottom: a component that calls hooks is a `component`.
 
 | Kind | Rule |
 |---|---|

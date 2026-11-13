@@ -14,10 +14,7 @@ description: >-
 # Find reinvention
 
 Find every job a package implements more than once, prove how the copies differ, and draft what stops
-the next copy. Copies of a helper rarely share code or a name, so name search and clone detectors miss
-them, and similarity scores alone flag many pairs that do different jobs. This skill catalogs every named
-function, groups them by the job they do, judges each group from source with the most capable model
-available to you, and runs the copies on the same tricky inputs.
+the next copy. A similarity score or a shared name proposes a group; only source and a run decide it.
 
 **What it writes.** In the target repo, only its catalog folder ([reference/CATALOG.md](reference/CATALOG.md)).
 It edits no code and commits nothing. Everything temporary goes in a work folder outside the repo.
@@ -37,9 +34,9 @@ Running copies uses copied function text only, never the application.
 You coordinate. You hold the plan and the tool's counts, never the rows: the tool reads and writes the
 row files. Start each step from the tool's output with a fresh context. Workers do the reading: a cheaper
 model is enough for describing rows; mapping and judging need the most capable model available to you.
-With one model, use it for everything; the split only saves money. Start workers in waves no larger than
-your agent's limit on concurrent work. If you cannot start fresh contexts, continue in one and say in the
-report header that steps and calibration passes were not independent.
+With one model, use it for everything. Start workers in waves no larger than your agent's limit on
+concurrent work. If you cannot start fresh contexts, continue in one and say in the report header that
+steps and calibration passes were not independent.
 
 ## 0. Build and prove the tool
 
@@ -100,16 +97,16 @@ Merge two groups that share two or more members when the result fits the cap of 
 source; record a `keep` pair for overlaps you cannot merge. Never chain groups through shared members.
 Split a group over the cap by normalised signature (ignore nullability and parameter-object wrapping),
 then by verb, then by the most capable model reading the rows. Add one more group holding the most
-typical member of each part, so the parts are still compared (JUDGE.md says what follows when it finds a
-match). Run `verify --check groups`; it must pass.
+typical member of each part (JUDGE.md says what follows when it finds a match). Run
+`verify --check groups`; it must pass.
 
 ## 5. Judge
 
 Calibrate on real pairs, then judge every group from source, as [reference/JUDGE.md](reference/JUDGE.md)
 describes: anchor, SAME, VARIANT or DIFFERENT per member, a predicted behaviour table, residual
 regrouping, the canonical copy. Judge in priority order: groups whose members span several files and
-are mostly `utility` or `method`, then by importers, with groups whose job means "no input" last, so the
-cap cuts the least useful groups. Only source decides a verdict.
+are mostly `utility` or `method`, then by importers, with groups whose job means "no input" last. Only source
+decides a verdict.
 
 ## 6. Run side by side
 
@@ -128,14 +125,14 @@ Plant four canaries in step 1b, self-contained, each copied from a real function
 1. A date formatter, renamed and rewritten, with one changed edge (`""` instead of a dash for empty),
    written as a private top-level const in a component-style file.
 2. A byte formatter rewritten in a different style (a reduce where it loops), named to share no stem with
-   any real function (`humanReadableSize`), so only the same-job key can catch it.
+   any real function (`humanReadableSize`).
 3. An error-message helper, renamed, with one changed fallback text.
 4. A negative: a function sharing a real helper's vocabulary but doing another job.
 
 If the package has no date, byte or error helper, copy from the largest groups' families instead. Plant
 each difference where the step 6 inputs reach it. The judge never sees the canaries during calibration.
-The first three are known VARIANTs, the fourth a known DIFFERENT: this is how you prove the check can
-fail. **The run fails**, and the report says so above the header, when any of these happens:
+The first three are known VARIANTs, the fourth a known DIFFERENT. **The run fails**, and the report says
+so above the header, when any of these happens:
 - a positive canary is not grouped with its source, not judged VARIANT, or its planted difference does
   not show when it is run beside its source;
 - the negative canary is judged SAME or VARIANT;

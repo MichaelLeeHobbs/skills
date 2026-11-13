@@ -26,8 +26,7 @@ is BLOCKED.
 1. Build a calibration set from real functions only, never the canaries: two or three pairs from the
    largest groups whose answer you settle by reading both bodies yourself, and two pairs that share
    vocabulary but not the job (for example a byte formatter and a count formatter, or an absolute date
-   formatter and a relative "3 days ago" formatter). The canaries stay unseen so they still test the
-   judge.
+   formatter and a relative "3 days ago" formatter).
 2. Judge the set twice, each time with a fresh judge that sees only the brief and the set.
 3. If any verdict differs between the two runs, or from the known answer, the brief is unclear. Rewrite
    it and judge the set twice again.
@@ -41,12 +40,10 @@ is BLOCKED.
   from the rows before judging. For any other group the judge may pick it after reading the source, and
   names it in every verdict line.
 - **Residual**: members judged DIFFERENT from the anchor form a new group and are judged again the same
-  way. Two copies that match each other but not an odd anchor still get compared. Add residual groups to
-  the next judge batch rather than a separate pass. If the cap stops you before all residuals are judged,
-  the report header says how many were judged out of how many.
+  way. Add residual groups to the next judge batch rather than a separate pass. If the cap stops you
+  before all residuals are judged, the report header says how many were judged out of how many.
 - **Parts of a split group**: when the cross-part group finds VARIANT or SAME between two parts' anchors,
-  judge the VARIANT and SAME members of each of those parts against the other part's anchor too, so two
-  copies that landed in different parts still meet.
+  judge the VARIANT and SAME members of each of those parts against the other part's anchor too.
 - **Canonical** (what the report recommends keeping): an existing shared copy if one exists, else the
   member with the most importers, else the most defensive on the tricky inputs, else the one with tests.
   If the repo already depends on a library that does this job, say so next to the canonical copy.
@@ -67,7 +64,6 @@ Do not tell the judge which grouping key proposed the group or that canaries exi
 
 ## Overlaps and conflicts
 
-Before judging, merge any two groups that share two or more members if the merged group fits the cap
-(25 members or 150 KB of source). For overlaps that would exceed the cap, record a `keep` pair for the
-tool and give each shared member one home group: the higher-priority group. If two judgements give a
+Step 4 merges overlapping groups and records a `keep` pair for each overlap over the cap. Give each
+member shared by a `keep` pair one home group: the higher-priority group. If two judgements give a
 pair conflicting verdicts, judge that pair once more with both functions alone and keep that verdict.

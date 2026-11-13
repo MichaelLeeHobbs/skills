@@ -26,7 +26,9 @@ around it goes.
 A launch tutorial, a getting-started page, and install steps in the README. Three copies of one
 procedure, at most one of them right.
 
-Verdict: keep the canonical procedure and replace redundant copies with links after checking that no unique prerequisites or steps disappear. Execute only the commands step 2 permits. If execution is prohibited or unavailable, preserve the procedure and mark those claims unchecked; lack of execution does not establish that a copy is wrong.
+Verdict: keep the canonical procedure and replace the other copies with links, after confirming no
+prerequisite or step exists only in a copy. Run only what step 2 allows. A command you could not run is
+unchecked, not evidence that its copy is wrong.
 
 ## The aspiration
 
@@ -78,12 +80,13 @@ Verdict: delete the general entries and keep the local ones.
 
 A stub from a template, a "TODO: document this", a heading with one sentence of throat-clearing under it.
 
-Verdict: unverifiable. Delete it. An empty heading is a promise nobody made, and it makes the document
-look incomplete rather than short.
+Verdict: unverifiable. Delete it.
 
 ## The doc that is only right because nobody uses that path
 
 A procedure for a deployment target, a platform, or an option that no longer gets exercised. Nothing
 contradicts it, because nothing touches it.
 
-Verdict: ask whether the path is still supported. For a supported path, perform the checks step 2 permits and report any prohibited or unavailable checks as unchecked while preserving the procedure. For an unsupported path, report the obsolete code alongside the doc; changing code still requires the scope from step 1.
+Verdict: ask whether the path is still supported. If it is, run the checks step 2 allows, and keep the
+procedure with any check you could not run marked unchecked. If it is not, report the obsolete code
+alongside the doc; changing that code still needs the scope from step 1.

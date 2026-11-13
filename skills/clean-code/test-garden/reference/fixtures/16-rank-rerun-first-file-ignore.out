@@ -1,0 +1,6 @@
+{"t":"slow","id":"f1","kind":"file","cost_ms_day":2666,"exec_milli":10000,"n":3,"mean":266,"median":100,"p90":700,"max":700,"basis":"ci","flags":["low_n"]}
+{"t":"slow","id":"f1 > y","kind":"test","cost_ms_day":2500,"exec_milli":10000,"n":3,"mean":250,"median":250,"p90":300,"max":300,"basis":"ci","flags":["ignored","low_n"]}
+{"t":"slow","id":"f1 > x","kind":"test","cost_ms_day":1000,"exec_milli":10000,"n":3,"mean":100,"median":100,"p90":100,"max":100,"basis":"ci","flags":["low_n"]}
+{"t":"slow","id":"f2 > z","kind":"test","cost_ms_day":660,"exec_milli":11000,"n":2,"mean":60,"median":50,"p90":70,"max":70,"basis":"ci+local","flags":["low_n","thin"]}
+{"t":"slow","id":"f2","kind":"file","cost_ms_day":0,"exec_milli":1000,"n":1,"mean":0,"median":0,"p90":0,"max":0,"basis":"local","flags":["low_n","thin"]}
+{"t":"summary","tests":3,"ranked":3,"files":2,"unseen":0,"orphans":0,"ids_unstable":false,"samples":8,"runs":4}

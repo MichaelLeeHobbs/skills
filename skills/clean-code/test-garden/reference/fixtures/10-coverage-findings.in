@@ -1,0 +1,24 @@
+verify --check coverage
+{"t":"file","path":"tests/a.test.ts","declared":3}
+{"t":"file","path":"tests/b.test.ts","declared":4}
+{"t":"file","path":"tests/c.test.ts","declared":5}
+{"t":"file","path":"tests/d.test.ts","declared":6}
+{"t":"file","path":"tests/e.test.ts","declared":2}
+{"t":"file","path":"tests/f.test.ts","declared":2}
+{"t":"file","path":"tests/Z.test.ts","declared":1}
+{"t":"test","id":"tests/a.test.ts > a1","path":"tests/a.test.ts"}
+{"t":"test","id":"tests/a.test.ts > a2","path":"tests/a.test.ts"}
+{"t":"test","id":"tests/a.test.ts > a3","path":"tests/a.test.ts"}
+{"t":"test","id":"tests/c.test.ts > c1","path":"tests/c.test.ts"}
+{"t":"test","id":"tests/c.test.ts > c2","path":"tests/c.test.ts"}
+{"t":"test","id":"tests/c.test.ts > c3","path":"tests/c.test.ts"}
+{"t":"test","id":"tests/d.test.ts > d1","path":"tests/d.test.ts"}
+{"t":"test","id":"tests/d.test.ts > d2","path":"tests/d.test.ts"}
+{"t":"test","id":"tests/e.test.ts > e1","path":"tests/e.test.ts"}
+{"t":"test","id":"tests/f.test.ts > f[1]","path":"tests/f.test.ts"}
+{"t":"test","id":"tests/f.test.ts > f[2]","path":"tests/f.test.ts"}
+{"t":"test","id":"tests/f.test.ts > f[3]","path":"tests/f.test.ts"}
+{"t":"test","id":"tests/f.test.ts > f[4]","path":"tests/f.test.ts"}
+{"t":"test","id":"tests/f.test.ts > f[5]","path":"tests/f.test.ts"}
+{"t":"except","path":"tests/d.test.ts","reason":"declared in a loop"}
+{"t":"broken","path":"tests/e.test.ts"}

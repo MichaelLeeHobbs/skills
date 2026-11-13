@@ -1,0 +1,28 @@
+rank
+{"t":"window","days":7}
+{"t":"job","id":"unit","runs":70,"basis":"ci"}
+{"t":"job","id":"loc","runs":7,"basis":"local"}
+{"t":"run","id":"u1","job":"unit","day":1,"attempt":1}
+{"t":"run","id":"u2","job":"unit","day":3,"attempt":1}
+{"t":"run","id":"u2r","job":"unit","day":3,"attempt":2}
+{"t":"run","id":"u3","job":"unit","day":5,"attempt":1}
+{"t":"run","id":"l1","job":"loc","day":6,"attempt":1}
+{"t":"test","id":"f1 > x","path":"f1"}
+{"t":"test","id":"f1 > y","path":"f1"}
+{"t":"test","id":"f2 > z","path":"f2"}
+{"t":"sample","run":"u1","test":"f1 > x","ms":100,"status":"pass"}
+{"t":"sample","run":"u2","test":"f1 > x","ms":100,"status":"fail"}
+{"t":"sample","run":"u2r","test":"f1 > x","ms":900,"status":"pass"}
+{"t":"sample","run":"u3","test":"f1 > x","ms":100,"status":"pass"}
+{"t":"sample","run":"u1","test":"f1 > y","ms":200,"status":"pass"}
+{"t":"sample","run":"u2","test":"f1 > y","ms":300,"status":"pass"}
+{"t":"sample","run":"u3","test":"f1 > y","ms":250,"status":"pass"}
+{"t":"sample","run":"u3","test":"f2 > z","ms":50,"status":"pass"}
+{"t":"sample","run":"l1","test":"f2 > z","ms":70,"status":"pass"}
+{"t":"filetime","run":"u1","path":"f1","ms":1000}
+{"t":"filetime","run":"u2","path":"f1","ms":500}
+{"t":"filetime","run":"u2r","path":"f1","ms":5000}
+{"t":"filetime","run":"u3","path":"f1","ms":350}
+{"t":"filetime","run":"l1","path":"f2","ms":60}
+{"t":"first","test":"f2 > z","day":5}
+{"t":"ignore","id":"f1 > y"}

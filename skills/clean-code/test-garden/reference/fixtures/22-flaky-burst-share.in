@@ -1,0 +1,9 @@
+flaky --burst-min 1 --burst-bp 5000 --min-events 1
+{"t":"window","days":1}
+{"t":"job","id":"j","ms":7}
+{"t":"outcome","test":"a","commit":"c1","job":"j","run":"r1","attempt":1,"day":1,"status":"flaky"}
+{"t":"outcome","test":"b","commit":"c1","job":"j","run":"r1","attempt":1,"day":1,"status":"flaky"}
+{"t":"outcome","test":"c","commit":"c1","job":"j","run":"r1","attempt":1,"day":1,"status":"pass"}
+{"t":"outcome","test":"a","commit":"c2","job":"j","run":"r2","attempt":1,"day":2,"status":"flaky"}
+{"t":"outcome","test":"b","commit":"c2","job":"j","run":"r2","attempt":1,"day":2,"status":"pass"}
+{"t":"outcome","test":"c","commit":"c2","job":"j","run":"r2","attempt":1,"day":2,"status":"pass"}

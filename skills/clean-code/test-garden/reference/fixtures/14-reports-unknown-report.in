@@ -1,0 +1,3 @@
+verify --check reports
+{"t":"sample","report":"r9","test":"a","ms":1,"status":"pass"}
+{"t":"report","id":"r1","tests":0,"ms":0}

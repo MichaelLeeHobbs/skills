@@ -1,0 +1,4 @@
+verify --check coverage
+{"t":"file","path":"x.py","declared":2}
+{"t":"test","id":"x.py::test_a","path":"x.py"}
+{"t":"test","id":"x.py::test_b","path":"x.py"}

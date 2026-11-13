@@ -1,0 +1,7 @@
+verdict
+{"t":"test","id":"a","expects_error":false}
+{"t":"mutant","test":"a","kind":"C","attempt":1,"result":"killed"}
+{"t":"mutant","test":"a","kind":"C","attempt":1,"result":"survived"}
+{"t":"mutant","test":"a","kind":"R","attempt":1,"result":"reached"}
+{"t":"mutant","test":"a","kind":"R","attempt":1,"result":"reached"}
+{"t":"mutant","test":"zz","kind":"R","attempt":1,"result":"reached"}

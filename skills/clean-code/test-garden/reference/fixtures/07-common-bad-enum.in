@@ -1,0 +1,3 @@
+rank
+{"t":"window","days":7}
+{"t":"sample","run":"r1","test":"a","ms":5,"status":"passed"}

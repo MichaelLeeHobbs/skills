@@ -1,0 +1,12 @@
+group
+{"t":"helper","id":"tests/a/factory.ts:3:makeUser","name":"makeUser","body":"{ return { id: 1, name: 'a' } }"}
+{"t":"helper","id":"tests/b/util.ts:9:buildUser","name":"buildUser","body":"{\n  return {  id: 1, name: 'a' }\n}"}
+{"t":"helper","id":"tests/c/mk.ts:1:createUser","name":"createUser","body":"{ return { id: 2 } }"}
+{"t":"helper","id":"tests/d/x.ts:4:defaultAccount","name":"defaultAccount","body":"\t{ return { id: 1, name: 'a' } }  "}
+{"t":"helper","id":"tests/e/o.ts:1:order","name":"order","body":"{}"}
+{"t":"helper","id":"tests/f/o.ts:2:getOrder","name":"getOrder","body":"{ }"}
+{"t":"helper","id":"tests/x/s.ts:1:setup","name":"setup","body":"   "}
+{"t":"helper","id":"tests/y/s.ts:1:setup","name":"setup","body":""}
+{"t":"helper","id":"tests/g/p.ts:1:makeXMLParser","name":"makeXMLParser","body":"a"}
+{"t":"helper","id":"tests/h/p.ts:1:xmlParser","name":"xmlParser","body":"b"}
+{"t":"helper","id":"tests/i/q.ts:1:__","name":"__","body":"c"}

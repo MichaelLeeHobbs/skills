@@ -1,0 +1,13 @@
+{"t":"verdict","id":"b01","class":"blocked","proof":"BLOCKED","reason":"baseline","survivors":0}
+{"t":"verdict","id":"b02","class":"blocked","proof":"BLOCKED","reason":"baseline","survivors":0}
+{"t":"verdict","id":"b03","class":"blocked","proof":"BLOCKED","reason":"no_probe","survivors":0}
+{"t":"verdict","id":"b04","class":"blocked","proof":"BLOCKED","reason":"timeout","survivors":0}
+{"t":"verdict","id":"b05","class":"blocked","proof":"BLOCKED","reason":"no_decisive","survivors":0}
+{"t":"verdict","id":"b06","class":"blocked","proof":"BLOCKED","reason":"invalid","survivors":0}
+{"t":"verdict","id":"b07","class":"blocked","proof":"BLOCKED","reason":"no_rerun","survivors":0}
+{"t":"verdict","id":"b08","class":"blocked","proof":"BLOCKED","reason":"unstable","survivors":0}
+{"t":"verdict","id":"b09","class":"blocked","proof":"BLOCKED","reason":"unstable","survivors":0}
+{"t":"verdict","id":"b10","class":"blocked","proof":"BLOCKED","reason":"bad_result","survivors":0}
+{"t":"verdict","id":"b11","class":"blocked","proof":"BLOCKED","reason":"bad_result","survivors":0}
+{"t":"verdict","id":"b12","class":"blocked","proof":"BLOCKED","reason":"no_decisive","survivors":0}
+{"t":"summary","tests":12,"cannot_fail":0,"unreached":0,"weak":0,"ok":0,"blocked":12,"by_reason":{"bad_result":2,"baseline":2,"invalid":1,"no_decisive":2,"no_probe":1,"no_rerun":1,"timeout":1,"unstable":2}}

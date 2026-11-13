@@ -1,0 +1,4 @@
+{"t":"slow","id":"c","kind":"test","cost_ms_day":72000,"exec_milli":120000,"n":4,"mean":600,"median":600,"p90":600,"max":600,"basis":"ci","flags":["low_n"]}
+{"t":"slow","id":"a","kind":"test","cost_ms_day":66000,"exec_milli":60000,"n":2,"mean":1100,"median":1000,"p90":1200,"max":1200,"basis":"ci","flags":["low_n","thin"]}
+{"t":"slow","id":"b","kind":"test","cost_ms_day":4000,"exec_milli":1000,"n":2,"mean":4000,"median":4000,"p90":4000,"max":4000,"basis":"ci","flags":["low_n","thin"]}
+{"t":"summary","tests":4,"ranked":3,"files":0,"unseen":1,"orphans":1,"ids_unstable":true,"samples":10,"runs":6}

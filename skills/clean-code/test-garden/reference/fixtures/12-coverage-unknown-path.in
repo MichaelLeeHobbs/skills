@@ -1,0 +1,4 @@
+verify --check coverage
+{"t":"file","path":"x.py","declared":1}
+{"t":"except","path":"y.py","reason":"gone"}
+{"t":"file","path":"x.py","declared":1}

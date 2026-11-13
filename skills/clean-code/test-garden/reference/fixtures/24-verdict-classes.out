@@ -1,0 +1,9 @@
+{"t":"verdict","id":"T8","class":"weak","proof":"CONFIRMED","reason":"","survivors":1}
+{"t":"verdict","id":"t1","class":"cannot_fail","proof":"CONFIRMED","reason":"","survivors":0}
+{"t":"verdict","id":"t2","class":"unreached","proof":"CONFIRMED","reason":"","survivors":0}
+{"t":"verdict","id":"t3","class":"weak","proof":"CONFIRMED","reason":"","survivors":2}
+{"t":"verdict","id":"t4","class":"ok","proof":"REFUTED","reason":"","survivors":0}
+{"t":"verdict","id":"t5","class":"cannot_fail","proof":"CONFIRMED","reason":"","survivors":0}
+{"t":"verdict","id":"t6","class":"ok","proof":"REFUTED","reason":"","survivors":0}
+{"t":"verdict","id":"t7","class":"ok","proof":"REFUTED","reason":"","survivors":0}
+{"t":"summary","tests":8,"cannot_fail":2,"unreached":1,"weak":2,"ok":3,"blocked":0,"by_reason":{}}

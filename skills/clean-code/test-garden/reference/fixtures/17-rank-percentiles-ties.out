@@ -1,0 +1,4 @@
+{"t":"slow","id":"T","kind":"test","cost_ms_day":550,"exec_milli":10000,"n":10,"mean":55,"median":50,"p90":90,"max":100,"basis":"user","flags":[]}
+{"t":"slow","id":"t","kind":"test","cost_ms_day":550,"exec_milli":10000,"n":10,"mean":55,"median":50,"p90":90,"max":100,"basis":"user","flags":[]}
+{"t":"slow","id":"u","kind":"test","cost_ms_day":550,"exec_milli":10000,"n":10,"mean":55,"median":50,"p90":90,"max":100,"basis":"user","flags":[]}
+{"t":"summary","tests":3,"ranked":3,"files":0,"unseen":0,"orphans":0,"ids_unstable":false,"samples":30,"runs":10}

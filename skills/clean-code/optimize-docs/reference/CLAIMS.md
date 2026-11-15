@@ -3,6 +3,10 @@
 Read this during step 2, before you check anything. Every claim type here has a check, and a way that
 check passes while the claim stays false. Rule out the second before you record a pass.
 
+Mine every doc in scope for each kind below: file and directory paths; commands and every flag they are
+given; symbol, endpoint and route names; environment variables, configuration keys and ports; version
+numbers and dependency names; links, internal and external.
+
 ## Paths and directories
 
 **Check:** the path exists.

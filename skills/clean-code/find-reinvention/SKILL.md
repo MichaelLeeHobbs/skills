@@ -16,8 +16,9 @@ description: >-
 Find every job a package implements more than once, prove how the copies differ, and draft what stops
 the next copy. A similarity score or a shared name proposes a group; only source and a run decide it.
 
-**What it writes.** In the target repo, only its catalog folder ([reference/CATALOG.md](reference/CATALOG.md)).
-It edits no code and commits nothing. Everything temporary goes in a work folder outside the repo.
+**What it writes.** In the target repo, only its catalog folder and one line of the shared run ledger
+([reference/CATALOG.md](reference/CATALOG.md)). It edits no code and commits nothing. Everything
+temporary goes in a work folder outside the repo.
 
 ## Prerequisites
 
@@ -40,12 +41,10 @@ steps and calibration passes were not independent.
 
 ## 0. Build and prove the tool
 
-The tool does the bookkeeping a model must not do for itself: slicing, collecting, grouping and
-reconciling rows, checking returned IDs and rows, accounting for every group member, coverage, and the
-report's counts. Pick a runtime. Implement [reference/ALGORITHM.md](reference/ALGORITHM.md) to satisfy
-[reference/CONTRACT.md](reference/CONTRACT.md) in the work folder. Run every fixture in
-`reference/fixtures/`. **If any fixture fails, stop and report which.** Never edit a fixture to make it
-pass, and never continue with a partly passing tool.
+The tool does the bookkeeping a model must not do for itself. Pick a runtime. Implement
+[reference/ALGORITHM.md](reference/ALGORITHM.md) to satisfy [reference/CONTRACT.md](reference/CONTRACT.md)
+in the work folder. Run every fixture in `reference/fixtures/`. **If any fixture fails, stop and report
+which.** Never edit a fixture to make it pass, and never continue with a partly passing tool.
 
 ## 1. Inventory
 
@@ -117,7 +116,8 @@ runtime, mark cells run or predicted, set CONFIRMED, REFUTED or BLOCKED.
 ## 7. Report and save the catalog
 
 Write the report as [reference/REPORT.md](reference/REPORT.md) lays out and the catalog files as
-CATALOG.md lists them. Hand back the report path, header and decision list.
+CATALOG.md lists them. Then append the run record as CATALOG.md "Run record" says. Hand back the report
+path, header and decision list.
 
 ## Check
 
@@ -139,7 +139,8 @@ so above the header, when any of these happens:
 - `verify --check coverage` fails, or any other `verify` check fails at its step;
 - none of the top 10 groups ran although at least one had a runnable member;
 - the user supplied a list of known copies and any is missing from every group (name the step that lost
-  it).
+  it);
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it.
 

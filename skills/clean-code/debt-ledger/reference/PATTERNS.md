@@ -11,7 +11,8 @@ Search every tracked text file at the pinned commit. Skip, and count by reason:
 - vendored or generated paths: the repo's own markings (for example version-control attributes that mark
   files vendored or generated), dependency folders (`node_modules`, `vendor`, `.venv`), and build output
   (`dist`, `build`, `target`, `out`) when ignored by the repo;
-- the ledger folder and the baseline files themselves.
+- the whole `clean-code/` folder (this ledger, other skills' catalogs and the shared run record) and the
+  baseline files themselves.
 
 ## Kinds
 

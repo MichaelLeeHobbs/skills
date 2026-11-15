@@ -17,7 +17,7 @@ description: >-
 Turn "it feels inconsistent" into a list: "17 font sizes render, the scale has 6; these owners set the
 off-scale ones".
 
-**What it writes.** In the target repo, only its catalog folder ([reference/CATALOG.md](reference/CATALOG.md)).
+**What it writes.** In the target repo, only its catalog folder and one ledger line ([reference/CATALOG.md](reference/CATALOG.md)).
 It edits no code and commits nothing. Captures, built tools and every other temporary file go in a work
 folder outside the repo. It never records page text, screenshots or URLs with real parameters.
 
@@ -104,6 +104,7 @@ map needs work: fix it and re-tally, never recapture for it. Trace each off-scal
 
 Write the report as REPORT.md lays out and the catalog as CATALOG.md lists it. Hand back the report
 path, header and decision list. Tell the user the work folder's path and size and offer to delete it.
+Then append the run record as `reference/CATALOG.md` "Run record" says.
 
 ## Check
 
@@ -116,7 +117,8 @@ path, header and decision list. Tell the user the work folder's path and size an
   (c5) counted; a `display: none` element (c6) seen; a centred block (c7) not graded auto; a planted id
   (c8) not normalised;
 - `tally` reports a `FAIL` gate in the final run;
-- the user named an inconsistency they see, and no finding in the report covers it.
+- the user named an inconsistency they see, and no finding in the report covers it;
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it.
 

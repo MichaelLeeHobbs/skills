@@ -1,0 +1,5 @@
+{"t":"row","skill":"find-reinvention","scope":".","unit":"applies","status":"measured","reason":null,"metric":"jobs_2plus","value":8,"trend":"not_comparable","delta":null,"prev_line":1,"trend_key":"defs","at":"2026-11-01T10:00:00Z","commit":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","days":14,"commits":2,"ratio":"0.0800","due":false,"rank":null,"good_line":2,"good_value":8,"line":2}
+{"t":"row","skill":"vocabulary-drift","scope":".","unit":"applies","status":"measured","reason":null,"metric":"drifting","value":6,"trend":"not_comparable","delta":null,"prev_line":3,"trend_key":"seeds","at":"2026-11-01T10:00:00Z","commit":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","days":14,"commits":2,"ratio":"0.0800","due":false,"rank":null,"good_line":4,"good_value":6,"line":4}
+{"t":"coverage","scope":".","units":2,"measured":2,"clean":0,"due":0,"needs_setup":0}
+{"t":"total","units":2,"measured":2,"clean":0,"due":0,"needs_setup":0}
+{"t":"summary","read":4,"shown":2,"duplicates":0,"superseded":2,"rejected":0,"rows":2,"due":0,"through":"2026-11-01T10:00:00Z"}

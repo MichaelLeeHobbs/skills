@@ -1,0 +1,7 @@
+{"t":"row","skill":"debt-ledger","scope":".","unit":"applies","status":"unverified","reason":"commit","metric":"blanket","value":5,"trend":"none","delta":null,"prev_line":null,"trend_key":null,"at":"2026-11-10T10:00:00Z","commit":"cccccccccccccccccccccccccccccccccccccccc","days":5,"commits":1,"ratio":null,"due":true,"rank":1,"good_line":3,"good_value":5,"line":3}
+{"t":"row","skill":"find-reinvention","scope":"apps/web","unit":"applies","status":"measured","reason":null,"metric":"jobs_2plus","value":5,"trend":"new_baseline","delta":null,"prev_line":null,"trend_key":null,"at":"2026-11-10T10:00:00Z","commit":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","days":5,"commits":1,"ratio":"0.0400","due":false,"rank":null,"good_line":1,"good_value":5,"line":1}
+{"t":"row","skill":"vocabulary-drift","scope":".","unit":"applies","status":"unverified","reason":"commit","metric":"drifting","value":5,"trend":"none","delta":null,"prev_line":null,"trend_key":null,"at":"2026-11-10T10:00:00Z","commit":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","days":5,"commits":1,"ratio":null,"due":true,"rank":2,"good_line":2,"good_value":5,"line":2}
+{"t":"coverage","scope":".","units":2,"measured":0,"clean":0,"due":2,"needs_setup":0}
+{"t":"coverage","scope":"apps/web","units":1,"measured":1,"clean":0,"due":0,"needs_setup":0}
+{"t":"total","units":3,"measured":1,"clean":0,"due":2,"needs_setup":0}
+{"t":"summary","read":3,"shown":3,"duplicates":0,"superseded":0,"rejected":0,"rows":3,"due":2,"through":"2026-11-10T10:00:00Z"}

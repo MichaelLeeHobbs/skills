@@ -90,3 +90,28 @@ contradicts it, because nothing touches it.
 Verdict: ask whether the path is still supported. If it is, run the checks step 2 allows, and keep the
 procedure with any check you could not run marked unchecked. If it is not, report the obsolete code
 alongside the doc; changing that code still needs the scope from step 1.
+
+## The procedure with a command you could not run
+
+An install, deploy or on-call procedure holding a command step 2 does not allow, or one you had no way to
+run. Run only what step 2 allows.
+
+Verdict: human procedure. The command stays in the procedure, marked unchecked with the reason, and you
+correct only facts you verified another way. Unchecked is neither a pass nor a reason to delete.
+
+## The decision log
+
+The project already keeps decisions in some shape. A single append-only register file is as valid as a
+directory of records, and one may carry a convention for where an entry goes and how two people appending
+at once resolve a conflict.
+
+Verdict: route decisions into it in the shape it has, following its convention. Restructuring a decision
+log is not this pass.
+
+## The tree whose defect is wrongness, not bulk
+
+The pass usually ends with fewer words. A tree whose docs are mostly wrong rather than mostly redundant
+can finish larger, because a correct statement of a contradiction can be longer than the false sentence.
+
+Verdict: accept the larger tree. Either way, the share of remaining prose that something checked must go
+up.

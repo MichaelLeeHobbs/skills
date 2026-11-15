@@ -19,7 +19,7 @@ Find the asset files a project carries twice, never uses, or ships too large, an
 with more than one icon family. A name match or a similar hash proposes a finding; only a key, a
 measurement or a build decides it.
 
-**What it writes.** In the target repo, only its catalog folder ([reference/CATALOG.md](reference/CATALOG.md)).
+**What it writes.** In the target repo, only its catalog folder and one ledger line ([reference/CATALOG.md](reference/CATALOG.md)).
 It deletes, edits and commits nothing. Builds, trials and canaries run on a snapshot in a work folder
 outside the repo.
 
@@ -108,7 +108,7 @@ nobody measured, built or compared in this run is BLOCKED, never CONFIRMED.
 Run `verify --check canaries` on the canary expectations plus the `refs`, `dupes` and label output. Write
 the report as [reference/REPORT.md](reference/REPORT.md) lays out, update the catalog, confirm no canary
 remains in the real tree, delete the work folder and give its path. Hand back the report path, header
-and decision list.
+and decision list. Then append the run record as `reference/CATALOG.md` "Run record" says.
 
 ## Check
 
@@ -133,7 +133,8 @@ Plant these, copied from real project files (SVG only, or synthetic rasters, nev
 - a pass the user put in scope could not run (a declined pass makes no claim and plants no canary);
 - a canary was found in the real tree after the run, a secret-named file entered the snapshot, or the
   catalog scan in CATALOG.md found a match;
-- the label sample check failed twice in a row on one batch.
+- the label sample check failed twice in a row on one batch;
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it.
 

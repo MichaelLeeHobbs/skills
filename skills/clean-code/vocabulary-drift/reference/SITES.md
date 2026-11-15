@@ -55,9 +55,10 @@ produced no sites fails on its own.
 
 ## Seeds from a find-reinvention catalog
 
-Look for the catalog folder find-reinvention uses (a `reinvention/` folder in the folder your agent keeps
-project configuration in, or `.reinvention/` at the root). Its files are JSON Lines, one object per
-line:
+Look for find-reinvention's catalog in `clean-code/find-reinvention/` beside this skill's folder (for a
+package scope, `clean-code/find-reinvention/<repo path of the package>/`). If it is not there, treat the
+catalog as absent and the header says `Seeds: none`; never read a legacy `reinvention/` folder. Its files
+are JSON Lines, one object per line:
 - `domains.jsonl`: `id`, `name`, `def`. Each is a candidate concept seed. These name the *data a
   function takes* ("timestamp", "study identifier"), not the domain's entities, so most are `not-domain`
   here; keep the entity ones.

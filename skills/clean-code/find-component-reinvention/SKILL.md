@@ -17,8 +17,9 @@ Find every widget a front-end package builds more than once, prove how the copie
 same state, and draft what stops the next copy. A shared class or name proposes a group; only source and
 a measured render decide it.
 
-**What it writes.** In the target repo, only its catalog folder ([reference/CATALOG.md](reference/CATALOG.md)).
-It edits no code and commits nothing. Everything temporary goes in a work folder outside the repo.
+**What it writes.** In the target repo, only its catalog folder and one line of the shared run ledger
+([reference/CATALOG.md](reference/CATALOG.md)). It edits no code and commits nothing. Everything
+temporary goes in a work folder outside the repo.
 
 ## Prerequisites
 
@@ -54,8 +55,9 @@ pass, and never continue with a partly passing tool.
 
 Record the commit and read all source at that commit. Enumerate every component with the parser,
 following [reference/ROWS.md](reference/ROWS.md), count each in-scope file with the pattern, and run
-`verify --check coverage`; it must pass. If find-reinvention's catalog exists, cross-check against its
-component rows as ROWS.md describes. If this skill's catalog exists, run `reuse` as CATALOG.md describes.
+`verify --check coverage`; it must pass. If find-reinvention's catalog exists in
+`clean-code/find-reinvention/`, cross-check against its component rows as ROWS.md describes. If this
+skill's catalog exists, run `reuse` as CATALOG.md describes.
 
 ## 1b. Canaries and budget
 
@@ -103,7 +105,8 @@ sheets, then run the after-step check in RENDER.md; it must pass.
 ## 7. Report and save the catalog
 
 Write the report as [reference/REPORT.md](reference/REPORT.md) lays out and the catalog files as
-CATALOG.md lists them. Hand back the report path, the header, the decision list and the sheet paths.
+CATALOG.md lists them. Then append the run record as CATALOG.md "Run record" says. Hand back the report
+path, the header, the decision list and the sheet paths.
 
 ## Check
 
@@ -129,7 +132,8 @@ sees the canaries during calibration. **The run fails**, and the report says so 
   `ok` in one state, or more than half the planned real cells are not `ok`;
 - the after-step check finds a change in the live tree;
 - the user supplied a list of known copies and any is missing from every group (name the step that lost
-  it).
+  it);
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it.
 

@@ -1,0 +1,9 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"find-dead-code","scope":".","kind":"runtime","due":30,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"find-dead-code\",\"scope\":\".\",\"at\":\"2026-11-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"unused\",\"value\":5,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-dead-code/report.md\"}"}
+{"t":"report","line":1,"found":true,"commit":"aaaaaaa","value":5,"date":"2026-11-01"}
+{"t":"git","line":1,"ancestor":true,"commits":2}
+{"t":"ledger","line":2,"text":"{\"skill\":\"find-dead-code\",\"scope\":\".\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"check\":\"fail\",\"degraded\":false,\"metric\":\"unused\",\"value\":null,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-dead-code/report.md\"}"}
+{"t":"report","line":2,"found":true,"commit":"bbbbbbb","value":null,"date":"2026-11-10"}
+{"t":"git","line":2,"ancestor":true,"commits":0}

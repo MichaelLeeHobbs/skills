@@ -15,10 +15,16 @@ Syntaxes: <parsed list>; lexed: <list or none>   Root: <n>px (<found in file | a
 Surfaces: <token names | assumed white and black>
 Coverage: <coverage> of <hits> literals (<ignored_share> ignored)   PASS | FAIL   Tripwire: PASS | FAIL
 Canaries: <passed> of <n>   PASS | FAIL
+Drifted values: <n>
 Judged: <n> clusters, <share> of drifted uses; rejected plan rows: <n>
 ```
 
 If any line says FAIL, say first, above the header, that the run failed and which check.
+
+**Drifted values** is the sum, over the per-category `cluster` summaries (not the `neutral` summary, which
+repeats colours), of the `by_status` counts for `snap`, `near` and `cluster`: literal values that sit
+within the clustering distance of a token value (`snap`, `near`) or of another literal value (`cluster`)
+without equalling a token. It leaves out `exact`, `lone`, the size classes and every z-index status.
 
 ## Headline
 

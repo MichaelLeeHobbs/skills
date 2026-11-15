@@ -1,0 +1,6 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"css-override-census","scope":"apps/web","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"css-override-census\",\"scope\":\"apps/web\",\"at\":\"2026-11-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"partial\",\"degraded\":false,\"metric\":\"important\",\"value\":7,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/css-override-census/apps/web/report.md\"}"}
+{"t":"report","line":1,"found":true,"commit":"aaaaaaa","value":7,"date":"2026-11-01"}
+{"t":"git","line":1,"ancestor":true,"commits":1}

@@ -40,10 +40,12 @@ code behind it is not.
 State the rule you used, per kind, in the report. For decorator or file-system routing, where no file
 imports the handler, `callers` counts calls to the handler from elsewhere.
 
-When a find-reinvention catalog exists (a `rows.jsonl` with the fields `id`, `path`, `name`, `kind`,
-`importers`, `imported_by`, `alias_of`, recorded at the same commit), read the handler's row for
-`imported_by` and subtract the registering files. Otherwise count references with the parser. This
-skill never needs that catalog.
+When a find-reinvention catalog exists in `clean-code/find-reinvention/` beside this skill's folder (for
+a package scope, `clean-code/find-reinvention/<repo path of the package>/`), holding a `rows.jsonl` with
+the fields `id`, `path`, `name`, `kind`, `importers`, `imported_by`, `alias_of`, recorded at the same
+commit, read the handler's row for `imported_by` and subtract the registering files. Otherwise treat the
+catalog as absent, say so in the report header, and count references with the parser; never read a
+legacy `reinvention/` folder. This skill never needs that catalog.
 
 ## Dynamic registrations
 

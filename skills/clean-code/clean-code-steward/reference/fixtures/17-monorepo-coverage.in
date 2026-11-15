@@ -1,0 +1,16 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"find-reinvention","scope":"apps/web","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"find-reinvention","scope":"apps/admin","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"find-token-drift","scope":"apps/web","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"find-token-drift","scope":"apps/admin","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"debt-ledger","scope":".","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"find-reinvention\",\"scope\":\"apps/web\",\"at\":\"2026-11-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"jobs_2plus\",\"value\":7,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-reinvention/apps/web/report.md\"}"}
+{"t":"report","line":1,"found":true,"commit":"aaaaaaa","value":7,"date":"2026-11-01"}
+{"t":"git","line":1,"ancestor":true,"commits":2}
+{"t":"ledger","line":2,"text":"{\"skill\":\"find-token-drift\",\"scope\":\"apps/admin\",\"at\":\"2026-11-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"drifted_values\",\"value\":0,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-token-drift/apps/admin/report.md\"}"}
+{"t":"report","line":2,"found":true,"commit":"aaaaaaa","value":0,"date":"2026-11-01"}
+{"t":"git","line":2,"ancestor":true,"commits":0}
+{"t":"ledger","line":3,"text":"{\"skill\":\"debt-ledger\",\"scope\":\".\",\"at\":\"2026-11-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"blanket\",\"value\":11,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/debt-ledger/report.md\"}"}
+{"t":"report","line":3,"found":true,"commit":"aaaaaaa","value":11,"date":"2026-11-01"}
+{"t":"git","line":3,"ancestor":true,"commits":3}

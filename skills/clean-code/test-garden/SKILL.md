@@ -99,8 +99,9 @@ building both copies and diffing. Copied setup blocks inside test bodies are not
 
 ## 7. Report and catalog
 
-Write the report and update the catalog as [reference/REPORT.md](reference/REPORT.md) lays out. Hand back
-the report path, its header and the "do this first" list.
+Write the report and update the catalog as [reference/REPORT.md](reference/REPORT.md) lays out. Then
+append the run record as `reference/REPORT.md` "Run record" says. Hand back the report path, its header
+and the "do this first" list.
 
 ## Check
 
@@ -110,7 +111,8 @@ The run fails, and the report says so above the header, when any of these happen
 - a chosen lane could not get its evidence (it is reported as failed, never silently skipped);
 - a class, rank or count in the report does not come from tool output;
 - the user named a known slow, flaky or vacuous test and it is missing from that lane's output (name the
-  step that lost it).
+  step that lost it);
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A check you could not perform has failed.
 

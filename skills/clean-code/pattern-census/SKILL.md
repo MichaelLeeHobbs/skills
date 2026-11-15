@@ -92,8 +92,8 @@ and any known sites.
 ## 7. Owners, report and catalog
 
 Resolve owners with `owners` (REPORT.md). Write the report as [reference/REPORT.md](reference/REPORT.md)
-lays out and the catalog files as CATALOG.md lists them. Hand back the report path, header and decision
-list.
+lays out and the catalog files as CATALOG.md lists them. Then append the run record as
+`reference/CATALOG.md` "Run record" says. Hand back the report path, header and decision list.
 
 ## Check
 
@@ -104,7 +104,8 @@ list.
 - `census` exits 1: a sample was not drawn, or a `closed` job still has an escape after round two;
 - a canary is missing or lands in the wrong family, or the negative canary produces a site;
 - a known site the user supplied is not found;
-- a number in the report did not come from tool output.
+- a number in the report did not come from tool output;
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it. A withheld percentage is not a failure;
 the report says why it is withheld.

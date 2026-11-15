@@ -49,10 +49,13 @@ write one, coverage cannot be checked and the run fails.
 
 ## Cross-check against find-reinvention's catalog
 
-If the repo holds find-reinvention's `rows.jsonl` (in its `reinvention/` catalog folder, CATALOG.md),
-run `reuse` with its `component` rows as `old` and this inventory as `new`. Every `removed` record whose
-file still exists at this commit is a component one of the two inventories missed: name it and fail the
-coverage check. Its hashes may come from another definition, so expect `changed` records and ignore them.
+Look for find-reinvention's `rows.jsonl` in `clean-code/find-reinvention/` beside this skill's folder
+(for a package scope, `clean-code/find-reinvention/<repo path of the package>/`). If it is not there,
+treat the catalog as absent, say so in the report header, and skip this cross-check; never read a legacy
+`reinvention/` folder. If it is there, run `reuse` with its `component` rows as `old` and this inventory
+as `new`. Every `removed` record whose file still exists at this commit is a component one of the two
+inventories missed: name it and fail the coverage check. Its hashes may come from another definition,
+so expect `changed` records and ignore them.
 
 ## Row slots
 

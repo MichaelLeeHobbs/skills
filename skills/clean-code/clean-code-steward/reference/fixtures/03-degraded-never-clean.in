@@ -1,0 +1,6 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"theme-parity","scope":".","kind":"runtime","due":30,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"theme-parity\",\"scope\":\".\",\"at\":\"2026-11-12T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":\"browser\",\"metric\":\"clusters\",\"value\":0,\"comparable\":\"mode=degraded;v=1\",\"report\":\".clean-code/theme-parity/report.md\"}"}
+{"t":"report","line":1,"found":true,"commit":"aaaaaaa","value":0,"date":"2026-11-12"}
+{"t":"git","line":1,"ancestor":true,"commits":0}

@@ -21,7 +21,7 @@ on that element. So a required token that never appeared on any element, in any 
 crawl, proves that selector never matched there. Record a token log in the browser. Do not add rule
 coverage, media emulation or forced pseudo-states: the test needs none of them, and any browser works.
 
-**What it writes.** In the target repo, only its catalog folder ([reference/REPORT.md](reference/REPORT.md#catalog)).
+**What it writes.** In the target repo, only its catalog folder and one ledger line ([reference/REPORT.md](reference/REPORT.md#where)).
 It edits no code and commits nothing. Builds, logs and scripts go in a work folder outside the repo.
 
 ## Prerequisites
@@ -111,7 +111,8 @@ report calls the list unproven.
 ## 8. Report and save the catalog
 
 Write the report and catalog as [reference/REPORT.md](reference/REPORT.md) lays out. Hand back the
-report path, its header and the delete list summary.
+report path, its header and the delete list summary. Then append the run record as
+`reference/REPORT.md` "Run record" says.
 
 ## Static-only mode
 
@@ -136,7 +137,8 @@ the header, when any of these happens:
 - any fixture fails, or the driver self-test differs from its expected output;
 - `verify --check plan` or `classify` prints a problem;
 - canary 4 was not aborted, or any request outside the guard reached a host;
-- a rule the proof REFUTED is still on the delete list.
+- a rule the proof REFUTED is still on the delete list;
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A check that could not run has failed. In static-only mode, canaries 2 and 4 cannot run, so the header
 never says PASS for them.

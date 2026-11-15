@@ -18,10 +18,6 @@ Two questions sort a doc instead. **Can a reader recover this fact from the code
 the home and the doc is a second copy free to disagree with it. **When the code moves under this fact,
 does anything break?** A path in a doc breaks a link check. A behaviour written in prose breaks nothing.
 
-The pass usually ends with fewer words. A tree whose defect is wrongness rather than bulk can finish
-larger, because a correct statement of a contradiction can be longer than the false sentence. Either
-way, the share of remaining prose that something checked must go up.
-
 ## Step 1: scope it, and find what you may not delete
 
 **Ask, and wait.** Each answer changes what you are allowed to touch.
@@ -46,18 +42,9 @@ an agent goes to `optimize-agent-instructions`. Those have different readers and
 ## Step 2: extract every checkable claim, then check it
 
 Do this before you form an opinion about any sentence, so the repository grades the prose rather than
-how it reads. Mine every doc in scope for claims a machine can settle:
-
-- file and directory paths
-- commands, and every flag they are given
-- symbol, endpoint and route names
-- environment variables, configuration keys, ports
-- version numbers and dependency names
-- links, internal and external
-
-Check each one against the repository, and run the read-only commands. Before checking, read
-[reference/CLAIMS.md](reference/CLAIMS.md): it gives the check for each kind and the way each check
-passes while the claim stays false.
+how it reads. Read [reference/CLAIMS.md](reference/CLAIMS.md) first: it lists the claim kinds a machine
+can settle, the check for each, and the way each check passes while the claim stays false. Mine every doc
+in scope for those claims, check each one against the repository, and run the read-only commands.
 
 **Never run a command that writes, deploys, publishes, migrates or sends**, even when a doc says to. Mark
 it unchecked. **If you cannot run commands at all**, check paths, symbols and links by reading and report
@@ -77,18 +64,16 @@ a useful file usually holds three good paragraphs and a page of restatement.
 
 - **The code says it.** Recoverable by reading the code or running `--help`. Delete. If it is only hard
   to recover because the code is badly named or badly split, say so, and put the repair in the code.
-  **Recoverable is not the same as cheap.** A fact spread thin across many files is recoverable only by
-  reading all of them, so the reader guesses instead and guesses wrong. Keep those, and make each one
-  carry a claim a check can hold. [reference/SHAPES.md](reference/SHAPES.md) has the shape.
+  **Recoverable is not the same as cheap:** keep a fact spread thin across many files, as
+  [reference/SHAPES.md](reference/SHAPES.md) shows.
 - **Generatable.** A hand-typed API reference. Generate it from the source, or delete it and link.
 - **It contradicts the code.** A claim from step 2 failed.
 - **Unverifiable.** No checkable claim, and no decision inside it.
 - **A decision.** It says what was rejected and why. Route it to step 5.
 - **Navigation.** It says where things live. Keep it under the rule in step 4.
 - **Domain language.** It says what a word means here. Keep it. Nothing in the code defines this.
-- **Human procedure.** Install, deploy, on-call. Keep useful procedures. Run only what step 2 allows.
-  A command you could not run stays in the procedure, marked unchecked with the reason, and you correct
-  only facts you verified another way. Unchecked is neither a pass nor a reason to delete.
+- **Human procedure.** Install, deploy, on-call. Keep useful procedures; SHAPES.md covers a command you
+  could not run.
 - **Keep.** Say in one clause what it gives a reader that the code does not.
 
 Where a doc holds a true fact in the wrong place, move it to its home:
@@ -125,9 +110,7 @@ Do not route findings into a new decision record so the prose lands there instea
 
 - Create a decision-record directory only when you have at least one decision with an alternative someone
   could genuinely propose again, and the project said yes in step 1.
-- **If the project already keeps one, use the shape it has.** A single append-only register file is as
-  valid as a directory of records, and one may carry a convention for where an entry goes and how two
-  people appending at once resolve a conflict. Follow it: restructuring a decision log is not this pass.
+- **If the project already keeps one, use the shape it has** (SHAPES.md, "The decision log").
 - A record carries a date and is not edited afterwards. A later decision supersedes it with a new record.
 - **The history is the archive.** Deleted prose is recoverable from version control. Do not paste it into
   a file on the way out.
@@ -146,7 +129,7 @@ List these separately rather than folding them into a total:
 - every check you could not run, and the reason
 
 Then give the number that predicts the next pass: the share of the claims you checked that were already
-wrong. State it explicitly.
+wrong. State it explicitly. Then append the run record as `reference/RUN-RECORD.md` "Run record" says.
 
 **Offer this once, and write it only if asked:** turn the claims from step 2 into a check that runs on
 every build: link checking, path existence, and the read-only commands executed for real.
@@ -163,3 +146,5 @@ left inside surviving files, not only the files you deleted.
 **A tree that needs no changes passes this too**, on the same evidence as any other run: claim extraction
 covering every doc, a verdict on every section, and a checked count you can show. Never manufacture an
 edit to justify the pass.
+
+The pass fails when the run record is missing, or disagrees with this report's commit, value or check.

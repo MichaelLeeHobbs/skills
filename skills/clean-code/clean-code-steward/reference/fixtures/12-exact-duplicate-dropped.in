@@ -1,0 +1,10 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"debt-ledger","scope":".","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"debt-ledger\",\"scope\":\".\",\"at\":\"2026-11-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"blanket\",\"value\":7,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/debt-ledger/report.md\"}"}
+{"t":"ledger","line":2,"text":"{\"skill\":\"debt-ledger\",\"scope\":\".\",\"at\":\"2026-11-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"blanket\",\"value\":7,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/debt-ledger/report.md\"}"}
+{"t":"ledger","line":3,"text":"{\"skill\":\"debt-ledger\",\"scope\":\".\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"blanket\",\"value\":6,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/debt-ledger/report.md\"}"}
+{"t":"ledger","line":4,"text":"{\"skill\":\"debt-ledger\",\"scope\":\".\",\"at\":\"2026-11-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"blanket\",\"value\":7,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/debt-ledger/report.md\"}\r"}
+{"t":"report","line":3,"found":true,"commit":"bbbbbbb","value":6,"date":"2026-11-10"}
+{"t":"git","line":1,"ancestor":true,"commits":5}
+{"t":"git","line":3,"ancestor":true,"commits":1}

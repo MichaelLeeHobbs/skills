@@ -2,11 +2,43 @@
 
 ## Where
 
-A folder inside the target repo: the folder your agent already keeps project configuration in, with a
-`reinvention/` folder under it (for example `.claude/reinvention/`), or `.reinvention/` at the repo root
-if your agent has none. Use the same folder on every run; the report header names it.
+Use `clean-code/` inside your agent's project configuration folder, or `.clean-code/` at the repo root if
+your agent has none. If a `clean-code/` folder already exists in another folder at the repo root, use that
+one; if two exist, stop and name both. This skill's files go in `clean-code/find-reinvention/`; for a
+package scope, in `clean-code/find-reinvention/<repo path of the package>/` (for example
+`clean-code/find-reinvention/apps/web/`). Write this folder and the shared `clean-code/ledger.jsonl` and
+nothing else in the repo; never commit.
 
-The skill writes this folder and nothing else in the repo. It never commits.
+**Legacy folder.** On the first write, if `reinvention/` exists beside `clean-code/` (or `.reinvention/`
+at the repo root), copy the whole folder into the new home: catalogs, history and user-owned files. A
+legacy package subfolder named after a package goes to that package's repo path; if more than one could
+match, stop and name the candidates. Say in the report header that you copied it and that the user can
+delete the legacy folder. Never read the legacy folder again, and never delete it yourself.
+
+## Run record
+
+Replace `report.md` only after this run's own checks are done. Then append exactly one line to
+`clean-code/ledger.jsonl`, pass or fail:
+
+```
+{"skill":"find-reinvention","scope":".","at":"2026-11-15T14:02:00Z","commit":"<full hash>","check":"pass","degraded":false,"metric":"jobs_2plus","value":<n>,"comparable":"mode=full;domains=<n>;nojob=<n>","report":"<path to report.md>"}
+```
+
+| Field | Value |
+|---|---|
+| `skill` | `find-reinvention` |
+| `scope` | `.` for the whole repo, else the package's repo-relative path with `/` separators |
+| `at` | UTC time the run finished, `YYYY-MM-DDTHH:MM:SSZ` |
+| `commit` | the full commit hash read at the start of the run, with `+dirty` appended if the working tree had changes; `none` without version control |
+| `check` | `fail` if the report says the run failed; `partial` if any check line reads PARTIAL, UNCONFIRMED, not run, or user's word; otherwise `pass` |
+| `degraded` | `false`, or the one missing thing: `browser`, `runtime-evidence`, `ci-history`, `build`, `parser`. This skill always records `false`: without a parser it stops before any work |
+| `metric` | `jobs_2plus` |
+| `value` | the integer on the report's `Jobs implemented 2+ times` line, or `null` when the run stopped before `tally` produced it |
+| `comparable` | `mode=full` or `mode=degraded`, then `;` and this skill's fields sorted by key: `domains` (lines in `domains.jsonl`; the list is append-only, so its length is its version), `nojob` (lines in `nojob.jsonl`). This skill always records `mode=full` |
+| `report` | repo-relative path of this run's `report.md` |
+
+After appending, check that the file grew by exactly one line and that no earlier line changed. Order in
+the file does not matter.
 
 ## What goes in it
 

@@ -18,7 +18,8 @@ Measure every override in a front end, prove which library overrides are already
 layers and tokens that make the rest unnecessary. A count says where to look; only source decides a
 judgment, and only the tool produces a number.
 
-**What it writes.** In the target repo, only its catalog folder ([reference/CATALOG.md](reference/CATALOG.md)).
+**What it writes.** In the target repo, only its catalog folder and one line of the shared run record
+([reference/CATALOG.md](reference/CATALOG.md)).
 It edits no code and commits nothing. Everything temporary goes in a work folder outside the repo.
 
 ## Prerequisites
@@ -89,7 +90,8 @@ hot spots. Run `verify --check layers` on the z proposal; it must pass.
 ## 5. Report and save the catalog
 
 Write the report as [reference/REPORT.md](reference/REPORT.md) lays out and the catalog files as
-CATALOG.md lists them. Hand back the report path, the header and the decision list.
+CATALOG.md lists them. Then append the run record as `reference/CATALOG.md` "Run record" says. Hand
+back the report path, the header and the decision list.
 
 ## Check
 
@@ -118,7 +120,8 @@ rest unchanged. Canary findings stay out of the report body, which shows only th
 - any `verify` check fails at its step, or `unchecked_tokens` is above 0 in the census of record;
 - a head that matches an installed UI dependency has neither a prefix nor a reason in the appendix;
 - the user supplied known overrides and any is missing from the `m` records or is not flagged as the
-  user described (name the step that lost it).
+  user described (name the step that lost it);
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it.
 

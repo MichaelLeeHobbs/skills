@@ -1,0 +1,17 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"find-dead-css","scope":"apps/web","kind":"runtime","due":30,"applies":true,"absent":[]}
+{"t":"unit","skill":"pattern-census","scope":"apps/web","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"find-token-drift","scope":"apps/web","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"type-rhythm","scope":"apps/web","kind":"runtime","due":30,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"find-dead-css\",\"scope\":\"apps/web\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"dead\",\"value\":14,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-dead-css/apps/web/report.md\"}"}
+{"t":"report","line":1,"found":true,"commit":"aaaaaaa","value":13,"date":"2026-11-10"}
+{"t":"git","line":1,"ancestor":true,"commits":0}
+{"t":"ledger","line":2,"text":"{\"skill\":\"pattern-census\",\"scope\":\"apps/web\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"off_pattern_families\",\"value\":2,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/pattern-census/apps/web/report.md\"}"}
+{"t":"report","line":2,"found":true,"commit":"aaaaaaa","value":2,"date":"2026-11-09"}
+{"t":"git","line":2,"ancestor":true,"commits":0}
+{"t":"ledger","line":3,"text":"{\"skill\":\"find-token-drift\",\"scope\":\"apps/web\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"drifted_values\",\"value\":8,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-token-drift/apps/web/report.md\"}"}
+{"t":"report","line":3,"found":false}
+{"t":"git","line":3,"ancestor":true,"commits":0}
+{"t":"ledger","line":4,"text":"{\"skill\":\"type-rhythm\",\"scope\":\"apps/web\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"sizes_off\",\"value\":3,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/type-rhythm/apps/web/report.md\"}"}
+{"t":"git","line":4,"ancestor":true,"commits":0}

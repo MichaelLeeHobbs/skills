@@ -1,0 +1,6 @@
+{"t":"row","skill":"debt-ledger","scope":".","unit":"applies","status":"measured","reason":null,"metric":"blanket","value":40,"trend":"new_baseline","delta":null,"prev_line":null,"trend_key":null,"at":"2026-11-01T11:00:00Z","commit":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","days":14,"commits":30,"ratio":"1.2000","due":true,"rank":1,"good_line":3,"good_value":40,"line":3}
+{"t":"row","skill":"find-reinvention","scope":"apps/web","unit":"applies","status":"measured","reason":null,"metric":"jobs_2plus","value":9,"trend":"down","delta":-3,"prev_line":1,"trend_key":null,"at":"2026-11-01T10:00:00Z","commit":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","days":14,"commits":4,"ratio":"0.1600","due":false,"rank":null,"good_line":2,"good_value":9,"line":2}
+{"t":"coverage","scope":".","units":1,"measured":1,"clean":0,"due":1,"needs_setup":0}
+{"t":"coverage","scope":"apps/web","units":1,"measured":1,"clean":0,"due":0,"needs_setup":0}
+{"t":"total","units":2,"measured":2,"clean":0,"due":1,"needs_setup":0}
+{"t":"summary","read":3,"shown":2,"duplicates":0,"superseded":1,"rejected":0,"rows":2,"due":1,"through":"2026-11-01T11:00:00Z"}

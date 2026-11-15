@@ -12,6 +12,7 @@ Catalog: <folder in the repo>   Work folder: <path outside the repo>
 Jobs: <n> (<names>; <closed> closed, <partial> partial)   Patterns: confirmed | UNCONFIRMED
 Scanner cases: <passed> of <cases>   PASS | FAIL
 Sites: <n> (<same_as> same_as, <inside> inside conduits)   Blocked: <n>   Opaque: <n>
+Off-pattern families: <n>
 Audit: <sampled> sampled, <upheld> scanner errors upheld   PASS | FAIL | NOT BLIND FAIL
 Escape sample: <read> files read over <rounds> rounds, <escapes> escapes   PASS | FAIL
 Canaries: <n> of 5 behaved as planted   PASS | FAIL
@@ -22,6 +23,11 @@ Since last run: <per job site and coverage change> | definitions changed, not co
 
 If any line says FAIL or UNCONFIRMED, say first, above the header, that the run failed or is unconfirmed
 and which line.
+
+**Off-pattern families** counts `census` `family` records, across all jobs, whose job has at least one
+`stated` convention and that conform to none of them: for each stated convention of the job, the family
+matches no `allow` key or matches a `deny` key, with keys matched as ALGORITHM.md `census` matches them.
+Scope is ignored. Families of jobs with no stated convention (silent or vague) are not counted.
 
 ## One block per job
 

@@ -1,0 +1,6 @@
+{"t":"row","skill":"find-dead-code","scope":".","unit":"applies","status":"measured","reason":null,"metric":"unused","value":2,"trend":"new_baseline","delta":null,"prev_line":null,"trend_key":null,"at":"2026-11-05T10:00:00Z","commit":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","days":10,"commits":8,"ratio":"0.3333","due":false,"rank":null,"good_line":2,"good_value":2,"line":2}
+{"t":"row","skill":"find-reinvention","scope":"apps/web","unit":"applies","status":"measured","reason":null,"metric":"jobs_2plus","value":5,"trend":"new_baseline","delta":null,"prev_line":null,"trend_key":null,"at":"2026-11-01T10:00:00Z","commit":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","days":14,"commits":3,"ratio":"0.1200","due":false,"rank":null,"good_line":1,"good_value":5,"line":1}
+{"t":"coverage","scope":".","units":1,"measured":1,"clean":0,"due":0,"needs_setup":0}
+{"t":"coverage","scope":"apps/web","units":1,"measured":1,"clean":0,"due":0,"needs_setup":0}
+{"t":"total","units":2,"measured":2,"clean":0,"due":0,"needs_setup":0}
+{"t":"summary","read":2,"shown":2,"duplicates":0,"superseded":0,"rejected":0,"rows":2,"due":0,"through":"2026-11-05T10:00:00Z"}

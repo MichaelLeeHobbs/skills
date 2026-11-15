@@ -17,8 +17,9 @@ Find the entry points that production never reaches, and prove it. A finding say
 over D days in sources S, and no caller outside its registration". It never says "dead" or "safe to
 delete": the owner decides that.
 
-**What it writes.** In the target repo, only its catalog folder ([reference/CATALOG.md](reference/CATALOG.md)).
-It edits no code and commits nothing. Everything temporary goes in a work folder outside the repo.
+**What it writes.** In the target repo, only its catalog folder and one line of the shared run ledger
+([reference/CATALOG.md](reference/CATALOG.md)). It edits no code and commits nothing. Everything
+temporary goes in a work folder outside the repo.
 
 ## Prerequisites
 
@@ -89,7 +90,8 @@ Run `join` again with the demotes. Both passes can only demote.
 ## 5. Report and save the catalog
 
 Write the report as [reference/REPORT.md](reference/REPORT.md) lays out and append the history line as
-CATALOG.md says. Hand back the report path, header and decision list. Delete the work folder, or tell the
+CATALOG.md says, then the run record as CATALOG.md "Run record" says. Hand back the report path, header
+and decision list. Delete the work folder, or tell the
 user where it is and that it holds counts and a source snapshot.
 
 ## Check
@@ -115,7 +117,8 @@ from the day records you measured, never after seeing the output:
   canary came out wrong;
 - the inventory did not find the inventory canary;
 - a source the user named could not be queried;
-- the user supplied a list of known-dead or known-live entries and any came out against it.
+- the user supplied a list of known-dead or known-live entries and any came out against it;
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A check that could not run has failed. There is no skipped state.
 

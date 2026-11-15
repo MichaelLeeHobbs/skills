@@ -1,0 +1,16 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"find-token-drift","scope":"apps/web","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"pattern-census","scope":"apps/web","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"find-token-drift\",\"scope\":\"apps/web\",\"at\":\"2026-10-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"drifted_values\",\"value\":3,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-token-drift/apps/web/report.md\"}"}
+{"t":"report","line":1,"found":true,"commit":"aaaaaaa","value":3,"date":"2026-10-01"}
+{"t":"git","line":1,"ancestor":true,"commits":5}
+{"t":"ledger","line":2,"text":"{\"skill\":\"find-token-drift\",\"scope\":\"apps/web\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb+dirty\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"drifted_values\",\"value\":0,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-token-drift/apps/web/report.md\"}"}
+{"t":"report","line":2,"found":true,"commit":"bbbbbbbbbb+dirty","value":0,"date":"2026-11-10"}
+{"t":"git","line":2,"ancestor":true,"commits":0}
+{"t":"ledger","line":3,"text":"{\"skill\":\"pattern-census\",\"scope\":\"apps/web\",\"at\":\"2026-10-01T10:00:00Z\",\"commit\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb+dirty\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"off_pattern_families\",\"value\":4,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/pattern-census/apps/web/report.md\"}"}
+{"t":"report","line":3,"found":true,"commit":"bbbbbbb","value":4,"date":"2026-10-01"}
+{"t":"git","line":3,"ancestor":true,"commits":6}
+{"t":"ledger","line":4,"text":"{\"skill\":\"pattern-census\",\"scope\":\"apps/web\",\"at\":\"2026-11-12T10:00:00Z\",\"commit\":\"cccccccccccccccccccccccccccccccccccccccc\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"off_pattern_families\",\"value\":2,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/pattern-census/apps/web/report.md\"}"}
+{"t":"report","line":4,"found":true,"commit":"ccccccc","value":2,"date":"2026-11-12"}
+{"t":"git","line":4,"ancestor":true,"commits":1}

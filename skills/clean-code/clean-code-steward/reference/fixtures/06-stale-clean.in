@@ -1,0 +1,14 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"asset-garden","scope":".","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"theme-parity","scope":".","kind":"runtime","due":30,"applies":true,"absent":[]}
+{"t":"unit","skill":"debt-ledger","scope":".","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"asset-garden\",\"scope\":\".\",\"at\":\"2026-10-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"unused_confirmed\",\"value\":0,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/asset-garden/report.md\"}"}
+{"t":"report","line":1,"found":true,"commit":"aaaaaaa","value":0,"date":"2026-10-01"}
+{"t":"git","line":1,"ancestor":true,"commits":3}
+{"t":"ledger","line":2,"text":"{\"skill\":\"theme-parity\",\"scope\":\".\",\"at\":\"2026-10-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"clusters\",\"value\":0,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/theme-parity/report.md\"}"}
+{"t":"report","line":2,"found":true,"commit":"aaaaaaa","value":0,"date":"2026-10-01"}
+{"t":"git","line":2,"ancestor":true,"commits":0}
+{"t":"ledger","line":3,"text":"{\"skill\":\"debt-ledger\",\"scope\":\".\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"blanket\",\"value\":0,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/debt-ledger/report.md\"}"}
+{"t":"report","line":3,"found":true,"commit":"aaaaaaa","value":0,"date":"2026-11-10"}
+{"t":"git","line":3,"ancestor":true,"commits":0}

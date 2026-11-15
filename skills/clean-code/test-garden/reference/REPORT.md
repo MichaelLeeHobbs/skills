@@ -56,9 +56,22 @@ to keep.
 
 ## Catalog
 
-A folder inside the target repo: the folder your agent keeps project configuration in, with a
-`test-garden/` folder under it, or `.test-garden/` at the repo root if your agent has none. Use the
-same folder every run. The skill writes this folder and nothing else in the repo, and never commits.
+### Where
+
+Use `clean-code/` inside your agent's project configuration folder, or `.clean-code/` at the repo root if
+your agent has none. If a `clean-code/` folder already exists in another folder at the repo root, use that
+one; if two exist, stop and name both. This skill's files go in `clean-code/test-garden/`; for a package
+scope, in `clean-code/test-garden/<repo path of the package>/` (for example
+`clean-code/test-garden/apps/web/`). Write this folder and the shared `clean-code/ledger.jsonl` and
+nothing else in the repo; never commit.
+
+**Legacy folder.** On the first write, if `test-garden/` exists beside `clean-code/` (or `.test-garden/`
+at the repo root), copy the whole folder into the new home: catalogs, history and user-owned files. A
+legacy package subfolder named after a package goes to that package's repo path; if more than one could
+match, stop and name the candidates. Say in the report header that you copied it and that the user can
+delete the legacy folder. Never read the legacy folder again, and never delete it yourself.
+
+### Files
 
 | File | Content | Written by |
 |---|---|---|
@@ -77,3 +90,28 @@ left the table as fixed (still in the inventory) or deleted (gone from it).
 
 Propose new `ignore.jsonl` entries in the report; never write them. Nothing else is kept: no verdicts,
 since every run measures again, and never the built tool, reports, samples or mutant copies.
+
+### Run record
+
+Replace `report.md` only after this run's own checks are done. Then append exactly one line to
+`clean-code/ledger.jsonl`, pass or fail:
+
+```
+{"skill":"test-garden","scope":".","at":"2026-11-15T14:02:00Z","commit":"<full hash>","check":"pass","degraded":false,"metric":"flaky","value":<n>,"comparable":"mode=full;rung=<a-d>;runner=<runner>;window_days=<days>","report":"<path to report.md>"}
+```
+
+| Field | Value |
+|---|---|
+| `skill` | `test-garden` |
+| `scope` | `.` for the whole repo, else the package's repo-relative path with `/` separators |
+| `at` | UTC time the run finished, `YYYY-MM-DDTHH:MM:SSZ` |
+| `commit` | the full commit hash read at the start of the run, with `+dirty` appended if the working tree had changes; `none` without version control |
+| `check` | `fail` if the report says the run failed; `partial` if any check line reads PARTIAL, UNCONFIRMED, not run, or user's word, or a lane the user asked for reads not run on the `Lanes` line (a lane left off by choice, such as weak or dupes by default, does not count); otherwise `pass` |
+| `degraded` | `false`, or the one missing thing: `browser`, `runtime-evidence`, `ci-history`, `build`, `parser`. Record `ci-history` when the flaky lane did not run (not run or FAILED) |
+| `metric` | `flaky` |
+| `value` | the integer `<flaky>` on the report's `Flaky` line (tests ranked), or `null` when the flaky lane did not run |
+| `comparable` | `mode=full` or `mode=degraded`, then `;` and this skill's fields sorted by key: `rung`, `runner`, `window_days`, as in the history line |
+| `report` | repo-relative path of this run's `report.md` |
+
+After appending, check that the file grew by exactly one line and that no earlier line changed. Order in
+the file does not matter.

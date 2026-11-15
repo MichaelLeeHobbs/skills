@@ -1,0 +1,14 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"find-reinvention","scope":"apps/web","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"vocabulary-drift","scope":".","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"debt-ledger","scope":".","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"find-reinvention\",\"scope\":\"apps/web\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"jobs_2plus\",\"value\":5,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-reinvention/apps/web/report.md\"}"}
+{"t":"report","line":1,"found":true,"commit":"aaaaaaa","value":5,"date":"2026-11-10"}
+{"t":"git","line":1,"ancestor":true,"commits":1}
+{"t":"ledger","line":2,"text":"{\"skill\":\"vocabulary-drift\",\"scope\":\".\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"drifting\",\"value\":5,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/vocabulary-drift/report.md\"}"}
+{"t":"report","line":2,"found":true,"commit":"bbbbbb","value":5,"date":"2026-11-10"}
+{"t":"git","line":2,"ancestor":true,"commits":1}
+{"t":"ledger","line":3,"text":"{\"skill\":\"debt-ledger\",\"scope\":\".\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"cccccccccccccccccccccccccccccccccccccccc\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"blanket\",\"value\":5,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/debt-ledger/report.md\"}"}
+{"t":"report","line":3,"found":true,"commit":"ccccccd","value":5,"date":"2026-11-10"}
+{"t":"git","line":3,"ancestor":true,"commits":1}

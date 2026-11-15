@@ -1,0 +1,10 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"find-reinvention","scope":"apps/web","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"find-dead-code","scope":".","kind":"runtime","due":30,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"find-reinvention\",\"scope\":\"apps/web\",\"at\":\"2026-11-01T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"jobs_2plus\",\"value\":5,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-reinvention/apps/web/report.md\"}"}
+{"t":"report","line":1,"found":true,"commit":"aaaaaaa","value":5,"date":"2026-11-01"}
+{"t":"git","line":1,"ancestor":true,"commits":3}
+{"t":"ledger","line":2,"text":"{\"skill\":\"find-dead-code\",\"scope\":\".\",\"at\":\"2026-11-05T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"unused\",\"value\":2,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-dead-code/report.md\"}"}
+{"t":"report","line":2,"found":true,"commit":"aaaaaaa","value":2,"date":"2026-11-05"}
+{"t":"git","line":2,"ancestor":true,"commits":8}

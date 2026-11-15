@@ -66,6 +66,7 @@ Gardening and weeding an existing codebase: finding what is duplicated, dead, dr
 
 | Skill | What it does |
 |---|---|
+| `clean-code-steward` | Start here. Surveys which clean-code skills apply to a repo, recommends the one or two to run next with a reason each, hands off the run, and keeps a shared ledger and scorecard of how each domain measures over time, from facts rather than grades. Every skill below appends one line to that ledger when it runs. |
 | `find-reinvention` | Find helpers that do the same job under different code or names across a whole package. Builds a catalog of every named function with cheap workers and a proven bookkeeping tool, groups rows by job, judges each group from source, runs the copies side by side, and reports the behaviour differences as decisions. The catalog lives in the repo, so re-runs reuse it, track removed functions and show cleanup progress. |
 | `optimize-comments` | Keep the shortest comments that prevent misunderstandings or wrong edits. Cuts nearby-code narration, preserves useful constraints and active tool directives, checks contradictions, and adds missing reasons only when supported by evidence. |
 | `optimize-docs` | Audit the prose docs in a repository and make them smaller. Extracts every path, command, flag, symbol and link the docs claim and checks it against the repo, so prose gets graded on evidence instead of on how it reads. Deletes what the code already says, routes a real decision to a dated record, and refuses to create a new home for anything that failed the test. |

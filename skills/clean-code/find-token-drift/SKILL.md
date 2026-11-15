@@ -102,7 +102,8 @@ CONFIRMED snap becomes a default in the decision list.
 
 Write the report as [reference/REPORT.md](reference/REPORT.md) lays out, the per-line change list to the
 work folder, and the catalog files as CATALOG.md lists them. On a re-run, run `diff` against the saved
-values first. Hand back the report path, its header and the decision list.
+values first. Then append the run record as `reference/CATALOG.md` "Run record" says. Hand back the
+report path, its header and the decision list.
 
 ## Check
 
@@ -123,7 +124,8 @@ and the canary run's output:
 
 **The run fails**, and the report says so above the header, when any of these happens: a fixture fails;
 `verify --check occ` or `verify --check coverage` fails; the tripwire passes; any canary fails; the judge's
-plan still has rejected rows after one resend and they cover more than 10% of judged uses. A run that
+plan still has rejected rows after one resend and they cover more than 10% of judged uses; the run record
+is missing, or disagrees with this report's commit, value or check. A run that
 could not perform one of these checks has failed it.
 
 ## If you cannot run work in parallel

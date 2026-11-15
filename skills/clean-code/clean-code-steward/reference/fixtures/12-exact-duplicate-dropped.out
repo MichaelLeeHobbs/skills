@@ -1,0 +1,6 @@
+{"t":"row","skill":"debt-ledger","scope":".","unit":"applies","status":"measured","reason":null,"metric":"blanket","value":6,"trend":"down","delta":-1,"prev_line":1,"trend_key":null,"at":"2026-11-10T10:00:00Z","commit":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb","days":5,"commits":1,"ratio":"0.0400","due":false,"rank":null,"good_line":3,"good_value":6,"line":3}
+{"t":"coverage","scope":".","units":1,"measured":1,"clean":0,"due":0,"needs_setup":0}
+{"t":"total","units":1,"measured":1,"clean":0,"due":0,"needs_setup":0}
+{"t":"problem","line":2,"reason":"duplicate","of":1}
+{"t":"problem","line":4,"reason":"duplicate","of":1}
+{"t":"summary","read":4,"shown":1,"duplicates":2,"superseded":1,"rejected":0,"rows":1,"due":0,"through":"2026-11-10T10:00:00Z"}

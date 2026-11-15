@@ -18,9 +18,9 @@ Find every concept a repo names more than once, every name that means more than 
 one canonical name for each. Shared words and similar shapes propose a pair; only cited source decides
 it, and a real distinction (an order produces studies; they are not one thing) must survive.
 
-**What it writes.** In the target repo, only its catalog folder ([reference/CATALOG.md](reference/CATALOG.md)).
-It edits no code, renames nothing and commits nothing. Everything temporary goes in a work folder
-outside the repo.
+**What it writes.** In the target repo, only its catalog folder and one line of the shared run ledger
+([reference/CATALOG.md](reference/CATALOG.md)). It edits no code, renames nothing and commits nothing.
+Everything temporary goes in a work folder outside the repo.
 
 ## Prerequisites
 
@@ -57,9 +57,9 @@ with a context, as SITES.md describes. Count each file and surface a second, ind
 
 If the catalog folder already holds `concepts.jsonl`, the run is a re-run: follow CATALOG.md.
 
-**A find-reinvention catalog**, if the repo has one: read its `domains.jsonl` and `mapping.jsonl` as
-SITES.md "Seeds" says, and record a `seed` line per file for `tally`. If there is none, the header says
-`Seeds: none` and every later step runs unchanged.
+**A find-reinvention catalog**, if `clean-code/find-reinvention/` holds one: read its `domains.jsonl`
+and `mapping.jsonl` as SITES.md "Seeds" says, and record a `seed` line per file for `tally`. If there is
+none, the header says `Seeds: none` and every later step runs unchanged.
 
 ## 1b. Canaries and budget
 
@@ -108,7 +108,8 @@ output, the candidate statuses, the seeds and the spend.
 ## 6. Report and save the catalog
 
 Choose canonical names and write the report as [reference/REPORT.md](reference/REPORT.md) lays out, and
-the catalog files as CATALOG.md lists them. Hand back the report path, header and decision list.
+the catalog files as CATALOG.md lists them. Then append the run record as CATALOG.md "Run record" says.
+Hand back the report path, header and decision list.
 
 ## Check
 
@@ -127,7 +128,8 @@ calibration. **The run fails**, and the report says so above the header, when an
 - a canary name is absent from the canary `terms` run on a surface it was planted on;
 - `verify --check coverage` or `verify --check map` fails, or `tally` reports a seed file not read in
   full;
-- the user supplied known synonym or homonym pairs and any is missing from every claim.
+- the user supplied known synonym or homonym pairs and any is missing from every claim;
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it.
 

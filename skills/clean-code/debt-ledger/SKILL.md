@@ -17,7 +17,8 @@ description: >-
 Count the debt a repo has written down, date it, assign it to a team, and show honestly how it moved
 since the last run. Every number comes from the bookkeeping tool. No model reads or judges single items.
 
-**What it writes.** In the target repo, only its ledger folder ([reference/LEDGER.md](reference/LEDGER.md)).
+**What it writes.** In the target repo, only its ledger folder and one line of the shared run record
+`clean-code/ledger.jsonl`, which is not part of the ledger ([reference/LEDGER.md](reference/LEDGER.md)).
 It edits no code, config or baseline, and commits nothing. Temporary files go in a work folder outside
 the repo.
 
@@ -105,8 +106,8 @@ the Canaries line.
 
 Run `tally` with every item, the run record, the strict patterns, each baseline's total, and the last
 history line. Write the report as [reference/REPORT.md](reference/REPORT.md) lays out and the ledger files
-as LEDGER.md lists them, including the `history` record as a new line. Hand back the report path and its
-header.
+as LEDGER.md lists them, including the `history` record as a new line. Then append the run record as
+`reference/LEDGER.md` "Run record" says. Hand back the report path and its header.
 
 ## Check
 
@@ -119,7 +120,8 @@ header.
 - a canary item is missed, misclassified or wrongly counted, or a canary negative is counted;
 - a baseline canary unit lands outside its planted class;
 - a re-derived date disagrees with blame;
-- the tool reports `conserved` false for any source.
+- the tool reports `conserved` false for any source;
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it.
 

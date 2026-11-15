@@ -17,7 +17,7 @@ description: >-
 Find the token edits that make every theme readable, and prove each one by rendering. Never estimate a
 ratio: the tool computes every number. Never call a fix PROVEN without the re-render that shows it.
 
-**What it writes.** In the target repo, only its catalog folder ([reference/CATALOG.md](reference/CATALOG.md)).
+**What it writes.** In the target repo, only its catalog folder and one ledger line ([reference/CATALOG.md](reference/CATALOG.md)).
 It edits no code and no tokens, and commits nothing. Everything temporary goes in a work folder outside
 the repo.
 
@@ -91,7 +91,8 @@ is intentional.
 
 Run the pixel ground-truth check (COLLECT.md) through `verify --check truth`. Write the report as
 [reference/REPORT.md](reference/REPORT.md) lays out and the catalog files as CATALOG.md lists them. Hand
-back the report path, header and decision list.
+back the report path, header and decision list. Then append the run record as `reference/CATALOG.md`
+"Run record" says.
 
 ## Check
 
@@ -102,7 +103,8 @@ back the report path, header and decision list.
 - ground truth is off on more than 1 sample in 10, or could not run (no screenshots, under 10 samples);
 - `measure` returns FAIL: undecided rows above 5%, or unparsed colours above 1%;
 - a fix line says PROVEN without its re-render output, or a number in the report did not come from the
-  tool.
+  tool;
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it. A PARTIAL coverage run may report
 failures but never says the app passes.

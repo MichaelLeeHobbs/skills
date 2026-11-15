@@ -1,0 +1,15 @@
+{"t":"row","skill":"debt-ledger","scope":".","unit":"applies","status":"measured","reason":null,"metric":"blanket","value":3,"trend":"new_baseline","delta":null,"prev_line":null,"trend_key":null,"at":"2026-11-10T10:00:00Z","commit":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","days":5,"commits":1,"ratio":"0.0400","due":false,"rank":null,"good_line":1,"good_value":3,"line":1}
+{"t":"coverage","scope":".","units":1,"measured":1,"clean":0,"due":0,"needs_setup":0}
+{"t":"total","units":1,"measured":1,"clean":0,"due":0,"needs_setup":0}
+{"t":"problem","line":2,"reason":"bad_json"}
+{"t":"problem","line":3,"reason":"not_object"}
+{"t":"problem","line":4,"reason":"missing_field","field":"check"}
+{"t":"problem","line":5,"reason":"bad_field","field":"check"}
+{"t":"problem","line":6,"reason":"bad_field","field":"degraded"}
+{"t":"problem","line":7,"reason":"bad_field","field":"comparable"}
+{"t":"problem","line":8,"reason":"bad_field","field":"at"}
+{"t":"problem","line":9,"reason":"bad_json"}
+{"t":"problem","line":10,"reason":"bad_field","field":"scope"}
+{"t":"problem","line":11,"reason":"bad_field","field":"commit"}
+{"t":"problem","line":12,"reason":"bad_field","field":"comparable"}
+{"t":"summary","read":12,"shown":1,"duplicates":0,"superseded":0,"rejected":11,"rows":1,"due":0,"through":"2026-11-10T10:00:00Z"}

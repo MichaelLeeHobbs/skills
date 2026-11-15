@@ -75,6 +75,6 @@ Review the diff against the original comments. Confirm no unique reason, caller 
 
 Run relevant checks for any authorized code or directive changes, including the consuming tool when a directive changed. If a required check cannot run, report that change as unverified rather than declaring it successful.
 
-Show the diff and verdict counts. List unresolved contradictions, unavailable evidence, and important behaviors lacking tests separately. Report comment word counts before and after as context, without a reduction target. Additions can be justified even when the total grows.
+Show the diff and verdict counts. List unresolved contradictions, unavailable evidence, and important behaviors lacking tests separately. Report comment word counts before and after as context, without a reduction target. Additions can be justified even when the total grows. Then append the run record as `reference/RUN-RECORD.md` "Run record" says.
 
-**The pass succeeds when** every comment is accounted for, each change has a defensible information-based reason, protected content remains intact, and required checks pass. Zero edits is a valid result. Do not manufacture a deletion or addition to meet a count.
+**The pass succeeds when** every comment is accounted for, each change has a defensible information-based reason, protected content remains intact, and required checks pass. Zero edits is a valid result. Do not manufacture a deletion or addition to meet a count. The pass fails when the run record is missing, or disagrees with this report's commit, value or check.

@@ -1,0 +1,4 @@
+{"t":"row","skill":"css-override-census","scope":"apps/web","unit":"applies","status":"unproven","reason":"partial","metric":"important","value":7,"trend":"none","delta":null,"prev_line":null,"trend_key":null,"at":"2026-11-01T10:00:00Z","commit":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","days":14,"commits":1,"ratio":null,"due":true,"rank":1,"good_line":null,"good_value":null,"line":1}
+{"t":"coverage","scope":"apps/web","units":1,"measured":0,"clean":0,"due":1,"needs_setup":0}
+{"t":"total","units":1,"measured":0,"clean":0,"due":1,"needs_setup":0}
+{"t":"summary","read":1,"shown":1,"duplicates":0,"superseded":0,"rejected":0,"rows":1,"due":1,"through":"2026-11-01T10:00:00Z"}

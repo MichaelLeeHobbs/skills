@@ -1,0 +1,17 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"find-contract-drift","scope":".","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"debt-ledger","scope":".","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"asset-garden","scope":".","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"unit","skill":"find-dead-code","scope":".","kind":"runtime","due":30,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"find-contract-drift\",\"scope\":\".\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"cccccccccccccccccccccccccccccccccccccccc\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"breaking\",\"value\":4,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-contract-drift/report.md\"}"}
+{"t":"report","line":1,"found":true,"commit":"ccccccc","value":4,"date":"2026-11-10"}
+{"t":"git","line":1,"ancestor":false,"commits":0}
+{"t":"ledger","line":2,"text":"{\"skill\":\"debt-ledger\",\"scope\":\".\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"cccccccccccccccccccccccccccccccccccccccc\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"blanket\",\"value\":9,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/debt-ledger/report.md\"}"}
+{"t":"report","line":2,"found":true,"commit":"ccccccc","value":9,"date":"2026-11-10"}
+{"t":"ledger","line":3,"text":"{\"skill\":\"asset-garden\",\"scope\":\".\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"none\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"unused_confirmed\",\"value\":2,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/asset-garden/report.md\"}"}
+{"t":"report","line":3,"found":true,"commit":"none","value":2,"date":"2026-11-10"}
+{"t":"git","line":3,"ancestor":true,"commits":0}
+{"t":"ledger","line":4,"text":"{\"skill\":\"find-dead-code\",\"scope\":\".\",\"at\":\"2026-10-06T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"unused\",\"value\":3,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/find-dead-code/report.md\"}"}
+{"t":"report","line":4,"found":true,"commit":"aaaaaaa","value":3,"date":"2026-10-06"}
+{"t":"git","line":4,"ancestor":true,"commits":1}

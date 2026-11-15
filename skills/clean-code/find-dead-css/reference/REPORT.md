@@ -54,11 +54,24 @@ can run themselves to confirm no reference.
 4. **Out of scope**: at-rules, runtime CSS-in-JS, cross-origin frames, closed declarative shadow roots,
    vendor sheets, each with a count.
 
+## Where
+
+Use `clean-code/` inside your agent's project configuration folder, or `.clean-code/` at the repo root if
+your agent has none. If a `clean-code/` folder already exists in another folder at the repo root, use
+that one; if two exist, stop and name both. This skill's files go in `clean-code/find-dead-css/`; for a
+package scope, in `clean-code/find-dead-css/<repo path of the package>/` (for example
+`clean-code/find-dead-css/apps/web/`). Write this folder and the shared `clean-code/ledger.jsonl` and
+nothing else in the repo; never commit.
+
+**Legacy folder.** On the first write, if `dead-css/` exists beside `clean-code/` (or `.dead-css/` at the
+repo root), copy the whole folder into the new home: catalogs, history and user-owned files. A legacy
+package subfolder named after a package goes to that package's repo path; if more than one could match,
+stop and name the candidates. Say in the report header that you copied it and that the user can delete
+the legacy folder. Never read the legacy folder again, and never delete it yourself.
+
 ## Catalog
 
-A folder inside the target repo: the folder your agent keeps project configuration in, with a
-`dead-css/` folder under it, or `.dead-css/` at the repo root if your agent has none. Use the same folder
-on every run. The skill writes this folder and nothing else in the repo, and never commits.
+The catalog is this skill's folder from [Where](#where). Use the same folder on every run.
 
 | File | Content | Sorted by |
 |---|---|---|
@@ -74,3 +87,28 @@ admin routes: say so before the user commits it to a public repo.
 
 On a re-run, start from `plan.jsonl` (see [PLAN.md](PLAN.md#on-a-re-run)) and fill the header's Last
 run line from the last `history.jsonl` line.
+
+## Run record
+
+Replace `report.md` only after this run's own checks are done. Then append exactly one line to
+`clean-code/ledger.jsonl`, pass or fail:
+
+```
+{"skill":"find-dead-css","scope":".","at":"2026-11-15T14:02:00Z","commit":"<full hash>","check":"pass","degraded":false,"metric":"dead","value":<n>,"comparable":"mode=full;plan=<hash of plan.jsonl>","report":"<path to report.md>"}
+```
+
+| Field | Value |
+|---|---|
+| `skill` | `find-dead-css` |
+| `scope` | `.` for the whole repo, else the package's repo-relative path with `/` separators |
+| `at` | UTC time the run finished, `YYYY-MM-DDTHH:MM:SSZ` |
+| `commit` | the full commit hash read at the start of the run, with `+dirty` appended if the working tree had changes; `none` without version control |
+| `check` | `fail` if the report says the run failed; `partial` if any check line reads PARTIAL, UNCONFIRMED, not run, or user's word (a Canaries line of `not run (static-only)` and a Proof of `not run` or `BLOCKED` are `partial`); otherwise `pass` |
+| `degraded` | `false`, or the one missing thing: `browser`, `runtime-evidence`, `ci-history`, `build`, `parser`. A static-only run records `browser` |
+| `metric` | `dead` |
+| `value` | the DEAD count on the report's `Verdicts` line, or `null` in static-only mode, where no member can be DEAD |
+| `comparable` | `mode=full` or `mode=degraded`, then `;` and this skill's fields sorted by key: `plan` (the hash of `plan.jsonl` that `history.jsonl` records; `none` in static-only mode). A static-only run's `comparable` starts with `mode=degraded` |
+| `report` | repo-relative path of this run's `report.md` |
+
+After appending, check that the file grew by exactly one line and that no earlier line changed. Order in
+the file does not matter.

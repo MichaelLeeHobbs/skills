@@ -19,8 +19,9 @@ Find every data shape a repo defines more than once, show field by field where t
 the wire, and rank what breaks. A shared name or field overlap proposes a group; the parsed definitions,
 the serializer config and a run decide it.
 
-**What it writes.** In the target repo, only its catalog folder ([reference/CATALOG.md](reference/CATALOG.md)).
-It edits no code and commits nothing. Everything temporary goes in a work folder outside the repo.
+**What it writes.** In the target repo, only its catalog folder and one line of the shared run record
+([reference/CATALOG.md](reference/CATALOG.md)). It edits no code and commits nothing. Everything temporary
+goes in a work folder outside the repo.
 
 ## Prerequisites
 
@@ -30,18 +31,16 @@ Stop before any cost and say which is missing:
   A language without one fails the run unless the user excludes it at the budget approval; the header
   then names it and its producers show as `unparsed producer`.
 
-**Where code goes.** Source goes only to the model provider you already use. Proof uses copied shapes and
-copied serializer setup in the bare runtime. Never start the application, call an endpoint or open a
-database.
+**Where code goes.** Source goes only to the model provider you already use. Proof copies shapes and
+serializer setup into the bare runtime; never start the application, call an endpoint or open a database.
 
 ## Roles
 
-You coordinate. You hold the plan and the tool's counts, never the rows: the tool reads and writes the
-row files. Start each step from the tool's output with a fresh context. A cheaper model is enough for
-extracting config rows; judging needs the most capable model available to you. With one model, use it
-for everything. Start workers in waves no larger than your agent's limit on concurrent work. If you
-cannot start fresh contexts, continue in one and say in the report header that steps and calibration
-passes were not independent.
+You coordinate and hold the plan and the tool's counts, never the rows: the tool reads and writes the
+row files. Start each step from the tool's output in a fresh context. A cheaper model can extract config
+rows; judging needs the most capable model available to you; with one model, use it for everything.
+Start workers in waves within your agent's limit on concurrent work. Without fresh contexts, continue
+in one and say in the report header that steps and calibration passes were not independent.
 
 ## 0. Build and prove the tool
 
@@ -107,8 +106,8 @@ run `verify --check evidence`; it must pass.
 ## 7. Report and save the catalog
 
 Run `tally`. Write the report as [reference/REPORT.md](reference/REPORT.md) lays out, every number from
-tool output, and the catalog files as CATALOG.md lists them. Hand back the report path, header and
-decision list.
+tool output, and the catalog files as CATALOG.md lists them. Then append the run record as
+`reference/CATALOG.md` "Run record" says. Hand back the report path, header and decision list.
 
 ## Check
 
@@ -136,8 +135,8 @@ calibration. Canary rows stay out of coverage, `tally`, the decision list and th
 - any `verify` check fails at its step;
 - none of the top 10 BREAKING cells has evidence beyond `uncited` although at least one was provable;
 - a group holding an UNRESOLVED, BLOCKED or `uncited` cell is reported as clean;
-- the user supplied a list of known drifts and one is missing from every group (name the step that lost
-  it).
+- a known drift the user listed is missing from every group (name the step that lost it);
+- the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it.
 

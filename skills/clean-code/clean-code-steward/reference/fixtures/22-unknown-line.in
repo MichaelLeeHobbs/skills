@@ -1,0 +1,6 @@
+reduce
+{"t":"now","at":"2026-11-15T12:00:00Z"}
+{"t":"unit","skill":"debt-ledger","scope":".","kind":"source","due":25,"applies":true,"absent":[]}
+{"t":"ledger","line":1,"text":"{\"skill\":\"debt-ledger\",\"scope\":\".\",\"at\":\"2026-11-10T10:00:00Z\",\"commit\":\"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\",\"check\":\"pass\",\"degraded\":false,\"metric\":\"m\",\"value\":1,\"comparable\":\"mode=full;v=1\",\"report\":\".clean-code/debt-ledger/report.md\"}"}
+{"t":"git","line":1,"ancestor":true,"commits":0}
+{"t":"git","line":9,"ancestor":true,"commits":0}

@@ -1,0 +1,6 @@
+{"t":"row","skill":"css-override-census","scope":".","unit":"applies","status":"unmeasured","reason":null,"metric":null,"value":null,"trend":"none","delta":null,"prev_line":null,"trend_key":null,"at":null,"commit":null,"days":null,"commits":null,"ratio":null,"due":true,"rank":2,"good_line":null,"good_value":null,"line":null}
+{"t":"row","skill":"find-reinvention","scope":"apps/web","unit":"applies","status":"unmeasured","reason":null,"metric":null,"value":null,"trend":"none","delta":null,"prev_line":null,"trend_key":null,"at":null,"commit":null,"days":null,"commits":null,"ratio":null,"due":true,"rank":1,"good_line":null,"good_value":null,"line":null}
+{"t":"coverage","scope":".","units":1,"measured":0,"clean":0,"due":1,"needs_setup":0}
+{"t":"coverage","scope":"apps/web","units":1,"measured":0,"clean":0,"due":1,"needs_setup":0}
+{"t":"total","units":2,"measured":0,"clean":0,"due":2,"needs_setup":0}
+{"t":"summary","read":0,"shown":0,"duplicates":0,"superseded":0,"rejected":0,"rows":2,"due":2,"through":null}

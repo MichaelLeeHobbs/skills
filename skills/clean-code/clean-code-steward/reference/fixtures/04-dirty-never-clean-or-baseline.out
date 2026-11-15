@@ -1,0 +1,5 @@
+{"t":"row","skill":"find-token-drift","scope":"apps/web","unit":"applies","status":"unproven","reason":"dirty","metric":"drifted_values","value":0,"trend":"none","delta":null,"prev_line":null,"trend_key":null,"at":"2026-11-10T10:00:00Z","commit":"bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb+dirty","days":5,"commits":0,"ratio":null,"due":true,"rank":1,"good_line":1,"good_value":3,"line":2}
+{"t":"row","skill":"pattern-census","scope":"apps/web","unit":"applies","status":"measured","reason":null,"metric":"off_pattern_families","value":2,"trend":"new_baseline","delta":null,"prev_line":null,"trend_key":null,"at":"2026-11-12T10:00:00Z","commit":"cccccccccccccccccccccccccccccccccccccccc","days":3,"commits":1,"ratio":"0.0400","due":false,"rank":null,"good_line":4,"good_value":2,"line":4}
+{"t":"coverage","scope":"apps/web","units":2,"measured":1,"clean":0,"due":1,"needs_setup":0}
+{"t":"total","units":2,"measured":1,"clean":0,"due":1,"needs_setup":0}
+{"t":"summary","read":4,"shown":2,"duplicates":0,"superseded":2,"rejected":0,"rows":2,"due":1,"through":"2026-11-12T10:00:00Z"}

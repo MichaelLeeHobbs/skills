@@ -1,45 +1,95 @@
-# What the verdicts look like in real code
+# How the verdicts land
 
-Read this when a comment's disposition is ambiguous. Judge the information it supplies and the role it serves.
+Read this when a comment's verdict is not obvious. Each case names the verdict and why.
 
-## Redundant narration
+## Narration
 
-`// Increment the retry count` above `retryCount++` adds nothing. Delete it. A doc comment that repeats a declaration's name or `@param path the path` can lose that repetition, while retaining any actual caller contract and required documentation structure.
+`// Increment the retry count` above `retryCount++`: Delete. So is `// Loop over the users`, `// Return
+the result`, and every comment that says in English what the next line says in code. These are the
+comments most likely to go stale, because nothing forces anyone to update them.
 
-Do not use shared vocabulary as a shortcut: "`timeout` is in seconds; the upstream API expects milliseconds" repeats a name but adds a consequential unit boundary.
+## Doc comments that repeat the signature
 
-## A compatibility reason
+```ts
+/**
+ * Gets the user.
+ * @param id - The user id.
+ * @returns A promise of the user.
+ */
+async function getUser(id: UserId): Promise<User>
+```
 
-"Rhino reuses const bindings across loop iterations" can prevent a well-intended rewrite from reintroducing a runtime bug. Keep the short reason when it applies to the supported runtime, even if a regression test already covers the behavior. Verify the runtime constraint before adding or retaining it as fact.
+Delete the whole block. The summary repeats the name, the tags repeat the types. An agent reads the
+signature anyway.
 
-## Behavior already covered by a test
+```ts
+/** Throws NotFound when the user was hard-deleted; soft-deleted users resolve with `deletedAt` set. */
+async function getUser(id: UserId): Promise<User>
+```
 
-A test asserting retries occur in order does not explain why an external service requires that order. Keep the local constraint. Delete a comment merely walking through the retry loop when its mechanics are already clear.
+Keep: a caller rule the types miss. It is also a fact about the contract, not a description of the
+body, so it does not drift when the body changes.
 
-Do not paste the test into the comment. State only the reason or contract the reader cannot readily recover from the nearby code.
+## Class and file summaries
+
+`/** Service for managing orders. */` above `class OrderService`: Delete. A file header that lists what
+the file contains: Delete. A header that says "this module must not import from `ui/`; it runs in the
+worker": Keep, a rule the code cannot state.
+
+## Units and ranges
+
+"`timeout` is in seconds; the upstream API expects milliseconds": Keep, a caller rule. Better still, if
+code changes are allowed, rename to `timeoutSeconds` and delete the comment. A name cannot drift.
+
+## A deliberate oddity
+
+```js
+// Rhino reuses const bindings across loop iterations; use let.
+```
+
+Keep: an agent would "modernize" this to `const` and reintroduce the bug. If a test pins it and its
+name says why (`keeps let in loops: Rhino reuses const bindings`), Move to test and delete the comment.
+
+## Behaviour a test pins
+
+`// Retries must run in order` with a test named `retries run in order`: Move to test only if the reason
+is there too. Order alone is not the reason. If the reason is "the payment gateway rejects
+out-of-order idempotency keys", either the test's name or assertion message says that, or the comment
+stays as one line.
 
 ## Tool directives
 
-Preserve active directives such as `prettier-ignore`, formatter enable/disable markers, lint suppressions, compiler annotations in comments, and coverage controls. They affect tool behavior and are not disposable prose. A short explanation of why a suppression exists can also prevent a wrong edit.
-
-If a directive seems obsolete, identify its consumer and the condition it suppresses. Remove it only when that change is in scope and the relevant tool confirms the intended behavior. Preserve an unknown directive and report the missing evidence.
-
-## Stale history
-
-Ask whether a reader could still make the mistake the history warns about. A completed migration, removed option, or old name can go when no supported path or live constraint depends on knowing it. Keep a rejected alternative someone could plausibly propose again.
-
-Do not delete a comment solely because it predates the code. Check the claim. Preserve license-required attribution regardless of whether version history records the author.
-
-## A reason longer than its code
-
-A one-line workaround can need two sentences explaining a dependency defect and the condition for removing it. Keep both when each changes what a future editor can safely do. Put a lengthy design discussion in an existing decision record when appropriate, retaining the shortest local explanation or pointer the reader needs.
-
-## Section banners
-
-Delete banners that repeat structure already clear from names and indentation. Keep a short label that organizes a long literal or rules table and helps a reader locate the relevant group.
-
-Extract a named constant only when code changes are authorized and the extraction improves the code. Do not split a coherent table solely to eliminate its headings.
+`// eslint-disable-next-line no-await-in-loop -- gateway rate-limits parallel calls`: Keep, a fixed
+exception with its reason. A directive with no reason: Keep the directive; add the reason only if you
+found evidence for it. A directive that suppresses nothing any more is a code change: remove it only
+when the linter, run without it, confirms nothing new fires.
 
 ## Commented-out code
 
-Remove abandoned implementation when version history preserves it and it has no current explanatory role. A small example of a rejected approach may be useful if it demonstrates the precise error a future editor would otherwise repeat. Retain only enough to explain that constraint.
+Delete, always. Version control has it. If it shows an approach that fails for a reason someone would
+retry, write that reason as one line and delete the code.
+
+## History notes
+
+"Migrated from v1 in 2023", "Renamed from fooBar", "Added for the Q3 launch": Delete. History lives in
+version control. "Do not switch to the streaming parser: it drops trailing records (issue 412)": Keep.
+That is a rejected alternative an agent could propose again, with a pointer.
+
+## Section banners
+
+`// ===== Helpers =====`: Delete. A short label grouping rows in a long data table or rules table:
+Keep, if it is the only way to find a group.
+
+## Long explanations
+
+A paragraph explaining a design decision: Shorten to one line and a pointer to the decision record or
+issue that holds the rest. If no such record exists, keep the shortest version that states the
+constraint, and list it in the report as a candidate for a decision record.
+
+## Looks like a keep, is not
+
+- "This is important": says nothing an agent can act on. Delete.
+- "Be careful when changing this": names no rule. Delete, unless you can find the rule and write that
+  instead.
+- "See the function below": the agent can see it. Delete.
+- "Note: returns null if not found", when the return type is `User | null`: the type says it. Delete.

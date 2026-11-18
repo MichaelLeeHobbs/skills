@@ -26,7 +26,7 @@ pass or fail:
 | `scope` | `.` for the whole repo, else the package's repo-relative path with `/` separators; for a single file or a diff, the repo-relative path of the file or of the directory holding the changed files |
 | `at` | UTC time the run finished, `YYYY-MM-DDTHH:MM:SSZ` |
 | `commit` | the full commit hash read at the start of the run, with `+dirty` appended if the working tree had changes; `none` without version control |
-| `check` | `fail` if the pass did not succeed (step 5: a comment unaccounted for, protected content changed, or a required check failed); `partial` if any change is reported unverified or any external claim unchecked; otherwise `pass` |
+| `check` | `fail` if the pass did not succeed (step 5: a comment unaccounted for, a fixed exception removed, or a check failed or could not run); `partial` if any outside fact is reported unverified; otherwise `pass` |
 | `degraded` | always `false`: this skill has no degraded mode |
 | `metric` | `null` |
 | `value` | `null` |

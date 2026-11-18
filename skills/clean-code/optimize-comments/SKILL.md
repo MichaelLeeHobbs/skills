@@ -1,80 +1,115 @@
 ---
 name: optimize-comments
 description: >-
-  Audit and tighten comments in a file, diff or package. Use for "clean up these comments",
-  "the comments are out of date", "stale comments", "too many comments", or "this file is
-  over-commented". Deletes what nearby code already says, keeps constraints and reasons, adds a
-  missing reason only with evidence. NOT a general code review, not for TODOs tied to issues (use triage-todos), and not for generated or vendored files.
+  Cut comments in a file, diff or package down to the few an agent needs. Use for "clean up these
+  comments", "strip the comments", "remove useless JSDoc", "the comments are out of date", "too many
+  comments", or "this file is over-commented". Deletes by default: a comment stays only when it states
+  something the code and types cannot, in a form that cannot drift from the code. Deletes doc comments
+  that repeat types, narration, banners and commented-out code; keeps reasons, outside facts and tool
+  directives. NOT a general code review, not for TODOs tied to issues (use triage-todos), and not for
+  generated or vendored files.
 ---
 
 # Optimize comments
 
-Keep the shortest comment that prevents a plausible misunderstanding or wrong edit. Delete information readily recoverable from the nearby code. Preserve constraints, reasons, and external facts the code cannot express. A sentence that saves tracing several files or rediscovering a runtime bug earns its place; one narrating the next line does not.
+Agents read most code now, and they read the same file many times. Every comment is paid for on every
+read, and a comment that describes the code goes stale the first time the code changes without it. A
+stale comment is worse than none: the agent believes it. So the default verdict is **Delete**, and a
+comment has to earn its place.
 
-## Standing rules
+## The keep test
 
-1. **Prefer clear names and structure.** Use a better name when it explains the point naturally and code changes are in scope. Do not introduce an abstraction solely to remove a short useful comment.
-2. **Preserve information the reader needs.** Keep reasons an obvious alternative fails, ordering constraints, surprising units, compatibility requirements, and external contracts beside the code. Explain what callers need without making them read the implementation, including callers inside the same package.
-3. **Make each sentence earn its place.** Cut repetition, throat-clearing, and narration. Use an imperative for an instruction and a direct statement for a fact. A one-line workaround may need two sentences; comment-to-code length is not a deletion rule.
-4. **Add only evidenced explanations.** No comment quota per declaration, and no requirement to add something in every pass. If the code is already clear, leave it alone. If the reason is unknown, report the gap rather than inventing one.
+Keep a comment only when all three hold:
 
-## Step 1: establish scope and protected content
+1. **The code and types cannot say it.** It states a reason, an outside fact (a vendor limit, a spec
+   rule, a runtime defect), a deliberate oddity an agent would otherwise "fix", or a caller rule the
+   types miss (units, side effects, ordering, ownership).
+2. **It cannot drift from the code.** It states a fact the code does not own, or points to a lasting
+   source (an issue, a spec section, a decision record). A comment that says what the code does fails
+   this, however accurate it is today.
+3. **It is the shortest form that still does the job.** One clause beats a sentence; a sentence beats a
+   paragraph.
 
-Use the scope and permissions already supplied. Resolve only missing details that affect the work: which files, whether code changes are allowed, and which comments feed published documentation or tooling. Generated and vendored files are out. Without authorization for code changes, edit comments only.
+Ask the core question of every comment: would an agent editing this code act differently without it?
+If not, it goes.
 
-**Never change license headers, copyright notices, or attribution required by a license.** Preserve published documentation contracts and active formatter, linter, compiler, coverage, and other tool directives. Remove one only with separate justification and verification by the tool that consumes it. If a comment's publication or tooling role is uncertain, preserve it and report the uncertainty.
+**Fixed exceptions.** These stay whatever the test says, because a tool or a law reads them, not a
+person:
+- license headers, copyright notices and attribution a license requires;
+- active tool directives (lint suppressions, type-checker ignores, formatter and coverage markers),
+  each with its one-line reason if it has one;
+- deprecation markers that editors and linters act on;
+- doc comments on the public API of a package that is published and whose docs a generator consumes;
+- doc comments that are code: type annotations a type checker reads (JSDoc types in checked
+  JavaScript, type comments in Python), and runnable examples a test runner executes (doctests).
 
-## Step 2: read every comment and record its disposition
+## Step 1: scope
 
-Read the surrounding code and enough of its callers, tests, and dependencies to judge each comment. Record one verdict per comment, including protected ones:
+Use the scope and permissions the user gave. Settle only what changes the work: which files, whether
+code changes (renames, test renames) are allowed, and whether the package is a published library.
+Generated and vendored files are out. Without permission for code changes, edit comments only.
 
-- **Rename.** An authorized naming or structure change makes the explanation unnecessary.
-- **Contradiction.** The comment and implementation disagree; identify the conflicting claims.
-- **Delete.** The comment adds no useful information beyond nearby code or repeats an explanation already accessible where needed.
-- **Shorten.** Keep its useful information in fewer words.
-- **Keep.** Name the misunderstanding it prevents, the caller information it supplies, or the legal/tooling role that protects it.
+Leave TODO, FIXME, HACK and XXX markers in place and list them: whether they are stale is a question of
+issue state and history, which triage-todos answers. If that skill is not available, list them in the
+report as unjudged.
 
-Choose the home by what the reader needs:
+## Step 2: give every comment one verdict
 
-| Information | Home |
+| Verdict | When |
 |---|---|
-| What a simple expression or declaration does | Clear code or a better name |
-| A behavior that must keep holding | A test, with a local explanation when its reason is not evident |
-| A broad design decision and rejected alternatives | The project's decision record, with a short local pointer when needed |
-| What a caller must know without reading the body | A doc comment on the declaration |
-| A local constraint, unit, ordering requirement, or compatibility reason | A short comment beside the relevant code |
-| A tool directive or required notice | Preserve where its consumer requires it |
+| **Delete** | Fails the keep test. This includes narration, doc comments that repeat a name or a type, section banners, commented-out code, history notes, and any comment describing what the code does |
+| **Move to test** | Passes rule 1, but a test already pins the behaviour. Delete the comment if the test's name or assertion message states the reason; if it does not and code changes are allowed, rename the test to state it, then delete |
+| **Shorten** | Passes the test with more words than it needs |
+| **Keep** | Passes the test, or is a fixed exception. Name which rule-1 kind it is (reason, outside fact, oddity, caller rule) or which exception |
+| **Contradiction** | The comment states a fact the code disagrees with. Report both readings. Do not delete it to make the conflict disappear: it may be the only record of intended behaviour, and the code may be the bug |
 
-Do not copy a long explanation between homes.
+Read [reference/SHAPES.md](reference/SHAPES.md) for how the verdicts land on doc comments, banners,
+directives, commented-out code and the cases that look like keeps but are not.
 
-**Check:** account for every comment in scope, with a reason for every deletion and every protected comment left intact.
+**Typed languages.** In TypeScript, typed Python, Kotlin, Rust and similar, a doc comment on anything
+that is not public API of a published package keeps only the sentences that pass the keep test. Tags
+that restate the signature (`@param x the x`, `@returns the result`, `@type`, `@async`) always go. A
+doc comment with nothing left is deleted, not shortened to a stub.
 
-## Step 3: check the evidence before deleting or correcting
+**Check:** every comment in scope has exactly one verdict, every Keep names its kind or exception, and
+every Delete of a rule-1 comment names the test that now carries it.
 
-**Test coverage does not automatically replace a comment.** Read the assertion and the behavior it exercises. Delete a comment that merely narrates an obvious tested implementation, but keep the shortest useful explanation of the requirement or constraint. A reader who does not understand the reason may otherwise change both the implementation and its test. Search for behavior rather than names alone; fixture-driven tests may not name the option they protect.
+## Step 3: check before deleting
 
-**Verify external claims.** Open a referenced dependency, specification, fixture, or issue when it determines whether the comment is still true. Record the evidence. If it is unavailable, mark the claim unchecked and preserve the explanation pending verification.
+Read the code around each comment and enough of its callers to judge it. A comment can look like
+narration and still carry an outside fact ("retry once" may be the only record that the vendor drops
+the first request after idle). Verify outside facts against their source when the source is
+reachable. A comment whose outside fact you cannot verify stays, marked unverified in the report.
 
-**Treat contradictions as unresolved until intent is established.** A stale-looking comment may be the only surviving record of intended behavior. Report both readings and do not rewrite or shorten it to match the implementation by assumption. Use history to find relevant changes when available; age alone proves neither correctness nor staleness. Without history, compare current code, callers, tests, and available requirements, and report what remains unknown.
+Read [reference/EVIDENCE.md](reference/EVIDENCE.md) when you are unsure whether a test really pins a
+behaviour, or whether a comment is a caller rule or narration.
 
-**Distinguish stale history from a live constraint.** Delete a completed-migration note only when it no longer helps a reader act. Keep the reason for a rejected alternative someone could plausibly reintroduce. Read [reference/SHAPES.md](reference/SHAPES.md) when a comment's verdict is ambiguous, or for directives, section banners and commented-out code. Read [reference/EVIDENCE.md](reference/EVIDENCE.md) when deciding whether a long explanation, a test-covered behavior, or an old comment still earns its place.
+**Check:** each Move to test names the test and the assertion that pins the behaviour. Each
+Contradiction lists both readings.
 
-**Check:** every contradiction is resolved from evidence or reported with both readings. For each deletion, identify where its useful information remains or explain why it is no longer needed. Mark required checks that could not run as unverified.
+## Step 4: shorten what stays
 
-## Step 4: shorten and fill evidenced gaps
+Cut each kept comment to its fact. Drop the subject when the code makes it plain ("vendor caps batches
+at 500" over "We need to do this because the vendor API caps batches at 500 items"). Keep the
+qualifier that bounds the claim (a runtime version, a condition). Replace a long explanation with one
+line and a pointer to the issue or decision record that holds the rest.
 
-Remove facts the nearby code already makes apparent, redundant introductions, and repeated rationale. Keep the condition, unit, exception, or reason that changes how the reader interprets or edits the code. Reusing a symbol's name does not make a comment redundant; ask what information the sentence adds.
-
-Prefer one clause when it carries the whole explanation. Keep another sentence when dropping it would force the reader to reconstruct a consequential constraint. Preserve qualifiers that bound a claim, such as a runtime version or a condition under which behavior changes.
-
-Look for missing explanations around unusual ordering, surprising constants, compatibility workarounds, and guards against apparently impossible cases. Add a short reason only when supported by evidence and useful at that location.
+Add a comment only for a deliberate oddity you found evidence for in this pass, such as an issue or a
+commit message that explains it. Never add a doc comment, a summary, or a comment that describes the
+code.
 
 ## Step 5: verify and report
 
-Review the diff against the original comments. Confirm no unique reason, caller contract, unit, required notice, or active directive disappeared. For each shortened comment, check that the relevant condition and consequence remain understandable without reconstructing the deleted text.
+Run what reads comments or depends on them: the type checker (doc-comment types), the linter
+(directives), the formatter, the doc build for a published package, and doctests. Any failure means a
+comment you removed was code: restore it and record it as a fixed exception.
 
-Run relevant checks for any authorized code or directive changes, including the consuming tool when a directive changed. If a required check cannot run, report that change as unverified rather than declaring it successful.
+Show the diff and the verdict counts. Report comment lines and words before and after, the fixed
+exceptions kept by kind, unverified outside facts, contradictions with both readings, and the markers
+left for triage-todos. Then append the run record as [reference/RUN-RECORD.md](reference/RUN-RECORD.md)
+says.
 
-Show the diff and verdict counts. List unresolved contradictions, unavailable evidence, and important behaviors lacking tests separately. Report comment word counts before and after as context, without a reduction target. Additions can be justified even when the total grows. Then append the run record as `reference/RUN-RECORD.md` "Run record" says.
-
-**The pass succeeds when** every comment is accounted for, each change has a defensible information-based reason, protected content remains intact, and required checks pass. Zero edits is a valid result. Do not manufacture a deletion or addition to meet a count. The pass fails when the run record is missing, or disagrees with this report's commit, value or check.
+**The pass succeeds when** every comment has one verdict, every Keep names its kind, no fixed exception
+was removed, and every check above passes. The pass fails when a check fails after restoring, a
+comment is unaccounted for, or the run record is missing or disagrees with this report's commit or
+check. A check that could not run has failed. A pass with unverified outside facts is `partial`.

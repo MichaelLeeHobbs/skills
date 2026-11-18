@@ -1,39 +1,70 @@
-# Evidence for comment decisions
+# Evidence for the hard calls
 
-Read this when deciding whether an explanation earns its space. Judge individual comments from their contents and consumers; repository-wide comment counts cannot settle their value.
+Read this when a verdict depends on what a test proves, what an agent needs, or whether a comment can
+drift.
 
-## Count the reading a comment saves
+## Why delete by default
 
-A reader can recover a simple assignment or loop from nearby code. Repeating it increases the text they must process without reducing uncertainty.
+A comment costs reading time on every read, and agents reread files often within one task. A comment
+that restates the code gives an agent nothing it would not get from the code, and the day the code
+changes without it, the comment tells the agent something false. Agents act on what they read. The
+expected value of a restating comment is negative, so it goes without needing proof of harm.
 
-A short explanation can save a search through callers, a specification, or a dependency's issue history. Keep it when it states a consequential fact accurately and is placed where the reader needs it. Do not repeat a long external explanation when a short reason and a precise reference suffice.
+A comment that carries a fact the code does not own has the opposite profile: the agent cannot get the
+fact anywhere else, and the fact does not change when the code does. That is what the keep test
+selects for.
 
-Comment word counts describe the edit but do not prove improvement. A smaller result can lose essential information; a larger result can prevent a costly misunderstanding. Judge each added or retained sentence by the interpretation or action it changes.
+## What can drift and what cannot
 
-## Tests enforce behavior; explanations preserve reasons
+Ask who owns the fact. If the code owns it (what a function does, what a loop iterates, what a
+variable holds), a comment about it is a second copy that can disagree with the first: Delete. If
+something outside the code owns it (a vendor's limit, a spec, a runtime defect, a decision the team
+made), the comment is the only copy in the codebase: it can be wrong, but it cannot drift from the code
+because the code does not state it.
 
-A regression test shows which behavior is expected and detects some departures from it. It may not explain the external constraint that requires the expectation. Without that reason, a future editor may consider both the implementation and test mistaken.
+A caller rule sits between the two. "Throws NotFound when hard-deleted" is owned by the function's
+contract. It can go stale if the contract changes, but a contract change is a deliberate, visible
+event, unlike an edit to a loop. Keep caller rules that the types cannot express, and prefer moving
+them into the types (a result type, a branded unit type, a better name) when code changes are allowed.
 
-Keep a short local explanation when it prevents that error. Delete prose that only repeats obvious mechanics. A test, comment, and decision record can serve different readers without each repeating the whole story.
+## When a test really carries a comment
 
-Check the actual assertion before treating a behavior as covered. An observed measurement can instead depend on a workload, environment, or external system; preserve the conditions needed to interpret it and report missing evidence or coverage honestly.
+A test carries a comment only when all of these hold:
+- it exercises the behaviour the comment protects, read from the assertion, not from the test's name;
+- it fails if someone makes the change the comment warns against;
+- its name or assertion message states the reason, so an agent that breaks it learns why instead of
+  "fixing" the test.
 
-## Caller documentation has a different reading context
+If the first two hold and the third does not, the test protects the behaviour but not the reason. An
+agent that breaks it may update the test to match. Rename the test or add the assertion message (code
+change), or keep the one-line comment.
 
-A caller may read a declaration or editor hover without opening the body. Units, accepted ranges, side effects, and ordering guarantees can belong there even when the caller is inside the same package. Export visibility alone does not determine whether the explanation is useful.
+## What an agent needs from a comment
 
-A reader editing the implementation already has its mechanics in view. Inline comments should supply the constraint, reason, or brief orientation that changes how they interpret those mechanics. Do not force a factual explanation into an imperative when stating the fact is shorter and clearer.
+Agents read the code, the types, the callers and the tests. They are good at recovering what the code
+does. They cannot recover:
+- why an obvious simpler version is wrong;
+- facts from outside the repository;
+- which of two plausible behaviours is the intended one;
+- which oddities are deliberate.
 
-## Age and aggregate statistics do not prove a comment is wrong
+Those are the four rule-1 kinds. Anything else, the agent already has.
 
-A comment older than nearby code is a candidate for verification, not evidence of a contradiction. It may still state a stable requirement. Compare the claim with the implementation and available requirements before editing it.
+## Published API docs are different
 
-The fraction of comment edits that accompany code edits does not tell you how often code edits omit needed comment updates. Those are different conditional probabilities. Do not use one to dismiss the other failure mode.
+A published package's doc comments are read by a doc generator and shown to users who never open the
+source. There they are product, not commentary, and they are a fixed exception. This applies only to
+the exported surface of a package that is actually published, not to every exported symbol in an
+application or a private monorepo package.
 
-Likewise, a survey grouping licenses or tool directives with non-explanatory comments does not establish that those comments are removable. They have consumers other than the person reading the algorithm. Verify their role before changing them.
+## Comments that are code
 
-## A useful check can fail
+Some comments are read by tools as code: JSDoc type annotations in JavaScript checked by a type
+checker, Python type comments, doctests, and runnable doc examples. Removing them changes types or
+drops tests. Step 5's checks catch a removal; treat such comments as fixed exceptions from the start.
 
-Before deleting or shortening a comment, name what information would disappear and where the reader can recover anything still needed. Check directives with their consuming tools when an authorized change affects them. Preserve unresolved explanations and record unavailable evidence.
+## Age does not decide
 
-A pass with no changes can meet every check. A pass that reduces words while deleting an unexplained compatibility constraint cannot.
+An old comment is not stale because it is old, and a new comment is not useful because it is new. A
+comment fails the keep test on what it says, not on when it was written. Stale TODO markers are judged
+by issue state and history, which is triage-todos' job.

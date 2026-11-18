@@ -11,7 +11,7 @@ description: >-
 
 # Clean-code steward
 
-Seventeen clean-code skills are too many to choose from. The steward tells the user which ones apply,
+Eighteen clean-code skills are too many to choose from. The steward tells the user which ones apply,
 what the ledger proves so far, and which one to run next. It measures nothing itself: every number comes
 from a skill's own run record, and every status from the ledger tool.
 

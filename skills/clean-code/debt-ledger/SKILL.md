@@ -9,7 +9,7 @@ description: >-
   version-control blame, an owning team, and the trend against the last run. Splits a baseline's change
   into fixed, moved inline, deleted with the file, and hidden by a config change, so a shrink that is not
   a fix shows. Keeps a ledger in the repo for re-runs. NOT for fixing the debt, judging whether a TODO
-  still matters, or gating CI.
+  still matters (use triage-todos), or gating CI.
 ---
 
 # Debt ledger

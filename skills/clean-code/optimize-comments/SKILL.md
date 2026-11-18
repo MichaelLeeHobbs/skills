@@ -4,7 +4,7 @@ description: >-
   Audit and tighten comments in a file, diff or package. Use for "clean up these comments",
   "the comments are out of date", "stale comments", "too many comments", or "this file is
   over-commented". Deletes what nearby code already says, keeps constraints and reasons, adds a
-  missing reason only with evidence. NOT a general code review, and not for generated or vendored files.
+  missing reason only with evidence. NOT a general code review, not for TODOs tied to issues (use triage-todos), and not for generated or vendored files.
 ---
 
 # Optimize comments

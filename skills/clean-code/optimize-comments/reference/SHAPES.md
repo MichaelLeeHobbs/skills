@@ -80,6 +80,23 @@ That is a rejected alternative an agent could propose again, with a pointer.
 `// ===== Helpers =====`: Delete. A short label grouping rows in a long data table or rules table:
 Keep, if it is the only way to find a group.
 
+## An excuse for a shortcut
+
+```js
+// Quick fix: wait for the list to render before scrolling. Fine for now.
+setTimeout(scrollToSelected, 100);
+```
+
+Excuse. The comment does not state a fact that forces the timer; it argues the timer is acceptable.
+Leave it, and report the finding: the scroll should run after the render it depends on, so the fix is
+to find that hook or event, or to file an issue. Deleting the comment would leave the timer looking
+intended, and the next agent would copy it.
+
+Compare `// Vendor rejects a second call within 1s (API docs, rate limits)` above a one-second delay:
+Keep, an outside fact. The test is whether the comment names a constraint outside the code, or only
+asks the reader to accept the code. "Works around the race", "good enough", "for now" and "hack, but"
+with no named cause are excuses.
+
 ## Long explanations
 
 A paragraph explaining a design decision: Shorten to one line and a pointer to the decision record or

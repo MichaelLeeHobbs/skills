@@ -6,7 +6,8 @@ description: >-
   comments", or "this file is over-commented". Deletes by default: a comment stays only when it states
   something the code and types cannot, in a form that cannot drift from the code. Deletes doc comments
   that repeat types, narration, banners and commented-out code; keeps reasons, outside facts and tool
-  directives. NOT a general code review, not for TODOs tied to issues (use triage-todos), and not for
+  directives. Flags comments that excuse a shortcut ("quick fix is fine because", "timer works around
+  the race") as findings instead of keeping or hiding them. NOT a general code review, not for TODOs tied to issues (use triage-todos), and not for
   generated or vendored files.
 ---
 
@@ -32,6 +33,12 @@ Keep a comment only when all three hold:
 
 Ask the core question of every comment: would an agent editing this code act differently without it?
 If not, it goes.
+
+**A reason records a fact, never excuses a shortcut.** "Vendor drops the first request after idle"
+is a fact that forces the code. "Quick fix, fine for now", "the timeout gives the list time to render"
+or "works around the race" argues that a hack is acceptable. That passes for a defending comment, lets
+the hack through review, and teaches the next agent to copy it. An excuse is never a Keep, and it is
+never a silent Delete either, because deleting it hides the hack.
 
 **Fixed exceptions.** These stay whatever the test says, because a tool or a law reads them, not a
 person:
@@ -62,6 +69,7 @@ report as unjudged.
 | **Shorten** | Passes the test with more words than it needs |
 | **Keep** | Passes the test, or is a fixed exception. Name which rule-1 kind it is (reason, outside fact, oddity, caller rule) or which exception |
 | **Contradiction** | The comment states a fact the code disagrees with. Report both readings. Do not delete it to make the conflict disappear: it may be the only record of intended behaviour, and the code may be the bug |
+| **Excuse** | The comment justifies a shortcut instead of stating a fact that forces it. Leave it in place and report it as a finding: the code it excuses, the fix (find the root cause the timer, retry or sleep papers over), or the issue to file. If it calls itself temporary or names an issue, also list it for triage-todos |
 
 Read [reference/SHAPES.md](reference/SHAPES.md) for how the verdicts land on doc comments, banners,
 directives, commented-out code and the cases that look like keeps but are not.
@@ -71,8 +79,9 @@ that is not public API of a published package keeps only the sentences that pass
 that restate the signature (`@param x the x`, `@returns the result`, `@type`, `@async`) always go. A
 doc comment with nothing left is deleted, not shortened to a stub.
 
-**Check:** every comment in scope has exactly one verdict, every Keep names its kind or exception, and
-every Delete of a rule-1 comment names the test that now carries it.
+**Check:** every comment in scope has exactly one verdict, every Keep names its kind or exception, every
+Delete of a rule-1 comment names the test that now carries it, and every Excuse names the code it
+excuses and the fix or issue.
 
 ## Step 3: check before deleting
 
@@ -95,8 +104,9 @@ qualifier that bounds the claim (a runtime version, a condition). Replace a long
 line and a pointer to the issue or decision record that holds the rest.
 
 Add a comment only for a deliberate oddity you found evidence for in this pass, such as an issue or a
-commit message that explains it. Never add a doc comment, a summary, or a comment that describes the
-code.
+commit message that explains it. Never add a doc comment, a summary, a comment that describes the
+code, or a comment that excuses a shortcut. Never shorten an Excuse into something that reads like a
+Keep.
 
 ## Step 5: verify and report
 
@@ -105,7 +115,8 @@ Run what reads comments or depends on them: the type checker (doc-comment types)
 comment you removed was code: restore it and record it as a fixed exception.
 
 Show the diff and the verdict counts. Report comment lines and words before and after, the fixed
-exceptions kept by kind, unverified outside facts, contradictions with both readings, and the markers
+exceptions kept by kind, unverified outside facts, contradictions with both readings, excuses with the
+fix or issue each needs, and the markers
 left for triage-todos. Then append the run record as [reference/RUN-RECORD.md](reference/RUN-RECORD.md)
 says.
 

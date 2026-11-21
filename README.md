@@ -41,14 +41,6 @@ Reaching a decision. Nothing here touches code.
 | `steelman` | Settle a binary design question that keeps getting deferred. Both positions argued at full strength, both tested against ground truth, judged on a rubric written before the arguing started. |
 | `debate-plan` | Turn a vague ticket or idea into buildable work by having panels argue it: builders open and rebut, real users and guardians review, and the report comes back as a design, slices in build order and numbered decisions with defaults. Runs serially on an agent that cannot work in parallel. |
 
-### writing
-
-Prose, in any medium.
-
-| Skill | What it does |
-|---|---|
-| `unslop` | Cut AI tells from any writing. 36 named patterns, from puffery and em dashes to the debate-rubric essay (manufactured stakes, strawman setup, announced taxonomy). Forked from Cursor's pstack; items 32 to 36 are the additions. |
-
 ### engineering
 
 Writing and reviewing code.
@@ -102,7 +94,6 @@ Directing the agent itself.
 |---|---|
 | `optimize-agent-instructions` | Audit and tighten any file that instructs an agent: a context file (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.cursorrules`), a skill, a command, a subagent definition. Sizes the cut by when the file loads, strips rationale that does not change behavior, and catches a description too vague to ever fire. |
 | `hill-climb` | Improve something fuzzy (a screen, a prompt, generated code) as a scored loop. Freezes a metric or a judge rubric with anchors, measures the judge's noise floor, then keeps one change per round only if the score beats the noise. Blind judges, guardrails, and a gaming check. |
-| `hands-off` | Prepare a project for an unattended build-out. Freezes an ordered queue with a check per item, sets up a decision log, and defines what the agent does when it hits something ambiguous at 3am. |
 
 ### clean-room
 
@@ -141,9 +132,6 @@ it is published.
 
 ## Credits
 
-- `unslop` is a fork of [Cursor's pstack skill](https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md)
-  by Lauren Tan (MIT). Her notice ships in the skill folder. The fork adds five structural patterns
-  upstream does not have.
 - `codebase-design` and `grilling` are [mattpocock's](https://github.com/mattpocock/skills). Not vendored
   here. Go get them from the source.
 - The parallel-argument method in `steelman` owes a lot to Ousterhout's "design it twice".

@@ -50,6 +50,7 @@ Writing and reviewing code.
 | `write-tests` | Write a test that would actually catch the bug it claims to cover. Covers the traps: vacuous assertions, tests that encode the bug, green from two cancelling faults, fixtures the product never produces. |
 | `deep-code-review` | Exhaustive file-by-file review of a package or service. Splits the tree into disjoint slices so every file is actually read, then verifies the load-bearing findings against the source before reporting them. |
 | `triage-card` | Judge a ticket before anyone builds it. Pins a revision, checks each claim in code, finds where the ticket's diagnosis is wrong, and records a verdict with file:line evidence on the ticket. |
+| `cve-sweep` | Weekly CVE patch sweep of one repo. Counts CVEs from the audit, an image scan and the cloud registry, plans every bump to the latest LTS runtime, base image and dependencies with majors flagged, stops for review, then ships in at most three releases and counts again. Keeps a risk register with expiry dates and a ledger that checks last week's fixes reached production. |
 | `batch-work` | Build several small tickets as one batch: a branch per ticket inside one batch branch, one review, one test run, one pull request. Keeps each ticket's state honest and checks the merge history proves it. |
 
 ### clean-code

@@ -61,7 +61,8 @@ Checkpoint the starting state in version control. Then, each round:
    (a small beam). Each candidate starts from the current best, not from another candidate, in its own
    working copy, and its brief carries the isolated agent rules block from
    [ISOLATED-AGENT-RULES.md](../../engineering/batch-work/reference/ISOLATED-AGENT-RULES.md) (installed
-   alone? read it from github.com/MichaelLeeHobbs/skills at that path).
+   alone? read `skills/engineering/batch-work/reference/ISOLATED-AGENT-RULES.md` in
+   github.com/MichaelLeeHobbs/skills).
 3. **Check guardrails.** Any failure: revert, log it, next round.
 4. **Capture evidence** exactly as framed.
 5. **Judge blind.** A fresh judge each time, given the rubric, references and evidence only. It does not

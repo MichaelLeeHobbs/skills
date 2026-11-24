@@ -3,8 +3,10 @@
 One reviewer per slice. Every reviewer gets this same prompt, differing only in the assigned file list
 and the domain-risk sentence. Substitute the angle-bracketed parts, and append the isolated agent rules
 block from batch-work's [ISOLATED-AGENT-RULES.md](../../batch-work/reference/ISOLATED-AGENT-RULES.md)
-with the path under review filled in (installed alone? read it from github.com/MichaelLeeHobbs/skills
-at that path).
+(installed alone? read `skills/engineering/batch-work/reference/ISOLATED-AGENT-RULES.md` in
+github.com/MichaelLeeHobbs/skills). Fill in the path under review as the working copy, which the reviewer
+reads but never writes, and a scratch folder outside the repository for scratch processes and any
+screenshot. This prompt's read-only rule wins over the block.
 
 ---
 

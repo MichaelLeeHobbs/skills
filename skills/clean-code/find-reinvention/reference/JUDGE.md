@@ -24,9 +24,13 @@ is BLOCKED.
 ## Calibrate before judging
 
 1. Build a calibration set from real functions only, never the canaries: two or three pairs from the
-   largest groups whose answer you settle by reading both bodies yourself, and two pairs that share
-   vocabulary but not the job (for example a byte formatter and a count formatter, or an absolute date
-   formatter and a relative "3 days ago" formatter).
+   largest groups whose answer you settle by reading both bodies yourself, one superset pair, and two
+   pairs that share vocabulary but not the job (for example a byte formatter and a count formatter, or
+   an absolute date formatter and a relative "3 days ago" formatter). The superset pair is a helper that
+   takes a value as a parameter and a copy that fixes that value, such as `errorMessage(error, fallback)`
+   and a copy that always falls back to `'unknown failure'`. Its known answer is VARIANT with a note
+   naming the parameterised member. If the package has no such pair, write the fixed copy yourself from
+   a real parameterised helper; it stays in the calibration set and never enters the inventory.
 2. Judge the set twice, each time with a fresh judge that sees only the brief and the set.
 3. If any verdict differs between the two runs, or from the known answer, the brief is unclear. Rewrite
    it and judge the set twice again.

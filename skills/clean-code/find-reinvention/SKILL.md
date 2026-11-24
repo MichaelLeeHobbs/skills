@@ -130,7 +130,10 @@ Plant four canaries in step 1b, self-contained, each copied from a real function
 4. A negative: a function sharing a real helper's vocabulary but doing another job.
 
 If the package has no date, byte or error helper, copy from the largest groups' families instead. Plant
-each difference where the step 6 inputs reach it. The judge never sees the canaries during calibration.
+each difference where the step 6 inputs reach it, and so that it holds against every call of the
+source: if the source takes the changed value as a parameter (a fallback text, a separator), a copy
+that fixes some value is a specialisation and the run shows no difference. Change a value the source
+fixes, or change behaviour the parameter does not control. The judge never sees the canaries during calibration.
 The first three are known VARIANTs, the fourth a known DIFFERENT. **The run fails**, and the report says
 so above the header, when any of these happens:
 - a positive canary is not grouped with its source, not judged VARIANT, or its planted difference does

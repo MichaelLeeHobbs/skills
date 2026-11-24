@@ -7,7 +7,7 @@
       "name": "agent-workflow",
       "source": "./",
       "strict": false,
-      "description": "Improve agent work and agent instructions: scored hill-climb loops, tighter context files.",
+      "description": "Improve agent work and agent instructions: scored hill-climb loops, tighter context files, session status checks.",
       "license": "MIT",
       "skills": ["./skills/agent-workflow"]
     },
@@ -39,9 +39,17 @@
       "name": "engineering",
       "source": "./",
       "strict": false,
-      "description": "Day-to-day engineering: card triage, batched builds, CVE sweeps, deep code review, writing tests.",
+      "description": "Day-to-day engineering: ticket triage and filing, batched builds, CVE sweeps, deep code review, writing tests, shared tracker verbs.",
       "license": "MIT",
       "skills": ["./skills/engineering"]
+    },
+    {
+      "name": "github",
+      "source": "./",
+      "strict": false,
+      "description": "Tracker layer for GitHub Issues: maps the shared tracker verbs onto gh, with labels for status.",
+      "license": "MIT",
+      "skills": ["./skills/github"]
     },
     {
       "name": "operations",

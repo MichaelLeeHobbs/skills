@@ -18,6 +18,7 @@ npx skills add MichaelLeeHobbs/skills --skill write-tests
 | `operations/` | Running things that are already live. Incidents, investigations, audits, infrastructure health. |
 | `agent-workflow/` | Directing the agent itself. Delegation, context files, orchestration. Meta-work rather than the work. |
 | `clean-room/` | Specifying a system you can observe but must not copy. Reverse-engineering by operating the thing, capturing behaviour without transcribing implementation. |
+| `github/` | Tracker layers. Map the shared `tracker-verbs` (in `engineering/`) onto one tracker, so ticket skills run there unchanged. |
 | `domains/` | Tied to one technology or ecosystem. Useful only if you use that thing, and clearly labelled so. |
 
 Add an area when three skills want it, or when one skill names a mode of work no existing area covers.

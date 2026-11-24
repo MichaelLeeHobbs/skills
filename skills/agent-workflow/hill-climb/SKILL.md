@@ -58,7 +58,10 @@ Checkpoint the starting state in version control. Then, each round:
 1. **Pick the target.** Read the last judge's lowest criterion and its stated reasons. Work on that.
 2. **Make one focused change.** One idea per round, so a score change can be traced to a cause. If you can
    run work in parallel, try 2 to 4 different candidates for the same criterion and keep the best one
-   (a small beam). Each candidate starts from the current best, not from another candidate.
+   (a small beam). Each candidate starts from the current best, not from another candidate, in its own
+   working copy, and its brief carries the isolated agent rules block from
+   [ISOLATED-AGENT-RULES.md](../../engineering/batch-work/reference/ISOLATED-AGENT-RULES.md) (installed
+   alone? read it from github.com/MichaelLeeHobbs/skills at that path).
 3. **Check guardrails.** Any failure: revert, log it, next round.
 4. **Capture evidence** exactly as framed.
 5. **Judge blind.** A fresh judge each time, given the rubric, references and evidence only. It does not

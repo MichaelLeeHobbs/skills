@@ -3,7 +3,8 @@
 Keep it under 150 lines and save it in the catalog folder as `report.md`. Everything else goes in the
 appendix. Take every number from tool output or the run tables, never from memory or a worker's summary:
 coverage lines from the `verify --check coverage` summary; rows, exclusions, slices, spend and the jobs
-metric from `tally`; the since-last-run line from `reuse`; executed groups and canaries from the run
+metric from `tally`; the since-last-run line from `reuse`; accepted, out-of-scope and reopened counts
+from the `accepted` summary; executed groups and canaries from the run
 tables. Canary rows never enter `tally`, groups or decisions.
 
 ## Header
@@ -19,10 +20,22 @@ Groups: <judged> judged of <candidates> (rest cut by priority); residuals judged
 Spend: $<total> of $<cap> cap (measured | estimated from tokens)
 Canaries: <n> of 4 behaved as planted   PASS | FAIL
 Executed: <n> of 10 top groups   Network off: yes | no
-Jobs implemented 2+ times: <n> (last run: <n> | first run)
+Jobs implemented 2+ times: <n> (last run: <n> | first run); <a> accepted, <o> out of scope, reopened <r>
 ```
 
+`<n>` is `tally`'s `reinvented`, which leaves out closed groups. Without `accepted.jsonl`, end the line
+after the parenthesis.
+
 If any line says FAIL, say first, above the header, that the run failed and which check.
+
+## Reopened groups
+
+A reopened group is open again: it ranks, runs and enters the decision list like any other group. Mark
+it wherever it appears, from its `reopened` records:
+
+```
+G7  reopened: accepted before as G0041 (out-of-scope); added c.ts:9:fmt; edited a.ts:4:fmt
+```
 
 ## Decision list
 
@@ -82,6 +95,8 @@ Drafts for the user to apply. The skill edits nothing.
 - Every group with its verdicts and tables (`verdicts.jsonl`).
 - Removed since last run: the functions `reuse` reported removed, and any group they leave with one
   member, which is a resolved duplicate.
+- Closed groups: each `closed` record with its line's reason. Unmatched `accepted.jsonl` lines: their
+  copies are gone or merged, and the user may delete the line.
 - Per-key unique hits: for each grouping key and optional source, how many confirmed groups only it
   found. A key that finds nothing unique over two runs is a candidate to drop.
 - The domain mapping and its version.

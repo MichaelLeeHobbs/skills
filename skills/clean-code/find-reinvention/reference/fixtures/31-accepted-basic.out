@@ -1,0 +1,6 @@
+{"t":"closed","job":"J0001","group":"G0034","bucket":"accepted"}
+{"t":"closed","job":"J0002","group":"G0039","bucket":"out-of-scope"}
+{"t":"reopened","job":"J0003","group":"G0041","bucket":"accepted","added":["g.ts:9:fmt"],"edited":["e.ts:4:fmt"],"gone":[]}
+{"t":"reopened","job":"J0004","group":"G0060","bucket":"out-of-scope","added":[],"edited":[],"gone":["r.ts:1:sum"]}
+{"t":"unmatched","group":"G0050"}
+{"t":"summary","lines":6,"units":5,"accepted":1,"out_of_scope":1,"reopened":2,"unmatched":1}

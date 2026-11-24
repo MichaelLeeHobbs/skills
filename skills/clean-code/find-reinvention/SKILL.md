@@ -107,9 +107,13 @@ regrouping, the canonical copy. Judge in priority order: groups whose members sp
 are mostly `utility` or `method`, then by importers, with groups whose job means "no input" last. Only source
 decides a verdict.
 
+If the catalog holds `accepted.jsonl`, run `accepted` over its lines, this run's inventory and one
+`unit` per counted job (CATALOG.md "Accepted groups"). Pass its `closed` records to `tally`; closed
+groups leave step 6, the top lists and the decision list.
+
 ## 6. Run side by side
 
-Run the top 10 real groups, every group holding a canary, and each positive canary beside its source, as
+Run the top 10 open groups, every group holding a canary, and each positive canary beside its source, as
 [reference/RUN.md](reference/RUN.md) describes: probe the zone and clock, run copied members in the bare
 runtime, mark cells run or predicted, set CONFIRMED, REFUTED or BLOCKED.
 
@@ -143,6 +147,7 @@ so above the header, when any of these happens:
 - none of the top 10 groups ran although at least one had a runnable member;
 - the user supplied a list of known copies and any is missing from every group (name the step that lost
   it);
+- `tally`'s `closed` count differs from the `accepted` summary's `accepted` plus `out_of_scope`;
 - the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it.

@@ -2,8 +2,8 @@
 
 ## Which groups
 
-The top 10 real groups in judging priority order that have at least one member you can run, plus every
-group holding a canary. A member can be run when its `effects` are `pure`, `clock` or `locale` and it
+The top 10 real groups in judging priority order that have at least one member you can run and that
+`accepted` did not close, plus every group holding a canary. A member can be run when its `effects` are `pure`, `clock` or `locale` and it
 needs nothing from the framework, a closure or an instance.
 
 **Run each positive canary beside its source**, in the same harness, even when grouping or splitting put

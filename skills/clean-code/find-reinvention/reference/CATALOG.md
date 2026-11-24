@@ -51,8 +51,27 @@ the file does not matter.
 | `verdicts.jsonl` | judge and run results, each with the content hashes of the members it covers | group, member |
 | `report.md` | the last report | |
 | `history.jsonl` | one line per run: date, commit, rows, jobs implemented 2+ times | date |
+| `accepted.jsonl` | optional, written by the user: copy groups closed without a code change | `group` |
 
 Write every JSONL file sorted and one object per line, so a re-run's changes show as a readable diff.
+
+## Accepted groups
+
+Some copy groups should stay: two parsers for two formats, a delegating wrapper, boilerplate the user
+ruled out of scope. The user closes such a group with one line in `accepted.jsonl`:
+
+```
+{"group":"G0034","bucket":"accepted","members":["src/a.ts:260:getSegmentCount","src/b.ts:139:getSegmentCount"],"hashes":["<hash>","<hash>"],"reason":"B mirrors A by design","decision":"D-258","date":"2026-11-15"}
+```
+
+`bucket` is `accepted` or `out-of-scope`. `members` and `hashes` are copied from the report's group
+and `rows.jsonl`, in the same order. `reason`, `decision` and `date` are for people; the tool ignores
+them. The file belongs to the user: never write, reorder or prune it, and never drop a line because it
+went unmatched. Re-runs read it as it is.
+
+A line closes a group only while its members and their content hashes match this run's unit exactly.
+An edited, renamed, moved, added or removed member reopens the group, so a line never hides a copy
+written after it.
 
 **Never in the catalog:** the built tool, slices, worker outputs, harnesses, run output and anything else
 temporary. Those live in a work folder outside the repo. Rebuild the tool from the spec and prove it
@@ -71,7 +90,8 @@ against the fixtures on every run.
 4. Group as usual (step 4). Reuse a saved verdict only when every member hash it covers is unchanged and
    the group's membership is the same; judge every other group again.
 5. Report the since-last-run line, list resolved groups (a group that lost all but one member), and add
-   a line to `history.jsonl`. Replace the catalog files with this run's versions.
+   a line to `history.jsonl`. Replace the catalog files with this run's versions, except
+   `accepted.jsonl`, which stays as the user left it.
 
 ## Size
 

@@ -11,6 +11,7 @@ has, then run every fixture in [fixtures/](fixtures/). Any failing fixture stops
 <tool> strings
 <tool> group [--max-stem N]
 <tool> reuse
+<tool> accepted
 <tool> verify --check ids
 <tool> verify --check rows
 <tool> verify --check map
@@ -34,7 +35,7 @@ any other argument left over.
 
 | Code | Meaning |
 |---|---|
-| 0 | Input valid, and the check found no problem (always 0 for valid `slice`, `strings`, `group`, `reuse` and `tally` input) |
+| 0 | Input valid, and the check found no problem (always 0 for valid `slice`, `strings`, `group`, `reuse`, `accepted` and `tally` input) |
 | 1 | Input valid, and the check found at least one problem or failed its threshold |
 | 2 | Usage error or malformed input. Output is exactly one error record |
 
@@ -53,6 +54,7 @@ Field types used below:
 - `name`: a JSON string, non-empty.
 - `int`: a JSON number whose value is a whole number from 0 to 9007199254740991 (`1.0` counts as 1).
 - `names`: a JSON array of `name`, with no value repeated.
+- `list`: a JSON array of `name`, repeats allowed.
 
 ## Output format
 
@@ -81,11 +83,12 @@ Field types used below:
 | `not_object` | valid JSON but not an object |
 | `unknown_type` | `t` missing, not a string, or not a type this subcommand accepts |
 | `missing_field` | a required field is absent |
-| `bad_field` | a required field has the wrong type, or a closed-list value is invalid in `tally` |
+| `bad_field` | a required field has the wrong type, or a closed-list value is invalid in `tally` or `accepted` |
 | `duplicate` | a value that must be unique repeats |
 | `unknown_path` | a record names a path no `file` or `count` record declared |
 | `unknown_group` | a record names a group no `group` record declared |
 | `unmapped` | a `group` input row's `domain_in` has no `map` record |
+| `unknown_row` | an `accepted` `unit` names a member no `new` record declared |
 
 ## Record types per subcommand
 
@@ -145,6 +148,27 @@ Output: one record per new row, then one `removed` record per old row that is go
 {"t":"summary","old":4,"new":5,"reused":3,"changed":1,"added":1,"removed":1}
 ```
 A `reuse` row keeps its saved description. `changed` and `added` rows are described again.
+
+### accepted
+
+Input:
+- `{"t":"accept","group":name,"bucket":str,"members":names,"hashes":list}`: one line of the catalog's
+  `accepted.jsonl` with `"t":"accept"` added. `bucket` is `accepted` or `out-of-scope`. `members` are
+  row IDs from the run that closed the group, and `hashes[i]` is the content hash of `members[i]`.
+- `{"t":"new","id":name,"hash":name}`: a row from this run's inventory, as given to `reuse`.
+- `{"t":"unit","job":name,"members":names}`: one job this run counts as implemented 2+ times: the
+  anchor and every member judged SAME or VARIANT against it. `job` is the value given to `tally`.
+
+A `bucket` outside its list is `bad_field`.
+
+Output: `closed` records, then `reopened`, then `unmatched`, then `summary`. The `closed` records are
+valid `tally` input.
+```
+{"t":"closed","job":"G0003","group":"G0034","bucket":"accepted"}
+{"t":"reopened","job":"G0007","group":"G0041","bucket":"out-of-scope","added":["c.ts:9:fmt"],"edited":["a.ts:4:fmt"],"gone":[]}
+{"t":"unmatched","group":"G0050"}
+{"t":"summary","lines":3,"units":4,"accepted":1,"out_of_scope":0,"reopened":1,"unmatched":1}
+```
 
 ### verify --check ids
 
@@ -238,8 +262,10 @@ Input (every type optional, any order):
 - `{"t":"evidence","result":str}`: `CONFIRMED`, `REFUTED` or `BLOCKED`.
 - `{"t":"spend","phase":name,"usd_cents":int}`
 - `{"t":"cap","usd_cents":int}`: at most one.
+- `{"t":"closed","job":name}`: a job the user closed, as `accepted` prints it.
 
-A value outside its closed list is `bad_field`. A second `cap` record is `duplicate`.
+A value outside its closed list is `bad_field`. A second `cap` record, or a second `closed` record for
+the same `job`, is `duplicate`.
 
 Output: exactly seven records in this order.
 ```
@@ -248,7 +274,7 @@ Output: exactly seven records in this order.
 {"t":"slices","done":2,"blocked":1}
 {"t":"verdicts","SAME":2,"VARIANT":1,"DIFFERENT":1}
 {"t":"evidence","CONFIRMED":1,"REFUTED":0,"BLOCKED":1}
-{"t":"jobs","reinvented":2}
+{"t":"jobs","reinvented":2,"closed":0}
 {"t":"spend","total_cents":1025,"cap_cents":2500,"over_cap":false,"by_phase":{"describe":125,"judge":900}}
 ```
 

@@ -32,6 +32,8 @@ and decisions.
    before handing back.
 3. Do not merge, rebase onto, or edit another ticket's branch.
 4. If the ticket cannot be done as written, stop and say why rather than delivering something else.
+5. The block in [ISOLATED-AGENT-RULES.md](ISOLATED-AGENT-RULES.md), word for word, with the worker's
+   working copy and scratch folder paths filled in, and that file's check run before sending.
 
 ## When a result comes back
 

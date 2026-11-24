@@ -27,6 +27,21 @@ npx skills add MichaelLeeHobbs/skills --skill write-tests
 
 Or read the markdown and copy what you want. Every skill is one file you can hold in your head.
 
+### As a Claude Code plugin
+
+The repo is also a Claude Code plugin marketplace with one plugin per group below, so you install only
+the groups you use:
+
+```bash
+claude plugin marketplace add MichaelLeeHobbs/skills
+claude plugin install engineering@michaelleehobbs
+```
+
+The plugins are `agent-workflow`, `clean-code`, `clean-room`, `domains`, `engineering`, `operations` and
+`thinking`. Plugin skills are namespaced by group, so `triage-card` runs as `/engineering:triage-card`.
+To take new commits, run `claude plugin marketplace update michaelleehobbs`, then
+`claude plugin update <group>@michaelleehobbs`, or turn on auto-update for the marketplace in `/plugin`.
+
 ## The skills
 
 Grouped by area. Different topics, no unifying theme beyond being useful and being prose.

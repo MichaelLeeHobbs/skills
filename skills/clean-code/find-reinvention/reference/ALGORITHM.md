@@ -14,7 +14,8 @@ the disagreement is a bug to report.
    4. For each required field of that type, in the order CONTRACT.md lists them: absent is
       `missing_field`; present with the wrong type is `bad_field`. A `names` array that repeats a value
       is `duplicate`.
-   5. For `tally` only: a closed-list field with a value outside its list is `bad_field`.
+   5. For `tally` and `accepted` only: a closed-list field with a value outside its list is
+      `bad_field`.
 3. Only when every line passed step 2, run the semantic checks for the subcommand (below) in input
    order. The first failing record decides the error, using that record's line number. Exit 2. A
    `bad_field` on line 9 therefore wins over a `duplicate` on line 3: read the whole input before
@@ -108,6 +109,51 @@ Split each ID into path, line and name at its last two `:` characters.
 Two new rows may name the same `from`: identical copies of one function both reuse its description, and
 two rewritten functions with the same path and name (overloads) may both be `changed` from one old row.
 
+## accepted
+
+Semantic checks, per record in this order: an `accept` or `unit` with fewer than two `members` is
+`bad_field`; an `accept` whose `hashes` and `members` differ in length is `bad_field`; an `accept`
+member or a `new` `id` with fewer than two `:` characters is `bad_field`; a second `new` with the same
+`id` is `duplicate`; a second `unit` with the same `job` is `duplicate`; a `unit` member with no `new`
+record is `unknown_row`. A repeated `group` is allowed: group IDs restart at `G0001` on every run.
+
+Number accept records from 1 in input order; that number is the record's `line`. Split each ID into
+path, line and name at its last two `:` characters, as in `reuse`. Two IDs are **alike** when their
+paths are equal and their names are equal.
+
+1. **Translate** each accept member `m` with hash `h`. Its translation is the first that exists of:
+   the new row whose `id` is `m` and whose hash is `h`; the smallest ID among new rows alike to `m`
+   with hash `h`; the smallest ID among all new rows with hash `h`. Otherwise `m` has no translation.
+   A member whose line moved, or that moved unchanged to another file, translates; an edited member
+   does not.
+2. **Closed.** A line closes a unit when every member of the line has a translation, no two members
+   share a translation, and the set of translations equals the set of the unit's members. Each closed
+   unit prints one `closed` record with `job`, then `line`, `group` and `bucket` of the smallest
+   closing `line`.
+3. **Reopened.** A unit that no line closed is reopened by each line that has a member alike to a unit
+   member or translated to one. For each such pair print `reopened` with `job`, `line`, `group`,
+   `bucket`, and three sorted lists. A unit member is **matched** when it is the translation of some
+   member of the line.
+   - `added`: unit members not matched and alike to no member of the line.
+   - `edited`: unit members not matched but alike to a member of the line.
+   - `gone`: line members, as the line wrote them, whose translation is missing, is not a unit member,
+     or equals the translation of an earlier member of the line; leave out any alike to an `edited`
+     member.
+4. **Unmatched.** A line that closed no unit and reopened none prints `unmatched` with `line`, `group`
+   and `present`: the line's members, as written and sorted, that have a translation or are alike to
+   some new row. An empty `present` means every copy is gone; otherwise the group still exists but was
+   not judged this run or is no longer counted.
+5. **Draft.** Each unit no line closed prints `draft` with `job`, `members` (sorted) and `hashes` (the
+   new row hash of each member, in the same order).
+6. Print `closed` sorted by `job`, `reopened` sorted by `job` then `line`, `unmatched` sorted by
+   `line`, `draft` sorted by `job`. Then `summary`: `lines` (accept records), `units` (unit records),
+   `accepted` and `out_of_scope` (closed units by the bucket printed on their `closed` record),
+   `reopened` (distinct units with a `reopened` record), `unmatched` (unmatched lines).
+
+A closed unit is never also reported as reopened. One line may close one unit and reopen others. A
+line never closes a unit with more members than the line: its translations are distinct and number
+at most its members.
+
 ## verify --check ids
 
 Semantic check: a second `expect` with the same `slice` and `id` is `duplicate`.
@@ -194,7 +240,8 @@ Semantic checks: a second `count` with the same `path` is `duplicate`. An `adjus
 
 ## tally
 
-Semantic check: a second `cap` record is `duplicate`.
+Semantic checks: a second `cap` record is `duplicate`. A second `closed` record with the same `job` is
+`duplicate`.
 
 Print the seven records in CONTRACT.md order:
 1. `rows`: `total` row records; `by_kind` and `by_visibility` as objects with keys sorted, holding only
@@ -203,8 +250,9 @@ Print the seven records in CONTRACT.md order:
 3. `slices`: counts of `done` and `blocked`.
 4. `verdicts`: counts of `SAME`, `VARIANT`, `DIFFERENT`, always all three keys.
 5. `evidence`: counts of `CONFIRMED`, `REFUTED`, `BLOCKED`, always all three keys.
-6. `jobs`: `reinvented` is the number of distinct `job` values with at least one `SAME` or `VARIANT`
-   verdict.
+6. `jobs`: of the distinct `job` values with at least one `SAME` or `VARIANT` verdict, `reinvented`
+   counts those no `closed` record names and `closed` counts those one does. A `closed` record for any
+   other job counts nowhere.
 7. `spend`: `total_cents` is the sum of `usd_cents`; `cap_cents` is the cap or 0 if there is none;
    `over_cap` is true when the cap is above 0 and the total exceeds it; `by_phase` sums per `phase`, keys
    sorted.

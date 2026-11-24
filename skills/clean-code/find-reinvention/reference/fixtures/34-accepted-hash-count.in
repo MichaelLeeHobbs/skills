@@ -1,0 +1,4 @@
+accepted
+{"t":"new","id":"a.ts:1:f","hash":"h1"}
+{"t":"new","id":"b.ts:1:f","hash":"h2"}
+{"t":"accept","group":"G0001","bucket":"accepted","members":["a.ts:1:f","b.ts:1:f"],"hashes":["h1"]}

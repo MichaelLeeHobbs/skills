@@ -1,0 +1,8 @@
+tally
+{"t":"verdict","job":"J0001","verdict":"SAME"}
+{"t":"verdict","job":"J0002","verdict":"VARIANT"}
+{"t":"verdict","job":"J0002","verdict":"DIFFERENT"}
+{"t":"verdict","job":"J0003","verdict":"DIFFERENT"}
+{"t":"closed","job":"J0002","group":"G0034","bucket":"accepted"}
+{"t":"closed","job":"J0003","group":"G0035","bucket":"out-of-scope"}
+{"t":"closed","job":"J0009","group":"G0036","bucket":"accepted"}

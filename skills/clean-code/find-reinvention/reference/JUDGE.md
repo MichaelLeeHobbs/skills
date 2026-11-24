@@ -23,12 +23,17 @@ is BLOCKED.
 
 ## Calibrate before judging
 
-1. Build a calibration set from real functions only, never the canaries: two or three pairs from the
-   largest groups whose answer you settle by reading both bodies yourself, and two pairs that share
-   vocabulary but not the job (for example a byte formatter and a count formatter, or an absolute date
-   formatter and a relative "3 days ago" formatter).
+1. Build a calibration set from real functions, never the canaries: two or three pairs from the
+   largest groups whose answer you settle by reading both bodies yourself, one superset pair, and two
+   pairs that share vocabulary but not the job (for example a byte formatter and a count formatter, or
+   an absolute date formatter and a relative "3 days ago" formatter). The superset pair is a helper that
+   takes a value as a parameter and a copy that fixes that value, such as `errorMessage(error, fallback)`
+   and a copy that always falls back to `'unknown failure'`. Its known answer is VARIANT with a note
+   naming the parameterised member. If the package has no such pair, write the fixed copy yourself from
+   a real parameterised helper; it stays in the calibration set and never enters the inventory.
 2. Judge the set twice, each time with a fresh judge that sees only the brief and the set.
-3. If any verdict differs between the two runs, or from the known answer, the brief is unclear. Rewrite
+3. If any verdict differs between the two runs, or from the known answer, or a superset pair's `note`
+   does not name the parameterised member, the brief is unclear. Rewrite
    it and judge the set twice again.
 4. When both runs agree with the known answers, freeze the brief. Do not edit it for the rest of the run.
    A changed brief means calibrating again.
@@ -57,8 +62,11 @@ Give each judge call one group (or about ten small groups batched in one call) a
 > verdict, SAME, VARIANT or DIFFERENT, against the anchor, with the line numbers that decide it. Then fill a
 > behaviour table: one column per function, one row per input class (empty, invalid, the boundary
 > cases for this job's domain, time zone or units), each cell the output you predict from the code.
-> Do not guess from names. Do not mark SAME unless every cell matches. Reply as JSON lines: one
-> `verdict` line per member with `group`, `member`, `anchor`, `verdict`, `lines`, then one `table` line.
+> Do not guess from names. Do not mark SAME unless every cell matches. When one function takes as a
+> parameter a value the other fixes (a fallback text, a separator, a unit), it is a superset: give
+> VARIANT, add a table row that passes a value the fixed one cannot produce, and name the function
+> that does more in `note`. Reply as JSON lines: one `verdict` line per member with `group`, `member`,
+> `anchor`, `verdict`, `lines`, `note` (empty unless a superset), then one `table` line.
 
 Do not tell the judge which grouping key proposed the group or that canaries exist.
 

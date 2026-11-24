@@ -1,0 +1,7 @@
+{"t":"rows","total":0,"by_kind":{},"by_visibility":{}}
+{"t":"excluded","total":0,"by_reason":{}}
+{"t":"slices","done":0,"blocked":0}
+{"t":"verdicts","SAME":1,"VARIANT":1,"DIFFERENT":2}
+{"t":"evidence","CONFIRMED":0,"REFUTED":0,"BLOCKED":0}
+{"t":"jobs","reinvented":1,"closed":1}
+{"t":"spend","total_cents":0,"cap_cents":0,"over_cap":false,"by_phase":{}}

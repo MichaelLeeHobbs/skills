@@ -1,0 +1,9 @@
+{"t":"closed","job":"J0010","line":1,"group":"G0010","bucket":"accepted"}
+{"t":"closed","job":"J0012","line":2,"group":"G0012","bucket":"out-of-scope"}
+{"t":"reopened","job":"J0013","line":3,"group":"G0013","bucket":"accepted","added":[],"edited":[],"gone":["c.ts:20:f"]}
+{"t":"reopened","job":"J0014","line":4,"group":"G0001","bucket":"accepted","added":["W.ts:1:x","w.ts:1:x"],"edited":[],"gone":[]}
+{"t":"reopened","job":"J0014","line":5,"group":"G0001","bucket":"out-of-scope","added":["W.ts:1:x","u.ts:1:x","w.ts:1:x"],"edited":[],"gone":["y.ts:1:x","z.ts:1:x"]}
+{"t":"unmatched","line":6,"group":"G0020","present":["p.ts:1:k"]}
+{"t":"draft","job":"J0013","members":["c.ts:10:f","d.ts:1:f"],"hashes":["hF","hG"]}
+{"t":"draft","job":"J0014","members":["W.ts:1:x","u.ts:1:x","v.ts:1:x","w.ts:1:x"],"hashes":["hW","hU","hV","hw2"]}
+{"t":"summary","lines":6,"units":4,"accepted":1,"out_of_scope":1,"reopened":2,"unmatched":1}

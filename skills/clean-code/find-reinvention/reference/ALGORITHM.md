@@ -111,35 +111,48 @@ two rewritten functions with the same path and name (overloads) may both be `cha
 
 ## accepted
 
-Semantic checks: a second `accept` with the same `group` is `duplicate`; an `accept` or `unit` with
-fewer than two `members` is `bad_field`; an `accept` whose `hashes` and `members` differ in length is
-`bad_field`; an `accept` member or a `new` `id` with fewer than two `:`
-characters is `bad_field`; a second `new` with the same `id` is `duplicate`; a second `unit` with the
-same `job` is `duplicate`; a `unit` member with no `new` record is `unknown_row`.
+Semantic checks, per record in this order: an `accept` or `unit` with fewer than two `members` is
+`bad_field`; an `accept` whose `hashes` and `members` differ in length is `bad_field`; an `accept`
+member or a `new` `id` with fewer than two `:` characters is `bad_field`; a second `new` with the same
+`id` is `duplicate`; a second `unit` with the same `job` is `duplicate`; a `unit` member with no `new`
+record is `unknown_row`. A repeated `group` is allowed: group IDs restart at `G0001` on every run.
 
-Split each ID into path, line and name at its last two `:` characters, as in `reuse`. Two IDs are
-**alike** when their paths are equal and their names are equal.
+Number accept records from 1 in input order; that number is the record's `line`. Split each ID into
+path, line and name at its last two `:` characters, as in `reuse`. Two IDs are **alike** when their
+paths are equal and their names are equal.
 
-1. **Translate** each accept member `m` with hash `h`: its candidates are the new rows alike to `m`
-   whose hash is `h`. Its translation is the candidate whose `id` equals `m` if there is one, otherwise
-   the smallest candidate ID. With no candidate, `m` has no translation. Line numbers move when code
-   above a function changes; a function edited, renamed or moved to another file has no translation.
-2. **Closed.** A unit is closed by an accept line when every member of the line has a translation and
-   the set of translations equals the set of the unit's members. Each closed unit prints one `closed`
-   record with `job`, then `group` and `bucket` of the smallest such line's `group`.
-3. **Reopened.** A unit that is not closed is reopened by each accept line that has a member alike to
-   at least one unit member. For each such pair print `reopened` with `job`, `group`, `bucket`, and
-   three sorted lists:
-   - `added`: unit members alike to no member of the line.
-   - `edited`: unit members alike to some member of the line but the translation of none.
-   - `gone`: line members, as the line wrote them, alike to no unit member.
-4. **Unmatched.** An accept line that closed no unit and reopened none prints `unmatched` with `group`.
-5. Print `closed` sorted by `job`, then `reopened` sorted by `job` then `group`, then `unmatched` sorted
-   by `group`. Then `summary`: `lines` (accept records), `units` (unit records), `accepted` and
-   `out_of_scope` (closed units by the bucket printed on their `closed` record), `reopened` (distinct
-   units with a `reopened` record), `unmatched` (unmatched lines).
+1. **Translate** each accept member `m` with hash `h`. Its translation is the first that exists of:
+   the new row whose `id` is `m` and whose hash is `h`; the smallest ID among new rows alike to `m`
+   with hash `h`; the smallest ID among all new rows with hash `h`. Otherwise `m` has no translation.
+   A member whose line moved, or that moved unchanged to another file, translates; an edited member
+   does not.
+2. **Closed.** A line closes a unit when every member of the line has a translation, no two members
+   share a translation, and the set of translations equals the set of the unit's members. Each closed
+   unit prints one `closed` record with `job`, then `line`, `group` and `bucket` of the smallest
+   closing `line`.
+3. **Reopened.** A unit that no line closed is reopened by each line that has a member alike to a unit
+   member or translated to one. For each such pair print `reopened` with `job`, `line`, `group`,
+   `bucket`, and three sorted lists. A unit member is **matched** when it is the translation of some
+   member of the line.
+   - `added`: unit members not matched and alike to no member of the line.
+   - `edited`: unit members not matched but alike to a member of the line.
+   - `gone`: line members, as the line wrote them, whose translation is missing, is not a unit member,
+     or equals the translation of an earlier member of the line; leave out any alike to an `edited`
+     member.
+4. **Unmatched.** A line that closed no unit and reopened none prints `unmatched` with `line`, `group`
+   and `present`: the line's members, as written and sorted, that have a translation or are alike to
+   some new row. An empty `present` means every copy is gone; otherwise the group still exists but was
+   not judged this run or is no longer counted.
+5. **Draft.** Each unit no line closed prints `draft` with `job`, `members` (sorted) and `hashes` (the
+   new row hash of each member, in the same order).
+6. Print `closed` sorted by `job`, `reopened` sorted by `job` then `line`, `unmatched` sorted by
+   `line`, `draft` sorted by `job`. Then `summary`: `lines` (accept records), `units` (unit records),
+   `accepted` and `out_of_scope` (closed units by the bucket printed on their `closed` record),
+   `reopened` (distinct units with a `reopened` record), `unmatched` (unmatched lines).
 
-A unit that a line closes is never also reported as reopened by another line.
+A closed unit is never also reported as reopened. One line may close one unit and reopen others. A
+line never closes a unit with more members than the line: its translations are distinct and number
+at most its members.
 
 ## verify --check ids
 

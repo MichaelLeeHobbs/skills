@@ -1,0 +1,5 @@
+accepted
+{"t":"new","id":"a.ts:1:f","hash":"h1"}
+{"t":"new","id":"b.ts:1:f","hash":"h2"}
+{"t":"unit","job":"J0001","members":["a.ts:1:f","b.ts:1:f"]}
+{"t":"unit","job":"J0001","members":["b.ts:1:f","a.ts:1:f"]}

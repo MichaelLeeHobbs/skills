@@ -7,7 +7,11 @@ The top 10 real groups in judging priority order that have at least one member y
 needs nothing from the framework, a closure or an instance.
 
 **Run each positive canary beside its source**, in the same harness, even when grouping or splitting put
-them in different groups or parts. The planted difference must show between those two columns.
+them in different groups or parts. The planted difference must show between those two columns, so it
+must hold against every call of the source. If the source takes the changed value as a parameter (a
+fallback text, a separator), a copy that fixes some value is a specialisation: calling the source with
+that value gives the copy's output, and the run shows nothing. Plant the change on a value the source
+fixes, or on behaviour the parameter does not control.
 
 ## How
 
@@ -52,6 +56,10 @@ domain, plus anything the judge's table names.
 
 For a domain not listed, write the set before running: the empty values, one normal value, the two
 boundaries the code branches on, and one value of the wrong type.
+
+For a superset (a judge `note` names the member that takes a parameter the others fix), add an input
+that sets that parameter to a value the fixed members cannot produce. The difference it shows confirms
+the VARIANT; a run that only uses the fixed value has not tested it.
 
 Whatever the domain, the set must reach every boundary any member branches on. Read the members' branches
 before running and add an input on each side of every threshold the table above misses: a formatter

@@ -1,11 +1,11 @@
 accepted
-{"t":"unit","job":"J0004","members":["p.ts:1:sum","q.ts:1:sum"]}
 {"t":"accept","group":"G0034","bucket":"accepted","members":["a.ts:10:fmtA","b.ts:5:fmtA"],"hashes":["h1","h2"],"reason":"B mirrors A by design","decision":"D-258","date":"2026-11-15"}
-{"t":"accept","group":"G0040","bucket":"accepted","members":["c.ts:1:wrap","d.ts:1:wrap"],"hashes":["h3","h3"]}
 {"t":"accept","group":"G0039","bucket":"out-of-scope","members":["d.ts:1:wrap","c.ts:1:wrap"],"hashes":["h3","h3"]}
+{"t":"accept","group":"G0040","bucket":"accepted","members":["c.ts:1:wrap","d.ts:1:wrap"],"hashes":["h3","h3"]}
 {"t":"accept","group":"G0041","bucket":"accepted","members":["e.ts:4:fmt","f.ts:2:fmt"],"hashes":["h5","h6"]}
 {"t":"accept","group":"G0050","bucket":"accepted","members":["x.ts:1:old","y.ts:1:old"],"hashes":["h8","h9"]}
 {"t":"accept","group":"G0060","bucket":"out-of-scope","members":["r.ts:1:sum","p.ts:1:sum","q.ts:1:sum"],"hashes":["h12","h10","h11"]}
+{"t":"unit","job":"J0004","members":["p.ts:1:sum","q.ts:1:sum"]}
 {"t":"new","id":"a.ts:12:fmtA","hash":"h1"}
 {"t":"new","id":"b.ts:5:fmtA","hash":"h2"}
 {"t":"new","id":"c.ts:1:wrap","hash":"h3"}

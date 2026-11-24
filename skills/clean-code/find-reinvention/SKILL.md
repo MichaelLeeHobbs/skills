@@ -56,7 +56,8 @@ by syntax, visibility, signature, exclusions counted by reason, re-exports as al
 Count each in-scope file with the language's pattern and run `verify --check coverage`. It must pass.
 
 If the catalog folder already holds `rows.jsonl`, run `reuse` against it as CATALOG.md describes: reused
-rows keep their slots, and only changed and added rows go to step 2.
+rows keep their slots, and only changed and added rows go to step 2. If it holds `accepted.jsonl`, check
+it now with `accepted` (CATALOG.md "Accepted groups"); a failure stops the run before any spend.
 
 ## 1b. Canaries and budget
 
@@ -107,9 +108,8 @@ regrouping, the canonical copy. Judge in priority order: groups whose members sp
 are mostly `utility` or `method`, then by importers, with groups whose job means "no input" last. Only source
 decides a verdict.
 
-If the catalog holds `accepted.jsonl`, run `accepted` over its lines, this run's inventory and one
-`unit` per counted job (CATALOG.md "Accepted groups"). Pass its `closed` records to `tally`; closed
-groups leave step 6, the top lists and the decision list.
+Then run `accepted` as CATALOG.md "Accepted groups" says and pass its `closed` records to `tally`.
+Closed groups leave step 6, the top lists and the decision list.
 
 ## 6. Run side by side
 
@@ -134,20 +134,17 @@ Plant four canaries in step 1b, self-contained, each copied from a real function
 4. A negative: a function sharing a real helper's vocabulary but doing another job.
 
 If the package has no date, byte or error helper, copy from the largest groups' families instead. Plant
-each difference where the step 6 inputs reach it, and so that it holds against every call of the
-source: if the source takes the changed value as a parameter (a fallback text, a separator), a copy
-that fixes some value is a specialisation and the run shows no difference. Change a value the source
-fixes, or change behaviour the parameter does not control. The judge never sees the canaries during calibration.
-The first three are known VARIANTs, the fourth a known DIFFERENT. **The run fails**, and the report says
-so above the header, when any of these happens:
+each difference where the step 6 inputs reach it, on a value the source fixes rather than takes as a
+parameter (RUN.md says why). The judge never sees the canaries during calibration. The first three are
+known VARIANTs, the fourth a known DIFFERENT. **The run fails**, and the report says so above the
+header, when any of these happens:
 - a positive canary is not grouped with its source, not judged VARIANT, or its planted difference does
   not show when it is run beside its source;
 - the negative canary is judged SAME or VARIANT;
 - `verify --check coverage` fails, or any other `verify` check fails at its step;
 - none of the top 10 groups ran although at least one had a runnable member;
-- the user supplied a list of known copies and any is missing from every group (name the step that lost
-  it);
-- `tally`'s `closed` count differs from the `accepted` summary's `accepted` plus `out_of_scope`;
+- a list of known copies the user supplied has one missing from every group (name the step that lost it);
+- `tally`'s `closed` differs from the `accepted` summary's `accepted` plus `out_of_scope`;
 - the run record is missing, or disagrees with this report's commit, value or check.
 
 A run that could not perform one of these checks has failed it.

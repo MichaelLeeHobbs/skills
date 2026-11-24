@@ -21,7 +21,7 @@ Replace `report.md` only after this run's own checks are done. Then append exact
 `clean-code/ledger.jsonl`, pass or fail:
 
 ```
-{"skill":"find-reinvention","scope":".","at":"2026-11-15T14:02:00Z","commit":"<full hash>","check":"pass","degraded":false,"metric":"jobs_2plus","value":<n>,"comparable":"mode=full;domains=<n>;nojob=<n>","report":"<path to report.md>"}
+{"skill":"find-reinvention","scope":".","at":"2026-11-15T14:02:00Z","commit":"<full hash>","check":"pass","degraded":false,"metric":"jobs_2plus","value":<n>,"comparable":"mode=full;accepted=<n>;domains=<n>;nojob=<n>","report":"<path to report.md>"}
 ```
 
 | Field | Value |
@@ -34,7 +34,7 @@ Replace `report.md` only after this run's own checks are done. Then append exact
 | `degraded` | `false`, or the one missing thing: `browser`, `runtime-evidence`, `ci-history`, `build`, `parser`. This skill always records `false`: without a parser it stops before any work |
 | `metric` | `jobs_2plus` |
 | `value` | the integer on the report's `Jobs implemented 2+ times` line, or `null` when the run stopped before `tally` produced it |
-| `comparable` | `mode=full` or `mode=degraded`, then `;` and this skill's fields sorted by key: `domains` (lines in `domains.jsonl`; the list is append-only, so its length is its version), `nojob` (lines in `nojob.jsonl`). This skill always records `mode=full` |
+| `comparable` | `mode=full` or `mode=degraded`, then `;` and this skill's fields sorted by key: `accepted` (lines in `accepted.jsonl`, 0 without one; each line can lower `value` without a code change), `domains` (lines in `domains.jsonl`; the list is append-only, so its length is its version), `nojob` (lines in `nojob.jsonl`). This skill always records `mode=full` |
 | `report` | repo-relative path of this run's `report.md` |
 
 After appending, check that the file grew by exactly one line and that no earlier line changed. Order in
@@ -51,9 +51,14 @@ the file does not matter.
 | `verdicts.jsonl` | judge and run results, each with the content hashes of the members it covers | group, member |
 | `report.md` | the last report | |
 | `history.jsonl` | one line per run: date, commit, rows, jobs implemented 2+ times | date |
-| `accepted.jsonl` | optional, written by the user: copy groups closed without a code change | `group` |
+| `accepted.jsonl` | optional, written by the user: copy groups closed without a code change | as the user wrote it |
 
-Write every JSONL file sorted and one object per line, so a re-run's changes show as a readable diff.
+Write every JSONL file you write sorted and one object per line, so a re-run's changes show as a
+readable diff.
+
+**Never in the catalog:** the built tool, slices, worker outputs, harnesses, run output and anything else
+temporary. Those live in a work folder outside the repo. Rebuild the tool from the spec and prove it
+against the fixtures on every run.
 
 ## Accepted groups
 
@@ -64,18 +69,21 @@ ruled out of scope. The user closes such a group with one line in `accepted.json
 {"group":"G0034","bucket":"accepted","members":["src/a.ts:260:getSegmentCount","src/b.ts:139:getSegmentCount"],"hashes":["<hash>","<hash>"],"reason":"B mirrors A by design","decision":"D-258","date":"2026-11-15"}
 ```
 
-`bucket` is `accepted` or `out-of-scope`. `members` and `hashes` are copied from the report's group
-and `rows.jsonl`, in the same order. `reason`, `decision` and `date` are for people; the tool ignores
-them. The file belongs to the user: never write, reorder or prune it, and never drop a line because it
-went unmatched. Re-runs read it as it is.
+The report's appendix prints a draft line for every open group (REPORT.md). The user copies it, adds
+`bucket` (`accepted` or `out-of-scope`) and a reason. `group` is a label for people: group IDs restart
+on every run, so two lines may carry the same one. `reason`, `decision` and `date` are for people too;
+the tool ignores them. The file belongs to the user: never write, reorder or prune it. Re-runs read it
+as it is. A blank line or a malformed line fails the run at step 1.
 
 A line closes a group only while its members and their content hashes match this run's unit exactly.
-An edited, renamed, moved, added or removed member reopens the group, so a line never hides a copy
-written after it.
+A member that moved unchanged still matches; an edited, added or removed member reopens the group, so
+a line never hides a copy written after it.
 
-**Never in the catalog:** the built tool, slices, worker outputs, harnesses, run output and anything else
-temporary. Those live in a work folder outside the repo. Rebuild the tool from the spec and prove it
-against the fixtures on every run.
+**In a run.** Feed the tool the file's lines in file order, each with `"t":"accept"` added, before any
+other record, so an error's `line` is the file's line.
+- Step 1: the lines alone. Exit 2 fails the run, before any spend.
+- Step 5, after judging, even with no file (the drafts need it): the lines, then a `new` record per
+  inventory row and one `unit` per counted job. Leave canary rows out of both.
 
 ## Re-running
 
@@ -96,5 +104,5 @@ against the fixtures on every run.
 ## Size
 
 About 600 bytes per function: a 6,500-function package gives a `rows.jsonl` near 4 MB. If that is too
-large to commit, keep `domains.jsonl`, `mapping.jsonl`, `nojob.jsonl` and `history.jsonl` (small, and
+large to commit, keep `domains.jsonl`, `mapping.jsonl`, `nojob.jsonl`, `accepted.jsonl` and `history.jsonl` (small, and
 the part that keeps the metric comparable) and regenerate rows each run.

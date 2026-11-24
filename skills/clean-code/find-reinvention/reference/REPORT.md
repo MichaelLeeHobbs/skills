@@ -34,7 +34,7 @@ A reopened group is open again: it ranks, runs and enters the decision list like
 it wherever it appears, from its `reopened` records:
 
 ```
-G7  reopened: accepted before as G0041 (out-of-scope); added c.ts:9:fmt; edited a.ts:4:fmt
+G7  reopened: accepted.jsonl line 12 (G0041, out-of-scope); added c.ts:9:fmt; edited a.ts:4:fmt; gone none
 ```
 
 ## Decision list
@@ -95,8 +95,12 @@ Drafts for the user to apply. The skill edits nothing.
 - Every group with its verdicts and tables (`verdicts.jsonl`).
 - Removed since last run: the functions `reuse` reported removed, and any group they leave with one
   member, which is a resolved duplicate.
-- Closed groups: each `closed` record with its line's reason. Unmatched `accepted.jsonl` lines: their
-  copies are gone or merged, and the user may delete the line.
+- Closed groups: each `closed` record with its line's reason.
+- Unmatched `accepted.jsonl` lines. With an empty `present`, every copy is gone and the user may delete
+  the line. Otherwise the group still exists but was not judged this run (cut by priority or the cap)
+  or is no longer counted; keep the line.
+- Draft lines: one per `draft` record, as a ready-to-paste `accepted.jsonl` line with the group ID,
+  `members`, `hashes`, and `bucket` and `reason` left for the user to fill.
 - Per-key unique hits: for each grouping key and optional source, how many confirmed groups only it
   found. A key that finds nothing unique over two runs is a candidate to drop.
 - The domain mapping and its version.

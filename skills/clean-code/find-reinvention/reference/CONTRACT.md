@@ -152,22 +152,26 @@ A `reuse` row keeps its saved description. `changed` and `added` rows are descri
 ### accepted
 
 Input:
-- `{"t":"accept","group":name,"bucket":str,"members":names,"hashes":list}`: one line of the catalog's
-  `accepted.jsonl` with `"t":"accept"` added. `bucket` is `accepted` or `out-of-scope`. `members` are
-  row IDs from the run that closed the group, and `hashes[i]` is the content hash of `members[i]`.
+- `{"t":"accept","group":str,"bucket":str,"members":names,"hashes":list}`: one line of the catalog's
+  `accepted.jsonl` with `"t":"accept"` added. `group` is the user's label and may repeat. `bucket` is
+  `accepted` or `out-of-scope`. `members` are row IDs from the run that closed the group, and
+  `hashes[i]` is the content hash of `members[i]`. Give these records first, in file order: an accept
+  record's `line` is its position among accept records, so it equals its line in the file.
 - `{"t":"new","id":name,"hash":name}`: a row from this run's inventory, as given to `reuse`.
 - `{"t":"unit","job":name,"members":names}`: one job this run counts as implemented 2+ times: the
   anchor and every member judged SAME or VARIANT against it. `job` is the value given to `tally`.
 
 A `bucket` outside its list is `bad_field`.
 
-Output: `closed` records, then `reopened`, then `unmatched`, then `summary`. The `closed` records are
-valid `tally` input.
+Output: `closed` records, then `reopened`, then `unmatched`, then `draft`, then `summary`. The
+`closed` records are valid `tally` input. A `draft` record holds the `members` and `hashes` of a unit
+no line closed, ready to become an `accepted.jsonl` line.
 ```
-{"t":"closed","job":"G0003","group":"G0034","bucket":"accepted"}
-{"t":"reopened","job":"G0007","group":"G0041","bucket":"out-of-scope","added":["c.ts:9:fmt"],"edited":["a.ts:4:fmt"],"gone":[]}
-{"t":"unmatched","group":"G0050"}
-{"t":"summary","lines":3,"units":4,"accepted":1,"out_of_scope":0,"reopened":1,"unmatched":1}
+{"t":"closed","job":"G0003","line":1,"group":"G0034","bucket":"accepted"}
+{"t":"reopened","job":"G0007","line":2,"group":"G0041","bucket":"out-of-scope","added":["c.ts:9:fmt"],"edited":["a.ts:4:fmt"],"gone":[]}
+{"t":"unmatched","line":3,"group":"G0050","present":["x.ts:1:old"]}
+{"t":"draft","job":"G0007","members":["a.ts:4:fmt","b.ts:2:fmt","c.ts:9:fmt"],"hashes":["h5x","h6","h7"]}
+{"t":"summary","lines":3,"units":2,"accepted":1,"out_of_scope":0,"reopened":1,"unmatched":1}
 ```
 
 ### verify --check ids

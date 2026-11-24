@@ -1,0 +1,63 @@
+{
+  "name": "michaelleehobbs",
+  "owner": { "name": "Michael Hobbs" },
+  "description": "Prose-only agent skills from MichaelLeeHobbs/skills, one plugin per group.",
+  "plugins": [
+    {
+      "name": "agent-workflow",
+      "source": "./",
+      "strict": false,
+      "description": "Improve agent work and agent instructions: scored hill-climb loops, tighter context files.",
+      "license": "MIT",
+      "skills": ["./skills/agent-workflow"]
+    },
+    {
+      "name": "clean-code",
+      "source": "./",
+      "strict": false,
+      "description": "Find and prove codebase rot: reinvented helpers, dead code and CSS, drift, stale TODOs and comments.",
+      "license": "MIT",
+      "skills": ["./skills/clean-code"]
+    },
+    {
+      "name": "clean-room",
+      "source": "./",
+      "strict": false,
+      "description": "Specify a UI feature from observed behaviour so it can be rebuilt without copying code.",
+      "license": "MIT",
+      "skills": ["./skills/clean-room"]
+    },
+    {
+      "name": "domains",
+      "source": "./",
+      "strict": false,
+      "description": "Open Integration Engine and Mirth Connect: channel code review and plugin development.",
+      "license": "MIT",
+      "skills": ["./skills/domains"]
+    },
+    {
+      "name": "engineering",
+      "source": "./",
+      "strict": false,
+      "description": "Day-to-day engineering: card triage, batched builds, CVE sweeps, deep code review, writing tests.",
+      "license": "MIT",
+      "skills": ["./skills/engineering"]
+    },
+    {
+      "name": "operations",
+      "source": "./",
+      "strict": false,
+      "description": "Running systems: blameless postmortems.",
+      "license": "MIT",
+      "skills": ["./skills/operations"]
+    },
+    {
+      "name": "thinking",
+      "source": "./",
+      "strict": false,
+      "description": "Reaching a decision: brainstorm, steelman, debate a plan with a panel.",
+      "license": "MIT",
+      "skills": ["./skills/thinking"]
+    }
+  ]
+}

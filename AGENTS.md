@@ -61,7 +61,7 @@ and it hides for months.
 ## Format
 
 ```
-skills/<name>/
+skills/<group>/<name>/
   SKILL.md              required
   reference/*.md        optional, for detail that would bloat the body
 ```
@@ -94,7 +94,7 @@ When a skill genuinely needs a deterministic tool, ship a specification rather t
 The agent generates the tool on the user's machine and proves it correct before using it.
 
 ```
-skills/<name>/
+skills/<group>/<name>/
   SKILL.md
   reference/
     ALGORITHM.md         pseudocode, precise enough to implement from
@@ -129,3 +129,5 @@ reported bug becomes a fixture, and every future generated implementation inheri
   bug.
 - Confirm the skill's own check is one you could actually run.
 - Confirm no executable file entered the repo.
+- A new group folder under `skills/` needs its own entry in `.claude-plugin/marketplace.json`, or Claude
+  Code plugin users never see it. Run `claude plugin validate .` if you have Claude Code; it must pass.

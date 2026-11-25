@@ -52,8 +52,8 @@ name says why (`keeps let in loops: Rhino reuses const bindings`), Move to test 
 
 ## Behaviour a test pins
 
-`// Retries must run in order` with a test named `retries run in order`: Move to test only if the reason
-is there too. Order alone is not the reason. If the reason is "the payment gateway rejects
+`// Retries must run in order` with a test named `retries run in order`: Move to test only if the cause
+is there too. Order alone is not the cause. If the cause is "the payment gateway rejects
 out-of-order idempotency keys", either the test's name or assertion message says that, or the comment
 stays as one line.
 
@@ -72,8 +72,37 @@ retry, write that reason as one line and delete the code.
 ## History notes
 
 "Migrated from v1 in 2023", "Renamed from fooBar", "Added for the Q3 launch": Delete. History lives in
-version control. "Do not switch to the streaming parser: it drops trailing records (issue 412)": Keep.
-That is a rejected alternative an agent could propose again, with a pointer.
+version control. "Do not switch to the streaming parser: it drops trailing records (issue 412)": Keep,
+an oddity. The edit is the switch, the breakage is lost records, and the issue is the lasting source.
+"We chose this parser because it fits our needs better": Delete. It names no breakage.
+
+## Claims about the repo itself
+
+```yaml
+# A single job, since installing is most of the work and splitting would repeat it.
+```
+
+Delete. How the install compares with the rest is the repo's state, and it changes as the suite grows.
+Splitting the job breaks nothing, and a run shows whether it helps. A real pass kept a line like this one
+as a "reason". The install turned out to be 2s of a 566s run.
+
+```js
+// All tests hit the same server, so run them in order.
+workers: 1,
+```
+
+Delete. What the tests share is the repo's state, and it goes false the day each test gets its own
+storage. List `workers: 1` in the report: the setting the comment defended may be wrong too.
+
+Also Delete: "long enough for a cold start" above a timeout, "never flaky, so no retries", "cheap because
+the list is short", "only three callers". If one needs to survive, record the measurement in an issue and
+leave only the link.
+
+Compare, all Keep when checked:
+- "Under the runtime's 10s stop limit, or it kills the process": an outside fact.
+- "Release can arrive before the render commits, so read the ref": an oddity. "Before" is about order,
+  not speed.
+- "Bound before compiling: a visitor supplies the pattern": a security limit.
 
 ## Section banners
 
@@ -100,8 +129,9 @@ with no named cause are excuses.
 ## Long explanations
 
 A paragraph explaining a design decision: Shorten to one line and a pointer to the decision record or
-issue that holds the rest. If no such record exists, keep the shortest version that states the
-constraint, and list it in the report as a candidate for a decision record.
+issue that holds the rest. If no such record exists, keep the shortest version that passes
+the keep test, or Delete if none does. Either way, list it in the report as a candidate for a decision
+record.
 
 ## Looks like a keep, is not
 
@@ -109,4 +139,8 @@ constraint, and list it in the report as a candidate for a decision record.
 - "Be careful when changing this": names no rule. Delete, unless you can find the rule and write that
   instead.
 - "See the function below": the agent can see it. Delete.
+- "Map, because lookups are hot": a speed claim about the repo. Delete.
+- "X because Y", where doing otherwise breaks nothing: an opinion with a cause attached. Delete.
+- "Revisit if the suite passes two minutes": the condition is a measurement. Delete it with its claim;
+  never cut only this sentence, which leaves the claim with no limit.
 - "Note: returns null if not found", when the return type is `User | null`: the type says it. Delete.

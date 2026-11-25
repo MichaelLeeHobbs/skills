@@ -45,6 +45,10 @@ Banned from skill bodies:
 Say what capability you need, not which product provides it. "If you can run work in parallel" beats
 "spawn subagents".
 
+One exception: a literal token that other sessions or tools match on keeps its exact text, even when it
+names a product. Renaming it would orphan every record already written with it. The only one today is
+the `claude-session:` claim marker in `github-issues`.
+
 ### 3. Degrade gracefully
 
 State the fallback explicitly. A skill that fans out to eight workers must say what to do on an agent

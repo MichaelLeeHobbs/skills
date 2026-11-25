@@ -24,6 +24,7 @@ npx skills add MichaelLeeHobbs/skills --skill write-tests
 Add an area when three skills want it, or when one skill names a mode of work no existing area covers.
 `clean-room/` is the second case: specifying from observation, without copying implementation, is a
 different job from anything in `engineering/`. `clean-code/` is the first case: three skills (reinvention,
-comments, docs) that tend an existing codebase rather than write new code.
+comments, docs) that tend an existing codebase rather than write new code. `github/` is an exception: each
+area installs as one plugin, so in `domains/` this layer would bring unrelated skills with it.
 
 Required shape and the rules every skill follows: [../AGENTS.md](../AGENTS.md).

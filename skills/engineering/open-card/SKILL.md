@@ -52,7 +52,8 @@ layer there first.
 
 Stop and do not file if the work is really several tickets, spans more than one repository, needs a
 design debate (a real choice between approaches, permissions or sensitive data, data integrity), or adds
-a new system or screen. Say which in one line, and offer to plan it instead, carrying over what you
+a new system or screen. Stop too if the tracker is public and the fix lives in a private repository: the
+ticket could not say where to build it, so propose a private tracker. Say which in one line, and offer to plan it instead, carrying over what you
 found: the evidence, the revision, the conventions and the neighbours. Never file a partial ticket to fit
 this skill.
 
@@ -72,11 +73,14 @@ with the result.
 
 ## 4. The ticket body
 
-The project's tone rules apply (neutral, provable, no personal data or credentials). Then:
+The project's tone rules apply (neutral, provable, no personal data or credentials). On a public tracker,
+so does the public tracker rule in the [rules for every write](../tracker-verbs/SKILL.md#rules-for-every-write),
+for the title and the brief too. "Just file it" does not cover a private detail. Then:
 
 - **What:** the change, in a few lines.
 - **Why it matters:** the failure first (what breaks or misleads if nobody does this).
-- **Evidence:** `path:line` at the revision, the query and its result, the originating ticket and session.
+- **Evidence:** `path:line` at the revision, the query and its result (where the public tracker rule bars
+  them, only the conclusion), the originating ticket unless it is private, and the session id.
 - **Acceptance criteria:** testable, cheapest decisive check first, with the command when one settles it.
 
 Then the run brief from [reference/BRIEF.md](reference/BRIEF.md), filled in for one slice, in the
@@ -93,7 +97,7 @@ On the user's yes:
 3. `label` it `plan-ready` plus the project's labels, in one write.
 4. `link` it to the originating ticket (`relates`, unless the user says otherwise).
 5. `read` everything back: the fields, the labels, the brief's headings against the template, the link
-   from both tickets. Write the project's record of filed tickets, if it keeps one.
+   from both tickets (from the private one alone, if only it is private). Write the project's record of filed tickets, if it keeps one.
 
 ## 6. Do not claim it
 
@@ -123,5 +127,5 @@ Leave out how it was researched.
 Before the report, confirm from the `read` back, not from memory: the ticket exists with the drafted
 title; it carries `plan-ready`; its description holds every heading in
 [reference/BRIEF.md](reference/BRIEF.md) and its own key in the slices row; the link shows from both
-tickets; it is unclaimed. Run the [tracker verbs check](../tracker-verbs/SKILL.md#check). Any item that
-fails goes in the report as not done.
+tickets (from the private one alone, if only it is private); it is unclaimed. Run the
+[tracker verbs check](../tracker-verbs/SKILL.md#check). Any item that fails goes in the report as not done.

@@ -19,7 +19,8 @@ anything else, and only the layer changes.
 Use the first that exists:
 
 1. **The project's own rules.** A project skill or doc that maps these verbs, or states its ticket
-   conventions (board, fields, labels, how tickets close), wins over everything below.
+   conventions (board, fields, labels, how tickets close), wins over the layers below. The
+   [rules for every write](#rules-for-every-write) still apply.
 2. **An installed layer skill** for the tracker the project uses, such as `github-issues` for GitHub.
 3. **No layer.** Do each verb by hand with the tracker's own command-line tool or API, meeting the
    "Done when" column. Before the first write, tell the user in one line per verb how you mapped it.
@@ -46,7 +47,7 @@ Never skip a verb because no layer covers it. A step that cannot be done is repo
 | `unlabel <key> <labels>` | Remove labels and keep the rest | `read` shows the rest, without those |
 | `claim <key>` | Assign the ticket to the user and mark it as worked by this session (see [claims](#claims)) | `read` shows the assignee and this session's mark |
 | `release <key>` | Remove this session's mark; the assignee stays | `read` shows no mark for this session |
-| `link <key> <type> <other>` | Relate two tickets: `relates` or `blocks`. A duplicate is not a link: use `close <key> duplicate-of <other>` | The link shows from both tickets, or the layer's fallback text is on the ticket |
+| `link <key> <type> <other>` | Relate two tickets: `relates` or `blocks`. A duplicate is not a link: use `close <key> duplicate-of <other>` | The link shows from both tickets, or the layer's fallback text is on the ticket. One of them private: from the private one only |
 | `nest <parent> <child>` | Make one ticket a child (sub-ticket) of another | `read <child>` shows the parent |
 | `start <key>` | Mark the ticket in progress. It does not claim: a session that builds the ticket runs `claim` itself | `read` shows it in progress |
 | `close <key> <outcome>` | End the ticket as `done`, `not-planned` or `duplicate-of <other>`, with a one-line reason | `read` shows it closed with that outcome |
@@ -61,6 +62,9 @@ These names mean the same thing on every tracker, so a skill can ask for one wit
 - `plan-ready`: the description holds a build brief that a fresh session can build from, alone.
 - `in-progress`: being built. A layer whose tracker has a native in-progress state uses that for `start`
   instead and says so.
+
+Never change a label that exists. If one of these already means something else there, ask the user before
+using it.
 
 Done is closed. A layer may map `close done` to its tracker's review state when the project's rules say
 finished work waits there; the layer says so.
@@ -80,22 +84,38 @@ A claim says who is working a ticket now, so two sessions do not build the same 
 ## Rules for every write
 
 - Write only to tickets in the task's set. A neighbour you only read gets no writes.
+- **Public trackers.** Before the first write, find out who can read the tracker, and for `tie` the
+  repository the change goes to. If it is public, or you cannot tell, keep these out of every title, body,
+  comment, branch name and commit message you write for the ticket: internal hostnames and network
+  addresses, account and resource ids, paths on someone's machine, customer names and data, log lines or
+  query results holding any of those, session titles, and anything from a private repository or tracker
+  (names, paths, code, ticket keys). State the conclusion instead ("one caller in a week of network logs").
+  Search the text for these before each write, because an edit does not remove what was published. If the
+  ticket makes no sense without a detail, show it to the user and ask first; a general go-ahead to file
+  does not cover it.
+- **Private keys stay private.** A verb that would put a private ticket's key on a public ticket or change
+  (`link`, `nest`, `close duplicate-of`, `tie`) is written and read back on the private side only. If it
+  has no private-side form, ask the user.
 - `read` back after each write and compare with what you meant. A write you cannot read back is a
   failure, not a success.
 - A refused write (no permission, archived, locked) is not retried as is. Put the note on a ticket you
-  can write to, name the refused key in it, and tell the user.
+  can write to that is no more public than the refused one, name the refused key in it, and tell the user.
+  If there is none, only tell the user.
 - Keep a write's error visible. Never send its output somewhere it can vanish, or a failure reads as a
   success.
 
 ## Writing a layer
 
 A layer is a skill or project doc that gives, for each verb: the exact command, how to read it back, how
-a refusal looks, and a fallback where the tracker lacks the feature. It also says where the status labels
-live, how a missing label gets created without duplicating it, and what `close done` means on that
-tracker. `github-issues` is the worked example.
+a refusal looks, and a fallback where the tracker lacks the feature. It also says how to tell who can read
+the tracker, where the status labels live, how a missing label gets created without duplicating it or
+changing one that exists, and what `close done` means on that tracker. `github-issues` is the worked
+example.
 
 ## Check
 
 Before reporting, list every tracker write this task made with its read-back result. Any write whose
 read-back does not match, or that was never read back, goes in the report as a failure with the key and
-the verb. A task that made writes and cannot show this list has not passed.
+the verb. A task that made writes and cannot show this list has not passed. On a public tracker, search
+each read-back for the details the public tracker rule lists. One that got through without the user's yes
+is a failure: report it first, with how that tracker removes old revisions.

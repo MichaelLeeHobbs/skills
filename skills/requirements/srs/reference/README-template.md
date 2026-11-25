@@ -45,7 +45,8 @@ and `trace.md`, which only the verifier writes.
   (reasoning written out).
 - **Status** `Proposed`, `Accepted`, `Deferred`, `Rejected`, or `Superseded by <ID>`. Anyone may add a
   Proposed row. Only the developer moves a row to Accepted, Deferred or Rejected, in their own words, and
-  each such decision gets a dated line in the change log naming every ID it moved.
+  each such decision gets a dated line in the change log naming every ID it moved, with the word
+  Accepted before the IDs it accepts.
 
 **Wording.** `shall` is mandatory, `should` is expected, `may` is permitted. Each requirement is
 necessary, singular (one behaviour per row), unambiguous, verifiable, and says what the product does,

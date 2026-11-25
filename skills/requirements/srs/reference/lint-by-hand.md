@@ -6,7 +6,7 @@ Ignore tables inside fenced code blocks.
 
 ## Requirement rows (every `.md` except README.md and trace.md)
 
-A requirement table is one whose header starts `| ID | Requirement |`.
+A requirement table is one whose header has both an ID and a Requirement column, in any order.
 
 1. Every requirement table has the columns ID, Requirement, Pri, Verify, Status.
 2. Every ID matches `AREA-SUB-NN`: capitals, a hyphen, capitals, a hyphen, two or more digits.
@@ -14,7 +14,8 @@ A requirement table is one whose header starts `| ID | Requirement |`.
 4. No requirement text is empty.
 5. Pri is P1, P2 or P3. Verify is Test, Demonstration, Inspection or Analysis.
 6. Status is Proposed, Accepted, Deferred, Rejected, or `Superseded by <ID>`.
-7. Every `Superseded by <ID>` names an ID that exists and is not the row's own.
+7. Every `Superseded by <ID>` names an ID that exists, is not the row's own, and is Accepted or itself
+   Superseded.
 8. Every Proposed or Accepted row outside `interfaces/` uses shall, should or may.
 
 ## README.md
@@ -23,13 +24,15 @@ A requirement table is one whose header starts `| ID | Requirement |`.
    Areas, Completeness summary, Change log.
 10. It holds exactly one `<!-- srs-summary:start -->` followed by one `<!-- srs-summary:end -->`.
 11. The Areas section names every area and interface file, and every `.md` link in it exists.
-12. Every Accepted ID appears, spelled out, on a Change log line that carries a `YYYY-MM-DD` date.
+12. Every Accepted ID appears, spelled out after the word Accepted, in a Change log item that carries a
+    `YYYY-MM-DD` date. An item may wrap onto indented continuation lines.
 
 ## trace.md, when it exists
 
-A trace table is one whose header starts `| ID |` and has a Verdict column.
+A trace table is one whose header has an ID column.
 
-13. It has an Evidence column.
+13. If trace.md names any requirement ID, it holds a trace table, and that table has Verdict and
+    Evidence columns.
 14. Every ID is a requirement in this SRS, its Status is Accepted, and it appears once.
 15. Every verdict is Met, Partial, Not met, Regressed or Cannot verify.
 16. Met, Partial and Regressed rows name evidence. Cannot verify rows say why, in Notes or Evidence.

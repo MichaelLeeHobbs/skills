@@ -12,7 +12,7 @@ bought you code execution from a repo you probably skimmed.
 This repo keeps that small enough to audit. Almost every skill is prose only. A skill that needs a
 deterministic job done (parsing a table, counting IDs) may ship a script, and only on strict terms: Node
 ESM in the skill's own `scripts/` folder, Node built-ins only, no dependencies, no install step, no
-network, and tests with fixtures beside it. Today only the `requirements` skills carry scripts. Read
+network, and tests with fixtures beside it. Today only `srs` and `srs-verify` carry scripts. Read
 those before you install them; everything else has no code to read.
 
 ## Install
@@ -106,8 +106,8 @@ Gardening and weeding an existing codebase: finding what is duplicated, dead, dr
 ### requirements
 
 Keeping a Software Requirements Specification (SRS) in the repo as the contract agents build toward. The
-SRS README carries the format, so each skill works without the others installed. These three ship Node
-scripts (built-ins only, tested with `node --test`).
+SRS README carries the format, so each skill works without the others installed. `srs` and `srs-verify`
+ship Node scripts (built-ins only, tested with `node --test`).
 
 | Skill | What it does |
 |---|---|

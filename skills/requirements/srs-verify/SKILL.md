@@ -43,9 +43,10 @@ node <this skill's folder>/scripts/srs-coverage.mjs docs/srs --tests <test folde
 
 `covered` maps each ID to the test names that cite it: those are your candidates, not your evidence.
 `uncovered` lists Accepted rows with Verify Test and no citing test, by priority: each starts as Not met
-unless you find a test the naming missed. Findings for unknown or superseded IDs are tests to rename;
-list them in the report. Exit 0 or 1 both mean the script ran; exit 2 means wrong arguments, so fix and
-rerun. If Node is not available, say the script did not run and find citing tests by searching the test
+unless you find a test the naming missed. Findings for unknown or superseded IDs are tests to rename,
+and `skipped-test` findings are skipped or todo tests that do not count; list both in the report. Exit 0
+or 1 both mean the script ran; exit 2 means wrong arguments or the script could not run (it says why),
+so fix and rerun. If Node is not available, say the script did not run and find citing tests by searching the test
 folders for each ID (hyphenated, and with underscores for languages that forbid hyphens in names).
 
 ## 2. Judge each requirement

@@ -5,7 +5,7 @@ import { join, relative, resolve, sep } from 'node:path';
 const USAGE = `Usage: node srs-lint.mjs <srs-dir> [--json]
 
 Checks the format of a Software Requirements Specification folder (usually docs/srs).
-Exit 0 clean, 1 findings, 2 usage error.`;
+Exit 0 clean, 1 findings, 2 usage error or the script could not run.`;
 
 // ---- SRS parsing. srs-verify/scripts/srs-coverage.mjs carries its own copy of this block because each
 // ---- skill installs on its own. Change both together; each copy is pinned by its own skill's tests.
@@ -42,16 +42,25 @@ function splitRow(line) {
 
 const isSeparator = (cells) => cells.length > 0 && cells.every((c) => /^:?-+:?$/.test(c));
 
+// CommonMark: a fence closes only on the same character, at least as long as the opener.
+function fenceTracker() {
+  let open = null;
+  return (line) => {
+    const m = /^\s{0,3}(`{3,}|~{3,})/.exec(line);
+    if (m && (!open || (m[1][0] === open[0] && m[1].length >= open.length && /^\s{0,3}[`~]+\s*$/.test(line)))) {
+      open = open ? null : m[1];
+      return true;
+    }
+    return open !== null;
+  };
+}
+
 function parseTables(text) {
   const lines = text.split(/\r?\n/);
   const tables = [];
-  let inFence = false;
+  const fenced = fenceTracker();
   for (let i = 0; i < lines.length; i++) {
-    if (/^\s*(```|~~~)/.test(lines[i])) {
-      inFence = !inFence;
-      continue;
-    }
-    if (inFence) continue;
+    if (fenced(lines[i])) continue;
     const header = splitRow(lines[i]);
     const sepCells = i + 1 < lines.length ? splitRow(lines[i + 1]) : null;
     if (!header || !sepCells || !isSeparator(sepCells)) continue;
@@ -68,11 +77,21 @@ function parseTables(text) {
   return tables;
 }
 
-function listMarkdown(dir) {
+function statOrNull(path) {
+  try {
+    return statSync(path);
+  } catch {
+    return null;
+  }
+}
+
+function listMarkdown(dir, skipped) {
   const out = [];
   for (const name of readdirSync(dir).sort()) {
     const full = join(dir, name);
-    if (statSync(full).isDirectory()) out.push(...listMarkdown(full));
+    const st = statOrNull(full);
+    if (!st) skipped.push(full);
+    else if (st.isDirectory()) out.push(...listMarkdown(full, skipped));
     else if (name.toLowerCase().endsWith('.md')) out.push(full);
   }
   return out;
@@ -87,10 +106,9 @@ function parseStatus(cell) {
 function sections(text) {
   const lines = text.split(/\r?\n/);
   const out = [];
-  let inFence = false;
+  const fenced = fenceTracker();
   lines.forEach((l, i) => {
-    if (/^\s*(```|~~~)/.test(l)) inFence = !inFence;
-    const m = !inFence && /^##\s+(.+?)\s*#*\s*$/.exec(l);
+    const m = !fenced(l) && /^##\s+(.+?)\s*#*\s*$/.exec(l);
     if (m) out.push({ name: m[1].trim().toLowerCase(), line: i + 1, body: [] });
     else if (out.length) out[out.length - 1].body.push({ line: i + 1, text: l });
   });
@@ -98,9 +116,10 @@ function sections(text) {
 }
 
 function loadSrs(srsDir) {
-  const files = listMarkdown(srsDir);
+  const skipped = [];
+  const files = listMarkdown(srsDir, skipped);
   const rel = (f) => relative(srsDir, f).split(sep).join('/');
-  const srs = { readme: null, trace: null, areaFiles: [], requirements: [], tables: [] };
+  const srs = { readme: null, trace: null, areaFiles: [], requirements: [], tables: [], unreadable: skipped.map(rel) };
   for (const f of files) {
     const r = rel(f);
     const text = readFileSync(f, 'utf8');
@@ -114,7 +133,7 @@ function loadSrs(srsDir) {
     }
     srs.areaFiles.push(r);
     for (const t of parseTables(text)) {
-      if (t.header[0] !== 'id' || !t.header.includes('requirement')) continue;
+      if (!t.header.includes('id') || !t.header.includes('requirement')) continue;
       const col = Object.fromEntries(REQ_COLUMNS.map((c) => [c, t.header.indexOf(c)]));
       srs.tables.push({ file: r, line: t.line, col });
       for (const row of t.rows) {
@@ -143,6 +162,8 @@ function lint(srsDir) {
   const srs = loadSrs(srsDir);
   const findings = [];
   const add = (rule, file, line, message, id) => findings.push({ rule, file, line, message, ...(id ? { id } : {}) });
+
+  for (const u of srs.unreadable) add('unreadable', u, 0, 'cannot be read (a broken link or a permissions problem), so it was not checked');
 
   if (srs.requirements.length === 0) {
     add('no-requirements', '.', 0, 'no requirement tables found (a table whose header starts | ID | Requirement |)');
@@ -180,6 +201,10 @@ function lint(srsDir) {
       if (!r.supersededBy) add('supersede-target', r.file, r.line, 'Superseded row does not name its replacement ("Superseded by ID")', r.id);
       else if (r.supersededBy === r.id) add('supersede-target', r.file, r.line, `${r.id} is superseded by itself`, r.id);
       else if (!byId.has(r.supersededBy)) add('supersede-target', r.file, r.line, `superseded by ${r.supersededBy}, which does not exist`, r.id);
+      else if (!['Accepted', 'Superseded'].includes(byId.get(r.supersededBy).status)) {
+        const target = byId.get(r.supersededBy);
+        add('supersede-target', r.file, r.line, `superseded by ${r.supersededBy}, which is ${target.status}; a row is superseded only once its replacement is Accepted`, r.id);
+      }
     }
     const interfaceRow = r.file.startsWith('interfaces/');
     if (!interfaceRow && r.text && !/\b(shall|should|may)\b/i.test(r.text) && ['Proposed', 'Accepted'].includes(r.status)) {
@@ -219,11 +244,16 @@ function lint(srsDir) {
 
     const log = find('change log');
     if (log) {
+      const items = [];
+      for (const b of log.body) {
+        if (/^\s*[-*+]\s/.test(b.text) || !items.length) items.push(b.text);
+        else if (b.text.trim()) items[items.length - 1] += ` ${b.text.trim()}`;
+      }
       for (const r of byId.values()) {
         if (r.status !== 'Accepted') continue;
-        const idRe = new RegExp(`(^|[^A-Z0-9-])${r.id}([^0-9]|$)`);
-        const ok = log.body.some((b) => idRe.test(b.text) && /\b\d{4}-\d{2}-\d{2}\b/.test(b.text));
-        if (!ok) add('change-log', r.file, r.line, `${r.id} is Accepted but no dated change-log line names it`, r.id);
+        const acceptedRe = new RegExp(`\\baccept[a-z]*\\b[^.;"]*?(^|[^A-Z0-9-])${r.id}([^0-9]|$)`, 'i');
+        const ok = items.some((t) => acceptedRe.test(t) && /\b\d{4}-\d{2}-\d{2}\b/.test(t));
+        if (!ok) add('change-log', r.file, r.line, `${r.id} is Accepted but no dated change-log line says "Accepted ... ${r.id}"`, r.id);
       }
     }
   }
@@ -231,10 +261,15 @@ function lint(srsDir) {
   if (srs.trace) {
     const file = srs.trace.file;
     const seen = new Map();
-    for (const t of srs.trace.tables) {
-      if (t.header[0] !== 'id' || !t.header.includes('verdict')) continue;
+    const traceTables = srs.trace.tables.filter((t) => t.header.includes('id'));
+    if (traceTables.length === 0 && /[A-Z][A-Z0-9]*-[A-Z][A-Z0-9]*-\d{2,}/.test(srs.trace.text)) {
+      add('trace-unparsed', file, 0, 'trace.md names requirement IDs but holds no | ID | Verdict | Evidence | table');
+    }
+    for (const t of traceTables) {
       const col = Object.fromEntries(['id', 'verdict', 'evidence', 'notes'].map((c) => [c, t.header.indexOf(c)]));
-      if (col.evidence < 0) add('missing-column', file, t.line, 'trace table lacks column: evidence');
+      const missing = ['verdict', 'evidence'].filter((c) => col[c] < 0);
+      if (missing.length) add('missing-column', file, t.line, `trace table lacks column(s): ${missing.join(', ')}`);
+      if (col.verdict < 0) continue;
       for (const row of t.rows) {
         const cell = (c) => (col[c] >= 0 ? (row.cells[col[c]] ?? '').trim() : '');
         const id = cell('id');
@@ -295,4 +330,9 @@ function main(argv) {
   return findings.length ? 1 : 0;
 }
 
-process.exitCode = main(process.argv);
+try {
+  process.exitCode = main(process.argv);
+} catch (err) {
+  console.error(`srs-lint could not run: ${err?.message ?? err}`);
+  process.exitCode = 2;
+}

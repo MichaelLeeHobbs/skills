@@ -7,7 +7,7 @@ const USAGE = `Usage: node srs-coverage.mjs <srs-dir> --tests <path>... [--write
 Maps requirement IDs in test names to the SRS: Accepted requirements with Verify Test and no test,
 tests citing unknown or superseded IDs, and per-area counts. --write-summary rewrites the block
 between the srs-summary markers in the SRS README.
-Exit 0 clean, 1 findings (or the summary could not be written), 2 usage error.`;
+Exit 0 clean, 1 findings (or the summary could not be written), 2 usage error or the script could not run.`;
 
 // ---- SRS parsing. srs/scripts/srs-lint.mjs carries its own copy of this block because each skill
 // ---- installs on its own. Change both together; each copy is pinned by its own skill's tests.
@@ -44,16 +44,25 @@ function splitRow(line) {
 
 const isSeparator = (cells) => cells.length > 0 && cells.every((c) => /^:?-+:?$/.test(c));
 
+// CommonMark: a fence closes only on the same character, at least as long as the opener.
+function fenceTracker() {
+  let open = null;
+  return (line) => {
+    const m = /^\s{0,3}(`{3,}|~{3,})/.exec(line);
+    if (m && (!open || (m[1][0] === open[0] && m[1].length >= open.length && /^\s{0,3}[`~]+\s*$/.test(line)))) {
+      open = open ? null : m[1];
+      return true;
+    }
+    return open !== null;
+  };
+}
+
 function parseTables(text) {
   const lines = text.split(/\r?\n/);
   const tables = [];
-  let inFence = false;
+  const fenced = fenceTracker();
   for (let i = 0; i < lines.length; i++) {
-    if (/^\s*(```|~~~)/.test(lines[i])) {
-      inFence = !inFence;
-      continue;
-    }
-    if (inFence) continue;
+    if (fenced(lines[i])) continue;
     const header = splitRow(lines[i]);
     const sepCells = i + 1 < lines.length ? splitRow(lines[i + 1]) : null;
     if (!header || !sepCells || !isSeparator(sepCells)) continue;
@@ -70,11 +79,21 @@ function parseTables(text) {
   return tables;
 }
 
-function listMarkdown(dir) {
+function statOrNull(path) {
+  try {
+    return statSync(path);
+  } catch {
+    return null;
+  }
+}
+
+function listMarkdown(dir, skipped) {
   const out = [];
   for (const name of readdirSync(dir).sort()) {
     const full = join(dir, name);
-    if (statSync(full).isDirectory()) out.push(...listMarkdown(full));
+    const st = statOrNull(full);
+    if (!st) skipped.push(full);
+    else if (st.isDirectory()) out.push(...listMarkdown(full, skipped));
     else if (name.toLowerCase().endsWith('.md')) out.push(full);
   }
   return out;
@@ -89,10 +108,9 @@ function parseStatus(cell) {
 function sections(text) {
   const lines = text.split(/\r?\n/);
   const out = [];
-  let inFence = false;
+  const fenced = fenceTracker();
   lines.forEach((l, i) => {
-    if (/^\s*(```|~~~)/.test(l)) inFence = !inFence;
-    const m = !inFence && /^##\s+(.+?)\s*#*\s*$/.exec(l);
+    const m = !fenced(l) && /^##\s+(.+?)\s*#*\s*$/.exec(l);
     if (m) out.push({ name: m[1].trim().toLowerCase(), line: i + 1, body: [] });
     else if (out.length) out[out.length - 1].body.push({ line: i + 1, text: l });
   });
@@ -100,9 +118,10 @@ function sections(text) {
 }
 
 function loadSrs(srsDir) {
-  const files = listMarkdown(srsDir);
+  const skipped = [];
+  const files = listMarkdown(srsDir, skipped);
   const rel = (f) => relative(srsDir, f).split(sep).join('/');
-  const srs = { readme: null, trace: null, areaFiles: [], requirements: [], tables: [] };
+  const srs = { readme: null, trace: null, areaFiles: [], requirements: [], tables: [], unreadable: skipped.map(rel) };
   for (const f of files) {
     const r = rel(f);
     const text = readFileSync(f, 'utf8');
@@ -116,7 +135,7 @@ function loadSrs(srsDir) {
     }
     srs.areaFiles.push(r);
     for (const t of parseTables(text)) {
-      if (t.header[0] !== 'id' || !t.header.includes('requirement')) continue;
+      if (!t.header.includes('id') || !t.header.includes('requirement')) continue;
       const col = Object.fromEntries(REQ_COLUMNS.map((c) => [c, t.header.indexOf(c)]));
       srs.tables.push({ file: r, line: t.line, col });
       for (const row of t.rows) {
@@ -145,8 +164,10 @@ const SKIP_DIRS = new Set(['node_modules', '.git', 'dist', 'build', 'coverage', 
 const CODE_EXT = /\.(c|m)?(j|t)sx?$|\.(py|go|java|kt|kts|cs|rb|rs|php|swift|scala|exs?|feature)$/i;
 const TEST_NAME = /([._-](test|spec)s?\.[a-z]+$)|(^test_.*\.py$)|(_test\.(go|py|rs|exs)$)|(Tests?\.(java|kt|cs|swift|scala)$)|(\.feature$)/i;
 const TEST_DIR = new Set(['test', 'tests', '__tests__', 'spec', 'specs', 'e2e']);
+const TEST_CALL = /\b(it|test|describe|context|suite|specify|scenario|feature)\b(\.\w+(\([^)]*\))?)*/.source;
 const DECLARATION = [
-  /\b(it|test|describe|context|suite|specify|scenario|feature)\b(\.\w+)*\s*[(\s]\s*[`'"]/i,
+  new RegExp(TEST_CALL + /\s*[(\s]\s*[`'"]/.source, 'i'),
+  /\b(it|test|describe)\.each\b/,
   /^\s*(Scenario|Scenario Outline|Feature|Rule|Example):/,
   /\.Run\s*\(\s*[`'"]/,
   /\bdef\s+test\w*/i,
@@ -157,20 +178,27 @@ const DECLARATION = [
   /\bfun\s+`/,
   /DisplayName\s*[(=]/,
 ];
+const OPEN_CALL = new RegExp(TEST_CALL + /\s*\(\s*$/.source, 'i');
+const NAMED_DEF = /\b(def\s+test\w*|func\s+Test\w*|fn\s+\w+|void\s+\w+)\s*\(/i;
+const COMMENT = /^\s*(\/\/|#(?!\[)|\/\*|\*|--|<!--)/;
+const SKIPPED_CALL = /\b(x(it|test|describe|context|specify)|(it|test|describe|context|suite|specify)\.(skip|todo|fixme))\b/;
+const SKIP_MARK = /@pytest\.mark\.(skip|xfail)|@unittest\.skip|@Disabled|@Ignore|\[(Ignore|Skip)\b|#\[ignore\]|\bt\.Skip\(/;
 const HYPHEN_ID = /(?<![A-Za-z0-9-])[A-Z][A-Z0-9]*-[A-Z][A-Z0-9]*-\d{2,}(?![0-9])/g;
-const UNDERSCORE_ID = /(?<![A-Za-z0-9])([A-Za-z][A-Za-z0-9]*)_([A-Za-z][A-Za-z0-9]*)_(\d{2,})(?![0-9])/g;
+const UNDERSCORE_ID = /([A-Za-z][A-Za-z0-9]*)_([A-Za-z][A-Za-z0-9]*)_(\d{2,})(?![0-9])/g;
 
-function collectTestFiles(target, explicit, out) {
-  const st = statSync(target);
+function collectTestFiles(target, explicit, out, unreadable) {
+  const st = statOrNull(target);
+  if (!st) {
+    unreadable.push(target);
+    return;
+  }
   if (st.isFile()) {
     if (explicit || CODE_EXT.test(target)) out.push({ path: target, explicit });
     return;
   }
   for (const name of readdirSync(target).sort()) {
     if (SKIP_DIRS.has(name)) continue;
-    const full = join(target, name);
-    if (statSync(full).isDirectory()) collectTestFiles(full, false, out);
-    else if (CODE_EXT.test(name)) out.push({ path: full, explicit: false });
+    collectTestFiles(join(target, name), false, out, unreadable);
   }
 }
 
@@ -180,29 +208,51 @@ function isTestFile(path, root) {
   return TEST_NAME.test(name) || parts.slice(0, -1).some((p) => TEST_DIR.has(p.toLowerCase())) || TEST_DIR.has(basename(root).toLowerCase());
 }
 
+// A Go or JUnit name glues a prefix onto the area (TestCONN_API_01), so try each suffix of the first part;
+// only a suffix that forms a known ID counts, which keeps names like test_page_size_10 from matching.
+function idsIn(text, knownIds) {
+  const ids = new Set();
+  for (const m of text.matchAll(HYPHEN_ID)) ids.add(m[0]);
+  for (const m of text.matchAll(UNDERSCORE_ID)) {
+    for (let k = 0; k < m[1].length; k++) {
+      if (!/[A-Za-z]/.test(m[1][k])) continue;
+      const id = `${m[1].slice(k)}-${m[2]}-${m[3]}`.toUpperCase();
+      if (knownIds.has(id)) {
+        ids.add(id);
+        break;
+      }
+    }
+  }
+  return ids;
+}
+
 function findCitations(testRoots, knownIds, cwd) {
   const citations = [];
+  const skipped = [];
+  const unreadable = [];
   let scanned = 0;
   for (const root of testRoots) {
     const files = [];
-    collectTestFiles(root, true, files);
+    collectTestFiles(root, true, files, unreadable);
     for (const f of files) {
       if (!f.explicit && !isTestFile(f.path, root)) continue;
       scanned++;
       const display = shown(cwd, f.path);
-      readFileSync(f.path, 'utf8').split(/\r?\n/).forEach((line, i) => {
-        if (!DECLARATION.some((re) => re.test(line))) return;
-        const ids = new Set();
-        for (const m of line.matchAll(HYPHEN_ID)) ids.add(m[0]);
-        for (const m of line.matchAll(UNDERSCORE_ID)) {
-          const id = `${m[1]}-${m[2]}-${m[3]}`.toUpperCase();
-          if (knownIds.has(id)) ids.add(id);
+      const lines = readFileSync(f.path, 'utf8').split(/\r?\n/);
+      lines.forEach((line, i) => {
+        if (COMMENT.test(line) || !(OPEN_CALL.test(line) || DECLARATION.some((re) => re.test(line)))) return;
+        let text = line;
+        if (OPEN_CALL.test(line) || NAMED_DEF.test(line)) {
+          for (let j = i + 1; j <= i + 2 && j < lines.length && /^\s*[`'"]/.test(lines[j]); j++) text += ` ${lines[j].trim()}`;
         }
-        for (const id of ids) citations.push({ id, file: display, line: i + 1, name: line.trim().slice(0, 160) });
+        const isSkipped = SKIPPED_CALL.test(line) || lines.slice(Math.max(0, i - 2), i + 3).some((l) => SKIP_MARK.test(l));
+        for (const id of idsIn(text, knownIds)) {
+          (isSkipped ? skipped : citations).push({ id, file: display, line: i + 1, name: line.trim().slice(0, 160) });
+        }
       });
     }
   }
-  return { citations, scanned };
+  return { citations, skipped, unreadable: unreadable.map((u) => shown(cwd, u)), scanned };
 }
 
 function shown(cwd, path) {
@@ -215,7 +265,7 @@ function readVerdicts(srs) {
   for (const t of srs.trace.tables) {
     const idCol = t.header.indexOf('id');
     const vCol = t.header.indexOf('verdict');
-    if (idCol !== 0 || vCol < 0) continue;
+    if (idCol < 0 || vCol < 0) continue;
     for (const row of t.rows) verdicts.set((row.cells[idCol] ?? '').trim(), (row.cells[vCol] ?? '').trim());
   }
   return verdicts;
@@ -225,11 +275,17 @@ function coverage(srsDir, testRoots, cwd) {
   const srs = loadSrs(srsDir);
   const byId = new Map();
   for (const r of srs.requirements) if (r.id && ID_RE.test(r.id) && !byId.has(r.id)) byId.set(r.id, r);
-  const { citations, scanned } = findCitations(testRoots, new Set(byId.keys()), cwd);
+  const { citations, skipped, unreadable, scanned } = findCitations(testRoots, new Set(byId.keys()), cwd);
   const verdicts = readVerdicts(srs);
   const findings = [];
   const add = (rule, message, extra = {}) => findings.push({ rule, message, ...extra });
 
+  for (const u of [...srs.unreadable.map((p) => `${shown(cwd, srsDir)}/${p}`), ...unreadable]) {
+    add('unreadable', `${u} cannot be read (a broken link or a permissions problem), so it was not scanned`, { file: u });
+  }
+  for (const c of skipped) {
+    add('skipped-test', `${c.file}:${c.line} cites ${c.id} but is skipped or a todo, so it does not count`, { id: c.id, file: c.file, line: c.line });
+  }
   if (byId.size === 0) add('no-requirements', `no requirement rows found under ${shown(cwd, srsDir)}`);
   if (scanned === 0) add('no-tests', `no test files found under ${testRoots.map((t) => shown(cwd, t)).join(', ')}`);
 
@@ -306,6 +362,11 @@ function writeSummary(srsDir, result, date) {
   const e = text.indexOf(SUMMARY_END);
   if (s < 0 || e < 0 || e < s || text.indexOf(SUMMARY_START, s + 1) >= 0 || text.indexOf(SUMMARY_END, e + 1) >= 0) {
     return `README needs exactly one ${SUMMARY_START} followed by one ${SUMMARY_END}`;
+  }
+  try {
+    new TextDecoder('utf-8', { fatal: true }).decode(readFileSync(path));
+  } catch {
+    return 'README is not valid UTF-8, and rewriting it would corrupt it';
   }
   const eol = text.includes('\r\n') ? '\r\n' : '\n';
   const block = summaryBlock(result, date).split('\n').join(eol);
@@ -403,4 +464,9 @@ function main(argv) {
   return result.findings.length ? 1 : 0;
 }
 
-process.exitCode = main(process.argv);
+try {
+  process.exitCode = main(process.argv);
+} catch (err) {
+  console.error(`srs-coverage could not run: ${err?.message ?? err}`);
+  process.exitCode = 2;
+}

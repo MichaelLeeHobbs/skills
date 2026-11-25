@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -47,7 +47,33 @@ const cases = {
   'no-readme': ['readme'],
   'bad-trace': ['bad-verdict', 'trace-duplicate', 'trace-evidence', 'trace-evidence', 'trace-stale', 'trace-unknown-id'],
   empty: ['area-index', 'area-index', 'no-requirements'],
+  'trace-shape': ['missing-column'],
+  'trace-unparsed': ['trace-unparsed'],
+  'supersede-proposed': ['supersede-target'],
+  'change-log-shapes': ['change-log'],
+  'fence-and-column-order': ['bad-pri', 'bad-verify'],
 };
+
+test('a wrapped change-log item counts, a dated mention without "Accepted" does not', () => {
+  const { json } = rules('change-log-shapes');
+  assert.deepEqual(json.findings.map((f) => f.id), ['AUTH-USR-01']);
+});
+
+test('a broken link inside the SRS is a finding, not a crash or a clean pass', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'srs-lint-'));
+  try {
+    cpSync(fixture('clean'), dir, { recursive: true });
+    const target = join(dir, 'gone-target');
+    mkdirSync(target);
+    symlinkSync(target, join(dir, 'gone'), 'junction');
+    rmSync(target, { recursive: true });
+    const r = run(dir, '--json');
+    assert.equal(r.code, 1, r.err);
+    assert.deepEqual(JSON.parse(r.out).findings.map((f) => f.rule), ['unreadable']);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
 
 for (const [name, expected] of Object.entries(cases)) {
   test(`${name} fixture reports exactly ${expected.join(', ')} and exits 1`, () => {

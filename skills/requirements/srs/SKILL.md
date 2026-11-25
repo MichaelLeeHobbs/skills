@@ -90,7 +90,7 @@ node <this skill's folder>/scripts/srs-lint.mjs docs/srs
 
 Add `--json` for a machine-readable list. Exit 0 means clean. Exit 1 lists findings as
 `file:line: rule: message`: fix every one and run it again; never report the work done with findings
-open. Exit 2 means a wrong path or option.
+open. Exit 2 means a wrong path or option, or the script could not run; it prints why.
 
 If Node is not available, the check has not run, and you say so in your report as a failure. Then go
 through [the checks by hand](reference/lint-by-hand.md), mark each pass or fail with the row it concerns,

@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { cpSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -118,6 +118,50 @@ test('--write-summary without markers is a finding and leaves the README untouch
     assert.equal(out.summaryWritten, false);
     assert.deepEqual(rules(out), ['summary-not-written']);
     assert.equal(readFileSync(readme, 'utf8'), stripped);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('detection: Go names, multi-line names, table tests and docstrings count; skipped tests and comments do not', () => {
+  const r = json('detection');
+  assert.equal(r.code, 1);
+  assert.deepEqual(Object.keys(r.covered).sort(), ['AUTH-SES-01', 'AUTH-USR-01', 'AUTH-USR-03', 'CONN-API-01']);
+  assert.ok(r.covered['AUTH-USR-01'].every((c) => c.file.endsWith('test_passwords.py')), 'only the docstring cites AUTH-USR-01');
+  assert.deepEqual(rules(r), ['skipped-test']);
+});
+
+test('an SRS with no requirement rows is a finding', () => {
+  const r = json('no-requirements');
+  assert.equal(r.code, 1);
+  assert.ok(rules(r).includes('no-requirements'));
+});
+
+test('--write-summary refuses a README that is not UTF-8', () => {
+  const dir = tmpCopy('clean');
+  try {
+    const readme = join(dir, 'srs', 'README.md');
+    const latin1 = Buffer.concat([Buffer.from('# Caf'), Buffer.from([0xe9]), Buffer.from('\n'), readFileSync(readme)]);
+    writeFileSync(readme, latin1);
+    const r = run([join(dir, 'srs'), '--tests', join(dir, 'tests'), '--write-summary', '--json']);
+    assert.equal(r.code, 1);
+    assert.deepEqual(rules(JSON.parse(r.out)), ['summary-not-written']);
+    assert.deepEqual(readFileSync(readme), latin1);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('a broken link in the test folder is a finding, not a crash', () => {
+  const dir = tmpCopy('clean');
+  try {
+    const target = join(dir, 'gone-target');
+    mkdirSync(target);
+    symlinkSync(target, join(dir, 'tests', 'gone'), 'junction');
+    rmSync(target, { recursive: true });
+    const r = run([join(dir, 'srs'), '--tests', join(dir, 'tests'), '--json']);
+    assert.equal(r.code, 1, r.err);
+    assert.deepEqual(rules(JSON.parse(r.out)), ['unreadable']);
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }

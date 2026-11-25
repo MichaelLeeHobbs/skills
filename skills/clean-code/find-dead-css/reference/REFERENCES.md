@@ -16,15 +16,32 @@ Stream each file as one `src` record (`path`, `text`) to `refs`:
   class a date picker or menu library sets in a state the crawl missed is still found;
 - the canary corpus file (Check, canary 3).
 
-Set `fragments` to `no` on a file that never runs in the shipped app: prose (`.md`, `.txt`, unless the
-app renders it), tests and their fixtures, component stories, lint and agent configuration. An exact name
-there still counts as a reference. A piece of one does not, because such a file cannot build a class name
-in the app, and prose or a test that mentions a class prefix would otherwise look like code building
-every class with that prefix. Leave it at `yes` for product source, built JavaScript, templates, outside
-sources, the canary corpus file and any file you are unsure about: a wrong `no` can call a live rule
-dead. Show the patterns set to `no` at approval.
+Give each record its `fragments` value as [Exact-only files](#exact-only-files) says.
 
 Never send the corpus to a model to search. The tool reads it once.
+
+## Exact-only files
+
+Prose or a test that mentions a class prefix reads the same as code that builds every class with that
+prefix. Set `fragments` to `no` on these files and no others, so an exact name in them counts and a piece
+of a name does not:
+
+- prose: `.md` and `.txt` files, licences, and instructions for agents;
+- test files, their fixtures and component stories;
+- lint, formatter and agent configuration.
+
+Every other file is `yes`: product source, built JavaScript, templates, every other app and package in
+the repo, server and build-time code, code generators, all other configuration (a utility-class safelist
+names classes), `.mdx`, data files and the canary corpus file. Apply the same rule to outside sources.
+
+A file on the list is still `yes` when a built source map lists it, a `yes` file imports or reads it, any
+app, site or email renders it, or you are unsure. A wrong `yes` leaves a dead rule unproven. A wrong
+`no` can call a live rule dead.
+
+Write the globs for the `no` files to the catalog's `exact-only.txt`, one per line in byte order, LF after
+each, with `!` before a path that stays `yes`: a file is `no` when it matches a glob line and no `!` line.
+Show the globs and how many files they match at approval. In static-only mode, which has no plan to
+approve, show them before running `refs`.
 
 ## Tokens to search
 
@@ -33,17 +50,30 @@ all appear in the crawl. `classify` stops with `missing_ref` if one is missing.
 
 ## Prefix probes
 
-Before classifying, test that the corpus can return `none` at all. Take the distinct first segments of the
-inventory's class tokens, leaving out CSS-module classes: the name up to and including its first `-` or
-`_`, when that is at least 3 bytes. In a separate `refs` run over the same corpus, send one made-up name per segment:
-`c:<segment>zz<nonce>`, the nonce ASCII letters and digits only. On an exact match, use another nonce.
+Before classifying, test that the corpus can return `none` at all. For every class token in the
+inventory, canaries left out, take each prefix of 3 bytes or more that ends at a `-` or `_`:
+`card--wide` gives `card-` and `card--`. In a separate `refs` run over the same corpus, send one `want` per
+distinct prefix, numbered from 0, with a nonce of ASCII letters and digits:
 
-- `none`: a dead class with that segment can be found.
-- `fragment` in product source, built JavaScript, a template or an outside source: the app may build
-  names from that segment. A class token that starts with it can never be DEAD. Report the segment, how
-  many class tokens start with it, and the fragment's place.
-- `fragment` in any other file: that file should be `no`. The run fails. Correct the corpus and run
-  `refs` again.
+```
+{"t":"want","token":"c:probe0","needle":"card--zz<nonce>"}
+```
+
+For a CSS-module class use its local name and add its importers as `paths`. On an exact match, use
+another nonce.
+
+- `none`: no `yes` file holds that prefix or a shorter one as a fragment.
+- `fragment` in a file that [Exact-only files](#exact-only-files) lists: it was given the wrong value. Set
+  that file to `no`, and run `refs` and the probes again.
+- `fragment` in any other file, or in one you are unsure about: the app may build names from that
+  prefix, so a token that starts with it cannot be what makes a rule DEAD. Report the prefix, its tokens
+  and the place. The place is the first in path order; look for code among the others before saying code
+  builds the name. Never set a file to `no` because a probe found a fragment in it.
+
+The line is FAIL when a fragment in a listed file is left after the correction, or the probes did not run;
+PARTIAL when there was at least one probe and none returned `none`; otherwise PASS. With no prefix to
+probe, no prefix fragment is possible: write `none to probe` and PASS. The probes do not test suffixes
+(`__title`), ids or attribute names.
 
 ## CSS modules
 
@@ -54,7 +84,7 @@ in no source and in every built module map. For each token from a module stylesh
 2. Find the files that import that module, with the language's parser.
 3. Send `{"t":"want","token":"c:Button_primary_x1","needle":"primary","paths":[<importers>]}`.
 
-If an importer reads the module with a computed key (`styles[variant]`), send a `ref` with kind
+If an importer that is not exact-only reads the module with a computed key (`styles[variant]`), send a `ref` with kind
 `fragment` for every token of that module instead of searching: any of them could be built.
 
 ## How matches count

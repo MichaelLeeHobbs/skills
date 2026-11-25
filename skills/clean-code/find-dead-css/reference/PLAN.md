@@ -75,13 +75,15 @@ The deny list is English and name-based. It is a backstop; the network guard in
 ## Approval
 
 Show one screen, not the records: routes planned and excluded (with reasons), cells by role and state,
-width bands, themes and flags, mocks used, every `allow`, the host, the guard rules, the build command,
+width bands, themes and flags, mocks used, every `allow`, the corpus exclusions, the exact-only globs
+([REFERENCES.md](REFERENCES.md#exact-only-files)), the host, the guard rules, the build command,
 estimated wall time (cells times about 4 seconds, divided by parallel contexts) and the model cost of
-drafting. One approval covers all of it. Record the date, commit, host and a hash of `plan.jsonl` in
-`history.jsonl`. A re-run shows only the plan's changes and gets a new approval for those.
+drafting. One approval covers all of it. Record the date, commit, host and the hashes of `plan.jsonl` and
+`exact-only.txt` in `history.jsonl`. A re-run shows only what changed in the two files and gets a new
+approval for that.
 
 ## On a re-run
 
-Validate the saved plan first. A step that no longer finds its element blocks its cell with reason
-`plan-rot`; fix the step and re-approve rather than dropping the cell. Add cells for routes the router
-gained; the tool's `route_unplanned` problem lists them.
+Start from the saved `exact-only.txt`. Validate the saved plan first. A step that no longer finds its
+element blocks its cell with reason `plan-rot`; fix the step and re-approve rather than dropping the
+cell. Add cells for routes the router gained; the tool's `route_unplanned` problem lists them.

@@ -2,8 +2,8 @@
 
 Keep the report under 150 lines and save it in the catalog folder as `report.md`. Take every number from
 tool output: rules and members from `members`, verdict counts, cells and canaries from `classify`, the
-proof from `proof`, the plan counts from `verify --check plan`. Canary rows never appear outside the
-Canaries line.
+proof from `proof`, the plan counts from `verify --check plan`, the probes from their own `refs` run.
+Canary rows never appear outside the Canaries line.
 
 ## Header
 
@@ -16,7 +16,8 @@ Verdicts: DEAD <n>  KEEP <n>  SEEN <n>  UNDECIDABLE <n>  UNPROVEN <n> (<by reaso
 Delete list: <rules> rules, <trim> trims, <files> whole files   Proof: CONFIRMED | REFUTED <n> | BLOCKED | not run
 Outside use: <none | sources searched | unknown, sheets marked foreign>
 Canaries: <n> of 3 as planted, guard <aborted | NOT ABORTED>   PASS | FAIL | not run (static-only)
-Prefix probes: <n> of <m> none; <k> of <c> class tokens cannot be DEAD (<segment> <count>, ...)   PASS | FAIL
+Exact-only files: <n> of <n> corpus files (<globs>)
+Prefix probes: <n> of <m> none; <k> of <c> class tokens have a prefix the app may build   PASS | PARTIAL | FAIL
 Hosts reached: <approved host only | list>   Spend: $<total> of $<cap> cap (measured | estimated)
 Last run: <date> DEAD <n>, delete list <n> rules | first run
 ```
@@ -77,8 +78,9 @@ The catalog is this skill's folder from [Where](#where). Use the same folder on 
 | File | Content | Sorted by |
 |---|---|---|
 | `plan.jsonl` | the approved plan's `route`, `exclude`, `cell` and `allow` records | type, then key |
+| `exact-only.txt` | the approved globs for files searched for exact names only | line |
 | `verdicts.jsonl` | one line per delete-list and UNPROVEN member: rule, source file and line, selector, verdict, reason, token | file, then line |
-| `history.jsonl` | one line per run: date, commit, host, plan hash, approval, mode, verdict counts, proof result | date |
+| `history.jsonl` | one line per run: date, commit, host, plan hash, exact-only hash, approval, mode, verdict counts, proof result | date |
 | `report.md` | the last report | |
 
 Never in the catalog: credentials or sign-in state, the token log, cell records, builds, scripts, mocks
@@ -95,7 +97,7 @@ Replace `report.md` only after this run's own checks are done. Then append exact
 `clean-code/ledger.jsonl`, pass or fail:
 
 ```
-{"skill":"find-dead-css","scope":".","at":"2026-11-15T14:02:00Z","commit":"<full hash>","check":"pass","degraded":false,"metric":"dead","value":<n>,"comparable":"mode=full;plan=<hash of plan.jsonl>;refs=2","report":"<path to report.md>"}
+{"skill":"find-dead-css","scope":".","at":"2026-11-15T14:02:00Z","commit":"<full hash>","check":"pass","degraded":false,"metric":"dead","value":<n>,"comparable":"mode=full;exact=<hash of exact-only.txt>;plan=<hash of plan.jsonl>","report":"<path to report.md>"}
 ```
 
 | Field | Value |
@@ -108,7 +110,7 @@ Replace `report.md` only after this run's own checks are done. Then append exact
 | `degraded` | `false`, or the one missing thing: `browser`, `runtime-evidence`, `ci-history`, `build`, `parser`. A static-only run records `browser` |
 | `metric` | `dead` |
 | `value` | the DEAD count on the report's `Verdicts` line, or `null` in static-only mode, where no member can be DEAD |
-| `comparable` | `mode=full` or `mode=degraded`, then `;` and this skill's fields sorted by key: `plan` (the hash of `plan.jsonl` that `history.jsonl` records; `none` in static-only mode) and `refs` (always `2`, the version of the reference rule; a line without it used a rule that found fewer dead names). A static-only run's `comparable` starts with `mode=degraded` |
+| `comparable` | `mode=full` or `mode=degraded`, then `;` and this skill's fields sorted by key: `exact` (the SHA-256 of `exact-only.txt`, in static-only mode too; a line without it counted fragments from every file) and `plan` (the hash of `plan.jsonl` that `history.jsonl` records; `none` in static-only mode). A static-only run's `comparable` starts with `mode=degraded` |
 | `report` | repo-relative path of this run's `report.md` |
 
 After appending, check that the file grew by exactly one line and that no earlier line changed. Order in

@@ -37,8 +37,8 @@ claude plugin marketplace add MichaelLeeHobbs/skills
 claude plugin install engineering@michaelleehobbs
 ```
 
-The plugins are `agent-workflow`, `clean-code`, `clean-room`, `domains`, `engineering`, `operations` and
-`thinking`. Plugin skills are namespaced by group, so `triage-card` runs as `/engineering:triage-card`.
+The plugins are `agent-workflow`, `clean-code`, `clean-room`, `domains`, `engineering`, `github`,
+`operations` and `thinking`. Plugin skills are namespaced by group, so `triage-card` runs as `/engineering:triage-card`.
 To take new commits, run `claude plugin marketplace update michaelleehobbs`, then
 `claude plugin update <group>@michaelleehobbs`, or turn on auto-update for the marketplace in `/plugin`.
 
@@ -67,6 +67,8 @@ Writing and reviewing code.
 | `triage-card` | Judge a ticket before anyone builds it. Pins a revision, checks each claim in code, finds where the ticket's diagnosis is wrong, and records a verdict with file:line evidence on the ticket. |
 | `cve-sweep` | Weekly CVE patch sweep of one repo. Counts CVEs from the audit, an image scan and the cloud registry, plans every bump to the latest LTS runtime, base image and dependencies with majors flagged, stops for review, then ships in at most three releases and counts again. Keeps a risk register with expiry dates and a ledger that checks last week's fixes reached production. |
 | `batch-work` | Build several small tickets as one batch: a branch per ticket inside one batch branch, one review, one test run, one pull request. Keeps each ticket's state honest and checks the merge history proves it. |
+| `open-card` | File one small ticket a fresh session can build from alone. Checks the claim in code at a pinned revision, looks for duplicates, stops at a size gate, and writes a one-slice run brief into the description before labelling it `plan-ready`. |
+| `tracker-verbs` | The shared verb list (search, read, file, label, claim, link, close and the rest) that every ticket step here is written in, with what each verb must guarantee and how to check it. A tracker layer maps the verbs onto one tracker. |
 
 ### clean-code
 
@@ -110,6 +112,16 @@ Directing the agent itself.
 |---|---|
 | `optimize-agent-instructions` | Audit and tighten any file that instructs an agent: a context file (`CLAUDE.md`, `AGENTS.md`, `GEMINI.md`, `.cursorrules`), a skill, a command, a subagent definition. Sizes the cut by when the file loads, strips rationale that does not change behavior, and catches a description too vague to ever fire. |
 | `hill-climb` | Improve something fuzzy (a screen, a prompt, generated code) as a scored loop. Freezes a metric or a judge rubric with anchors, measures the judge's noise floor, then keeps one change per round only if the score beats the noise. Blind judges, guardrails, and a gaming check. |
+| `where-we-stand` | Check in on a session after time away. Rebuilds what it committed to, verifies each pull request, pipeline, deploy and ticket against live state, finds the steps only you can do, tidies what is safe and reports in one screen. "Everything is merged" is treated as a claim to check. |
+
+### github
+
+Tracker layers. Each maps the shared `tracker-verbs` onto one tracker, so the ticket skills above work on
+it unchanged.
+
+| Skill | What it does |
+|---|---|
+| `github-issues` | GitHub Issues through `gh`. Labels `triaged`, `plan-ready` and `in-progress` carry status (no Projects board), assignees and a hidden comment marker carry claims, and native sub-issues and dependencies carry structure, with plain-text fallbacks on an older `gh`. |
 
 ### clean-room
 

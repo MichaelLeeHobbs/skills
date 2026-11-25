@@ -89,7 +89,8 @@ Check) as INSTRUMENT.md describes. Reaching the cap stops cleanly; the work fold
 
 Take only the tokens that never appeared in the crawl. Build the corpus and run `refs` over it as
 [reference/REFERENCES.md](reference/REFERENCES.md) describes: exact matches, string fragments that could
-build the name, and CSS-module classes by their local name in the files that import the module.
+build the name, and CSS-module classes by their local name in the files that import the module. Files
+that never run in the shipped app count for exact matches only. Run the prefix probes it describes.
 
 ## 6. Classify
 
@@ -131,12 +132,16 @@ Plant these before step 4. They never enter the inventory counts, the delete lis
    interpolation, and a row `.zz-frag-alpha`. Expect UNPROVEN `fragment`.
 4. **Guard**: the driver sends one POST and one third-party GET from the first cell. Both must be
    aborted by the rules INSTRUMENT.md names.
+5. **Prefix probes**: in step 5, one made-up class per leading segment of the app's own class names
+   ([reference/REFERENCES.md](reference/REFERENCES.md#prefix-probes)). Expect `none`, or a fragment in
+   code that can build names. They run in static-only mode too.
 
 Pass the first three to `classify` as `canary` records. **The run fails**, and the report says so above
 the header, when any of these happens:
 - any fixture fails, or the driver self-test differs from its expected output;
 - `verify --check plan` or `classify` prints a problem;
 - canary 4 was not aborted, or any request outside the guard reached a host;
+- a prefix probe found a fragment in a file that never runs in the shipped app, or the probes did not run;
 - a rule the proof REFUTED is still on the delete list;
 - the run record is missing, or disagrees with this report's commit, value or check.
 

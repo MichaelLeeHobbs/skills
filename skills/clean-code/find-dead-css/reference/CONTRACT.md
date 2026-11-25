@@ -111,12 +111,14 @@ Input:
 
 ```
 {"t":"src","path":name,"text":str}
+{"t":"src","path":name,"text":str,"fragments":enum(yes,no)}
 {"t":"want","token":name}
 {"t":"want","token":name,"needle":name,"paths":names}
 ```
 
 `src.path` is unique and `want.token` is unique. `needle` defaults to the token without its two-character
-prefix. `paths`, when present, limits the search to those `src` records.
+prefix. `paths`, when present, limits the search to those `src` records. `fragments` defaults to `yes`;
+a `src` with `no` is searched for exact matches only.
 
 Output: one `ref` per `want`, sorted by `token`, then one summary.
 

@@ -1,0 +1,3 @@
+refs
+{"t":"src","path":"src/a.ts","text":"x = 'a-' + b"}
+{"t":"src","path":"src/b.ts","text":"","fragments":"maybe"}

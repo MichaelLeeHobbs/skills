@@ -1,0 +1,11 @@
+refs
+{"t":"src","path":"src/z.tsx","text":"// shipped\nc = 'chip-' + s;","fragments":"yes"}
+{"t":"src","path":"src/y.tsx","text":"d = 'tab-' + s;"}
+{"t":"src","path":"src/a.test.ts","text":"has('card-' + k);\nhas('pill-on');\nhas('btn-' + v);","fragments":"no"}
+{"t":"src","path":"docs/guide.md","text":"Every class starts with `ui-`.\nChips use `chip-`.","fragments":"no"}
+{"t":"want","token":"c:ui-never"}
+{"t":"want","token":"c:tab-first"}
+{"t":"want","token":"c:pill-on"}
+{"t":"want","token":"c:chip-red"}
+{"t":"want","token":"c:card-wide"}
+{"t":"want","token":"c:a_btn-x_1","needle":"btn-x","paths":["src/a.test.ts"]}

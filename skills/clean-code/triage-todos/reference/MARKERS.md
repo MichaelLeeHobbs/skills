@@ -41,7 +41,8 @@ name them in the report.
 ## Unmarked phrases
 
 Comments that make the same promise without a tag. Search comments only, case-insensitive:
-- `temporary`, `temporarily`, `for now`, `until`, `remove (this|once|when|after)`;
+- `temporary`, `temporarily`, `for now`, `until`, `remove (this|once|when|after)`,
+  `revisit (if|when|once)`;
 - `workaround for`, `hack around`, `revert (this|once|when)`;
 - `this breaks (when|if)`, `doesn't work (when|if)`, `known issue`, `not yet (supported|implemented)`.
 

@@ -3,6 +3,18 @@
 This skill keeps no catalog and writes no report file. It leaves one line in a shared ledger so a team
 can see when the pass last ran and whether it succeeded.
 
+## The report
+
+Show the user:
+- the diff, the verdict counts, and comment lines and words before and after;
+- comments kept by kind, and as a share of those judged, with every Keep's edit and breakage;
+- the fixed exceptions kept, by kind;
+- unverified claims kept;
+- deleted claims that were uncheckable or about the repo itself, with their text and the setting or code
+  each defended, which may be wrong too;
+- contradictions with both readings, and excuses with the fix or issue each needs;
+- the markers and expiry conditions left for triage-todos.
+
 ## Where
 
 Use `clean-code/` inside your agent's project configuration folder, or `.clean-code/` at the repo root if
@@ -26,7 +38,7 @@ pass or fail:
 | `scope` | `.` for the whole repo, else the package's repo-relative path with `/` separators; for a single file or a diff, the repo-relative path of the file or of the directory holding the changed files |
 | `at` | UTC time the run finished, `YYYY-MM-DDTHH:MM:SSZ` |
 | `commit` | the full commit hash read at the start of the run, with `+dirty` appended if the working tree had changes; `none` without version control |
-| `check` | `fail` if the pass did not succeed (step 5: a comment unaccounted for, a fixed exception removed, or a check failed or could not run); `partial` if any outside fact is reported unverified; otherwise `pass` |
+| `check` | `fail` if the pass did not succeed (step 5: a comment unaccounted for, a fixed exception removed, a keep judged only once, or a check failed or could not run); `partial` if any kept claim is reported unverified; otherwise `pass` |
 | `degraded` | always `false`: this skill has no degraded mode |
 | `metric` | `null` |
 | `value` | `null` |

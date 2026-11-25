@@ -18,7 +18,8 @@ needs must be in its brief.
 6. **The test rule:** the project's. Where it sets none, the builder runs only the tests it wrote or
    changed, plus lint and typecheck of the packages it touched, never the whole suite.
 7. **Mechanical work:** run the tool's autofix or a small script first; rewrite a file with many findings
-   in one write, not one edit per finding; read only the lines around each finding.
+   in one write, not one edit per finding; read only the lines around each finding, and cut tool output
+   down to the lines it needs.
 8. **Contradictions:** if the brief contradicts an owning project skill (the wrong reference pattern, say),
    report it and do not build that part around it.
 9. **Context:** when its working context grows large, stop at a clean point, commit, and return a

@@ -63,11 +63,11 @@ integration engine?"). A generic default here is what causes rework.
 
 - **`debate-plan`** for large or risky work: a new system or domain, a major overhaul, permissions or
   sensitive data, data integrity, a screen people work in all day. Say in one line that you are sending
-  it to debate and at which depth. Hand it the user's vision rules and the conventions sheet word for
+  it to debate and at which depth; ask only if the depth is not obvious. Hand it the user's vision rules and the conventions sheet word for
   word. Bring its report back in the short-loop shape; the full report stays in the scratch file.
 - **Project skills for grounding:** the UI, route, schema or worker skill tells you what is cheap and
   what is expensive here. Read the relevant ones before sizing. When the plan names a pattern to copy for
-  a screen, check it against the UI skill's own reference list; if you pick another, say why in the
+  a screen, check it against the UI skill's own reference list (an editor is not a worklist); if you pick another, say why in the
   brief's **Conventions** line.
 - **`triage-card`** for existing tickets the idea touches: fold them in, supersede them or leave them,
   and say which.
@@ -80,13 +80,14 @@ Loop until:
 - each slice has a clear owner area, so slices in the same wave do not touch the same files;
 - you have re-checked against the code the key facts the plan relies on;
 - a plan with a screen has a **sign-off list** the user agrees to: the tasks they will do by hand to
-  accept it, in their words, with click counts where they matter. For a replacement it covers every job
-  in the inventory, and each screen slice's acceptance names the jobs it carries. There is no late
-  "parity" slice.
+  accept it, in their words, with click counts where they matter. Technical goals ("safe by
+  construction") do not replace it. For a replacement it covers every job in the inventory, and each
+  screen slice's acceptance names the jobs it carries. There is no late "parity" slice, and parity is
+  never accepted on a paper checklist.
 
 After the user's answers change the design, run one focused adversarial review of just the changed parts
 (a fresh reviewer with the conventions sheet, or yourself in a fresh pass if you cannot start one). Tell
-the user in a few lines what it changed.
+the user in a few lines what it changed. Do not rerun the whole debate.
 
 A real defect found along the way gets its own ticket at once (sensitive data reaching the wrong
 audience first). It is not fixed here.
@@ -100,7 +101,11 @@ yes.
 
 ## 6. File the tickets
 
-Follow the project's ticket conventions for every field.
+Follow the project's ticket conventions for every field, and the
+[rules for every write](../../engineering/tracker-verbs/SKILL.md#rules-for-every-write) for every word: on a
+public tracker the design comment and the brief carry conclusions, not internal detail. If the tracker is
+public and the work lives in a private repository, stop and propose a private tracker: the tickets could
+not say where to build it.
 
 1. `file` the epic (or the single ticket) first, then each child with the epic as parent (`nest` if the
    layer cannot set a parent on `file`). Each child holds its goal, acceptance criteria, the files or

@@ -18,15 +18,15 @@ builds it. The brief is the plan: follow it, do not redesign it. Where it contra
 skill, stop and ask (step 4) rather than build around it.
 
 Ticket and pull request steps use the shared [tracker verbs](../tracker-verbs/SKILL.md), including the
-change verbs. Find your tracker layer there first.
+change verbs (installed alone? read `skills/engineering/tracker-verbs/SKILL.md` in github.com/MichaelLeeHobbs/skills). Find your tracker layer there first. Every comment, brief edit,
+branch name, commit message and pull request body follows the [rules for every write](../tracker-verbs/SKILL.md#rules-for-every-write).
 
 ## 0. Gate
 
 `read` the ticket and check all of these:
 
 - it carries `plan-ready`;
-- its description has a section whose heading starts `## Run brief`, with every heading from the template
-  (a brief with no **Sign-off** whose plan has a screen: ask the user for the sign-off tasks before wave 1);
+- its description has a section whose heading starts `## Run brief`, with every heading from the template;
 - for an epic: every ticket in the slices table exists, has the epic as parent, is not closed, and its
   `blocks` links match the `Needs` column.
 
@@ -36,8 +36,8 @@ plan yourself.
 
 ## 1. Load the project
 
-- Run the [conventions pass](../../thinking/debate-plan/reference/conventions-pass.md) for each
-  repository in the brief. Check the brief's **Conventions** still match the owning skills. If a skill
+- Run the [conventions pass](../../thinking/debate-plan/reference/conventions-pass.md) (installed alone? `skills/thinking/debate-plan/reference/conventions-pass.md` in github.com/MichaelLeeHobbs/skills)
+  for each repository in the brief. Check the brief's **Conventions** still match the owning skills. If a skill
   changed since the plan was written, the skill wins: record it under `### Changes during the run`.
 - A project copy of `run-plan` wins over this file. The project's workflow skills always apply: how agents
   are briefed, how several tickets ship, the test-run policy, the review rule.
@@ -66,12 +66,14 @@ Build the dependency graph from the slices table and the `blocks` links. A wave 
 3. **Integrate each result as it lands.** Read the diff and check it against the slice's acceptance
    criteria and the conventions sheet. Read what the builder says it ran and cover only the gap (a shared
    package no builder linted where it is used). Merge the slice branch into the batch. A wrong slice goes
-   back to its builder; the coordinator does no slice's coding.
+   back to its builder. The coordinator does no slice's coding: it owns claims, the tracker, merges,
+   the review, the test run and the pull requests, which keeps its context free for the whole run.
 4. **Keep the tickets true.** `comment` on a ticket when its slice lands. A change to the plan goes into
    the brief with `edit`, under `### Changes during the run`, dated, with the reason.
 5. **Check the whole screen.** When one screen spans several slices, after each wave that touches it,
    render the assembled screen as each role that uses it, run the UI skill's checks and the sign-off tasks
-   that should work by now, and keep the screenshots for the review.
+   that should work by now, and keep the screenshots for the review. Send findings back to the owning
+   slices.
 6. **User walkthrough.** At the first wave after which the screen works end to end, stop and ask the user
    to try the sign-off tasks. Later waves do not build on it until they have.
 
@@ -98,9 +100,10 @@ or the walkthrough. Batch the questions, each with a default.
 ## 6. Close out
 
 - Move each child only as far as the project's rules allow: `close done` when its closing state is
-  reached (some boards wait for review, some for a verified deploy). A ticket that has not reached it
-  keeps its claim, and the report says what it waits on. `release` each ticket when it closes or the user
-  hands it on.
+  reached (some boards wait for review, some for a verified deploy). `release` each ticket when it closes,
+  when it waits in a review state (on trackers where the open pull request is the review state, once
+  `open-change` has tied it), or when the user hands it on. A ticket still short of that keeps its claim,
+  and the report says what it waits on.
 - **Close the epic only after every child is closed.** A child the user agreed to drop is noted in the
   brief.
 - Before the last move, list what the run left unfinished: do it now if it can be done now, otherwise

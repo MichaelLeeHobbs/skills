@@ -22,14 +22,16 @@ other work, so leave the working tree alone (fetching is fine). Steps use the sh
 
 Resolve the user's words to a checkout on this machine; if more than one fits, or none, ask once. Take the
 repository from its remote and the base from the remote's default branch. If this session is not in that
-checkout and your agent can start a session there, start one with this skill and stop here.
+checkout and your agent can start a session there, start one with this skill and stop here. Otherwise
+work from here, naming that repository and checkout explicitly in every call.
 
 ## 1. Build the queue
 
 - `search-changes` for open pull requests the user authored in this repository. Other people's are never
-  in the queue.
+  in the queue. When a teammate's pull request blocks one of the user's (the user's is stacked on it), say
+  so in the queue and in that pull request's question, but never review or merge the teammate's.
 - **Dependencies:** B depends on A when B's target branch is A's source branch (stacked), B's branch
-  carries A's commits that the base lacks, or B's description says so ("merge after A").
+  carries A's commits that the base lacks (for git: fetch, then `git log origin/<base>..origin/<B-branch>`), or B's description says so ("merge after A").
 - **Order:** a pull request after those it depends on; otherwise oldest first.
 - **Pre-merge checks:** read every description for steps due before merging (a read-only production check,
   a sign-off, a migration that must go first). Commands that read production are for the user to run.
@@ -49,9 +51,10 @@ sensitive-data paths, lockfile drift beyond its own packages, user-visible behav
 pre-merge checks and their state; and any sign-off the merge stands for ("Merge counts as your sign-off
 on the new role"). If it depends on one the user skipped, open with that and say what would ride along.
 
-Offer **Merge** and **Skip** always, and **Fix** when it cannot merge as is (conflicts, red checks, a
-failed or unrun pre-merge check, a needed rebase). Put your pick first. Recommend Skip or Fix for High
-risk, red checks, conflicts, a failed or unrun pre-merge check, or a skipped dependency.
+Offer **Skip** always, **Merge** unless it is a draft, and **Fix** when it cannot merge as is (conflicts,
+red or unfinished checks, a failed or unrun pre-merge check, a needed rebase, a target branch whose own
+pull request already merged). Put your pick first. Recommend Skip or Fix for High risk, a draft, red
+checks, conflicts, a failed or unrun pre-merge check, or a skipped dependency.
 
 - **Merge:** `merge-change` it, which reads it again first. Then move on.
 - **Skip:** record it with the reason, and move on.
@@ -67,11 +70,12 @@ requests; one already passed over is offered again at the end.
 
 1. **Fixed ones:** once a fix reports, `read-change` it yourself and offer it the same way.
 2. **Summary:** merged, skipped (with reasons), being fixed, blocked by a skipped dependency. One line each.
-3. **Tickets:** for each ticket a merged pull request belongs to, ask once whether to move it, and `close`
-   or move it only on yes, as far as the project's rules allow. Recommend leaving it when it still has
-   open pull requests or work.
+3. **Tickets:** `read` each ticket a merged pull request belongs to. One the merge already closed (a
+   `tie` that closes on merge): `unlabel in-progress` and clear any finished session's claim, no question.
+   For each still open, and each epic, ask once whether to move it, and `close` or move it only on yes, as
+   far as the project's rules allow. Recommend leaving it when it still has open pull requests or work.
 4. **Deploy heads-up:** from the merged descriptions, what the user must do around the deploy (secrets,
-   migrations, flags), each with its pull request and command.
+   migrations or backfills, a UI version to make the default, flags), each with its pull request and command.
 
 ## Check
 

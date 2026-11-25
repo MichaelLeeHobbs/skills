@@ -20,8 +20,8 @@ sorted by how much of their attention each ticket needs.
 
 ## 0. Load the project
 
-- Run the [conventions pass](../../thinking/debate-plan/reference/conventions-pass.md). A project copy of
-  `find-work` wins over this file.
+- Run the [conventions pass](../../thinking/debate-plan/reference/conventions-pass.md) (installed alone? `skills/thinking/debate-plan/reference/conventions-pass.md` in github.com/MichaelLeeHobbs/skills).
+  A project copy of `find-work` wins over this file.
 - **Find the tracker and board** from the project's context file and ticket conventions. If they do not
   name one, use the ticket keys most common in the last 90 days of the default branch's history. Where
   the work spans several boards, filter by component, label or text; otherwise ask the user once.
@@ -36,7 +36,8 @@ sorted by how much of their attention each ticket needs.
 - **The user widens or narrows it in their own words:** "all" (no limit), a label, component or area ("UI
   only"), or teammates by name ("include Sam", "the whole team"). Someone else's ticket qualifies only
   while it waits in the backlog; one they started is theirs.
-- **Always skip** tickets another running session has claimed.
+- **Always skip** tickets another running session has claimed: `read` shows every session's mark (step 2
+  reads each ticket anyway).
 
 ## 2. Sort
 

@@ -103,13 +103,16 @@ Pull requests, on the same repository rules as above. `gh pr list` also defaults
 | Verb | Command | Read back |
 | --- | --- | --- |
 | `search-changes` | `gh pr list --state open --author @me --json number,title,headRefName,baseRefName,isDraft,createdAt,url --limit 100` (or `--search`, `--base`, `--head`) | The output is the result |
-| `read-change` | `gh pr view <n> --json number,title,body,state,isDraft,author,headRefName,headRefOid,baseRefName,mergeable,mergeStateStatus,reviewDecision,statusCheckRollup,closingIssuesReferences,commits,url`, and `gh pr diff <n>`. `mergeable` CONFLICTING means it conflicts; `mergeStateStatus` BEHIND means it is behind its base; each check in `statusCheckRollup` has its own result and completion time | Nothing to check |
+| `read-change` | `gh pr view <n> --json number,title,body,state,isDraft,author,headRefName,headRefOid,baseRefName,mergeable,mergeStateStatus,reviewDecision,statusCheckRollup,closingIssuesReferences,commits,url`, and `gh pr diff <n>`. `mergeable` CONFLICTING means it conflicts; UNKNOWN means GitHub has not computed it yet, so read again, never read it as no conflict. How far behind: `gh api repos/{owner}/{repo}/compare/<baseRefName>...<headRefOid> --jq .behind_by`. Each check in `statusCheckRollup` has its own status, result and completion time | Nothing to check |
 | `open-change` | `gh pr create --base <base> --head <branch> --title "<title>" --body-file <file>` | `read-change`: `state` OPEN, `body` |
-| `merge-change` | `gh repo view --json mergeCommitAllowed,squashMergeAllowed,rebaseMergeAllowed` for the allowed ways (the project's rules pick among them), then `gh pr merge <n> --merge` (or `--squash`, `--rebase`) `--match-head-commit <headRefOid from the read>`. Never `--admin`, and `--auto` only when the user asks for it | `read-change`: `state` MERGED; `gh pr view <n> --json mergeCommit`, then `git fetch` and `git merge-base --is-ancestor <oid> origin/<base>` |
+| `merge-change` | `gh repo view --json mergeCommitAllowed,squashMergeAllowed,rebaseMergeAllowed` for the allowed ways (the project's rules pick among them), then `gh pr merge <n> --merge` (or `--squash`, `--rebase`) `--match-head-commit <headRefOid from the read>`. Only when `isDraft` is false and every check has completed: with checks still running, `gh pr merge` arms auto-merge instead, and on a merge-queue base it queues. Never `--admin`, and `--auto` only when the user asks for it | `read-change`: `state` MERGED; `gh pr view <n> --json mergeCommit`, then `git fetch` and `git merge-base --is-ancestor <oid> origin/<default branch>`. Not MERGED: `gh pr merge <n> --disable-auto` and report it |
 
 A stacked pull request (its base is another pull request's head branch) is retargeted to the merged
-one's base only when that head branch is deleted; until then it still points at the old branch. Read it
-again after each merge before offering it.
+one's base only when that head branch is deleted; until then it still points at the old branch, and
+merging it lands nowhere useful. Before `merge-change`, if `baseRefName` is not the default branch, check
+whether that branch's pull request merged (`gh pr list --state merged --head <baseRefName> --json
+number`). If it did, do not merge: retarget first with `gh pr edit <n> --base <default branch>` (a Fix,
+with the user's yes), then read it again.
 
 ## Claim and release
 
@@ -117,7 +120,8 @@ again after each merge before offering it.
 
 1. `read` the issue. Someone other than the user in `assignees`: stop and ask. A comment holding another
    session's marker: follow the claim rules in the tracker verbs.
-2. `gh issue edit <n> --add-assignee @me` (or the user's login when `gh` runs as someone else).
+2. Unless the claim is `mark-only`: `gh issue edit <n> --add-assignee @me` (or the user's login when
+   `gh` runs as someone else).
 3. `gh issue comment <n> --body-file <file>`, the file holding one visible line and the marker:
 
 ```

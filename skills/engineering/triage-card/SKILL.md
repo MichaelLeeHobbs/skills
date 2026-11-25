@@ -44,8 +44,9 @@ Read your agent's context file and the project's contributing docs before resear
   one, and a `search` on the ticket's key nouns over open and recently closed tickets. List them as
   related. Propose folding the ones that are clearly the same work; they join the set only when the user
   agrees.
-- `claim` each ticket in the set, following the claim rules: a ticket another running session holds is
-  left out and named. A folded ticket is claimed when the user agrees to fold it.
+- `claim <key> mark-only` each ticket in the set: triage marks it without taking it from its assignee. A
+  ticket another running session holds is left out and named. A folded ticket is marked when the user
+  agrees to fold it.
 
 **More than about three tickets, or tickets in unrelated areas:** if you can run read-only research in
 parallel, give one researcher per cluster steps 2 to 6, with the brief in
@@ -146,19 +147,19 @@ Follow the project's ticket conventions for every write.
 After the user picks a path, apply it and `comment` what was decided. Confirm any open hypothesis before
 building on it, and tell the user if it turned out wrong.
 
-- **Build it here** (small or medium): `start` each ticket when work begins and keep the claim until it
-  closes.
+- **Build it here** (small or medium): `claim` each ticket (a full claim now), `start` it when work
+  begins, and keep the claim until it closes or waits in review.
 - **Plan it** (large): hand the report and the tickets to a planning step (`shape-plan`), and `release`
   once the plan is filed or the tickets re-scoped.
-- **Close, fold or wait:** `close` with the reason (`done`, `not-planned` or `duplicate-of`), then
-  `release`.
+- **Close:** `close` with the reason (`done` or `not-planned`), then `release`. **Fold:** `close
+  duplicate-of` the canonical ticket, then `release`. **Wait:** `comment` what it waits on, then `release`.
 
 ## 9. Check your work
 
-Run [reference/check.md](reference/check.md) before you answer and again after the tracker writes, then
-the [tracker verbs check](../tracker-verbs/SKILL.md#check). It
+Run [reference/check.md](reference/check.md) before you answer and again after the tracker writes. It
 re-opens every cited line at the pinned revision, confirms every claim is labelled, and compares each
-comment read back from the tracker with what you meant to post. A step that cannot run is a `FAIL`.
+comment read back from the tracker with what you meant to post. A step that cannot run is a `FAIL`. Then
+run the [tracker verbs check](../tracker-verbs/SKILL.md#check).
 
 ## It is working if
 

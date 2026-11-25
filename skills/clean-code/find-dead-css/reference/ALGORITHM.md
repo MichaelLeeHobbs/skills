@@ -13,8 +13,8 @@ the disagreement is a bug to report.
    3. `t` absent, not a string, or not accepted by this subcommand or mode: `unknown_type`.
    4. For each field of that type, in the order CONTRACT.md lists them: absent is `missing_field`
       (optional fields: `src.fragments`, `want.needle`, `want.paths`); present with the wrong type, or an
-      `enum` value outside its list, is `bad_field`. A `names` array that repeats a value is `duplicate`; check the
-      element types first, so `["a","a",5]` is `bad_field`.
+      `enum` value outside its list, is `bad_field`. A `names` array that repeats a value is `duplicate`;
+      check the element types first, so `["a","a",5]` is `bad_field`.
 
    Valid JSON is strict: `NaN`, `Infinity` and `-Infinity` are `bad_json`. When an object repeats a key,
    the last value wins. Numeric option values are matched as ASCII digits only.

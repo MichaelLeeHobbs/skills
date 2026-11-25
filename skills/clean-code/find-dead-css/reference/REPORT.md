@@ -2,7 +2,7 @@
 
 Keep the report under 150 lines and save it in the catalog folder as `report.md`. Take every number from
 tool output: rules and members from `members`, verdict counts, cells and canaries from `classify`, the
-proof from `proof`, the plan counts from `verify --check plan`, the probes from their own `refs` run.
+proof from `proof`, the plan counts from `verify --check plan`, the probe results from their own `refs` run.
 Canary rows never appear outside the Canaries line.
 
 ## Header
@@ -16,8 +16,8 @@ Verdicts: DEAD <n>  KEEP <n>  SEEN <n>  UNDECIDABLE <n>  UNPROVEN <n> (<by reaso
 Delete list: <rules> rules, <trim> trims, <files> whole files   Proof: CONFIRMED | REFUTED <n> | BLOCKED | not run
 Outside use: <none | sources searched | unknown, sheets marked foreign>
 Canaries: <n> of 3 as planted, guard <aborted | NOT ABORTED>   PASS | FAIL | not run (static-only)
-Exact-only files: <n> of <n> corpus files (<globs>)
-Prefix probes: <n> of <m> none; <k> of <c> class tokens have a prefix the app may build   PASS | PARTIAL | FAIL
+Exact-only files: <n> approved (<paths>)
+Prefix probes: <n> of <m> none | none to probe; <k> of <c> class tokens have a prefix the app may build   PASS | PARTIAL | FAIL
 Hosts reached: <approved host only | list>   Spend: $<total> of $<cap> cap (measured | estimated)
 Last run: <date> DEAD <n>, delete list <n> rules | first run
 ```
@@ -53,7 +53,8 @@ can run themselves to confirm no reference.
    where it is), `sheet-not-loaded` (the sheet and the routes or states that would load it; add them to
    the plan), `foreign`, `proof` (rules the proof refuted), `static-only`.
 3. **Counts only**: KEEP, SEEN (classes built at runtime the crawl saw), UNDECIDABLE.
-4. **Out of scope**: at-rules, runtime CSS-in-JS, cross-origin frames, closed declarative shadow roots,
+4. **Prefixes the app may build**: each prefix whose probe was `fragment`, its token count and the place.
+5. **Out of scope**: at-rules, runtime CSS-in-JS, cross-origin frames, closed declarative shadow roots,
    vendor sheets, each with a count.
 
 ## Where
@@ -78,7 +79,7 @@ The catalog is this skill's folder from [Where](#where). Use the same folder on 
 | File | Content | Sorted by |
 |---|---|---|
 | `plan.jsonl` | the approved plan's `route`, `exclude`, `cell` and `allow` records | type, then key |
-| `exact-only.txt` | the approved globs for files searched for exact names only | line |
+| `exact-only.txt` | the approved paths of files searched for exact names only | line |
 | `verdicts.jsonl` | one line per delete-list and UNPROVEN member: rule, source file and line, selector, verdict, reason, token | file, then line |
 | `history.jsonl` | one line per run: date, commit, host, plan hash, exact-only hash, approval, mode, verdict counts, proof result | date |
 | `report.md` | the last report | |
@@ -110,7 +111,7 @@ Replace `report.md` only after this run's own checks are done. Then append exact
 | `degraded` | `false`, or the one missing thing: `browser`, `runtime-evidence`, `ci-history`, `build`, `parser`. A static-only run records `browser` |
 | `metric` | `dead` |
 | `value` | the DEAD count on the report's `Verdicts` line, or `null` in static-only mode, where no member can be DEAD |
-| `comparable` | `mode=full` or `mode=degraded`, then `;` and this skill's fields sorted by key: `exact` (the SHA-256 of `exact-only.txt`, in static-only mode too; a line without it counted fragments from every file) and `plan` (the hash of `plan.jsonl` that `history.jsonl` records; `none` in static-only mode). A static-only run's `comparable` starts with `mode=degraded` |
+| `comparable` | `mode=full` or `mode=degraded`, then `;` and this skill's fields sorted by key: `exact` (the lowercase hex SHA-256 of the bytes of `exact-only.txt`, in static-only mode too; a line without it counted fragments from every file) and `plan` (the hash of `plan.jsonl` that `history.jsonl` records; `none` in static-only mode). A static-only run's `comparable` starts with `mode=degraded` |
 | `report` | repo-relative path of this run's `report.md` |
 
 After appending, check that the file grew by exactly one line and that no earlier line changed. Order in

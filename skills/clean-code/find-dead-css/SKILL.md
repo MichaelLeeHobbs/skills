@@ -67,9 +67,10 @@ an exclusion count; say the counts.
 
 Draft the plan from the router configuration, end-to-end tests, component stories and mocks, as
 [reference/PLAN.md](reference/PLAN.md) lays out: every route planned or excluded with a reason, each
-state a short list of steps with an `expect`. Run `verify --check plan`; it must pass. Show the user one
-screen: routes, cells, states per route, mocks, corpus exclusions, exact-only files, estimated wall time
-and model cost, the host and the guard. Get one approval and a spend cap (default 1.25 times the
+state a short list of steps with an `expect`. Run `verify --check plan`; it must pass. Run the prefix
+probes as [reference/REFERENCES.md](reference/REFERENCES.md#prefix-probes) says. Show the user one
+screen: routes, cells, states per route, mocks, corpus exclusions, proposed exact-only files, estimated
+wall time and model cost, the host and the guard. Get one approval and a spend cap (default 1.25 times the
 estimate). Record the approval in the catalog's `history.jsonl`.
 
 ## 3. Prove the driver
@@ -89,8 +90,8 @@ Check) as INSTRUMENT.md describes. Reaching the cap stops cleanly; the work fold
 
 Take only the tokens that never appeared in the crawl. Build the corpus and run `refs` over it as
 [reference/REFERENCES.md](reference/REFERENCES.md) describes: exact matches, string fragments that could
-build the name, and CSS-module classes by their local name in the files that import the module. Prose,
-tests and tool configuration count for exact matches only. Run the prefix probes it describes.
+build the name, and CSS-module classes by their local name in the files that import the module. The
+approved exact-only files count for exact matches only.
 
 ## 6. Classify
 
@@ -133,9 +134,8 @@ Plant these before step 4. They never enter the inventory counts, the delete lis
 4. **Guard**: the driver sends one POST and one third-party GET from the first cell. Both must be
    aborted by the rules INSTRUMENT.md names.
 
-In step 5, also run the **prefix probes** ([reference/REFERENCES.md](reference/REFERENCES.md#prefix-probes)):
-made-up classes with the app's own prefixes, to show a dead one could be found. They run in static-only
-mode too.
+The **prefix probes** of step 2 are a check too: made-up classes with the app's own prefixes, to show a
+dead one could be found. They run in static-only mode as well, before `refs`.
 
 Pass canaries 1 to 3 to `classify` as `canary` records. **The run fails**, and the report says so above
 the header, when any of these happens:

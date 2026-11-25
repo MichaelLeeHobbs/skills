@@ -76,10 +76,10 @@ The deny list is English and name-based. It is a backstop; the network guard in
 
 Show one screen, not the records: routes planned and excluded (with reasons), cells by role and state,
 width bands, themes and flags, mocks used, every `allow`, the corpus exclusions, each proposed exact-only
-file and why ([REFERENCES.md](REFERENCES.md#exact-only-files)), the host, the guard rules, the build command,
-estimated wall time (cells times about 4 seconds, divided by parallel contexts) and the model cost of
-drafting. One approval covers all of it. Record the date, commit, host and the hashes of `plan.jsonl` and
-`exact-only.txt` in `history.jsonl`. A re-run shows only what changed in the two files and gets a new
+file and why ([REFERENCES.md](REFERENCES.md#exact-only-files)), the host, the guard rules, the build
+command, estimated wall time (cells times about 4 seconds, divided by parallel contexts) and the model
+cost of drafting. One approval covers all of it; the user may strike out any exact-only path. Record the
+date, commit, host and the hashes of `plan.jsonl` and `exact-only.txt` in `history.jsonl`. A re-run shows only what changed in the two files and gets a new
 approval for that. Paths agreed in a static-only run are approved.
 
 ## On a re-run

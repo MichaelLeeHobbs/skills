@@ -2,8 +2,8 @@
 
 Keep the report under 150 lines and save it in the catalog folder as `report.md`. Take every number from
 tool output: rules and members from `members`, verdict counts, cells and canaries from `classify`, the
-proof from `proof`, the plan counts from `verify --check plan`, the probe results from their own `refs` run.
-Canary rows never appear outside the Canaries line.
+proof from `proof`, the plan counts from `verify --check plan`, the probe counts from their own
+`refs` run and `members`. Canary rows never appear outside the Canaries line.
 
 ## Header
 

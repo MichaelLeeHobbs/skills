@@ -17,6 +17,9 @@ Stream each file as one `src` record (`path`, `text`) to `refs`:
   class a date picker or menu library sets in a state the crawl missed is still found;
 - the canary corpus file (Check, canary 3).
 
+`path` is repo-relative with `/` separators. For an outside source it is the name the user gave the
+source, `/`, then the path inside that source. Never use an absolute path.
+
 Set `fragments` to `no` on the approved [exact-only files](#exact-only-files), and on no other record.
 
 Never send the corpus to a model to search. The tool reads it once.
@@ -34,7 +37,7 @@ starts out counting for both. Propose a file only when all of these hold:
 3. You opened it and searched for its uses. No app, site, email, generator or build step imports it, loads
    it by path (a file-system route, an import glob), reads its content or renders it, and no built source
    map lists it. A test runner running it, a code host showing it and a component explorer showing a
-   story do not count.
+   story do not count, unless that explorer is a site people use and this CSS is part of it.
 
 When unsure, do not propose it. A file that wrongly counts leaves a dead rule unproven. A file wrongly
 made exact-only can call a live rule dead. The user approves each path with the plan; a path not approved
@@ -73,13 +76,14 @@ match, use another nonce.
   cannot be what makes a rule DEAD. The place is the first in path order; look at the others before
   saying code builds the name.
 
-If the user does not approve every path, run the probes once more with the approved ones. Report that last
-run: `m` is the summary's `wants` and `n` its `none`, `c` the inventory's class tokens, modules included
-and canaries not, and `k` those that start with a prefix whose probe was `fragment`.
+If the user does not approve every path, or changes the exclusions, run the probes once more with the
+approved ones. Report that last run: `m` is the summary's `wants` and `n` its `none`, `c` the inventory's
+class tokens, modules included and canaries not, and `k` those that start (a module token by its local name, with its own `paths`) with
+a prefix whose probe was `fragment`.
 
 The line is FAIL when the probes did not run, or when `refs` treated a file as exact-only that is not in
-the approved `exact-only.txt`; PARTIAL when `m` is above 0 and `n` is 0; otherwise PASS. With no prefix to
-probe, no prefix fragment is possible: write `none to probe` and PASS. The probes do not test suffixes
+the approved `exact-only.txt`; PARTIAL when `m` is above 0 and `n` is 0, or when `k` equals `c` and
+`c` is above 0; otherwise PASS. When `m` is 0, write `none to probe`. The probes do not test suffixes
 (`__title`), ids or attribute names.
 
 ## CSS modules

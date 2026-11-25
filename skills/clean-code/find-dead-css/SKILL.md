@@ -118,8 +118,8 @@ report path, its header and the delete list summary. Then append the run record 
 
 ## Static-only mode
 
-When the browser cannot be driven or no safe host exists: skip steps 2 to 4 and 7, send every token to
-`refs`, and run `classify --mode static`. No member is ever DEAD; candidates are UNPROVEN `static-only`.
+When the browser cannot be driven or no safe host exists: skip steps 2 to 4 (but run the prefix
+probes) and 7, send every token to `refs`, and run `classify --mode static`. No member is ever DEAD; candidates are UNPROVEN `static-only`.
 The report header says `Mode: static-only` and `Crawl canaries: not run`, and has no delete list. Use it
 to size the work before paying for a crawl, never as a list to delete from.
 

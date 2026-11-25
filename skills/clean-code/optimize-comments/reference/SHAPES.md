@@ -30,6 +30,11 @@ async function getUser(id: UserId): Promise<User>
 Keep: a caller rule the types miss. It is also a fact about the contract, not a description of the
 body, so it does not drift when the body changes.
 
+**Typed languages.** In TypeScript, typed Python, Kotlin, Rust and similar, a doc comment on anything
+that is not public API of a published package keeps only the sentences that pass the keep test. Tags
+that restate the signature (`@param x the x`, `@returns the result`, `@type`, `@async`) always go. A
+doc comment with nothing left is deleted, not shortened to a stub.
+
 ## Class and file summaries
 
 `/** Service for managing orders. */` above `class OrderService`: Delete. A file header that lists what
@@ -41,14 +46,19 @@ worker": Keep, a rule the code cannot state.
 "`timeout` is in seconds; the upstream API expects milliseconds": Keep, a caller rule. Better still, if
 code changes are allowed, rename to `timeoutSeconds` and delete the comment. A name cannot drift.
 
+"`amount` is in cents" above an exported function that only passes it on: Keep, marked unverified, even
+with no caller to check. "Callers pass frozen arrays": Delete. It reports what callers do today.
+
 ## A deliberate oddity
 
 ```js
-// Rhino reuses const bindings across loop iterations; use let.
+// Rhino reuses const bindings across loop iterations (issue 57); use let.
 ```
 
-Keep: an agent would "modernize" this to `const` and reintroduce the bug. If a test pins it and its
-name says why (`keeps let in loops: Rhino reuses const bindings`), Move to test and delete the comment.
+Keep: an agent would "modernize" this to `const` and reintroduce the bug. Without the issue, run it on
+Rhino or find the commit that recorded the bug. If neither is possible, Delete and report. If a test pins
+it and its name says why (`keeps let in loops: Rhino reuses const bindings`), Move to test and delete the
+comment.
 
 ## Behaviour a test pins
 
@@ -103,6 +113,12 @@ Compare, all Keep when checked:
 - "Release can arrive before the render commits, so read the ref": an oddity. "Before" is about order,
   not speed.
 - "Bound before compiling: a visitor supplies the pattern": a security limit.
+- "The proxy strips this header from outside requests, so it is trusted": a security limit, kept even
+  though it describes the repo's setup and you cannot check the proxy. Mark it unverified.
+- "Reject bodies over 1 MB until the gateway has its own limit": a security limit, kept. List the
+  condition for triage-todos.
+
+Not a security limit: "No auth check yet, only the team can reach this". It defends a missing one: Excuse.
 
 ## Section banners
 

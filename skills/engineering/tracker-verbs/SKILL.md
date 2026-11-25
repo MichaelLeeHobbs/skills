@@ -84,18 +84,20 @@ A claim says who is working a ticket now, so two sessions do not build the same 
 ## Rules for every write
 
 - Write only to tickets in the task's set. A neighbour you only read gets no writes.
-- **Public trackers.** Before the first write, find out who can read the tracker, and for `tie` the
-  repository the change goes to. If it is public, or you cannot tell, keep these out of every title, body,
-  comment, branch name and commit message you write for the ticket: internal hostnames and network
-  addresses, account and resource ids, paths on someone's machine, customer names and data, log lines or
+- **Public trackers.** Before the first write, find out who can read each tracker the write touches or
+  names, and for `tie` the repository the change goes to. One you would write to counts as public when you
+  cannot tell, here and in every skill that says "public tracker". On a public one, keep these out of every
+  title, body, comment, branch name and commit message you write for the ticket: internal hostnames and
+  network addresses, account and resource ids, paths on someone's machine, customer names and data, log lines or
   query results holding any of those, session titles, and anything from a private repository or tracker
   (names, paths, code, ticket keys). State the conclusion instead ("one caller in a week of network logs").
   Search the text for these before each write, because an edit does not remove what was published. If the
   ticket makes no sense without a detail, show it to the user and ask first; a general go-ahead to file
   does not cover it.
 - **Private keys stay private.** A verb that would put a private ticket's key on a public ticket or change
-  (`link`, `nest`, `close duplicate-of`, `tie`) is written and read back on the private side only. If it
-  has no private-side form, ask the user.
+  (`link`, `nest`, `close duplicate-of`, `tie`) is written and read back on the private side only, whatever
+  its "Done when" says. A ticket you only name counts as private when you cannot tell. If the verb has no
+  private-side form, ask the user.
 - `read` back after each write and compare with what you meant. A write you cannot read back is a
   failure, not a success.
 - A refused write (no permission, archived, locked) is not retried as is. Put the note on a ticket you
@@ -107,10 +109,10 @@ A claim says who is working a ticket now, so two sessions do not build the same 
 ## Writing a layer
 
 A layer is a skill or project doc that gives, for each verb: the exact command, how to read it back, how
-a refusal looks, and a fallback where the tracker lacks the feature. It also says how to tell who can read
-the tracker, where the status labels live, how a missing label gets created without duplicating it or
-changing one that exists, and what `close done` means on that tracker. `github-issues` is the worked
-example.
+a refusal looks, a fallback where the tracker lacks the feature, and the private-side form if the verb has
+one. It also says how to tell who can read the tracker, where the status labels live, how a missing label
+gets created without duplicating it or changing one that exists, and what `close done` means on that
+tracker. `github-issues` is the worked example.
 
 ## Check
 

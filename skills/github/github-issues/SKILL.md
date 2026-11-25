@@ -18,14 +18,18 @@ GitHub. A project's own issue conventions win over this file, but not over the r
 ## Before the first write
 
 - **Where:** the commands below act on the current checkout's repository. When the issue is in another
-  one, or you are outside a checkout, add `--repo <owner>/<name>` to every `gh issue`, `gh label` and `gh
-  pr` call, and write the owner and name for `{owner}/{repo}` in every `gh api` path.
+  one, or you are outside a checkout, add `--repo` with the issue's repository to every `gh issue` and `gh
+  label` call, and with the pull request's to every `gh pr` call. Write the issue's owner and name for
+  `{owner}/{repo}` in every `gh api` path. When two sides are in different repositories, write
+  `<owner>/<name>#<n>` for every `#<n>` below, and the issue's URL where a flag takes an issue.
 - **Version:** run `gh issue edit --help`. If it lists `--parent` and `--add-blocked-by`, use the native
   sub-issue and dependency commands below. If not, `gh` is too old: use the fallback lines, and say so
   in the report.
-- **Who can read it:** `gh repo view <owner>/<name> --json visibility --jq .visibility`, naming the issue's
-  repository (and for `tie`, the pull request's). On `PUBLIC`, or if the command fails, follow the public
-  tracker rule in the [rules for every write](../../engineering/tracker-verbs/SKILL.md#rules-for-every-write).
+- **Who can read it:** `gh repo view <owner>/<name> --json visibility --jq .visibility`, for the
+  repository of every issue the write touches or names (and for `tie`, the pull request's). On `PUBLIC`,
+  follow the public tracker rule in the
+  [rules for every write](../../engineering/tracker-verbs/SKILL.md#rules-for-every-write). If the command
+  fails, a repository you write to counts as public and one you only name counts as private.
   Editing leaves the old text in the edit history until someone deletes that revision on the web page.
 - **Labels:** `gh` fails when a label to add or remove does not exist. Before adding one, run
   `gh api "repos/{owner}/{repo}/labels/<name>" --jq '[.name, .description] | @tsv'`, with `%20` for a space
@@ -61,8 +65,11 @@ Write bodies and comments to a scratch file and pass `--body-file`; shell quotin
 A list as long as its limit, or of exactly 1000 (the most `--search` returns), is cut off: raise the limit,
 or at 1000 narrow the words or dates. The claim search is the exception, a fixed backstop.
 
-A row that puts one issue's number on another follows the private keys rule in the tracker verbs when one
-of them is private.
+When one side is private, the private keys rule in the tracker verbs decides, and these are the private-side
+forms. `link` and `nest`: the comment or body line on the private issue only. `tie` to a public pull
+request: a comment on the private issue with the pull request's URL, then `close done` by hand after the
+merge. A public issue that duplicates a private one has none: ask whether to close it `not-planned` with a
+reason that does not mention the private issue.
 
 | Verb | Command | Read back |
 | --- | --- | --- |
@@ -83,7 +90,7 @@ of them is private.
 | `close not-planned` | `gh issue close <n> --reason "not planned" --comment "<reason>"` | `stateReason` NOT_PLANNED |
 | `close duplicate-of` | `gh issue close <n> --duplicate-of <m> --comment "<reason>"`. Old `gh`: `--reason "not planned" --comment "Duplicate of #<m>"` | `stateReason` DUPLICATE (old `gh`: NOT_PLANNED and the comment) |
 | `reopen` | `gh issue reopen <n> --comment "<reason>"` | `read`: `state` OPEN |
-| `tie` | A line `Fixes #<n>` in the pull request body, one line per issue (`Fixes #1, #2` closes only #1). Work that only touches the issue gets `Part of #<n>` instead, which links without closing. The merge closes the issue but leaves its labels: `unlabel in-progress` after it | `gh pr view <pr> --json closingIssuesReferences` lists `<n>` |
+| `tie` | A line `Fixes #<n>` in the pull request body, one line per issue (`Fixes #1, #2` closes only #1). Work that only touches the issue gets `Part of #<n>` instead, which links without closing. The merge closes the issue but leaves its labels: `unlabel in-progress` after it | `gh pr view <pr> --json closingIssuesReferences` lists `<n>` with the issue's `repository` |
 
 ## Claim and release
 

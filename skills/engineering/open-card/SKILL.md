@@ -80,7 +80,8 @@ for the title and the brief too. "Just file it" does not cover a private detail.
 - **What:** the change, in a few lines.
 - **Why it matters:** the failure first (what breaks or misleads if nobody does this).
 - **Evidence:** `path:line` at the revision, the query and its result (where the public tracker rule bars
-  them, only the conclusion), the originating ticket unless it is private, and the session id.
+  them, only the conclusion), the originating ticket (not a private one on a public tracker), and the
+  session id.
 - **Acceptance criteria:** testable, cheapest decisive check first, with the command when one settles it.
 
 Then the run brief from [reference/BRIEF.md](reference/BRIEF.md), filled in for one slice, in the

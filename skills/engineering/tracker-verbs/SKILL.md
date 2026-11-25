@@ -2,7 +2,7 @@
 name: tracker-verbs
 description: >-
   The shared list of issue-tracker verbs (search, read, file, edit, comment, label, claim, release, link,
-  nest, start, close, tie) that other skills write their ticket steps in, and what a tracker layer must
+  nest, start, close, reopen, tie) that other skills write their ticket steps in, and what a tracker layer must
   provide for each. Read it when a skill says to do a step "with the tracker verbs", or when writing a
   layer that maps the verbs onto a tracker (GitHub Issues, Jira, Linear, a project's own board). NOT a
   task on its own: it files and changes nothing until another skill asks.
@@ -43,12 +43,14 @@ Never skip a verb because no layer covers it. A step that cannot be done is repo
 | `edit <key>` | Replace the title or body | `read` shows the new text |
 | `comment <key>` | Add a comment | The comment shows in `read` |
 | `label <key> <labels>` | Add labels and keep the existing ones; create a label the tracker lacks first | `read` shows the old labels plus the new |
+| `unlabel <key> <labels>` | Remove labels and keep the rest | `read` shows the rest, without those |
 | `claim <key>` | Assign the ticket to the user and mark it as worked by this session (see [claims](#claims)) | `read` shows the assignee and this session's mark |
 | `release <key>` | Remove this session's mark; the assignee stays | `read` shows no mark for this session |
-| `link <key> <type> <other>` | Relate two tickets: `relates`, `blocks` or `duplicates` | The link shows from both tickets, or the layer's fallback text is on the ticket |
+| `link <key> <type> <other>` | Relate two tickets: `relates` or `blocks`. A duplicate is not a link: use `close <key> duplicate-of <other>` | The link shows from both tickets, or the layer's fallback text is on the ticket |
 | `nest <parent> <child>` | Make one ticket a child (sub-ticket) of another | `read <child>` shows the parent |
-| `start <key>` | Mark the ticket in progress | `read` shows it in progress |
+| `start <key>` | Mark the ticket in progress. It does not claim: a session that builds the ticket runs `claim` itself | `read` shows it in progress |
 | `close <key> <outcome>` | End the ticket as `done`, `not-planned` or `duplicate-of <other>`, with a one-line reason | `read` shows it closed with that outcome |
+| `reopen <key>` | Reopen a closed ticket, with a one-line reason | `read` shows it open |
 | `tie <key> <change>` | Put the ticket's key into a change (branch, commit or pull request) so merging the change closes or links the ticket | The change shows the key, and the ticket shows the change once the tracker sees it |
 
 ## Status labels
@@ -72,8 +74,8 @@ A claim says who is working a ticket now, so two sessions do not build the same 
   another session: if you can tell that session is still running, stop and name it; if it has finished,
   remove its mark and say so; if you cannot tell, ask the user.
 - **Release when this session is done with it:** closed, handed to another session, folded into another
-  ticket, or left in a review state. At the end of a task, `search` for this session's mark to find any
-  claim still held.
+  ticket, or left in a review state. At the end of a task, `read` every ticket this session claimed to
+  confirm its mark is gone, then `search` for this session's mark as a backstop for any you forgot.
 
 ## Rules for every write
 

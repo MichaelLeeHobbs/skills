@@ -2,7 +2,7 @@
 name: github-issues
 description: >-
   The GitHub Issues layer for the shared tracker verbs: maps search, read, file, edit, comment, label,
-  claim, release, link, nest, start, close and tie onto the gh command-line tool, with labels (not
+  unlabel, claim, release, link, nest, start, close, reopen and tie onto the gh command-line tool, with labels (not
   GitHub Projects) carrying status so it works in any repository with no setup beyond three labels. Use
   when a skill such as open-card, triage-card or where-we-stand does a ticket step and the project
   tracks work in GitHub Issues. NOT for pull request review, Actions, or GitHub Projects boards.
@@ -60,19 +60,20 @@ Write bodies and comments to a scratch file and pass `--body-file`; shell quotin
 | `search` label | `gh issue list --label plan-ready --json number,title,labels` | The output is the result |
 | `search` claim | See [claim and release](#claim-and-release) | The output is the result |
 | `read` | `gh issue view <n> --json number,title,body,state,stateReason,labels,assignees,comments,parent,subIssues,blockedBy,blocking,url` (old `gh`: drop `parent`, `subIssues`, `blockedBy`, `blocking`) | Nothing to check |
-| `file` | `gh issue create --title "<title>" --body-file <file> --assignee @me --label <a>,<b>`, plus `--parent <n>` for a child. It prints the new issue's URL; the number is its last segment | `read` the new number |
+| `file` | `gh issue create --title "<title>" --body-file <file> --assignee @me --label <a>,<b>`, plus `--parent <n>` for a child (old `gh`: file it, then use the `nest` fallback). It prints the new issue's URL; the number is its last segment | `read` the new number |
 | `edit` | `gh issue edit <n> --title "<title>" --body-file <file>` | `read`: `title`, `body` |
 | `comment` | `gh issue comment <n> --body-file <file>` | `read`: the last of `comments` |
 | `label` | `gh issue edit <n> --add-label <a>,<b>` (keeps the others) | `read`: `labels` |
-| `link relates` | `gh issue comment <n> --body "Related: #<m>"` (another repository: `<owner>/<name>#<m>`). GitHub shows the cross-reference on both issues | `read <n>`: the comment |
+| `unlabel` | `gh issue edit <n> --remove-label <a>,<b>` | `read`: `labels` |
+| `link relates` | `gh issue comment <n> --body "Related: #<m>"` and `gh issue comment <m> --body "Related: #<n>"` (another repository: `<owner>/<name>#<m>`). `read` returns comments but not GitHub's cross-reference events, so the link is the pair of comments | `read` both: each holds its `Related:` comment |
 | `link blocks` | `gh issue edit <blocked> --add-blocked-by <blocker>`. Fallback: `edit` the blocked issue's body to start with `Blocked by #<blocker>` | `read <blocked>`: `blockedBy`, or the body line |
-| `link duplicates` | `close <n> duplicate-of <m>` below | As for `close` |
 | `nest` | `gh issue edit <child> --parent <parent>`. Fallback: a `Parent: #<parent>` line in the child's body and a `- [ ] #<child>` line in the parent's | `read <child>`: `parent`, or both lines |
-| `start` | `claim` first, then `gh issue edit <n> --add-label in-progress` | `read`: `labels`, `assignees` |
-| `close done` | Prefer `tie`. By hand: `gh issue close <n> --reason completed --comment "<reason>"`, then `gh issue edit <n> --remove-label in-progress` | `read`: `state` CLOSED, `stateReason` COMPLETED |
+| `start` | `gh issue edit <n> --add-label in-progress`. It does not claim | `read`: `labels` |
+| `close done` | Prefer `tie`; once its pull request merges, `unlabel in-progress` and `release`. By hand: `gh issue close <n> --reason completed --comment "<reason>"`, then `gh issue edit <n> --remove-label in-progress` | `read`: `state` CLOSED, `stateReason` COMPLETED |
 | `close not-planned` | `gh issue close <n> --reason "not planned" --comment "<reason>"` | `stateReason` NOT_PLANNED |
-| `close duplicate-of` | `gh issue close <n> --duplicate-of <m> --comment "<reason>"` | `stateReason` DUPLICATE |
-| `tie` | A line `Fixes #<n>` in the pull request body, one line per issue (`Fixes #1, #2` closes only #1). Work that only touches the issue gets `Part of #<n>` instead, which links without closing | `gh pr view <pr> --json closingIssuesReferences` lists `<n>` |
+| `close duplicate-of` | `gh issue close <n> --duplicate-of <m> --comment "<reason>"`. Old `gh`: `--reason "not planned" --comment "Duplicate of #<m>"` | `stateReason` DUPLICATE (old `gh`: NOT_PLANNED and the comment) |
+| `reopen` | `gh issue reopen <n> --comment "<reason>"` | `read`: `state` OPEN |
+| `tie` | A line `Fixes #<n>` in the pull request body, one line per issue (`Fixes #1, #2` closes only #1). Work that only touches the issue gets `Part of #<n>` instead, which links without closing. The merge closes the issue but leaves its labels: `unlabel in-progress` after it | `gh pr view <pr> --json closingIssuesReferences` lists `<n>` |
 
 ## Claim and release
 
@@ -90,15 +91,16 @@ Claimed by agent session <session title or id>.
 
 **Release** edits the marker away, which keeps the history and stops `search` from finding the claim:
 
-1. Find the comment's id: `gh api --paginate repos/{owner}/{repo}/issues/<n>/comments --jq '.[] | select(.body | contains("claude-session: <id>")) | .id'`.
+1. Find the comment's id: `gh api --paginate repos/{owner}/{repo}/issues/<n>/comments --jq '.[] | select(.body | contains("claude-session: <id> -->")) | .id'`.
 2. `gh api -X PATCH repos/{owner}/{repo}/issues/comments/<comment id> -f body="Released by agent session <session title or id>."`
 
 The assignee stays. Clearing a finished session's stale claim is the same two steps with its id.
 
-**Search for a session's claims** (the 200 most recently updated issues, open or closed):
+**Search for a session's claims** as a backstop only: it covers the 200 most recently updated issues, open
+or closed, so first `read` every issue the session knows it claimed.
 
 ```
-gh issue list --state all --search "sort:updated-desc" --limit 200 --json number,title,state,comments --jq '.[] | select(any(.comments[]; .body | contains("claude-session: <id>"))) | .number'
+gh issue list --state all --search "sort:updated-desc" --limit 200 --json number,title,state,comments --jq '.[] | select(any(.comments[]; .body | contains("claude-session: <id> -->"))) | .number'
 ```
 
 ## Refusals

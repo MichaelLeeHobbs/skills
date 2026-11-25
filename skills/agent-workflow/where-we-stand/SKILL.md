@@ -28,7 +28,7 @@ layer there before the first ticket write.
 ## 1. Rebuild what this session owns
 
 Before checking anything, list what this session committed to, from the conversation (and its summary,
-if it was compacted):
+if earlier parts were summarized):
 
 - the original ask, and any side work it took on;
 - tickets it filed, claimed or worked (also `search` for tickets carrying this session's claim);
@@ -44,7 +44,7 @@ script, a release skill's verify step).
 
 | Item | Check |
 | --- | --- |
-| Pull request | State (open, merged, declined), and whether its merge commit is on the base branch (for git: `git fetch`, then `git log origin/<base> --grep "<pull request number>"`) |
+| Pull request | State (open, merged, declined), and whether its merge commit is on the base branch: take the merge commit the code host records, then (for git) `git fetch` and `git merge-base --is-ancestor <merge commit> origin/<base>` |
 | Pipeline | The base branch's pipeline for that merge commit passed |
 | Deploy | It reached the environment: the release pipeline, the running image or version, a health probe, or the project's verify step. "Merged" is not "deployed" |
 | Ticket | `read` it. Its state matches reality (merged work is not left in progress, open work is not closed), and this session's claim is released |
@@ -106,5 +106,5 @@ Leave out how you checked things, unless the user asks.
 Before sending, go through the report line by line. Every "done", "merged", "deployed" or "released"
 must point to a check made in this run (step 2 or 3), not to memory or an earlier message. A line without
 one moves to **Couldn't verify**. Run the [tracker verbs check](../../engineering/tracker-verbs/SKILL.md#check)
-for the ticket writes. `Done, safe to archive` is a failure if a `search` for this session's claim still
-returns a ticket.
+for the ticket writes. `Done, safe to archive` is a failure if any ticket from step 1, read back, still
+carries this session's claim, or if a `search` for the claim still returns one.

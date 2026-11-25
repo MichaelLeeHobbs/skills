@@ -1,7 +1,7 @@
 {
   "name": "michaelleehobbs",
   "owner": { "name": "Michael Hobbs" },
-  "description": "Prose-only agent skills from MichaelLeeHobbs/skills, one plugin per group.",
+  "description": "Agent skills from MichaelLeeHobbs/skills, one plugin per group.",
   "plugins": [
     {
       "name": "agent-workflow",
@@ -58,6 +58,14 @@
       "description": "Running systems: blameless postmortems.",
       "license": "MIT",
       "skills": ["./skills/operations"]
+    },
+    {
+      "name": "requirements",
+      "source": "./",
+      "strict": false,
+      "description": "Keep a Software Requirements Specification as the contract agents build toward: write it, debate it, verify it.",
+      "license": "MIT",
+      "skills": ["./skills/requirements"]
     },
     {
       "name": "thinking",

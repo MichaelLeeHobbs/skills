@@ -1,6 +1,6 @@
 # Skills
 
-**Agent skills across a range of topics. Prose only, so nothing here executes.**
+**Agent skills across a range of topics. Mostly prose; the few scripts are small, dependency-free and tested.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 &nbsp;Works with Claude Code, Cursor, Codex, opencode, Windsurf, Gemini CLI and 70 other agents.
@@ -9,8 +9,11 @@ Installing a skill normally means copying a folder into your agent's skills dire
 the agent do whatever the skill body tells it to. If that folder contains a script, one command just
 bought you code execution from a repo you probably skimmed.
 
-This repo makes that impossible. There are no executable files in it and there never will be. You can
-install everything here without reading a line of code, because there is no code.
+This repo keeps that small enough to audit. Almost every skill is prose only. A skill that needs a
+deterministic job done (parsing a table, counting IDs) may ship a script, and only on strict terms: Node
+ESM in the skill's own `scripts/` folder, Node built-ins only, no dependencies, no install step, no
+network, and tests with fixtures beside it. Today only the `requirements` skills carry scripts. Read
+those before you install them; everything else has no code to read.
 
 ## Install
 
@@ -25,7 +28,7 @@ copies the skills into the right place for each. To take one instead of all of t
 npx skills add MichaelLeeHobbs/skills --skill write-tests
 ```
 
-Or read the markdown and copy what you want. Every skill is one file you can hold in your head.
+Or read the markdown and copy what you want. Every skill is one file you can hold in your head, plus its reference docs and, for the few that have one, its `scripts/` folder.
 
 ### As a Claude Code plugin
 
@@ -38,13 +41,13 @@ claude plugin install engineering@michaelleehobbs
 ```
 
 The plugins are `agent-workflow`, `clean-code`, `clean-room`, `domains`, `engineering`, `github`,
-`operations` and `thinking`. Plugin skills are namespaced by group, so `triage-card` runs as `/engineering:triage-card`.
+`operations`, `requirements` and `thinking`. Plugin skills are namespaced by group, so `triage-card` runs as `/engineering:triage-card`.
 To take new commits, run `claude plugin marketplace update michaelleehobbs`, then
 `claude plugin update <group>@michaelleehobbs`, or turn on auto-update for the marketplace in `/plugin`.
 
 ## The skills
 
-Grouped by area. Different topics, no unifying theme beyond being useful and being prose.
+Grouped by area. Different topics, no unifying theme beyond being useful.
 
 ### thinking
 
@@ -100,6 +103,18 @@ Gardening and weeding an existing codebase: finding what is duplicated, dead, dr
 | `vocabulary-drift` | Find concepts that go by several names across code, schema, routes, UI text and docs, propose one canonical name per concept, and flag names that mean different things in different places. |
 | `asset-garden` | Weed static assets: identical images and SVGs under different names, unused images and fonts, oversized files, and one meaning drawn by several icon families, each finding proven before it is reported. |
 
+### requirements
+
+Keeping a Software Requirements Specification (SRS) in the repo as the contract agents build toward. The
+SRS README carries the format, so each skill works without the others installed. These three ship Node
+scripts (built-ins only, tested with `node --test`).
+
+| Skill | What it does |
+|---|---|
+| `srs` | Write and maintain `docs/srs/`: bootstrap it from an existing repo a few areas at a time, add or change requirements from a conversation or ticket, log requirements discovered during a build as Proposed, apply the developer's accept decisions with a dated change log, and draft interface specs. `srs-lint` checks the format. |
+| `srs-debate` | Challenge the SRS with panels (a contractor hunting ambiguity, the customer, a tester, a domain guardian, a scope guardian) and return numbered findings per requirement ID with proposed rewrites and decisions with defaults. Read-only until the developer approves. |
+| `srs-verify` | Prove or disprove requirements from the requirement side: assume Not met, find the evidence its Verify method demands, and write verdicts to `trace.md`. `srs-coverage` maps IDs to test names first and rewrites the README summary. Never edits requirement text. |
+
 ### operations
 
 Running things that are already live.
@@ -146,21 +161,16 @@ Tied to one technology. Useful only if you use that thing.
 
 ## The rules
 
-One hard rule and three quality bars. The reasoning is in [AGENTS.md](./AGENTS.md).
+One limit on code and three quality bars. The reasoning is in [AGENTS.md](./AGENTS.md).
 
-1. **No executable files. Ever.** This is what the repo is. Everything else is negotiable.
+1. **Scripts only on strict terms.** Node ESM under a skill's `scripts/` folder, Node built-ins only, no
+   dependencies, with tests and fixtures that pass under `node --test`. Prose first.
 2. **No agent-specific names.** No model names, no tool names, no `~/.claude` paths. A skill that names
    one agent is a skill that breaks on every other.
 3. **Degrade gracefully.** A skill that wants eight parallel workers still has to do something useful on
    an agent that has none.
 4. **Every skill ships its own check.** If a skill cannot tell you how you would know it worked, it is
    not finished.
-
-## What is deliberately not here
-
-Skills that come with scripts. Those live in a separate cookbook repo that is structurally invisible to
-the `skills` CLI, so installing one is a deliberate act: read it, copy it, rename it. Link to follow once
-it is published.
 
 ## Credits
 

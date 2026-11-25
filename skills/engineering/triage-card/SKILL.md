@@ -20,6 +20,10 @@ fine, and so are throwaway scripts outside the repo. Production data only throug
 sanctioned read-only route. The tracker is the exception: the triage is recorded on each ticket (step 8),
 because a triage that lives only in a chat gets redone.
 
+Ticket steps use the shared [tracker verbs](../tracker-verbs/SKILL.md) (installed alone? read
+`skills/engineering/tracker-verbs/SKILL.md` in github.com/MichaelLeeHobbs/skills). Find your tracker
+layer there before the first ticket write.
+
 ## 0. Load the project's rules
 
 Read your agent's context file and the project's contributing docs before researching. Look for:
@@ -35,11 +39,13 @@ Read your agent's context file and the project's contributing docs before resear
 
 ## 1. Scope the set
 
-- Read every ticket you were given, with comments and links. For an epic, read it and all its children.
-- Find the neighbours: linked and parent tickets, the tracker's similar-issue search if it has one, and a
-  text search on the ticket's key nouns over open and recently closed tickets. List them as related.
-  Propose folding the ones that are clearly the same work; they join the set only when the user agrees.
-- Leave out tickets someone else is actively working, and say which and why.
+- `read` every ticket you were given. For an epic, `read` it and all its children.
+- Find the neighbours: linked and parent tickets, the tracker's similar-issue search if the layer has
+  one, and a `search` on the ticket's key nouns over open and recently closed tickets. List them as
+  related. Propose folding the ones that are clearly the same work; they join the set only when the user
+  agrees.
+- `claim` each ticket in the set, following the claim rules: a ticket another running session holds is
+  left out and named. A folded ticket is claimed when the user agrees to fold it.
 
 **More than about three tickets, or tickets in unrelated areas:** if you can run read-only research in
 parallel, give one researcher per cluster steps 2 to 6, with the brief in
@@ -128,22 +134,29 @@ default, so the user can answer "1 yes, 2 drop".
 
 Follow the project's ticket conventions for every write.
 
-- Post a triage comment on each ticket whose verdict is not a plain `VALID` or whose diagnosis you
+- `comment` a triage note on each ticket whose verdict is not a plain `VALID` or whose diagnosis you
   challenged. Never post a bare "still valid". The template is in
   [reference/templates.md](reference/templates.md#triage-comment).
-- Add only links you are sure of, after reading existing links. If a link is refused, name the ticket
+- `link` only what you are sure of, after reading existing links. If a link is refused, name the ticket
   in the comment instead.
-- A "triaged" label, if the project uses one, goes on without dropping existing labels.
-- Read each ticket back after writing.
+- `label` each ticket `triaged`, unless the project's rules say otherwise.
+- `read` each ticket back after writing.
 - **Touch only tickets in the triaged set.** Neighbours you did not triage get no writes.
 
-After the user picks a path, apply it (re-scope, close with a reason, file slice tickets, reprioritize)
-and comment what was decided. Confirm any open hypothesis before building on it, and tell the user if it
-turned out wrong.
+After the user picks a path, apply it and `comment` what was decided. Confirm any open hypothesis before
+building on it, and tell the user if it turned out wrong.
+
+- **Build it here** (small or medium): `start` each ticket when work begins and keep the claim until it
+  closes.
+- **Plan it** (large): hand the report and the tickets to a planning step (`shape-plan`), and `release`
+  once the plan is filed or the tickets re-scoped.
+- **Close, fold or wait:** `close` with the reason (`done`, `not-planned` or `duplicate-of`), then
+  `release`.
 
 ## 9. Check your work
 
-Run [reference/check.md](reference/check.md) before you answer and again after the tracker writes. It
+Run [reference/check.md](reference/check.md) before you answer and again after the tracker writes, then
+the [tracker verbs check](../tracker-verbs/SKILL.md#check). It
 re-opens every cited line at the pinned revision, confirms every claim is labelled, and compares each
 comment read back from the tracker with what you meant to post. A step that cannot run is a `FAIL`.
 

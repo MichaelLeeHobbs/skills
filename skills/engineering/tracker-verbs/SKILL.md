@@ -1,9 +1,10 @@
 ---
 name: tracker-verbs
 description: >-
-  The shared list of issue-tracker verbs (search, read, file, edit, comment, label, claim, release, link,
-  nest, start, close, reopen, tie) that other skills write their ticket steps in, and what a tracker layer must
-  provide for each. Read it when a skill says to do a step "with the tracker verbs", or when writing a
+  The shared list of issue-tracker verbs (search, read, file, edit, comment, label, unlabel, assign,
+  claim, release, link, nest, start, close, reopen, tie) and code-host change verbs (search-changes,
+  read-change, open-change, merge-change) that other skills write their ticket and pull request steps
+  in, and what a layer must provide for each. Read it when a skill says to do a step "with the tracker verbs", or when writing a
   layer that maps the verbs onto a tracker (GitHub Issues, Jira, Linear, a project's own board). NOT a
   task on its own: it files and changes nothing until another skill asks.
 ---
@@ -45,6 +46,7 @@ Never skip a verb because no layer covers it. A step that cannot be done is repo
 | `comment <key>` | Add a comment | The comment shows in `read` |
 | `label <key> <labels>` | Add labels and keep the existing ones; create a label the tracker lacks first | `read` shows the old labels plus the new |
 | `unlabel <key> <labels>` | Remove labels and keep the rest | `read` shows the rest, without those |
+| `assign <key> <person>` | Make someone the assignee, replacing the current one. Only after the user agreed to take the ticket from its assignee; a claim needs no `assign` | `read` shows that assignee |
 | `claim <key>` | Assign the ticket to the user and mark it as worked by this session (see [claims](#claims)) | `read` shows the assignee and this session's mark |
 | `release <key>` | Remove this session's mark; the assignee stays | `read` shows no mark for this session |
 | `link <key> <type> <other>` | Relate two tickets: `relates` or `blocks`. A duplicate is not a link: use `close <key> duplicate-of <other>` | The link shows from both tickets, or the layer's fallback text is on the ticket. One of them private: from the private one only |
@@ -53,6 +55,22 @@ Never skip a verb because no layer covers it. A step that cannot be done is repo
 | `close <key> <outcome>` | End the ticket as `done`, `not-planned` or `duplicate-of <other>`, with a one-line reason | `read` shows it closed with that outcome |
 | `reopen <key>` | Reopen a closed ticket, with a one-line reason | `read` shows it open |
 | `tie <key> <change>` | Put the ticket's key into a change (branch, commit or pull request) so merging the change closes or links the ticket | The change shows the key, and the ticket shows the change once the tracker sees it |
+
+## Change verbs
+
+A change is a pull request (or merge request) on the code host. Some skills list, read, open or merge
+them; the same layer, or the code host's own layer, maps these.
+
+| Verb | Does | Done when (read back) |
+| --- | --- | --- |
+| `search-changes <query>` | List changes by author, repository, state or branch | You hold the list with each change's number, title, source and target branch, and state |
+| `read-change <change>` | Get one change: title, body, state, source and target branch, author, approvals, checks and their age, whether it conflicts or is behind its target, its commits and diff, and the tickets it closes | Nothing to check; it writes nothing |
+| `open-change` | Open a change from a pushed branch to its target, with a title and body (the body carries `tie`) | `read-change` shows it open with that body |
+| `merge-change <change>` | Merge an open change the user said to merge, in the repository's allowed way, and only at the head commit that was read | `read-change` shows it merged, and its merge commit is on the target branch |
+
+Merging is never implied. Each `merge-change` needs the user's go-ahead for that change; a yes for one is
+not a yes for the next. Read it again right before merging: a change that merged, closed or moved since
+you read it is read and offered again, not merged.
 
 ## Status labels
 
@@ -108,7 +126,7 @@ A claim says who is working a ticket now, so two sessions do not build the same 
 
 ## Writing a layer
 
-A layer is a skill or project doc that gives, for each verb: the exact command, how to read it back, how
+A layer is a skill or project doc that gives, for each verb (and each change verb it supports): the exact command, how to read it back, how
 a refusal looks, a fallback where the tracker lacks the feature, and the private-side form if the verb has
 one. It also says how to tell who can read the tracker, where the status labels live, how a missing label
 gets created without duplicating it or changing one that exists, and what `close done` means on that

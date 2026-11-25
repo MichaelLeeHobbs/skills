@@ -1,11 +1,13 @@
 ---
 name: github-issues
 description: >-
-  The GitHub Issues layer for the shared tracker verbs: maps search, read, file, edit, comment, label,
-  unlabel, claim, release, link, nest, start, close, reopen and tie onto the gh command-line tool, with labels (not
-  GitHub Projects) carrying status so it works in any repository with no setup beyond three labels. Use
-  when a skill such as open-card, triage-card or where-we-stand does a ticket step and the project
-  tracks work in GitHub Issues. NOT for pull request review, Actions, or GitHub Projects boards.
+  The GitHub layer for the shared tracker verbs: maps the ticket verbs (search, read, file, edit,
+  comment, label, unlabel, assign, claim, release, link, nest, start, close, reopen, tie) and the change
+  verbs (search-changes, read-change, open-change, merge-change) onto the gh command-line tool, with
+  labels (not GitHub Projects) carrying status so it works in any repository with no setup beyond three
+  labels. Use when a skill such as open-card, triage-card, shape-plan, run-plan, find-work, merge-my-prs
+  or where-we-stand does a ticket or pull request step on GitHub. NOT for reviewing a pull request's
+  code, Actions, or GitHub Projects boards.
 ---
 
 # GitHub Issues layer
@@ -82,6 +84,7 @@ reason that does not mention the private issue.
 | `comment` | `gh issue comment <n> --body-file <file>` | `read`: the last of `comments` |
 | `label` | `gh issue edit <n> --add-label <a>,<b>` (keeps the others) | `read`: `labels` |
 | `unlabel` | `gh issue edit <n> --remove-label <a>,<b>`, only for labels `read` shows on it | `read`: `labels` |
+| `assign` | `gh issue edit <n> --remove-assignee <old login> --add-assignee <login>` | `read`: `assignees` |
 | `link relates` | `gh issue comment <n> --body "Related: #<m>"` and `gh issue comment <m> --body "Related: #<n>"` (another repository: `<owner>/<name>#<m>`). `read` returns comments but not GitHub's cross-reference events, so the link is the pair of comments | `read` both: each holds its `Related:` comment |
 | `link blocks` | `gh issue edit <blocked> --add-blocked-by <blocker>`. Fallback: `edit` the blocked issue's body to start with `Blocked by #<blocker>` | `read <blocked>`: `blockedBy`, or the body line |
 | `nest` | `gh issue edit <child> --parent <parent>`. Fallback: a `Parent: #<parent>` line in the child's body and a `- [ ] #<child>` line in the parent's | `read <child>`: `parent`, or both lines |
@@ -91,6 +94,22 @@ reason that does not mention the private issue.
 | `close duplicate-of` | `gh issue close <n> --duplicate-of <m> --comment "<reason>"`. Old `gh`: `--reason "not planned" --comment "Duplicate of #<m>"` | `stateReason` DUPLICATE (old `gh`: NOT_PLANNED and the comment) |
 | `reopen` | `gh issue reopen <n> --comment "<reason>"` | `read`: `state` OPEN |
 | `tie` | A line `Fixes #<n>` in the pull request body, one line per issue (`Fixes #1, #2` closes only #1). Work that only touches the issue gets `Part of #<n>` instead, which links without closing. The merge closes the issue but leaves its labels: `unlabel in-progress` after it | `gh pr view <pr> --json closingIssuesReferences` lists `<n>` with the issue's `repository` |
+
+## Change verbs
+
+Pull requests, on the same repository rules as above. `gh pr list` also defaults to 30 open ones, so set
+`--state` and `--limit`.
+
+| Verb | Command | Read back |
+| --- | --- | --- |
+| `search-changes` | `gh pr list --state open --author @me --json number,title,headRefName,baseRefName,isDraft,createdAt,url --limit 100` (or `--search`, `--base`, `--head`) | The output is the result |
+| `read-change` | `gh pr view <n> --json number,title,body,state,isDraft,author,headRefName,headRefOid,baseRefName,mergeable,mergeStateStatus,reviewDecision,statusCheckRollup,closingIssuesReferences,commits,url`, and `gh pr diff <n>`. `mergeable` CONFLICTING means it conflicts; `mergeStateStatus` BEHIND means it is behind its base; each check in `statusCheckRollup` has its own result and completion time | Nothing to check |
+| `open-change` | `gh pr create --base <base> --head <branch> --title "<title>" --body-file <file>` | `read-change`: `state` OPEN, `body` |
+| `merge-change` | `gh repo view --json mergeCommitAllowed,squashMergeAllowed,rebaseMergeAllowed` for the allowed ways (the project's rules pick among them), then `gh pr merge <n> --merge` (or `--squash`, `--rebase`) `--match-head-commit <headRefOid from the read>`. Never `--admin`, and `--auto` only when the user asks for it | `read-change`: `state` MERGED; `gh pr view <n> --json mergeCommit`, then `git fetch` and `git merge-base --is-ancestor <oid> origin/<base>` |
+
+A stacked pull request (its base is another pull request's head branch) is retargeted to the merged
+one's base only when that head branch is deleted; until then it still points at the old branch. Read it
+again after each merge before offering it.
 
 ## Claim and release
 

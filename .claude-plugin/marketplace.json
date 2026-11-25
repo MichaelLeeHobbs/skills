@@ -39,7 +39,7 @@
       "name": "engineering",
       "source": "./",
       "strict": false,
-      "description": "Day-to-day engineering: ticket triage and filing, batched builds, CVE sweeps, deep code review, writing tests, shared tracker verbs.",
+      "description": "Day-to-day engineering: find, triage, file and build tickets from a plan, batched builds, merging your PRs, CVE sweeps, deep code review, writing tests, shared tracker verbs.",
       "license": "MIT",
       "skills": ["./skills/engineering"]
     },
@@ -47,7 +47,7 @@
       "name": "github",
       "source": "./",
       "strict": false,
-      "description": "Tracker layer for GitHub Issues: maps the shared tracker verbs onto gh, with labels for status.",
+      "description": "GitHub layer: maps the shared ticket and pull request verbs onto gh, with labels for status.",
       "license": "MIT",
       "skills": ["./skills/github"]
     },
@@ -63,7 +63,7 @@
       "name": "thinking",
       "source": "./",
       "strict": false,
-      "description": "Reaching a decision: brainstorm, steelman, debate a plan with a panel.",
+      "description": "Reaching a decision: brainstorm, steelman, debate a plan with a panel, shape a plan into tickets.",
       "license": "MIT",
       "skills": ["./skills/thinking"]
     }

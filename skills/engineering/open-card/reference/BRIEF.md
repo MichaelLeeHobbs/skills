@@ -1,5 +1,10 @@
 # Run brief for one ticket
 
+This is the one-ticket case of shape-plan's
+[run brief](../../../thinking/shape-plan/reference/RUN-BRIEF.md) (installed alone?
+`skills/thinking/shape-plan/reference/RUN-BRIEF.md` in github.com/MichaelLeeHobbs/skills), which holds
+the rules `run-plan` checks.
+
 Paste this into the ticket's description, below the body, and fill every heading. A heading with nothing
 to say gets "None" and a reason, never deletion: the build session checks the headings are all there. On a
 public tracker, name the repository by its URL, never a local path.

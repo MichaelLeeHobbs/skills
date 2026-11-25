@@ -54,6 +54,7 @@ Reaching a decision. Nothing here touches code.
 |---|---|
 | `brainstorm` | Explore a problem you have not solved. You bring the problem and the goal, the agent brings the option space instead of running with its first idea. |
 | `steelman` | Settle a binary design question that keeps getting deferred. Both positions argued at full strength, both tested against ground truth, judged on a rubric written before the arguing started. |
+| `shape-plan` | Work an idea into an agreed plan in short loops with you, calling a debate or project skills when they earn it, then file it as one ticket or an epic with children, holding a run brief a fresh session can build from and labelled `plan-ready`. Changes no code. |
 | `debate-plan` | Turn a vague ticket or idea into buildable work by having panels argue it: builders open and rebut, real users and guardians review, and the report comes back as a design, slices in build order and numbered decisions with defaults. Runs serially on an agent that cannot work in parallel. |
 
 ### engineering
@@ -68,7 +69,10 @@ Writing and reviewing code.
 | `cve-sweep` | Weekly CVE patch sweep of one repo. Counts CVEs from the audit, an image scan and the cloud registry, plans every bump to the latest LTS runtime, base image and dependencies with majors flagged, stops for review, then ships in at most three releases and counts again. Keeps a risk register with expiry dates and a ledger that checks last week's fixes reached production. |
 | `batch-work` | Build several small tickets as one batch: a branch per ticket inside one batch branch, one review, one test run, one pull request. Keeps each ticket's state honest and checks the merge history proves it. |
 | `open-card` | File one small ticket a fresh session can build from alone. Checks the claim in code at a pinned revision, looks for duplicates, stops at a size gate, and writes a one-slice run brief into the description before labelling it `plan-ready`. |
-| `tracker-verbs` | The shared verb list (search, read, file, label, claim, link, close and the rest) that every ticket step here is written in, with what each verb must guarantee and how to check it. A tracker layer maps the verbs onto one tracker. |
+| `run-plan` | Build a `plan-ready` ticket or epic from its run brief: claims the tickets, builds the slices wave by wave (in parallel where your agent can), keeps the tickets and brief true, one review and one test run, and stops at open pull requests. |
+| `find-work` | List what to work on next from the project's tracker on one screen: Easy (checked against the code), Quick questions, Risky, Plan it and Close these, numbered so you pick by number. Read-only until you pick. |
+| `merge-my-prs` | Go through your own open pull requests one at a time, in dependency order, with a risk rating for each, and merge only on your answer for that one. |
+| `tracker-verbs` | The shared verb list (search, read, file, label, claim, link, close and the rest, plus pull request verbs: search, read, open, merge) that every ticket and pull request step here is written in, with what each verb must guarantee and how to check it. A tracker layer maps the verbs onto one tracker. |
 
 ### clean-code
 
@@ -121,7 +125,7 @@ it unchanged.
 
 | Skill | What it does |
 |---|---|
-| `github-issues` | GitHub Issues through `gh`. Labels `triaged`, `plan-ready` and `in-progress` carry status (no Projects board), assignees and a hidden comment marker carry claims, and native sub-issues and dependencies carry structure, with plain-text fallbacks on an older `gh`. |
+| `github-issues` | GitHub Issues and pull requests through `gh`. Labels `triaged`, `plan-ready` and `in-progress` carry status (no Projects board), assignees and a hidden comment marker carry claims, and native sub-issues and dependencies carry structure, with plain-text fallbacks on an older `gh`. |
 
 ### clean-room
 

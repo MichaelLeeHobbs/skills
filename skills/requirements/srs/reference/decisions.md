@@ -3,8 +3,9 @@
 A decision about how the product behaves is a requirement change. If the SRS waits for the build, the
 decision lives only in a plan's "what would change" list, the old rows keep their old wording, and
 verification measures the code against requirements nobody holds any more. So the SRS changes in the same
-change that records the decision, and verification reports the new rows Not met until the code lands.
-That keeps the gap visible.
+change that records the decision. Until the developer accepts the new rows, the Proposed rows citing the
+decision are the record; once accepted, verification reports them Not met until the code lands. Either
+way the gap is visible.
 
 ## The rule for the repo's agent instructions
 
@@ -15,15 +16,16 @@ add it only on the developer's yes:
 ```
 ## Decisions that change behaviour update the SRS
 
-When a decision sets how the product behaves (a debate, a ticket, a design review, a chat), add or
-revise the docs/srs rows it implies in the same change that records the decision, even when the build
-comes later. Each row cites the decision's ID; the decision record keeps the why. Verification reports
-the rows Not met until the code lands. A decision that sets no product behaviour says "SRS: none" in its
-record.
+When a decision sets how the product behaves (a debate, a ticket, a design review, a chat), add the
+docs/srs rows it implies as Proposed rows (a Proposed replacement for an Accepted row) in the same change
+that records the decision, even when the build comes later. Each row cites the decision's ID; the
+decision record keeps the why. Once accepted, verification reports the rows Not met until the code
+lands. A decision that sets no product behaviour says "SRS: none" in its record.
 ```
 
-If the developer declines, carry on with the SRS work, and say once in your report that decisions made
-in this repo will not reach the SRS automatically.
+If the developer declines, write `Decisions rule: declined, <date>` under Decisions in the SRS README's
+Conventions, carry on with the SRS work, and say once in your report that decisions made in this repo
+will not reach the SRS automatically. When that line is present, do not propose the rule again.
 
 ## Recording one decision
 
@@ -53,7 +55,22 @@ record that:
 - has a status of Proposed, Draft, Rejected, Superseded, Deprecated or Withdrawn, written as a
   `Status: <word>` line or as the first word under a `## Status` heading.
 
-Every other record that no SRS file cites is a `decision-uncited` finding.
+Every other record that no SRS file cites is a `decision-uncited` finding. A folder with no records at
+all is a `decisions-empty` finding, because pointing the check at the wrong folder would otherwise pass.
+The decisions folder and the SRS folder must not contain each other. The summary line says how many
+records were checked; zero checked records is worth a second look.
+
+## Turning the check on in a repo that already has decisions
+
+Records written before the SRS existed would all be flagged at once, and many teams never edit an
+accepted record. Do not edit old records to silence the check. Instead:
+
+1. Ask the developer which record is the first one the SRS should answer for (often the next one to be
+   written). Record that in the README's Decisions convention: `Checked from <file name>`.
+2. Pass it as `--decisions-since <file name>`. The script skips records whose file name sorts before it,
+   which works when file names start with a number or a date.
+3. For older records that still set live behaviour, offer them in batches of 3 to 5 as mode 2 work, the
+   same as bootstrap. Never a wall.
 
 Decisions kept outside files (tracker tickets labelled as decisions, comments on a pull request) cannot
 be checked by the script. List them with your tracker and check each by hand: its ID or key appears in

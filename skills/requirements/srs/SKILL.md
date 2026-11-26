@@ -26,7 +26,7 @@ fill in what you know, and go to bootstrap (an existing codebase) or add (a new 
 
 Either way, every time you use this skill in a repo, check its agent instructions for the rule that decisions update the SRS when they are made
 ([decisions](reference/decisions.md) has the wording). If it is missing, propose it before you go on, and
-add it only on the developer's yes.
+add it only on the developer's yes. Skip this when the README records that they declined it.
 
 ## Rules you never break
 
@@ -40,7 +40,8 @@ add it only on the developer's yes.
 - **Write requirements, not designs.** One behaviour per row, `shall` / `should` / `may`, verifiable,
   saying what and not how: no library, table, framework or file name. Interface specs are the exception.
 - **Decisions change the SRS when they are made.** A decision that sets how the product behaves
-  updates or adds its rows in the same change as the decision record, even when the build comes later.
+  gets its Proposed rows (or Proposed replacements for Accepted rows) in the same change as the decision
+  record, even when the build comes later.
   Never leave it as a line on a future build's checklist.
 - **Never a wall.** Present at most 3 to 5 areas for decision at a time.
 
@@ -99,8 +100,10 @@ Run the format check from this skill's folder against the SRS:
 node <this skill's folder>/scripts/srs-lint.mjs docs/srs
 ```
 
-If the repo keeps decision records in a folder, add `--decisions <that folder>`: every record that sets
-behaviour must be cited by some SRS row ([decisions](reference/decisions.md) says how it decides).
+If the repo keeps decision records in a folder, add `--decisions <that folder>` (and
+`--decisions-since <file name>` if the README names one): every record that sets behaviour must be cited
+by some SRS row. [Decisions](reference/decisions.md) says how it decides, and how to turn it on in a repo
+with older records.
 Add `--json` for a machine-readable list. Exit 0 means clean. Exit 1 lists findings as
 `file:line: rule: message`: fix every one and run it again; never report the work done with findings
 open. Exit 2 means a wrong path or option, or the script could not run; it prints why.

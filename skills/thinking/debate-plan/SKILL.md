@@ -143,7 +143,8 @@ keeps such things:
   deferral triggers, the losing option's strongest point and the condition that would reverse it;
 - if the repo keeps an SRS, the rows each behaviour decision adds or changes, written now in the same
   change as the decision record and citing it, not when the build happens. Use the `srs` skill if it is
-  installed; otherwise draft them as Proposed rows following the SRS's own README conventions.
+  installed; otherwise draft them as Proposed rows (a Proposed replacement for an Accepted row) following
+  the SRS's own README conventions.
 
 ## If you cannot run work in parallel
 

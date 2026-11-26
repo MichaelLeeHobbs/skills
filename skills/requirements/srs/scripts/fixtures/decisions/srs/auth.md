@@ -9,7 +9,7 @@
 | AUTH-USR-03 | The system shall lock an account after 5 failed sign-ins within 15 minutes. | P1 | Test | Accepted |
 | AUTH-USR-04 | The system should show remaining attempts \| before lockout. | P3 | Test | Proposed |
 
-AUTH-USR-04: source: decision 0001-lockout; decision D-07.
+AUTH-USR-04: source: decision 0001-lockout; decision D-07; decision D-08.
 
 ## Sessions (SES)
 

@@ -117,7 +117,8 @@ not say where to build it.
 4. Record architecture decisions where the project keeps them, then `comment` the full design on the epic
    and point the brief's **Design** line at it. If the repo keeps an SRS, write the rows each behaviour
    decision adds or changes in the same docs change, citing the decision (the `srs` skill if installed,
-   otherwise Proposed rows following the SRS README's conventions). Do not leave them for the build.
+   otherwise Proposed rows, or a Proposed replacement for an Accepted row, following the SRS README's
+   conventions). Do not leave them for the build.
 5. `read` everything back: each child's parent, each `blocks` link from both sides, the brief's headings.
    Only then `label` the epic `plan-ready`: it tells the build step the plan is complete.
 
@@ -138,6 +139,7 @@ Before the report, from the read-back and not from memory: every ticket in the c
 child's parent is the epic; the `blocks` links match the `Needs` column; the epic's description holds every
 heading in [reference/RUN-BRIEF.md](reference/RUN-BRIEF.md) and every slices row names a real key; the epic
 carries `plan-ready`; no ticket still carries this session's claim; if the repo keeps an SRS, every
-behaviour decision is cited by a row in the docs change (run `srs-lint --decisions` when the repo keeps
-decision records in a folder). Run the
+behaviour decision is cited by a row in the docs change (if the `srs` skill is installed, run its
+srs-lint with `--decisions <folder>`; otherwise search `docs/srs/` for each decision's ID by hand, and
+report the item as not done if you cannot). Run the
 [tracker verbs check](../../engineering/tracker-verbs/SKILL.md#check). A failed item is reported as not done.

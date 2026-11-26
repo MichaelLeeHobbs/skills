@@ -45,4 +45,5 @@ A trace table is one whose header has an ID column.
 
 18. Every record in the folder, except README.md, index.md, templates, records that say `SRS: none`, and
     records whose status is Proposed, Draft, Rejected, Superseded, Deprecated or Withdrawn, has its ID
-    (its `ID:` line, or else its file name without `.md`) somewhere in the SRS.
+    (its `ID:` line, or else its file name without `.md`) somewhere in the SRS. Records older than the
+    README's "checked from" file name are skipped. A folder with no records fails.

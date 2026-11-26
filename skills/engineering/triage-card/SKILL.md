@@ -147,8 +147,9 @@ Follow the project's ticket conventions for every write.
 
 After the user picks a path, apply it and `comment` what was decided. Confirm any open hypothesis before
 building on it, and tell the user if it turned out wrong. If an answer sets how the product behaves and
-the repo keeps an SRS, add or revise its rows now, citing the ticket, even when the build comes later
-(the `srs` skill if installed, otherwise Proposed rows following the SRS README's conventions).
+the repo keeps an SRS, write its rows now, citing the ticket, even when the build comes later: the `srs`
+skill if installed, otherwise Proposed rows (a Proposed replacement for an Accepted row) following the
+SRS README's conventions. They land through the project's usual docs change (a branch and pull request).
 
 - **Build it here** (small or medium): `claim` each ticket (a full claim now), `start` it when work
   begins, and keep the claim until it closes or waits in review.

@@ -107,7 +107,9 @@ In this order:
    the conventions sheet) and the files or areas it owns.
 4. **Won't build and deferred.** Each deferral names the trigger that would bring it back.
 5. **Numbered decisions**, each with a recommended default, so the user can answer "1 yes, 2 drop, 3
-   default". Every place the design breaks a convention is one of these decisions.
+   default". Every place the design breaks a convention is one of these decisions. If the repo keeps a
+   Software Requirements Specification (`docs/srs/`), each decision that sets how the product behaves
+   names the requirement rows it adds or changes, by ID, with the new wording.
 
 KISS and YAGNI apply. A need the user stated stays in, even if large. A "we could" with no plan behind it
 goes to deferred or is dropped. If a numbered decision is a genuine either/or that is expensive to get
@@ -125,7 +127,8 @@ or send the report with the failing items listed at the top. Never send it silen
 The items, in short: every "wrong today" claim cites a file that exists and says what is claimed; every
 slice names its convention and owned files; every decision has a default; every convention break is a
 decision; every deferral has a trigger; every builder opening was rebutted; every always-on guardian and,
-for a screen, every user persona reviewed the final draft.
+for a screen, every user persona reviewed the final draft; where the repo keeps an SRS, every behaviour
+decision names its requirement rows.
 
 ## 7. After the user answers
 
@@ -137,7 +140,10 @@ keeps such things:
 - the ticket re-scoped, or slice tickets filed in build order with their dependencies linked;
 - parked ideas on one future ticket that names its prerequisites;
 - for an architecture decision, an entry in the project's decision record if it keeps one, with the
-  deferral triggers, the losing option's strongest point and the condition that would reverse it.
+  deferral triggers, the losing option's strongest point and the condition that would reverse it;
+- if the repo keeps an SRS, the rows each behaviour decision adds or changes, written now in the same
+  change as the decision record and citing it, not when the build happens. Use the `srs` skill if it is
+  installed; otherwise draft them as Proposed rows following the SRS's own README conventions.
 
 ## If you cannot run work in parallel
 

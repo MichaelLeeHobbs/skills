@@ -61,7 +61,15 @@ After the writes, read each ticket back from the tracker (not from your own copy
 `FAIL` if the read-back fails, a write is missing or duplicated, a label was dropped, or a ticket outside
 the set changed. A failed read-back is not a pass: say the write is unconfirmed.
 
+## 6. Behaviour decisions reached the SRS
+
+Run on the second pass only, after the user picked a path. If the repo has no `docs/srs/`, write
+`PASS: no SRS`. Otherwise, for each answer that sets how the product behaves, an SRS row that cites the
+ticket now exists or was revised in this change.
+
+`FAIL` for each such answer with no row, or with a note that the SRS will be updated when it is built.
+
 ## Output
 
-End the report with the five results, one line each. If any is `FAIL`, say what you did about it or what
+End the report with the six results, one line each. If any is `FAIL`, say what you did about it or what
 the user needs to do.

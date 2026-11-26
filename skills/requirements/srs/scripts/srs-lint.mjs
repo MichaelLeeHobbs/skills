@@ -1,10 +1,11 @@
 #!/usr/bin/env node
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
-import { join, relative, resolve, sep } from 'node:path';
+import { basename, join, relative, resolve, sep } from 'node:path';
 
-const USAGE = `Usage: node srs-lint.mjs <srs-dir> [--json]
+const USAGE = `Usage: node srs-lint.mjs <srs-dir> [--decisions <dir>] [--json]
 
 Checks the format of a Software Requirements Specification folder (usually docs/srs).
+--decisions also flags decision records in <dir> that no SRS file cites.
 Exit 0 clean, 1 findings, 2 usage error or the script could not run.`;
 
 // ---- SRS parsing. srs-verify/scripts/srs-coverage.mjs carries its own copy of this block because each
@@ -297,6 +298,63 @@ function lint(srsDir) {
   return { srs, findings };
 }
 
+const INACTIVE_DECISION = ['proposed', 'draft', 'rejected', 'superseded', 'deprecated', 'withdrawn'];
+
+function readDecision(text) {
+  const lines = text.split(/\r?\n/);
+  const fenced = fenceTracker();
+  const open = lines.map((l) => (fenced(l) ? null : l));
+  const field = (name) => {
+    const re = new RegExp(`^\\s*(?:[-*+]\\s+)?\\**\\s*${name}\\s*\\**\\s*:\\s*\\**\\s*(.*)$`, 'i');
+    for (const l of open) {
+      const m = l !== null && re.exec(l);
+      if (m) return m[1].replace(/[*`]/g, '').trim();
+    }
+    return null;
+  };
+  const firstWord = (s) => (s ?? '').split(/[\s,.;(]/)[0].toLowerCase();
+  let status = field('status');
+  if (status === null) {
+    const h = open.findIndex((l) => l !== null && /^#{2,6}\s+status\s*#*\s*$/i.test(l));
+    if (h >= 0) status = open.slice(h + 1).find((l) => l !== null && l.trim() !== '')?.replace(/[*`]/g, '').trim() ?? null;
+  }
+  const id = field('id');
+  return {
+    id: id ? id.split(/\s/)[0] : null,
+    optOut: firstWord(field('srs')) === 'none',
+    inactive: INACTIVE_DECISION.includes(firstWord(status)),
+  };
+}
+
+function lintDecisions(srsDir, decisionsDir, findings) {
+  const skipped = [];
+  const srsText = listMarkdown(srsDir, []).map((f) => readFileSync(f, 'utf8')).join('\n');
+  const rel = (f) => relative(srsDir, f).split(sep).join('/');
+  const records = listMarkdown(decisionsDir, skipped).filter((f) => {
+    const n = basename(f).toLowerCase();
+    return n !== 'readme.md' && n !== 'index.md' && !n.includes('template');
+  });
+  for (const u of skipped) findings.push({ rule: 'unreadable', file: rel(u), line: 0, message: 'cannot be read, so it was not checked' });
+  let checked = 0;
+  for (const f of records) {
+    const d = readDecision(readFileSync(f, 'utf8'));
+    if (d.optOut || d.inactive) continue;
+    checked++;
+    const id = d.id ?? basename(f).replace(/\.md$/i, '');
+    const cited = new RegExp(`(^|[^\\w-])${id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}($|[^\\w-])`).test(srsText);
+    if (!cited) {
+      findings.push({
+        rule: 'decision-uncited',
+        file: rel(f),
+        line: 1,
+        message: `no SRS file cites decision ${id}: add or revise the rows it sets, citing ${id}, or write "SRS: none" in the record if it sets no product behaviour`,
+        decision: id,
+      });
+    }
+  }
+  return checked;
+}
+
 function main(argv) {
   const args = argv.slice(2);
   if (args.includes('--help') || args.includes('-h')) {
@@ -305,20 +363,40 @@ function main(argv) {
   }
   const json = args.includes('--json');
   const rest = args.filter((a) => a !== '--json');
+  let decisionsArg = null;
+  const di = rest.indexOf('--decisions');
+  if (di >= 0) {
+    decisionsArg = rest[di + 1];
+    if (!decisionsArg || decisionsArg.startsWith('-')) {
+      console.error('--decisions needs a folder.');
+      console.error(USAGE);
+      return 2;
+    }
+    rest.splice(di, 2);
+  }
   const unknown = rest.filter((a) => a.startsWith('-'));
   if (unknown.length || rest.length !== 1) {
     console.error(unknown.length ? `Unknown option: ${unknown.join(' ')}` : 'Expected exactly one <srs-dir>.');
     console.error(USAGE);
     return 2;
   }
+  const isDir = (p) => existsSync(p) && statSync(p).isDirectory();
   const dir = resolve(rest[0]);
-  if (!existsSync(dir) || !statSync(dir).isDirectory()) {
+  if (!isDir(dir)) {
     console.error(`Not a directory: ${rest[0]}`);
     return 2;
   }
+  const decisionsDir = decisionsArg === null ? null : resolve(decisionsArg);
+  if (decisionsDir !== null && !isDir(decisionsDir)) {
+    console.error(`Not a directory: ${decisionsArg}`);
+    return 2;
+  }
   const { srs, findings } = lint(dir);
+  const decisions = decisionsDir === null ? undefined : lintDecisions(dir, decisionsDir, findings);
   if (json) {
-    console.log(JSON.stringify({ ok: findings.length === 0, requirements: srs.requirements.length, files: srs.areaFiles.length, findings }, null, 2));
+    console.log(
+      JSON.stringify({ ok: findings.length === 0, requirements: srs.requirements.length, files: srs.areaFiles.length, decisions, findings }, null, 2),
+    );
   } else {
     for (const f of findings) console.log(`${f.file}:${f.line}: ${f.rule}: ${f.message}`);
     console.log(

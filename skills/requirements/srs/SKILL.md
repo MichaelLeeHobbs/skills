@@ -24,6 +24,10 @@ If there is no SRS, copy [the README template](reference/README-template.md) to 
 fill in what you know, and go to bootstrap (an existing codebase) or add (a new project).
 [The example area](reference/example-area.md) shows a finished area file.
 
+Either way, every time you use this skill in a repo, check its agent instructions for the rule that decisions update the SRS when they are made
+([decisions](reference/decisions.md) has the wording). If it is missing, propose it before you go on, and
+add it only on the developer's yes.
+
 ## Rules you never break
 
 - **You write Proposed rows only.** Only the developer moves a row to Accepted, Deferred or Rejected,
@@ -35,6 +39,9 @@ fill in what you know, and go to bootstrap (an existing codebase) or add (a new 
 - **Never write `trace.md`.** Verdicts belong to verification, and whoever built the work never marks it Met.
 - **Write requirements, not designs.** One behaviour per row, `shall` / `should` / `may`, verifiable,
   saying what and not how: no library, table, framework or file name. Interface specs are the exception.
+- **Decisions change the SRS when they are made.** A decision that sets how the product behaves
+  updates or adds its rows in the same change as the decision record, even when the build comes later.
+  Never leave it as a line on a future build's checklist.
 - **Never a wall.** Present at most 3 to 5 areas for decision at a time.
 
 ## Mode 1: bootstrap an existing repo
@@ -50,7 +57,11 @@ fill in what you know, and go to bootstrap (an existing codebase) or add (a new 
 4. Present the batch: per area, the rows and a one-line question. Accept answers like "accept all but
    04, defer 07, reject 09". Apply them as in mode 4, run the check, then present the next batch.
 
-## Mode 2: add or change from a conversation, ticket or idea
+## Mode 2: add or change from a decision, conversation, ticket or idea
+
+For a decision the developer has already made (in a debate, on a ticket, in a review), follow
+[decisions](reference/decisions.md): cite the decision in every row and ask for acceptance of the wording
+in the same step.
 
 1. Read the area files it touches and search every SRS file for the behaviour: duplicates, rows it
    contradicts (a different number, a different rule) and Out of scope lines it collides with.
@@ -88,6 +99,8 @@ Run the format check from this skill's folder against the SRS:
 node <this skill's folder>/scripts/srs-lint.mjs docs/srs
 ```
 
+If the repo keeps decision records in a folder, add `--decisions <that folder>`: every record that sets
+behaviour must be cited by some SRS row ([decisions](reference/decisions.md) says how it decides).
 Add `--json` for a machine-readable list. Exit 0 means clean. Exit 1 lists findings as
 `file:line: rule: message`: fix every one and run it again; never report the work done with findings
 open. Exit 2 means a wrong path or option, or the script could not run; it prints why.
@@ -103,5 +116,5 @@ line with your recommended answer; and the check's result.
 
 ## It is working if
 
-The check exits 0, every Proposed row has a source note, and every Accepted row traces to a dated
-change-log line in the developer's words.
+The check exits 0, every Proposed row has a source note, every Accepted row traces to a dated
+change-log line in the developer's words, and every decision that sets behaviour is cited by a row.

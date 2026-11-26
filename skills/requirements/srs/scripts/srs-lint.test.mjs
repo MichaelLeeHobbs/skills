@@ -110,7 +110,37 @@ test('the area index must name the file itself, not a longer name that contains 
   }
 });
 
+const decisions = (records) => {
+  const r = run(fixture('decisions/srs'), '--decisions', fixture(`decisions/${records}`), '--json');
+  return { code: r.code, json: JSON.parse(r.out) };
+};
+
+test('decision records cited by file name or ID line, opted out, inactive, index or template: clean', () => {
+  const { code, json } = decisions('records-clean');
+  assert.equal(code, 0, JSON.stringify(json.findings));
+  assert.deepEqual(json.findings, []);
+  assert.equal(json.decisions, 2, 'only 0001 and 0002 are active decisions that need a citation');
+});
+
+test('an uncited decision, a status only inside a fence, and a prefix-only match are each decision-uncited', () => {
+  const { code, json } = decisions('records-uncited');
+  assert.equal(code, 1);
+  assert.deepEqual(json.findings.map((f) => `${f.rule} ${f.decision}`).sort(), [
+    'decision-uncited 0001-lock',
+    'decision-uncited 0010-hex-switch',
+    'decision-uncited 0011-fenced-status',
+  ]);
+});
+
+test('without --decisions, decision records are not checked', () => {
+  const r = run(fixture('decisions/srs'), '--json');
+  assert.equal(r.code, 0);
+  assert.equal(JSON.parse(r.out).decisions, undefined);
+});
+
 test('usage errors exit 2', () => {
+  assert.equal(run(fixture('clean'), '--decisions').code, 2);
+  assert.equal(run(fixture('clean'), '--decisions', join(here, 'fixtures', 'does-not-exist')).code, 2);
   assert.equal(run().code, 2);
   assert.equal(run(fixture('clean'), '--bogus').code, 2);
   assert.equal(run(join(here, 'fixtures', 'does-not-exist')).code, 2);

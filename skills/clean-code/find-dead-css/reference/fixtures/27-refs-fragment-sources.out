@@ -1,0 +1,9 @@
+{"t":"ref","token":"c:a_btn-x_1","kind":"none","path":"","line":0,"via":""}
+{"t":"ref","token":"c:card-wide","kind":"none","path":"","line":0,"via":""}
+{"t":"ref","token":"c:chip-old","kind":"exact","path":"src/a.test.ts","line":5,"via":""}
+{"t":"ref","token":"c:chip-red","kind":"fragment","path":"src/z.tsx","line":2,"via":"chip-"}
+{"t":"ref","token":"c:pill-on","kind":"exact","path":"src/a.test.ts","line":2,"via":""}
+{"t":"ref","token":"c:row-active","kind":"none","path":"","line":0,"via":""}
+{"t":"ref","token":"c:tab-first","kind":"fragment","path":"src/y.tsx","line":1,"via":"tab-"}
+{"t":"ref","token":"c:ui-never","kind":"none","path":"","line":0,"via":""}
+{"t":"summary","wants":8,"exact":2,"fragment":2,"none":4}

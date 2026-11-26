@@ -12,9 +12,9 @@ the disagreement is a bug to report.
    2. Not an object: `not_object`.
    3. `t` absent, not a string, or not accepted by this subcommand or mode: `unknown_type`.
    4. For each field of that type, in the order CONTRACT.md lists them: absent is `missing_field`
-      (optional fields: `want.needle`, `want.paths`); present with the wrong type, or an `enum` value
-      outside its list, is `bad_field`. A `names` array that repeats a value is `duplicate`; check the
-      element types first, so `["a","a",5]` is `bad_field`.
+      (optional fields: `src.fragments`, `want.needle`, `want.paths`); present with the wrong type, or an
+      `enum` value outside its list, is `bad_field`. A `names` array that repeats a value is `duplicate`;
+      check the element types first, so `["a","a",5]` is `bad_field`.
 
    Valid JSON is strict: `NaN`, `Infinity` and `-Infinity` are `bad_json`. When an object repeats a key,
    the last value wins. Numeric option values are matched as ASCII digits only.
@@ -102,7 +102,8 @@ byte order.
 1. **Exact.** `N` occurs at offset `p` in text `T` with no name byte at `p - 1` (or `p` is 0) and no
    name byte at `p + len(N)` (or that is the end of `T`). If any text has one, the result is `exact`
    at the first text in path order that has one, at its smallest such offset.
-2. **Fragment**, only when no text has an exact match. The candidates, in this order:
+2. **Fragment**, only when no text has an exact match. Search only the texts whose `fragments` is absent
+   or `yes`, also when `paths` is given. The candidates, in this order:
    - prefixes `N[0, k)` for `k` from `len(N) - 1` down to 3 where byte `N[k-1]` is `-` or `_`;
    - suffixes `N[k, len(N))` for `k` from 1 up to `len(N) - 3` where byte `N[k]` is `-` or `_`.
 
@@ -111,8 +112,8 @@ byte order.
    A suffix `S` matches at `p` when `S` occurs there, there is no name byte at `p + len(S)` (or that is
    the end), and the bytes before `p` end with one of `}`, `%>`, `'`, `"`, or a backtick.
 
-   For each text in path order, try the candidates in order; the first candidate with a match in that
-   text gives the result `fragment`, at its smallest offset in that text, with `via` set to the
+   For each of those texts in path order, try the candidates in order; the first candidate with a match
+   in that text gives the result `fragment`, at its smallest offset in that text, with `via` set to the
    candidate. The first text with any fragment match decides.
 3. Otherwise the result is `none`.
 

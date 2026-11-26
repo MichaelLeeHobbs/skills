@@ -67,10 +67,11 @@ an exclusion count; say the counts.
 
 Draft the plan from the router configuration, end-to-end tests, component stories and mocks, as
 [reference/PLAN.md](reference/PLAN.md) lays out: every route planned or excluded with a reason, each
-state a short list of steps with an `expect`. Run `verify --check plan`; it must pass. Show the user one
-screen: routes, cells, states per route, mocks, estimated wall time and model cost, the host and the
-guard. Get one approval and a spend cap (default 1.25 times the estimate). Record the approval in the
-catalog's `history.jsonl`.
+state a short list of steps with an `expect`. Run `verify --check plan`; it must pass. Run the prefix
+probes as [reference/REFERENCES.md](reference/REFERENCES.md#prefix-probes) says. Show the user one
+screen: routes, cells, states per route, mocks, corpus exclusions, proposed exact-only files, estimated
+wall time and model cost, the host and the guard. Get one approval and a spend cap (default 1.25 times the
+estimate). Record the approval in the catalog's `history.jsonl`.
 
 ## 3. Prove the driver
 
@@ -89,7 +90,8 @@ Check) as INSTRUMENT.md describes. Reaching the cap stops cleanly; the work fold
 
 Take only the tokens that never appeared in the crawl. Build the corpus and run `refs` over it as
 [reference/REFERENCES.md](reference/REFERENCES.md) describes: exact matches, string fragments that could
-build the name, and CSS-module classes by their local name in the files that import the module.
+build the name, and CSS-module classes by their local name in the files that import the module. The
+approved exact-only files count for exact matches only.
 
 ## 6. Classify
 
@@ -116,8 +118,8 @@ report path, its header and the delete list summary. Then append the run record 
 
 ## Static-only mode
 
-When the browser cannot be driven or no safe host exists: skip steps 2 to 4 and 7, send every token to
-`refs`, and run `classify --mode static`. No member is ever DEAD; candidates are UNPROVEN `static-only`.
+When the browser cannot be driven or no safe host exists: skip steps 2 to 4 (but run the prefix
+probes) and 7, send every token to `refs`, and run `classify --mode static`. No member is ever DEAD; candidates are UNPROVEN `static-only`.
 The report header says `Mode: static-only` and `Crawl canaries: not run`, and has no delete list. Use it
 to size the work before paying for a crawl, never as a list to delete from.
 
@@ -132,11 +134,15 @@ Plant these before step 4. They never enter the inventory counts, the delete lis
 4. **Guard**: the driver sends one POST and one third-party GET from the first cell. Both must be
    aborted by the rules INSTRUMENT.md names.
 
-Pass the first three to `classify` as `canary` records. **The run fails**, and the report says so above
+The **prefix probes** of step 2 are a check too: made-up classes with the app's own prefixes, to show a
+dead one could be found. They run in static-only mode as well, before `refs`.
+
+Pass canaries 1 to 3 to `classify` as `canary` records. **The run fails**, and the report says so above
 the header, when any of these happens:
 - any fixture fails, or the driver self-test differs from its expected output;
 - `verify --check plan` or `classify` prints a problem;
 - canary 4 was not aborted, or any request outside the guard reached a host;
+- the prefix probes line reads FAIL;
 - a rule the proof REFUTED is still on the delete list;
 - the run record is missing, or disagrees with this report's commit, value or check.
 

@@ -37,13 +37,38 @@ the groups you use:
 
 ```bash
 claude plugin marketplace add MichaelLeeHobbs/skills
-claude plugin install engineering@michaelleehobbs
+claude plugin install mlh-engineering@michaelleehobbs
 ```
 
-The plugins are `agent-workflow`, `clean-code`, `clean-room`, `domains`, `engineering`, `github`,
-`operations`, `requirements` and `thinking`. Plugin skills are namespaced by group, so `triage-card` runs as `/engineering:triage-card`.
-To take new commits, run `claude plugin marketplace update michaelleehobbs`, then
-`claude plugin update <group>@michaelleehobbs`, or turn on auto-update for the marketplace in `/plugin`.
+Each plugin is named `mlh-<group>`: `mlh-agent-workflow`, `mlh-clean-code`, `mlh-clean-room`,
+`mlh-domains`, `mlh-engineering`, `mlh-github`, `mlh-operations`, `mlh-requirements` and
+`mlh-thinking`. Plugin skills are namespaced by plugin, so `triage-card` runs as
+`/mlh-engineering:triage-card`. To take new commits, run `claude plugin marketplace update michaelleehobbs`,
+then `claude plugin update mlh-<group>@michaelleehobbs`, or turn on auto-update for the marketplace in
+`/plugin`.
+
+The prefix keeps these plugins from clashing with plugins of the same name from other sources, such as
+the official marketplace or plugins synced from claude.ai. When two enabled plugins share a name, Claude
+Code loads only one of them and skips the other.
+
+#### Upgrading from the unprefixed names
+
+Plugins installed before the rename keep their old names (`engineering`, `thinking` and so on), stop
+receiving updates, and can still hide a same-named plugin from another source. Run `claude plugin list`,
+note each `<group>@michaelleehobbs` entry, and replace each one, for example:
+
+```bash
+claude plugin uninstall engineering@michaelleehobbs
+claude plugin marketplace update michaelleehobbs
+claude plugin install mlh-engineering@michaelleehobbs
+```
+
+If you installed at project or local scope, add `-s project` or `-s local` to the uninstall, and in that
+repo's `.claude/settings.json` change `<group>@michaelleehobbs` to `mlh-<group>@michaelleehobbs` under
+`enabledPlugins`.
+
+Restart Claude Code, then check that `/mlh-<group>:` offers every skill the group lists below (for
+example `/mlh-engineering:triage-card`), and that `claude plugin list` reports no plugin as not loaded.
 
 ## The skills
 

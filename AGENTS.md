@@ -154,5 +154,6 @@ reported bug becomes a fixture, and every future generated implementation inheri
 - Confirm the skill's own check is one you could actually run.
 - Confirm every executable file is a `.mjs` under a skill's `scripts/` folder, imports only `node:`
   built-ins, and that `node --test "skills/**/*.test.mjs"` passes.
-- A new group folder under `skills/` needs its own entry in `.claude-plugin/marketplace.json`, or Claude
-  Code plugin users never see it. Run `claude plugin validate .` if you have Claude Code; it must pass.
+- A new group folder under `skills/` needs its own entry in `.claude-plugin/marketplace.json`, named
+  `mlh-<group>` so it cannot clash with a same-named plugin from another source, or Claude Code plugin
+  users never see it. Run `claude plugin validate .` if you have Claude Code; it must pass.

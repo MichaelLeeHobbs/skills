@@ -33,7 +33,8 @@ Read your agent's context file and the project's contributing docs before resear
 - **The docs or skills that own the areas the ticket touches** (UI, routes, schema, workers, tests). Note
   for each area the pattern a fix must follow and one real file that follows it. You check every
   proposed fix against this list in step 4.
-- **Where decisions are recorded:** a decision log, ADRs, planning docs.
+- **Where decisions are recorded:** a decision log, ADRs, planning docs, and whether the repo keeps a
+  Software Requirements Specification (`docs/srs/`).
 - **A backlog-triage process with its own verdict words.** If one exists, use its words in ticket
   comments so every comment on the board reads the same.
 
@@ -145,7 +146,10 @@ Follow the project's ticket conventions for every write.
 - **Touch only tickets in the triaged set.** Neighbours you did not triage get no writes.
 
 After the user picks a path, apply it and `comment` what was decided. Confirm any open hypothesis before
-building on it, and tell the user if it turned out wrong.
+building on it, and tell the user if it turned out wrong. If an answer sets how the product behaves and
+the repo keeps an SRS, write its rows now, citing the ticket, even when the build comes later: the `srs`
+skill if installed, otherwise Proposed rows (a Proposed replacement for an Accepted row) following the
+SRS README's conventions. They land through the project's usual docs change (a branch and pull request).
 
 - **Build it here** (small or medium): `claim` each ticket (a full claim now), `start` it when work
   begins, and keep the claim until it closes or waits in review.

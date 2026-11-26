@@ -64,6 +64,10 @@ R2 skeptic rebuttal -> maintainer: bulk action has no undo, a misclick clears 20
 9. **The request survives word for word.** The user's request appears verbatim in the shared brief, and
    every need it states is either in a slice or in a numbered decision proposing to drop it.
 10. **Serial runs say so.** If the panel ran one member at a time, the report says the debate was serial.
+11. **Behaviour decisions name their SRS rows.** Not applicable when the repo has no `docs/srs/`.
+    Otherwise every numbered decision that changes what the product does names the requirement IDs it
+    adds or changes and the new wording. A decision that changes behaviour with no row, or a line such
+    as "update the SRS when built", fails.
 
 ## Self-test
 

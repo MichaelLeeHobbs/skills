@@ -55,6 +55,11 @@ not how it is built. Interface specs are the exception: there the exact shape is
 **Source notes.** A Proposed row discovered during a build or drafted from existing material carries its
 source in a note under the table: `AUTH-USR-07: source: discovered while building the login screen, PR 214`.
 
+**Decisions.** A decision that sets how the product behaves changes this SRS in the same change that
+records the decision, even when the build comes later. Each row it adds or revises cites the decision's
+ID in its source note or change-log line. Decision records live in `<decisions folder, or "none">`,
+checked from `<first file name the SRS answers for, or "the first">`.
+
 **Tests.** A test that proves a requirement carries its ID in its name, for example
 `AUTH-USR-03: locks the account after 5 failed logins`. Where a language forbids hyphens in names, use
 underscores (`test_auth_usr_03_locks_account`).

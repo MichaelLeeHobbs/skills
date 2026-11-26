@@ -18,7 +18,8 @@ having been in this conversation.
 
 **Change nothing in the repository.** Research is fine: read code and history, query the tracker, write
 throwaway scripts outside the repo. The only writes are to the tracker (step 6), plus the project's
-decision record when it keeps one, through its own process (often a docs pull request).
+decision record and its Software Requirements Specification (`docs/srs/`) when it keeps them, through
+its own process (often a docs pull request).
 
 Ticket steps use the shared [tracker verbs](../../engineering/tracker-verbs/SKILL.md) (installed alone?
 read `skills/engineering/tracker-verbs/SKILL.md` in github.com/MichaelLeeHobbs/skills). Find your tracker
@@ -114,7 +115,10 @@ not say where to build it.
 3. `edit` the epic's description to hold the [run brief](reference/RUN-BRIEF.md), with the real keys in
    its slices table.
 4. Record architecture decisions where the project keeps them, then `comment` the full design on the epic
-   and point the brief's **Design** line at it.
+   and point the brief's **Design** line at it. If the repo keeps an SRS, write the rows each behaviour
+   decision adds or changes in the same docs change, citing the decision (the `srs` skill if installed,
+   otherwise Proposed rows, or a Proposed replacement for an Accepted row, following the SRS README's
+   conventions). Do not leave them for the build.
 5. `read` everything back: each child's parent, each `blocks` link from both sides, the brief's headings.
    Only then `label` the epic `plan-ready`: it tells the build step the plan is complete.
 
@@ -134,5 +138,8 @@ key and title; where the decisions are recorded. Leave out how the plan was rese
 Before the report, from the read-back and not from memory: every ticket in the confirmed plan exists; each
 child's parent is the epic; the `blocks` links match the `Needs` column; the epic's description holds every
 heading in [reference/RUN-BRIEF.md](reference/RUN-BRIEF.md) and every slices row names a real key; the epic
-carries `plan-ready`; no ticket still carries this session's claim. Run the
+carries `plan-ready`; no ticket still carries this session's claim; if the repo keeps an SRS, every
+behaviour decision is cited by a row in the docs change (if the `srs` skill is installed, run its
+srs-lint with `--decisions <folder>`; otherwise search `docs/srs/` for each decision's ID by hand, and
+report the item as not done if you cannot). Run the
 [tracker verbs check](../../engineering/tracker-verbs/SKILL.md#check). A failed item is reported as not done.

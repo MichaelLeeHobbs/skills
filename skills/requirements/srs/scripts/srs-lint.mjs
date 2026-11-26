@@ -1,10 +1,12 @@
 #!/usr/bin/env node
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
-import { join, relative, resolve, sep } from 'node:path';
+import { basename, isAbsolute, join, relative, resolve, sep } from 'node:path';
 
-const USAGE = `Usage: node srs-lint.mjs <srs-dir> [--json]
+const USAGE = `Usage: node srs-lint.mjs <srs-dir> [--decisions <dir> [--decisions-since <name>]] [--json]
 
 Checks the format of a Software Requirements Specification folder (usually docs/srs).
+--decisions also flags decision records in <dir> that no SRS file cites.
+--decisions-since skips records whose file name sorts before <name> (records older than the SRS).
 Exit 0 clean, 1 findings, 2 usage error or the script could not run.`;
 
 // ---- SRS parsing. srs-verify/scripts/srs-coverage.mjs carries its own copy of this block because each
@@ -297,6 +299,77 @@ function lint(srsDir) {
   return { srs, findings };
 }
 
+const INACTIVE_DECISION = ['proposed', 'draft', 'rejected', 'superseded', 'deprecated', 'withdrawn'];
+
+// Accepts YAML front matter, list items, blockquotes and headings: `status: "proposed"`, `- Status: X`,
+// `> SRS: none`, `## Status: Rejected`, and a `## Status` heading with the value on the next line.
+const FIELD_LEAD = '^\\s*(?:>\\s*)*(?:[-*+]\\s+)?(?:#{1,6}\\s+)?';
+const stripMarks = (s) => s.replace(/[*`"']/g, '').replace(/^\s*(?:>\s*)*(?:[-*+]\s+)?/, '').trim();
+
+function readDecision(text) {
+  const lines = text.split(/\r?\n/);
+  const fenced = fenceTracker();
+  const open = lines.map((l) => (fenced(l) ? null : l));
+  const field = (name) => {
+    const re = new RegExp(`${FIELD_LEAD}\\**\\s*${name}\\s*\\**\\s*:\\s*(.*)$`, 'i');
+    for (const l of open) {
+      const m = l !== null && re.exec(l);
+      if (m) return stripMarks(m[1]);
+    }
+    return null;
+  };
+  const firstWord = (s) => stripMarks(s ?? '').split(/[\s,.;:(]/)[0].toLowerCase();
+  let status = field('status');
+  if (status === null) {
+    const h = open.findIndex((l) => l !== null && /^#{2,6}\s+status\s*#*\s*$/i.test(l));
+    if (h >= 0) status = open.slice(h + 1).find((l) => l !== null && l.trim() !== '') ?? null;
+  }
+  const id = /^[^\s,;]+/.exec(field('id') ?? '')?.[0].replace(/[.:]+$/, '') || null;
+  return {
+    id,
+    optOut: firstWord(field('srs')) === 'none',
+    inactive: INACTIVE_DECISION.includes(firstWord(status)),
+  };
+}
+
+function lintDecisions(srsDir, decisionsDir, since, findings) {
+  const skipped = [];
+  const srsText = listMarkdown(srsDir, []).map((f) => readFileSync(f, 'utf8')).join('\n');
+  const rel = (f) => relative(srsDir, f).split(sep).join('/');
+  const records = listMarkdown(decisionsDir, skipped).filter((f) => {
+    const n = basename(f).toLowerCase();
+    return n !== 'readme.md' && n !== 'index.md' && !n.includes('template');
+  });
+  for (const u of skipped) findings.push({ rule: 'unreadable', file: rel(u), line: 0, message: 'cannot be read, so it was not checked' });
+  if (records.length === 0 && skipped.length === 0) {
+    findings.push({
+      rule: 'decisions-empty',
+      file: rel(decisionsDir),
+      line: 0,
+      message: 'holds no .md decision records, so nothing was checked; is this the right folder?',
+    });
+  }
+  let checked = 0;
+  for (const f of records) {
+    if (since !== null && basename(f).replace(/\.md$/i, '').toLowerCase() < since.toLowerCase()) continue;
+    const d = readDecision(readFileSync(f, 'utf8'));
+    if (d.optOut || d.inactive) continue;
+    checked++;
+    const id = d.id ?? basename(f).replace(/\.md$/i, '');
+    const cited = new RegExp(`(^|[^\\w-])${id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}($|[^\\w-])`).test(srsText);
+    if (!cited) {
+      findings.push({
+        rule: 'decision-uncited',
+        file: rel(f),
+        line: 1,
+        message: `no SRS file cites decision ${id}: add or revise the rows it sets, citing ${id}, or write "SRS: none" in the record if it sets no product behaviour`,
+        decision: id,
+      });
+    }
+  }
+  return checked;
+}
+
 function main(argv) {
   const args = argv.slice(2);
   if (args.includes('--help') || args.includes('-h')) {
@@ -305,26 +378,58 @@ function main(argv) {
   }
   const json = args.includes('--json');
   const rest = args.filter((a) => a !== '--json');
+  const takeValue = (flag) => {
+    const i = rest.indexOf(flag);
+    if (i < 0) return null;
+    const v = rest[i + 1];
+    rest.splice(i, 2);
+    return !v || v.startsWith('-') ? '' : v;
+  };
+  const decisionsArg = takeValue('--decisions');
+  const since = takeValue('--decisions-since');
+  if (decisionsArg === '' || since === '' || (since !== null && decisionsArg === null)) {
+    console.error(since !== null && decisionsArg === null ? '--decisions-since needs --decisions.' : '--decisions and --decisions-since each need a value.');
+    console.error(USAGE);
+    return 2;
+  }
   const unknown = rest.filter((a) => a.startsWith('-'));
   if (unknown.length || rest.length !== 1) {
     console.error(unknown.length ? `Unknown option: ${unknown.join(' ')}` : 'Expected exactly one <srs-dir>.');
     console.error(USAGE);
     return 2;
   }
+  const isDir = (p) => existsSync(p) && statSync(p).isDirectory();
   const dir = resolve(rest[0]);
-  if (!existsSync(dir) || !statSync(dir).isDirectory()) {
+  if (!isDir(dir)) {
     console.error(`Not a directory: ${rest[0]}`);
     return 2;
   }
+  const decisionsDir = decisionsArg === null ? null : resolve(decisionsArg);
+  if (decisionsDir !== null && !isDir(decisionsDir)) {
+    console.error(`Not a directory: ${decisionsArg}`);
+    return 2;
+  }
+  const inside = (a, b) => {
+    const r = relative(a, b);
+    return r === '' || (!r.startsWith('..') && !isAbsolute(r));
+  };
+  if (decisionsDir !== null && (inside(dir, decisionsDir) || inside(decisionsDir, dir))) {
+    console.error('The decisions folder and the SRS folder must not contain each other.');
+    return 2;
+  }
   const { srs, findings } = lint(dir);
+  const decisions = decisionsDir === null ? undefined : lintDecisions(dir, decisionsDir, since, findings);
+  const decisionsNote = decisions === undefined ? '' : `; ${decisions} decision record(s) checked`;
   if (json) {
-    console.log(JSON.stringify({ ok: findings.length === 0, requirements: srs.requirements.length, files: srs.areaFiles.length, findings }, null, 2));
+    console.log(
+      JSON.stringify({ ok: findings.length === 0, requirements: srs.requirements.length, files: srs.areaFiles.length, decisions, findings }, null, 2),
+    );
   } else {
     for (const f of findings) console.log(`${f.file}:${f.line}: ${f.rule}: ${f.message}`);
     console.log(
       findings.length
-        ? `srs-lint: ${findings.length} finding(s); ${srs.requirements.length} requirement row(s) in ${srs.areaFiles.length} file(s)`
-        : `srs-lint: clean; ${srs.requirements.length} requirement row(s) in ${srs.areaFiles.length} file(s)`,
+        ? `srs-lint: ${findings.length} finding(s); ${srs.requirements.length} requirement row(s) in ${srs.areaFiles.length} file(s)${decisionsNote}`
+        : `srs-lint: clean; ${srs.requirements.length} requirement row(s) in ${srs.areaFiles.length} file(s)${decisionsNote}`,
     );
   }
   return findings.length ? 1 : 0;
